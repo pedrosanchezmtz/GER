@@ -1,0 +1,20 @@
+select * from xxer_payments where 1=1 and RECEIPT_NUMBER='PFCTAMPERSA'
+update xxer_payments set STATUS = 'STAMPED' , UUID='B3AB9DF9-68A6-11EA-8DF7-00155D014007', UUID_DATE=sysdate where 1=1 and RECEIPT_NUMBER='PFCTAMPERSA';
+commit;
+
+--listo para actualizar
+select * from xxer_payments where 1=1 and RECEIPT_NUMBER='PF VERSAER'
+select * from xxer_payment_details where 1=1 and PAYMENT_ID='2504' 
+update xxer_payments set STATUS = 'STAMPED' , UUID='2726EC84-5B47-11EB-923C-00155D014009', UUID_DATE=sysdate where 1=1 and RECEIPT_NUMBER='PF VERSAER' and PAYMENT_ID='2504' ;
+commit;
+
+select * from xxer_payments where 1=1 and RECEIPT_NUMBER='PF VERSAER'
+select * from xxer_payment_details where 1=1 and PAYMENT_ID='2122' 
+update xxer_payments set STATUS = 'STAMPED' , UUID='1826CB1D-2493-11EB-9A48-00155D014007', UUID_DATE=sysdate where 1=1 and RECEIPT_NUMBER='PF VERSAER' and PAYMENT_ID='2122' ;
+commit;
+
+
+--
+select * from xxer_payments where 1=1 and RECEIPT_NUMBER='PAQUER'
+
+select * from xxer_payments where 1=1 and RECEIPT_NUMBER='2892932Pago Proveedores'

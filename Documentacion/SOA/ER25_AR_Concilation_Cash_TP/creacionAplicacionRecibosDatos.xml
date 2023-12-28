@@ -1,0 +1,48 @@
+<CreateReceiptRq xmlns="http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec">
+	<Amount>503854.4</Amount>
+	<DepositDate>2021-05-26</DepositDate>
+	<CurrencyCode>MXN</CurrencyCode>
+	<OrganizationId>300000002753847</OrganizationId>
+	<CustomerSiteUseId>300000032790204</CustomerSiteUseId>
+	<CustomerId>300000032790193</CustomerId>
+	<ReceiptDate>2021-05-26</ReceiptDate>
+	<ReceiptMethodId>300000005837188</ReceiptMethodId>
+	<ReceiptNumber>TRAILERS T</ReceiptNumber>
+	<ReceiptFlex>
+		<Reference/>
+		<ReferenceExtend/>
+		<Concept/>
+		<DateTime/>
+		<FormPay/>
+		<superInterface>Y</superInterface>
+	</ReceiptFlex>
+</CreateReceiptRq>
+<CreateApplyReceiptRq xmlns="http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec">
+	<ApplyReceiptType>
+		<AmountApplied>15708</AmountApplied>
+		<ReceiptId>790015</ReceiptId>
+		<CustomerTrxId>2587518</CustomerTrxId>
+		<ReceiptNumber>VER23621</ReceiptNumber>
+		<TransactionNumber>VER-23621</TransactionNumber>
+		<CustomerName>SCHETTINO HERMANOS S RL DE CV</CustomerName>
+		<ApplicationDate>2021-05-24</ApplicationDate>
+		<AccountingDate>2021-05-24</AccountingDate>
+	</ApplyReceiptType>
+</CreateApplyReceiptRq>
+<tns:Q_CUSTOMER>
+<tns:RFC>DML7905239C3</tns:RFC>
+<tns:PARTY_NAME>DHL METROPOLITAN LOGISTICS SC MEXICO SA DE CV</tns:PARTY_NAME>
+<tns:PARTY_NUMBER>6187</tns:PARTY_NUMBER>
+<tns:PARTY_ID>100000001796614</tns:PARTY_ID>
+<tns:ACCOUNT_NUMBER>2788</tns:ACCOUNT_NUMBER>
+<tns:CUST_ACCOUNT_ID>100000001796642</tns:CUST_ACCOUNT_ID>
+<tns:CUST_ACCT_SITE_ID>300000008377466</tns:CUST_ACCT_SITE_ID>
+<tns:PARTY_SITE_NUMBER>21224</tns:PARTY_SITE_NUMBER>
+<tns:SITE_USE_ID>300000008377476</tns:SITE_USE_ID>
+<tns:SITE_USE_CODE>BILL_TO</tns:SITE_USE_CODE>
+<tns:PRIMARY_FLAG>Y</tns:PRIMARY_FLAG>
+<tns:LOCATION>25190</tns:LOCATION>
+<tns:LOCATION_ID>300000008377468</tns:LOCATION_ID>
+<tns:ORGANIZATION_ID>300000002753757</tns:ORGANIZATION_ID>
+<tns:NAME>CONTERSA_BU</tns:NAME>
+</tns:Q_CUSTOMER>
