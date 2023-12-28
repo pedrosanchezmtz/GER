@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="DigitalStampGERTec/WSDLs/DigitalStampGERTec"/>
+            <con:binding>
+                <con:name>DigitalStampGERTecBinding</con:name>
+                <con:namespace>http://soa.estrellaroja.com.mx/DigitalStampGERTec</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline type="error" name="error-N3f57fed0.N75fcdeed.0.17aee67c833.N7cfa" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57fed0.N75fcdeed.0.17aee67c833.N7cf9" name="StageError">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/DigitalStampGERTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7cf8</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<dig:createTrxCFDIRs xmlns:dig="http://soa.estrellaroja.com.mx/DigitalStampGERTec">
+    <cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+        <cmn:Error>
+            <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+            <cmn:ShortDescription>{$body/text()}</cmn:ShortDescription>
+            <cmn:Description>{fn:concat("Error invoking ", $v_operation,$fault/ctx:details," ErApi: ",$body/text() )}</cmn:Description>
+            <cmn:BusinessProcess>DigitalStampGERTec</cmn:BusinessProcess>
+            <cmn:FailedService>DigitalStampGERTec</cmn:FailedService>
+            <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+        </cmn:Error>
+    </cmn:Errors>
+  </dig:createTrxCFDIRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7cf7</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fed0.N20f9937c.0.17ac554289e.N7fff">
+            <con:stage id="_StageId-N3f57fed0.N20f9937c.0.17ac554289e.N7e90" name="StageRq" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                <con:context>
+                    <con1:userNsDecl prefix="val" namespace="http://soa.estrellaroja.com.mx/ValidacionAutomaticaConsulta"/>
+                    <con1:userNsDecl prefix="dig" namespace="http://soa.estrellaroja.com.mx/DigitalStampGERTec"/>
+                    <con1:varNsDecl prefix="est" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con2:assign varName="v_operation">
+                        <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7eb3</con1:id>
+                        <con2:expr>
+                            <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">$body/dig:createTrxCFDIRq/dig:invoice/dig:typeInvoice</con:xqueryText>
+                        </con2:expr>
+                    </con2:assign>
+                    <con2:assign varName="varXMLJsonSchema">
+                        <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N7e8f</con1:id>
+                        <con2:expr>
+                            <con1:xsltTransform>
+                                <con1:resource ref="DigitalStampGERTec/Transformations/DigitalStampRq_to_DigitalStampAPIRq"/>
+                                <con1:input>$body/*[1]</con1:input>
+                            </con1:xsltTransform>
+                        </con2:expr>
+                    </con2:assign>
+                    <con2:nxsdTranslation>
+                        <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N7e8e</con1:id>
+                        <con2:type>XML-To-Native</con2:type>
+                        <con2:sourceExpr>
+                            <con1:xqueryText>$varXMLJsonSchema</con1:xqueryText>
+                        </con2:sourceExpr>
+                        <con2:nxsd ref="DigitalStampGERTec/Schemas/NXSDs/nxsd_createCFDI_Jason_Rq"/>
+                        <con2:schemaElement xmlns:dig="http://soa.estrellaroja.com.mx/DigitalStampGERTec">dig:invoice</con2:schemaElement>
+                        <con2:assign-variable>varXMLJsonRq</con2:assign-variable>
+                        <con2:enforceSchemaOrder>false</con2:enforceSchemaOrder>
+                    </con2:nxsdTranslation>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N3f57fed0.N20f9937c.0.17ac554289e.N7e28" name="StageJava" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                <con:context>
+                    <con1:varNsDecl prefix="est" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con1:varNsDecl prefix="dig" namespace="http://soa.estrellaroja.com.mx/DigitalStampGERTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:javaCallout varName="varJsonStringRq">
+                        <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N7e27</con1:id>
+                        <con2:archive ref="DEV_UtilityTec/JAR/commons-codec-1.7"/>
+                        <con2:className>org.apache.commons.codec.binary.StringUtils</con2:className>
+                        <con2:method>public static java.lang.String newStringIso8859_1([B)</con2:method>
+                        <con2:expr>
+                            <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">$varXMLJsonRq</con:xqueryText>
+                        </con2:expr>
+                        <con2:return-param-as-ref>false</con2:return-param-as-ref>
+                    </con2:javaCallout>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fed0.N75fcdeed.0.17aee67c833.N7d55" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57fed0.N75fcdeed.0.17aee67c833.N7d54" name="StageError">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/DigitalStampGERTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7d53</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<dig:createTrxCFDIRs xmlns:dig="http://soa.estrellaroja.com.mx/DigitalStampGERTec">
+    <cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+        <cmn:Error>
+            <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+            <cmn:ShortDescription>{$body/text()}</cmn:ShortDescription>
+            <cmn:Description>{fn:concat("Error invoking ", $v_operation,$fault/ctx:details," ErApi: ",$body/text() )}</cmn:Description>
+            <cmn:BusinessProcess>DigitalStampGERTec</cmn:BusinessProcess>
+            <cmn:FailedService>DigitalStampGERTec</cmn:FailedService>
+            <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+        </cmn:Error>
+    </cmn:Errors>
+  </dig:createTrxCFDIRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7d52</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fed0.N75fcdeed.0.17aee67c833.N7b06"/>
+        <con:pipeline type="response" name="response-N3f57fed0.N20f9937c.0.17ac554289e.N7ffe" errorHandler="error-N3f57fca4.53df7f60.0.17b998735e1.N7e1e">
+            <con:stage id="_StageId-N3f57fed0.N20f9937c.0.17ac554289e.N7ffc" name="StageRs">
+                <con:context>
+                    <con1:userNsDecl prefix="dig" namespace="http://soa.estrellaroja.com.mx/DigitalStampGERTec" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                        <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N7c80</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText>$varResponse</con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:ifThenElse xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57fca4.53df7f60.0.17b998735e1.N7d79</con2:id>
+                        <con1:case id="_BranchId-N3f57fca4.53df7f60.0.17b998735e1.N7d78">
+                            <con1:condition>
+                                <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">$body/*[1]/dig:Return/dig:invoiceRs/dig:stamping_message/text()!='Timbrado exitoso'</con2:xqueryText>
+                            </con1:condition>
+                            <con1:actions>
+                                <con1:Error>
+                                    <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57fca4.53df7f60.0.17b998735e1.N7d77</con2:id>
+                                    <con1:errCode>ORA-0001</con1:errCode>
+                                </con1:Error>
+                            </con1:actions>
+                        </con1:case>
+                    </con1:ifThenElse>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fed0.N75fcdeed.0.17aee67c833.N7b05">
+            <con:stage id="_StageId-N3f57fed0.N75fcdeed.0.17aee67c833.N7a9a" name="StageNotOperation" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/DigitalStampGERTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7a99</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<dig:createTrxCFDIRs xmlns:dig="http://soa.estrellaroja.com.mx/DigitalStampGERTec">
+    <cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+        <cmn:Error>
+            <cmn:ErrorCode>SOA-001</cmn:ErrorCode>
+            <cmn:ShortDescription>{$body/text()}</cmn:ShortDescription>
+            <cmn:Description>{fn:concat("Error Operacion", $v_operation," No existe" )}</cmn:Description>
+            <cmn:BusinessProcess>DigitalStampGERTec</cmn:BusinessProcess>
+            <cmn:FailedService>DigitalStampGERTec</cmn:FailedService>
+            <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+        </cmn:Error>
+    </cmn:Errors>
+  </dig:createTrxCFDIRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7a98</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fed0.N75fcdeed.0.17aee67c833.N7e1b" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57fed0.N75fcdeed.0.17aee67c833.N7e1a" name="StageError">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/DigitalStampGERTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7e19</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<dig:createTrxCFDIRs xmlns:dig="http://soa.estrellaroja.com.mx/DigitalStampGERTec">
+    <cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+        <cmn:Error>
+            <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+            <cmn:ShortDescription>{$body/text()}</cmn:ShortDescription>
+            <cmn:Description>{fn:concat("Error invoking ", $v_operation,$fault/ctx:details," ErApi: ",$body/text() )}</cmn:Description>
+            <cmn:BusinessProcess>DigitalStampGERTec</cmn:BusinessProcess>
+            <cmn:FailedService>DigitalStampGERTec</cmn:FailedService>
+            <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+        </cmn:Error>
+    </cmn:Errors>
+  </dig:createTrxCFDIRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7e18</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fca4.53df7f60.0.17b998735e1.N7e1e">
+            <con:stage id="_StageId-N3f57fca4.53df7f60.0.17b998735e1.N7de7" name="StageError" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                <con:context>
+                    <con1:userNsDecl prefix="dig" namespace="http://soa.estrellaroja.com.mx/DigitalStampGERTec"/>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/DigitalStampGERTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fca4.53df7f60.0.17b998735e1.N7de6</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<dig:createTrxCFDIRs xmlns:dig="http://soa.estrellaroja.com.mx/DigitalStampGERTec">
+    <cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+        <cmn:Error>
+            <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+            <cmn:ShortDescription>{$body/dig:createTrxCFDIRs/dig:Return/dig:invoiceRs/dig:stamping_message/text()}</cmn:ShortDescription>
+            <cmn:Description>{fn:concat("Error invoking ", $v_operation," ErApi: ",$body/dig:createTrxCFDIRs/dig:Return/dig:invoiceRs/dig:stamping_message/text() )}</cmn:Description>
+            <cmn:BusinessProcess>DigitalStampGERTec</cmn:BusinessProcess>
+            <cmn:FailedService>DigitalStampGERTec</cmn:FailedService>
+            <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+        </cmn:Error>
+    </cmn:Errors>
+  </dig:createTrxCFDIRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fca4.53df7f60.0.17b998735e1.N7de5</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57ef0c.4839071e.0.183f6cf8665.N7f4f" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57ef0c.4839071e.0.183f6cf8665.N7f4e" name="Exception Handler">
+                <con:context>
+                    <con1:userNsDecl prefix="dst" namespace="http://soa.estrellaroja.com.mx/DigitalStampGERTec"/>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57ef0c.4839071e.0.183f6cf8665.N7f4d</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<dst:consultaCFDIRs xmlns:dst="http://soa.estrellaroja.com.mx/DigitalStampGERTec">
+	<cmn:Errors>
+		<cmn:Error>
+			<cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+			<cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+			<cmn:Description>{fn:concat("Error when invoking ", "DigitalStampGERTec",$fault/ctx:details," consultaCFDI: ",$body/text() )}</cmn:Description>
+			<cmn:BusinessProcess>consultaCFDI</cmn:BusinessProcess>
+			<cmn:FailedService>DigitalStampGERTec</cmn:FailedService>
+			<cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+		</cmn:Error>
+	</cmn:Errors>
+</dst:consultaCFDIRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57ef0c.4839071e.0.183f6cf8665.N7f4c</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57ef0c.4839071e.0.183f6cf8665.N7edf" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57ef0c.4839071e.0.183f6cf8665.N7ede" name="ConsultaCFDIRequests">
+                <con:context>
+                    <con1:userNsDecl prefix="dig" namespace="http://soa.estrellaroja.com.mx/DigitalStampGERTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:assign varName="varRequest">
+                        <con1:id>_ActionId-N3f57ef0c.4839071e.0.183f6cf8665.N7edd</con1:id>
+                        <con2:expr>
+                            <con1:xsltTransform>
+                                <con1:resource ref="DigitalStampGERTec/Transformations/consultaCFDIRq_to_consulta"/>
+                                <con1:input>$body/*[1]</con1:input>
+                            </con1:xsltTransform>
+                        </con2:expr>
+                    </con2:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57ef0c.4839071e.0.183f6cf8665.N7edc" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57ef0c.4839071e.0.183f6cf8665.N7edb" name="ConsultaCFDIResponse">
+                <con:context/>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57ef0c.4839071e.0.183f6cf8665.N7eda</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText>$varResponse</con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57ef3a.N2a923e37.0.18632651e86.N7f83" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57ef3a.N2a923e37.0.18632651e86.N7f82" name="Exception Handler">
+                <con:context>
+                    <con1:userNsDecl prefix="dst" namespace="http://soa.estrellaroja.com.mx/DigitalStampGERTec"/>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57ef3a.N2a923e37.0.18632651e86.N7f81</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<dst:consultaCFDIRs xmlns:dst="http://soa.estrellaroja.com.mx/DigitalStampGERTec">
+	<cmn:Errors>
+		<cmn:Error>
+			<cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+			<cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+			<cmn:Description>{fn:concat("Error when invoking ", "DigitalStampGERTec",$fault/ctx:details," consultaCFDI: ",$body/text() )}</cmn:Description>
+			<cmn:BusinessProcess>consultaCFDI</cmn:BusinessProcess>
+			<cmn:FailedService>DigitalStampGERTec</cmn:FailedService>
+			<cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+		</cmn:Error>
+	</cmn:Errors>
+</dst:consultaCFDIRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57ef3a.N2a923e37.0.18632651e86.N7f80</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57ef3a.N2a923e37.0.18632651e86.N7f13" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config"/>
+        <con:pipeline type="response" name="response-N3f57ef3a.N2a923e37.0.18632651e86.N7f10" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57ef3a.N2a923e37.0.18632651e86.N7f0f" name="ConsultaCFDIResponse">
+                <con:context/>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57ef3a.N2a923e37.0.18632651e86.N7dfb</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText>$varResponse</con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57fed0.N20f9937c.0.17ac554289e.N7ffb" name="BranchNode1">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="createTrxCFDI">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair Node1">
+                                <con:request>request-N3f57fed0.N20f9937c.0.17ac554289e.N7fff</con:request>
+                                <con:response>response-N3f57fed0.N20f9937c.0.17ac554289e.N7ffe</con:response>
+                            </con:pipeline-node>
+                            <con:branch-node type="condition" id="_FlowId-N3f57fed0.N75fcdeed.0.17aee67c833.N7ff4" name="Operaciones">
+                                <con:context>
+                                    <con1:userNsDecl prefix="dig" namespace="http://soa.estrellaroja.com.mx/DigitalStampGERTec" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                                </con:context>
+                                <con:branch-table variable="body">
+                                    <con:xpath>
+                                        <con1:xpathText xmlns:con1="http://www.bea.com/wli/sb/stages/config">$v_operation</con1:xpathText>
+                                    </con:xpath>
+                                    <con:branch name="StampInvoice">
+                                        <con:operator>equals</con:operator>
+                                        <con:value>'INVOICE'</con:value>
+                                        <con:flow>
+                                            <con:route-node name="RouteNodeStampInvoice" error-handler="error-N3f57fed0.N75fcdeed.0.17aee67c833.N7d55" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                                <con:context>
+                                                    <con1:userNsDecl prefix="val" namespace="http://soa.estrellaroja.com.mx/ValidacionAutomaticaConsulta"/>
+                                                </con:context>
+                                                <con:actions>
+                                                    <con3:route>
+                                                        <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7d5c</con1:id>
+                                                        <con3:service ref="DigitalStampGERTec/Business/DigitalStampGERApi" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                                        <con3:operation>StampInvoice</con3:operation>
+                                                        <con3:outboundTransform>
+                                                            <con2:delete varName="outbound">
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7d5b</con1:id>
+                                                                <con2:location>
+                                                                    <con1:xpathText>./ctx:transport/ctx:request/tp:headers/http:Content-Type</con1:xpathText>
+                                                                </con2:location>
+                                                            </con2:delete>
+                                                            <con2:insert varName="outbound">
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7d5a</con1:id>
+                                                                <con2:location>
+                                                                    <con1:xpathText>$outbound/ctx:transport/ctx:request/tp:headers</con1:xpathText>
+                                                                </con2:location>
+                                                                <con2:where>first-child</con2:where>
+                                                                <con2:expr>
+                                                                    <con1:xqueryText>&lt;http:Content-Type>{'application/json'}&lt;/http:Content-Type></con1:xqueryText>
+                                                                </con2:expr>
+                                                            </con2:insert>
+                                                            <con4:report>
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7d59</con1:id>
+                                                                <con4:expr>
+                                                                    <con1:xqueryText>replace($varJsonStringRq,'null','""')</con1:xqueryText>
+                                                                </con4:expr>
+                                                            </con4:report>
+                                                            <con2:replace varName="body" contents-only="true">
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7d58</con1:id>
+                                                                <con2:location>
+                                                                    <con1:xpathText>.</con1:xpathText>
+                                                                </con2:location>
+                                                                <con2:expr>
+                                                                    <con1:xqueryText>$varJsonStringRq</con1:xqueryText>
+                                                                </con2:expr>
+                                                            </con2:replace>
+                                                        </con3:outboundTransform>
+                                                        <con3:responseTransform>
+                                                            <con2:nxsdTranslation>
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7d57</con1:id>
+                                                                <con2:type>Native-To-XML</con2:type>
+                                                                <con2:sourceExpr>
+                                                                    <con1:xqueryText>$body/text()</con1:xqueryText>
+                                                                </con2:sourceExpr>
+                                                                <con2:nxsd ref="DigitalStampGERTec/Schemas/NXSDs/nxsd_createCFDI_JasonRs"/>
+                                                                <con2:schemaElement xmlns:dig="http://soa.estrellaroja.com.mx/DigitalStampGERTec">dig:invoice</con2:schemaElement>
+                                                                <con2:assign-variable>varJsonRs</con2:assign-variable>
+                                                            </con2:nxsdTranslation>
+                                                            <con2:assign varName="varResponse">
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7d56</con1:id>
+                                                                <con2:expr>
+                                                                    <con1:xsltTransform>
+                                                                        <con1:resource ref="DigitalStampGERTec/Transformations/DigitalStampAPIRs_to_DigitalStampRs.xsl"/>
+                                                                        <con1:input>$varJsonRs</con1:input>
+                                                                    </con1:xsltTransform>
+                                                                </con2:expr>
+                                                            </con2:assign>
+                                                        </con3:responseTransform>
+                                                    </con3:route>
+                                                </con:actions>
+                                            </con:route-node>
+                                        </con:flow>
+                                    </con:branch>
+                                    <con:branch name="StampCreditNote">
+                                        <con:operator>equals</con:operator>
+                                        <con:value>'CREDITNOTE'</con:value>
+                                        <con:flow>
+                                            <con:route-node name="RouteNodeStampCreditNote" error-handler="error-N3f57fed0.N75fcdeed.0.17aee67c833.N7e1b" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                                <con:context>
+                                                    <con1:userNsDecl prefix="val" namespace="http://soa.estrellaroja.com.mx/ValidacionAutomaticaConsulta"/>
+                                                </con:context>
+                                                <con:actions>
+                                                    <con3:route>
+                                                        <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7e23</con1:id>
+                                                        <con3:service ref="DigitalStampGERTec/Business/DigitalStampGERApi" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                                        <con3:operation>StampCreditNote</con3:operation>
+                                                        <con3:outboundTransform>
+                                                            <con2:delete varName="outbound">
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7e22</con1:id>
+                                                                <con2:location>
+                                                                    <con1:xpathText>./ctx:transport/ctx:request/tp:headers/http:Content-Type</con1:xpathText>
+                                                                </con2:location>
+                                                            </con2:delete>
+                                                            <con2:insert varName="outbound">
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7e21</con1:id>
+                                                                <con2:location>
+                                                                    <con1:xpathText>$outbound/ctx:transport/ctx:request/tp:headers</con1:xpathText>
+                                                                </con2:location>
+                                                                <con2:where>first-child</con2:where>
+                                                                <con2:expr>
+                                                                    <con1:xqueryText>&lt;http:Content-Type>{'application/json'}&lt;/http:Content-Type></con1:xqueryText>
+                                                                </con2:expr>
+                                                            </con2:insert>
+                                                            <con4:report>
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7e1f</con1:id>
+                                                                <con4:expr>
+                                                                    <con1:xqueryText>replace($varJsonStringRq,'null','""')</con1:xqueryText>
+                                                                </con4:expr>
+                                                            </con4:report>
+                                                            <con2:replace varName="body" contents-only="true">
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7e1e</con1:id>
+                                                                <con2:location>
+                                                                    <con1:xpathText>.</con1:xpathText>
+                                                                </con2:location>
+                                                                <con2:expr>
+                                                                    <con1:xqueryText>$varJsonStringRq</con1:xqueryText>
+                                                                </con2:expr>
+                                                            </con2:replace>
+                                                        </con3:outboundTransform>
+                                                        <con3:responseTransform>
+                                                            <con2:nxsdTranslation>
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7e1d</con1:id>
+                                                                <con2:type>Native-To-XML</con2:type>
+                                                                <con2:sourceExpr>
+                                                                    <con1:xqueryText>$body/text()</con1:xqueryText>
+                                                                </con2:sourceExpr>
+                                                                <con2:nxsd ref="DigitalStampGERTec/Schemas/NXSDs/nxsd_createCFDI_JasonRs"/>
+                                                                <con2:schemaElement xmlns:dig="http://soa.estrellaroja.com.mx/DigitalStampGERTec">dig:invoice</con2:schemaElement>
+                                                                <con2:assign-variable>varJsonRs</con2:assign-variable>
+                                                            </con2:nxsdTranslation>
+                                                            <con2:assign varName="varResponse">
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7e1c</con1:id>
+                                                                <con2:expr>
+                                                                    <con1:xsltTransform>
+                                                                        <con1:resource ref="DigitalStampGERTec/Transformations/DigitalStampAPIRs_to_DigitalStampRs.xsl"/>
+                                                                        <con1:input>$varJsonRs</con1:input>
+                                                                    </con1:xsltTransform>
+                                                                </con2:expr>
+                                                            </con2:assign>
+                                                        </con3:responseTransform>
+                                                    </con3:route>
+                                                </con:actions>
+                                            </con:route-node>
+                                        </con:flow>
+                                    </con:branch>
+                                    <con:branch name="StampPayment">
+                                        <con:operator>equals</con:operator>
+                                        <con:value>'PAYMENTCOMPLEMENT'</con:value>
+                                        <con:flow>
+                                            <con:route-node name="RouteNodeStampPayment" error-handler="error-N3f57fed0.N75fcdeed.0.17aee67c833.N7cfa" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                                <con:context>
+                                                    <con1:userNsDecl prefix="val" namespace="http://soa.estrellaroja.com.mx/ValidacionAutomaticaConsulta"/>
+                                                </con:context>
+                                                <con:actions>
+                                                    <con3:route>
+                                                        <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7d01</con1:id>
+                                                        <con3:service ref="DigitalStampGERTec/Business/DigitalStampGERApi" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                                        <con3:operation>StampPayment</con3:operation>
+                                                        <con3:outboundTransform>
+                                                            <con2:delete varName="outbound">
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7d00</con1:id>
+                                                                <con2:location>
+                                                                    <con1:xpathText>./ctx:transport/ctx:request/tp:headers/http:Content-Type</con1:xpathText>
+                                                                </con2:location>
+                                                            </con2:delete>
+                                                            <con2:insert varName="outbound">
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7cff</con1:id>
+                                                                <con2:location>
+                                                                    <con1:xpathText>$outbound/ctx:transport/ctx:request/tp:headers</con1:xpathText>
+                                                                </con2:location>
+                                                                <con2:where>first-child</con2:where>
+                                                                <con2:expr>
+                                                                    <con1:xqueryText>&lt;http:Content-Type>{'application/json'}&lt;/http:Content-Type></con1:xqueryText>
+                                                                </con2:expr>
+                                                            </con2:insert>
+                                                            <con4:report>
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7cfe</con1:id>
+                                                                <con4:expr>
+                                                                    <con1:xqueryText>replace($varJsonStringRq,'null','""')</con1:xqueryText>
+                                                                </con4:expr>
+                                                            </con4:report>
+                                                            <con2:replace varName="body" contents-only="true">
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7cfd</con1:id>
+                                                                <con2:location>
+                                                                    <con1:xpathText>.</con1:xpathText>
+                                                                </con2:location>
+                                                                <con2:expr>
+                                                                    <con1:xqueryText>$varJsonStringRq</con1:xqueryText>
+                                                                </con2:expr>
+                                                            </con2:replace>
+                                                        </con3:outboundTransform>
+                                                        <con3:responseTransform>
+                                                            <con2:nxsdTranslation>
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7cfc</con1:id>
+                                                                <con2:type>Native-To-XML</con2:type>
+                                                                <con2:sourceExpr>
+                                                                    <con1:xqueryText>$body/text()</con1:xqueryText>
+                                                                </con2:sourceExpr>
+                                                                <con2:nxsd ref="DigitalStampGERTec/Schemas/NXSDs/nxsd_createCFDI_JasonRs"/>
+                                                                <con2:schemaElement xmlns:dig="http://soa.estrellaroja.com.mx/DigitalStampGERTec">dig:invoice</con2:schemaElement>
+                                                                <con2:assign-variable>varJsonRs</con2:assign-variable>
+                                                            </con2:nxsdTranslation>
+                                                            <con2:assign varName="varResponse">
+                                                                <con1:id>_ActionId-N3f57fed0.N75fcdeed.0.17aee67c833.N7cfb</con1:id>
+                                                                <con2:expr>
+                                                                    <con1:xsltTransform>
+                                                                        <con1:resource ref="DigitalStampGERTec/Transformations/DigitalStampAPIRs_to_DigitalStampRs.xsl"/>
+                                                                        <con1:input>$varJsonRs</con1:input>
+                                                                    </con1:xsltTransform>
+                                                                </con2:expr>
+                                                            </con2:assign>
+                                                        </con3:responseTransform>
+                                                    </con3:route>
+                                                </con:actions>
+                                            </con:route-node>
+                                        </con:flow>
+                                    </con:branch>
+                                    <con:default-branch>
+                                        <con:flow>
+                                            <con:pipeline-node name="Pipeline Pair Node2">
+                                                <con:request>request-N3f57fed0.N75fcdeed.0.17aee67c833.N7b06</con:request>
+                                                <con:response>response-N3f57fed0.N75fcdeed.0.17aee67c833.N7b05</con:response>
+                                            </con:pipeline-node>
+                                        </con:flow>
+                                    </con:default-branch>
+                                </con:branch-table>
+                            </con:branch-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="consultaCFDI">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair Node3" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                <con:request>request-N3f57ef0c.4839071e.0.183f6cf8665.N7edf</con:request>
+                                <con:response>response-N3f57ef0c.4839071e.0.183f6cf8665.N7edc</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteNode1" error-handler="error-N3f57ef0c.4839071e.0.183f6cf8665.N7f4f" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                <con:context>
+                                    <con1:userNsDecl prefix="rs" namespace="http://tempuri.org/"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con1:id>_ActionId-N3f57ef0c.4839071e.0.183f6cf8665.N7f52</con1:id>
+                                        <con3:service ref="DigitalStampGERTec/Business/ConsultaCFDIService" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>Consulta</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con2:replace varName="body" contents-only="true">
+                                                <con1:id>_ActionId-N3f57ef0c.4839071e.0.183f6cf8665.N7f51</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>.</con1:xpathText>
+                                                </con2:location>
+                                                <con2:expr>
+                                                    <con1:xqueryText>$varRequest</con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con2:assign varName="varResponse">
+                                                <con1:id>_ActionId-N3f57ef0c.4839071e.0.183f6cf8665.N7f50</con1:id>
+                                                <con2:expr>
+                                                    <con1:xsltTransform>
+                                                        <con1:resource ref="DigitalStampGERTec/Transformations/consultaResponse_to_consultaCFDIRs"/>
+                                                        <con1:input>$body/*[1]</con1:input>
+                                                    </con1:xsltTransform>
+                                                </con2:expr>
+                                            </con2:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="GetCFDIFile">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair Node4" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                <con:request>request-N3f57ef3a.N2a923e37.0.18632651e86.N7f13</con:request>
+                                <con:response>response-N3f57ef3a.N2a923e37.0.18632651e86.N7f10</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteNode2" error-handler="error-N3f57ef3a.N2a923e37.0.18632651e86.N7f83" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                <con:context>
+                                    <con1:userNsDecl prefix="rs" namespace="http://tempuri.org/"/>
+                                    <con1:userNsDecl prefix="amsf" namespace="http://schemas.datacontract.org/2004/07/B2bmxapi.Models.Facturacion.Cliente.GER"/>
+                                    <con1:userNsDecl prefix="dig" namespace="http://soa.estrellaroja.com.mx/DigitalStampGERTec"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con1:id>_ActionId-N3f57ef3a.N2a923e37.0.18632651e86.N7f86</con1:id>
+                                        <con3:service ref="DigitalStampGERTec/Business/GetCFDIFile" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>GetCFDIFiles</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con2:insert varName="outbound">
+                                                <con1:id>_ActionId-N3f57ef3a.N2a923e37.0.18632651e86.N7ec8</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>./ctx:transport/ctx:request</con1:xpathText>
+                                                </con2:location>
+                                                <con2:where>first-child</con2:where>
+                                                <con2:expr>
+                                                    <con1:xqueryText><![CDATA[<http:query-parameters>
+<http:parameter name= "rfc" value ="{$body/dig:GetCFDIFileRq/dig:rfc}"/>
+<http:parameter name= "uuid" value ="{$body/dig:GetCFDIFileRq/dig:uuid}"/>
+<http:parameter name= "tipoArchivo" value ="{$body/dig:GetCFDIFileRq/dig:tipoArchivo}"/>
+<http:parameter name= "base64" value ="{$body/dig:GetCFDIFileRq/dig:base64}"/>
+</http:query-parameters>]]></con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:insert>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con2:assign varName="varResponse">
+                                                <con1:id>_ActionId-N3f57ef3a.N2a923e37.0.18632651e86.N7e2f</con1:id>
+                                                <con2:expr>
+                                                    <con1:xqueryText><![CDATA[<dig:GetCFDIFileRs  	xmlns:dig="http://soa.estrellaroja.com.mx/DigitalStampGERTec">
+	<dig:NombreArchivo>{$body/amsf:ResponseObtenerCFDI/amsf:NombreArchivo/text()}</dig:NombreArchivo>
+	<dig:Archivo>{$body/amsf:ResponseObtenerCFDI/amsf:Archivo/text()}</dig:Archivo>
+	<dig:Error>{$body/amsf:ResponseObtenerCFDI/amsf:Error/text()}</dig:Error>
+	<dig:DetalleError>{$body/amsf:ResponseObtenerCFDI/amsf:DetalleError/text()}</dig:DetalleError>
+	</dig:GetCFDIFileRs>]]></con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+    <aler:alertRules xsi:nil="true" xmlns:aler="http://xmlns.oracle.com/servicebus/monitoring/alert"/>
+</con:pipelineEntry>

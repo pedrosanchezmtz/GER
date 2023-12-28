@@ -1,0 +1,55 @@
+<xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/LetterPorteTec/Types" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/LetterPorteTec/Types" xmlns:tns="http://soa.estrellaroja.com.mx/LetterPorteTec/Types" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+<xsd:import schemaLocation="Commons/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+
+  <xsd:element name="GetRelationsCFDIsRq" type="tns:GetRelationsCFDIsRqType"/>
+  <xsd:element name="GetRelationsCFDIsRs" type="tns:GetRelationsCFDIsRsType"/>
+  <xsd:complexType name="GetRelationsCFDIsRqType">
+    <xsd:sequence>
+      <xsd:element name="TransactionNumber" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="BusinessUnit" type="xsd:string" minOccurs="0" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetRelationsCFDIsRsType">
+  
+   <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:annotation>
+          <xsd:documentation>Extends BaseRsType (Success and Errors nodes). Contains a node which should be used for the specific response of the corresponding service.</xsd:documentation>
+        </xsd:annotation>
+       <xsd:sequence>
+      <xsd:element name="RelationCFDIs" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+             <xsd:element name="Descripcion" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="VtMonto" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="SucursalId" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Importe" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Iva" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="ImporteIva" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="ImporteRetencion" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="NumeroProducto" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="ReferenciaProducto" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="UnidadMedida" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="NumeroDocumento" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="TotalFactura" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="UuidIngreso" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Estatus" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="UrlPdfIngreso" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="UrlXmlIngreso" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="DateIngreso" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="UuidCp" type="xsd:string" minOccurs="0" nillable="true"/>			
+            <xsd:element name="EstatusCp" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="UrlPdfCp" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="UrlXmlCp" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="DateCp" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="TipoFactura" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="FechaCreacion" type="xsd:string" minOccurs="0" nillable="true"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+    
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="InvoicesBiz" targetNamespace="http://soa.estrellaroja.com.mx/InvoicesBiz" xmlns:tns="http://soa.estrellaroja.com.mx/InvoicesBiz" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://soa.estrellaroja.com.mx/InvoicesBiz" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+<wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+<import namespace="http://soa.estrellaroja.com.mx/InvoicesBiz" schemaLocation="InvoicesBiz.xsd"/>
+</schema>
+</wsdl:types>
+<wsdl:message name="BuildInvoicesZipRq">
+<wsdl:part name="BuildInvoicesZipRq" element="tns:BuildInvoicesZipRq"/>
+</wsdl:message>
+<wsdl:message name="BuildInvoicesZipRs">
+<wsdl:part name="BuildInvoicesZipRs" element="tns:BuildInvoicesZipRs"/>
+</wsdl:message>
+<wsdl:message name="ValidateInvoicesAPRq">
+<wsdl:part name="ValidateInvoicesAPRq" element="tns:ValidateInvoicesAPRq"/>
+</wsdl:message>
+<wsdl:message name="ValidateInvoicesAPRs">
+<wsdl:part name="ValidateInvoicesAPRs" element="tns:ValidateInvoicesAPRs"/>
+</wsdl:message>
+<wsdl:message name="DigitalStampRq">
+<wsdl:part name="DigitalStampRq" element="tns:DigitalStampRq"/>
+</wsdl:message>
+<wsdl:message name="DigitalStampRs">
+<wsdl:part name="DigitalStampRs" element="tns:DigitalStampRs"/>
+</wsdl:message>
+<wsdl:portType name="InvoicesBizPortType">
+<wsdl:operation name="BuildInvoicesZip">
+<wsdl:input message="tns:BuildInvoicesZipRq"/>
+<wsdl:output message="tns:BuildInvoicesZipRs"/>
+</wsdl:operation>
+<wsdl:operation name="ValidateInvoicesAP">
+<wsdl:input message="tns:ValidateInvoicesAPRq"/>
+</wsdl:operation>
+<wsdl:operation name="DigitalStamp">
+<wsdl:input message="tns:DigitalStampRq"/>
+<wsdl:output message="tns:DigitalStampRs"/>
+</wsdl:operation>
+<wsdl:operation name="ValidatePaymentComplements">
+<wsdl:input message="tns:ValidatePaymentComplementsRq"/>
+</wsdl:operation>
+<wsdl:operation name="UploadPaymentComplements">
+<wsdl:input message="tns:UploadPaymentComplementsRq"/>
+</wsdl:operation>
+<wsdl:operation name="NotifyLoadInvoices">
+<wsdl:input message="tns:NotifyLoadInvoicesRq"/>
+<wsdl:output message="tns:NotifyLoadInvoicesRs"/>
+</wsdl:operation>
+<wsdl:operation name="StatusLoadInvoices">
+<wsdl:input message="tns:StatusLoadInvoicesRq"/>
+<wsdl:output message="tns:StatusLoadInvoicesRs"/>
+</wsdl:operation>
+<wsdl:operation name="UpdateUuid">
+<wsdl:input message="tns:UpdateUuidRq"/>
+<wsdl:output message="tns:UpdateUuidRs"/>
+</wsdl:operation>
+<wsdl:operation name="GetComplementToUpdInvoices">
+<wsdl:input message="tns:GetComplementToUpdInvoicesRq"/>
+<wsdl:output message="tns:GetComplementToUpdInvoicesRs"/>
+</wsdl:operation>
+<wsdl:operation name="UpdateStatusInvoices">
+<wsdl:input message="tns:UpdateStatusInvoicesRq"/>
+<wsdl:output message="tns:UpdateStatusInvoicesRs"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:portType name="InvoicesBizCallbackPortType">
+<wsdl:operation name="ValidateInvoicesAP">
+<wsdl:input message="tns:ValidateInvoicesAPRs"/>
+</wsdl:operation>
+<wsdl:operation name="ValidatePaymentComplements">
+<wsdl:input message="tns:ValidatePaymentComplementsRs"/>
+</wsdl:operation>
+<wsdl:operation name="UploadPaymentComplements">
+<wsdl:input message="tns:UploadPaymentComplementsRs"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="InvoicesBizBinding" type="tns:InvoicesBizPortType">
+<soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="BuildInvoicesZip">
+<soap12:operation soapAction="http://soa.estrellaroja.com.mx/InvoicesBiz/BuildInvoicesZip"/>
+<wsdl:input>
+<soap12:body use="literal" parts="BuildInvoicesZipRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal" parts="BuildInvoicesZipRs"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ValidateInvoicesAP">
+<soap12:operation soapAction="http://soa.estrellaroja.com.mx/InvoicesBiz/ValidateInvoicesAP"/>
+<wsdl:input>
+<soap12:body use="literal" parts="ValidateInvoicesAPRq"/>
+</wsdl:input>
+</wsdl:operation>
+<wsdl:operation name="DigitalStamp">
+<soap12:operation soapAction="http://soa.estrellaroja.com.mx/InvoicesBiz/DigitalStamp"/>
+<wsdl:input>
+<soap12:body use="literal" parts="DigitalStampRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal" parts="DigitalStampRs"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ValidatePaymentComplements">
+<soap12:operation soapAction="http://soa.estrellaroja.com.mx/InvoicesBiz/ValidatePaymentComplements"/>
+<wsdl:input>
+<soap12:body use="literal" parts="ValidatePaymentComplementsRqPart"/>
+</wsdl:input>
+</wsdl:operation>
+<wsdl:operation name="UploadPaymentComplements">
+<soap12:operation soapAction="http://soa.estrellaroja.com.mx/InvoicesBiz/UploadPaymentComplements"/>
+<wsdl:input>
+<soap12:body use="literal" parts="UploadPaymentComplementsRqPart"/>
+</wsdl:input>
+</wsdl:operation>
+<wsdl:operation name="NotifyLoadInvoices">
+<soap12:operation soapAction="http://soa.estrellaroja.com.mx/InvoicesBiz/NotifyLoadInvoices"/>
+<wsdl:input>
+<soap12:body use="literal" parts="NotifyLoadInvoicesRqPart"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal" parts="NotifyLoadInvoicesRsPart"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="StatusLoadInvoices">
+<soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/InvoicesBiz/StatusLoadInvoices"/>
+<wsdl:input>
+<soap12:body use="literal" parts="StatusLoadInvoicesRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal" parts="StatusLoadInvoicesRs"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="UpdateUuid">
+<soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/InvoicesBiz/UpdateUuid"/>
+<wsdl:input>
+<soap12:body use="literal" parts="UpdateUuidRqPart"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal" parts="UpdateUuidRsPart"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetComplementToUpdInvoices">
+<soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/InvoicesBiz/GetComplementToUpdInvoices"/>
+<wsdl:input>
+<soap12:body use="literal" parts="GetComplementToUpdInvoicesRqPart"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal" parts="GetComplementToUpdInvoicesRsPart"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="UpdateStatusInvoices">
+<soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/InvoicesBiz/UpdateStatusInvoices"/>
+<wsdl:input>
+<soap12:body use="literal" parts="UpdateStatusInvoicesRqPart"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal" parts="UpdateStatusInvoicesRsPart"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:message name="ValidatePaymentComplementsRq">
+<wsdl:part name="ValidatePaymentComplementsRqPart" element="tns:ValidatePaymentComplementsRq"/>
+</wsdl:message>
+<wsdl:message name="ValidatePaymentComplementsRs">
+<wsdl:part name="ValidatePaymentComplementsRsPart" element="tns:ValidatePaymentComplementsRs"/>
+</wsdl:message>
+<wsdl:message name="UploadPaymentComplementsRq">
+<wsdl:part name="UploadPaymentComplementsRqPart" element="tns:UploadPaymentComplementsRq"/>
+</wsdl:message>
+<wsdl:message name="UploadPaymentComplementsRs">
+<wsdl:part name="UploadPaymentComplementsRsPart" element="tns:UploadPaymentComplementsRs"/>
+</wsdl:message>
+<wsdl:message name="NotifyLoadInvoicesRq">
+<wsdl:part name="NotifyLoadInvoicesRqPart" element="tns:NotifyLoadInvoicesRq"/>
+</wsdl:message>
+<wsdl:message name="NotifyLoadInvoicesRs">
+<wsdl:part name="NotifyLoadInvoicesRsPart" element="tns:NotifyLoadInvoicesRs"/>
+</wsdl:message>
+<wsdl:message name="StatusLoadInvoicesRq">
+<wsdl:part name="StatusLoadInvoicesRq" element="tns:StatusLoadInvoicesRq"/>
+</wsdl:message>
+<wsdl:message name="StatusLoadInvoicesRs">
+<wsdl:part name="StatusLoadInvoicesRs" element="tns:StatusLoadInvoicesRs"/>
+</wsdl:message>
+<wsdl:message name="UpdateUuidRq">
+<wsdl:part name="UpdateUuidRqPart" element="tns:UpdateUuidRq"/>
+</wsdl:message>
+<wsdl:message name="UpdateUuidRs">
+<wsdl:part name="UpdateUuidRsPart" element="tns:UpdateUuidRs"/>
+</wsdl:message>
+<wsdl:message name="GetComplementToUpdInvoicesRq">
+<wsdl:part name="GetComplementToUpdInvoicesRqPart" element="tns:GetComplementToUpdInvoicesRq"/>
+</wsdl:message>
+<wsdl:message name="GetComplementToUpdInvoicesRs">
+<wsdl:part name="GetComplementToUpdInvoicesRsPart" element="tns:GetComplementToUpdInvoicesRs"/>
+</wsdl:message>
+<wsdl:message name="UpdateStatusInvoicesRq">
+<wsdl:part name="UpdateStatusInvoicesRqPart" element="tns:UpdateStatusInvoicesRq"/>
+</wsdl:message>
+<wsdl:message name="UpdateStatusInvoicesRs">
+<wsdl:part name="UpdateStatusInvoicesRsPart" element="tns:UpdateStatusInvoicesRs"/>
+</wsdl:message>
+<wsdl:service name="InvoicesBiz">
+<wsdl:port name="InvoicesBizPort" binding="tns:InvoicesBizBinding">
+<soap12:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/INERDEV/InvoicesBiz/InvoicesBiz"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

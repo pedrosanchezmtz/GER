@@ -1,0 +1,13 @@
+<adapter-config name="dbInsertArElecInvoiceErrors" adapter="db" wsdlLocation="../WSDLs/External/dbaInsertArElecInvoiceErrors.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory UIConnectionName="dbCloud" location="eis/DB/dbCloud"/>
+  <endpoint-interaction portType="dbInsertArElecInvoiceErrors_ptt" operation="insert">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="dbInsertArElecInvoiceErrors.XxerArElecInvoiceErrors"/>
+      <property name="DmlType" value="insert"/>
+      <property name="OutputCompletedXml" value="true"/>
+      <property name="MappingsMetaDataURL" value="dbaInsertArElecInvoiceErrors-or-mappings.xml"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+      <property name="DetectOmissions" value="true"/>
+    </interaction-spec>
+  </endpoint-interaction>
+</adapter-config>

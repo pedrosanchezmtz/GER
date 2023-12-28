@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="ValidaCartaPorteEnt" targetNamespace="http://soa.estrellaroja.com.mx/XMLValidatorBiz" xmlns:tns="http://soa.estrellaroja.com.mx/XMLValidatorBiz" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://soa.estrellaroja.com.mx/XMLValidatorBiz" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.estrellaroja.com.mx/XMLValidatorBiz/types" elementFormDefault="qualified">
+<xsd:import namespace="http://soa.estrellaroja.com.mx/XMLValidatorBiz" schemaLocation="XMLValidatorBiz.xsd"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="ValidaCartaPorteRq">
+<xsd:schema/>
+<wsdl:part name="ValidaCartaPorteRqPart" element="tns:ValidaCartaPorteRq"/>
+</wsdl:message>
+<wsdl:message name="ValidaCartaPorteRs">
+<wsdl:part name="ValidaCartaPorteRsPart" element="tns:ValidaCartaPorteRs"/>
+</wsdl:message>
+<wsdl:portType name="XMLValidatorBizPortType">
+<wsdl:operation name="ValidaCartaPorte">
+<wsdl:input message="tns:ValidaCartaPorteRq"/>
+<wsdl:output message="tns:ValidaCartaPorteRs"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="XMLValidatorBizPortTypeBinding" type="tns:XMLValidatorBizPortType">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="ValidaCartaPorte">
+<soap:operation style="document" soapAction="http://soa.estrellaroja.com.mx/XMLValidatorBiz/ValidaCartaPorte"/>
+<wsdl:input>
+<soap:body use="literal" parts="ValidaCartaPorteRqPart"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="ValidaCartaPorteRsPart"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="XMLValidatorBizService">
+<wsdl:port name="XMLValidatorBizPort" binding="tns:XMLValidatorBizPortTypeBinding">
+<soap:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/PROD/XMLValidatorBiz/XMLValidatorBiz"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,20 @@
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns0="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="erpUpdateInvoiceInstallmentsAP">RestReference</doc>
+  <grammars>
+    <xsd:schema>
+      <xsd:import namespace="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP" schemaLocation="../../../Schemas/External/InvoiceAP/erpInvoiceInstallmentsAP.xsd"/>
+    </xsd:schema>
+  </grammars>
+  <resources>
+    <resource path="/">
+      <method name="PATCH" soa:wsdlOperation="updateInvoiceInstallmentAP">
+        <request soa:paramElement="pns:updateInvoiceInstallmentsAPRq" xmlns:pns="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">
+          <representation mediaType="application/json" element="cns:updateInvoiceInstallmentsAPRq" xmlns:cns="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP"/>
+        </request>
+        <response status="200">
+          <representation mediaType="application/json" element="cns:updateInvoiceInstallmentsAPRs" xmlns:cns="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP"/>
+        </response>
+      </method>
+    </resource>
+  </resources>
+</application>

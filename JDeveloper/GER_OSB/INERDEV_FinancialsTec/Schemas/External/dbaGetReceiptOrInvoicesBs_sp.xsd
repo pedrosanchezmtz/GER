@@ -1,0 +1,420 @@
+<schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/dbaGetReceiptOrInvoicesBs" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/sp/dbaGetReceiptOrInvoicesBs" elementFormDefault="qualified">
+   <element name="InputParameters">
+      <complexType>
+         <sequence>
+            <element name="P_INFORMATION" type="db:XERINTUSER.XXER_AR_RECEIPT_INVOICE_TTYPE" db:index="1" db:type="Array" minOccurs="0" nillable="true"/>
+            <element name="P_MODULE" type="string" db:index="2" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         </sequence>
+      </complexType>
+   </element>
+   <element name="OutputParameters">
+      <complexType>
+         <sequence>
+            <element name="P_RECEIPT" type="db:XERINTUSER.XXER_AR_RECEIPT_TTYPE" db:index="3" db:type="Array" minOccurs="0" nillable="true"/>
+            <element name="P_INVOICE" type="db:XERINTUSER.XXER_AR_GET_INV_TB_TYP" db:index="4" db:type="Array" minOccurs="0" nillable="true"/>
+            <element name="P_ERROR" type="decimal" db:index="5" db:type="NUMBER" minOccurs="0" nillable="true"/>
+            <element name="P_ERROR_DESC" type="string" db:index="6" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         </sequence>
+      </complexType>
+   </element>
+   <complexType name="XERINTUSER.XXER_AR_GET_INV_TYP">
+      <sequence>
+         <element name="RFC" type="db:string20" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="BUSINESS_UNIT_NAME" type="db:string250" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TRANS_BATCH_SOURCE_NAME" type="db:string250" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TRANSACTION_TYPE_NAME" type="db:string50" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="PAYMENT_TERMS" type="db:string50" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TRANSACTION_DATE" type="dateTime" db:type="DATE" minOccurs="0" nillable="true"/>
+         <element name="ACCOUNTING_DATE" type="dateTime" db:type="DATE" minOccurs="0" nillable="true"/>
+         <element name="TRANSACTION_NUMBER" type="db:string50" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ORIG_SYS_BILL_TO_CST_REF" type="db:string250" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ORIG_SYS_BILL_TO_CST_AD_REF" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ORIG_SYS_BILL_TO_CST_CO_REF" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ORIG_SYS_SHIP_TO_CST_REF" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ORIG_SYS_SHIP_TO_CST_AD_REF" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ORIG_SYS_SHIP_TO_CST_CO_REF" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ORIG_SYS_SHP_TO_CST_ACC_REF" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ORI_SYS_SHP_TO_CST_AC_AD_REF" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ORI_SYS_SHP_TO_CST_AC_CO_RF" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ORIG_SYS_SOLD_TO_CST_REF" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ORIG_SYS_SOLD_TO_CST_ACC_RF" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="BILL_TO_CUST_ACCOUNT_NMBR" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="BILL_TO_CUSTOMER_SITE_NMBR" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="BILL_TO_CONTACT_PARTY_NMBR" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SHIP_TO_CUST_ACCOUNT_NMBR" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SHIP_TO_CUSTOMER_SITE_NMBR" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SHIP_TO_CONTACT_PARTY_NMBR" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SOLD_TO_CUST_ACCOUNT_NMBR" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TRANSACTION_LINE_TYPE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TRANSACTION_LINE_DESC" type="db:string250" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="CURRENCY_CODE" type="db:string10" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="CURRENCY_CONVERSION_TYPE" type="db:string50" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="CURRENCY_CONVERSION_DATE" type="dateTime" db:type="DATE" minOccurs="0" nillable="true"/>
+         <element name="CURRENCY_CONVERSION_RATE" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="TRANSACTION_LINE_AMOUNT" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="TRANSACTION_LINE_QUANTITY" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="CUSTOMER_ORDERED_QUANTITY" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="UNIT_SELLING_PRICE" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="UNIT_STANDARD_PRICE" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="LINE_TRANS_FLXFLD_CONTEXT" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINE_TRANS_FLXFLD_SGMNT_1" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINE_TRANS_FLXFLD_SGMNT_2" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINE_TRANS_FLXFLD_SGMNT_3" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINE_TRANS_FLXFLD_SGMNT_4" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINE_TRANS_FLXFLD_SGMNT_5" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINE_TRANS_FLXFLD_SGMNT_6" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINE_TRANS_FLXFLD_SGMNT_7" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINE_TRANS_FLXFLD_SGMNT_8" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINE_TRANS_FLXFLD_SGMNT_9" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINE_TRANS_FLXFLD_SGMNT_10" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINE_TRANS_FLXFLD_SGMNT_11" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINE_TRANS_FLXFLD_SGMNT_12" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINE_TRANS_FLXFLD_SGMNT_13" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINE_TRANS_FLXFLD_SGMNT_14" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINE_TRANS_FLXFLD_SGMNT_15" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="PRIMARY_SALESPERSON_NUMBER" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="TAX_CLASSIFICATION_CODE" type="db:string50" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LEGAL_ENTITY_IDENTIFIER" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ACCD_AMOUNT_IN_LED_CRRNCY" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SALES_ORDER_NUMBER" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SALES_ORDER_DATE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ACTUAL_SHIP_DATE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="WAREHOUSE_CODE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="UNIT_OF_MEASURE_CODE" type="db:string50" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="UNIT_OF_MEASURE_NAME" type="db:string50" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICING_RULE_NAME" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REVE_SCHEDULING_RULE_NAME" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="NUMBER_OF_REVENUE_PERIODS" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REV_SCHDLNG_RULE_START_DATE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REV_SCHDLNG_RULE_END_DATE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REASON_CODE_MEANING" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LAST_PERIOD_TO_CREDIT" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TRANS_BISS_CATEGORY_CODE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="PROD_FISC_CLASSIFICTN_CODE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="PRODUCT_CATEGORY_CODE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="PRODUCT_TYPE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINE_INTENDED_USE_CODE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ASSESSABLE_VALUE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="DOCUMENT_SUB_TYPE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="DEFAULT_TAXATION_COUNTRY" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="USER_DEFND_FISC_CLASSIFICTN" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TAX_INVOICE_NUMBER" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TAX_INVOICE_DATE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TAX_REGIME_CODE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TAX" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TAX_STATUS_CODE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TAX_RATE_CODE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TAX_JURISDICTION_CODE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="FIRST_PARTY_REGISTRATN_NMBR" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="THIRD_PARTY_REGISTRATN_NMBR" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="FINAL_DISCHARGE_LOCATION" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TAXABLE_AMOUNT" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TAXABLE_FLAG" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TAX_EXEMPTION_FLAG" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TAX_EXEMPTION_REASON_CODE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TAX_EXEMPTN_RSON_CODE_MNG" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TAX_EXEMPTN_CERTIFICT_NMBR" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINE_AMOUNT_INCLDS_TAX_FLAG" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TAX_PRECEDENCE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="CR_MT_2B_US_4_LS_WT_RV_SC_RS" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="CR_MT_2B_US_4_TR_WT_SP_PY_TR" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REASON_CODE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TAX_RATE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="FOB_POINT" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="CARRIER" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SHIPPING_REFERENCE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SALES_ORDER_LINE_NUMBER" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SALES_ORDER_SOURCE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SALES_ORDER_REVISION_NUMBER" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="PURCHASE_ORDER_NUMBER" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="PURCHASE_ORDER_REVSN_NMBR" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="PURCHASE_ORDER_DATE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="AGREEMENT_NAME" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="MEMO_LINE_NAME" type="db:string250" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="DOCUMENT_NUMBER" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ORIGINAL_SYSTEM_BATCH_NAME" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LINK_TO_TRANS_FLXFLD_CNTXT" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_TRANS_FLXFLD_SGMNT_1" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_TRANS_FLXFLD_SGMNT_2" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_TRANS_FLXFLD_SGMNT_3" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_TRANS_FLXFLD_SGMNT_4" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_TRANS_FLXFLD_SGMNT_5" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_TRANS_FLXFLD_SGMNT_6" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_TRANS_FLXFLD_SGMNT_7" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_TRANS_FLXFLD_SGMNT_8" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_TRANS_FLXFLD_SGMNT_9" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_TRANS_FLXFLD_SGMNT_10" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_TRANS_FLXFLD_SGMNT_11" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_TRANS_FLXFLD_SGMNT_12" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_TRANS_FLXFLD_SGMNT_13" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_TRANS_FLXFLD_SGMNT_14" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_TRANS_FLXFLD_SGMNT_15" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REF_TRANS_FLXFLD_CNTXT" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REF_TRANS_FLXFLD_SGMNT_1" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REF_TRANS_FLXFLD_SGMNT_2" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REF_TRANS_FLXFLD_SGMNT_3" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REF_TRANS_FLXFLD_SGMNT_4" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REF_TRANS_FLXFLD_SGMNT_5" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REF_TRANS_FLXFLD_SGMNT_6" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REF_TRANS_FLXFLD_SGMNT_7" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REF_TRANS_FLXFLD_SGMNT_8" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REF_TRANS_FLXFLD_SGMNT_9" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REF_TRANS_FLXFLD_SGMNT_10" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REF_TRANS_FLXFLD_SGMNT_11" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REF_TRANS_FLXFLD_SGMNT_12" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REF_TRANS_FLXFLD_SGMNT_13" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REF_TRANS_FLXFLD_SGMNT_14" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REF_TRANS_FLXFLD_SGMNT_15" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_PARENT_LINE_CONTEXT" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_PARENT_LINE_SGMNT_1" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_PARENT_LINE_SGMNT_2" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_PARENT_LINE_SGMNT_3" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_PARENT_LINE_SGMNT_4" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_PARENT_LINE_SGMNT_5" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_PARENT_LINE_SGMNT_6" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_PARENT_LINE_SGMNT_7" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_PARENT_LINE_SGMNT_8" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_PARENT_LINE_SGMNT_9" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_PARENT_LINE_SGMNT_10" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_PARENT_LINE_SGMNT_11" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_PARENT_LINE_SGMNT_12" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_PARENT_LINE_SGMNT_13" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_PARENT_LINE_SGMNT_14" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LNK_TO_PARENT_LINE_SGMNT_15" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RECEIPT_METHOD_NAME" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="PRINTING_OPTION" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RELATED_BATCH_SOURCE_NAME" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RELATED_TRANSACTION_NUMBER" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_NUMBER" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_2" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_3" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_4" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_5" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_6" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_7" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_8" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_9" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_10" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_11" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_12" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_13" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_14" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_15" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_16" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_17" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_18" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_19" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVENTORY_ITEM_SEGMENT_20" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="BILL_TO_CUST_BANK_ACC_NAME" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RESET_TRANSACTION_DATE_FLAG" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="PAYMENT_SERVER_ORDER_NUMBER" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LAST_TRANS_ON_DEBIT_AUTZTN" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="APPROVAL_CODE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ADDRESS_VERIFICATION_CODE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="TRANS_LINE_TRANSLATED_DESC" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="CONSOLIDATED_BILLING_NUMBER" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="PROMISED_COMMITMENT_AMOUNT" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="PAYMENT_SET_IDENTIFIER" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ORIGINAL_ACCOUNTING_DATE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICED_LINE_ACC_LEVEL" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="OVERRIDE_AUTOACCOUNTING_FLAG" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="HISTORICAL_FLAG" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="DEFERRAL_EXCLUSION_FLAG" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="PAYMENT_ATTRIBUTES" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_BILLING_DATE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_LINES_FLXFLD_CNTXT" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_LNS_FLXFLD_SGMNT_1" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_LNS_FLXFLD_SGMNT_2" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_LNS_FLXFLD_SGMNT_3" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_LNS_FLXFLD_SGMNT_4" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_LNS_FLXFLD_SGMNT_5" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_LNS_FLXFLD_SGMNT_6" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_LNS_FLXFLD_SGMNT_7" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_LNS_FLXFLD_SGMNT_8" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_LNS_FLXFLD_SGMNT_9" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_LNS_FLXFLD_SGMNT_10" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_LNS_FLXFLD_SGMNT_11" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_LNS_FLXFLD_SGMNT_12" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_LNS_FLXFLD_SGMNT_13" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_LNS_FLXFLD_SGMNT_14" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_LNS_FLXFLD_SGMNT_15" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_TRANS_FLXFLD_CNTXT" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INV_TRANS_FLXFLD_SGMNT_1" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INV_TRANS_FLXFLD_SGMNT_2" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INV_TRANS_FLXFLD_SGMNT_3" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INV_TRANS_FLXFLD_SGMNT_4" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INV_TRANS_FLXFLD_SGMNT_5" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INV_TRANS_FLXFLD_SGMNT_6" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INV_TRANS_FLXFLD_SGMNT_7" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INV_TRANS_FLXFLD_SGMNT_8" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INV_TRANS_FLXFLD_SGMNT_9" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INV_TRANS_FLXFLD_SGMNT_10" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INV_TRANS_FLXFLD_SGMNT_11" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INV_TRANS_FLXFLD_SGMNT_12" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INV_TRANS_FLXFLD_SGMNT_13" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INV_TRANS_FLXFLD_SGMNT_14" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INV_TRANS_FLXFLD_SGMNT_15" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_CNTXT" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_1" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_2" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_3" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_4" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_5" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_6" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_7" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_8" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_9" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_10" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_11" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_12" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_13" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_14" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_15" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_16" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_17" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_18" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_19" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_20" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_21" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_22" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_23" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_24" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_25" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_26" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_27" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_28" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_29" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RCVB_TRN_RGN_INF_FLXF_SGM_30" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_ATTR_CAT" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_2" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_3" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_4" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_5" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_6" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_7" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_8" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_9" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_10" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_11" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_12" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_13" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_14" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_15" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_16" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_17" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_18" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_19" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LN_GLB_DSC_FLXFLD_SGMNT_1_20" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="COMMENTS" type="db:string250" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="NOTES_FROM_SOURCE" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ENFORCE_CHRONLGCL_DOC_SEQNG" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ORGANIZATION_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>         
+      </sequence>
+   </complexType>
+<complexType name="XERINTUSER.XXER_AR_RECEIPT_TYPE">
+      <sequence>
+         <element name="RFC" type="db:string20" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="AMOUNT" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="SITE_USE_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="DEPOSIT_DATE" type="dateTime" db:type="DATE" minOccurs="0" nillable="true"/>
+         <element name="CUST_ACCOUNT_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="RECEIPT_DATE" type="dateTime" db:type="DATE" minOccurs="0" nillable="true"/>
+         <element name="RECEIPT_METHOD_ID" type="db:string30" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="RECEIPT_NUMBER" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="CASH_RECEIPT_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="ORGANIZATION_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="TABLA_PUENTE_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+      </sequence>
+   </complexType>
+   <complexType name="XERINTUSER.XXER_AR_RECEIPT_TTYPE">
+      <sequence>
+         <element name="P_RECEIPT_ITEM" type="db:XERINTUSER.XXER_AR_RECEIPT_TYPE" db:type="Struct" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+      </sequence>
+   </complexType>
+   <complexType name="XERINTUSER.XXER_AR_GET_INV_TB_TYP">
+      <sequence>
+         <element name="P_INVOICE_ITEM" type="db:XERINTUSER.XXER_AR_GET_INV_TYP" db:type="Struct" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+      </sequence>
+   </complexType>
+   <complexType name="XERINTUSER.XXER_AR_RECEIPT_INVOICE_TYPE">
+      <sequence>
+         <element name="RFC" type="db:string20" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="PARTY_NAME" type="db:string360" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="PARTY_NUMBER" type="db:string30" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="PARTY_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="ACCOUNT_NUMBER" type="db:string30" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="CUST_ACCOUNT_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="CUST_ACCT_SITE_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="PARTY_SITE_NUMBER" type="db:string30" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SITE_USE_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="SITE_USE_CODE" type="db:string30" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="PRIMARY_FLAG" type="db:string1" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LOCATION" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LOCATION_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="PAYMENT_TERMS" type="db:string500" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ORG_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="BU_NAME" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+      </sequence>
+   </complexType>
+   <complexType name="XERINTUSER.XXER_AR_RECEIPT_INVOICE_TTYPE">
+      <sequence>
+         <element name="P_INFORMATION_ITEM" type="db:XERINTUSER.XXER_AR_RECEIPT_INVOICE_TYPE" db:type="Struct" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+      </sequence>
+   </complexType>
+   <simpleType name="string20">
+      <restriction base="string">
+         <maxLength value="20"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string360">
+      <restriction base="string">
+         <maxLength value="360"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string30">
+      <restriction base="string">
+         <maxLength value="30"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string1">
+      <restriction base="string">
+         <maxLength value="1"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string150">
+      <restriction base="string">
+         <maxLength value="150"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string500">
+      <restriction base="string">
+         <maxLength value="500"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string25">
+      <restriction base="string">
+         <maxLength value="25"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string250">
+      <restriction base="string">
+         <maxLength value="250"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string50">
+      <restriction base="string">
+         <maxLength value="50"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string100">
+      <restriction base="string">
+         <maxLength value="100"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string10">
+      <restriction base="string">
+         <maxLength value="10"/>
+      </restriction>
+   </simpleType>
+</schema>

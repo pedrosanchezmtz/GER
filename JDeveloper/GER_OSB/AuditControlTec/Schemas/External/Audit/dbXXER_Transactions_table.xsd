@@ -1,0 +1,41 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbXXER_Transactions" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbXXER_Transactions" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxerIntegrationsTransactionsCollection" type="XxerIntegrationsTransactionsCollection"/>
+   <xs:complexType name="XxerIntegrationsTransactionsCollection">
+      <xs:sequence>
+         <xs:element name="XxerIntegrationsTransactions" type="XxerIntegrationsTransactions" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerIntegrationsTransactions">
+      <xs:sequence>
+         <xs:element name="transactionId" type="xs:decimal" nillable="true"/>
+         <xs:element name="integrationName" type="string200" minOccurs="0"/>
+         <xs:element name="importCreationDate" type="xs:string" minOccurs="0"/>
+         <xs:element name="processName" type="string250" minOccurs="0" nillable="true"/>
+         <xs:element name="creationDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="lastUpdateDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute1" type="string250" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute2" type="string250" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute3" type="string250" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute4" type="string250" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute5" type="string250" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="dbXXER_TransactionsSelect_p_integrationName_p_processNameInputParameters" type="dbXXER_TransactionsSelect_p_integrationName_p_processName"/>
+   <xs:complexType name="dbXXER_TransactionsSelect_p_integrationName_p_processName">
+      <xs:sequence>
+         <xs:element name="p_integrationName" type="xs:string" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="p_processName" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="string200">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="200"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string250">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="250"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

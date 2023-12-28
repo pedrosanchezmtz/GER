@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://TargetNamespace.com/RestReference_Operation1_request" targetNamespace="http://TargetNamespace.com/RestReference_Operation1_request" elementFormDefault="qualified" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON" nxsd:encoding="US-ASCII">
+   <xsd:element name="Request">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="PersonId" type="xsd:integer"/>
+            <xsd:element name="AssignmentId" type="xsd:integer"/>
+            <xsd:element name="ElementTypeId" type="xsd:integer"/>
+            <xsd:element name="EntryType" type="xsd:string"/>
+            <xsd:element name="CreatorType" type="xsd:string"/>
+            <xsd:element name="elementEntryValues">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="InputValueId" type="xsd:integer"/>
+                     <xsd:element name="ScreenEntryValue" type="xsd:double"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+<xsd:annotation xmlns="">
+      <xsd:appinfo>NXSDSAMPLE=</xsd:appinfo>
+      <xsd:appinfo>USEHEADER=false</xsd:appinfo>
+   </xsd:annotation>
+</xsd:schema>

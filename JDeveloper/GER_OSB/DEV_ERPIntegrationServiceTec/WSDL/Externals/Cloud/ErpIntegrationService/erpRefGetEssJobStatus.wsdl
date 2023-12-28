@@ -1,0 +1,77 @@
+<wsdl:definitions
+    
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefGetEssJobStatus"
+     xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/"
+     xmlns:orafault="http://xmlns.oracle.com/oracleas/schema/oracle-fault-11_0"
+     xmlns:tns="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:types="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/types/"
+     xmlns:ns0="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefGetEssJobStatus/types"
+     xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefGetEssJobStatus"
+    >
+    <plnk:partnerLinkType name="getESSJobStatus_plt">
+        <plnk:role name="getESSJobStatus_role">
+            <plnk:portType name="ns1:erpRefGetEssJobStatusPortType"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <xs:schema xmlns="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefGetEssJobStatus/types"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefGetEssJobStatus/types"
+             xmlns:tns0="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefGetEssJobStatus/types">
+            <xs:element name="getESSJobStatus" type="tns0:getESSJobStatusType"/>
+            <xs:complexType name="getESSJobStatusType">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="xs:long" name="requestId"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getESSJobStatusResponse" type="tns0:getESSJobStatusResponseType"/>
+            <xs:complexType name="getESSJobStatusResponseType">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="xs:string" name="result"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://xmlns.oracle.com/adf/svc/errors/" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:tns="http://xmlns.oracle.com/adf/svc/errors/" sdoJava:package="oracle.jbo.service.errors">
+            <xs:element name="ServiceErrorMessage" type="tns:ServiceErrorMessage"/>
+            <xs:complexType name="ServiceErrorMessage">
+                <xs:complexContent>
+                    <xs:extension base="tns:ServiceMessage">
+                        <xs:sequence>
+                            <xs:element maxOccurs="1" minOccurs="0" name="sdoObject" type="anyType"/>
+                            <xs:element maxOccurs="1" minOccurs="0" name="exceptionClassName" type="string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ServiceMessage">
+                <xs:sequence>
+                    <xs:element maxOccurs="1" minOccurs="0" name="code" type="string"/>
+                    <xs:element maxOccurs="1" minOccurs="0" name="message" type="string"/>
+                    <xs:element maxOccurs="1" minOccurs="0" name="severity" type="string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="detail" type="tns:ServiceMessage"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getESSJobStatusRequestMessage">
+        <wsdl:part name="parameters" element="ns0:getESSJobStatus"/>
+    </wsdl:message>
+    <wsdl:message name="getESSJobStatusResponseMessage">
+        <wsdl:part name="parameters" element="ns0:getESSJobStatusResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceException">
+        <wsdl:part name="parameters" element="errors:ServiceErrorMessage"/>
+    </wsdl:message>
+    <wsdl:portType name="erpRefGetEssJobStatusPortType">
+        <wsdl:operation name="getESSJobStatus">
+            <cloud:CloudOperation xmlns:cloud="http://xml.oracle.com/types" targetOperation="getESSJobStatus"/>
+            <wsdl:input message="ns1:getESSJobStatusRequestMessage"/>
+            <wsdl:output message="ns1:getESSJobStatusResponseMessage"/>
+            <wsdl:fault name="ServiceException" message="ns1:ServiceException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

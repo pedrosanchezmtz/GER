@@ -1,0 +1,15 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/ZamDbTec/dbZamDliverPlanEmbarques" name="dbZamDliverPlanEmbarques-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="dbZamDliverPlanEmbarques.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/ZamDbTec/dbZamDliverPlanEmbarques"/>
+    <wsdl:binding name="dbZamDliverPlanEmbarques_ptt-binding" type="dbz:dbZamDliverPlanEmbarques_ptt" xmlns:dbz="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/ZamDbTec/dbZamDliverPlanEmbarques">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="dbZamDliverPlanEmbarquesSelect">
+            <soap:operation soapAction="dbZamDliverPlanEmbarquesSelect"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

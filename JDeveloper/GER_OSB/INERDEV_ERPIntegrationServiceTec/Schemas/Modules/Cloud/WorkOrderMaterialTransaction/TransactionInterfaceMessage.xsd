@@ -1,0 +1,31 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/" sdoJava:package="oracle.apps.scm.commonWorkExecution.workOrderMaterialTransactions.materialTransactionsService" xmlns:sdoJava="commonj.sdo/java" xmlns="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation xmlns:oer="http://xmlns.oracle.com/oer">
+            <name>Material Transaction Interface Message</name>
+            <description>Import Material Transactions</description>
+            <oer:category name="lbo">
+                <value>SCM-SCM : WIE-Common Work Execution : ORA_WO_MATERIAL_TRANSACTION-Work Order
+                    Material Transaction</value>
+            </oer:category>
+            <oer:attributes>
+                <oer:attribute description="The user identifier for the material transaction." name="HeaderNumber"/>
+                <oer:attribute description="The exception message thrown during input processing." name="ExceptionMessage"/>
+                <oer:attribute description="The system identifier of the interface batch." name="InterfaceBatchId"/>
+            </oer:attributes>
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="commonj.sdo/java" schemaLocation="../Commons/sdoJava.xsd"/>
+    <xsd:complexType name="TransactionInterfaceMessage">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/"/>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="HeaderNumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ExceptionMessage" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="InterfaceBatchId" nillable="true" type="xsd:long"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="transactionInterfaceMessage" type="TransactionInterfaceMessage"/>
+</xsd:schema>

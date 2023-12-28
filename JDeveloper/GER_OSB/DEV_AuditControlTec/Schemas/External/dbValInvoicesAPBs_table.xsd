@@ -1,0 +1,56 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbValInvoicesAPBs" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbValInvoicesAPBs" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxerInvoicesApConfTblCollection" type="XxerInvoicesApConfTblCollection"/>
+   <xs:complexType name="XxerInvoicesApConfTblCollection">
+      <xs:sequence>
+         <xs:element name="XxerInvoicesApConfTbl" type="XxerInvoicesApConfTbl" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerInvoicesApConfTbl">
+      <xs:sequence>
+         <xs:element name="id" type="xs:decimal"/>
+         <xs:element name="code" type="string50" minOccurs="0"/>
+         <xs:element name="proccess" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="action" type="xs:string" minOccurs="0" nillable="true"/>
+         <xs:element name="orderProccess" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="validationName" type="string2000" minOccurs="0" nillable="true"/>
+         <xs:element name="documentType" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="cfdiVersion" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="notificationMessage" type="string3000" minOccurs="0" nillable="true"/>
+         <xs:element name="proccessDesc" type="string3000" minOccurs="0" nillable="true"/>
+         <xs:element name="parameter1" type="string3000" minOccurs="0" nillable="true"/>
+         <xs:element name="parameter2" type="string3000" minOccurs="0" nillable="true"/>
+         <xs:element name="parameter3" type="string3000" minOccurs="0" nillable="true"/>
+         <xs:element name="parameter4" type="string3000" minOccurs="0" nillable="true"/>
+         <xs:element name="parameter5" type="string3000" minOccurs="0" nillable="true"/>
+         <xs:element name="creationDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="createdBy" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="lastUpdateDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="lastUpdatedBy" type="string150" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="dbValInvoicesAPBsSelectInputParameters" type="dbValInvoicesAPBsSelect"/>
+   <xs:complexType name="dbValInvoicesAPBsSelect">
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:simpleType name="string50">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="50"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string2000">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="2000"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string150">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="150"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string3000">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="3000"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

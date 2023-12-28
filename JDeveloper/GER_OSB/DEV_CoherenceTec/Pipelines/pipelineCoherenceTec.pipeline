@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="DEV_CoherenceTec/WSDLs/CoherenceTec"/>
+            <con:binding>
+                <con:name>CoherenceTecBinding</con:name>
+                <con:namespace>http://soa.estrellaroja.com.mx/CoherenceTec</con:namespace>
+            </con:binding>
+        </con:binding>
+        <oper:operations xmlns:oper="http://xmlns.oracle.com/servicebus/pipeline/operations" xmlns:cus="http://www.bea.com/wli/config/customizations" xmlns:xt="http://www.bea.com/wli/config/xmltypes"/>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router errorHandler="error-N3f57fec2.4b6c8abf.0.16037705d75.N7f9d">
+        <con:pipeline type="error" name="error-N3f57fec2.4b6c8abf.0.16037705d75.N7f9d">
+            <con:stage id="_StageId-N3f57fec2.4b6c8abf.0.16037705d75.N7f9c" name="StageGeneralErrorHandler">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7fce</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<cmn:Errors>
+ <cmn:Error>
+   <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+      <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+      <cmn:Description>{fn:concat("Error when invoking CoherenceTec",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+      <cmn:BusinessProcess>CoherenceTec</cmn:BusinessProcess>
+      <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+   <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+ </cmn:Error>
+</cmn:Errors>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply isError="false">
+                        <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7f9b</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fec2.4b6c8abf.0.16037705d75.N7f08">
+            <con:stage id="_StageId-N3f57fec2.4b6c8abf.0.16037705d75.N7f06" name="StageRq">
+                <con:context>
+                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:assign varName="varRequest">
+                        <con1:id>_ActionId-N3f57fec2.N56ca23be.0.1603899a461.N7ecb</con1:id>
+                        <con2:expr>
+                            <con1:xqueryText>$body/coh:CreateOrgsCacheRq/coh:DATA_DS/coh:G_ORGS</con1:xqueryText>
+                        </con2:expr>
+                    </con2:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fec2.4b6c8abf.0.16037705d75.N7f07">
+            <con:stage id="_StageId-N3f57fec2.4b6c8abf.0.16037705d75.N7f05" name="StageRs">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fec2.4b6c8abf.0.16037705d75.N7aad</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText>&lt;coh:CreateOrgsCacheRs>
+&lt;cmn:Success/>
+&lt;/coh:CreateOrgsCacheRs></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fec2.4b6c8abf.0.16037705d75.N7a4a">
+            <con:stage id="_StageId-N3f57fec2.4b6c8abf.0.16037705d75.N7a49" name="StageErrorHandler">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fec2.4b6c8abf.0.16037705d75.N79e3</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<coh:CreateOrgsCacheRs>
+<cmn:Errors>
+ <cmn:Error>
+   <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+      <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+      <cmn:Description>{fn:concat("Error when invoking CreateOrgsCache",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+      <cmn:BusinessProcess>CreateOrgsCache</cmn:BusinessProcess>
+      <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+   <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+ </cmn:Error>
+</cmn:Errors>
+</coh:CreateOrgsCacheRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fec2.4b6c8abf.0.16037705d75.N7a16</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7eca">
+            <con:stage id="_StageId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7ec9" name="StageErrorHandler">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7ec8</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<coh:GetOrgCodesRs>
+<cmn:Errors>
+ <cmn:Error>
+   <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+      <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+      <cmn:Description>{fn:concat("Error when invoking GetOrgCodes",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+      <cmn:BusinessProcess>GetOrgCodes</cmn:BusinessProcess>
+      <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+   <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+ </cmn:Error>
+</cmn:Errors>
+</coh:GetOrgCodesRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7ec7</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7e33">
+            <con:stage id="_StageId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7e31" name="StageRequest">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7e32">
+            <con:stage id="_StageId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7e30" name="StageResponse">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7dfd</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<cmn:Errors>
+  <cmn:Error>
+    <cmn:ErrorCode>
+      500
+    </cmn:ErrorCode>
+    <cmn:ShortDescription>
+      Operation Not implemented Yet!!!
+    </cmn:ShortDescription>
+  </cmn:Error>
+</cmn:Errors>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply isError="true">
+                        <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7dca</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7d46">
+            <con:stage id="_StageId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7d45" name="StageErrorHandler">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7d44</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<coh:GetTerritoryCacheRs>
+<cmn:Errors>
+ <cmn:Error>
+   <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+      <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+      <cmn:Description>{fn:concat("Error when invoking GetTerritoryCache",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+      <cmn:BusinessProcess>GetTerritoryCache</cmn:BusinessProcess>
+      <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+   <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+ </cmn:Error>
+</cmn:Errors>
+</coh:GetTerritoryCacheRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7d43</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7cc5">
+            <con:stage id="_StageId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7cc4" name="StageErrorHandler">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7cc3</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<coh:CreateTerritoryCacheRs>
+<cmn:Errors>
+ <cmn:Error>
+   <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+      <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+      <cmn:Description>{fn:concat("Error when invoking CreateTerritoryCache",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+      <cmn:BusinessProcess>CreateTerritoryCache</cmn:BusinessProcess>
+      <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+   <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+ </cmn:Error>
+</cmn:Errors>
+</coh:CreateTerritoryCacheRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7cc2</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7c24">
+            <con:stage id="_StageId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7c23" name="StageRq">
+                <con:context>
+                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:assign varName="varRequest">
+                        <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7c22</con1:id>
+                        <con2:expr>
+                            <con1:xqueryText>$body/coh:CreateTerritoryCacheRq/coh:TERRITORY</con1:xqueryText>
+                        </con2:expr>
+                    </con2:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7c21">
+            <con:stage id="_StageId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7c20" name="StageRs">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7c1f</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText>&lt;coh:CreateTerritoryCacheRs>
+&lt;cmn:Success/>
+&lt;/coh:CreateTerritoryCacheRs></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fffe.19811e0a.0.160805e9e2e.N7f4d">
+            <con:stage id="_StageId-N3f57fffe.19811e0a.0.160805e9e2e.N7f4c" name="StageErrorHandler">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fffe.19811e0a.0.160805e9e2e.N7f4b</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<coh:GetOrgListRs>
+<cmn:Errors>
+ <cmn:Error>
+   <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+      <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+      <cmn:Description>{fn:concat("Error when invoking GetOrgList",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+      <cmn:BusinessProcess>GetOrgList</cmn:BusinessProcess>
+      <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+   <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+ </cmn:Error>
+</cmn:Errors>
+</coh:GetOrgListRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fffe.19811e0a.0.160805e9e2e.N7f4a</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fffe.19811e0a.0.160805e9e2e.N7e68">
+            <con:stage id="_StageId-N3f57fffe.19811e0a.0.160805e9e2e.N7e67" name="StageErrorHandler">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fffe.19811e0a.0.160805e9e2e.N7e66</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<coh:DeleteAllOrgsRs>
+<cmn:Errors>
+ <cmn:Error>
+   <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+      <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+      <cmn:Description>{fn:concat("Error when invoking DeleteAllOrgs",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+      <cmn:BusinessProcess>DeleteAllOrgs</cmn:BusinessProcess>
+      <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+   <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+ </cmn:Error>
+</cmn:Errors>
+</coh:DeleteAllOrgsRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fffe.19811e0a.0.160805e9e2e.N7e65</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57fec2.4b6c8abf.0.16037705d75.N7fcf" name="SelectOperation">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="CreateOrgsCache">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="PipelineCreateOrgsCache">
+                                <con:request>request-N3f57fec2.4b6c8abf.0.16037705d75.N7f08</con:request>
+                                <con:response>response-N3f57fec2.4b6c8abf.0.16037705d75.N7f07</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="Route2CoherencePutOrgSetCodes" error-handler="error-N3f57fec2.4b6c8abf.0.16037705d75.N7a4a">
+                                <con:context>
+                                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                                </con:context>
+                                <con:actions>
+                                    <con4:route>
+                                        <con1:id>_ActionId-N3f57fec2.4b6c8abf.0.16037705d75.N7b13</con1:id>
+                                        <con4:service ref="DEV_CoherenceTec/Business/coherencePutOrgSetCodesBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con4:operation>Put</con4:operation>
+                                        <con4:outboundTransform>
+                                            <con2:transport-headers>
+                                                <con1:id>_ActionId-N3f57fec2.N56ca23be.0.1603899a461.N7f01</con1:id>
+                                                <con2:header-set>outbound-request</con2:header-set>
+                                                <con2:header value="expression" name="jca.coherence.Key">
+                                                    <con1:xqueryText>fn:concat($varRequest/coh:SET_CODE/text(),'_SET')</con1:xqueryText>
+                                                </con2:header>
+                                            </con2:transport-headers>
+                                            <con2:replace varName="body" contents-only="true">
+                                                <con1:id>_ActionId-N3f57fec2.4b6c8abf.0.16037705d75.N7ae0</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>.</con1:xpathText>
+                                                </con2:location>
+                                                <con2:expr>
+                                                    <con1:xqueryText>$varRequest</con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:replace>
+                                        </con4:outboundTransform>
+                                        <con4:responseTransform/>
+                                    </con4:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="GetOrgsCache">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route2CoherenceGetOrgCodes" error-handler="error-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7eca">
+                                <con:context>
+                                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                                </con:context>
+                                <con:actions>
+                                    <con4:route>
+                                        <con1:id>_ActionId-N3f57fec2.N56ca23be.0.1603899a461.N7fcd</con1:id>
+                                        <con4:service ref="DEV_CoherenceTec/Business/coherenceGetOrgCodesBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con4:operation>Get</con4:operation>
+                                        <con4:outboundTransform>
+                                            <con2:assign varName="varOrgCode">
+                                                <con1:id>_ActionId-N3f57fec2.N56ca23be.0.1603899a461.N7f9a</con1:id>
+                                                <con2:expr>
+                                                    <con1:xqueryText>$body/coh:GetOrgsCacheRq/coh:OrgCode/text()</con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:assign>
+                                            <con2:transport-headers>
+                                                <con1:id>_ActionId-N3f57fec2.N56ca23be.0.1603899a461.N7f05</con1:id>
+                                                <con2:header-set>outbound-request</con2:header-set>
+                                                <con2:header value="expression" name="jca.coherence.Key">
+                                                    <con1:xqueryText>$varOrgCode</con1:xqueryText>
+                                                </con2:header>
+                                            </con2:transport-headers>
+                                        </con4:outboundTransform>
+                                        <con4:responseTransform>
+                                            <con2:replace varName="body" contents-only="true">
+                                                <con1:id>_ActionId-N3f57fec2.N56ca23be.0.1603899a461.N7e62</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>.</con1:xpathText>
+                                                </con2:location>
+                                                <con2:expr>
+                                                    <con1:xqueryText>&lt;coh:GetOrgsCacheRs>
+  &lt;cmn:Success />
+  &lt;coh:Return>
+  {$body/coh:G_ORGS}
+  &lt;/coh:Return>
+&lt;/coh:GetOrgsCacheRs></con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:replace>
+                                        </con4:responseTransform>
+                                    </con4:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="CreateTerritoryCache">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="PipelineCreateTerritoryCache">
+                                <con:request>request-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7c24</con:request>
+                                <con:response>response-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7c21</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="Route2CoherencePutTerritory" error-handler="error-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7cc5">
+                                <con:context>
+                                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                                </con:context>
+                                <con:actions>
+                                    <con4:route>
+                                        <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7cc8</con1:id>
+                                        <con4:service ref="DEV_CoherenceTec/Business/coherencePutTerritoryBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con4:operation>Put</con4:operation>
+                                        <con4:outboundTransform>
+                                            <con2:transport-headers>
+                                                <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7cc7</con1:id>
+                                                <con2:header-set>outbound-request</con2:header-set>
+                                                <con2:header value="expression" name="jca.coherence.Key">
+                                                    <con1:xqueryText>$varRequest/coh:TERRITORYSHORTNAME/text()</con1:xqueryText>
+                                                </con2:header>
+                                            </con2:transport-headers>
+                                            <con2:replace varName="body" contents-only="true">
+                                                <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7cc6</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>.</con1:xpathText>
+                                                </con2:location>
+                                                <con2:expr>
+                                                    <con1:xqueryText>$varRequest</con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:replace>
+                                        </con4:outboundTransform>
+                                        <con4:responseTransform/>
+                                    </con4:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="GetTerritoryCache">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteTerritoryCache" error-handler="error-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7d46">
+                                <con:context>
+                                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                                </con:context>
+                                <con:actions>
+                                    <con4:route>
+                                        <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7d4a</con1:id>
+                                        <con4:service ref="DEV_CoherenceTec/Business/coherenceGetTerritoryBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con4:operation>Get</con4:operation>
+                                        <con4:outboundTransform>
+                                            <con2:assign varName="varTerritoryName">
+                                                <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7d49</con1:id>
+                                                <con2:expr>
+                                                    <con1:xqueryText>$body/coh:GetTerritoryCacheRq/coh:TerritoryName/text()</con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:assign>
+                                            <con2:transport-headers>
+                                                <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7d48</con1:id>
+                                                <con2:header-set>outbound-request</con2:header-set>
+                                                <con2:header value="expression" name="jca.coherence.Key">
+                                                    <con1:xqueryText>$varTerritoryName</con1:xqueryText>
+                                                </con2:header>
+                                            </con2:transport-headers>
+                                        </con4:outboundTransform>
+                                        <con4:responseTransform>
+                                            <con2:assign varName="varResponse">
+                                                <con1:id>_ActionId-N3f57fffe.N2f19b483.0.16093d0a473.N7fce</con1:id>
+                                                <con2:expr>
+                                                    <con1:xsltTransform>
+                                                        <con1:resource ref="DEV_CoherenceTec/XSLs/trGetTerritoryCodeRs"/>
+                                                        <con1:input>$body/coh:TERRITORY</con1:input>
+                                                    </con1:xsltTransform>
+                                                </con2:expr>
+                                            </con2:assign>
+                                            <con2:replace varName="body" contents-only="true">
+                                                <con1:id>_ActionId-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7d47</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>.</con1:xpathText>
+                                                </con2:location>
+                                                <con2:expr>
+                                                    <con1:xqueryText>$varResponse</con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:replace>
+                                        </con4:responseTransform>
+                                    </con4:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="GetOrgList">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route2GetOrgList" error-handler="error-N3f57fffe.19811e0a.0.160805e9e2e.N7f4d">
+                                <con:context>
+                                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                                    <con1:userNsDecl prefix="adp" namespace="http://xmlns.oracle.com/pcbpel/adapter/coherence/coherenceGetOrgList/request"/>
+                                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                                </con:context>
+                                <con:actions>
+                                    <con4:route>
+                                        <con1:id>_ActionId-N3f57fffe.19811e0a.0.160805e9e2e.N7f51</con1:id>
+                                        <con4:service ref="DEV_CoherenceTec/Business/coherenceGetOrgListBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con4:operation>Query</con4:operation>
+                                        <con4:outboundTransform>
+                                            <con2:replace varName="body" contents-only="true">
+                                                <con1:id>_ActionId-N3f57fffe.19811e0a.0.160805e9e2e.N7f17</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>.</con1:xpathText>
+                                                </con2:location>
+                                                <con2:expr>
+                                                    <con1:xqueryText>&lt;adp:QueryRequest /></con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:replace>
+                                        </con4:outboundTransform>
+                                        <con4:responseTransform>
+                                            <con2:assign varName="varResponse">
+                                                <con1:id>_ActionId-N3f4dfeb4.b4dfb10.0.1609077c650.N7fce</con1:id>
+                                                <con2:expr>
+                                                    <con1:xsltTransform>
+                                                        <con1:resource ref="DEV_CoherenceTec/XSLs/trOrgCollection"/>
+                                                        <con1:input>$body/coh:OrgCollection</con1:input>
+                                                    </con1:xsltTransform>
+                                                </con2:expr>
+                                            </con2:assign>
+                                            <con2:replace varName="body" contents-only="true">
+                                                <con1:id>_ActionId-N3f57fffe.19811e0a.0.160805e9e2e.N7f4e</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>.</con1:xpathText>
+                                                </con2:location>
+                                                <con2:expr>
+                                                    <con1:xqueryText>$varResponse</con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:replace>
+                                        </con4:responseTransform>
+                                    </con4:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="DeleteAllOrgs">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route2DeleteAllOrgsCache" error-handler="error-N3f57fffe.19811e0a.0.160805e9e2e.N7e68">
+                                <con:context>
+                                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                                    <con1:userNsDecl prefix="adp1" namespace="http://xmlns.oracle.com/pcbpel/adapter/coherence/coherenceDeleteAllOrgs/request"/>
+                                    <con1:userNsDecl prefix="adp" namespace="http://xmlns.oracle.com/pcbpel/adapter/coherence/coherenceDeleteAllOrgs/response"/>
+                                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                                </con:context>
+                                <con:actions>
+                                    <con4:route>
+                                        <con1:id>_ActionId-N3f57fffe.19811e0a.0.160805e9e2e.N7e6b</con1:id>
+                                        <con4:service ref="DEV_CoherenceTec/Business/coherenceDeleteAllOrgsBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con4:operation>Remove</con4:operation>
+                                        <con4:outboundTransform>
+                                            <con2:replace varName="body" contents-only="true">
+                                                <con1:id>_ActionId-N3f57fffe.19811e0a.0.160805e9e2e.N7e6a</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>.</con1:xpathText>
+                                                </con2:location>
+                                                <con2:expr>
+                                                    <con1:xqueryText>&lt;adp1:RemoveRequest /></con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:replace>
+                                        </con4:outboundTransform>
+                                        <con4:responseTransform>
+                                            <con2:replace varName="body" contents-only="true">
+                                                <con1:id>_ActionId-N3f57fffe.19811e0a.0.160805e9e2e.N7e69</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>.</con1:xpathText>
+                                                </con2:location>
+                                                <con2:expr>
+                                                    <con1:xqueryText>&lt;coh:DeleteAllOrgsRs>
+  &lt;cmn:Success />
+  &lt;coh:Return>
+  {fn:concat('Remove ',$body/adp:RemoveResponse/adp:Count,' entries')}
+  &lt;/coh:Return>
+&lt;/coh:DeleteAllOrgsRs></con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:replace>
+                                        </con4:responseTransform>
+                                    </con4:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow>
+                            <con:pipeline-node name="PipelineDefault">
+                                <con:request>request-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7e33</con:request>
+                                <con:response>response-N3f57fffe.Nafc6708.0.1606a6a0d0c.N7e32</con:response>
+                            </con:pipeline-node>
+                        </con:flow>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

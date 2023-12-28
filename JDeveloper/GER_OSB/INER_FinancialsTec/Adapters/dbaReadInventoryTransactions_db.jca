@@ -1,0 +1,11 @@
+<adapter-config name="dbaReadInventoryTransactions" adapter="db" wsdlLocation="../WSDLs/External/dbaReadInventoryTransactions.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="ERSEPDB1DS" location="eis/DB/DEV/ERSEPDBSCM"/>
+  <endpoint-interaction portType="dbaReadInventoryTransactions_ptt" operation="dbaReadInventoryTransactions">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="select * from xxer_inv_carga_diesel_v"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

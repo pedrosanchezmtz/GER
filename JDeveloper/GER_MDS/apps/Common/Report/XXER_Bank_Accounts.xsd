@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/Reports/XXER_Bank_Accounts" targetNamespace="http://soa.estrellaroja.com.mx/Reports/XXER_Bank_Accounts" elementFormDefault="qualified">
+<xsd:element name="DATA_DS">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="G_1" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="UNIDAD_NEGOCIO" minOccurs="0" type="xsd:string"/>
+<xsd:element name="NUMERO_TA" type="xsd:string"/>
+<xsd:element name="NOMBRE_CTA" type="xsd:string"/>
+<xsd:element name="NOMBRE_CARPETA" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>

@@ -1,0 +1,25 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/model/flex/StandardReceiptGdf/" xmlns:sdoJava="commonj.sdo/java" xmlns:sdoXML="commonj.sdo/xml" xmlns="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/model/flex/StandardReceiptGdf/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:include schemaLocation="XMLSchema_562237111.xsd" xml:id="JExILReceiptInformation-xsd"/>
+    <xsd:include schemaLocation="XMLSchema_993521007.xsd" xml:id="StandardReceiptGdfJA_5FCN_5FREMIT_5FBILL_5FNUM-xsd"/>
+    <xsd:include schemaLocation="XMLSchema_-582891917.xsd" xml:id="Jaxtwreceiptinformation-xsd"/>
+    <xsd:include schemaLocation="XMLSchema_1898008880.xsd" xml:id="JLxARReceiptInformation-xsd"/>
+    <xsd:import namespace="commonj.sdo/java" schemaLocation="XMLSchema_-1644098047.xsd"/>
+    <xsd:import namespace="commonj.sdo/xml" schemaLocation="XMLSchema_293054946.xsd"/>
+    <xsd:complexType name="StandardReceiptGdf">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>CashReceiptId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="CashReceiptId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+            <xsd:element minOccurs="0" name="FLEX_PARAM_GLOBAL_COUNTRY_CODE" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="standardReceiptGdf" type="StandardReceiptGdf"/>
+</xsd:schema>

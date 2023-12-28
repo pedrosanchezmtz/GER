@@ -1,0 +1,211 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/DigitalStampTec"
+            targetNamespace="http://soa.estrellaroja.com.mx/DigitalStampTec" elementFormDefault="qualified"
+            xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON" nxsd:encoding="UTF-8">
+  <xsd:element name="invoice">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="invoice">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="id_rfc" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="certificate_number" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="issuer_rfc" type="xsd:string"/>
+              <xsd:element name="issuer_name" type="xsd:string"/>
+              <xsd:element name="issuer_street" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="issuer_ext_number" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="issuer_int_number" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="issuer_colony" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="issuer_zip_code" type="xsd:string"/>
+              <xsd:element name="issuer_municipality" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="issuer_state" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="issuer_phone" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="issuer_country" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="invoice_date" type="xsd:string"/>
+              <xsd:element name="document_type" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="additional_information" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="cancellation_date" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="total_words" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="invoice_items" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="description" type="xsd:string"/>
+                    <xsd:element name="prod_serv_key" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="quantity" type="xsd:integer" minOccurs="0"/>
+                    <xsd:element name="discount" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="vat_percentage" type="xsd:double" minOccurs="0"/>
+                    <xsd:element name="unit" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="unit_key" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="unit_price" type="xsd:double" minOccurs="0" />
+                    <xsd:element name="tax_base" type="xsd:double" minOccurs="0"/>
+                    <xsd:element name="tax" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="factor_type" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="rate_fee" type="xsd:double" minOccurs="0"/>
+                    <xsd:element name="stps_percentage" type="xsd:integer" minOccurs="0"/>
+                    <xsd:element name="imp_percentage" type="xsd:double" minOccurs="0"/>
+                    <xsd:element name="retention_vat_percentage" type="xsd:double" minOccurs="0"/>
+                    <xsd:element name="retention_rt_percentage" type="xsd:double" minOccurs="0"/>
+                    <xsd:element name="amount" type="xsd:double"/>
+                    <xsd:element name="subtotal" type="xsd:double"/>
+                    <xsd:element name="vat" type="xsd:double" minOccurs="0"/>
+                    <xsd:element name="stps" type="xsd:double" minOccurs="0"/>
+                    <xsd:element name="imp" type="xsd:double" minOccurs="0"/>
+                    <xsd:element name="retention_vat" type="xsd:double" minOccurs="0"/>
+                    <xsd:element name="retention_rt" type="xsd:double" minOccurs="0"/>
+                    <xsd:element name="total" type="xsd:double"/>
+                    <xsd:element name="st" type="xsd:integer" minOccurs="0"/>
+                    <xsd:element name="addendum_interface_apply" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="addendum_interface_type" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="addendum_interface_concept" type="xsd:string" minOccurs="0"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="total_items" type="xsd:integer" minOccurs="0"/>
+              <xsd:element name="local_retention_name" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="local_retention_percentage" type="xsd:double" minOccurs="0"/>
+              <xsd:element name="local_retention_amount" type="xsd:double" minOccurs="0"/>
+              <xsd:element name="total_vat" type="xsd:double" minOccurs="0"/>
+              <xsd:element name="total_stps" type="xsd:double" minOccurs="0"/>
+              <xsd:element name="total_st" type="xsd:double" minOccurs="0"/>
+              <xsd:element name="total_tip" type="xsd:double" minOccurs="0"/>
+              <xsd:element name="retention_vat" type="xsd:double" minOccurs="0"/>
+              <xsd:element name="retention_rt" type="xsd:double" minOccurs="0"/>
+              <xsd:element name="subtotal" type="xsd:double"/>
+              <xsd:element name="total" type="xsd:double"/>
+              <xsd:element name="serie" type="xsd:string"/>
+              <xsd:element name="branch_id" type="xsd:integer" minOccurs="0"/>
+              <xsd:element name="branch_number" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="branch_name" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="branch_street" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="branch_ext_number" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="branch_int_number" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="branch_colony" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="branch_zip_code" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="branch_municipality" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="branch_state" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="branch_reference" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="branch_phone" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="branch_country" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="receiver_name" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="receiver_email" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="receiver_rfc" type="xsd:string"/>
+              <xsd:element name="receiver_phone" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="receiver_street" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="receiver_ext_number" type="xsd:integer" minOccurs="0"/>
+              <xsd:element name="receiver_int_number" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="receiver_colony" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="receiver_zip_code" type="xsd:string"/>
+              <xsd:element name="receiver_municipality" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="receiver_state" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="receiver_country" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="receiver_passport" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="receiver_cfdi_use" type="xsd:string" />
+              <xsd:element name="payment_method" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="currency" type="xsd:string"/>
+              <xsd:element name="issuer_tax_regime" type="xsd:string"/>
+              <xsd:element name="currency_exchange_rate" type="xsd:integer" minOccurs="0"/>
+              <xsd:element name="payment_method_select" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="added_payment_methods" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="payment_form" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="payment_condition" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="payment_status" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="payment_account_number" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="discount" type="xsd:integer" minOccurs="0"/>
+              <xsd:element name="comments" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="service" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="relationship_type" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="related_cfdi" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="payment_complements" minOccurs="0" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="payment_date" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="payment_way" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="currency" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="currency_exchange" type="xsd:integer" minOccurs="0"/>
+                    <xsd:element name="amount" type="xsd:double"/>
+                    <xsd:element name="operation_number" type="xsd:integer" minOccurs="0"/>
+                    <xsd:element name="ord_acc_iusser_rfc" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="bank_name" type="xsd:string" minOccurs="0" />
+                    <xsd:element name="payer_account" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="ben_acc_issuer_rfc" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="beneficiary_account" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="payment_string_type" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="payment_cert" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="payment_string" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="payment_seal" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="version" type="xsd:integer" minOccurs="0"/>
+                    <xsd:element name="related_documents" maxOccurs="unbounded">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="document_id" type="xsd:string"/>
+                          <xsd:element name="serie" type="xsd:string" minOccurs="0"/>
+                          <xsd:element name="folio" type="xsd:integer" minOccurs="0"/>
+                          <xsd:element name="currency" type="xsd:string" minOccurs="0"/>
+                          <xsd:element name="currency_exchange" type="xsd:integer" minOccurs="0"/>
+                          <xsd:element name="payment_method" type="xsd:string" minOccurs="0"/>
+                          <xsd:element name="partiality_number" type="xsd:integer" minOccurs="0"/>
+                          <xsd:element name="previous_balance" type="xsd:double" minOccurs="0"/>
+                          <xsd:element name="paid_amount" type="xsd:double" minOccurs="0"/>
+                          <xsd:element name="outstanding_balance" type="xsd:double" minOccurs="0"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="addendas" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="grupo_ado">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="tipoAddenda" type="xsd:string"/>
+                    <xsd:element name="valor" type="xsd:integer"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="bus" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ticket_numer" type="xsd:integer"/>
+              <xsd:element name="destination" type="xsd:string"/>
+              <xsd:element name="sale_date" type="xsd:string"/>
+              <xsd:element name="amount" type="xsd:double"/>
+              <xsd:element name="billing_code" type="xsd:string"/>
+              <xsd:element name="service" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="parking" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ticket_number" type="xsd:string"/>
+              <xsd:element name="service_date" type="xsd:string"/>
+              <xsd:element name="service" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="taxi" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ticket_number" type="xsd:integer"/>
+              <xsd:element name="purchae_date" type="xsd:string"/>
+              <xsd:element name="service" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:annotation xmlns="">
+    <xsd:appinfo>NXSDSAMPLE=C:\Users\Carlos\Carlos\Proyectos\EstrellaRoja\TimbradoDeAnticipos\CFDIJasonRq.json</xsd:appinfo>
+    <xsd:appinfo>USEHEADER=false</xsd:appinfo>
+  </xsd:annotation>
+</xsd:schema>

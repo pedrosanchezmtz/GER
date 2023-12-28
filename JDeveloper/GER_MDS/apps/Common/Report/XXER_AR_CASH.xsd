@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/Reports/XXER_AR_CASH" targetNamespace="http://soa.estrellaroja.com.mx/Reports/XXER_AR_CASH" elementFormDefault="qualified">
+<xsd:element name="DATA_DS">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="P_METODO_RECIBO" type="xsd:string"/>
+<xsd:element name="P_CONCEPTO" type="xsd:string"/>
+<xsd:element name="G_1" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="FECHA" type="xsd:dateTime"/>
+<xsd:element name="CUENTA" type="xsd:integer"/>
+<xsd:element name="DESCRIPCION" type="xsd:string"/>
+<xsd:element name="CARGO_ABONO" type="xsd:string"/>
+<xsd:element name="IMPORTE" type="xsd:float"/>
+<xsd:element name="PAYMENT_REFERENCE" type="xsd:string"/>
+<xsd:element name="CONCEPTO" type="xsd:integer"/>
+<xsd:element name="METODO_RECIBO" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>

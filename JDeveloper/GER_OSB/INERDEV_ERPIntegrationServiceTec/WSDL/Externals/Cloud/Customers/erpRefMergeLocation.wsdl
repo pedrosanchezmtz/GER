@@ -1,0 +1,351 @@
+<wsdl:definitions
+    
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefMergeLocation"
+     xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/"
+     xmlns:orafault="http://xmlns.oracle.com/oracleas/schema/oracle-fault-11_0"
+     xmlns:tns="http://xmlns.oracle.com/apps/cdm/foundation/parties/locationService/applicationModule/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:types="http://xmlns.oracle.com/apps/cdm/foundation/parties/locationService/applicationModule/types/"
+     xmlns:ns0="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefMergeLocation/types"
+     xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefMergeLocation"
+    >
+    <plnk:partnerLinkType name="mergeLocation_plt">
+        <plnk:role name="mergeLocation_role">
+            <plnk:portType name="ns1:erpRefMergeLocationPortType"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <xs:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://xmlns.oracle.com/adf/svc/errors/" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:tns="http://xmlns.oracle.com/adf/svc/errors/" sdoJava:package="oracle.jbo.service.errors">
+            <xs:complexType name="ServiceMessage">
+                <xs:sequence>
+                    <xs:element maxOccurs="1" minOccurs="0" name="code" type="string"/>
+                    <xs:element maxOccurs="1" minOccurs="0" name="message" type="string"/>
+                    <xs:element maxOccurs="1" minOccurs="0" name="severity" type="string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="detail" type="tns:ServiceMessage"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="ServiceErrorMessage" type="tns:ServiceErrorMessage"/>
+            <xs:complexType name="ServiceErrorMessage">
+                <xs:complexContent>
+                    <xs:extension base="tns:ServiceMessage">
+                        <xs:sequence>
+                            <xs:element maxOccurs="1" minOccurs="0" name="sdoObject" type="anyType"/>
+                            <xs:element maxOccurs="1" minOccurs="0" name="exceptionClassName" type="string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/adf/svc/types/" elementFormDefault="qualified"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/adf/svc/types/"
+             xmlns:sdoJava="commonj.sdo/java" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:sdoXML="commonj.sdo/xml" xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/"
+             xmlns:sdo="commonj.sdo" sdoJava:package="oracle.jbo.common.service.types">
+            <xs:import namespace="http://xmlns.oracle.com/adf/svc/errors/"/>
+            <xsd:simpleType name="dateTime-Timestamp" sdoJava:instanceClass="java.sql.Timestamp">
+                <xsd:restriction base="xsd:dateTime"/>
+            </xsd:simpleType>
+            <xsd:simpleType name="date-Date" sdoJava:instanceClass="java.sql.Date">
+                <xsd:restriction base="xsd:date"/>
+            </xsd:simpleType>
+            <xsd:complexType name="MethodResult">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Message" type="errors:ServiceMessage"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/sourceSystemRef/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/sourceSystemRef/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:sdoXML="commonj.sdo/xml">
+            <xsd:complexType name="SourceSystemRefInformation">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>OrigSystemRefId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="OrigSystemRefId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/" elementFormDefault="qualified"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:sdoXML="commonj.sdo/xml"
+             xmlns:ns1="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/sourceSystemRef/"
+             xmlns:sdo="commonj.sdo" sdoJava:package="oracle.apps.cdm.foundation.parties.partyService">
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/sourceSystemRef/"/>
+            <xs:import namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+            <xsd:complexType name="OriginalSystemReference">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>OrigSystemReferenceId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="OrigSystemReferenceId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="OrigSystem" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ReasonCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OldOrigSystemReference" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StartDateActive" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EndDateActive" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="SourceSystemRefInformation" type="ns1:SourceSystemRefInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/location/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/location/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:sdoXML="commonj.sdo/xml">
+            <xsd:complexType name="LocationInformation">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>LocationId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="LocationId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/locationService/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/locationService/"
+             xmlns:sdoJava="commonj.sdo/java" sdoJava:package="oracle.apps.cdm.foundation.parties.locationService"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/"
+             xmlns:sdoXML="commonj.sdo/xml" xmlns:ns2="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/location/"
+             xmlns:ns1="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/"
+             xmlns:sdo="commonj.sdo">
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/location/"/>
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/"/>
+            <xs:import namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+            <xsd:complexType name="Location">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>LocationId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="LocationId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="OrigSystem" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Country" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address1" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address2" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address3" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address4" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="City" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PostalCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="State" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Province" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="County" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AddressStyle" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ValidatedFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="AddressLinesPhonetic" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PostalPlus4Code" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Position" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LocationDirections" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AddressEffectiveDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="AddressExpirationDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="ClliCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Language" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ShortDescription" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SalesTaxGeocode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SalesTaxInsideCityLimits" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FaLocationId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="GeometryStatusCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ValidationStatusCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DateValidated" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="DoNotValidateFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="Comments" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="HouseType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EffectiveDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="AddrElementAttribute1" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AddrElementAttribute2" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AddrElementAttribute3" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AddrElementAttribute4" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AddrElementAttribute5" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Building" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FloorNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StatusFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="InternalFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="TimezoneCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Latitude" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="Longitude" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="Distance" nillable="true" type="xsd:decimal"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="LocationProfile" type="LocationProfile"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns1:OriginalSystemReference"/>
+                    <xsd:element minOccurs="0" name="LocationInformation" type="ns2:LocationInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element minOccurs="0" name="LocationLocale" type="LocationLocale"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="LocationProfile">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>LocationProfileId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="LocationProfileId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="LocationId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="EffectiveStartDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EffectiveEndDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="ValidationSstFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="ValidationStatusCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DateValidated" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="Address1" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address2" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address3" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address4" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="City" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PostalCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="County" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Country" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="State" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Province" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EffectiveSequence" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="EffectiveLatestChange" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AddrElementAttribute1" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AddrElementAttribute2" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AddrElementAttribute3" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AddrElementAttribute4" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AddrElementAttribute5" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Building" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FloorNumber" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="LocationLocale">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>LocationLocaleId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="AddrElementAttribute1" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AddrElementAttribute2" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AddrElementAttribute3" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AddrElementAttribute4" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AddrElementAttribute5" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address1" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address2" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address3" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address4" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Building" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="City" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="County" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="FloorNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LocationId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="PostalCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PostalPlus4Code" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="State" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="TransliterationLang" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Province" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="LocationResult">
+                <xsd:complexContent>
+                    <xsd:extension base="ns0:MethodResult">
+                        <xsd:sequence>
+                            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Value" type="Location"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefMergeLocation/types"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefMergeLocation/types"
+             xmlns:ns2="http://xmlns.oracle.com/apps/cdm/foundation/parties/locationService/"
+             xmlns:tns0="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefMergeLocation/types">
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/locationService/"/>
+            <xs:element name="mergeLocation" type="tns0:mergeLocationType"/>
+            <xs:complexType name="mergeLocationType">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="ns2:Location" name="location"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="mergeLocationResponse" type="tns0:mergeLocationResponseType"/>
+            <xs:complexType name="mergeLocationResponseType">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="ns2:LocationResult" name="result"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="mergeLocationRequestMessage">
+        <wsdl:part name="parameters" element="ns0:mergeLocation"/>
+    </wsdl:message>
+    <wsdl:message name="mergeLocationResponseMessage">
+        <wsdl:part name="parameters" element="ns0:mergeLocationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceException">
+        <wsdl:part name="parameters" element="errors:ServiceErrorMessage"/>
+    </wsdl:message>
+    <wsdl:portType name="erpRefMergeLocationPortType">
+        <wsdl:operation name="mergeLocation">
+            <cloud:CloudOperation xmlns:cloud="http://xml.oracle.com/types" targetOperation="mergeLocation"/>
+            <wsdl:input message="ns1:mergeLocationRequestMessage"/>
+            <wsdl:output message="ns1:mergeLocationResponseMessage"/>
+            <wsdl:fault name="ServiceException" message="ns1:ServiceException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

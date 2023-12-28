@@ -1,0 +1,532 @@
+<schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/types/" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:ns1="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/" xmlns:tns="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/types/" xmlns="http://www.w3.org/2001/XMLSchema">
+    <import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="../Commons/BC4JService.xsd"/>
+    <import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/" schemaLocation="OrganizationParty.xsd"/>
+    <import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/" schemaLocation="OrganizationProfile.xsd"/>
+    <import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="BC4JServiceCS.xsd"/>
+    <element name="getOrganization">
+        <complexType>
+            <sequence>
+                <element name="partyId" type="long"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationParty"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createOrganization">
+        <complexType>
+            <sequence>
+                <element name="organizationParty" type="ns1:OrganizationParty"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createOrganizationResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationPartyResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateOrganization">
+        <complexType>
+            <sequence>
+                <element name="organizationParty" type="ns1:OrganizationParty"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateOrganizationResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationPartyResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="mergeOrganization">
+        <complexType>
+            <sequence>
+                <element name="organizationParty" type="ns1:OrganizationParty"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="mergeOrganizationResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationPartyResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processOrganization">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="organizationParty" type="ns1:OrganizationParty"/>
+                <element name="processControl" type="ns0:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processOrganizationResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationPartyResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="deleteOrganization">
+        <complexType>
+            <sequence>
+                <element name="organizationParty" type="ns1:OrganizationParty"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="deleteOrganizationResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:MethodResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processCSOrganization">
+        <complexType>
+            <sequence>
+                <element name="processData" type="ns0:ProcessData"/>
+                <element name="processControl" type="ns0:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processCSOrganizationResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ProcessData"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createOrganizationAsync">
+        <complexType>
+            <sequence>
+                <element name="organizationParty" type="ns1:OrganizationParty"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createOrganizationAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationPartyResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="deleteOrganizationAsync">
+        <complexType>
+            <sequence>
+                <element name="organizationParty" type="ns1:OrganizationParty"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="deleteOrganizationAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:MethodResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateOrganizationAsync">
+        <complexType>
+            <sequence>
+                <element name="organizationParty" type="ns1:OrganizationParty"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateOrganizationAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationPartyResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationAsync">
+        <complexType>
+            <sequence>
+                <element name="partyId" type="long"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationParty"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processCSOrganizationAsync">
+        <complexType>
+            <sequence>
+                <element name="processData" type="ns0:ProcessData"/>
+                <element name="processControl" type="ns0:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processCSOrganizationAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ProcessData"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="mergeOrganizationAsync">
+        <complexType>
+            <sequence>
+                <element name="organizationParty" type="ns1:OrganizationParty"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="mergeOrganizationAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationPartyResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processOrganizationAsync">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="organizationParty" type="ns1:OrganizationParty"/>
+                <element name="processControl" type="ns0:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processOrganizationAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationPartyResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findOrganization">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns0:FindCriteria"/>
+                <element name="findControl" type="ns0:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findOrganizationResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationPartyResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findOrganizationAsync">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns0:FindCriteria"/>
+                <element name="findControl" type="ns0:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findOrganizationAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationPartyResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationsFilteredByPartyUsageFilterRuleCode">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns0:FindCriteria"/>
+                <element name="bindPartyUsageFrCode" type="string"/>
+                <element name="bindEffectiveDate" type="ns0:date-Date"/>
+                <element name="findControl" type="ns0:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationsFilteredByPartyUsageFilterRuleCodeResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationPartyResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationsFilteredByPartyUsageFilterRuleCodeAsync">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns0:FindCriteria"/>
+                <element name="bindPartyUsageFrCode" type="string"/>
+                <element name="bindEffectiveDate" type="ns0:date-Date"/>
+                <element name="findControl" type="ns0:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationsFilteredByPartyUsageFilterRuleCodeAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationPartyResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationsFilteredByPartyUsageCode">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns0:FindCriteria"/>
+                <element name="bindPartyUsageCode" type="string"/>
+                <element name="bindEffectiveDate" type="ns0:date-Date"/>
+                <element name="findControl" type="ns0:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationsFilteredByPartyUsageCodeResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationPartyResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationByOriginalSystemReference">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns0:FindCriteria"/>
+                <element name="bindOrigSystem" type="string"/>
+                <element name="bindOrigSystemReference" type="string"/>
+                <element name="findControl" type="ns0:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationByOriginalSystemReferenceResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationPartyResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationByOriginalSystemReferenceAsync">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns0:FindCriteria"/>
+                <element name="bindOrigSystem" type="string"/>
+                <element name="bindOrigSystemReference" type="string"/>
+                <element name="findControl" type="ns0:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationByOriginalSystemReferenceAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationPartyResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationsFilteredByPartyUsageCodeAsync">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns0:FindCriteria"/>
+                <element name="bindPartyUsageCode" type="string"/>
+                <element name="bindEffectiveDate" type="ns0:date-Date"/>
+                <element name="findControl" type="ns0:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationsFilteredByPartyUsageCodeAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationPartyResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationProfile">
+        <complexType>
+            <sequence>
+                <element name="PartyId" type="long"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationProfileResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationProfile"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationProfileAsync">
+        <complexType>
+            <sequence>
+                <element name="PartyId" type="long"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrganizationProfileAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationProfile"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateOrganizationProfile">
+        <complexType>
+            <sequence>
+                <element name="organizationDVO" type="ns1:OrganizationProfile"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateOrganizationProfileResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationProfile"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="mergeOrganizationProfile">
+        <complexType>
+            <sequence>
+                <element name="organizationDVO" type="ns1:OrganizationProfile"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="mergeOrganizationProfileResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationProfile"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="mergeOrganizationProfileAsync">
+        <complexType>
+            <sequence>
+                <element name="organizationDVO" type="ns1:OrganizationProfile"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="mergeOrganizationProfileAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationProfile"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateOrganizationProfileAsync">
+        <complexType>
+            <sequence>
+                <element name="organizationDVO" type="ns1:OrganizationProfile"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateOrganizationProfileAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:OrganizationProfile"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findOrganizationProfile">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns0:FindCriteria"/>
+                <element name="findControl" type="ns0:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findOrganizationProfileResponse">
+        <complexType>
+            <sequence>
+                <element maxOccurs="unbounded" minOccurs="0" name="result" type="ns1:OrganizationProfile"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findOrganizationProfileAsync">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns0:FindCriteria"/>
+                <element name="findControl" type="ns0:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findOrganizationProfileAsyncResponse">
+        <complexType>
+            <sequence>
+                <element maxOccurs="unbounded" minOccurs="0" name="result" type="ns1:OrganizationProfile"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDfltObjAttrHints">
+        <complexType>
+            <sequence>
+                <element name="viewName" type="string"/>
+                <element name="localeName" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDfltObjAttrHintsResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ObjAttrHints"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getServiceLastUpdateTime">
+        <complexType>
+            <sequence/>
+        </complexType>
+    </element>
+    <element name="getServiceLastUpdateTimeResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:dateTime-Timestamp"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getEntityList">
+        <complexType>
+            <sequence/>
+        </complexType>
+    </element>
+    <element name="getEntityListResponse">
+        <complexType>
+            <sequence>
+                <element maxOccurs="unbounded" minOccurs="0" name="result" type="ns0:ServiceViewInfo"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getEntityListAsync">
+        <complexType>
+            <sequence/>
+        </complexType>
+    </element>
+    <element name="getEntityListAsyncResponse">
+        <complexType>
+            <sequence>
+                <element maxOccurs="unbounded" minOccurs="0" name="result" type="ns0:ServiceViewInfo"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDfltObjAttrHintsAsync">
+        <complexType>
+            <sequence>
+                <element name="viewName" type="string"/>
+                <element name="localeName" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDfltObjAttrHintsAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ObjAttrHints"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getServiceLastUpdateTimeAsync">
+        <complexType>
+            <sequence/>
+        </complexType>
+    </element>
+    <element name="getServiceLastUpdateTimeAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:dateTime-Timestamp"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

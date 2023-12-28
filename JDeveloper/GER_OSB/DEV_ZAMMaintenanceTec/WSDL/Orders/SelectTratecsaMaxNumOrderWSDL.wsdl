@@ -1,0 +1,24 @@
+<wsdl:definitions name="SelectTratecsaMaxNumOrder" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_ESTRELLA_ROJA/DEV_ZAMMaintenanceTec/SelectTratecsaMaxNumOrder" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_ESTRELLA_ROJA/DEV_ZAMMaintenanceTec/SelectTratecsaMaxNumOrder" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/SelectTratecsaMaxNumOrder" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="SelectTratecsaMaxNumOrder_plt">
+    <plt:role name="SelectTratecsaMaxNumOrder_role">
+      <plt:portType name="tns:SelectTratecsaMaxNumOrder_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/SelectTratecsaMaxNumOrder" schemaLocation="../../XSD/Orders/SelectTratecsaMaxNumOrderXSD.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="SelectTratecsaMaxNumOrderInput_msg">
+        <wsdl:part name="SelectTratecsaMaxNumOrderInput_msg" element="db:SelectTratecsaMaxNumOrderInput"/>
+    </wsdl:message>
+    <wsdl:message name="SelectTratecsaMaxNumOrderOutput_msg">
+        <wsdl:part name="SelectTratecsaMaxNumOrderOutput" element="db:SelectTratecsaMaxNumOrderOutput"/>
+    </wsdl:message>
+    <wsdl:portType name="SelectTratecsaMaxNumOrder_ptt">
+        <wsdl:operation name="SelectTratecsaMaxNumOrder">
+            <wsdl:input message="tns:SelectTratecsaMaxNumOrderInput_msg"/>
+            <wsdl:output message="tns:SelectTratecsaMaxNumOrderOutput_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

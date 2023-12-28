@@ -1,0 +1,20 @@
+<wsdl:definitions name="dbaUpdateShipSites" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaUpdateShipSites" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaUpdateShipSites" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbaUpdateShipSites" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="dbaUpdateShipSites_plt">
+    <plt:role name="dbaUpdateShipSites_role">
+      <plt:portType name="tns:dbaUpdateShipSites_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbaUpdateShipSites" schemaLocation="../../Schemas/External/dbaUpdateCustomerSites_table.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="XxerArCustomerShipSitesVCollection_msg">
+        <wsdl:part name="XxerArCustomerShipSitesVCollection" element="top:XxerArCustomerShipSitesVCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="dbaUpdateShipSites_ptt">
+        <wsdl:operation name="update">
+            <wsdl:input message="tns:XxerArCustomerShipSitesVCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

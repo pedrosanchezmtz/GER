@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/CFDITec" xmlns="http://soa.estrellaroja.com.mx/CFDITec" targetNamespace="http://soa.estrellaroja.com.mx/CFDITec" elementFormDefault="qualified" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:cfdi="http://soa.estrellaroja.com.mx/CFDI" xmlns:va="http://soa.estrellaroja.com.mx/Reports/XXER_AP_INVOICE_VALIDATION_AUTOMATICA" xmlns:vc="http://soa.estrellaroja.com.mx/Reports/XXER_ValidationComplement" xmlns:aud="http://soa.estrellaroja.com.mx/AuditControlTec">
+<xsd:import schemaLocation="../../OSB/AuditControlTec/AuditControlTec.xsd" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+<xsd:import schemaLocation="../../Common/Report/XXER_AP_INVOICE_VALIDATION_AUTOMATICA.xsd" namespace="http://soa.estrellaroja.com.mx/Reports/XXER_AP_INVOICE_VALIDATION_AUTOMATICA"/>
+<xsd:import schemaLocation="../../Common/Report/XXER_ValidationComplement.xsd" namespace="http://soa.estrellaroja.com.mx/Reports/XXER_ValidationComplement"/>
+<xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+<xsd:import schemaLocation="../../Common/XSD/CFDI.xsd" namespace="http://soa.estrellaroja.com.mx/CFDI"/>
+<xsd:element name="GetCFDIFromFileRq" type="tns:GetCFDIFromFileRqType"/>
+<xsd:element name="GetCFDIFromFileRs" type="tns:GetCFDIFromFileRsType"/>
+<xsd:element name="GetInvoiceCFDIFromERPRq" type="tns:GetInvoiceCFDIFromERPRqType"/>
+<xsd:element name="GetInvoiceCFDIFromERPRs" type="tns:GetInvoiceCFDIFromERPRsType"/>
+<xsd:element name="GetComplementCFDIRq" type="tns:GetComplementCFDIRqType"/>
+<xsd:element name="GetComplementCFDIRs" type="tns:GetComplementCFDIRsType"/>
+<xsd:element name="SendCFDIToSFTPRq" type="tns:SendCFDIToSFTPRqType"/>
+<xsd:element name="ER_FACTURACION_GENERAL_TBL" type="tns:ER_FACTURACION_GENERAL_TBL_Type"/>
+<xsd:complexType name="SendCFDIToSFTPRqType">
+<xsd:sequence>
+<xsd:element name="InitialDate" type="xsd:date"/>
+<xsd:element name="EndDate" type="xsd:date"/>
+<xsd:element name="IdTransaccion" type="xsd:date"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetCFDIFromFileRqType">
+<xsd:sequence>
+<xsd:element name="FileBase64" type="xsd:base64Binary" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetCFDIFromFileRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="Comprobante" type="cfdi:ComprobanteType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="GetInvoiceCFDIFromERPRqType">
+<xsd:sequence>
+<xsd:element name="IdInvoice" type="xsd:integer" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element name="InvoiceNumber" type="xsd:string" minOccurs="0"/>
+<xsd:element name="FechaInicio" type="xsd:date" minOccurs="0"/>
+<xsd:element name="FechaFin" type="xsd:date" minOccurs="0"/>
+<xsd:element name="SendReport" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="GetResponse" type="xsd:boolean" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetInvoiceCFDIFromERPRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="INVOICE" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element ref="va:DATA_DS"/>
+<xsd:element name="Comprobante" type="cfdi:ComprobanteType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="GetComplementCFDIRqType">
+<xsd:sequence>
+<xsd:element ref="vc:DATA_DS" minOccurs="1"/>
+<xsd:element name="FileBase64" type="xsd:base64Binary" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element name="GetDataResponse" type="xsd:boolean" minOccurs="0"/>
+<xsd:element name="SendReport" type="xsd:boolean" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ER_FACTURACION_GENERAL_TBL_Type">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="ROW" type="tns:RowType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="RowType">
+<xsd:sequence>
+<xsd:element name="ID" type="xsd:integer" minOccurs="0"/>
+<xsd:element name="TRANSACTION_NUMBER" type="xsd:string" minOccurs="0"/>
+<xsd:element name="UUID" type="xsd:string" minOccurs="0"/>
+<xsd:element name="FOLIO" type="xsd:string" minOccurs="0"/>
+<xsd:element name="URL_PDF" type="xsd:string" minOccurs="0"/>
+<xsd:element name="URL_XML" type="xsd:string" minOccurs="0"/>
+<xsd:element name="SISTEMA_ORIGEN" type="xsd:string" minOccurs="0"/>
+<xsd:element name="TIPO_FACTURA" type="xsd:string" minOccurs="0"/>
+<xsd:element name="FECHA_CREACION" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="ULTIMA_FECHA_ACTUALIZACION" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="SERIE" type="xsd:string" minOccurs="0"/>
+<xsd:element name="TOTAL" type="xsd:decimal" minOccurs="0"/>
+<xsd:element name="ESTATUS_DESCARGA_SFTP" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+<xsd:attribute name="num" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo numero del row.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+</xsd:complexType>
+<xsd:complexType name="GetComplementCFDIRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="COMPLEMENT" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element ref="vc:DATA_DS"/>
+<xsd:element name="COMPLEMENT_LINE" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element ref="vc:DATA_DS"/>
+<xsd:element ref="aud:GetInvoicesAPByExampleRs"/>
+<xsd:element name="DocumentoDR" type="cfdi:ComprobanteType" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Comprobante" type="cfdi:ComprobanteType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

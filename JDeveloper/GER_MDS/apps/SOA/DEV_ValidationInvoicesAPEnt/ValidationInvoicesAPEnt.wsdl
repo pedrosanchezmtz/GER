@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="ValidationInvoicesAPEnt" targetNamespace="http://soa.estrellaroja.com.mx/ValidationInvoicesAPEnt" xmlns:tns="http://soa.estrellaroja.com.mx/ValidationInvoicesAPEnt" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://soa.estrellaroja.com.mx/ValidationInvoicesAPEnt" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.estrellaroja.com.mx/ValidationInvoicesAPEnt/types" elementFormDefault="qualified">
+<xsd:import namespace="http://soa.estrellaroja.com.mx/ValidationInvoicesAPEnt" schemaLocation="ValidationInvoicesAPEnt.xsd"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="ValidationInvoicesAPRq">
+<wsdl:part name="ValidationInvoicesAPRqPart" element="tns:ValidationInvoicesAPRq"/>
+</wsdl:message>
+<wsdl:message name="ValidationInvoicesAPRs">
+<wsdl:part name="ValidationInvoicesAPRsPart" element="tns:ValidationInvoicesAPRs"/>
+</wsdl:message>
+<wsdl:portType name="ValidationInvoicesAPEntPortType">
+<wsdl:operation name="ValidationInvoicesAP">
+<wsdl:input message="tns:ValidationInvoicesAPRq"/>
+<wsdl:output message="tns:ValidationInvoicesAPRs"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="ValidationInvoicesAPEntBinding" type="tns:ValidationInvoicesAPEntPortType">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="ValidationInvoicesAP">
+<soap:operation soapAction="http://soa.estrellaroja.com.mx/ValidationInvoicesAPEnt/ValidationInvoicesAP"/>
+<wsdl:input>
+<soap:body use="literal" parts="ValidationInvoicesAPRqPart"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="ValidationInvoicesAPRsPart"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="ValidationInvoicesAPEntService">
+<wsdl:port name="ValidationInvoicesAPEntPort" binding="tns:ValidationInvoicesAPEntBinding">
+<soap:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/DEV/ValidationInvoicesAPEnt/ValidationInvoicesAPEnt"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

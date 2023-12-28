@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="SftpTec/WSDLs/SftpTec"/>
+            <con:binding>
+                <con:name>SftpTec_bind</con:name>
+                <con:namespace>http://soa.estrellaroja.com.mx/SftpTec</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline type="request" name="request-N3f57fedb.N49ffe39.0.17b6497397f.N7fea">
+            <con:stage id="_StageId-N3f57fedb.N49ffe39.0.17b6497397f.N7fe8" name="Stage1">
+                <con:context>
+                    <con1:userNsDecl prefix="sft" namespace="http://soa.estrellaroja.com.mx/SftpTec" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57fedb.N49ffe39.0.17b6497397f.N7fdc</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="SftpTec/Transformations/PutFileBancoERRq_To_PutFileBancoER"/>
+                                <con2:input>$body/*[1]</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fedb.N49ffe39.0.17b6497397f.N7fe9">
+            <con:stage id="_StageId-N3f57fedb.N49ffe39.0.17b6497397f.N7fe7" name="Stage1">
+                <con:context/>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                        <con1:id>_ActionId-N3f57fedb.N49ffe39.0.17b6497397f.N7ed5</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText>&lt;dig:PutFileBancoERRs xmlns:dig="http://soa.estrellaroja.com.mx/SftpTec">
+    &lt;dig:Return>
+    &lt;cmn:Success xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+    &lt;/dig:Return>
+  &lt;/dig:PutFileBancoERRs></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fedb.N49ffe39.0.17b6497397f.N7f75">
+            <con:stage id="_StageId-N3f57fedb.N49ffe39.0.17b6497397f.N7f0b" name="StageError" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/DigitalStampTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fedb.N49ffe39.0.17b6497397f.N7f0a</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<dig:PutFileBancoERRs xmlns:dig="http://soa.estrellaroja.com.mx/SftpTec">
+    <dig:Return>
+    <cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+        <cmn:Error>
+            <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+            <cmn:ShortDescription>{$body/text()}</cmn:ShortDescription>
+            <cmn:Description>{fn:concat("Error when invoking ", "SftpTec",$fault/ctx:details," ErApi: ",$body/text() )}</cmn:Description>
+            <cmn:BusinessProcess>SftpTec</cmn:BusinessProcess>
+            <cmn:FailedService>SftpTec</cmn:FailedService>
+            <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+        </cmn:Error>
+    </cmn:Errors>
+    </dig:Return>
+  </dig:PutFileBancoERRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fedb.N49ffe39.0.17b6497397f.N7f09</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57ef02.56ee98b4.0.17ce78be529.N7f83">
+            <con:stage id="_StageId-N3f57ef02.56ee98b4.0.17ce78be529.N7f82" name="StageError" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/DigitalStampTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57ef02.56ee98b4.0.17ce78be529.N7f81</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<dig:PutFileERRs xmlns:dig="http://soa.estrellaroja.com.mx/SftpTec">
+    <dig:Return>
+    <cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+        <cmn:Error>
+            <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+            <cmn:ShortDescription>{$body/text()}</cmn:ShortDescription>
+            <cmn:Description>{fn:concat("Error when invoking ", "SftpTec",$fault/ctx:details," ErApi: ",$body/text() )}</cmn:Description>
+            <cmn:BusinessProcess>SftpTec</cmn:BusinessProcess>
+            <cmn:FailedService>SftpTec</cmn:FailedService>
+            <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+        </cmn:Error>
+    </cmn:Errors>
+    </dig:Return>
+  </dig:PutFileERRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57ef02.56ee98b4.0.17ce78be529.N7f80</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57ef02.56ee98b4.0.17ce78be529.N7f13">
+            <con:stage id="_StageId-N3f57ef02.56ee98b4.0.17ce78be529.N7f12" name="StageRq">
+                <con:context>
+                    <con1:userNsDecl prefix="sft" namespace="http://soa.estrellaroja.com.mx/SftpTec" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57ef02.56ee98b4.0.17ce78be529.N7f11</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="SftpTec/Transformations/PutFileGERRq_To_PutFileGER"/>
+                                <con2:input>$body/*[1]</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57ef02.56ee98b4.0.17ce78be529.N7f10">
+            <con:stage id="_StageId-N3f57ef02.56ee98b4.0.17ce78be529.N7f0f" name="StageRs">
+                <con:context/>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                        <con1:id>_ActionId-N3f57ef02.56ee98b4.0.17ce78be529.N7f0e</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText>&lt;dig:PutFileBancoERRs xmlns:dig="http://soa.estrellaroja.com.mx/SftpTec">
+    &lt;dig:Return>
+    &lt;cmn:Success xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+    &lt;/dig:Return>
+  &lt;/dig:PutFileBancoERRs></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7f7e">
+            <con:stage id="_StageId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7f7d" name="StageError" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/DigitalStampTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7f7c</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<dig:GetFileERRq xmlns:dig="http://soa.estrellaroja.com.mx/SftpTec">
+    <dig:Return>
+    <cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+        <cmn:Error>
+            <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+            <cmn:ShortDescription>{$body/text()}</cmn:ShortDescription>
+            <cmn:Description>{fn:concat("Error when invoking ", "SftpTec",$fault/ctx:details," ErApi: ",$body/text() )}</cmn:Description>
+            <cmn:BusinessProcess>SftpTec</cmn:BusinessProcess>
+            <cmn:FailedService>SftpTec</cmn:FailedService>
+            <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+        </cmn:Error>
+    </cmn:Errors>
+    </dig:Return>
+  </dig:GetFileERRq>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7f7b</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7f0e">
+            <con:stage id="_StageId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7f0d" name="StageRequest">
+                <con:context>
+                    <con1:userNsDecl prefix="sft" namespace="http://soa.estrellaroja.com.mx/SftpTec" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varBodyRequest" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7d38</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">$body/*[1]</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7f0b">
+            <con:stage id="_StageId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7b28" name="StageResponse">
+                <con:context>
+                    <con1:userNsDecl prefix="sft" namespace="http://soa.estrellaroja.com.mx/SftpTec" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                    <con1:userNsDecl prefix="est" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                        <con1:id>_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7b24</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText>$varResponse</con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con2:replace varName="body" contents-only="true" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                        <con1:id>_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7f09</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText>$varResponse</con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7d31" name="StagePutFile" errorHandler="error-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7ca3">
+                <con:context>
+                    <con1:userNsDecl prefix="sft" namespace="http://soa.estrellaroja.com.mx/SftpTec" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                    <con1:userNsDecl prefix="est" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+                <con:actions>
+                    <con1:ifThenElse xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7d25</con2:id>
+                        <con1:case id="_BranchId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7d24">
+                            <con1:condition>
+                                <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">fn:string-length($varBodyRequest/sft:DirNameCopy) > 0 and fn:string-length($body/*[1]/sft:FileB64) > 0</con2:xqueryText>
+                            </con1:condition>
+                            <con1:actions>
+                                <con1:wsCallout>
+                                    <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7d20</con2:id>
+                                    <con1:service ref="SftpTec/Proxys/SftpTecPS" xsi:type="ref:ProxyRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                    <con1:operation>PutFileER</con1:operation>
+                                    <con1:request>
+                                        <con1:body wrapped="false">varPutFileERRq</con1:body>
+                                    </con1:request>
+                                    <con1:response>
+                                        <con1:body wrapped="false">varPutFileERRs</con1:body>
+                                    </con1:response>
+                                    <con1:requestTransform>
+                                        <con1:assign varName="varPutFileERRq">
+                                            <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7d1d</con2:id>
+                                            <con1:expr>
+                                                <con2:xsltTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                                    <con2:resource ref="SftpTec/Transformations/GetFileERRq_to_PutFileERRq"/>
+                                                    <con2:input>$varBodyRequest</con2:input>
+                                                    <con2:param name="varFileB64">
+                                                        <con2:path>$body/*[1]/sft:FileB64</con2:path>
+                                                    </con2:param>
+                                                </con2:xsltTransform>
+                                            </con1:expr>
+                                        </con1:assign>
+                                    </con1:requestTransform>
+                                    <con1:responseTransform/>
+                                </con1:wsCallout>
+                            </con1:actions>
+                        </con1:case>
+                        <con1:default/>
+                    </con1:ifThenElse>
+                    <con1:ifThenElse xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7bdf</con2:id>
+                        <con1:case id="_BranchId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7bde">
+                            <con1:condition>
+                                <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">fn:string-length($varPutFileERRs/sft:Return/est:Errors/est:Error/est:ErrorCode) > 0</con2:xqueryText>
+                            </con1:condition>
+                            <con1:actions>
+                                <con1:Error>
+                                    <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7ba5</con2:id>
+                                    <con1:errCode>Error PutFileER</con1:errCode>
+                                    <con1:message>No es posible colocar el archivo en ruta especificada</con1:message>
+                                </con1:Error>
+                            </con1:actions>
+                        </con1:case>
+                    </con1:ifThenElse>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7e57">
+            <con:stage id="_StageId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7e56" name="StageError" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/DigitalStampTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7e55</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<dig:GetListFilesERRq xmlns:dig="http://soa.estrellaroja.com.mx/SftpTec">
+    <dig:Return>
+    <cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+        <cmn:Error>
+            <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+            <cmn:ShortDescription>{$body/text()}</cmn:ShortDescription>
+            <cmn:Description>{fn:concat("Error when invoking ", "SftpTec",$fault/ctx:details," ErApi: ",$body/text() )}</cmn:Description>
+            <cmn:BusinessProcess>SftpTec</cmn:BusinessProcess>
+            <cmn:FailedService>SftpTec</cmn:FailedService>
+            <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+        </cmn:Error>
+    </cmn:Errors>
+    </dig:Return>
+  </dig:GetListFilesERRq>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7e54</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7deb">
+            <con:stage id="_StageId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7dea" name="Stage1">
+                <con:context>
+                    <con1:userNsDecl prefix="sft" namespace="http://soa.estrellaroja.com.mx/SftpTec" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7de9">
+            <con:stage id="_StageId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7de8" name="Stage1">
+                <con:context/>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                        <con1:id>_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7de7</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText>$varResponse</con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7ca3">
+            <con:stage id="_StageId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7c39" name="StageError" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/DigitalStampTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7c38</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<dig:GetFileERRq xmlns:dig="http://soa.estrellaroja.com.mx/SftpTec">
+    <dig:Return>
+    <cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+        <cmn:Error>
+            <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+            <cmn:ShortDescription>{$body/text()}</cmn:ShortDescription>
+            <cmn:Description>{fn:concat("Error when invoking ", "SftpTec",$fault/ctx:details," ErApi: ",$body/text() )}</cmn:Description>
+            <cmn:BusinessProcess>SftpTec</cmn:BusinessProcess>
+            <cmn:FailedService>SftpTec</cmn:FailedService>
+            <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+        </cmn:Error>
+    </cmn:Errors>
+    </dig:Return>
+  </dig:GetFileERRq>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7c37</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57fedb.N49ffe39.0.17b6497397f.N7feb" name="BranchNode">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="PutFileBancoER">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair PutFileBancoER">
+                                <con:request>request-N3f57fedb.N49ffe39.0.17b6497397f.N7fea</con:request>
+                                <con:response>response-N3f57fedb.N49ffe39.0.17b6497397f.N7fe9</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RoutePutFileBancoER" error-handler="error-N3f57fedb.N49ffe39.0.17b6497397f.N7f75">
+                                <con:context>
+                                    <con1:userNsDecl prefix="sft" namespace="http://soa.estrellaroja.com.mx/SftpTec" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                                </con:context>
+                                <con:actions>
+                                    <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
+                                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57fedb.N49ffe39.0.17b6497397f.N7fe2</con2:id>
+                                        <con1:service ref="SftpTec/Business/sftpBancoER" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con1:operation>PutFile</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con2:transport-headers xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57fedb.N49ffe39.0.17b6497397f.N7fdf</con3:id>
+                                                <con2:header-set>outbound-request</con2:header-set>
+                                                <con2:header value="expression" name="jca.ftp.FileName">
+                                                    <con3:xqueryText xmlns:con3="http://www.bea.com/wli/sb/stages/config">$body/*[1]/sft:FileName/text()</con3:xqueryText>
+                                                </con2:header>
+                                                <con2:header value="expression" name="jca.ftp.Directory">
+                                                    <con3:xqueryText xmlns:con3="http://www.bea.com/wli/sb/stages/config">$body/*[1]/sft:DirName/text()</con3:xqueryText>
+                                                </con2:header>
+                                                <con2:header value="delete" name="Content-Type"/>
+                                            </con2:transport-headers>
+                                            <con2:replace varName="body" contents-only="true" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57fedb.N49ffe39.0.17b6497397f.N7fd9</con3:id>
+                                                <con2:location>
+                                                    <con3:xpathText xmlns:con3="http://www.bea.com/wli/sb/stages/config">.</con3:xpathText>
+                                                </con2:location>
+                                                <con2:expr>
+                                                    <con3:xqueryText xmlns:con3="http://www.bea.com/wli/sb/stages/config">$varRequest</con3:xqueryText>
+                                                </con2:expr>
+                                            </con2:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="PutFileER">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair PutFileER">
+                                <con:request>request-N3f57ef02.56ee98b4.0.17ce78be529.N7f13</con:request>
+                                <con:response>response-N3f57ef02.56ee98b4.0.17ce78be529.N7f10</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RoutePutFileER" error-handler="error-N3f57ef02.56ee98b4.0.17ce78be529.N7f83">
+                                <con:context>
+                                    <con1:userNsDecl prefix="sft" namespace="http://soa.estrellaroja.com.mx/SftpTec" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                                </con:context>
+                                <con:actions>
+                                    <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
+                                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57ef02.56ee98b4.0.17ce78be529.N7f86</con2:id>
+                                        <con1:service ref="SftpTec/Business/sftpGER" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con1:operation>PutFile</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con2:transport-headers xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57ef02.56ee98b4.0.17ce78be529.N7f85</con3:id>
+                                                <con2:header-set>outbound-request</con2:header-set>
+                                                <con2:header value="expression" name="jca.ftp.FileName">
+                                                    <con3:xqueryText xmlns:con3="http://www.bea.com/wli/sb/stages/config">$body/*[1]/sft:FileName/text()</con3:xqueryText>
+                                                </con2:header>
+                                                <con2:header value="expression" name="jca.ftp.Directory">
+                                                    <con3:xqueryText xmlns:con3="http://www.bea.com/wli/sb/stages/config">$body/*[1]/sft:DirName/text()</con3:xqueryText>
+                                                </con2:header>
+                                                <con2:header value="delete" name="Content-Type"/>
+                                            </con2:transport-headers>
+                                            <con2:replace varName="body" contents-only="true" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57ef02.56ee98b4.0.17ce78be529.N7f84</con3:id>
+                                                <con2:location>
+                                                    <con3:xpathText xmlns:con3="http://www.bea.com/wli/sb/stages/config">.</con3:xpathText>
+                                                </con2:location>
+                                                <con2:expr>
+                                                    <con3:xqueryText xmlns:con3="http://www.bea.com/wli/sb/stages/config">$varRequest</con3:xqueryText>
+                                                </con2:expr>
+                                            </con2:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="GetFileER">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair GetFileER">
+                                <con:request>request-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7f0e</con:request>
+                                <con:response>response-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7f0b</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteGetFileER" error-handler="error-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7f7e">
+                                <con:context>
+                                    <con1:userNsDecl prefix="sft" namespace="http://soa.estrellaroja.com.mx/SftpTec" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                                </con:context>
+                                <con:actions>
+                                    <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
+                                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7f81</con2:id>
+                                        <con1:service ref="SftpTec/Business/sftpGER" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con1:operation>SynchRead</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con2:transport-headers xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7f80</con3:id>
+                                                <con2:header-set>outbound-request</con2:header-set>
+                                                <con2:header value="expression" name="jca.ftp.FileName">
+                                                    <con3:xqueryText xmlns:con3="http://www.bea.com/wli/sb/stages/config">$body/*[1]/sft:FileName/text()</con3:xqueryText>
+                                                </con2:header>
+                                                <con2:header value="expression" name="jca.ftp.Directory">
+                                                    <con3:xqueryText xmlns:con3="http://www.bea.com/wli/sb/stages/config">$body/*[1]/sft:DirName/text()</con3:xqueryText>
+                                                </con2:header>
+                                                <con2:header value="delete" name="Content-Type"/>
+                                            </con2:transport-headers>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform>
+                                            <con1:assign varName="varResponse" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7ed5</con2:id>
+                                                <con1:expr>
+                                                    <con2:xsltTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                                        <con2:resource ref="SftpTec/Transformations/outGetFileGER_to_GetFileERRs"/>
+                                                        <con2:input>$body/*[1]</con2:input>
+                                                    </con2:xsltTransform>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con1:responseTransform>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="GetListFilesER">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair GetListFilesER">
+                                <con:request>request-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7deb</con:request>
+                                <con:response>response-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7de9</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteGetListFilesER" error-handler="error-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7e57">
+                                <con:context>
+                                    <con1:userNsDecl prefix="sft" namespace="http://soa.estrellaroja.com.mx/SftpTec" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                                </con:context>
+                                <con:actions>
+                                    <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
+                                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7e5a</con2:id>
+                                        <con1:service ref="SftpTec/Business/sftpGER" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con1:operation>FileListing</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con2:transport-headers xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7e59</con3:id>
+                                                <con2:header-set>outbound-request</con2:header-set>
+                                                <con2:header value="expression" name="jca.ftp.Directory">
+                                                    <con3:xqueryText xmlns:con3="http://www.bea.com/wli/sb/stages/config">$body/*[1]/sft:DirName/text()</con3:xqueryText>
+                                                </con2:header>
+                                                <con2:header value="delete" name="Content-Type"/>
+                                            </con2:transport-headers>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform>
+                                            <con1:assign varName="varResponse" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f5e5.N4c90d8b6.0.18ab9230062.N7e58</con2:id>
+                                                <con1:expr>
+                                                    <con2:xsltTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                                        <con2:resource ref="SftpTec/Transformations/outFileList_to_GetListFilesRs"/>
+                                                        <con2:input>$body/*[1]</con2:input>
+                                                    </con2:xsltTransform>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con1:responseTransform>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

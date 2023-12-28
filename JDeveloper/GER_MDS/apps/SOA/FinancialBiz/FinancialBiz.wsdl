@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="FinancialBiz" targetNamespace="http://soa.estrellaroja.com.mx/FinancialBiz" xmlns:tns="http://soa.estrellaroja.com.mx/FinancialBiz" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://soa.estrellaroja.com.mx/FinancialBiz" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.estrellaroja.com.mx/FinancialBiz/types" elementFormDefault="qualified">
+<xsd:import namespace="http://soa.estrellaroja.com.mx/FinancialBiz" schemaLocation="FinancialBiz.xsd"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="GetRfcRq">
+<wsdl:part name="GetRfcRq" element="ns0:GetRfcRq"/>
+</wsdl:message>
+<wsdl:message name="GetRfcRs">
+<wsdl:part name="GetRfcRs" element="ns0:GetRfcRs"/>
+</wsdl:message>
+<wsdl:portType name="FinancialBizPortType">
+<wsdl:operation name="GetRfc">
+<wsdl:input message="tns:GetRfcRq"/>
+<wsdl:output message="tns:GetRfcRs"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="FinancialBizBinding" type="tns:FinancialBizPortType">
+<soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="GetRfc">
+<soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialBiz/GetRfc"/>
+<wsdl:input>
+<soap12:body use="literal" parts="GetRfcRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal" parts="GetRfcRs"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="FinancialBiz">
+<wsdl:port name="FinancialBizPort" binding="tns:FinancialBizBinding">
+<soap12:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/PROD/FinancialsBiz/FinancialBiz"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

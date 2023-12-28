@@ -1,0 +1,12 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbArElecInvoiceBs" name="dbArElecInvoiceBs-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="dbaInsertArElecInvoiceBs.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbArElecInvoiceBs"/>
+    <wsdl:binding name="dbArElecInvoiceBs_ptt-binding" type="dbar:dbArElecInvoiceBs_ptt" xmlns:dbar="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbArElecInvoiceBs">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="insert">
+            <soap:operation soapAction="insert"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

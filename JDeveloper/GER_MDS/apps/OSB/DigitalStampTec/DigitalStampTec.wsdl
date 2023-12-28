@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<WL5G3N0:definitions name="DigitalStampTec" targetNamespace="http://soa.estrellaroja.com.mx/DigitalStampTec" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://soa.estrellaroja.com.mx/DigitalStampTec" xmlns:WL5G3N2="http://schemas.xmlsoap.org/wsdl/soap12/">
+<WL5G3N0:types>
+<xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/DigitalStampTec/types" elementFormDefault="qualified" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soa.estrellaroja.com.mx/DigitalStampTec" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+<xsd:import schemaLocation="DigitalStampTec.xsd" namespace="http://soa.estrellaroja.com.mx/DigitalStampTec"/>
+</xsd:schema>
+</WL5G3N0:types>
+<WL5G3N0:message name="createTrxCFDIRq">
+<WL5G3N0:part name="createTrxCFDIRq" element="WL5G3N1:createTrxCFDIRq"/>
+</WL5G3N0:message>
+<WL5G3N0:message name="createTrxCFDIRs">
+<WL5G3N0:part name="createTrxCFDIRs" element="WL5G3N1:createTrxCFDIRs"/>
+</WL5G3N0:message>
+<WL5G3N0:message name="ValidatePaymentRq">
+<WL5G3N0:part name="ValidatePaymentRqPart" element="WL5G3N1:ValidatePaymentRq"/>
+</WL5G3N0:message>
+<WL5G3N0:message name="ValidatePaymentRs">
+<WL5G3N0:part name="ValidatePaymentRsPart" element="WL5G3N1:ValidatePaymentRs"/>
+</WL5G3N0:message>
+<WL5G3N0:portType name="DigitalStampTePortType">
+<WL5G3N0:operation name="createTrxCFDI">
+<WL5G3N0:input message="WL5G3N1:createTrxCFDIRq"/>
+<WL5G3N0:output message="WL5G3N1:createTrxCFDIRs"/>
+</WL5G3N0:operation>
+<WL5G3N0:operation name="ValidatePayment">
+<WL5G3N0:input message="WL5G3N1:ValidatePaymentRq"/>
+<WL5G3N0:output message="WL5G3N1:ValidatePaymentRs"/>
+</WL5G3N0:operation>
+</WL5G3N0:portType>
+<WL5G3N0:binding name="DigitalStampTeBinding" type="WL5G3N1:DigitalStampTePortType">
+<WL5G3N2:binding transport="http://www.bea.com/transport/2007/05/sb" style="document"/>
+<WL5G3N0:operation name="createTrxCFDI">
+<WL5G3N2:operation style="document" soapAction="http://soa.estrellaroja.com.mx/DigitalStampTec/createTrxCFDI"/>
+<WL5G3N0:input>
+<WL5G3N2:body use="literal" parts="createTrxCFDIRq"/>
+</WL5G3N0:input>
+<WL5G3N0:output>
+<WL5G3N2:body use="literal" parts="createTrxCFDIRs"/>
+</WL5G3N0:output>
+</WL5G3N0:operation>
+<WL5G3N0:operation name="ValidatePayment">
+<WL5G3N2:operation style="document" soapAction="http://soa.estrellaroja.com.mx/DigitalStampTec/ValidatePayment"/>
+<WL5G3N0:input>
+<WL5G3N2:body use="literal" parts="ValidatePaymentRqPart"/>
+</WL5G3N0:input>
+<WL5G3N0:output>
+<WL5G3N2:body use="literal" parts="ValidatePaymentRsPart"/>
+</WL5G3N0:output>
+</WL5G3N0:operation>
+</WL5G3N0:binding>
+<WL5G3N0:service name="DigitalStampTeBindingQSService">
+<WL5G3N0:documentation>OSB Service</WL5G3N0:documentation>
+<WL5G3N0:port name="DigitalStampTeBindingQSPort" binding="WL5G3N1:DigitalStampTeBinding">
+<WL5G3N2:address location="sb://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/DigitalStampTecPs"/>
+</WL5G3N0:port>
+</WL5G3N0:service>
+</WL5G3N0:definitions>

@@ -1,0 +1,27 @@
+<wsdl:definitions name="coherenceGetOrgList" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/coherence/CoherenceTec/CoherenceTec/coherenceGetOrgList" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/coherence/CoherenceTec/CoherenceTec/coherenceGetOrgList" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:imp2="http://soa.estrellaroja.com.mx/CoherenceTec" xmlns:imp1="http://xmlns.oracle.com/pcbpel/adapter/coherence/coherenceGetOrgList/request">
+  <plt:partnerLinkType name="Query_plt">
+    <plt:role name="Query_role">
+      <plt:portType name="tns:Query_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://soa.estrellaroja.com.mx/CoherenceTec" schemaLocation="../../Schemas/CoherenceTec.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/coherence/coherenceGetOrgList/request" schemaLocation="../../Schemas/External/coherenceGetOrgListRequest.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="Query_msg">
+        <wsdl:part name="body" element="imp1:QueryRequest"/>
+    </wsdl:message>
+    <wsdl:message name="QueryResponse_msg">
+        <wsdl:part name="body" element="imp2:OrgCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="Query_ptt">
+        <wsdl:operation name="Query">
+            <wsdl:input message="tns:Query_msg"/>
+            <wsdl:output message="tns:QueryResponse_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="ValidationPaymentsAPEnt" targetNamespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPEnt" xmlns:tns="http://soa.estrellaroja.com.mx/ValidationPaymentsAPEnt" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://soa.estrellaroja.com.mx/ValidationPaymentsAPEnt" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPEnt/types" elementFormDefault="qualified">
+<xsd:import namespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPEnt" schemaLocation="ValidationPaymentsAPEnt.xsd"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="SendPaymentsAPRq">
+<wsdl:part name="SendPaymentsAPRqPart" element="tns:SendPaymentsAPRq"/>
+</wsdl:message>
+<wsdl:message name="SendPaymentsAPRs">
+<wsdl:part name="SendPaymentsAPRsPart" element="tns:SendPaymentsAPRs"/>
+</wsdl:message>
+<wsdl:portType name="ValidationPaymentsAPEntPortType">
+<wsdl:operation name="SendPaymentsAP">
+<wsdl:input message="tns:SendPaymentsAPRq"/>
+<wsdl:output message="tns:SendPaymentsAPRs"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="ValidationPaymentsAPEntBinding" type="tns:ValidationPaymentsAPEntPortType">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="SendPaymentsAP">
+<soap:operation soapAction="http://soa.estrellaroja.com.mx/ValidationPaymentsAPEnt/SendPaymentsAP"/>
+<wsdl:input>
+<soap:body use="literal" parts="SendPaymentsAPRqPart"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="SendPaymentsAPRsPart"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="ValidationPaymentsAPEntService">
+<wsdl:port name="ValidationPaymentsAPEntPort" binding="tns:ValidationPaymentsAPEntBinding">
+<soap:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/DEV/ValidationPaymentsAPEnt/SendPaymentsAP"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

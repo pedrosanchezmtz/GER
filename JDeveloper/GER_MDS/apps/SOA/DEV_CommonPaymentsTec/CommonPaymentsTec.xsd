@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/CommonPaymentsTec" targetNamespace="http://soa.estrellaroja.com.mx/CommonPaymentsTec" elementFormDefault="qualified" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+<xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+<xsd:element name="MergePaymentRq" type="tns:MergePaymentRqType">
+<xsd:annotation>
+<xsd:documentation>Element for Request.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="MergePaymentRs" type="tns:MergePaymentRsType">
+<xsd:annotation>
+<xsd:documentation>Element for Response.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="CurrentPaymentDetail" type="tns:FullPaymentDetailType"/>
+<xsd:element name="GetPayementRq" type="tns:GetPayementRqType"/>
+<xsd:element name="GetPayementRs" type="tns:GetPayementRsType"/>
+<xsd:element name="GetRetriableComplementsRq"/>
+<xsd:element name="GetRetriableComplementsRs" type="tns:GetRetriableComplementsRsType"/>
+<xsd:element name="GetRetriableIncomeRq"/>
+<xsd:element name="GetRetriableIncomeRs" type="tns:GetRetriableIncomeRsType"/>
+<xsd:element name="GetRetriableOutcomeRq"/>
+<xsd:element name="GetRetriableOutcomeRs" type="tns:GetRetriableOutcomeRsType"/>
+<xsd:complexType name="MergePaymentRqType">
+<xsd:sequence>
+<xsd:element name="Payment" type="tns:PaymentType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MergePaymentRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="Return" maxOccurs="1" type="tns:MergePaymentReturnType"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="PaymentType">
+<xsd:complexContent>
+<xsd:extension base="tns:UuidComplexType">
+<xsd:sequence>
+<xsd:element name="PaymentId" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="CashReceiptId" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="ReceiptNumber" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="CustomerNumber" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="AccountNumber" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="SiteNumber" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="PaymentType" type="tns:PaymentTypeEnumType" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="CurrencyCode" type="xsd:string" minOccurs="0" nillable="true"/>
+<xsd:element name="ReceipMethod" type="xsd:string" minOccurs="0" nillable="true"/>
+<xsd:element name="SubTotal" type="xsd:decimal" minOccurs="0" nillable="true"/>
+<xsd:element name="Iva" type="xsd:decimal" minOccurs="0" nillable="true"/>
+<xsd:element name="Total" type="xsd:decimal" minOccurs="0" nillable="true"/>
+<xsd:element name="Attribute1" type="xsd:string" minOccurs="0" nillable="true"/>
+<xsd:element name="Attribute2" type="xsd:string" minOccurs="0" nillable="true"/>
+<xsd:element name="Attribute3" type="xsd:string" minOccurs="0" nillable="true"/>
+<xsd:element name="Attribute4" type="xsd:string" minOccurs="0" nillable="true"/>
+<xsd:element name="Attribute5" type="xsd:string" minOccurs="0" nillable="true"/>
+<xsd:element name="SourceLastUpdatedBy" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="TextPlainContent" maxOccurs="1" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PaymentDetail" type="tns:PaymentDetailType" maxOccurs="unbounded" minOccurs="0"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="PaymentDetailType">
+<xsd:complexContent>
+<xsd:extension base="tns:UuidComplexType">
+<xsd:sequence>
+<xsd:element name="PaymentDetailId" type="xsd:long" maxOccurs="1" minOccurs="0"/>
+<xsd:element name="InvoiceNumber" type="xsd:string" maxOccurs="1"/>
+<xsd:element name="InstallmentNumber" type="xsd:int" maxOccurs="1"/>
+<xsd:element name="ReceivableApplicationId" type="xsd:long" maxOccurs="1"/>
+<xsd:element name="TrxNumber" type="xsd:string" maxOccurs="1"/>
+<xsd:element name="BalanceBefore" type="xsd:decimal" maxOccurs="1"/>
+<xsd:element name="BalanceAfter" type="xsd:decimal" maxOccurs="1"/>
+<xsd:element name="TextPlainContent" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+<xsd:element name="CurrencyCode" type="xsd:string" minOccurs="0" nillable="true"/>
+<xsd:element name="Total" type="xsd:decimal" minOccurs="0" nillable="true"/>
+<xsd:element name="Attribute1" type="xsd:string" minOccurs="0" nillable="true"/>
+<xsd:element name="Attribute2" type="xsd:string" minOccurs="0" nillable="true"/>
+<xsd:element name="Attribute3" type="xsd:string" minOccurs="0" nillable="true"/>
+<xsd:element name="Attribute4" type="xsd:string" minOccurs="0" nillable="true"/>
+<xsd:element name="Attribute5" type="xsd:string" minOccurs="0" nillable="true"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="FullPaymentDetailType">
+<xsd:complexContent>
+<xsd:extension base="tns:PaymentDetailType">
+<xsd:sequence>
+<xsd:element name="PaymentId" type="xsd:long" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="MergePaymentReturnType">
+<xsd:sequence>
+<xsd:element name="PaymentId" type="xsd:long" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="WhoFieldsType">
+<xsd:sequence>
+<xsd:element name="CreatedBy" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="CreationDate" type="xsd:dateTime" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="LastUpdatedBy" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="LastUpdateDate" type="xsd:dateTime" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="ObjectVersionNumber" type="xsd:long" maxOccurs="1" minOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="UuidComplexType">
+<xsd:complexContent>
+<xsd:extension base="tns:WhoFieldsType">
+<xsd:sequence>
+<xsd:element name="Uuid" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+<xsd:element name="UuidDate" type="xsd:dateTime" maxOccurs="1" minOccurs="0"/>
+<xsd:element name="Status" type="tns:StatusEnumType" maxOccurs="1" minOccurs="0"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="GetPayementRqType">
+<xsd:sequence>
+<xsd:element name="CashReceiptId" type="xsd:long" maxOccurs="1"/>
+<xsd:element name="PaymentType" type="tns:PaymentTypeEnumType" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetPayementRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="Return" type="tns:GetPayementReturnType" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="GetPayementReturnType">
+<xsd:sequence>
+<xsd:element name="Payment" type="tns:PaymentType" maxOccurs="1" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetRetriableComplementsRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="Return" type="tns:GetRetriableComplementsReturnType" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="GetRetriableComplementsReturnType">
+<xsd:sequence>
+<xsd:element name="RetriablePayment" type="tns:RetriablePaymentType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="RetriablePaymentType">
+<xsd:sequence>
+<xsd:element name="PaymentId" type="xsd:long" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="CashReceiptId" type="xsd:long" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="PlainContent" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetRetriableIncomeRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="Return" type="tns:GetRetriableIncomeReturnType" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="GetRetriableIncomeReturnType">
+<xsd:sequence>
+<xsd:element name="RetriableIncome" type="tns:RetriableIncomeType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="RetriableIncomeType">
+<xsd:sequence>
+<xsd:element name="PaymentId" type="xsd:long" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="CashReceiptId" type="xsd:long" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="PlainContent" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetRetriableOutcomeRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="Return" type="tns:GetRetriableOutcomeReturnType" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="GetRetriableOutcomeReturnType">
+<xsd:sequence>
+<xsd:element name="RetriableOutcome" type="tns:RetriableOutcomeType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="RetriableOutcomeType">
+<xsd:sequence>
+<xsd:element name="PaymentId" type="xsd:long" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="receivable_application_id" type="xsd:long" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="PlainContent" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:simpleType name="PaymentTypeEnumType">
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="INCOME"/>
+<xsd:enumeration value="OUTCOME"/>
+<xsd:enumeration value="COMPLEMENT"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="StatusEnumType">
+<xsd:restriction>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="STAMPED"/>
+<xsd:enumeration value="ERRORED"/>
+<xsd:enumeration value="NOT_CONNECTED"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:schema>

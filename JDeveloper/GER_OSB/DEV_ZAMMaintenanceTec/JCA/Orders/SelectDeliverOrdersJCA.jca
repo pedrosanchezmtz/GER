@@ -1,0 +1,12 @@
+<adapter-config name="SelectDeliverOrders" adapter="db" wsdlLocation="../../WSDL/Orders/SelectDeliverOrdersWSDL.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="ERSEPDB1" location="eis/DB/ERSEPDB1"/>
+  <endpoint-interaction portType="SelectDeliverOrders_ptt" operation="SelectDeliverOrders">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="select * from mtto_orden@hsmssqldlv_t.estrellaroja.com.mx where &quot;id_orden&quot; = #idOrden or &quot;id_unidad&quot; = #idUnidad  "/>
+      <property name="QueryTimeout" value="10"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

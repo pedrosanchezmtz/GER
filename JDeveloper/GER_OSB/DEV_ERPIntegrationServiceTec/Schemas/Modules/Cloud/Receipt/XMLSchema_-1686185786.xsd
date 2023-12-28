@@ -1,0 +1,567 @@
+<schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/types/" xmlns:ns0="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" xmlns:ns1="http://xmlns.oracle.com/adf/svc/types/" xmlns:tns="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/types/" xmlns="http://www.w3.org/2001/XMLSchema">
+    <import namespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" schemaLocation="XMLSchema_2102015873.xsd"/>
+    <import namespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" schemaLocation="XMLSchema_137932758.xsd"/>
+    <import namespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" schemaLocation="XMLSchema_1499942459.xsd"/>
+    <import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="XMLSchema_469750432.xsd"/>
+    <import namespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" schemaLocation="XMLSchema_698021341.xsd"/>
+    <import namespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" schemaLocation="XMLSchema_1128361162.xsd"/>
+    <import namespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" schemaLocation="XMLSchema_711564180.xsd"/>
+    <import namespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" schemaLocation="XMLSchema_-383292217.xsd"/>
+    <import namespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" schemaLocation="XMLSchema_-1757508480.xsd"/>
+    <element name="createStandardReceipt">
+        <complexType>
+            <sequence>
+                <element name="standardReceipt" type="ns0:StandardReceipt"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createStandardReceiptResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:StandardReceiptResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findStandardReceipt">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns1:FindCriteria"/>
+                <element name="findControl" type="ns1:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findStandardReceiptResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:StandardReceiptResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createStandardReceiptAsync">
+        <complexType>
+            <sequence>
+                <element name="standardReceipt" type="ns0:StandardReceipt"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createStandardReceiptAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:StandardReceiptResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findStandardReceiptAsync">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns1:FindCriteria"/>
+                <element name="findControl" type="ns1:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findStandardReceiptAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:StandardReceiptResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createReverseReceipt">
+        <complexType>
+            <sequence>
+                <element name="reverseReceipt" type="ns0:ReverseReceipt"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createReverseReceiptResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ReverseReceiptResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createUnapplyReceipt">
+        <complexType>
+            <sequence>
+                <element name="unapplyReceipt" type="ns0:UnapplyReceipt"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createUnapplyReceiptResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:UnapplyReceiptResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createReverseReceiptAsync">
+        <complexType>
+            <sequence>
+                <element name="reverseReceipt" type="ns0:ReverseReceipt"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createReverseReceiptAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ReverseReceiptResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createUnapplyReceiptAsync">
+        <complexType>
+            <sequence>
+                <element name="unapplyReceipt" type="ns0:UnapplyReceipt"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createUnapplyReceiptAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:UnapplyReceiptResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processReverseReceipt">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="reverseReceipt" type="ns0:ReverseReceipt"/>
+                <element name="processControl" type="ns1:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processReverseReceiptResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ReverseReceiptResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processUnapplyReceipt">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="unapplyReceipt" type="ns0:UnapplyReceipt"/>
+                <element name="processControl" type="ns1:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processUnapplyReceiptResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:UnapplyReceiptResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processReverseReceiptAsync">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="reverseReceipt" type="ns0:ReverseReceipt"/>
+                <element name="processControl" type="ns1:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processReverseReceiptAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ReverseReceiptResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processUnapplyReceiptAsync">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="unapplyReceipt" type="ns0:UnapplyReceipt"/>
+                <element name="processControl" type="ns1:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processUnapplyReceiptAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:UnapplyReceiptResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createUnapplyOnAccount">
+        <complexType>
+            <sequence>
+                <element name="unapplyOnAccount" type="ns0:UnapplyOnAccount"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createUnapplyOnAccountResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:UnapplyOnAccountResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processUnapplyOnAccount">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="unapplyOnAccount" type="ns0:UnapplyOnAccount"/>
+                <element name="processControl" type="ns1:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processUnapplyOnAccountResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:UnapplyOnAccountResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createUnapplyOnAccountAsync">
+        <complexType>
+            <sequence>
+                <element name="unapplyOnAccount" type="ns0:UnapplyOnAccount"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createUnapplyOnAccountAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:UnapplyOnAccountResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processUnapplyOnAccountAsync">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="unapplyOnAccount" type="ns0:UnapplyOnAccount"/>
+                <element name="processControl" type="ns1:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processUnapplyOnAccountAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:UnapplyOnAccountResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createApplyOnAccount">
+        <complexType>
+            <sequence>
+                <element name="applyOnAccount" type="ns0:ApplyOnAccount"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createApplyOnAccountResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ApplyOnAccountResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processApplyOnAccount">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="applyOnAccount" type="ns0:ApplyOnAccount"/>
+                <element name="processControl" type="ns1:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processApplyOnAccountResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ApplyOnAccountResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createApplyOnAccountAsync">
+        <complexType>
+            <sequence>
+                <element name="applyOnAccount" type="ns0:ApplyOnAccount"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createApplyOnAccountAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ApplyOnAccountResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processApplyOnAccountAsync">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="applyOnAccount" type="ns0:ApplyOnAccount"/>
+                <element name="processControl" type="ns1:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processApplyOnAccountAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ApplyOnAccountResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createActivityApplication">
+        <complexType>
+            <sequence>
+                <element name="activityApplication" type="ns0:ActivityApplication"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createActivityApplicationResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ActivityApplicationResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processActivityApplication">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="activityApplication" type="ns0:ActivityApplication"/>
+                <element name="processControl" type="ns1:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processActivityApplicationResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ActivityApplicationResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createActivityUnapplication">
+        <complexType>
+            <sequence>
+                <element name="activityUnapplication" type="ns0:ActivityUnapplication"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createActivityUnapplicationResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ActivityUnapplicationResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processActivityUnapplication">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="activityUnapplication" type="ns0:ActivityUnapplication"/>
+                <element name="processControl" type="ns1:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processActivityUnapplicationResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ActivityUnapplicationResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processActivityApplicationAsync">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="activityApplication" type="ns0:ActivityApplication"/>
+                <element name="processControl" type="ns1:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processActivityApplicationAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ActivityApplicationResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processActivityUnapplicationAsync">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="activityUnapplication" type="ns0:ActivityUnapplication"/>
+                <element name="processControl" type="ns1:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processActivityUnapplicationAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ActivityUnapplicationResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createActivityApplicationAsync">
+        <complexType>
+            <sequence>
+                <element name="activityApplication" type="ns0:ActivityApplication"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createActivityApplicationAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ActivityApplicationResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createActivityUnapplicationAsync">
+        <complexType>
+            <sequence>
+                <element name="activityUnapplication" type="ns0:ActivityUnapplication"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createActivityUnapplicationAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ActivityUnapplicationResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDfltObjAttrHints">
+        <complexType>
+            <sequence>
+                <element name="viewName" type="string"/>
+                <element name="localeName" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDfltObjAttrHintsResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:ObjAttrHints"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getServiceLastUpdateTime">
+        <complexType>
+            <sequence/>
+        </complexType>
+    </element>
+    <element name="getServiceLastUpdateTimeResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:dateTime-Timestamp"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getEntityList">
+        <complexType>
+            <sequence/>
+        </complexType>
+    </element>
+    <element name="getEntityListResponse">
+        <complexType>
+            <sequence>
+                <element maxOccurs="unbounded" minOccurs="0" name="result" type="ns1:ServiceViewInfo"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getEntityListAsync">
+        <complexType>
+            <sequence/>
+        </complexType>
+    </element>
+    <element name="getEntityListAsyncResponse">
+        <complexType>
+            <sequence>
+                <element maxOccurs="unbounded" minOccurs="0" name="result" type="ns1:ServiceViewInfo"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDfltObjAttrHintsAsync">
+        <complexType>
+            <sequence>
+                <element name="viewName" type="string"/>
+                <element name="localeName" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDfltObjAttrHintsAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:ObjAttrHints"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getServiceLastUpdateTimeAsync">
+        <complexType>
+            <sequence/>
+        </complexType>
+    </element>
+    <element name="getServiceLastUpdateTimeAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:dateTime-Timestamp"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createApplyReceipt">
+        <complexType>
+            <sequence>
+                <element name="applyReceipt" type="ns0:ApplyReceipt"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createApplyReceiptResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ApplyReceiptResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processApplyReceipt">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="applyReceipt" type="ns0:ApplyReceipt"/>
+                <element name="processControl" type="ns1:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processApplyReceiptResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ApplyReceiptResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processApplyReceiptAsync">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="applyReceipt" type="ns0:ApplyReceipt"/>
+                <element name="processControl" type="ns1:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processApplyReceiptAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ApplyReceiptResult"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createApplyReceiptAsync">
+        <complexType>
+            <sequence>
+                <element name="applyReceipt" type="ns0:ApplyReceipt"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createApplyReceiptAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ApplyReceiptResult"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

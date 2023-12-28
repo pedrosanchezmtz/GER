@@ -1,0 +1,11 @@
+<adapter-config name="dbaReadCustomersBs" adapter="db" wsdlLocation="../WSDLs/External/dbaReadCustomers.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="ERSEPDB1DS" location="eis/DB/ERSEPDB1"/>
+  <endpoint-interaction portType="dbaReadCustomersBs_ptt" operation="dbaReadCustomers">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="SELECT     customer_id as &quot;CustomerId&quot;,     customer_name as &quot;Name&quot;,     trim(customer_middle_name ||' '||customer_last_name) as &quot;LastName&quot;,     fiscal_code as &quot;FiscalCode&quot;,     duns_number as &quot;DunsNumber&quot;,     account_name as &quot;AccountName&quot;,     customer_type as &quot;CustomerType&quot;,     replication_ind as &quot;ReplicationInd&quot;,     replication_msg as &quot;ReplicationMsg&quot;,     account_id as &quot;AccountId&quot;,     payment_terms as &quot;PaymentTerms&quot; FROM     xxer_ar_customers_v where 1=1"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

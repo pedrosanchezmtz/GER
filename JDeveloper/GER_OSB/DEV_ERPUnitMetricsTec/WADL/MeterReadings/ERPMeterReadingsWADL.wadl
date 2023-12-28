@@ -1,0 +1,22 @@
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns0="http://soa.estrellaroja.com.mx/ERPMeterReadings" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="ERPMeterReadings">RestReference</doc>
+   <grammars>
+      <xsd:schema>
+            <xsd:import namespace="http://soa.estrellaroja.com.mx/ERPMeterReadings" schemaLocation="../../XSD/MetricsReadings/ERPMeterReadingsTecNXSD.xsd"/>
+        </xsd:schema>
+   </grammars>
+   <resources>
+      <resource path="/">
+         <method name="POST" soa:wsdlOperation="postMeterReadings">
+            <request>
+               <representation mediaType="application/xml" element="cns:PostMeterReadingsRequest" xmlns:cns="http://soa.estrellaroja.com.mx/ERPMeterReadings"/>
+               <representation mediaType="application/json" element="cns:PostMeterReadingsRequest" xmlns:cns="http://soa.estrellaroja.com.mx/ERPMeterReadings"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/xml" element="cns:PostMeterReadingsResponse" xmlns:cns="http://soa.estrellaroja.com.mx/ERPMeterReadings"/>
+               <representation mediaType="application/json" element="cns:PostMeterReadingsResponse" xmlns:cns="http://soa.estrellaroja.com.mx/ERPMeterReadings"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

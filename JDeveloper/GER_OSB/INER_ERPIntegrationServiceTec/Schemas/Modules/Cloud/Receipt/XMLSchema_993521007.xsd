@@ -1,0 +1,20 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/model/flex/StandardReceiptGdf/" xmlns="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/model/flex/StandardReceiptGdf/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:include schemaLocation="XMLSchema_1361782915.xsd"/>
+    <xsd:complexType name="StandardReceiptGdfJA_5FCN_5FREMIT_5FBILL_5FNUM">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>CashReceiptId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="StandardReceiptGdf">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="_Remittance__Bill__Number" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="standardReceiptGdfJA_5FCN_5FREMIT_5FBILL_5FNUM" type="StandardReceiptGdfJA_5FCN_5FREMIT_5FBILL_5FNUM"/>
+</xsd:schema>

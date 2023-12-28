@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-persistence xmlns="http://www.eclipse.org/eclipselink/xsds/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eclipselink="http://www.eclipse.org/eclipselink/xsds/persistence" version="Eclipse Persistence Services - 2.6.4.v20160829-44060b6">
+   <name>dbGetValPaymentComplementsResume-OR</name>
+   <class-mapping-descriptors>
+      <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
+         <class>dbGetValPaymentComplementsResume.XeerApValpmtComplementsV</class>
+         <alias>XEER_AP_VALPMT_COMPLEMENTS_V</alias>
+         <primary-key>
+            <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="INC_PAYMENT_COMPLEMENT_ID" xsi:type="column"/>
+            <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="INC_PAYMENT_CMP_INVOICE_ID" xsi:type="column"/>
+         </primary-key>
+         <events/>
+         <querying>
+            <queries>
+               <query name="dbGetValPaymentComplementsResumeSelect" xsi:type="read-all-query">
+                  <arguments>
+                     <argument name="pComplementUuid">
+                        <type>java.lang.String</type>
+                     </argument>
+                     <argument name="pComplementRfcIssuer">
+                        <type>java.lang.String</type>
+                     </argument>
+                     <argument name="pComplementRfcReceiver">
+                        <type>java.lang.String</type>
+                     </argument>
+                     <argument name="pStatus">
+                        <type>java.lang.String</type>
+                     </argument>
+                     <argument name="pStartDate">
+                        <type>java.lang.String</type>
+                     </argument>
+                     <argument name="pEndDate">
+                        <type>java.lang.String</type>
+                     </argument>
+                  </arguments>
+                  <call xsi:type="sql-call">
+                     <sql>SELECT INC_PAYMENT_COMPLEMENT_ID, COMPLEMENT_RFC_ISSUER, COMPLEMENT_RFC_RECEIVER, COMPLEMENT_TOTAL_AMOUNT, COMPLEMENT_UUID, UUID_DATE, STATUS, STATUS_DESC, ATTATCHMENT, VALIDATION_RESPONSE, CHECK_NUMBER, INC_PAYMENT_CMP_INVOICE_ID, INVOICE_UUID, INSTALLMENT_NUMBER, INVOICE_RFC_ISSUER, INVOICE_RFC_RECEIVER, INVOICE_TOTAL_AMOUNT, BUSINESS_UNIT, INVOICE_NUMBER, SUPPLIER_NUMBER FROM XEER_AP_VALPMT_COMPLEMENTS_V
+WHERE 1 = 1
+  AND UUID_DATE BETWEEN TO_TIMESTAMP(#pStartDate, 'yyyy-MM-dd hh24:mi:SS.FF9')
+    AND TO_TIMESTAMP(#pEndDate, 'yyyy-MM-dd hh24:mi:SS.FF9')  
+    AND COMPLEMENT_UUID = NVL(#pComplementUuid,COMPLEMENT_UUID)
+    AND COMPLEMENT_RFC_ISSUER = NVL(#pComplementRfcIssuer,COMPLEMENT_RFC_ISSUER)
+    AND COMPLEMENT_RFC_RECEIVER = NVL(#pComplementRfcReceiver,COMPLEMENT_RFC_RECEIVER)
+    AND STATUS = NVL(#pStatus,STATUS)
+  </sql>
+                  </call>
+                  <reference-class>dbGetValPaymentComplementsResume.XeerApValpmtComplementsV</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>java.util.Vector</collection-type>
+                  </container>
+               </query>
+            </queries>
+         </querying>
+         <attribute-mappings>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>incPaymentComplementId</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="INC_PAYMENT_COMPLEMENT_ID" xsi:type="column"/>
+               <attribute-classification>java.lang.Long</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>complementRfcIssuer</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="COMPLEMENT_RFC_ISSUER" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>complementRfcReceiver</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="COMPLEMENT_RFC_RECEIVER" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>complementTotalAmount</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="COMPLEMENT_TOTAL_AMOUNT" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>complementUuid</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="COMPLEMENT_UUID" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>uuidDate</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="UUID_DATE" xsi:type="column"/>
+               <attribute-classification>java.sql.Timestamp</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>status</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="STATUS" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>statusDesc</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="STATUS_DESC" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>attatchment</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="ATTATCHMENT" xsi:type="column"/>
+               <attribute-classification>[C</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>validationResponse</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="VALIDATION_RESPONSE" xsi:type="column"/>
+               <attribute-classification>[C</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>checkNumber</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="CHECK_NUMBER" xsi:type="column"/>
+               <attribute-classification>java.lang.Long</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>incPaymentCmpInvoiceId</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="INC_PAYMENT_CMP_INVOICE_ID" xsi:type="column"/>
+               <attribute-classification>java.lang.Long</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>invoiceUuid</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="INVOICE_UUID" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>installmentNumber</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="INSTALLMENT_NUMBER" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>invoiceRfcIssuer</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="INVOICE_RFC_ISSUER" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>invoiceRfcReceiver</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="INVOICE_RFC_RECEIVER" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>invoiceTotalAmount</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="INVOICE_TOTAL_AMOUNT" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>businessUnit</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="BUSINESS_UNIT" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>invoiceNumber</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="INVOICE_NUMBER" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>supplierNumber</attribute-name>
+               <field table="XEER_AP_VALPMT_COMPLEMENTS_V" name="SUPPLIER_NUMBER" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+         </attribute-mappings>
+         <descriptor-type>independent</descriptor-type>
+         <caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+            <always-refresh>true</always-refresh>
+         </caching>
+         <remote-caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+         </remote-caching>
+         <instantiation/>
+         <copying xsi:type="instantiation-copy-policy"/>
+         <tables>
+            <table name="XEER_AP_VALPMT_COMPLEMENTS_V"/>
+         </tables>
+         <structure>structureName</structure>
+      </class-mapping-descriptor>
+   </class-mapping-descriptors>
+   <login xsi:type="database-login">
+      <platform-class>org.eclipse.persistence.platform.database.oracle.Oracle9Platform</platform-class>
+      <connection-url></connection-url>
+   </login>
+</object-persistence>

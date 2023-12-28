@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="InvoicesEnt" targetNamespace="http://soa.estrellaroja.com.mx/InvoicesEnt" xmlns:tns="http://soa.estrellaroja.com.mx/InvoicesEnt" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://soa.estrellaroja.com.mx/InvoicesEnt" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.estrellaroja.com.mx/InvoicesEnt/types" elementFormDefault="qualified">
+<xsd:import namespace="http://soa.estrellaroja.com.mx/InvoicesEnt" schemaLocation="InvoicesEnt.xsd"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="GetInvoicesRq">
+<wsdl:part name="GetInvoicesRq" element="ns0:GetInvoicesRq"/>
+</wsdl:message>
+<wsdl:message name="GetInvoicesRs">
+<wsdl:part name="GetInvoicesRs" element="ns0:GetInvoicesRs"/>
+</wsdl:message>
+<wsdl:message name="ElecInvoicesRq">
+<wsdl:part name="ElecInvoicesRq" element="ns0:ElecInvoicesRq"/>
+</wsdl:message>
+<wsdl:message name="ElecInvoicesRs">
+<wsdl:part name="ElecInvoicesRs" element="ns0:ElecInvoicesRs"/>
+</wsdl:message>
+<wsdl:message name="ValidateInvoicesAPRq">
+<wsdl:part name="ValidateInvoicesAPRq" element="ns0:ValidateInvoicesAPRq"/>
+</wsdl:message>
+<wsdl:message name="ValidateInvoicesAPRs">
+<wsdl:part name="ValidateInvoicesAPRs" element="ns0:ValidateInvoicesAPRs"/>
+</wsdl:message>
+<wsdl:message name="ValidatePaymentComplementsRq">
+<wsdl:part name="ValidatePaymentComplementsRqPart" element="tns:ValidatePaymentComplementsRq"/>
+</wsdl:message>
+<wsdl:message name="ValidatePaymentComplementsRs">
+<wsdl:part name="ValidatePaymentComplementsRsPart" element="tns:ValidatePaymentComplementsRs"/>
+</wsdl:message>
+<wsdl:portType name="InvoicesEntPortType">
+<wsdl:operation name="GetInvoices">
+<wsdl:input message="tns:GetInvoicesRq"/>
+<wsdl:output message="tns:GetInvoicesRs"/>
+</wsdl:operation>
+<wsdl:operation name="ElecInvoices">
+<wsdl:input message="tns:ElecInvoicesRq"/>
+<wsdl:output message="tns:ElecInvoicesRs"/>
+</wsdl:operation>
+<wsdl:operation name="ValidateInvoicesAP">
+<wsdl:input message="tns:ValidateInvoicesAPRq"/>
+<wsdl:output message="tns:ValidateInvoicesAPRs"/>
+</wsdl:operation>
+<wsdl:operation name="ValidatePaymentComplements">
+<wsdl:input message="tns:ValidatePaymentComplementsRq"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="InvoicesEntBinding" type="tns:InvoicesEntPortType">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="GetInvoices">
+<soap:operation soapAction="http://soa.estrellaroja.com.mx/InvoicesEnt/GetInvoices"/>
+<wsdl:input>
+<soap:body use="literal" parts="GetInvoicesRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="GetInvoicesRs"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ElecInvoices">
+<soap:operation soapAction="http://soa.estrellaroja.com.mx/InvoicesEnt/ElecInvoices"/>
+<wsdl:input>
+<soap:body use="literal" parts="ElecInvoicesRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="ElecInvoicesRs"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ValidateInvoicesAP">
+<soap:operation soapAction="http://soa.estrellaroja.com.mx/InvoicesEnt/ValidateInvoicesAP"/>
+<wsdl:input>
+<soap:body use="literal" parts="ValidateInvoicesAPRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="ValidateInvoicesAPRs"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ValidatePaymentComplements">
+<soap:operation soapAction="http://soa.estrellaroja.com.mx/InvoicesEnt/ValidatePaymentComplements"/>
+<wsdl:input>
+<soap:body use="literal" parts="ValidatePaymentComplementsRqPart"/>
+</wsdl:input>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:portType name="InvoicesEntCallbackPortType">
+<wsdl:operation name="ValidatePaymentComplements">
+<wsdl:input message="tns:ValidatePaymentComplementsRs"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:service name="InvoicesEntService">
+<wsdl:port name="InvoicesEntPort" binding="tns:InvoicesEntBinding">
+<soap:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/INERDEV/InvoicesEnt/InvoicesEnt"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/Tables/XXER_CONF_VALIDADOR_XML_TBL" targetNamespace="http://soa.estrellaroja.com.mx/Tables/XXER_CONF_VALIDADOR_XML_TBL" elementFormDefault="qualified" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+<xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+<xsd:element name="XXER_CONF_VALIDADOR_XML_TBL">
+<xsd:complexType>
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="ROW" type="tns:ConfigType" maxOccurs="unbounded" minOccurs="0"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="ConfigType">
+<xsd:sequence>
+<xsd:element name="ID" nillable="true" type="xsd:int" minOccurs="0"/>
+<xsd:element name="INTEGRACION" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="CODE" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PROCCESS" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="ACTION" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="ORDER" nillable="true" type="xsd:int" minOccurs="0"/>
+<xsd:element name="NAME" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="TYPE" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="VERSION" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="MESSAGE" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="DESC" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PARAMETER1" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PARAMETER2" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PARAMETER3" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PARAMETER4" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PARAMETER5" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="CREATION_DATE" nillable="true" type="xsd:date" minOccurs="0"/>
+<xsd:element name="CREATED_BY" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="LAST_UPDATE_DATE" nillable="true" type="xsd:date" minOccurs="0"/>
+<xsd:element name="LAST_UPDATED_BY" nillable="true" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="ConsultaZAM" type="tns:ConsultaZAMType"/>
+<xsd:complexType name="ConsultaZAMType">
+<xsd:sequence>
+<xsd:element name="ZipCodes">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ZipCode" type="tns:ZipCodeType" maxOccurs="unbounded" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Products">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Product" type="tns:ProductType" maxOccurs="unbounded" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ZipCodeType">
+<xsd:sequence>
+<xsd:element name="ZipCode" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="ZipCodeZAM" nillable="true" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ProductType">
+<xsd:sequence>
+<xsd:element name="Product" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="clasif_mat_peligroso" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="material_peligroso" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="id_producto" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fecha_ingreso" nillable="true" type="xsd:date" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

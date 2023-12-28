@@ -1,0 +1,408 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/InventoryBiz" targetNamespace="http://soa.estrellaroja.com.mx/InventoryBiz" elementFormDefault="qualified" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+<xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+<xsd:element name="InventoryBizRq" nillable="true">
+<xsd:annotation>
+<xsd:documentation>Element for Request.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="InventoryBizRs" type="tns:GenerateZipFileRsType">
+<xsd:annotation>
+<xsd:documentation>Element for Response.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="EncodeInventoryTransactionRq" type="tns:EncodeRqType">
+<xsd:annotation>
+<xsd:documentation>Element for Request.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="InventoryTemplate" type="tns:InventoryTemplateType">
+<xsd:annotation>
+<xsd:documentation>Element for Response.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="InventoryTransactionResultRq" type="tns:InventoryTransactionResultRqType"/>
+<xsd:element name="InventoryTransactionResultRs" type="tns:InventoryTransactionResultRsType"/>
+<xsd:complexType name="GetInventoryTransactionsReturnType">
+<xsd:sequence>
+<xsd:element name="InventoryTransaction" type="tns:InventoryTransactionType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="InventoryTransactionType">
+<xsd:sequence>
+<xsd:element name="OrganizationName" type="xsd:string" nillable="true"/>
+<xsd:element name="TransactionDate" type="xsd:dateTime" nillable="true"/>
+<xsd:element name="TransactionTypeName" type="xsd:string" nillable="true"/>
+<xsd:element name="SourceCode" type="xsd:string" nillable="true"/>
+<xsd:element name="SourceHeaderId" type="xsd:decimal" nillable="true"/>
+<xsd:element name="SourceLineId" type="xsd:decimal" nillable="true"/>
+<xsd:element name="TransactionSourceName" type="xsd:string" nillable="true"/>
+<xsd:element name="DspSegment1" type="xsd:string" nillable="true"/>
+<xsd:element name="DspSegment2" type="xsd:string" nillable="true"/>
+<xsd:element name="DspSegment3" type="xsd:string" nillable="true"/>
+<xsd:element name="DspSegment4" type="xsd:string" nillable="true"/>
+<xsd:element name="DspSegment5" type="xsd:string" nillable="true"/>
+<xsd:element name="DspSegment6" type="xsd:string" nillable="true"/>
+<xsd:element name="DspSegment7" type="xsd:string" nillable="true"/>
+<xsd:element name="DspSegment8" type="xsd:string" nillable="true"/>
+<xsd:element name="ProcessFlag" type="xsd:decimal" nillable="true"/>
+<xsd:element name="ItemNumber" type="xsd:string" nillable="true"/>
+<xsd:element name="SubinvetoryCode" type="xsd:string" nillable="true"/>
+<xsd:element name="LocatorName" type="xsd:string" nillable="true"/>
+<xsd:element name="TransactionQuantity" type="xsd:decimal" nillable="true"/>
+<xsd:element name="TransactionUom" type="xsd:string" nillable="true"/>
+<xsd:element name="TransactionUnitOfMeasure" type="xsd:string" nillable="true"/>
+<xsd:element name="TransactionSourceTypeName" type="xsd:string" nillable="true"/>
+<xsd:element name="TransactionMode" type="xsd:decimal" nillable="true"/>
+<xsd:element name="Attribute1" type="xsd:string" nillable="true"/>
+<xsd:element name="Attribute2" type="xsd:string" nillable="true"/>
+<xsd:element name="Attribute3" type="xsd:string" nillable="true"/>
+<xsd:element name="Attribute4" type="xsd:string" nillable="true"/>
+<xsd:element name="Attribute5" type="xsd:string" nillable="true"/>
+<xsd:element name="Attribute6" type="xsd:string" nillable="true"/>
+<xsd:element name="Attribute7" type="xsd:string" nillable="true"/>
+<xsd:element name="Attribute8" type="xsd:string" nillable="true"/>
+<xsd:element name="Attribute9" type="xsd:string" nillable="true"/>
+<xsd:element name="Attribute10" type="xsd:string" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="EncodeRqType">
+<xsd:sequence>
+<xsd:element name="ContentData" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="EncodeRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:annotation>
+<xsd:documentation>Extends BaseRsType (Success and Errors nodes). Contains a node which should be used for the specific response of the corresponding service.</xsd:documentation>
+</xsd:annotation>
+<xsd:sequence>
+<xsd:element name="Return" minOccurs="0" type="tns:EncodeReturnType" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="EncodeReturnType">
+<xsd:sequence>
+<xsd:element name="DataBase64" type="xsd:base64Binary"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="InventoryTemplateType">
+<xsd:sequence>
+<xsd:element name="Inventory" type="tns:InventoryType" minOccurs="1" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="InventoryTransactionResultRqType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="Return" type="tns:InventoryTransactionResultReturnType" minOccurs="0"/>
+<xsd:element name="totalSuccess" type="xsd:string" minOccurs="0"/>
+<xsd:element name="totalError" type="xsd:string" minOccurs="0"/>
+<xsd:element name="total" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="InventoryTransactionResultRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="Return" type="tns:InventoryTransactionReturnType" minOccurs="0"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="InventoryTransactionResultReturnType">
+<xsd:sequence>
+<xsd:element name="Processes" type="tns:ProcessesType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ProcessesType">
+<xsd:sequence>
+<xsd:element name="Process" maxOccurs="unbounded" type="tns:ProcessType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ProcessType">
+<xsd:sequence>
+<xsd:element name="Id" type="xsd:long"/>
+<xsd:element name="ProcessName" type="xsd:string"/>
+<xsd:element name="Status" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="InventoryType">
+<xsd:sequence>
+<xsd:element name="ORGANIZATION_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_GROUP_ID" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_GROUP_SEQ" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_BATCH_ID" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_BATCH_SEQ" type="xsd:string" nillable="true"/>
+<xsd:element name="PROCESS_FLAG" type="xsd:string" nillable="true"/>
+<xsd:element name="INVENTORY_ITEM" type="xsd:string" nillable="true"/>
+<xsd:element name="ITEM_NUMBER" type="xsd:string" nillable="true"/>
+<xsd:element name="REVISION" type="xsd:string" nillable="true"/>
+<xsd:element name="INV_LOTSERIAL_INTERFACE_NUM" type="xsd:string" nillable="true"/>
+<xsd:element name="SUBINVENTORY_CODE" type="xsd:string" nillable="true"/>
+<xsd:element name="LOCATOR_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT1" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT2" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT3" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT4" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT5" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT6" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT7" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT8" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT9" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT10" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT11" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT12" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT13" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT14" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT15" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT16" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT17" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT18" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT19" type="xsd:string" nillable="true"/>
+<xsd:element name="LOC_SEGMENT20" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_QUANTITY" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_UOM" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_UNIT_OF_MEASURE" type="xsd:string" nillable="true"/>
+<xsd:element name="RESERVATION_QUANTITY" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_DATE" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_SOURCE_TYPE_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_TYPE_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSFER_ORGANIZATION_TYPE" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSFER_ORGANIZATION_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSFER_SUBINVENTORY" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT1" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT2" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT3" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT4" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT5" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT6" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT7" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT8" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT9" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT10" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT11" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT12" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT13" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT14" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT15" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT16" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT17" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT18" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT19" type="xsd:string" nillable="true"/>
+<xsd:element name="XFER_LOC_SEGMENT20" type="xsd:string" nillable="true"/>
+<xsd:element name="PRIMARY_QUANTITY" type="xsd:string" nillable="true"/>
+<xsd:element name="SECONDARY_TRANSACTION_QUANTITY" type="xsd:string" nillable="true"/>
+<xsd:element name="SECONDARY_UOM_CODE" type="xsd:string" nillable="true"/>
+<xsd:element name="SECONDARY_UNIT_OF_MEASURE" type="xsd:string" nillable="true"/>
+<xsd:element name="SOURCE_CODE" type="xsd:string" nillable="true"/>
+<xsd:element name="SOURCE_HEADER_ID" type="xsd:string" nillable="true"/>
+<xsd:element name="SOURCE_LINE_ID" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_SOURCE_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT1" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT2" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT3" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT4" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT5" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT6" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT7" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT8" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT9" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT10" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT11" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT12" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT13" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT14" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT15" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT16" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT17" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT18" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT19" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT20" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT21" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT22" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT23" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT24" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT25" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT26" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT27" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT28" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT29" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT30" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_ACTION_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_MODE" type="xsd:string" nillable="true"/>
+<xsd:element name="LOCK_FLAG" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_REFERENCE" type="xsd:string" nillable="true"/>
+<xsd:element name="REASON_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="CURRENCY_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="CURRENCY_CODE" type="xsd:string" nillable="true"/>
+<xsd:element name="CURRENCY_CONVERSION_TYPE" type="xsd:string" nillable="true"/>
+<xsd:element name="CURRENCY_CONVERSION_RATE" type="xsd:string" nillable="true"/>
+<xsd:element name="CURRENCY_CONVERSION_DATE" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_COST" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSFER_COST" type="xsd:string" nillable="true"/>
+<xsd:element name="NEW_AVERAGE_COST" type="xsd:string" nillable="true"/>
+<xsd:element name="VALUE_CHANGE" type="xsd:string" nillable="true"/>
+<xsd:element name="PERCENTAGE_CHANGE" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT1" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT2" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT3" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT4" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT5" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT6" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT7" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT8" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT9" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT10" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT11" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT12" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT13" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT14" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT15" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT16" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT17" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT18" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT19" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT20" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT21" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT22" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT23" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT24" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT25" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT26" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT27" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT28" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT29" type="xsd:string" nillable="true"/>
+<xsd:element name="DST_SEGMENT30" type="xsd:string" nillable="true"/>
+<xsd:element name="LOCATION_TYPE" type="xsd:string" nillable="true"/>
+<xsd:element name="EMPLOYEE_CODE" type="xsd:string" nillable="true"/>
+<xsd:element name="RECEIVING_DOCUMENT" type="xsd:string" nillable="true"/>
+<xsd:element name="LINE_ITEM_NUM" type="xsd:string" nillable="true"/>
+<xsd:element name="SHIPMENT_NUMBER" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSPORTATION_COST" type="xsd:string" nillable="true"/>
+<xsd:element name="CONTAINERS" type="xsd:string" nillable="true"/>
+<xsd:element name="WAYBILL_AIRBILL" type="xsd:string" nillable="true"/>
+<xsd:element name="EXPECTED_ARRIVAL_DATE" type="xsd:string" nillable="true"/>
+<xsd:element name="REQUIRED_FLAG" type="xsd:string" nillable="true"/>
+<xsd:element name="SHIPPABLE_FLAG" type="xsd:string" nillable="true"/>
+<xsd:element name="SHIPPED_QUANTITY" type="xsd:string" nillable="true"/>
+<xsd:element name="VALIDATION_REQUIRED" type="xsd:string" nillable="true"/>
+<xsd:element name="NEGATIVE_REQ_FLAG" type="xsd:string" nillable="true"/>
+<xsd:element name="OWNING_TP_TYPE" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSFER_OWNING_TP_TYPE" type="xsd:string" nillable="true"/>
+<xsd:element name="OWNING_ORGANIZATION_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="XFR_OWNING_ORGANIZATION_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSFER_PERCENTAGE" type="xsd:string" nillable="true"/>
+<xsd:element name="PLANNING_TP_TYPE" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSFER_PLANNING_TP_TYPE" type="xsd:string" nillable="true"/>
+<xsd:element name="ROUTING_REVISION" type="xsd:string" nillable="true"/>
+<xsd:element name="ROUTING_REVISION_DATE" type="xsd:string" nillable="true"/>
+<xsd:element name="ALTERNATE_BOM_DESIGNATOR" type="xsd:string" nillable="true"/>
+<xsd:element name="ALTERNATE_ROUTING_DESIGNATOR" type="xsd:string" nillable="true"/>
+<xsd:element name="ORGANIZATION_TYPE" type="xsd:string" nillable="true"/>
+<xsd:element name="USSGL_TRANSACTION_CODE" type="xsd:string" nillable="true"/>
+<xsd:element name="WIP_ENTITY_TYPE" type="xsd:string" nillable="true"/>
+<xsd:element name="SCHEDULE_UPDATE_CODE" type="xsd:string" nillable="true"/>
+<xsd:element name="SETUP_TEARDOWN_CODE" type="xsd:string" nillable="true"/>
+<xsd:element name="PRIMARY_SWITCH" type="xsd:string" nillable="true"/>
+<xsd:element name="MRP_CODE" type="xsd:string" nillable="true"/>
+<xsd:element name="OPERATION_SEQ_NUM" type="xsd:string" nillable="true"/>
+<xsd:element name="WIP_SUPPLY_TYPE" type="xsd:string" nillable="true"/>
+<xsd:element name="RELIEVE_RESERVATIONS_FLAG" type="xsd:string" nillable="true"/>
+<xsd:element name="RELIEVE_HIGH_LEVEL_RSV_FLAG" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSFER_PRICE" type="xsd:string" nillable="true"/>
+<xsd:element name="BUILD_BREAK_TO_UOM" type="xsd:string" nillable="true"/>
+<xsd:element name="BUILD_BREAK_TO_UNIT_OF_MEASURE" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_CATEGORY" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE1" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE2" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE3" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE4" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE5" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE6" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE7" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE8" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE9" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE10" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE11" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE12" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE13" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE14" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE15" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE16" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE17" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE18" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE19" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE20" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_NUMBER1" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_NUMBER2" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_NUMBER3" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_NUMBER4" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_NUMBER5" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_NUMBER6" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_NUMBER7" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_NUMBER8" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_NUMBER9" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_NUMBER10" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_DATE1" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_DATE2" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_DATE3" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_DATE4" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_DATE5" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_TIMESTAMP1" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_TIMESTAMP2" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_TIMESTAMP3" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_TIMESTAMP4" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE_TIMESTAMP5" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_COST_IDENTIFIER" type="xsd:string" nillable="true"/>
+<xsd:element name="DEFAULT_TAXATION_COUNTRY" type="xsd:string" nillable="true"/>
+<xsd:element name="DOCUMENT_SUB_TYPE" type="xsd:string" nillable="true"/>
+<xsd:element name="TRX_BUSINESS_CATEGORY" type="xsd:string" nillable="true"/>
+<xsd:element name="USER_DEFINED_FISC_CLASS" type="xsd:string" nillable="true"/>
+<xsd:element name="TAX_INVOICE_NUMBER" type="xsd:string" nillable="true"/>
+<xsd:element name="TAX_INVOICE_DATE" type="xsd:string" nillable="true"/>
+<xsd:element name="PRODUCT_CATEGORY" type="xsd:string" nillable="true"/>
+<xsd:element name="PRODUCT_TYPE" type="xsd:string" nillable="true"/>
+<xsd:element name="ASSESSABLE_VALUE" type="xsd:string" nillable="true"/>
+<xsd:element name="TAX_CLASSIFICATION_CODE" type="xsd:string" nillable="true"/>
+<xsd:element name="EXEMPT_CERTIFICATE_NUMBER" type="xsd:string" nillable="true"/>
+<xsd:element name="EXEMPT_REASON_CODE" type="xsd:string" nillable="true"/>
+<xsd:element name="INTENDED_USE" type="xsd:string" nillable="true"/>
+<xsd:element name="FIRST_PTY_NUMBER" type="xsd:string" nillable="true"/>
+<xsd:element name="THIRD_PTY_NUMBER" type="xsd:string" nillable="true"/>
+<xsd:element name="FINAL_DISCHARGE_LOC_CODE" type="xsd:string" nillable="true"/>
+<xsd:element name="CATEGORY_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="OWNING_ORGANIZATION_ID" type="xsd:string" nillable="true"/>
+<xsd:element name="XFR_OWNING_ORGANIZATION_ID" type="xsd:string" nillable="true"/>
+<xsd:element name="PRC_BU_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="VENDOR_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="VENDOR_NUMBER" type="xsd:string" nillable="true"/>
+<xsd:element name="CONSIGNMENT_AGREEMENT_NUM" type="xsd:string" nillable="true"/>
+<xsd:element name="END" type="xsd:string" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GenerateZipFileRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="Return" type="tns:GenerateZipFileReturnType"/>
+<xsd:element name="NumberTransactions" type="xsd:string"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="GenerateZipFileReturnType">
+<xsd:sequence>
+<xsd:element name="ContentBase64" type="xsd:base64Binary"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="InventoryTransactionReturnType">
+<xsd:sequence>
+<xsd:element name="Result" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

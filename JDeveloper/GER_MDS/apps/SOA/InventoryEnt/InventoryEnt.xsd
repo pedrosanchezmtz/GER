@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/InventoryEnt" targetNamespace="http://soa.estrellaroja.com.mx/InventoryEnt" elementFormDefault="qualified" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+<xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+<xsd:element name="ImportInventoryRq" type="tns:ImportInventoryRqType">
+<xsd:annotation>
+<xsd:documentation>Element for Request.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="ImportInventoryRs" type="tns:ImportInventoryRsType">
+<xsd:annotation>
+<xsd:documentation>Element for Response.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="ConsultInventoryRq" type="tns:ConsultInventoryRqType"/>
+<xsd:element name="ConsultInventoryRsCollection" type="tns:ConsultInventoryRsType">
+<xsd:annotation>
+<xsd:documentation>Type for the service exit.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:complexType name="ImportInventoryRqType">
+<xsd:sequence>
+<xsd:element name="FirstElement"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ImportInventoryRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:annotation>
+<xsd:documentation>Extends BaseRsType (Success and Errors nodes). Contains a node which should be used for the specific response of the corresponding service.</xsd:documentation>
+</xsd:annotation>
+<xsd:sequence>
+<xsd:element name="Return" minOccurs="0" type="tns:ImportInventoryReturnType" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="ImportInventoryReturnType">
+<xsd:sequence>
+<xsd:element name="FirstData" type="tns:FirstDataType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="FirstDataType">
+<xsd:sequence>
+<xsd:element name="FirstElement"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ConsultInventoryRqType">
+<xsd:sequence/>
+</xsd:complexType>
+<xsd:complexType name="ConsultInventoryRsType">
+<xsd:annotation>
+<xsd:documentation>Type for the service exit.</xsd:documentation>
+</xsd:annotation>
+<xsd:sequence>
+<xsd:element name="ORGANIZATION_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_DATE" type="xsd:dateTime" nillable="true"/>
+<xsd:element name="TRANSACTION_TYPE_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="SOURCE_CODE" type="xsd:string" nillable="true"/>
+<xsd:element name="SOURCE_HEADER_ID" type="xsd:decimal" nillable="true"/>
+<xsd:element name="SOURCE_LINE_ID" type="xsd:decimal" nillable="true"/>
+<xsd:element name="TRANSACTION_SOURCE_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT1" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT2" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT3" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT4" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT5" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT6" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT7" type="xsd:string" nillable="true"/>
+<xsd:element name="DSP_SEGMENT8" type="xsd:string" nillable="true"/>
+<xsd:element name="PROCESS_FLAG" type="xsd:decimal" nillable="true"/>
+<xsd:element name="ITEM_NUMBER" type="xsd:string" nillable="true"/>
+<xsd:element name="SUBINVENTORY_CODE" type="xsd:string" nillable="true"/>
+<xsd:element name="LOCATOR_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_QUANTITY" type="xsd:decimal" nillable="true"/>
+<xsd:element name="TRANSACTION_UOM" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_UNIT_OF_MEASURE" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_SOURCE_TYPE_NAME" type="xsd:string" nillable="true"/>
+<xsd:element name="TRANSACTION_MODE" type="xsd:decimal" nillable="true"/>
+<xsd:element name="ATTRIBUTE1" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE2" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE3" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE4" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE5" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE6" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE7" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE8" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE9" type="xsd:string" nillable="true"/>
+<xsd:element name="ATTRIBUTE10" type="xsd:string" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

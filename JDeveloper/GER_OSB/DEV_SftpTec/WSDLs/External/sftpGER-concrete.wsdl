@@ -1,0 +1,30 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/ftp/GER_OSB_OCI/DEV_SftpTec/sftpGER" name="sftpGER-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="sftpGER.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/ftp/GER_OSB_OCI/DEV_SftpTec/sftpGER"/>
+    <wsdl:binding name="sftp_ger_ptt-binding" type="sft:sftp_ger_ptt" xmlns:sft="http://xmlns.oracle.com/pcbpel/adapter/ftp/GER_OSB_OCI/DEV_SftpTec/sftpGER">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="PutFile">
+            <soap:operation soapAction="PutFile"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="SynchRead">
+            <soap:operation soapAction="SynchRead"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="FileListing">
+            <soap:operation soapAction="FileListing"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

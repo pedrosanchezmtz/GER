@@ -1,0 +1,67 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbIncPaymentComplements" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbIncPaymentComplements" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxerIncPaymentComplementsCollection" type="XxerIncPaymentComplementsCollection"/>
+   <xs:complexType name="XxerIncPaymentComplementsCollection">
+      <xs:sequence>
+         <xs:element name="XxerIncPaymentComplements" type="XxerIncPaymentComplements" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerIncPaymentComplements">
+      <xs:sequence>
+         <xs:element name="incPaymentComplementId" type="xs:long" nillable="true"/>
+         <xs:element name="rfcIssuer" type="string150" minOccurs="0"/>
+         <xs:element name="rfcReceiver" type="string150" minOccurs="0"/>
+         <xs:element name="totalAmount" type="xs:decimal" minOccurs="0"/>
+         <xs:element name="uuid" type="string150" minOccurs="0"/>
+         <xs:element name="uuidDate" type="xs:dateTime" minOccurs="0"/>
+         <xs:element name="status" type="string150" minOccurs="0"/>
+         <xs:element name="statusDesc" type="string500" minOccurs="0" nillable="true"/>
+         <xs:element name="attatchment" type="xs:string" minOccurs="0" nillable="true"/>
+         <xs:element name="validationResponse" type="xs:string" minOccurs="0" nillable="true"/>
+         <xs:element name="createdBy" type="string150" minOccurs="0"/>
+         <xs:element name="creationDate" type="xs:dateTime" minOccurs="0"/>
+         <xs:element name="lastUpdatedBy" type="string150" minOccurs="0"/>
+         <xs:element name="lastUpdateDate" type="xs:dateTime" minOccurs="0"/>
+         <xs:element name="objectVersionNumber" type="xs:int" minOccurs="0"/>
+         <xs:element name="checkNumber" type="xs:long" minOccurs="0" nillable="true"/>
+         <xs:element name="xxerIncPaymentCmpInvoicesCollection" minOccurs="0">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="XxerIncPaymentCmpInvoices" type="XxerIncPaymentCmpInvoices" minOccurs="0" maxOccurs="unbounded"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerIncPaymentCmpInvoices">
+      <xs:sequence>
+         <xs:element name="incPaymentCmpInvoiceId" type="xs:long" nillable="true"/>
+         <xs:element name="uuid" type="string150" minOccurs="0"/>
+         <xs:element name="installmentNumber" type="string20" minOccurs="0"/>
+         <xs:element name="createdBy" type="string150" minOccurs="0"/>
+         <xs:element name="creationDate" type="xs:dateTime" minOccurs="0"/>
+         <xs:element name="lastUpdatedBy" type="string150" minOccurs="0"/>
+         <xs:element name="lastUpdateDate" type="xs:dateTime" minOccurs="0"/>
+         <xs:element name="objectVersionNumber" type="xs:int" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="dbIncPaymentComplementsSelectInputParameters" type="dbIncPaymentComplementsSelect"/>
+   <xs:complexType name="dbIncPaymentComplementsSelect">
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:simpleType name="string150">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="150"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string500">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="500"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string20">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="20"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

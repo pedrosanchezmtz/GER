@@ -1,0 +1,40 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/" sdoJava:package="oracle.apps.scm.commonWorkExecution.workOrderMaterialTransactions.materialTransactionsService" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:sdoJava="commonj.sdo/java" xmlns:sdoXML="commonj.sdo/xml" xmlns="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation xmlns:oer="http://xmlns.oracle.com/oer">
+            <name>Material Transaction Process Status Translation</name>
+            <description>Import Material Transactions</description>
+            <oer:category name="lbo">
+                <value>SCM-SCM : WIE-Common Work Execution : ORA_WO_MATERIAL_TRANSACTION-Work Order
+                    Material Transaction</value>
+            </oer:category>
+            <oer:attributes>
+                <oer:attribute description="The user specified description of the interface batch." name="InterfaceBatchDescription"/>
+                <oer:attribute description="The system identifier of the interface batch." name="InterfaceBatchId"/>
+                <oer:attribute description="The user identifier of the interface batch." name="InterfaceBatchName"/>
+                <oer:attribute description="The language to be displayed on user side." name="Language"/>
+                <oer:attribute description="The source language of the transaction." name="SourceLang"/>
+            </oer:attributes>
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="../Commons/BC4JService.xsd"/>
+    <xsd:import namespace="commonj.sdo/java" schemaLocation="../Commons/sdoJava.xsd"/>
+    <xsd:import namespace="commonj.sdo/xml" schemaLocation="../Commons/sdoXML.xsd"/>
+    <xsd:complexType name="ProcessStatusTranslation">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>InterfaceBatchId</attribute>
+                    <attribute>Language</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="InterfaceBatchDescription" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="InterfaceBatchId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+            <xsd:element minOccurs="0" name="InterfaceBatchName" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="Language" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="SourceLang" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="processStatusTranslation" type="ProcessStatusTranslation"/>
+</xsd:schema>

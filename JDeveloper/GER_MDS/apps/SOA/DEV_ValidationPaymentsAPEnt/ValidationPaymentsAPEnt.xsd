@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/ValidationPaymentsAPEnt" targetNamespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPEnt" elementFormDefault="qualified" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+<xsd:import schemaLocation="oramds:/apps/Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+<xsd:element name="SendPaymentsAPRq" type="tns:SendPaymentsAPRqType"/>
+<xsd:element name="SendPaymentsAPRs" type="tns:SendPaymentsAPRsType"/>
+<xsd:complexType name="SendPaymentsAPRqType">
+<xsd:sequence>
+<xsd:element name="DateInitial" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="SendPaymentsAPRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType"/>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

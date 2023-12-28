@@ -1,0 +1,1648 @@
+<wsdl:definitions name="OrganizationService" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/" xmlns:orafault="http://xmlns.oracle.com/oracleas/schema/oracle-fault-11_0" xmlns:tns="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:types="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/types/">
+    <wsdl:documentation xmlns:oer="http://xmlns.oracle.com/oer">
+        <name>Trading Community Organization</name>
+        <description>A company or organization such as Oracle or Dell that is registered
+            in some jurisdiction and can enter into a business relationship with
+            other legal entities.</description>
+        <docCategories>
+            <category>Integration</category>
+        </docCategories>
+        <oer:lifecycle>Active</oer:lifecycle>
+        <oer:compatibility>Supported - Backward Compatibility Assured</oer:compatibility>
+        <oer:category name="lba">
+            <value>CdmTop-Customer Data Management</value>
+            <value>CdmTop-Customer Data Management : FoundationTop-Foundation</value>
+            <value>CdmTop-Customer Data Management : FoundationTop-Foundation :
+                FoundationParties-Parties</value>
+        </oer:category>
+        <oer:category name="lbo">
+            <value>CRM-CRM : HZ-Trading Community Model : HZ_ORGANIZATION-Trading
+                Community Organization</value>
+        </oer:category>
+        <oer:operation name="getOrganization">
+            <description>Get operation for Trading Community Organization Details</description>
+            <oer:parameters>
+                <oer:parameter name="partyId" description="Party identifier"/>
+                <oer:return description="Trading Community Organization Details that matches the inbound key attributes."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="createOrganization">
+            <description>Create operation for Trading Community Organization Details</description>
+            <oer:parameters>
+                <oer:parameter name="organizationParty" description="Trading Community Organization Details to be created"/>
+                <oer:return description="Result of the operation includes the successfully created Trading Community Organization Details and/or a list of warnings or informational messages."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="updateOrganization">
+            <description>Update operation for Trading Community Organization Details</description>
+            <oer:parameters>
+                <oer:parameter name="organizationParty" description="Trading Community Organization Details to be updated"/>
+                <oer:return description="Result of the operation includes the successfully updated Trading Community Organization Details and/or a list of warnings or informational messages."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="mergeOrganization">
+            <description>Merge operation for Trading Community Organization Details. It
+                will perform an update if the object exists, or an insert if the
+                object doesn't already exist.</description>
+            <oer:parameters>
+                <oer:parameter name="organizationParty" description="Trading Community Organization Details to be merged"/>
+                <oer:return description="Result of the operation includes the successfully merged Trading Community Organization Details and/or a list of warnings or informational messages."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="processOrganization">
+            <description>Bulk load operation for Trading Community Organization Details</description>
+            <oer:parameters>
+                <oer:parameter name="changeOperation" description="Indicates what action shall be performed, such as Create, Update, Merge, or Delete"/>
+                <oer:parameter name="organizationParty" description="A list of Trading Community Organization Details to be processed"/>
+                <oer:parameter name="processControl" description="Control your bulk upload behavior, such as whether the valid data will be committed if there are other invalid data in the same batch, and whether the outbound will contain the key attributes only or the full object."/>
+                <oer:return description="Result of the operation including a list of Trading Community Organization Details that are successfully processed and any warnings or informational messages encountered during the invocation."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="deleteOrganization">
+            <description>Delete operation for Trading Community Organization Details</description>
+            <oer:parameters>
+                <oer:parameter name="organizationParty" description="Trading Community Organization Details to be deleted"/>
+                <oer:return description="A list of warnings or informational messages encountered when deleting the object."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="processCSOrganization">
+            <description>An operation to apply the changes back to the data source for
+                Trading Community Organization Details</description>
+            <oer:parameters>
+                <oer:parameter name="processData" description="The object that is used to represent the changes that have been made."/>
+                <oer:parameter name="processControl" description="Control your bulk upload behavior, such as whether the valid data will be committed if there are other invalid data in the same batch, and whether the outbound will contain the key attributes only or the full object."/>
+                <oer:return description="Result of the operation including a list of created/updated data objects, and all warning and informational messages."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="findOrganization">
+            <description>Find operation for Trading Community Organization Details</description>
+            <oer:parameters>
+                <oer:parameter name="findCriteria" description="The criteria used to limit your query result, such as the filter (where clause), the fetch size, etc."/>
+                <oer:parameter name="findControl" description="Find Control. Not currently used."/>
+                <oer:return description="Result of the operation including a list of Trading Community Organization Details that satisfy the inbound criteria and any warnings or informational messages encountered during the invocation."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="getOrganizationsFilteredByPartyUsageFilterRuleCode">
+            <description>Get operation for Trading Community Organization filtered by
+                Party Usage Filter Rule</description>
+            <oer:parameters>
+                <oer:parameter name="findCriteria" description="The criteria used to limit your query result, such as the filter (where clause), the fetch size, etc."/>
+                <oer:parameter name="bindPartyUsageFrCode" description="Party Usage filter rule used to filter Organization"/>
+                <oer:parameter name="bindEffectiveDate" description="Effective date used to filter the party usages associated with Organization"/>
+                <oer:parameter name="findControl" description="Find Control. Not currently used."/>
+                <oer:return description="Trading Community Organization Details that are filtered by the party usage filter rule provided."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="getOrganizationsFilteredByPartyUsageCode">
+            <description>Get operation for Trading Community Organization filtered by
+                Party Usage</description>
+            <oer:parameters>
+                <oer:parameter name="findCriteria" description="The criteria used to limit your query result, such as the filter (where clause), the fetch size, etc."/>
+                <oer:parameter name="bindPartyUsageCode" description="Party Usage Code used to filter Organization"/>
+                <oer:parameter name="bindEffectiveDate" description="Effective date used to filter the party usages associated with Organization"/>
+                <oer:parameter name="findControl" description="Find Control. Not currently used."/>
+                <oer:return description="Trading Community Organization Details that matches the inbound party usage code."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="getOrganizationByOriginalSystemReference">
+            <description>Get operation for Trading Community Organization filtered by
+                Source System Reference</description>
+            <oer:parameters>
+                <oer:parameter name="findCriteria" description="The criteria used to limit your query result, such as the filter (where clause), the fetch size, etc."/>
+                <oer:parameter name="bindOrigSystem" description="Unique Original System Code"/>
+                <oer:parameter name="bindOrigSystemReference" description="Unique Original System Reference Identifier"/>
+                <oer:parameter name="findControl" description="Find Control. Not currently used."/>
+                <oer:return description="Trading Community Organization Details that are filtered by the source system reference provided."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="getOrganizationProfile">
+            <description>Get operation for Trading Community Organization Profile. You
+                can query the organization profile with PartyId using this
+                operation.</description>
+            <oer:parameters>
+                <oer:parameter name="PartyId" description="PartyId for the organization party."/>
+                <oer:return description="Trading Community Organization Profile that matches the inbound key attributes."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="updateOrganizationProfile">
+            <description>Update operation for Trading Community Organization Profile. You
+                can update the organization profile with PartyId using this
+                operation.</description>
+            <oer:parameters>
+                <oer:parameter name="organizationDVO" description="Trading Community Organization Profile to be updated"/>
+                <oer:return description="Result of the operation includes the successfully updated Trading Community Organization Profile and/or a list of warnings or informational messages."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="mergeOrganizationProfile">
+            <description>Merge operation for Trading Community Organization Profile. You
+                can update the organization profile with PartyId using this
+                operation.</description>
+            <oer:parameters>
+                <oer:parameter name="organizationDVO" description="Trading Community Organization Profile to be merged"/>
+                <oer:return description="Result of the operation includes the successfully merged Trading Community Organization Profiles and/or a list of warnings or informational messages."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="findOrganizationProfile">
+            <description>Find operation for Trading Community Organization Profile</description>
+            <oer:parameters>
+                <oer:parameter name="findCriteria" description="The criteria used to limit your query result, such as the filter (where clause), the fetch size, etc."/>
+                <oer:parameter name="findControl" description="Find Control. Not currently used."/>
+                <oer:return description="Result of the operation including a list of Trading Community Organization Profiles that satisfy the inbound criteria and any warnings or informational messages encountered during the invocation."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="getDfltObjAttrHints">
+            <description>An operation to retrieve user interface hints, such as the
+                service data object label and object attribute labels, for the
+                specified service data object and locale.  As a prerequisite,
+                invoke the getEntityList operation defined on this service to
+                get the list of possible values for the viewName request payload
+                element.</description>
+            <oer:parameters>
+                <oer:parameter name="viewName" description="The service view usage name, an internal name for the service data object.  Specify the value of the &lt;name> element from the getEntityList operation response payload."/>
+                <oer:parameter name="localeName" description="The locale to use when evaluating locale-based user interface hints.  The localeName is in ISO 639-1 format."/>
+                <oer:return description="The label and user interface hints for the specified service data object and its attributes in a name-value pair format"/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="getServiceLastUpdateTime">
+            <description>An operation that returns the date and time when the schema
+                files referenced in the service definition last changed.</description>
+            <oer:parameters>
+                <oer:return description="The date and time when the service definition last changed in ISO 8601 format."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="getEntityList">
+            <description>An operation to get the list of service data objects defined on
+                this service.</description>
+            <oer:parameters>
+                <oer:return description="A list of service data objects defined on this service.  For each service data object, the result includes the QName, internal name, and Boolean values indicating whether create, update, merge, and delete operations can be performed on the object."/>
+            </oer:parameters>
+        </oer:operation>
+    </wsdl:documentation>
+    <plnk:partnerLinkType name="OrganizationService">
+        <plnk:role name="OrganizationServiceProvider">
+            <plnk:portType name="tns:OrganizationService"/>
+        </plnk:role>
+        <plnk:role name="OrganizationServiceRequestor">
+            <plnk:portType name="tns:OrganizationServiceResponse"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+    <wsp:Policy wsu:Id="OrganizationServiceResponse_Fault_Policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+    <wsp:Policy wsu:Id="OrganizationServiceResponse_Input_Policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+            <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+        </sp:EncryptedParts>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="OrganizationServiceResponse_Output_Policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+        </sp:EncryptedParts>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="OrganizationServiceSoapHttpPort_Fault_Policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+        <wsp:ExactlyOne>
+            <wsp:All/>
+            <wsp:All/>
+            <wsp:All/>
+            <wsp:All/>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="OrganizationServiceSoapHttpPort_Input_Policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <sp:Body/>
+                    <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+                    <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+                </sp:SignedParts>
+                <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <sp:Body/>
+                    <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+                </sp:EncryptedParts>
+            </wsp:All>
+            <wsp:All>
+                <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <sp:Body/>
+                    <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+                    <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+                </sp:SignedParts>
+                <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <sp:Body/>
+                    <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+                </sp:EncryptedParts>
+            </wsp:All>
+            <wsp:All>
+                <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <sp:Body/>
+                    <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+                    <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+                    <sp:Header Name="SignatureConfirmation" Namespace="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd"/>
+                </sp:SignedParts>
+                <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <sp:Body/>
+                    <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+                </sp:EncryptedParts>
+            </wsp:All>
+            <wsp:All>
+                <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <sp:Body/>
+                    <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+                    <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+                </sp:SignedParts>
+                <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <sp:Body/>
+                    <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+                </sp:EncryptedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="OrganizationServiceSoapHttpPort_Output_Policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <sp:Body/>
+                </sp:SignedParts>
+                <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <sp:Body/>
+                </sp:EncryptedParts>
+            </wsp:All>
+            <wsp:All>
+                <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <sp:Body/>
+                </sp:SignedParts>
+                <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <sp:Body/>
+                </sp:EncryptedParts>
+            </wsp:All>
+            <wsp:All>
+                <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <sp:Body/>
+                </sp:SignedParts>
+                <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <sp:Body/>
+                </sp:EncryptedParts>
+            </wsp:All>
+            <wsp:All>
+                <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <sp:Body/>
+                </sp:SignedParts>
+                <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <sp:Body/>
+                </sp:EncryptedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="wsaddr_policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="wss11_saml_or_username_token_with_message_protection_service_policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:ProtectionToken>
+                            <wsp:Policy>
+                                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                                    <wsp:Policy>
+                                        <sp:RequireThumbprintReference/>
+                                        <sp:WssX509V3Token11/>
+                                    </wsp:Policy>
+                                </sp:X509Token>
+                            </wsp:Policy>
+                        </sp:ProtectionToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic128/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                        <sp:ProtectTokens/>
+                        <sp:OnlySignEntireHeadersAndBody/>
+                    </wsp:Policy>
+                </sp:SymmetricBinding>
+                <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:SamlToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:WssSamlV11Token11/>
+                            </wsp:Policy>
+                        </sp:SamlToken>
+                    </wsp:Policy>
+                </sp:SignedSupportingTokens>
+                <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:WssX509V3Token11/>
+                            </wsp:Policy>
+                        </sp:X509Token>
+                    </wsp:Policy>
+                </sp:EndorsingSupportingTokens>
+                <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:RequireSignatureConfirmation/>
+                        <sp:MustSupportRefEncryptedKey/>
+                    </wsp:Policy>
+                </sp:Wss11>
+            </wsp:All>
+            <wsp:All>
+                <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:ProtectionToken>
+                            <wsp:Policy>
+                                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                                    <wsp:Policy>
+                                        <sp:RequireThumbprintReference/>
+                                        <sp:WssX509V3Token11/>
+                                    </wsp:Policy>
+                                </sp:X509Token>
+                            </wsp:Policy>
+                        </sp:ProtectionToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic128Exn256/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                        <sp:ProtectTokens/>
+                        <sp:OnlySignEntireHeadersAndBody/>
+                    </wsp:Policy>
+                </sp:SymmetricBinding>
+                <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:SamlToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:WssSamlV11Token11/>
+                            </wsp:Policy>
+                        </sp:SamlToken>
+                    </wsp:Policy>
+                </sp:SignedSupportingTokens>
+                <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:WssX509V3Token11/>
+                            </wsp:Policy>
+                        </sp:X509Token>
+                    </wsp:Policy>
+                </sp:EndorsingSupportingTokens>
+                <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:RequireSignatureConfirmation/>
+                        <sp:MustSupportRefEncryptedKey/>
+                    </wsp:Policy>
+                </sp:Wss11>
+            </wsp:All>
+            <wsp:All>
+                <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:ProtectionToken>
+                            <wsp:Policy>
+                                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                                    <wsp:Policy>
+                                        <sp:RequireThumbprintReference/>
+                                        <sp:WssX509V3Token11/>
+                                    </wsp:Policy>
+                                </sp:X509Token>
+                            </wsp:Policy>
+                        </sp:ProtectionToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic128/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                        <sp:OnlySignEntireHeadersAndBody/>
+                    </wsp:Policy>
+                </sp:SymmetricBinding>
+                <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:WssUsernameToken10/>
+                            </wsp:Policy>
+                        </sp:UsernameToken>
+                    </wsp:Policy>
+                </sp:SignedSupportingTokens>
+                <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:RequireSignatureConfirmation/>
+                        <sp:MustSupportRefEncryptedKey/>
+                    </wsp:Policy>
+                </sp:Wss11>
+            </wsp:All>
+            <wsp:All>
+                <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:ProtectionToken>
+                            <wsp:Policy>
+                                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                                    <wsp:Policy>
+                                        <sp:RequireThumbprintReference/>
+                                        <sp:WssX509V3Token11/>
+                                    </wsp:Policy>
+                                </sp:X509Token>
+                            </wsp:Policy>
+                        </sp:ProtectionToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic128Exn256/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                        <sp:OnlySignEntireHeadersAndBody/>
+                    </wsp:Policy>
+                </sp:SymmetricBinding>
+                <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:WssUsernameToken10/>
+                            </wsp:Policy>
+                        </sp:UsernameToken>
+                    </wsp:Policy>
+                </sp:SignedSupportingTokens>
+                <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:RequireSignatureConfirmation/>
+                        <sp:MustSupportRefEncryptedKey/>
+                    </wsp:Policy>
+                </sp:Wss11>
+            </wsp:All>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken RequireClientCertificate="false">
+                                    <wsp:Policy/>
+                                </sp:HttpsToken>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+                <sp:SupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:SamlToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:WssSamlV11Token10/>
+                            </wsp:Policy>
+                        </sp:SamlToken>
+                    </wsp:Policy>
+                </sp:SupportingTokens>
+            </wsp:All>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken RequireClientCertificate="false">
+                                    <wsp:Policy/>
+                                </sp:HttpsToken>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+                <sp:SupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:WssUsernameToken10/>
+                            </wsp:Policy>
+                        </sp:UsernameToken>
+                    </wsp:Policy>
+                </sp:SupportingTokens>
+            </wsp:All>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken RequireClientCertificate="false">
+                                    <wsp:Policy/>
+                                </sp:HttpsToken>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+            </wsp:All>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken RequireClientCertificate="false">
+                                    <wsp:Policy>
+                                        <osp:HttpJwtAuthentication xmlns:osp="http://schemas.oracle.com/ws/2012/01/wssecuritypolicy"/>
+                                    </wsp:Policy>
+                                </sp:HttpsToken>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="wss11_saml_token_with_message_protection_client_policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+                <sp:ProtectionToken>
+                    <wsp:Policy>
+                        <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                            <wsp:Policy>
+                                <sp:RequireThumbprintReference/>
+                                <sp:WssX509V3Token11/>
+                            </wsp:Policy>
+                        </sp:X509Token>
+                    </wsp:Policy>
+                </sp:ProtectionToken>
+                <sp:AlgorithmSuite>
+                    <wsp:Policy>
+                        <sp:Basic128/>
+                    </wsp:Policy>
+                </sp:AlgorithmSuite>
+                <sp:Layout>
+                    <wsp:Policy>
+                        <sp:Lax/>
+                    </wsp:Policy>
+                </sp:Layout>
+                <sp:IncludeTimestamp/>
+                <sp:ProtectTokens/>
+                <sp:OnlySignEntireHeadersAndBody/>
+            </wsp:Policy>
+        </sp:SymmetricBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+                <sp:SamlToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                    <wsp:Policy>
+                        <sp:WssSamlV11Token11/>
+                    </wsp:Policy>
+                </sp:SamlToken>
+            </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                    <wsp:Policy>
+                        <sp:WssX509V3Token11/>
+                    </wsp:Policy>
+                </sp:X509Token>
+            </wsp:Policy>
+        </sp:EndorsingSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+                <sp:RequireSignatureConfirmation/>
+                <sp:MustSupportRefEncryptedKey/>
+            </wsp:Policy>
+        </sp:Wss11>
+    </wsp:Policy>
+    <wsdl:import namespace="http://xmlns.oracle.com/adf/svc/errors/" location="../Common/ServiceException.wsdl"/>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://xmlns.oracle.com/oracleas/schema/oracle-fault-11_0" schemaLocation="../../../../Schemas/Modules/Cloud/Customers/oracle_webservices_async_fault_11_0.xsd"/>
+            <import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/types/" schemaLocation="../../../../Schemas/Modules/Cloud/Customers/OrganizationService.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="OrganizationService_onFault">
+        <wsdl:part name="parameters" element="orafault:Fault"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_createOrganizationAsyncResponse">
+        <wsdl:part name="parameters" element="types:createOrganizationAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_deleteOrganizationAsyncResponse">
+        <wsdl:part name="parameters" element="types:deleteOrganizationAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_updateOrganizationAsyncResponse">
+        <wsdl:part name="parameters" element="types:updateOrganizationAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationAsyncResponse">
+        <wsdl:part name="parameters" element="types:getOrganizationAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_processCSOrganizationAsyncResponse">
+        <wsdl:part name="parameters" element="types:processCSOrganizationAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_mergeOrganizationAsyncResponse">
+        <wsdl:part name="parameters" element="types:mergeOrganizationAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_processOrganizationAsyncResponse">
+        <wsdl:part name="parameters" element="types:processOrganizationAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_findOrganizationAsyncResponse">
+        <wsdl:part name="parameters" element="types:findOrganizationAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationsFilteredByPartyUsageFilterRuleCodeAsyncResponse">
+        <wsdl:part name="parameters" element="types:getOrganizationsFilteredByPartyUsageFilterRuleCodeAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationByOriginalSystemReferenceAsyncResponse">
+        <wsdl:part name="parameters" element="types:getOrganizationByOriginalSystemReferenceAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationsFilteredByPartyUsageCodeAsyncResponse">
+        <wsdl:part name="parameters" element="types:getOrganizationsFilteredByPartyUsageCodeAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationProfileAsyncResponse">
+        <wsdl:part name="parameters" element="types:getOrganizationProfileAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_mergeOrganizationProfileAsyncResponse">
+        <wsdl:part name="parameters" element="types:mergeOrganizationProfileAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_updateOrganizationProfileAsyncResponse">
+        <wsdl:part name="parameters" element="types:updateOrganizationProfileAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_findOrganizationProfileAsyncResponse">
+        <wsdl:part name="parameters" element="types:findOrganizationProfileAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getEntityListAsyncResponse">
+        <wsdl:part name="parameters" element="types:getEntityListAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getDfltObjAttrHintsAsyncResponse">
+        <wsdl:part name="parameters" element="types:getDfltObjAttrHintsAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getServiceLastUpdateTimeAsyncResponse">
+        <wsdl:part name="parameters" element="types:getServiceLastUpdateTimeAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganization">
+        <wsdl:part name="parameters" element="types:getOrganization"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationResponse">
+        <wsdl:part name="parameters" element="types:getOrganizationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_createOrganization">
+        <wsdl:part name="parameters" element="types:createOrganization"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_createOrganizationResponse">
+        <wsdl:part name="parameters" element="types:createOrganizationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_updateOrganization">
+        <wsdl:part name="parameters" element="types:updateOrganization"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_updateOrganizationResponse">
+        <wsdl:part name="parameters" element="types:updateOrganizationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_mergeOrganization">
+        <wsdl:part name="parameters" element="types:mergeOrganization"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_mergeOrganizationResponse">
+        <wsdl:part name="parameters" element="types:mergeOrganizationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_processOrganization">
+        <wsdl:part name="parameters" element="types:processOrganization"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_processOrganizationResponse">
+        <wsdl:part name="parameters" element="types:processOrganizationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_deleteOrganization">
+        <wsdl:part name="parameters" element="types:deleteOrganization"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_deleteOrganizationResponse">
+        <wsdl:part name="parameters" element="types:deleteOrganizationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_processCSOrganization">
+        <wsdl:part name="parameters" element="types:processCSOrganization"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_processCSOrganizationResponse">
+        <wsdl:part name="parameters" element="types:processCSOrganizationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_createOrganizationAsync">
+        <wsdl:part name="parameters" element="types:createOrganizationAsync"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_deleteOrganizationAsync">
+        <wsdl:part name="parameters" element="types:deleteOrganizationAsync"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_updateOrganizationAsync">
+        <wsdl:part name="parameters" element="types:updateOrganizationAsync"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationAsync">
+        <wsdl:part name="parameters" element="types:getOrganizationAsync"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_processCSOrganizationAsync">
+        <wsdl:part name="parameters" element="types:processCSOrganizationAsync"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_mergeOrganizationAsync">
+        <wsdl:part name="parameters" element="types:mergeOrganizationAsync"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_processOrganizationAsync">
+        <wsdl:part name="parameters" element="types:processOrganizationAsync"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_findOrganization">
+        <wsdl:part name="parameters" element="types:findOrganization"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_findOrganizationResponse">
+        <wsdl:part name="parameters" element="types:findOrganizationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_findOrganizationAsync">
+        <wsdl:part name="parameters" element="types:findOrganizationAsync"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationsFilteredByPartyUsageFilterRuleCode">
+        <wsdl:part name="parameters" element="types:getOrganizationsFilteredByPartyUsageFilterRuleCode"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationsFilteredByPartyUsageFilterRuleCodeResponse">
+        <wsdl:part name="parameters" element="types:getOrganizationsFilteredByPartyUsageFilterRuleCodeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationsFilteredByPartyUsageFilterRuleCodeAsync">
+        <wsdl:part name="parameters" element="types:getOrganizationsFilteredByPartyUsageFilterRuleCodeAsync"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationsFilteredByPartyUsageCode">
+        <wsdl:part name="parameters" element="types:getOrganizationsFilteredByPartyUsageCode"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationsFilteredByPartyUsageCodeResponse">
+        <wsdl:part name="parameters" element="types:getOrganizationsFilteredByPartyUsageCodeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationByOriginalSystemReference">
+        <wsdl:part name="parameters" element="types:getOrganizationByOriginalSystemReference"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationByOriginalSystemReferenceResponse">
+        <wsdl:part name="parameters" element="types:getOrganizationByOriginalSystemReferenceResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationByOriginalSystemReferenceAsync">
+        <wsdl:part name="parameters" element="types:getOrganizationByOriginalSystemReferenceAsync"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationsFilteredByPartyUsageCodeAsync">
+        <wsdl:part name="parameters" element="types:getOrganizationsFilteredByPartyUsageCodeAsync"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationProfile">
+        <wsdl:part name="parameters" element="types:getOrganizationProfile"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationProfileResponse">
+        <wsdl:part name="parameters" element="types:getOrganizationProfileResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getOrganizationProfileAsync">
+        <wsdl:part name="parameters" element="types:getOrganizationProfileAsync"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_updateOrganizationProfile">
+        <wsdl:part name="parameters" element="types:updateOrganizationProfile"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_updateOrganizationProfileResponse">
+        <wsdl:part name="parameters" element="types:updateOrganizationProfileResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_mergeOrganizationProfile">
+        <wsdl:part name="parameters" element="types:mergeOrganizationProfile"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_mergeOrganizationProfileResponse">
+        <wsdl:part name="parameters" element="types:mergeOrganizationProfileResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_mergeOrganizationProfileAsync">
+        <wsdl:part name="parameters" element="types:mergeOrganizationProfileAsync"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_updateOrganizationProfileAsync">
+        <wsdl:part name="parameters" element="types:updateOrganizationProfileAsync"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_findOrganizationProfile">
+        <wsdl:part name="parameters" element="types:findOrganizationProfile"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_findOrganizationProfileResponse">
+        <wsdl:part name="parameters" element="types:findOrganizationProfileResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_findOrganizationProfileAsync">
+        <wsdl:part name="parameters" element="types:findOrganizationProfileAsync"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getDfltObjAttrHints">
+        <wsdl:part name="parameters" element="types:getDfltObjAttrHints"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getDfltObjAttrHintsResponse">
+        <wsdl:part name="parameters" element="types:getDfltObjAttrHintsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getServiceLastUpdateTime">
+        <wsdl:part name="parameters" element="types:getServiceLastUpdateTime"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getServiceLastUpdateTimeResponse">
+        <wsdl:part name="parameters" element="types:getServiceLastUpdateTimeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getEntityList">
+        <wsdl:part name="parameters" element="types:getEntityList"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getEntityListResponse">
+        <wsdl:part name="parameters" element="types:getEntityListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getEntityListAsync">
+        <wsdl:part name="parameters" element="types:getEntityListAsync"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getDfltObjAttrHintsAsync">
+        <wsdl:part name="parameters" element="types:getDfltObjAttrHintsAsync"/>
+    </wsdl:message>
+    <wsdl:message name="OrganizationService_getServiceLastUpdateTimeAsync">
+        <wsdl:part name="parameters" element="types:getServiceLastUpdateTimeAsync"/>
+    </wsdl:message>
+    <wsdl:portType name="OrganizationServiceResponse">
+        <wsdl:operation name="onFault">
+            <wsdl:input message="tns:OrganizationService_onFault" ns1:Action="http://xmlns.oracle.com/oracleas/schema/oracle-fault-11_0/Fault" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createOrganizationAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_createOrganizationAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/createOrganizationAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="deleteOrganizationAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_deleteOrganizationAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/deleteOrganizationAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateOrganizationAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_updateOrganizationAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/updateOrganizationAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_getOrganizationAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="processCSOrganizationAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_processCSOrganizationAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/processCSOrganizationAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="mergeOrganizationAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_mergeOrganizationAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/mergeOrganizationAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="processOrganizationAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_processOrganizationAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/processOrganizationAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="findOrganizationAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_findOrganizationAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/findOrganizationAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationsFilteredByPartyUsageFilterRuleCodeAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_getOrganizationsFilteredByPartyUsageFilterRuleCodeAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationsFilteredByPartyUsageFilterRuleCodeAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationByOriginalSystemReferenceAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_getOrganizationByOriginalSystemReferenceAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationByOriginalSystemReferenceAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationsFilteredByPartyUsageCodeAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_getOrganizationsFilteredByPartyUsageCodeAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationsFilteredByPartyUsageCodeAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationProfileAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_getOrganizationProfileAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationProfileAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="mergeOrganizationProfileAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_mergeOrganizationProfileAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/mergeOrganizationProfileAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateOrganizationProfileAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_updateOrganizationProfileAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/updateOrganizationProfileAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="findOrganizationProfileAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_findOrganizationProfileAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/findOrganizationProfileAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getEntityListAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_getEntityListAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getEntityListAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getDfltObjAttrHintsAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_getDfltObjAttrHintsAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getDfltObjAttrHintsAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getServiceLastUpdateTimeAsyncResponse">
+            <wsdl:input message="tns:OrganizationService_getServiceLastUpdateTimeAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getServiceLastUpdateTimeAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:portType name="OrganizationService">
+        <wsdl:documentation>
+            <ViewInstance Name="OrganizationDVO" SDOName="ns0:OrganizationProfile" UpdateOpName="updateOrganizationProfile" MergeOpName="mergeOrganizationProfile" FindOpName="findOrganizationProfile" xmlns="http://xmlns.oracle.com/adf/svc/metadata/" xmlns:ns0="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/"/>
+            <ViewInstance Name="OrganizationParty" SDOName="ns0:OrganizationParty" CreateOpName="createOrganization" UpdateOpName="updateOrganization" DeleteOpName="deleteOrganization" MergeOpName="mergeOrganization" GetOpName="getOrganization" FindOpName="findOrganization" ProcessOpName="processOrganization" ProcessCSOpName="processCSOrganization" xmlns="http://xmlns.oracle.com/adf/svc/metadata/" xmlns:ns0="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/"/>
+        </wsdl:documentation>
+        <wsdl:operation name="getOrganization">
+            <wsdl:input message="tns:OrganizationService_getOrganization"/>
+            <wsdl:output message="tns:OrganizationService_getOrganizationResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="createOrganization">
+            <wsdl:input message="tns:OrganizationService_createOrganization"/>
+            <wsdl:output message="tns:OrganizationService_createOrganizationResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateOrganization">
+            <wsdl:input message="tns:OrganizationService_updateOrganization"/>
+            <wsdl:output message="tns:OrganizationService_updateOrganizationResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="mergeOrganization">
+            <wsdl:input message="tns:OrganizationService_mergeOrganization"/>
+            <wsdl:output message="tns:OrganizationService_mergeOrganizationResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="processOrganization">
+            <wsdl:input message="tns:OrganizationService_processOrganization"/>
+            <wsdl:output message="tns:OrganizationService_processOrganizationResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="deleteOrganization">
+            <wsdl:input message="tns:OrganizationService_deleteOrganization"/>
+            <wsdl:output message="tns:OrganizationService_deleteOrganizationResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="processCSOrganization">
+            <wsdl:input message="tns:OrganizationService_processCSOrganization"/>
+            <wsdl:output message="tns:OrganizationService_processCSOrganizationResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="createOrganizationAsync">
+            <wsdl:input message="tns:OrganizationService_createOrganizationAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/createOrganizationAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="deleteOrganizationAsync">
+            <wsdl:input message="tns:OrganizationService_deleteOrganizationAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/deleteOrganizationAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateOrganizationAsync">
+            <wsdl:input message="tns:OrganizationService_updateOrganizationAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/updateOrganizationAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationAsync">
+            <wsdl:input message="tns:OrganizationService_getOrganizationAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="processCSOrganizationAsync">
+            <wsdl:input message="tns:OrganizationService_processCSOrganizationAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/processCSOrganizationAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="mergeOrganizationAsync">
+            <wsdl:input message="tns:OrganizationService_mergeOrganizationAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/mergeOrganizationAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="processOrganizationAsync">
+            <wsdl:input message="tns:OrganizationService_processOrganizationAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/processOrganizationAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="findOrganization">
+            <wsdl:input message="tns:OrganizationService_findOrganization"/>
+            <wsdl:output message="tns:OrganizationService_findOrganizationResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findOrganizationAsync">
+            <wsdl:input message="tns:OrganizationService_findOrganizationAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/findOrganizationAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationsFilteredByPartyUsageFilterRuleCode">
+            <wsdl:input message="tns:OrganizationService_getOrganizationsFilteredByPartyUsageFilterRuleCode"/>
+            <wsdl:output message="tns:OrganizationService_getOrganizationsFilteredByPartyUsageFilterRuleCodeResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationsFilteredByPartyUsageFilterRuleCodeAsync">
+            <wsdl:input message="tns:OrganizationService_getOrganizationsFilteredByPartyUsageFilterRuleCodeAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationsFilteredByPartyUsageFilterRuleCodeAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationsFilteredByPartyUsageCode">
+            <wsdl:input message="tns:OrganizationService_getOrganizationsFilteredByPartyUsageCode"/>
+            <wsdl:output message="tns:OrganizationService_getOrganizationsFilteredByPartyUsageCodeResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationByOriginalSystemReference">
+            <wsdl:input message="tns:OrganizationService_getOrganizationByOriginalSystemReference"/>
+            <wsdl:output message="tns:OrganizationService_getOrganizationByOriginalSystemReferenceResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationByOriginalSystemReferenceAsync">
+            <wsdl:input message="tns:OrganizationService_getOrganizationByOriginalSystemReferenceAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationByOriginalSystemReferenceAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationsFilteredByPartyUsageCodeAsync">
+            <wsdl:input message="tns:OrganizationService_getOrganizationsFilteredByPartyUsageCodeAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationsFilteredByPartyUsageCodeAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationProfile">
+            <wsdl:input message="tns:OrganizationService_getOrganizationProfile"/>
+            <wsdl:output message="tns:OrganizationService_getOrganizationProfileResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationProfileAsync">
+            <wsdl:input message="tns:OrganizationService_getOrganizationProfileAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationProfileAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateOrganizationProfile">
+            <wsdl:input message="tns:OrganizationService_updateOrganizationProfile"/>
+            <wsdl:output message="tns:OrganizationService_updateOrganizationProfileResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="mergeOrganizationProfile">
+            <wsdl:input message="tns:OrganizationService_mergeOrganizationProfile"/>
+            <wsdl:output message="tns:OrganizationService_mergeOrganizationProfileResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="mergeOrganizationProfileAsync">
+            <wsdl:input message="tns:OrganizationService_mergeOrganizationProfileAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/mergeOrganizationProfileAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateOrganizationProfileAsync">
+            <wsdl:input message="tns:OrganizationService_updateOrganizationProfileAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/updateOrganizationProfileAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="findOrganizationProfile">
+            <wsdl:input message="tns:OrganizationService_findOrganizationProfile"/>
+            <wsdl:output message="tns:OrganizationService_findOrganizationProfileResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findOrganizationProfileAsync">
+            <wsdl:input message="tns:OrganizationService_findOrganizationProfileAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/findOrganizationProfileAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getDfltObjAttrHints">
+            <wsdl:input message="tns:OrganizationService_getDfltObjAttrHints"/>
+            <wsdl:output message="tns:OrganizationService_getDfltObjAttrHintsResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getServiceLastUpdateTime">
+            <wsdl:input message="tns:OrganizationService_getServiceLastUpdateTime"/>
+            <wsdl:output message="tns:OrganizationService_getServiceLastUpdateTimeResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getEntityList">
+            <wsdl:input message="tns:OrganizationService_getEntityList"/>
+            <wsdl:output message="tns:OrganizationService_getEntityListResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getEntityListAsync">
+            <wsdl:input message="tns:OrganizationService_getEntityListAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getEntityListAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getDfltObjAttrHintsAsync">
+            <wsdl:input message="tns:OrganizationService_getDfltObjAttrHintsAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getDfltObjAttrHintsAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getServiceLastUpdateTimeAsync">
+            <wsdl:input message="tns:OrganizationService_getServiceLastUpdateTimeAsync" ns1:Action="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getServiceLastUpdateTimeAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="OrganizationServiceSoapHttp" type="tns:OrganizationService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsp:PolicyReference URI="#wss11_saml_or_username_token_with_message_protection_service_policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+        <wsp:PolicyReference URI="#wsaddr_policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+        <wsdl:operation name="getOrganization">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganization"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createOrganization">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/createOrganization"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateOrganization">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/updateOrganization"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="mergeOrganization">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/mergeOrganization"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="processOrganization">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/processOrganization"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="deleteOrganization">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/deleteOrganization"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="processCSOrganization">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/processCSOrganization"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createOrganizationAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/createOrganizationAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="deleteOrganizationAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/deleteOrganizationAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="updateOrganizationAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/updateOrganizationAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="processCSOrganizationAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/processCSOrganizationAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="mergeOrganizationAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/mergeOrganizationAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="processOrganizationAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/processOrganizationAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="findOrganization">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/findOrganization"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findOrganizationAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/findOrganizationAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationsFilteredByPartyUsageFilterRuleCode">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationsFilteredByPartyUsageFilterRuleCode"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationsFilteredByPartyUsageFilterRuleCodeAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationsFilteredByPartyUsageFilterRuleCodeAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationsFilteredByPartyUsageCode">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationsFilteredByPartyUsageCode"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationByOriginalSystemReference">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationByOriginalSystemReference"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationByOriginalSystemReferenceAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationByOriginalSystemReferenceAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationsFilteredByPartyUsageCodeAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationsFilteredByPartyUsageCodeAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationProfile">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationProfile"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationProfileAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationProfileAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="updateOrganizationProfile">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/updateOrganizationProfile"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="mergeOrganizationProfile">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/mergeOrganizationProfile"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="mergeOrganizationProfileAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/mergeOrganizationProfileAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="updateOrganizationProfileAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/updateOrganizationProfileAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="findOrganizationProfile">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/findOrganizationProfile"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findOrganizationProfileAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/findOrganizationProfileAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getDfltObjAttrHints">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getDfltObjAttrHints"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getServiceLastUpdateTime">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getServiceLastUpdateTime"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getEntityList">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getEntityList"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getEntityListAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getEntityListAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getDfltObjAttrHintsAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getDfltObjAttrHintsAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getServiceLastUpdateTimeAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getServiceLastUpdateTimeAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="OrganizationServiceResponseBinding" type="tns:OrganizationServiceResponse">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsp:PolicyReference URI="#wss11_saml_token_with_message_protection_client_policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+        <wsdl:operation name="onFault">
+            <soap:operation soapAction="http://xmlns.oracle.com/oracleas/schema/oracle-fault-11_0/Fault"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createOrganizationAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/createOrganizationAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="deleteOrganizationAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/deleteOrganizationAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="updateOrganizationAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/updateOrganizationAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="processCSOrganizationAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/processCSOrganizationAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="mergeOrganizationAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/mergeOrganizationAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="processOrganizationAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/processOrganizationAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="findOrganizationAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/findOrganizationAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationsFilteredByPartyUsageFilterRuleCodeAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationsFilteredByPartyUsageFilterRuleCodeAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationByOriginalSystemReferenceAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationByOriginalSystemReferenceAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationsFilteredByPartyUsageCodeAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationsFilteredByPartyUsageCodeAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getOrganizationProfileAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getOrganizationProfileAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="mergeOrganizationProfileAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/mergeOrganizationProfileAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="updateOrganizationProfileAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/updateOrganizationProfileAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="findOrganizationProfileAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/findOrganizationProfileAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getEntityListAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getEntityListAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getDfltObjAttrHintsAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getDfltObjAttrHintsAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getServiceLastUpdateTimeAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/getServiceLastUpdateTimeAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#OrganizationServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="OrganizationService">
+        <wsdl:port name="OrganizationServiceSoapHttpPort" binding="tns:OrganizationServiceSoapHttp">
+            <soap:address location="https://egte-test.fa.us2.oraclecloud.com:443/crmService/FoundationPartiesOrganizationService"/>
+            <wsa:EndpointReference xmlns:wsa="http://www.w3.org/2005/08/addressing">
+                <wsa:Address>https://egte-test.fa.us2.oraclecloud.com:443/crmService/FoundationPartiesOrganizationService</wsa:Address>
+                <wsid:Identity xmlns:wsid="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+                    <dsig:KeyInfo xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+                         <dsig:X509Data>
+                            <dsig:X509Certificate>MIIDVzCCAj+gAwIBAgIIVg/+Q6HleUswDQYJKoZIhvcNAQELBQAwWTETMBEGCgmSJomT8ixkARkWA2NvbTEWMBQGCgmSJomT8ixkARkWBm9yYWNsZTEVMBMGCgmSJomT8ixkARkWBWNsb3VkMRMwEQYDVQQDEwpDbG91ZDlDQS0yMB4XDTE2MDUyMTAyMTgxMVoXDTI2MDUxOTAyMTgxMVowWzETMBEGCgmSJomT8ixkARkWA2NvbTEWMBQGCgmSJomT8ixkARkWBm9yYWNsZTEVMBMGCgmSJomT8ixkARkWBWNsb3VkMRUwEwYDVQQDEwxGQUVuY3J5cHRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCXkkCRaPrzPLVxYvo6yqAMrcduV0+Ghq6NCdXAhKdbAXkc6yfFJPpYKDTEooxEUVZUkcfzZ+N3kJq6fTcQifkHPhobN5SHHSAprBWTrwDPjuQtrOC+NxB4wb02tQD/RV722MaUmzIVUrxEcY4hr0SADaqTT+4kvGysNwfxBRrRACs3fY3B41B6qL85ZiWq5GBUdjqEJqpdCWKa2fYiRDDiWXQcGwf3HNETR1QMi20/HjUSwURZLAUoGZAvLpnc9Va5WD3VKfpQ+BME6gs/jCuKKKd5lzm1sn08rT+H7vbT8JfkHL4sbHMhTgSV7HVh7SCOeLY5/kyLmcDxGpAEWEs/AgMBAAGjITAfMB0GA1UdDgQWBBRe0RelArN2TGMOMSDshZ/yxiLr/jANBgkqhkiG9w0BAQsFAAOCAQEArJa3QUFptgahgBUHiXQ0Xsl1yGHgp7x0RqYUVFuIId3ojpASaN1hWY7Ze7gUC7yELqDj/w+z9fXa7ce7S9tMbPL82/pvoh48N8kEOeCkvFrww+XCKu0ywbjNKzejsl4hWr6t0Ej1cZ2cBrzz0V42acUBwtIDeRBD0VWffA0EEF9uRyOByErHg5yAcl+2n6vnwvhRHMRNNXn2r2ueRyu+nKKl3upWijgJDiWHcaCXZf/HCju1XgnZV+g5t4//R2dDMoBzhWqY9rIcO+7yYFGwyADrao0NqwQk9Vco4KC3I4fWyi+EZalBCUx31sMhTYopy5qOqnlWsCVd/6g75ce9DA==</dsig:X509Certificate>
+                            <dsig:X509IssuerSerial>
+                                <dsig:X509IssuerName>CN=Cloud9CA-2, DC=cloud, DC=oracle, DC=com</dsig:X509IssuerName>
+                                <dsig:X509SerialNumber>6201454778344896843</dsig:X509SerialNumber>
+                            </dsig:X509IssuerSerial>
+                            <dsig:X509SubjectName>CN=FAEncryption, DC=cloud, DC=oracle, DC=com</dsig:X509SubjectName>
+                            <dsig:X509SKI>XtEXpQKzdkxjDjEg7IWf8sYi6/4=</dsig:X509SKI>
+                            <dsig:X509Certificate>MIIDazCCAlOgAwIBAgIIMdQl7kIMrv0wDQYJKoZIhvcNAQELBQAwWTETMBEGCgmSJomT8ixkARkWA2NvbTEWMBQGCgmSJomT8ixkARkWBm9yYWNsZTEVMBMGCgmSJomT8ixkARkWBWNsb3VkMRMwEQYDVQQDEwpDbG91ZDlDQS0yMCAXDTE2MDUyMTAyMTgwOVoYDzIxMTYwNDI3MDIxODA5WjBZMRMwEQYKCZImiZPyLGQBGRYDY29tMRYwFAYKCZImiZPyLGQBGRYGb3JhY2xlMRUwEwYKCZImiZPyLGQBGRYFY2xvdWQxEzARBgNVBAMTCkNsb3VkOUNBLTIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDPZn2VAoMsIfWmIJks9exzK+DXaX6qYyBc12dRqDrRpC48v3CBeBchV/GT2E+mjcDp8Hzq8oIpwr9W5kwMja4PU3SPd4/0LB6WKbtLfHOnJxLg9EaT992UpbUGHaHlEq4oRAuVvPgDLp5sSspLZYEBKUh4vJXOyLitE1qsXn7mJNXRKTJZvrJKdfbs1dyTge3V3wk1rwY/wCWMKVgkqCgSzzWCGju8EZWoOrnzlR6BHkA0qZqeV4F7jDW8ucdv+Y20pOlOiaEbIg/ZFYGrZd5VWjlNvgLfU8P4C/YJLSkkcPHgoet3w4jI0S26efu59rVzgU9VsKnKtnqbDL99t81vAgMBAAGjNTAzMBIGA1UdEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFDMA8e55FI5kC12+guIE9xtcIXpFMA0GCSqGSIb3DQEBCwUAA4IBAQC45tOVeqHxA8Bo/Rnv1SHHpULge3HyTC1XV9nmUdrj6g/U6rmbA5hVJ5LshgQ77qopO/YsaNHj5Ru1u/+8VOlZWpbn+kt3CDOuBUCe89CKBZT/KWEDkvtNl2qu16gOkhFnuTQk8NsARvwZZ6KtyPDmsbW4Nc/I5fKwPhdTaMjCV6Lh9RCG4kU77lbdwY3SaXlCBXXQyfPWMouCi7z1thJaF3cNGW4tnsibMR5ej9fJ9j6UvShxNgAIgjNDoihPlC6k0kW3QDR3bBjCHJX47505aIhckojH/eKsP2Or0eE/Ma4WNbndj0IXPE2ae5AVmC8/GRtwAmnoZPnt3g/I2m5j</dsig:X509Certificate>
+                        </dsig:X509Data>
+                    </dsig:KeyInfo>
+                </wsid:Identity>
+            </wsa:EndpointReference>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

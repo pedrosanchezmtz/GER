@@ -1,0 +1,20 @@
+<wsdl:definitions name="dbaUpdateInventoryTransactions" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaUpdateInventoryTransactions" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaUpdateInventoryTransactions" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/dbaUpdateInventoryTransactions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="dbaUpdateInventoryTransactions_plt">
+    <plt:role name="dbaUpdateInventoryTransactions_role">
+      <plt:portType name="tns:dbaUpdateInventoryTransactions_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/dbaUpdateInventoryTransactions" schemaLocation="../../Schemas/External/dbaUpdateInventoryTransactions.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="dbaUpdateInventoryTransactionsInput_msg">
+        <wsdl:part name="dbaUpdateInventoryTransactionsInput_msg" element="db:dbaUpdateInventoryTransactionsInput"/>
+    </wsdl:message>
+    <wsdl:portType name="dbaUpdateInventoryTransactions_ptt">
+        <wsdl:operation name="dbaUpdateInventoryTransactions">
+            <wsdl:input message="tns:dbaUpdateInventoryTransactionsInput_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

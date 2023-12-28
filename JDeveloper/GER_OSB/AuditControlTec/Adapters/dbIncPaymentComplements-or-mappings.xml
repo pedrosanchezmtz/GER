@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-persistence xmlns="http://www.eclipse.org/eclipselink/xsds/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eclipselink="http://www.eclipse.org/eclipselink/xsds/persistence" version="Eclipse Persistence Services - 2.6.4.v20160829-44060b6">
+   <name>dbIncPaymentComplements-OR</name>
+   <class-mapping-descriptors>
+      <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
+         <class>dbIncPaymentComplements.XxerIncPaymentComplements</class>
+         <alias>XXER_INC_PAYMENT_COMPLEMENTS</alias>
+         <primary-key>
+            <field table="XXER_INC_PAYMENT_COMPLEMENTS" name="INC_PAYMENT_COMPLEMENT_ID" xsi:type="column"/>
+         </primary-key>
+         <events/>
+         <querying>
+            <queries>
+               <query name="dbIncPaymentComplementsSelect" xsi:type="read-all-query">
+                  <call xsi:type="sql-call">
+                     <sql>SELECT INC_PAYMENT_COMPLEMENT_ID, RFC_ISSUER, RFC_RECEIVER, TOTAL_AMOUNT, UUID, UUID_DATE, STATUS, STATUS_DESC, ATTATCHMENT, VALIDATION_RESPONSE, CREATED_BY, CREATION_DATE, LAST_UPDATED_BY, LAST_UPDATE_DATE, OBJECT_VERSION_NUMBER, CHECK_NUMBER FROM XXER_INC_PAYMENT_COMPLEMENTS
+WHERE 1 = 1
+  AND (
+    STATUS = 'NOT_CONNECTED'
+    OR
+    (STATUS = 'PENDING' /*AND UUID_DATE &amp;lt; CURRENT_TIMESTAMP - 2*/)
+  )</sql>
+                  </call>
+                  <reference-class>dbIncPaymentComplements.XxerIncPaymentComplements</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>java.util.Vector</collection-type>
+                  </container>
+               </query>
+            </queries>
+         </querying>
+         <attribute-mappings>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>incPaymentComplementId</attribute-name>
+               <field table="XXER_INC_PAYMENT_COMPLEMENTS" name="INC_PAYMENT_COMPLEMENT_ID" xsi:type="column"/>
+               <attribute-classification>java.lang.Long</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>rfcIssuer</attribute-name>
+               <field table="XXER_INC_PAYMENT_COMPLEMENTS" name="RFC_ISSUER" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>rfcReceiver</attribute-name>
+               <field table="XXER_INC_PAYMENT_COMPLEMENTS" name="RFC_RECEIVER" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>totalAmount</attribute-name>
+               <field table="XXER_INC_PAYMENT_COMPLEMENTS" name="TOTAL_AMOUNT" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>uuid</attribute-name>
+               <field table="XXER_INC_PAYMENT_COMPLEMENTS" name="UUID" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>uuidDate</attribute-name>
+               <field table="XXER_INC_PAYMENT_COMPLEMENTS" name="UUID_DATE" xsi:type="column"/>
+               <attribute-classification>java.sql.Timestamp</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>status</attribute-name>
+               <field table="XXER_INC_PAYMENT_COMPLEMENTS" name="STATUS" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>statusDesc</attribute-name>
+               <field table="XXER_INC_PAYMENT_COMPLEMENTS" name="STATUS_DESC" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>attatchment</attribute-name>
+               <field table="XXER_INC_PAYMENT_COMPLEMENTS" name="ATTATCHMENT" xsi:type="column"/>
+               <attribute-classification>[C</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>validationResponse</attribute-name>
+               <field table="XXER_INC_PAYMENT_COMPLEMENTS" name="VALIDATION_RESPONSE" xsi:type="column"/>
+               <attribute-classification>[C</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>createdBy</attribute-name>
+               <field table="XXER_INC_PAYMENT_COMPLEMENTS" name="CREATED_BY" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>creationDate</attribute-name>
+               <field table="XXER_INC_PAYMENT_COMPLEMENTS" name="CREATION_DATE" xsi:type="column"/>
+               <attribute-classification>java.sql.Timestamp</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>lastUpdatedBy</attribute-name>
+               <field table="XXER_INC_PAYMENT_COMPLEMENTS" name="LAST_UPDATED_BY" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>lastUpdateDate</attribute-name>
+               <field table="XXER_INC_PAYMENT_COMPLEMENTS" name="LAST_UPDATE_DATE" xsi:type="column"/>
+               <attribute-classification>java.sql.Timestamp</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>objectVersionNumber</attribute-name>
+               <field table="XXER_INC_PAYMENT_COMPLEMENTS" name="OBJECT_VERSION_NUMBER" xsi:type="column"/>
+               <attribute-classification>java.lang.Integer</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>checkNumber</attribute-name>
+               <field table="XXER_INC_PAYMENT_COMPLEMENTS" name="CHECK_NUMBER" xsi:type="column"/>
+               <attribute-classification>java.lang.Long</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="one-to-many-mapping">
+               <attribute-name>xxerIncPaymentCmpInvoicesCollection</attribute-name>
+               <reference-class>dbIncPaymentComplements.XxerIncPaymentCmpInvoices</reference-class>
+               <private-owned>true</private-owned>
+               <target-foreign-key>
+                  <field-reference>
+                     <source-field table="XXER_INC_PAYMENT_CMP_INVOICES" name="INC_PAYMENT_COMPLEMENT_ID" xsi:type="column"/>
+                     <target-field table="XXER_INC_PAYMENT_COMPLEMENTS" name="INC_PAYMENT_COMPLEMENT_ID" xsi:type="column"/>
+                  </field-reference>
+               </target-foreign-key>
+               <batch-reading>true</batch-reading>
+               <container xsi:type="list-container-policy">
+                  <collection-type>org.eclipse.persistence.indirection.IndirectList</collection-type>
+               </container>
+               <indirection xsi:type="value-holder-indirection-policy"/>
+               <selection-query xsi:type="read-all-query">
+                  <reference-class>dbIncPaymentComplements.XxerIncPaymentCmpInvoices</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>org.eclipse.persistence.indirection.IndirectList</collection-type>
+                  </container>
+               </selection-query>
+            </attribute-mapping>
+         </attribute-mappings>
+         <descriptor-type>independent</descriptor-type>
+         <sequencing>
+            <sequence-name>XXER_INC_PAYMENT_COMPLS_SEQ</sequence-name>
+            <sequence-field name="XXER_INC_PAYMENT_COMPLEMENTS.INC_PAYMENT_COMPLEMENT_ID"/>
+         </sequencing>
+         <caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+            <always-refresh>true</always-refresh>
+         </caching>
+         <remote-caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+         </remote-caching>
+         <instantiation/>
+         <copying xsi:type="instantiation-copy-policy"/>
+         <tables>
+            <table name="XXER_INC_PAYMENT_COMPLEMENTS"/>
+         </tables>
+         <structure>structureName</structure>
+      </class-mapping-descriptor>
+      <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
+         <class>dbIncPaymentComplements.XxerIncPaymentCmpInvoices</class>
+         <alias>XXER_INC_PAYMENT_CMP_INVOICES</alias>
+         <primary-key>
+            <field table="XXER_INC_PAYMENT_CMP_INVOICES" name="INC_PAYMENT_CMP_INVOICE_ID" xsi:type="column"/>
+         </primary-key>
+         <events/>
+         <querying/>
+         <attribute-mappings>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>incPaymentCmpInvoiceId</attribute-name>
+               <field table="XXER_INC_PAYMENT_CMP_INVOICES" name="INC_PAYMENT_CMP_INVOICE_ID" xsi:type="column"/>
+               <attribute-classification>java.lang.Long</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>incPaymentComplementId</attribute-name>
+               <read-only>true</read-only>
+               <properties>
+                  <property name="fkPlaceholder">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <field table="XXER_INC_PAYMENT_CMP_INVOICES" name="INC_PAYMENT_COMPLEMENT_ID" xsi:type="column"/>
+               <attribute-classification>java.lang.Long</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>uuid</attribute-name>
+               <field table="XXER_INC_PAYMENT_CMP_INVOICES" name="UUID" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>installmentNumber</attribute-name>
+               <field table="XXER_INC_PAYMENT_CMP_INVOICES" name="INSTALLMENT_NUMBER" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>createdBy</attribute-name>
+               <field table="XXER_INC_PAYMENT_CMP_INVOICES" name="CREATED_BY" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>creationDate</attribute-name>
+               <field table="XXER_INC_PAYMENT_CMP_INVOICES" name="CREATION_DATE" xsi:type="column"/>
+               <attribute-classification>java.sql.Timestamp</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>lastUpdatedBy</attribute-name>
+               <field table="XXER_INC_PAYMENT_CMP_INVOICES" name="LAST_UPDATED_BY" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>lastUpdateDate</attribute-name>
+               <field table="XXER_INC_PAYMENT_CMP_INVOICES" name="LAST_UPDATE_DATE" xsi:type="column"/>
+               <attribute-classification>java.sql.Timestamp</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>objectVersionNumber</attribute-name>
+               <field table="XXER_INC_PAYMENT_CMP_INVOICES" name="OBJECT_VERSION_NUMBER" xsi:type="column"/>
+               <attribute-classification>java.lang.Integer</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="one-to-one-mapping">
+               <attribute-name>incPaymentComplementId</attribute-name>
+               <reference-class>dbIncPaymentComplements.XxerIncPaymentComplements</reference-class>
+               <private-owned>true</private-owned>
+               <foreign-key>
+                  <field-reference>
+                     <source-field table="XXER_INC_PAYMENT_CMP_INVOICES" name="INC_PAYMENT_COMPLEMENT_ID" xsi:type="column"/>
+                     <target-field table="XXER_INC_PAYMENT_COMPLEMENTS" name="INC_PAYMENT_COMPLEMENT_ID" xsi:type="column"/>
+                  </field-reference>
+               </foreign-key>
+               <foreign-key-fields>
+                  <field table="XXER_INC_PAYMENT_CMP_INVOICES" name="INC_PAYMENT_COMPLEMENT_ID" xsi:type="column"/>
+               </foreign-key-fields>
+               <batch-reading>true</batch-reading>
+               <indirection xsi:type="value-holder-indirection-policy"/>
+               <selection-query xsi:type="read-object-query">
+                  <reference-class>dbIncPaymentComplements.XxerIncPaymentComplements</reference-class>
+               </selection-query>
+            </attribute-mapping>
+         </attribute-mappings>
+         <descriptor-type>independent</descriptor-type>
+         <sequencing>
+            <sequence-name>XXER_INC_PAYMENT_CMP_INV_SEQ</sequence-name>
+            <sequence-field name="XXER_INC_PAYMENT_CMP_INVOICES.INC_PAYMENT_CMP_INVOICE_ID"/>
+         </sequencing>
+         <caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+            <always-refresh>true</always-refresh>
+         </caching>
+         <remote-caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+         </remote-caching>
+         <instantiation/>
+         <copying xsi:type="instantiation-copy-policy"/>
+         <tables>
+            <table name="XXER_INC_PAYMENT_CMP_INVOICES"/>
+         </tables>
+         <structure>structureName</structure>
+      </class-mapping-descriptor>
+   </class-mapping-descriptors>
+   <login xsi:type="database-login">
+      <platform-class>org.eclipse.persistence.platform.database.oracle.Oracle9Platform</platform-class>
+      <connection-url></connection-url>
+   </login>
+</object-persistence>

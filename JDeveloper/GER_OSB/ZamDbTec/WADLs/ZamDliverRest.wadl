@@ -1,0 +1,21 @@
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:inp1="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbZAMDLV" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="ZamDliverRest">RestService</doc>
+   <grammars>
+      <xsd:schema>
+          <xsd:import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbZAMDLV" schemaLocation="../Schemas/nxsd_ZamDliverRestResponse.xsd"/>
+      <xsd:import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbZAMDLV" schemaLocation="../Schemas/nxsd_ZamDliverRest.xsd"/>
+    </xsd:schema>
+   </grammars>
+   <resources>
+      <resource path="/GetPlanEmbarques">
+         <method name="POST" soa:wsdlOperation="GetPlanEmbarques">
+            <request>
+               <representation mediaType="application/json" element="cns:GetPlanEmbarquesRq" xmlns:cns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbZAMDLV"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:GetPlanEmbarquesRs" xmlns:cns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbZAMDLV"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

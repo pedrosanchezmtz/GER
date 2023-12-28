@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <con:wsdl ref="SCMWorkOrdersTec/WSDL/WorkOrdersServiceWSDL"/>
+            <con:binding>
+                <con:name>ExternalReportWSSServiceSoapHttp</con:name>
+                <con:namespace>http://xmlns.oracle.com/oxp/service/PublicReportService</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:flow>
+            <con:route-node name="RunReportRN">
+                <con:comment/>
+                <con:context>
+                    <con1:varNsDecl prefix="pub" namespace="http://xmlns.oracle.com/oxp/service/PublicReportService" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+                <con:actions>
+                    <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N53ef9bf9.6bc0b0b1.2.16f06e82cde.N8000</con2:id>
+                        <con1:service ref="SCMWorkOrdersTec/BusinessService/WorkOrdersServiceBS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                        <con1:operation>runReport</con1:operation>
+                        <con1:outboundTransform>
+                            <con2:ifThenElse xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config">
+                                <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-N53ef9bf9.N2203576b.1.16f6dbace6e.N8000</con3:id>
+                                <con2:case>
+                                    <con2:condition>
+                                        <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">$body/pub:runReport/pub:reportRequest/pub:parameterNameValues/pub:item[./pub:defaultValue = 'ASSETS']</con:xqueryText>
+                                    </con2:condition>
+                                    <con2:actions>
+                                        <con2:replace varName="body" contents-only="true">
+                                            <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-N53ef9bf9.N2203576b.2.16f6dbe3ef1.N8000</con3:id>
+                                            <con2:location>
+                                                <con:xpathText xmlns:con="http://www.bea.com/wli/sb/stages/config">.</con:xpathText>
+                                            </con2:location>
+                                            <con2:expr>
+                                                <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config"><![CDATA[<pub:runReport xmlns:pub="http://xmlns.oracle.com/oxp/service/PublicReportService">
+    <pub:reportRequest>
+        <pub:parameterNameValues>
+            <pub:item>
+                <pub:name>P_ACTIVO</pub:name>
+                <pub:values>
+                    <pub:item>{$body/pub:runReport/pub:reportRequest/pub:parameterNameValues/pub:item/pub:values/pub:item/text()}</pub:item>
+                </pub:values>
+            </pub:item>
+        </pub:parameterNameValues>
+        <pub:reportAbsolutePath>/REPORTES/Catalogos/CATALOGO_ASSETS_R.xdo</pub:reportAbsolutePath>
+        <pub:sizeOfDataChunkDownload>-1</pub:sizeOfDataChunkDownload>
+    </pub:reportRequest>
+    <pub:appParams>string</pub:appParams>
+</pub:runReport>]]></con:xqueryText>
+                                            </con2:expr>
+                                        </con2:replace>
+                                    </con2:actions>
+                                </con2:case>
+                                <con2:case>
+                                    <con2:condition>
+                                        <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">$body/pub:runReport/pub:reportRequest/pub:parameterNameValues/pub:item[./pub:defaultValue = 'METERS']</con:xqueryText>
+                                    </con2:condition>
+                                    <con2:actions>
+                                        <con2:replace varName="body" contents-only="true">
+                                            <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-N53ef9bf9.N2203576b.3.16f6e9fd461.N8000</con3:id>
+                                            <con2:location>
+                                                <con:xpathText xmlns:con="http://www.bea.com/wli/sb/stages/config">.</con:xpathText>
+                                            </con2:location>
+                                            <con2:expr>
+                                                <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config"><![CDATA[<pub:runReport xmlns:pub="http://xmlns.oracle.com/oxp/service/PublicReportService">
+    <pub:reportRequest>
+        <pub:parameterNameValues>
+            <pub:item>
+                <pub:name>P_ACTIVO</pub:name>
+                <pub:values>
+                    <pub:item>{$body/pub:runReport/pub:reportRequest/pub:parameterNameValues/pub:item/pub:values/pub:item/text()}</pub:item>
+                </pub:values>
+            </pub:item>
+            <pub:item>
+                <pub:name>P_ORGA</pub:name>
+                <pub:values>
+                    <pub:item>300000002823248</pub:item>
+                </pub:values>
+            </pub:item>
+        </pub:parameterNameValues>
+        <pub:reportAbsolutePath>/REPORTES/Activos_medidores.xdo</pub:reportAbsolutePath>
+        <pub:sizeOfDataChunkDownload>-1</pub:sizeOfDataChunkDownload>
+    </pub:reportRequest>
+    <pub:appParams>string</pub:appParams>
+</pub:runReport>]]></con:xqueryText>
+                                            </con2:expr>
+                                        </con2:replace>
+                                    </con2:actions>
+                                </con2:case>
+                                <con2:case>
+                                    <con2:condition>
+                                        <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">$body/pub:runReport/pub:reportRequest/pub:parameterNameValues/pub:item[./pub:defaultValue = 'WORKORDERS']</con:xqueryText>
+                                    </con2:condition>
+                                    <con2:actions>
+                                        <con2:replace varName="body" contents-only="true">
+                                            <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-N53ef9bf9.N2203576b.1.16f6dbace6e.N7fff</con3:id>
+                                            <con2:location>
+                                                <con:xpathText xmlns:con="http://www.bea.com/wli/sb/stages/config">.</con:xpathText>
+                                            </con2:location>
+                                            <con2:expr>
+                                                <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config"><![CDATA[<pub:runReport xmlns:pub="http://xmlns.oracle.com/oxp/service/PublicReportService">
+    <pub:reportRequest>
+        <pub:parameterNameValues>
+            <pub:item>
+                <pub:name>P_ORGA</pub:name>
+                <pub:values>
+                    <pub:item>300000002823297</pub:item>
+                </pub:values>
+            </pub:item>
+            <pub:item>
+                <pub:name>P_CREADO</pub:name>
+                <pub:values>
+                    <pub:item></pub:item>
+                </pub:values>
+            </pub:item>
+            <pub:item>
+                <pub:name>P_FECHA_INI</pub:name>
+                <pub:values>
+                    <pub:item>{$body/pub:runReport/pub:reportRequest/pub:parameterNameValues/pub:item/pub:dateFrom/text()}</pub:item>
+                </pub:values>
+            </pub:item>
+            <pub:item>
+                <pub:name>P_FECHA_FIN</pub:name>
+                <pub:values>
+                    <pub:item>{$body/pub:runReport/pub:reportRequest/pub:parameterNameValues/pub:item/pub:dateTo/text()}</pub:item>
+                </pub:values>
+            </pub:item>
+            <pub:item>
+                <pub:name>P_ITEM</pub:name>
+                <pub:values>
+                    <pub:item></pub:item>
+                </pub:values>
+            </pub:item>
+        </pub:parameterNameValues>
+        <pub:reportAbsolutePath>/REPORTES/ORDENES_DE_TRABAJO_R.xdo</pub:reportAbsolutePath>
+        <pub:sizeOfDataChunkDownload>-1</pub:sizeOfDataChunkDownload>
+    </pub:reportRequest>
+    <pub:appParams>string</pub:appParams>
+</pub:runReport>]]></con:xqueryText>
+                                            </con2:expr>
+                                        </con2:replace>
+                                    </con2:actions>
+                                </con2:case>
+                            </con2:ifThenElse>
+                        </con1:outboundTransform>
+                        <con1:responseTransform/>
+                    </con1:route>
+                </con:actions>
+            </con:route-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

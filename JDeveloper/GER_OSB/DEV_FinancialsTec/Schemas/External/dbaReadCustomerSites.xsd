@@ -1,0 +1,36 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/dbaReadCustomerSites" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/dbaReadCustomerSites" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="dbaReadCustomerSitesInput" type="dbaReadCustomerSitesInput"/>
+   <xs:complexType name="dbaReadCustomerSitesInput">
+      <xs:sequence>
+         <xs:element name="PSiteSrc" type="xs:string" nillable="true" minOccurs="2" maxOccurs="2"/>
+         <xs:element name="PCustomerId" type="xs:long" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="dbaReadCustomerSitesOutputCollection" type="dbaReadCustomerSitesOutputCollection"/>
+   <xs:complexType name="dbaReadCustomerSitesOutputCollection">
+      <xs:sequence>
+         <xs:element name="dbaReadCustomerSitesOutput" type="dbaReadCustomerSitesOutput" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dbaReadCustomerSitesOutput">
+      <xs:sequence>
+         <xs:element name="CustomerSiteId" type="xs:decimal" nillable="true"/>
+         <xs:element name="CustomerId" type="xs:decimal" nillable="true"/>
+         <xs:element name="StreetName" type="xs:string" nillable="true"/>
+         <xs:element name="ExternalNumber" type="xs:string" nillable="true"/>
+         <xs:element name="InternalNumber" type="xs:string" nillable="true"/>
+         <xs:element name="PostalCode" type="xs:string" nillable="true"/>
+         <xs:element name="Province" type="xs:string" nillable="true"/>
+         <xs:element name="City" type="xs:string" nillable="true"/>
+         <xs:element name="State" type="xs:string" nillable="true"/>
+         <xs:element name="Country" type="xs:string" nillable="true"/>
+         <xs:element name="SiteName" type="xs:string" nillable="true"/>
+         <xs:element name="SiteDescription" type="xs:string" nillable="true"/>
+         <xs:element name="SiteUse" type="xs:string" nillable="true"/>
+         <xs:element name="CreatedDate" type="xs:dateTime" nillable="true"/>
+         <xs:element name="SourceTable" type="xs:string" nillable="true"/>
+         <xs:element name="AccountAddressSet" type="xs:string" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

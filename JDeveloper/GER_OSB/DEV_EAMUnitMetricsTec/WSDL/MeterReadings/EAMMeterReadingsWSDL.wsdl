@@ -1,0 +1,27 @@
+<wsdl:definitions name="EAMMeterReadings" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_EAMUnitMetricsTec/EAMMeterReadings" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_EAMUnitMetricsTec/EAMMeterReadings" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/EAMMeterReadings" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="EAMMeterReadings_plt">
+    <plt:role name="EAMMeterReadings_role">
+      <plt:portType name="tns:EAMMeterReadings_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/EAMMeterReadings" schemaLocation="../../XSD/MeterReadings/EAMMeterReadingsXSD.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="EAMMeterReadingsSelect_inputParameters">
+        <wsdl:part name="EAMMeterReadingsSelect_inputParameters" element="top:EAMMeterReadingsSelect_assetNumber_readingValue_readingDateInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="XxerEamMeterReadingsTblCollection_msg">
+        <wsdl:part name="XxerEamMeterReadingsTblCollection" element="top:XxerEamMeterReadingsTblCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="EAMMeterReadings_ptt">
+        <wsdl:operation name="merge">
+            <wsdl:input message="tns:XxerEamMeterReadingsTblCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="EAMMeterReadingsSelect">
+            <wsdl:input message="tns:EAMMeterReadingsSelect_inputParameters"/>
+            <wsdl:output message="tns:XxerEamMeterReadingsTblCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

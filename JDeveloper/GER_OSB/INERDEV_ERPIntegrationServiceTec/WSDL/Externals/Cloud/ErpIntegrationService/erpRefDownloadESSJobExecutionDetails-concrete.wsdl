@@ -1,0 +1,15 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefDownloadESSJobExecutionDetails" name="erpRefDownloadESSJobExecutionDetails-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="erpRefDownloadESSJobExecutionDetails.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefDownloadESSJobExecutionDetails"/>
+    <wsdl:binding name="erpRefDownloadESSJobExecutionDetailsPortType-binding" type="erp:erpRefDownloadESSJobExecutionDetailsPortType" xmlns:erp="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefDownloadESSJobExecutionDetails">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="downloadESSJobExecutionDetails">
+            <soap:operation soapAction="downloadESSJobExecutionDetails"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

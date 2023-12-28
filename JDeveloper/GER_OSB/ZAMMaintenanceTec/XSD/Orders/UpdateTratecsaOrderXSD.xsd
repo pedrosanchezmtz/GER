@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/UpdateTratecsaOrder" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/UpdateTratecsaOrder" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="UpdateTratecsaOrderInput" type="UpdateTratecsaOrderInput"/>
+   <xs:complexType name="UpdateTratecsaOrderInput">
+      <xs:sequence>
+         <xs:element name="fechaCierre" type="xs:string" nillable="true"/>
+         <xs:element name="zamStatus" type="xs:string" nillable="true"/>
+         <xs:element name="fechaLiberacion" type="xs:string" nillable="true"/>
+         <xs:element name="idUnidad" type="xs:string" nillable="true"/>
+         <xs:element name="idOrden" type="xs:string" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

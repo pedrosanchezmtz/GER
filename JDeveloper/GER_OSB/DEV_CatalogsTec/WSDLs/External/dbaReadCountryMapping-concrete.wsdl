@@ -1,0 +1,15 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/CatalogsTec/CatalogsTec/dbaReadCountryMapping" name="dbaReadCountryMapping-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="dbaReadCountryMapping.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/CatalogsTec/CatalogsTec/dbaReadCountryMapping"/>
+    <wsdl:binding name="dbaReadCountryMapping_ptt-binding" type="dbar:dbaReadCountryMapping_ptt" xmlns:dbar="http://xmlns.oracle.com/pcbpel/adapter/db/CatalogsTec/CatalogsTec/dbaReadCountryMapping">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="dbaReadCountryMappingSelect">
+            <soap:operation soapAction="dbaReadCountryMappingSelect"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

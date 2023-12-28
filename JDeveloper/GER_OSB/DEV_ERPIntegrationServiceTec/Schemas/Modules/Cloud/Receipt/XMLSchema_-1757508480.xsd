@@ -1,0 +1,68 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" sdoJava:package="oracle.apps.financials.receivables.receipts.shared.standardReceiptService.commonService" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:ns1="http://xmlns.oracle.com/apps/flex/financials/receivables/receipts/shared/standardReceiptService/commonService/ApplyOnAccountDff/" xmlns:ns2="http://xmlns.oracle.com/apps/flex/financials/receivables/receipts/shared/standardReceiptService/commonService/ApplyOnAccountGdf/" xmlns:sdo="commonj.sdo" xmlns:sdoJava="commonj.sdo/java" xmlns:sdoXML="commonj.sdo/xml" xmlns="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation xmlns:oer="http://xmlns.oracle.com/oer">
+            <name>Receivables Standard Receipt On Account Application SDO</name>
+            <description>Receipt Activity On Account Application</description>
+            <oer:attributes>
+                <oer:attribute description="Cash receipt number." name="ReceiptNumber"/>
+                <oer:attribute description="A unit of an enterprise that performs one or more business functions that can be rolled up in a management hierarchy." name="BusinessUnit"/>
+                <oer:attribute description="For same currency applications, the total amount of the application in the currency of the receipt and transaction.  For cross currency applications, the total amount of the application in the currency of the  transaction." name="AmountApplied"/>
+                <oer:attribute description="Date the application was applied." name="ApplyDate"/>
+                <oer:attribute description="Date that this application will post to the General Ledger." name="ApplyGlDate"/>
+                <oer:attribute description="Code defined by public sector accounting." name="USSGLTransactionCode"/>
+                <oer:attribute description="User comments." name="Comments"/>
+                <oer:attribute description="User-visible application reference number whose context is determined by the APPLICATION_REF_TYPE column's value." name="ApplicationReferenceNumber"/>
+                <oer:attribute description="User-visible application reference number whose context is determined by the SECONDARY_APPLICATION_REF_TYPE column's value." name="SecondaryApplicationReferenceNumber"/>
+                <oer:attribute description="Secondary application reference identifier of another transaction or application, such as a claim, that is associated with this receipt application." name="SecondaryApplicationReferenceId"/>
+                <oer:attribute description="Reference supplied by customer." name="CustomerReference"/>
+                <oer:attribute description="Customer reason for deductions and chargebacks associated with an application." name="CustomerReason"/>
+                <oer:attribute description="Identifies the application reference type and determines the context for the SECONDARY_APPLICATION_REF_ID and SECONDARY_APPLICATION_REF_NUM columns." name="SecondaryApplicationReferenceType"/>
+                <oer:attribute description="View Accessor of Recevable Application DFF." name="ReceivableApplicationFLEXVA"/>
+                <oer:attribute description="View Accessor of Recevable Application GDF." name="ApplyOnAccountGdfVA"/>
+            </oer:attributes>
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="XMLSchema_469750432.xsd"/>
+    <xsd:import namespace="http://xmlns.oracle.com/apps/flex/financials/receivables/receipts/shared/standardReceiptService/commonService/ApplyOnAccountDff/" schemaLocation="XMLSchema_80923234.xsd"/>
+    <xsd:import namespace="http://xmlns.oracle.com/apps/flex/financials/receivables/receipts/shared/standardReceiptService/commonService/ApplyOnAccountGdf/" schemaLocation="XMLSchema_595088285.xsd"/>
+    <xsd:import namespace="commonj.sdo/java" schemaLocation="XMLSchema_-1644098047.xsd"/>
+    <xsd:import namespace="commonj.sdo/xml" schemaLocation="XMLSchema_293054946.xsd"/>
+    <xsd:import namespace="commonj.sdo" schemaLocation="XMLSchema_-2075211952.xsd"/>
+    <xsd:complexType name="ApplyOnAccount">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>ReceivableApplicationId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="ReceiptNumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="BusinessUnit" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="AmountApplied" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="ApplyDate" type="ns0:date-Date"/>
+            <xsd:element minOccurs="0" name="ApplyGlDate" nillable="true" type="ns0:date-Date"/>
+            <xsd:element minOccurs="0" name="USSGLTransactionCode" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="Comments" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ApplicationReferenceNumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="SecondaryApplicationReferenceNumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="SecondaryApplicationReferenceId" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="CustomerReference" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CustomerReason" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="SecondaryApplicationReferenceType" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ReceivableApplicationFLEXVA" type="ns1:ReceivableApplicationFLEX" sdoXML:dataType="sdo:DataObject"/>
+            <xsd:element minOccurs="0" name="ApplyOnAccountGdfVA" type="ns2:ReceivableApplicationGdf" sdoXML:dataType="sdo:DataObject"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ApplyOnAccountResult">
+        <xsd:complexContent>
+            <xsd:extension base="ns0:MethodResult">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Value" type="ApplyOnAccount"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="applyOnAccount" type="ApplyOnAccount"/>
+    <xsd:element name="applyOnAccountResult" type="ApplyOnAccountResult"/>
+</xsd:schema>

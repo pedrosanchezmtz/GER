@@ -1,0 +1,13 @@
+<xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/CustomerEnt" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/CustomerEnt" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+ <xsd:import namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" schemaLocation="Commons/EstrellaRojaCommons.xsd"/>
+  <xsd:element name="SyncCustomersRq" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>element for request operation SyncCustomers</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ServiceError" type="cmn:ErrorType">
+    <xsd:annotation>
+      <xsd:documentation>element for request operation SyncCustomers</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

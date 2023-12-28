@@ -1,0 +1,15 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaGetJournalsTMSBs" name="dbaGetJournalsTMSBs-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="dbaGetJournalsTMSBs.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaGetJournalsTMSBs"/>
+    <wsdl:binding name="dbaGetJournalsTMSBs_ptt-binding" type="dbag:dbaGetJournalsTMSBs_ptt" xmlns:dbag="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaGetJournalsTMSBs">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="dbaGetJournalsTMSBs">
+            <soap:operation soapAction="dbaGetJournalsTMSBs"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

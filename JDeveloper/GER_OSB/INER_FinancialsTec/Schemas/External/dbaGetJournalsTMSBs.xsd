@@ -1,0 +1,155 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/dbaGetJournalsTMSBs" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/dbaGetJournalsTMSBs" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="dbaGetJournalsTMSBsInput" type="dbaGetJournalsTMSBsInput"/>
+   <xs:complexType name="dbaGetJournalsTMSBsInput">
+      <xs:sequence>
+         <xs:element name="psource" type="xs:string" nillable="true"/>
+         <xs:element name="pStatus" type="xs:string" nillable="true"/>
+         <xs:element name="pBatchId" type="xs:string" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="dbaGetJournalsTMSBsOutputCollection" type="dbaGetJournalsTMSBsOutputCollection"/>
+   <xs:complexType name="dbaGetJournalsTMSBsOutputCollection">
+      <xs:sequence>
+         <xs:element name="dbaGetJournalsTMSBsOutput" type="dbaGetJournalsTMSBsOutput" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dbaGetJournalsTMSBsOutput">
+      <xs:sequence>
+         <xs:element name="STATUS" type="xs:string" nillable="true"/>
+         <xs:element name="LEDGER_ID" type="xs:decimal" nillable="true"/>
+         <xs:element name="ACCOUNTING_DATE" type="xs:dateTime" nillable="true"/>
+         <xs:element name="CURRENCY_CODE" type="xs:string" nillable="true"/>
+         <xs:element name="DATE_CREATED" type="xs:dateTime" nillable="true"/>
+         <xs:element name="CREATED_BY" type="xs:decimal" nillable="true"/>
+         <xs:element name="ACTUAL_FLAG" type="xs:string" nillable="true"/>
+         <xs:element name="USER_JE_CATEGORY_NAME" type="xs:string" nillable="true"/>
+         <xs:element name="USER_JE_SOURCE_NAME" type="xs:string" nillable="true"/>
+         <xs:element name="CURRENCY_CONVERSION_DATE" type="xs:dateTime" nillable="true"/>
+         <xs:element name="ENCUMBRANCE_TYPE_ID" type="xs:decimal" nillable="true"/>
+         <xs:element name="BUDGET_VERSION_ID" type="xs:decimal" nillable="true"/>
+         <xs:element name="USER_CURRENCY_CONVERSION_TYPE" type="xs:string" nillable="true"/>
+         <xs:element name="CURRENCY_CONVERSION_RATE" type="xs:decimal" nillable="true"/>
+         <xs:element name="AVERAGE_JOURNAL_FLAG" type="xs:string" nillable="true"/>
+         <xs:element name="ORIGINATING_BAL_SEG_VALUE" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT1" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT2" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT3" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT4" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT5" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT6" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT7" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT8" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT9" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT10" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT11" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT12" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT13" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT14" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT15" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT16" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT17" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT18" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT19" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT20" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT21" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT22" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT23" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT24" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT25" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT26" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT27" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT28" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT29" type="xs:string" nillable="true"/>
+         <xs:element name="SEGMENT30" type="xs:string" nillable="true"/>
+         <xs:element name="ENTERED_DR" type="xs:decimal" nillable="true"/>
+         <xs:element name="ENTERED_CR" type="xs:decimal" nillable="true"/>
+         <xs:element name="ACCOUNTED_DR" type="xs:decimal" nillable="true"/>
+         <xs:element name="ACCOUNTED_CR" type="xs:decimal" nillable="true"/>
+         <xs:element name="TRANSACTION_DATE" type="xs:dateTime" nillable="true"/>
+         <xs:element name="REFERENCE1" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE2" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE3" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE4" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE5" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE6" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE7" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE8" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE9" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE10" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE11" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE12" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE13" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE14" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE15" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE16" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE17" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE18" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE19" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE20" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE21" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE22" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE23" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE24" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE25" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE26" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE27" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE28" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE29" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE30" type="xs:string" nillable="true"/>
+         <xs:element name="JE_BATCH_ID" type="xs:decimal" nillable="true"/>
+         <xs:element name="PERIOD_NAME" type="xs:string" nillable="true"/>
+         <xs:element name="JE_HEADER_ID" type="xs:decimal" nillable="true"/>
+         <xs:element name="JE_LINE_NUM" type="xs:decimal" nillable="true"/>
+         <xs:element name="CHART_OF_ACCOUNTS_ID" type="xs:decimal" nillable="true"/>
+         <xs:element name="FUNCTIONAL_CURRENCY_CODE" type="xs:string" nillable="true"/>
+         <xs:element name="CODE_COMBINATION_ID" type="xs:decimal" nillable="true"/>
+         <xs:element name="DATE_CREATED_IN_GL" type="xs:dateTime" nillable="true"/>
+         <xs:element name="WARNING_CODE" type="xs:string" nillable="true"/>
+         <xs:element name="STATUS_DESCRIPTION" type="xs:string" nillable="true"/>
+         <xs:element name="STAT_AMOUNT" type="xs:decimal" nillable="true"/>
+         <xs:element name="GROUP_ID" type="xs:decimal" nillable="true"/>
+         <xs:element name="REQUEST_ID" type="xs:decimal" nillable="true"/>
+         <xs:element name="SUBLEDGER_DOC_SEQUENCE_ID" type="xs:decimal" nillable="true"/>
+         <xs:element name="SUBLEDGER_DOC_SEQUENCE_VALUE" type="xs:decimal" nillable="true"/>
+         <xs:element name="ATTRIBUTE1" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE2" type="xs:string" nillable="true"/>
+         <xs:element name="GL_SL_LINK_ID" type="xs:decimal" nillable="true"/>
+         <xs:element name="GL_SL_LINK_TABLE" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE3" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE4" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE5" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE6" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE7" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE8" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE9" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE10" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE11" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE12" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE13" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE14" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE15" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE16" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE17" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE18" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE19" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE20" type="xs:string" nillable="true"/>
+         <xs:element name="CONTEXT" type="xs:string" nillable="true"/>
+         <xs:element name="CONTEXT2" type="xs:string" nillable="true"/>
+         <xs:element name="INVOICE_DATE" type="xs:dateTime" nillable="true"/>
+         <xs:element name="TAX_CODE" type="xs:string" nillable="true"/>
+         <xs:element name="INVOICE_IDENTIFIER" type="xs:string" nillable="true"/>
+         <xs:element name="INVOICE_AMOUNT" type="xs:decimal" nillable="true"/>
+         <xs:element name="CONTEXT3" type="xs:string" nillable="true"/>
+         <xs:element name="USSGL_TRANSACTION_CODE" type="xs:string" nillable="true"/>
+         <xs:element name="DESCR_FLEX_ERROR_MESSAGE" type="xs:string" nillable="true"/>
+         <xs:element name="JGZZ_RECON_REF" type="xs:string" nillable="true"/>
+         <xs:element name="REFERENCE_DATE" type="xs:dateTime" nillable="true"/>
+         <xs:element name="SET_OF_BOOKS_ID" type="xs:decimal" nillable="true"/>
+         <xs:element name="BALANCING_SEGMENT_VALUE" type="xs:string" nillable="true"/>
+         <xs:element name="MANAGEMENT_SEGMENT_VALUE" type="xs:string" nillable="true"/>
+         <xs:element name="FUNDS_RESERVED_FLAG" type="xs:string" nillable="true"/>
+         <xs:element name="CODE_COMBINATION_ID_INTERIM" type="xs:decimal" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

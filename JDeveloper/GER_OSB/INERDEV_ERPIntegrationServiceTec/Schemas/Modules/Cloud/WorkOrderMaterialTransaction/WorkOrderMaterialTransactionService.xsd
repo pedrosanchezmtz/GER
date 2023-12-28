@@ -1,0 +1,33 @@
+<schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/types/" xmlns:ns0="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/" xmlns:ns1="http://xmlns.oracle.com/adf/svc/types/" xmlns:tns="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/types/" xmlns="http://www.w3.org/2001/XMLSchema">
+    <import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="../Commons/BC4JService.xsd"/>
+    <import namespace="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/" schemaLocation="ProcessStatus.xsd"/>
+    <import namespace="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/" schemaLocation="BatchInput.xsd"/>
+    <element name="createWorkOrderMaterialTransactions">
+        <complexType>
+            <sequence>
+                <element name="batchInput" type="ns0:BatchInput"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createWorkOrderMaterialTransactionsResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ProcessStatus"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createWorkOrderMaterialTransactionsAsync">
+        <complexType>
+            <sequence>
+                <element name="batchInput" type="ns0:BatchInput"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createWorkOrderMaterialTransactionsAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ProcessStatus"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

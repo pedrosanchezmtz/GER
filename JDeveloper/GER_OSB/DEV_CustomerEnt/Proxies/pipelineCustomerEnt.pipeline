@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="DEV_CustomerEnt/WSDLs/CustomerEnt"/>
+            <con:binding>
+                <con:name>CustomerEntBinding</con:name>
+                <con:namespace>http://soa.estrellaroja.com.mx/CustomerEnt</con:namespace>
+            </con:binding>
+        </con:binding>
+        <oper:operations xmlns:oper="http://xmlns.oracle.com/servicebus/pipeline/operations" xmlns:cus="http://www.bea.com/wli/config/customizations" xmlns:xt="http://www.bea.com/wli/config/xmltypes"/>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline type="error" name="error-N3f57fffe.N667a2141.0.160e62e8664.N7f9b">
+            <con:stage id="_StageId-N3f57fffe.N667a2141.0.160e62e8664.N7f9a" name="stageErrorHandler">
+                <con:context>
+                    <con1:userNsDecl prefix="cus" namespace="http://soa.estrellaroja.com.mx/CustomerEnt"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fffe.N667a2141.0.160e62e8664.N7f67</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<cus:ServiceError>
+   <cus:ErrorCode>{$fault/ctx:errorCode/text()}</cus:ErrorCode>
+      <cus:ShortDescription>{$fault/ctx:reason/text()}</cus:ShortDescription>
+      <cus:Description>{fn:concat("Error when invoking CustomerEnt[SyncCutomers]",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cus:Description>
+      <cus:BusinessProcess>CustomerEnt</cus:BusinessProcess>
+      <cus:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cus:FailedService>
+   <cus:TimeStamp>{fn:current-dateTime()}</cus:TimeStamp>
+ </cus:ServiceError>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fffe.N667a2141.0.160e62e8664.N7f34</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:route-node name="Route2CustomerBiz" error-handler="error-N3f57fffe.N667a2141.0.160e62e8664.N7f9b" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                <con:context>
+                    <con2:userNsDecl prefix="cus" namespace="http://soa.estrellaroja.com.mx/CustomerEnt"/>
+                    <con2:userNsDecl prefix="biz" namespace="http://soa.estrellaroja.com.mx/CustomerBiz"/>
+                </con:context>
+                <con:actions>
+                    <con1:route>
+                        <con2:id>_ActionId-N3f57fffe.N667a2141.0.160e62e8664.N8000</con2:id>
+                        <con1:service ref="DEV_CustomerEnt/Business/CustomerBizBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:operation>SyncCustomers</con1:operation>
+                        <con1:outboundTransform>
+                            <con3:replace varName="body" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                <con2:id>_ActionId-N3f57fffe.N667a2141.0.160e62e8664.N7fcd</con2:id>
+                                <con3:location>
+                                    <con2:xpathText>.</con2:xpathText>
+                                </con3:location>
+                                <con3:expr>
+                                    <con2:xqueryText>&lt;biz:SyncCustomersRq /></con2:xqueryText>
+                                </con3:expr>
+                            </con3:replace>
+                        </con1:outboundTransform>
+                        <con1:responseTransform/>
+                    </con1:route>
+                </con:actions>
+            </con:route-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

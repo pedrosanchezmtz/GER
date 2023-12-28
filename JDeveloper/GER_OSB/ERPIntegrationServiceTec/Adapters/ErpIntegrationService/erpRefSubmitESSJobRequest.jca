@@ -1,0 +1,21 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefSubmitESSJobRequest/types" name="erpRefSubmitESSJobRequestPortType" adapter="erp" wsdlLocation="../../WSDL/Externals/Cloud/ErpIntegrationService/erpRefSubmitESSJobRequest.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="cloud/CloudAdapter">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.cloud.connector.fa.FAConnectionFactory">
+      <property name="targetWSDLURL" value="https://egte.fa.us2.oraclecloud.com:443/fscmService/ServiceCatalogService?WSDL"/>
+      <property name="csfkey" value="erpKey"/>
+      <property name="csfMap" value="oracle.wsm.security"/>
+      <property name="eventCatalogURL" value=""/>
+      <property name="applicationVersion" value="1.0"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-interaction portType="erpRefSubmitESSJobRequestPortType" operation="submitESSJobRequest">
+    <interaction-spec className="oracle.tip.adapter.cloud.CloudInteractionSpec">
+      <property name="targetOperation" value="submitESSJobRequest"/>
+      <property name="operationPath" value="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/submitESSJobRequest"/>
+      <property name="outboundRequestOperation" value="{http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/}submitESSJobRequest"/>
+      <property name="browseBySelection" value="browseByService"/>
+      <property name="serviceWSDLURL" value="https://egte.fa.us2.oraclecloud.com:443/fscmService/ErpIntegrationService?WSDL"/>
+      <property name="outboundRequestObject" value="{http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/OSCAdapter}ErpIntegrationService"/>
+    </interaction-spec>
+  </endpoint-interaction>
+</adapter-config>

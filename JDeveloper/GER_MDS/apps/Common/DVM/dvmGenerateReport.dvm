@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dvm name="DVM_GENERATE_REPORT" xmlns="http://xmlns.oracle.com/dvm">
+<description>Rutas de los Reportes con base a un nombre de interfaz</description>
+<columns>
+<column name="targetInterface"/>
+<column name="pathName"/>
+</columns>
+<rows>
+<row>
+<cell>PaymentComplements</cell>
+<cell>/Custom/ER_INTEGRATION/ER03_AR_Timbrado_de_Complementos_de_Pago/Data Models/</cell>
+</row>
+</rows>
+</dvm>

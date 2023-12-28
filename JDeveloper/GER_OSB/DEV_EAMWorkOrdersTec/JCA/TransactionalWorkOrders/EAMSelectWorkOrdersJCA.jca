@@ -1,0 +1,14 @@
+<adapter-config name="EAMSelectWorkOrders" adapter="db" wsdlLocation="../../WSDL/TransactionalWorkOrders/EAMSelectWorkOrdersWSDL.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="/DEV/ERSEPDB1" location="eis/DB/DEV/ERSEPDB1"/>
+  <endpoint-interaction portType="EAMSelectWorkOrders_ptt" operation="EAMSelectWorkOrdersSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="EAMSelectWorkOrders.XxerZamWoBlksTbl"/>
+      <property name="QueryName" value="EAMSelectWorkOrdersSelect"/>
+      <property name="MappingsMetaDataURL" value="EAMSelectWorkOrdersOrMappingsJCA.xml"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="BanxicoTec/WSDLs/BanxicoTec"/>
+            <con:binding>
+                <con:name>BanxicoTecBinding</con:name>
+                <con:namespace>http://soa.estrellaroja.com.mx/BanxicoTec</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router errorHandler="error-N3f57fffe.N411ae87a.0.177ab8a2029.N7f5e">
+        <con:pipeline type="error" name="error-N3f57fffe.N411ae87a.0.177ab8a2029.N7e5e">
+            <con:stage id="_StageId-N3f57fffe.N411ae87a.0.177ab8a2029.N7e27" name="StageErrorHandler" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/logging/config">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fffe.N411ae87a.0.177ab8a2029.N7e26</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<coh:GetExchangeRateRs>
+<cmn:Errors>
+ <cmn:Error>
+   <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+      <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+      <cmn:Description>{fn:concat("Error when invoking GetTerritoryCache",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+      <cmn:BusinessProcess>GetExchangeRateRs</cmn:BusinessProcess>
+      <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+   <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+ </cmn:Error>
+</cmn:Errors>
+</coh:GetExchangeRateRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fffe.N411ae87a.0.177ab8a2029.N7e25</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fffe.N411ae87a.0.177ab8a2029.N7c67">
+            <con:stage id="_StageId-N3f57fffe.N411ae87a.0.177ab8a2029.N7c30" name="StageErrorHandler" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/logging/config">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fffe.N411ae87a.0.177ab8a2029.N7c2f</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<coh:GetExchangeRateRs>
+<cmn:Errors>
+ <cmn:Error>
+   <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+      <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+      <cmn:Description>{fn:concat("Error when invoking GetTerritoryCache",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+      <cmn:BusinessProcess>GetExchangeRateRs</cmn:BusinessProcess>
+      <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+   <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+ </cmn:Error>
+</cmn:Errors>
+</coh:GetExchangeRateRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fffe.N411ae87a.0.177ab8a2029.N7c2e</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fffe.N6617d1c7.0.177a8aa96ed.N7f27">
+            <con:stage id="_StageId-N3f57fffe.N6617d1c7.0.177a8aa96ed.N7f25" name="StageRequest" errorHandler="error-N3f57fffe.N411ae87a.0.177ab8a2029.N7c67">
+                <con:context>
+                    <con1:userNsDecl prefix="ban1" namespace="http://xmlns.oracle.com/GER_OSB/BanxicoTec/BanxicoSieBs" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                    <con1:userNsDecl prefix="ban" namespace="http://soa.estrellaroja.com.mx/BanxicoTec" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                    <con1:variable name="BanxicoSie" path="$BanxicoSie" xmlns:con1="http://www.bea.com/wli/sb/typesystem/config">
+                        <con1:service>
+                            <con1:reference ref="BanxicoTec/Business/BanxicoSieBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        </con1:service>
+                    </con1:variable>
+                </con:context>
+                <con:actions>
+                    <con1:replace contents-only="true" varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57fffe.N6617d1c7.0.177a8aa96ed.N7e39</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xsltTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="BanxicoTec/Xslt/inputBanxicoTec_to_inputBanxicoSie"/>
+                                <con2:input>$body/*[1]</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fffe.N411ae87a.0.177ab8a2029.N7f5e">
+            <con:stage id="_StageId-N3f57fffe.N411ae87a.0.177ab8a2029.N7f27" name="StageGeneralErrorHandler" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/logging/config">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fffe.N411ae87a.0.177ab8a2029.N7f26</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<cmn:Errors>
+ <cmn:Error>
+   <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+      <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+      <cmn:Description>{fn:concat("Error when invoking CoherenceTec",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+      <cmn:BusinessProcess>BanxicoTec</cmn:BusinessProcess>
+      <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+   <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+ </cmn:Error>
+</cmn:Errors>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply isError="false">
+                        <con1:id>_ActionId-N3f57fffe.N411ae87a.0.177ab8a2029.N7f25</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fffe.N6617d1c7.0.177a8aa96ed.N7f26">
+            <con:stage id="_StageId-N3f57fffe.N6617d1c7.0.177a8aa96ed.N7f24" name="StageResponse" errorHandler="error-N3f57fffe.N411ae87a.0.177ab8a2029.N7c9a">
+                <con:context>
+                    <con1:varNsDecl prefix="ban" namespace="http://soa.estrellaroja.com.mx/BanxicoTec" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57fffe.N6617d1c7.0.177a8aa96ed.N7e36</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xsltTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="BanxicoTec/Xslt/outputBanxicoSie_to_outputBanxicoTec"/>
+                                <con2:input>fn-bea:inlinedXML(fn:normalize-space(fn-bea:serialize($body/*[1])))</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fffe.N411ae87a.0.177ab8a2029.N7c9a">
+            <con:stage id="_StageId-N3f57fffe.N411ae87a.0.177ab8a2029.N7bf8" name="StageErrorHandler" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/logging/config">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con1:userNsDecl prefix="coh" namespace="http://soa.estrellaroja.com.mx/CoherenceTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fffe.N411ae87a.0.177ab8a2029.N7bf7</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<coh:GetExchangeRateRs>
+<cmn:Errors>
+ <cmn:Error>
+   <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+      <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+      <cmn:Description>{fn:concat("Error when invoking GetTerritoryCache",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+      <cmn:BusinessProcess>GetExchangeRateRs</cmn:BusinessProcess>
+      <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+   <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+ </cmn:Error>
+</cmn:Errors>
+</coh:GetExchangeRateRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fffe.N411ae87a.0.177ab8a2029.N7bf6</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57a7ff.1447faf6.0.17793989f17.N7ffb" name="BranchNode1">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="GetExchangeRate">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair Node1">
+                                <con:request>request-N3f57fffe.N6617d1c7.0.177a8aa96ed.N7f27</con:request>
+                                <con:response>response-N3f57fffe.N6617d1c7.0.177a8aa96ed.N7f26</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteNodeGetSeries" error-handler="error-N3f57fffe.N411ae87a.0.177ab8a2029.N7e5e">
+                                <con:context>
+                                    <con1:userNsDecl prefix="pns" namespace="http://xmlns.oracle.com/GER_OSB/BanxicoTec/BanxicoSieBs" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                                    <con1:varNsDecl prefix="ban" namespace="http://soa.estrellaroja.com.mx/BanxicoTec" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                                    <con1:varNsDecl prefix="est" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                                </con:context>
+                                <con:actions>
+                                    <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
+                                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57fffe.N6617d1c7.0.177a8aa96ed.N7e7a</con2:id>
+                                        <con1:service ref="BanxicoTec/Business/BanxicoSieBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con1:operation>GetSeries</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con2:insert varName="outbound" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                                <con1:id>_ActionId-N3f57a7ff.1447faf6.0.17793989f17.N7fbf</con1:id>
+                                                <con2:location>
+                                                    <con:xpathText xmlns:con="http://www.bea.com/wli/sb/stages/config">$outbound/ctx:transport/ctx:request/tp:headers</con:xpathText>
+                                                </con2:location>
+                                                <con2:where>first-child</con2:where>
+                                                <con2:expr>
+                                                    <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">&lt;tp:user-header name="Bmx-Token" value='4f34d7a123ec8bc4c3df0fb5a4e9c8be500ffc0f92c272c42af360dc863cbe7a'/></con:xqueryText>
+                                                </con2:expr>
+                                            </con2:insert>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+        <con:partner-links/>
+    </con:router>
+</con:pipelineEntry>

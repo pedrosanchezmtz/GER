@@ -1,0 +1,12 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/ftp/GER_OSB_OCI/SftpTec/sftpBancoER" name="sftpBancoER-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="sftpBancoER.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/ftp/GER_OSB_OCI/SftpTec/sftpBancoER"/>
+    <wsdl:binding name="PutFile_ptt-binding" type="sft:PutFile_ptt" xmlns:sft="http://xmlns.oracle.com/pcbpel/adapter/ftp/GER_OSB_OCI/SftpTec/sftpBancoER">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="PutFile">
+            <soap:operation soapAction="PutFile"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

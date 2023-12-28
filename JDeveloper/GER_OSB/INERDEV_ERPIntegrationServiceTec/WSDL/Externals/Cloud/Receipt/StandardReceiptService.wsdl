@@ -1,0 +1,1703 @@
+<wsdl:definitions name="StandardReceiptService" targetNamespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/" xmlns:orafault="http://xmlns.oracle.com/oracleas/schema/oracle-fault-11_0" xmlns:tns="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:types="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/types/">
+    <wsdl:documentation xmlns:oer="http://xmlns.oracle.com/oer">
+        <name>Receivables Standard Receipt Service</name>
+        <description>The payment received in exchange for goods or services. Payment can
+            include applied and unapplied receipts entered within the specified
+            accounting date range. For example, receipt number RCPT13542 for
+            check payments of $1000 received from Matsuhita, Inc against the
+            first installment of invoice number B42315 for Dell Laptop purchase.</description>
+        <docCategories>
+            <category>Integration</category>
+        </docCategories>
+        <oer:lifecycle>Active</oer:lifecycle>
+        <oer:compatibility>Supported - Backward Compatibility Assured</oer:compatibility>
+        <oer:category name="lba">
+            <value>FinTop-Financial Products</value>
+            <value>FinTop-Financial Products : FinArTop-Public Receivables</value>
+            <value>FinTop-Financial Products : FinArTop-Public Receivables :
+                FinArReceipts-Receipts</value>
+            <value>FinTop-Financial Products : FinArTop-Public Receivables :
+                FinArReceipts-Receipts : FinArRcptsStdReceipts-Standard Receipts</value>
+        </oer:category>
+        <oer:operation name="createStandardReceipt">
+            <description>This method is used to create standard receipt</description>
+            <oer:parameters>
+                <oer:parameter name="standardReceipt" description="This is a Service Data Object for Receivables Standard Receipt Service."/>
+                <oer:return description="Returns the Service Data Object of create standard receipt operation."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="findStandardReceipt">
+            <description>This method is used to find an existing credit memo in
+                Receivables</description>
+            <oer:parameters>
+                <oer:parameter name="findCriteria" description="The criteria used to limit your query result, such as the filter (where clause), the fetch size, etc."/>
+                <oer:parameter name="findControl" description="Find Control. Not currently used."/>
+                <oer:return description="Returns the Service Data Object of find standard receipt operation that satisfy the inbound criteria."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="createReverseReceipt">
+            <description>This method is used to reverse receipt.</description>
+            <oer:parameters>
+                <oer:parameter name="reverseReceipt" description="This is a Service Data Object for Receivables Receipt Reverse Service."/>
+                <oer:return description="Returns the Service Data Object of Receivables Create And Apply Receipt Service."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="createUnapplyReceipt">
+            <description>This method is used to unapply receipt.</description>
+            <oer:parameters>
+                <oer:parameter name="unapplyReceipt" description="This is a Service Data Object for Receivables Standard Receipt Unapplication Service."/>
+                <oer:return description="Returns the Service Data Object of Receivables Standard Receipt Unapplication Service."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="processReverseReceipt">
+            <description>This method is used to reverse multiple records of receipts.</description>
+            <oer:parameters>
+                <oer:parameter name="changeOperation" description="Operation to be performed on the records of receipts."/>
+                <oer:parameter name="reverseReceipt" description="This is a Service Data Object for Receivables Receipt Reverse Service."/>
+                <oer:parameter name="processControl" description="Parameters that define control on the records of receipts."/>
+                <oer:return description="Returns the Service Data Object of Receivables Create And Apply Receipt Service."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="processUnapplyReceipt">
+            <description>This method is used to unapply multiple records of receipts.</description>
+            <oer:parameters>
+                <oer:parameter name="changeOperation" description="Operation to be performed on the records of receipts."/>
+                <oer:parameter name="unapplyReceipt" description="This is a Service Data Object for Receivables Standard Receipt Unapplication Service."/>
+                <oer:parameter name="processControl" description="Parameters that define control on the records of receipts."/>
+                <oer:return description="Returns the Service Data Object of Receivables Standard Receipt Unapplication Service."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="createUnapplyOnAccount">
+            <description>This method is used to unapply receipt on account.</description>
+            <oer:parameters>
+                <oer:parameter name="unapplyOnAccount" description="This is a Service Data Object for Receivables Standard Receipt On Account Unapplication Service."/>
+                <oer:return description="Returns the Service Data Object of Receivables Standard Receipt On Account Unapplication Service."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="processUnapplyOnAccount">
+            <description>This method is used to unapply on account multiple records of
+                receipts.</description>
+            <oer:parameters>
+                <oer:parameter name="changeOperation" description="Operation to be performed on the records of receipts."/>
+                <oer:parameter name="unapplyOnAccount" description="This is a Service Data Object for Receivables Standard Receipt On Account Unapplication Service."/>
+                <oer:parameter name="processControl" description="Parameters that define control on the records of receipts."/>
+                <oer:return description="Returns the Service Data Object of Receivables Standard Receipt On Account Unapplication Service."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="createApplyOnAccount">
+            <description>This method is used to apply receipt on account.</description>
+            <oer:parameters>
+                <oer:parameter name="applyOnAccount" description="This is a Service Data Object for Receivables Standard Receipt On Account Application Service."/>
+                <oer:return description="Returns the Service Data Object of Receivables Standard Receipt On Account Application Service."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="processApplyOnAccount">
+            <description>This method is used to apply on account multiple records of
+                receipts.</description>
+            <oer:parameters>
+                <oer:parameter name="changeOperation" description="Operation to be performed on the records of receipts."/>
+                <oer:parameter name="applyOnAccount" description="This is a Service Data Object for Receivables Standard Receipt On Account Application Service."/>
+                <oer:parameter name="processControl" description="Parameters that define control on the records of receipts."/>
+                <oer:return description="Returns the Service Data Object of Receivables Standard Receipt On Account Application Service."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="createActivityApplication">
+            <description>This method is used to apply activity on receipt.</description>
+            <oer:parameters>
+                <oer:parameter name="activityApplication" description="This is a Service Data Object for Receivables Standard Receipt Activity Application Service."/>
+                <oer:return description="Returns the Service Data Object of Receivables Standard Receipt Activity Application Service."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="processActivityApplication">
+            <description>This method is used to apply activity on multiple records of
+                receipts.</description>
+            <oer:parameters>
+                <oer:parameter name="changeOperation" description="Operation to be performed on the records of receipts."/>
+                <oer:parameter name="activityApplication" description="This is a Service Data Object for Receivables Standard Receipt Activity Application Service."/>
+                <oer:parameter name="processControl" description="Parameters that define control on the records of receipts."/>
+                <oer:return description="Returns the Service Data Object of Receivables Standard Receipt Activity Application Service."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="createActivityUnapplication">
+            <description>This method is used to unapply activity on receipt.</description>
+            <oer:parameters>
+                <oer:parameter name="activityUnapplication" description="This is a Service Data Object for Receivables Standard Receipt Activity Unapplication Service."/>
+                <oer:return description="Return value for the  Service Data Object for Receivables Standard Receipt Activity Unapplication Service."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="processActivityUnapplication">
+            <description>This method is used to unapply activity on multiple records of
+                receipts.</description>
+            <oer:parameters>
+                <oer:parameter name="changeOperation" description="Operation to be performed on the records of receipts."/>
+                <oer:parameter name="activityUnapplication" description="This is a Service Data Object for Receivables Standard Receipt Activity Unapplication Service."/>
+                <oer:parameter name="processControl" description="Parameters that define control on the records of receipts."/>
+                <oer:return description="Returns the Service Data Object of Receivables Standard Receipt Activity Unapplication Service."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="createApplyReceipt">
+            <description>This method is used to apply receipt on transacion.</description>
+            <oer:parameters>
+                <oer:parameter name="applyReceipt" description="This is a Service Data Object for Receivables Standard Receipt Application Service."/>
+                <oer:return description="Returns the Service Data Object of Receivables Standard Receipt Application Service."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="processApplyReceipt">
+            <description>This method is used to apply multipl receipts on multiple transacions.</description>
+            <oer:parameters>
+                <oer:parameter name="changeOperation" description="Operation to be performed on the records of receipts."/>
+                <oer:parameter name="applyReceipt" description="This is a Service Data Object for Receivables Standard Receipt Application Service."/>
+                <oer:parameter name="processControl" description="Parameters that define control on the records of receipts."/>
+                <oer:return description="Returns the Service Data Object of Receivables Standard Receipt Application Service."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="getDfltObjAttrHints">
+            <description>An operation to retrieve user interface hints, such as the
+                service data object label and object attribute labels, for the
+                specified service data object and locale.  As a prerequisite,
+                invoke the getEntityList operation defined on this service to
+                get the list of possible values for the viewName request payload
+                element.</description>
+            <oer:parameters>
+                <oer:parameter name="viewName" description="The service view usage name, an internal name for the service data object.  Specify the value of the &lt;name> element from the getEntityList operation response payload."/>
+                <oer:parameter name="localeName" description="The locale to use when evaluating locale-based user interface hints. The localeName is in ISO 639-1 format."/>
+                <oer:return description="The label and user interface hints for the specified service data object and its attributes in a name-value pair format."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="getServiceLastUpdateTime">
+            <description>An operation that returns the date and time when the schema
+                files referenced in the service definition last changed.</description>
+            <oer:parameters>
+                <oer:return description="The date and time when the service definition last changed in ISO 8601 format."/>
+            </oer:parameters>
+        </oer:operation>
+        <oer:operation name="getEntityList">
+            <description>An operation to get the list of service data objects defined on
+                this service.</description>
+            <oer:parameters>
+                <oer:return description="A list of service data objects defined on this service.  For each service data object, the result includes the QName, internal name, and Boolean values indicating whether create, update, merge, and delete operations can be performed on the object."/>
+            </oer:parameters>
+        </oer:operation>
+    </wsdl:documentation>
+    <plnk:partnerLinkType name="StandardReceiptService">
+        <plnk:role name="StandardReceiptServiceProvider">
+            <plnk:portType name="tns:StandardReceiptService"/>
+        </plnk:role>
+        <plnk:role name="StandardReceiptServiceRequestor">
+            <plnk:portType name="tns:StandardReceiptServiceResponse"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+<wsp:Policy wsu:Id="StandardReceiptServiceResponse_Fault_Policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/><wsp:Policy wsu:Id="StandardReceiptServiceResponse_Input_Policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+   <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+      <sp:Body/>
+      <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+      <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+      <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+   </sp:SignedParts>
+   <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+      <sp:Body/>
+      <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+   </sp:EncryptedParts>
+</wsp:Policy><wsp:Policy wsu:Id="StandardReceiptServiceResponse_Output_Policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+   <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+      <sp:Body/>
+   </sp:SignedParts>
+   <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+      <sp:Body/>
+   </sp:EncryptedParts>
+</wsp:Policy><wsp:Policy wsu:Id="StandardReceiptServiceSoapHttpPort_Fault_Policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+   <wsp:ExactlyOne>
+      <wsp:All/>
+      <wsp:All/>
+      <wsp:All/>
+      <wsp:All/>
+   </wsp:ExactlyOne>
+</wsp:Policy><wsp:Policy wsu:Id="StandardReceiptServiceSoapHttpPort_Input_Policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+   <wsp:ExactlyOne>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+            <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+            <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+            <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+            <sp:Header Name="SignatureConfirmation" Namespace="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd"/>
+            <sp:Header Name="SignatureConfirmation" Namespace="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd"/>
+            <sp:Header Name="SignatureConfirmation" Namespace="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd"/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+            <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:EncryptedParts>
+      </wsp:All>
+   </wsp:ExactlyOne>
+</wsp:Policy><wsp:Policy wsu:Id="StandardReceiptServiceSoapHttpPort_Output_Policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+   <wsp:ExactlyOne>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:EncryptedParts>
+      </wsp:All>
+   </wsp:ExactlyOne>
+</wsp:Policy><wsp:Policy wsu:Id="wsaddr_policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+   <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+</wsp:Policy><wsp:Policy wsu:Id="wsmtom_policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+   <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"/>
+</wsp:Policy><wsp:Policy wsu:Id="wss11_saml_or_username_token_with_message_protection_service_policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+   <wsp:ExactlyOne>
+      <wsp:All>
+         <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:ProtectionToken>
+                  <wsp:Policy>
+                     <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                        <wsp:Policy>
+                           <sp:RequireThumbprintReference/>
+                           <sp:WssX509V3Token11/>
+                        </wsp:Policy>
+                     </sp:X509Token>
+                  </wsp:Policy>
+               </sp:ProtectionToken>
+               <sp:AlgorithmSuite>
+                  <wsp:Policy>
+                     <sp:Basic128/>
+                  </wsp:Policy>
+               </sp:AlgorithmSuite>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+               <sp:ProtectTokens/>
+               <sp:OnlySignEntireHeadersAndBody/>
+            </wsp:Policy>
+         </sp:SymmetricBinding>
+         <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:SamlToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssSamlV11Token11/>
+                  </wsp:Policy>
+               </sp:SamlToken>
+            </wsp:Policy>
+         </sp:SignedSupportingTokens>
+         <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssX509V3Token11/>
+                  </wsp:Policy>
+               </sp:X509Token>
+            </wsp:Policy>
+         </sp:EndorsingSupportingTokens>
+         <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:RequireSignatureConfirmation/>
+               <sp:MustSupportRefEncryptedKey/>
+            </wsp:Policy>
+         </sp:Wss11>
+      </wsp:All>
+      <wsp:All>
+         <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:ProtectionToken>
+                  <wsp:Policy>
+                     <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                        <wsp:Policy>
+                           <sp:RequireThumbprintReference/>
+                           <sp:WssX509V3Token11/>
+                        </wsp:Policy>
+                     </sp:X509Token>
+                  </wsp:Policy>
+               </sp:ProtectionToken>
+               <sp:AlgorithmSuite>
+                  <wsp:Policy>
+                     <sp:Basic128Exn256/>
+                  </wsp:Policy>
+               </sp:AlgorithmSuite>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+               <sp:ProtectTokens/>
+               <sp:OnlySignEntireHeadersAndBody/>
+            </wsp:Policy>
+         </sp:SymmetricBinding>
+         <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:SamlToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssSamlV11Token11/>
+                  </wsp:Policy>
+               </sp:SamlToken>
+            </wsp:Policy>
+         </sp:SignedSupportingTokens>
+         <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssX509V3Token11/>
+                  </wsp:Policy>
+               </sp:X509Token>
+            </wsp:Policy>
+         </sp:EndorsingSupportingTokens>
+         <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:RequireSignatureConfirmation/>
+               <sp:MustSupportRefEncryptedKey/>
+            </wsp:Policy>
+         </sp:Wss11>
+      </wsp:All>
+      <wsp:All>
+         <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:ProtectionToken>
+                  <wsp:Policy>
+                     <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                        <wsp:Policy>
+                           <sp:RequireThumbprintReference/>
+                           <sp:WssX509V3Token11/>
+                        </wsp:Policy>
+                     </sp:X509Token>
+                  </wsp:Policy>
+               </sp:ProtectionToken>
+               <sp:AlgorithmSuite>
+                  <wsp:Policy>
+                     <sp:Basic128/>
+                  </wsp:Policy>
+               </sp:AlgorithmSuite>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+               <sp:OnlySignEntireHeadersAndBody/>
+            </wsp:Policy>
+         </sp:SymmetricBinding>
+         <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssUsernameToken10/>
+                  </wsp:Policy>
+               </sp:UsernameToken>
+            </wsp:Policy>
+         </sp:SignedSupportingTokens>
+         <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:RequireSignatureConfirmation/>
+               <sp:MustSupportRefEncryptedKey/>
+            </wsp:Policy>
+         </sp:Wss11>
+      </wsp:All>
+      <wsp:All>
+         <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:ProtectionToken>
+                  <wsp:Policy>
+                     <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                        <wsp:Policy>
+                           <sp:RequireThumbprintReference/>
+                           <sp:WssX509V3Token11/>
+                        </wsp:Policy>
+                     </sp:X509Token>
+                  </wsp:Policy>
+               </sp:ProtectionToken>
+               <sp:AlgorithmSuite>
+                  <wsp:Policy>
+                     <sp:Basic128Exn256/>
+                  </wsp:Policy>
+               </sp:AlgorithmSuite>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+               <sp:OnlySignEntireHeadersAndBody/>
+            </wsp:Policy>
+         </sp:SymmetricBinding>
+         <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssUsernameToken10/>
+                  </wsp:Policy>
+               </sp:UsernameToken>
+            </wsp:Policy>
+         </sp:SignedSupportingTokens>
+         <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:RequireSignatureConfirmation/>
+               <sp:MustSupportRefEncryptedKey/>
+            </wsp:Policy>
+         </sp:Wss11>
+      </wsp:All>
+      <wsp:All>
+         <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:TransportToken>
+                  <wsp:Policy>
+                     <sp:HttpsToken RequireClientCertificate="false">
+                        <wsp:Policy/>
+                     </sp:HttpsToken>
+                  </wsp:Policy>
+               </sp:TransportToken>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+            </wsp:Policy>
+         </sp:TransportBinding>
+         <sp:SupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:SamlToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssSamlV11Token10/>
+                  </wsp:Policy>
+               </sp:SamlToken>
+            </wsp:Policy>
+         </sp:SupportingTokens>
+      </wsp:All>
+      <wsp:All>
+         <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:TransportToken>
+                  <wsp:Policy>
+                     <sp:HttpsToken RequireClientCertificate="false">
+                        <wsp:Policy/>
+                     </sp:HttpsToken>
+                  </wsp:Policy>
+               </sp:TransportToken>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+            </wsp:Policy>
+         </sp:TransportBinding>
+         <sp:SupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssUsernameToken10/>
+                  </wsp:Policy>
+               </sp:UsernameToken>
+            </wsp:Policy>
+         </sp:SupportingTokens>
+      </wsp:All>
+      <wsp:All>
+         <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:TransportToken>
+                  <wsp:Policy>
+                     <sp:HttpsToken RequireClientCertificate="false">
+                        <wsp:Policy/>
+                     </sp:HttpsToken>
+                  </wsp:Policy>
+               </sp:TransportToken>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+            </wsp:Policy>
+         </sp:TransportBinding>
+      </wsp:All>
+      <wsp:All>
+         <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:TransportToken>
+                  <wsp:Policy>
+                     <sp:HttpsToken RequireClientCertificate="false">
+                        <wsp:Policy>
+                           <osp:HttpJwtAuthentication xmlns:osp="http://schemas.oracle.com/ws/2012/01/wssecuritypolicy"/>
+                        </wsp:Policy>
+                     </sp:HttpsToken>
+                  </wsp:Policy>
+               </sp:TransportToken>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+            </wsp:Policy>
+         </sp:TransportBinding>
+      </wsp:All>
+   </wsp:ExactlyOne>
+</wsp:Policy><wsp:Policy wsu:Id="wss11_saml_token_with_message_protection_client_policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+   <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+      <wsp:Policy>
+         <sp:ProtectionToken>
+            <wsp:Policy>
+               <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                  <wsp:Policy>
+                     <sp:RequireThumbprintReference/>
+                     <sp:WssX509V3Token11/>
+                  </wsp:Policy>
+               </sp:X509Token>
+            </wsp:Policy>
+         </sp:ProtectionToken>
+         <sp:AlgorithmSuite>
+            <wsp:Policy>
+               <sp:Basic128/>
+            </wsp:Policy>
+         </sp:AlgorithmSuite>
+         <sp:Layout>
+            <wsp:Policy>
+               <sp:Lax/>
+            </wsp:Policy>
+         </sp:Layout>
+         <sp:IncludeTimestamp/>
+         <sp:ProtectTokens/>
+         <sp:OnlySignEntireHeadersAndBody/>
+      </wsp:Policy>
+   </sp:SymmetricBinding>
+   <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+      <wsp:Policy>
+         <sp:SamlToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+            <wsp:Policy>
+               <sp:WssSamlV11Token11/>
+            </wsp:Policy>
+         </sp:SamlToken>
+      </wsp:Policy>
+   </sp:SignedSupportingTokens>
+   <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+      <wsp:Policy>
+         <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+            <wsp:Policy>
+               <sp:WssX509V3Token11/>
+            </wsp:Policy>
+         </sp:X509Token>
+      </wsp:Policy>
+   </sp:EndorsingSupportingTokens>
+   <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+      <wsp:Policy>
+         <sp:RequireSignatureConfirmation/>
+         <sp:MustSupportRefEncryptedKey/>
+      </wsp:Policy>
+   </sp:Wss11>
+</wsp:Policy>    <wsdl:import namespace="http://xmlns.oracle.com/adf/svc/errors/" location="../Common/ServiceException.wsdl"/>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://xmlns.oracle.com/oracleas/schema/oracle-fault-11_0" schemaLocation="../../../../Schemas/Modules/Cloud/Receipt/XMLSchema_1360085106.xsd"/>
+            <import namespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/types/" schemaLocation="../../../../Schemas/Modules/Cloud/Receipt/XMLSchema_-1686185786.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="StandardReceiptService_createStandardReceipt">
+        <wsdl:part name="parameters" element="types:createStandardReceipt"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createStandardReceiptResponse">
+        <wsdl:part name="parameters" element="types:createStandardReceiptResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_findStandardReceipt">
+        <wsdl:part name="parameters" element="types:findStandardReceipt"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_findStandardReceiptResponse">
+        <wsdl:part name="parameters" element="types:findStandardReceiptResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createStandardReceiptAsync">
+        <wsdl:part name="parameters" element="types:createStandardReceiptAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_findStandardReceiptAsync">
+        <wsdl:part name="parameters" element="types:findStandardReceiptAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createReverseReceipt">
+        <wsdl:part name="parameters" element="types:createReverseReceipt"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createReverseReceiptResponse">
+        <wsdl:part name="parameters" element="types:createReverseReceiptResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createUnapplyReceipt">
+        <wsdl:part name="parameters" element="types:createUnapplyReceipt"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createUnapplyReceiptResponse">
+        <wsdl:part name="parameters" element="types:createUnapplyReceiptResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createReverseReceiptAsync">
+        <wsdl:part name="parameters" element="types:createReverseReceiptAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createUnapplyReceiptAsync">
+        <wsdl:part name="parameters" element="types:createUnapplyReceiptAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processReverseReceipt">
+        <wsdl:part name="parameters" element="types:processReverseReceipt"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processReverseReceiptResponse">
+        <wsdl:part name="parameters" element="types:processReverseReceiptResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processUnapplyReceipt">
+        <wsdl:part name="parameters" element="types:processUnapplyReceipt"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processUnapplyReceiptResponse">
+        <wsdl:part name="parameters" element="types:processUnapplyReceiptResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processReverseReceiptAsync">
+        <wsdl:part name="parameters" element="types:processReverseReceiptAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processUnapplyReceiptAsync">
+        <wsdl:part name="parameters" element="types:processUnapplyReceiptAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createUnapplyOnAccount">
+        <wsdl:part name="parameters" element="types:createUnapplyOnAccount"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createUnapplyOnAccountResponse">
+        <wsdl:part name="parameters" element="types:createUnapplyOnAccountResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processUnapplyOnAccount">
+        <wsdl:part name="parameters" element="types:processUnapplyOnAccount"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processUnapplyOnAccountResponse">
+        <wsdl:part name="parameters" element="types:processUnapplyOnAccountResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createUnapplyOnAccountAsync">
+        <wsdl:part name="parameters" element="types:createUnapplyOnAccountAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processUnapplyOnAccountAsync">
+        <wsdl:part name="parameters" element="types:processUnapplyOnAccountAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createApplyOnAccount">
+        <wsdl:part name="parameters" element="types:createApplyOnAccount"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createApplyOnAccountResponse">
+        <wsdl:part name="parameters" element="types:createApplyOnAccountResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processApplyOnAccount">
+        <wsdl:part name="parameters" element="types:processApplyOnAccount"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processApplyOnAccountResponse">
+        <wsdl:part name="parameters" element="types:processApplyOnAccountResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createApplyOnAccountAsync">
+        <wsdl:part name="parameters" element="types:createApplyOnAccountAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processApplyOnAccountAsync">
+        <wsdl:part name="parameters" element="types:processApplyOnAccountAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createActivityApplication">
+        <wsdl:part name="parameters" element="types:createActivityApplication"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createActivityApplicationResponse">
+        <wsdl:part name="parameters" element="types:createActivityApplicationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processActivityApplication">
+        <wsdl:part name="parameters" element="types:processActivityApplication"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processActivityApplicationResponse">
+        <wsdl:part name="parameters" element="types:processActivityApplicationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createActivityUnapplication">
+        <wsdl:part name="parameters" element="types:createActivityUnapplication"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createActivityUnapplicationResponse">
+        <wsdl:part name="parameters" element="types:createActivityUnapplicationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processActivityUnapplication">
+        <wsdl:part name="parameters" element="types:processActivityUnapplication"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processActivityUnapplicationResponse">
+        <wsdl:part name="parameters" element="types:processActivityUnapplicationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processActivityApplicationAsync">
+        <wsdl:part name="parameters" element="types:processActivityApplicationAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processActivityUnapplicationAsync">
+        <wsdl:part name="parameters" element="types:processActivityUnapplicationAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createActivityApplicationAsync">
+        <wsdl:part name="parameters" element="types:createActivityApplicationAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createActivityUnapplicationAsync">
+        <wsdl:part name="parameters" element="types:createActivityUnapplicationAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createApplyReceipt">
+        <wsdl:part name="parameters" element="types:createApplyReceipt"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createApplyReceiptResponse">
+        <wsdl:part name="parameters" element="types:createApplyReceiptResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processApplyReceipt">
+        <wsdl:part name="parameters" element="types:processApplyReceipt"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processApplyReceiptResponse">
+        <wsdl:part name="parameters" element="types:processApplyReceiptResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processApplyReceiptAsync">
+        <wsdl:part name="parameters" element="types:processApplyReceiptAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createApplyReceiptAsync">
+        <wsdl:part name="parameters" element="types:createApplyReceiptAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_getDfltObjAttrHints">
+        <wsdl:part name="parameters" element="types:getDfltObjAttrHints"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_getDfltObjAttrHintsResponse">
+        <wsdl:part name="parameters" element="types:getDfltObjAttrHintsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_getServiceLastUpdateTime">
+        <wsdl:part name="parameters" element="types:getServiceLastUpdateTime"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_getServiceLastUpdateTimeResponse">
+        <wsdl:part name="parameters" element="types:getServiceLastUpdateTimeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_getEntityList">
+        <wsdl:part name="parameters" element="types:getEntityList"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_getEntityListResponse">
+        <wsdl:part name="parameters" element="types:getEntityListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_getEntityListAsync">
+        <wsdl:part name="parameters" element="types:getEntityListAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_getDfltObjAttrHintsAsync">
+        <wsdl:part name="parameters" element="types:getDfltObjAttrHintsAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_getServiceLastUpdateTimeAsync">
+        <wsdl:part name="parameters" element="types:getServiceLastUpdateTimeAsync"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_onFault">
+        <wsdl:part name="parameters" element="orafault:Fault"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createStandardReceiptAsyncResponse">
+        <wsdl:part name="parameters" element="types:createStandardReceiptAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_findStandardReceiptAsyncResponse">
+        <wsdl:part name="parameters" element="types:findStandardReceiptAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createReverseReceiptAsyncResponse">
+        <wsdl:part name="parameters" element="types:createReverseReceiptAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createUnapplyReceiptAsyncResponse">
+        <wsdl:part name="parameters" element="types:createUnapplyReceiptAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processReverseReceiptAsyncResponse">
+        <wsdl:part name="parameters" element="types:processReverseReceiptAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processUnapplyReceiptAsyncResponse">
+        <wsdl:part name="parameters" element="types:processUnapplyReceiptAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createUnapplyOnAccountAsyncResponse">
+        <wsdl:part name="parameters" element="types:createUnapplyOnAccountAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processUnapplyOnAccountAsyncResponse">
+        <wsdl:part name="parameters" element="types:processUnapplyOnAccountAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createApplyOnAccountAsyncResponse">
+        <wsdl:part name="parameters" element="types:createApplyOnAccountAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processApplyOnAccountAsyncResponse">
+        <wsdl:part name="parameters" element="types:processApplyOnAccountAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processActivityApplicationAsyncResponse">
+        <wsdl:part name="parameters" element="types:processActivityApplicationAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processActivityUnapplicationAsyncResponse">
+        <wsdl:part name="parameters" element="types:processActivityUnapplicationAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createActivityApplicationAsyncResponse">
+        <wsdl:part name="parameters" element="types:createActivityApplicationAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createActivityUnapplicationAsyncResponse">
+        <wsdl:part name="parameters" element="types:createActivityUnapplicationAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_processApplyReceiptAsyncResponse">
+        <wsdl:part name="parameters" element="types:processApplyReceiptAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_createApplyReceiptAsyncResponse">
+        <wsdl:part name="parameters" element="types:createApplyReceiptAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_getEntityListAsyncResponse">
+        <wsdl:part name="parameters" element="types:getEntityListAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_getDfltObjAttrHintsAsyncResponse">
+        <wsdl:part name="parameters" element="types:getDfltObjAttrHintsAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StandardReceiptService_getServiceLastUpdateTimeAsyncResponse">
+        <wsdl:part name="parameters" element="types:getServiceLastUpdateTimeAsyncResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="StandardReceiptService">
+        <wsdl:documentation>
+            <ViewInstance Name="StandardReceipt" SDOName="tns:StandardReceipt" CreateOpName="createStandardReceipt" FindOpName="findStandardReceipt" xmlns="http://xmlns.oracle.com/adf/svc/metadata/"/>
+            <ViewInstance Name="ReverseReceipt" SDOName="tns:ReverseReceipt" CreateOpName="createReverseReceipt" ProcessOpName="processReverseReceipt" xmlns="http://xmlns.oracle.com/adf/svc/metadata/"/>
+            <ViewInstance Name="UnapplyReceipt" SDOName="tns:UnapplyReceipt" CreateOpName="createUnapplyReceipt" ProcessOpName="processUnapplyReceipt" xmlns="http://xmlns.oracle.com/adf/svc/metadata/"/>
+            <ViewInstance Name="UnapplyOnAccount" SDOName="tns:UnapplyOnAccount" CreateOpName="createUnapplyOnAccount" ProcessOpName="processUnapplyOnAccount" xmlns="http://xmlns.oracle.com/adf/svc/metadata/"/>
+            <ViewInstance Name="ApplyOnAccount" SDOName="tns:ApplyOnAccount" CreateOpName="createApplyOnAccount" ProcessOpName="processApplyOnAccount" xmlns="http://xmlns.oracle.com/adf/svc/metadata/"/>
+            <ViewInstance Name="ActivityApplication" SDOName="tns:ActivityApplication" CreateOpName="createActivityApplication" ProcessOpName="processActivityApplication" xmlns="http://xmlns.oracle.com/adf/svc/metadata/"/>
+            <ViewInstance Name="ActivityUnapplication" SDOName="tns:ActivityUnapplication" CreateOpName="createActivityUnapplication" ProcessOpName="processActivityUnapplication" xmlns="http://xmlns.oracle.com/adf/svc/metadata/"/>
+            <ViewInstance Name="ApplyReceipt" SDOName="tns:ApplyReceipt" CreateOpName="createApplyReceipt" ProcessOpName="processApplyReceipt" xmlns="http://xmlns.oracle.com/adf/svc/metadata/"/>
+        </wsdl:documentation>
+        <wsdl:operation name="createStandardReceipt">
+            <wsdl:input message="tns:StandardReceiptService_createStandardReceipt"/>
+            <wsdl:output message="tns:StandardReceiptService_createStandardReceiptResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findStandardReceipt">
+            <wsdl:input message="tns:StandardReceiptService_findStandardReceipt"/>
+            <wsdl:output message="tns:StandardReceiptService_findStandardReceiptResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="createStandardReceiptAsync">
+            <wsdl:input message="tns:StandardReceiptService_createStandardReceiptAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createStandardReceiptAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="findStandardReceiptAsync">
+            <wsdl:input message="tns:StandardReceiptService_findStandardReceiptAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/findStandardReceiptAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createReverseReceipt">
+            <wsdl:input message="tns:StandardReceiptService_createReverseReceipt"/>
+            <wsdl:output message="tns:StandardReceiptService_createReverseReceiptResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="createUnapplyReceipt">
+            <wsdl:input message="tns:StandardReceiptService_createUnapplyReceipt"/>
+            <wsdl:output message="tns:StandardReceiptService_createUnapplyReceiptResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="createReverseReceiptAsync">
+            <wsdl:input message="tns:StandardReceiptService_createReverseReceiptAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createReverseReceiptAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createUnapplyReceiptAsync">
+            <wsdl:input message="tns:StandardReceiptService_createUnapplyReceiptAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createUnapplyReceiptAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="processReverseReceipt">
+            <wsdl:input message="tns:StandardReceiptService_processReverseReceipt"/>
+            <wsdl:output message="tns:StandardReceiptService_processReverseReceiptResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="processUnapplyReceipt">
+            <wsdl:input message="tns:StandardReceiptService_processUnapplyReceipt"/>
+            <wsdl:output message="tns:StandardReceiptService_processUnapplyReceiptResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="processReverseReceiptAsync">
+            <wsdl:input message="tns:StandardReceiptService_processReverseReceiptAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processReverseReceiptAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="processUnapplyReceiptAsync">
+            <wsdl:input message="tns:StandardReceiptService_processUnapplyReceiptAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processUnapplyReceiptAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createUnapplyOnAccount">
+            <wsdl:input message="tns:StandardReceiptService_createUnapplyOnAccount"/>
+            <wsdl:output message="tns:StandardReceiptService_createUnapplyOnAccountResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="processUnapplyOnAccount">
+            <wsdl:input message="tns:StandardReceiptService_processUnapplyOnAccount"/>
+            <wsdl:output message="tns:StandardReceiptService_processUnapplyOnAccountResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="createUnapplyOnAccountAsync">
+            <wsdl:input message="tns:StandardReceiptService_createUnapplyOnAccountAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createUnapplyOnAccountAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="processUnapplyOnAccountAsync">
+            <wsdl:input message="tns:StandardReceiptService_processUnapplyOnAccountAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processUnapplyOnAccountAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createApplyOnAccount">
+            <wsdl:input message="tns:StandardReceiptService_createApplyOnAccount"/>
+            <wsdl:output message="tns:StandardReceiptService_createApplyOnAccountResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="processApplyOnAccount">
+            <wsdl:input message="tns:StandardReceiptService_processApplyOnAccount"/>
+            <wsdl:output message="tns:StandardReceiptService_processApplyOnAccountResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="createApplyOnAccountAsync">
+            <wsdl:input message="tns:StandardReceiptService_createApplyOnAccountAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createApplyOnAccountAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="processApplyOnAccountAsync">
+            <wsdl:input message="tns:StandardReceiptService_processApplyOnAccountAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processApplyOnAccountAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createActivityApplication">
+            <wsdl:input message="tns:StandardReceiptService_createActivityApplication"/>
+            <wsdl:output message="tns:StandardReceiptService_createActivityApplicationResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="processActivityApplication">
+            <wsdl:input message="tns:StandardReceiptService_processActivityApplication"/>
+            <wsdl:output message="tns:StandardReceiptService_processActivityApplicationResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="createActivityUnapplication">
+            <wsdl:input message="tns:StandardReceiptService_createActivityUnapplication"/>
+            <wsdl:output message="tns:StandardReceiptService_createActivityUnapplicationResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="processActivityUnapplication">
+            <wsdl:input message="tns:StandardReceiptService_processActivityUnapplication"/>
+            <wsdl:output message="tns:StandardReceiptService_processActivityUnapplicationResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="processActivityApplicationAsync">
+            <wsdl:input message="tns:StandardReceiptService_processActivityApplicationAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processActivityApplicationAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="processActivityUnapplicationAsync">
+            <wsdl:input message="tns:StandardReceiptService_processActivityUnapplicationAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processActivityUnapplicationAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createActivityApplicationAsync">
+            <wsdl:input message="tns:StandardReceiptService_createActivityApplicationAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createActivityApplicationAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createActivityUnapplicationAsync">
+            <wsdl:input message="tns:StandardReceiptService_createActivityUnapplicationAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createActivityUnapplicationAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createApplyReceipt">
+            <wsdl:input message="tns:StandardReceiptService_createApplyReceipt"/>
+            <wsdl:output message="tns:StandardReceiptService_createApplyReceiptResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="processApplyReceipt">
+            <wsdl:input message="tns:StandardReceiptService_processApplyReceipt"/>
+            <wsdl:output message="tns:StandardReceiptService_processApplyReceiptResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="processApplyReceiptAsync">
+            <wsdl:input message="tns:StandardReceiptService_processApplyReceiptAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processApplyReceiptAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createApplyReceiptAsync">
+            <wsdl:input message="tns:StandardReceiptService_createApplyReceiptAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createApplyReceiptAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getDfltObjAttrHints">
+            <wsdl:input message="tns:StandardReceiptService_getDfltObjAttrHints"/>
+            <wsdl:output message="tns:StandardReceiptService_getDfltObjAttrHintsResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getServiceLastUpdateTime">
+            <wsdl:input message="tns:StandardReceiptService_getServiceLastUpdateTime"/>
+            <wsdl:output message="tns:StandardReceiptService_getServiceLastUpdateTimeResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getEntityList">
+            <wsdl:input message="tns:StandardReceiptService_getEntityList"/>
+            <wsdl:output message="tns:StandardReceiptService_getEntityListResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getEntityListAsync">
+            <wsdl:input message="tns:StandardReceiptService_getEntityListAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/getEntityListAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getDfltObjAttrHintsAsync">
+            <wsdl:input message="tns:StandardReceiptService_getDfltObjAttrHintsAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/getDfltObjAttrHintsAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getServiceLastUpdateTimeAsync">
+            <wsdl:input message="tns:StandardReceiptService_getServiceLastUpdateTimeAsync" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/getServiceLastUpdateTimeAsync" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:portType name="StandardReceiptServiceResponse">
+        <wsdl:operation name="onFault">
+            <wsdl:input message="tns:StandardReceiptService_onFault" ns1:Action="http://xmlns.oracle.com/oracleas/schema/oracle-fault-11_0/Fault" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createStandardReceiptAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_createStandardReceiptAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createStandardReceiptAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="findStandardReceiptAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_findStandardReceiptAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/findStandardReceiptAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createReverseReceiptAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_createReverseReceiptAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createReverseReceiptAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createUnapplyReceiptAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_createUnapplyReceiptAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createUnapplyReceiptAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="processReverseReceiptAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_processReverseReceiptAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processReverseReceiptAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="processUnapplyReceiptAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_processUnapplyReceiptAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processUnapplyReceiptAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createUnapplyOnAccountAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_createUnapplyOnAccountAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createUnapplyOnAccountAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="processUnapplyOnAccountAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_processUnapplyOnAccountAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processUnapplyOnAccountAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createApplyOnAccountAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_createApplyOnAccountAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createApplyOnAccountAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="processApplyOnAccountAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_processApplyOnAccountAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processApplyOnAccountAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="processActivityApplicationAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_processActivityApplicationAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processActivityApplicationAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="processActivityUnapplicationAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_processActivityUnapplicationAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processActivityUnapplicationAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createActivityApplicationAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_createActivityApplicationAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createActivityApplicationAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createActivityUnapplicationAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_createActivityUnapplicationAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createActivityUnapplicationAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="processApplyReceiptAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_processApplyReceiptAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processApplyReceiptAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="createApplyReceiptAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_createApplyReceiptAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createApplyReceiptAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getEntityListAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_getEntityListAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/getEntityListAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getDfltObjAttrHintsAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_getDfltObjAttrHintsAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/getDfltObjAttrHintsAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+        <wsdl:operation name="getServiceLastUpdateTimeAsyncResponse">
+            <wsdl:input message="tns:StandardReceiptService_getServiceLastUpdateTimeAsyncResponse" ns1:Action="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/getServiceLastUpdateTimeAsyncResponse" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="StandardReceiptServiceResponseBinding" type="tns:StandardReceiptServiceResponse">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsp:PolicyReference URI="#wss11_saml_token_with_message_protection_client_policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+        <wsdl:operation name="onFault">
+            <soap:operation soapAction="http://xmlns.oracle.com/oracleas/schema/oracle-fault-11_0/Fault"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createStandardReceiptAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createStandardReceiptAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="findStandardReceiptAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/findStandardReceiptAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createReverseReceiptAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createReverseReceiptAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createUnapplyReceiptAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createUnapplyReceiptAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="processReverseReceiptAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processReverseReceiptAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="processUnapplyReceiptAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processUnapplyReceiptAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createUnapplyOnAccountAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createUnapplyOnAccountAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="processUnapplyOnAccountAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processUnapplyOnAccountAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createApplyOnAccountAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createApplyOnAccountAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="processApplyOnAccountAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processApplyOnAccountAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="processActivityApplicationAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processActivityApplicationAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="processActivityUnapplicationAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processActivityUnapplicationAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createActivityApplicationAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createActivityApplicationAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createActivityUnapplicationAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createActivityUnapplicationAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="processApplyReceiptAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processApplyReceiptAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createApplyReceiptAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createApplyReceiptAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getEntityListAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/getEntityListAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getDfltObjAttrHintsAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/getDfltObjAttrHintsAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getServiceLastUpdateTimeAsyncResponse">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/getServiceLastUpdateTimeAsyncResponse"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceResponse_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="StandardReceiptServiceSoapHttp" type="tns:StandardReceiptService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsp:PolicyReference URI="#wss11_saml_or_username_token_with_message_protection_service_policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+      <wsp:PolicyReference URI="#wsmtom_policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+      <wsp:PolicyReference URI="#wsaddr_policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+        <wsdl:operation name="createStandardReceipt">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createStandardReceipt"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findStandardReceipt">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/findStandardReceipt"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createStandardReceiptAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createStandardReceiptAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="findStandardReceiptAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/findStandardReceiptAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createReverseReceipt">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createReverseReceipt"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createUnapplyReceipt">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createUnapplyReceipt"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createReverseReceiptAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createReverseReceiptAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createUnapplyReceiptAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createUnapplyReceiptAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="processReverseReceipt">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processReverseReceipt"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="processUnapplyReceipt">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processUnapplyReceipt"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="processReverseReceiptAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processReverseReceiptAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="processUnapplyReceiptAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processUnapplyReceiptAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createUnapplyOnAccount">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createUnapplyOnAccount"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="processUnapplyOnAccount">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processUnapplyOnAccount"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createUnapplyOnAccountAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createUnapplyOnAccountAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="processUnapplyOnAccountAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processUnapplyOnAccountAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createApplyOnAccount">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createApplyOnAccount"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="processApplyOnAccount">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processApplyOnAccount"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createApplyOnAccountAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createApplyOnAccountAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="processApplyOnAccountAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processApplyOnAccountAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createActivityApplication">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createActivityApplication"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="processActivityApplication">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processActivityApplication"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createActivityUnapplication">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createActivityUnapplication"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="processActivityUnapplication">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processActivityUnapplication"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="processActivityApplicationAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processActivityApplicationAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="processActivityUnapplicationAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processActivityUnapplicationAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createActivityApplicationAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createActivityApplicationAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createActivityUnapplicationAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createActivityUnapplicationAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createApplyReceipt">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createApplyReceipt"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="processApplyReceipt">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processApplyReceipt"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="processApplyReceiptAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/processApplyReceiptAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createApplyReceiptAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createApplyReceiptAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getDfltObjAttrHints">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/getDfltObjAttrHints"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getServiceLastUpdateTime">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/getServiceLastUpdateTime"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getEntityList">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/getEntityList"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Output_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Fault_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getEntityListAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/getEntityListAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getDfltObjAttrHintsAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/getDfltObjAttrHintsAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getServiceLastUpdateTimeAsync">
+            <soap:operation soapAction="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/getServiceLastUpdateTimeAsync"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference URI="#StandardReceiptServiceSoapHttpPort_Input_Policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="StandardReceiptService">
+        <wsdl:port name="StandardReceiptServiceSoapHttpPort" binding="tns:StandardReceiptServiceSoapHttp">
+            <soap:address location="https://egte.fa.us2.oraclecloud.com:443/fscmService/StandardReceiptService"/>
+            <wsa:EndpointReference xmlns:wsa="http://www.w3.org/2005/08/addressing">
+                <wsa:Address>https://egte.fa.us2.oraclecloud.com:443/fscmService/StandardReceiptService</wsa:Address>
+                <wsid:Identity xmlns:wsid="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+                    <dsig:KeyInfo xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+                        <dsig:X509Data>
+                            <dsig:X509Certificate>MIIDVzCCAj+gAwIBAgIIVg/+Q6HleUswDQYJKoZIhvcNAQELBQAwWTETMBEGCgmSJomT8ixkARkWA2NvbTEWMBQGCgmSJomT8ixkARkWBm9yYWNsZTEVMBMGCgmSJomT8ixkARkWBWNsb3VkMRMwEQYDVQQDEwpDbG91ZDlDQS0yMB4XDTE2MDUyMTAyMTgxMVoXDTI2MDUxOTAyMTgxMVowWzETMBEGCgmSJomT8ixkARkWA2NvbTEWMBQGCgmSJomT8ixkARkWBm9yYWNsZTEVMBMGCgmSJomT8ixkARkWBWNsb3VkMRUwEwYDVQQDEwxGQUVuY3J5cHRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCXkkCRaPrzPLVxYvo6yqAMrcduV0+Ghq6NCdXAhKdbAXkc6yfFJPpYKDTEooxEUVZUkcfzZ+N3kJq6fTcQifkHPhobN5SHHSAprBWTrwDPjuQtrOC+NxB4wb02tQD/RV722MaUmzIVUrxEcY4hr0SADaqTT+4kvGysNwfxBRrRACs3fY3B41B6qL85ZiWq5GBUdjqEJqpdCWKa2fYiRDDiWXQcGwf3HNETR1QMi20/HjUSwURZLAUoGZAvLpnc9Va5WD3VKfpQ+BME6gs/jCuKKKd5lzm1sn08rT+H7vbT8JfkHL4sbHMhTgSV7HVh7SCOeLY5/kyLmcDxGpAEWEs/AgMBAAGjITAfMB0GA1UdDgQWBBRe0RelArN2TGMOMSDshZ/yxiLr/jANBgkqhkiG9w0BAQsFAAOCAQEArJa3QUFptgahgBUHiXQ0Xsl1yGHgp7x0RqYUVFuIId3ojpASaN1hWY7Ze7gUC7yELqDj/w+z9fXa7ce7S9tMbPL82/pvoh48N8kEOeCkvFrww+XCKu0ywbjNKzejsl4hWr6t0Ej1cZ2cBrzz0V42acUBwtIDeRBD0VWffA0EEF9uRyOByErHg5yAcl+2n6vnwvhRHMRNNXn2r2ueRyu+nKKl3upWijgJDiWHcaCXZf/HCju1XgnZV+g5t4//R2dDMoBzhWqY9rIcO+7yYFGwyADrao0NqwQk9Vco4KC3I4fWyi+EZalBCUx31sMhTYopy5qOqnlWsCVd/6g75ce9DA==</dsig:X509Certificate>
+                            <dsig:X509IssuerSerial>
+                                <dsig:X509IssuerName>CN=Cloud9CA-2, DC=cloud, DC=oracle, DC=com</dsig:X509IssuerName>
+                                <dsig:X509SerialNumber>6201454778344896843</dsig:X509SerialNumber>
+                            </dsig:X509IssuerSerial>
+                            <dsig:X509SubjectName>CN=FAEncryption, DC=cloud, DC=oracle, DC=com</dsig:X509SubjectName>
+                            <dsig:X509SKI>XtEXpQKzdkxjDjEg7IWf8sYi6/4=</dsig:X509SKI>
+                            <dsig:X509Certificate>MIIDazCCAlOgAwIBAgIIMdQl7kIMrv0wDQYJKoZIhvcNAQELBQAwWTETMBEGCgmSJomT8ixkARkWA2NvbTEWMBQGCgmSJomT8ixkARkWBm9yYWNsZTEVMBMGCgmSJomT8ixkARkWBWNsb3VkMRMwEQYDVQQDEwpDbG91ZDlDQS0yMCAXDTE2MDUyMTAyMTgwOVoYDzIxMTYwNDI3MDIxODA5WjBZMRMwEQYKCZImiZPyLGQBGRYDY29tMRYwFAYKCZImiZPyLGQBGRYGb3JhY2xlMRUwEwYKCZImiZPyLGQBGRYFY2xvdWQxEzARBgNVBAMTCkNsb3VkOUNBLTIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDPZn2VAoMsIfWmIJks9exzK+DXaX6qYyBc12dRqDrRpC48v3CBeBchV/GT2E+mjcDp8Hzq8oIpwr9W5kwMja4PU3SPd4/0LB6WKbtLfHOnJxLg9EaT992UpbUGHaHlEq4oRAuVvPgDLp5sSspLZYEBKUh4vJXOyLitE1qsXn7mJNXRKTJZvrJKdfbs1dyTge3V3wk1rwY/wCWMKVgkqCgSzzWCGju8EZWoOrnzlR6BHkA0qZqeV4F7jDW8ucdv+Y20pOlOiaEbIg/ZFYGrZd5VWjlNvgLfU8P4C/YJLSkkcPHgoet3w4jI0S26efu59rVzgU9VsKnKtnqbDL99t81vAgMBAAGjNTAzMBIGA1UdEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFDMA8e55FI5kC12+guIE9xtcIXpFMA0GCSqGSIb3DQEBCwUAA4IBAQC45tOVeqHxA8Bo/Rnv1SHHpULge3HyTC1XV9nmUdrj6g/U6rmbA5hVJ5LshgQ77qopO/YsaNHj5Ru1u/+8VOlZWpbn+kt3CDOuBUCe89CKBZT/KWEDkvtNl2qu16gOkhFnuTQk8NsARvwZZ6KtyPDmsbW4Nc/I5fKwPhdTaMjCV6Lh9RCG4kU77lbdwY3SaXlCBXXQyfPWMouCi7z1thJaF3cNGW4tnsibMR5ej9fJ9j6UvShxNgAIgjNDoihPlC6k0kW3QDR3bBjCHJX47505aIhckojH/eKsP2Or0eE/Ma4WNbndj0IXPE2ae5AVmC8/GRtwAmnoZPnt3g/I2m5j</dsig:X509Certificate>
+                        </dsig:X509Data>
+                    </dsig:KeyInfo>
+                </wsid:Identity>
+            </wsa:EndpointReference>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

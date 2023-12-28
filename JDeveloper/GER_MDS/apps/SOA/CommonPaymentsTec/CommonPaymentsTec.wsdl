@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="CommonPaymentsTec" targetNamespace="http://soa.estrellaroja.com.mx/CommonPaymentsTec" xmlns:tns="http://soa.estrellaroja.com.mx/CommonPaymentsTec" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://soa.estrellaroja.com.mx/CommonPaymentsTec" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.estrellaroja.com.mx/CommonPaymentsTec/types" elementFormDefault="qualified">
+<xsd:import namespace="http://soa.estrellaroja.com.mx/CommonPaymentsTec" schemaLocation="CommonPaymentsTec.xsd"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="MergePaymentRq">
+<wsdl:part name="MergePaymentRq" element="ns0:MergePaymentRq"/>
+</wsdl:message>
+<wsdl:message name="MergePaymentRs">
+<wsdl:part name="MergePaymentRs" element="ns0:MergePaymentRs"/>
+</wsdl:message>
+<wsdl:portType name="CommonPaymentsTecPortType">
+<wsdl:operation name="MergePayment">
+<wsdl:input message="tns:MergePaymentRq"/>
+<wsdl:output message="tns:MergePaymentRs"/>
+</wsdl:operation>
+<wsdl:operation name="GetPayement">
+<wsdl:input message="tns:GetPayementRq"/>
+<wsdl:output message="tns:GetPayementRs"/>
+</wsdl:operation>
+<wsdl:operation name="GetRetriableComplements">
+<wsdl:input message="tns:GetRetriableComplementsRq"/>
+<wsdl:output message="tns:GetRetriableComplementsRs"/>
+</wsdl:operation>
+<wsdl:operation name="GetRetriableIncomes">
+<wsdl:input message="tns:GetRetriableIncomeRq"/>
+<wsdl:output message="tns:GetRetriableIncomeRs"/>
+</wsdl:operation>
+<wsdl:operation name="GetRetriableOutcomes">
+<wsdl:input message="tns:GetRetriableOutcomeRq"/>
+<wsdl:output message="tns:GetRetriableOutcomeRs"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:message name="GetPayementRq">
+<wsdl:part name="GetPayementRqPart" element="tns:GetPayementRq"/>
+</wsdl:message>
+<wsdl:message name="GetPayementRs">
+<wsdl:part name="GetPayementRsPart" element="tns:GetPayementRs"/>
+</wsdl:message>
+<wsdl:message name="GetRetriableComplementsRq">
+<wsdl:part name="GetRetriableComplementsRqPart" element="tns:GetRetriableComplementsRq"/>
+</wsdl:message>
+<wsdl:message name="GetRetriableComplementsRs">
+<wsdl:part name="GetRetriableComplementsRsPart" element="tns:GetRetriableComplementsRs"/>
+</wsdl:message>
+<wsdl:message name="GetRetriableIncomeRq">
+<wsdl:part name="GetRetriableIncomeRqPart" element="tns:GetRetriableIncomeRq"/>
+</wsdl:message>
+<wsdl:message name="GetRetriableIncomeRs">
+<wsdl:part name="GetRetriableIncomeRsPart" element="tns:GetRetriableIncomeRs"/>
+</wsdl:message>
+<wsdl:message name="GetRetriableOutcomeRq">
+<wsdl:part name="GetRetriableOutcomeRqPart" element="tns:GetRetriableOutcomeRq"/>
+</wsdl:message>
+<wsdl:message name="GetRetriableOutcomeRs">
+<wsdl:part name="GetRetriableOutcomeRsPart" element="tns:GetRetriableOutcomeRs"/>
+</wsdl:message>
+<wsdl:binding name="CommonPaymentsTecBinding" type="tns:CommonPaymentsTecPortType">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="MergePayment">
+<soap:operation style="document" soapAction="http://soa.estrellaroja.com.mx/CommonPaymentsTec/MergePayment"/>
+<wsdl:input>
+<soap:body use="literal" parts="MergePaymentRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="MergePaymentRs"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetPayement">
+<soap:operation style="document" soapAction="http://soa.estrellaroja.com.mx/CommonPaymentsTec/GetPayement"/>
+<wsdl:input>
+<soap:body use="literal" parts="GetPayementRqPart"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="GetPayementRsPart"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetRetriableComplements">
+<soap:operation style="document" soapAction="http://soa.estrellaroja.com.mx/CommonPaymentsTec/GetRetriableComplements"/>
+<wsdl:input>
+<soap:body use="literal" parts="GetRetriableComplementsRqPart"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="GetRetriableComplementsRsPart"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetRetriableIncomes">
+<soap:operation style="document" soapAction="http://soa.estrellaroja.com.mx/CommonPaymentsTec/GetRetriableIncomes"/>
+<wsdl:input>
+<soap:body use="literal" parts="GetRetriableIncomeRqPart"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="GetRetriableIncomeRsPart"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetRetriableOutcomes">
+<soap:operation style="document" soapAction="http://soa.estrellaroja.com.mx/CommonPaymentsTec/GetRetriableOutcomes"/>
+<wsdl:input>
+<soap:body use="literal" parts="GetRetriableOutcomeRqPart"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="GetRetriableOutcomeRsPart"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="CommonPaymentsTec">
+<wsdl:port name="CommonPaymentsTecPort" binding="tns:CommonPaymentsTecBinding">
+<soap:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/Commons/CommonPaymentsTec/CommonPaymentsTec"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

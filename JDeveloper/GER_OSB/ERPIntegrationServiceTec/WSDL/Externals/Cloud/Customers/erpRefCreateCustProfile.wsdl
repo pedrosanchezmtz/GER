@@ -1,0 +1,441 @@
+<wsdl:definitions
+    
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefCreateCustProfile"
+     xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/"
+     xmlns:orafault="http://xmlns.oracle.com/oracleas/schema/oracle-fault-11_0"
+     xmlns:tns="http://xmlns.oracle.com/apps/financials/receivables/customers/customerProfileService/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:types="http://xmlns.oracle.com/apps/financials/receivables/customers/customerProfileService/types/"
+     xmlns:ns0="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefCreateCustProfile/types"
+     xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefCreateCustProfile"
+    >
+    <plnk:partnerLinkType name="createCustomerProfile_plt">
+        <plnk:role name="createCustomerProfile_role">
+            <plnk:portType name="ns1:erpRefCreateCustProfilePortType"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <xs:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://xmlns.oracle.com/adf/svc/errors/" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:tns="http://xmlns.oracle.com/adf/svc/errors/" sdoJava:package="oracle.jbo.service.errors">
+            <xs:complexType name="ServiceMessage">
+                <xs:sequence>
+                    <xs:element maxOccurs="1" minOccurs="0" name="code" type="string"/>
+                    <xs:element maxOccurs="1" minOccurs="0" name="message" type="string"/>
+                    <xs:element maxOccurs="1" minOccurs="0" name="severity" type="string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="detail" type="tns:ServiceMessage"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="ServiceErrorMessage" type="tns:ServiceErrorMessage"/>
+            <xs:complexType name="ServiceErrorMessage">
+                <xs:complexContent>
+                    <xs:extension base="tns:ServiceMessage">
+                        <xs:sequence>
+                            <xs:element maxOccurs="1" minOccurs="0" name="sdoObject" type="anyType"/>
+                            <xs:element maxOccurs="1" minOccurs="0" name="exceptionClassName" type="string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/adf/svc/types/" elementFormDefault="qualified"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/adf/svc/types/"
+             xmlns:sdoJava="commonj.sdo/java" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:sdoXML="commonj.sdo/xml" xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/"
+             xmlns:sdo="commonj.sdo" sdoJava:package="oracle.jbo.common.service.types">
+            <xs:import namespace="http://xmlns.oracle.com/adf/svc/errors/"/>
+            <xsd:simpleType name="date-Date" sdoJava:instanceClass="java.sql.Date">
+                <xsd:restriction base="xsd:date"/>
+            </xsd:simpleType>
+            <xsd:complexType name="MethodResult">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Message" type="errors:ServiceMessage"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/financials/receivables/customerSetup/customerProfiles/model/flex/CustomerProfileDff/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/financials/receivables/customerSetup/customerProfiles/model/flex/CustomerProfileDff/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:sdoXML="commonj.sdo/xml">
+            <xs:import namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+            <xsd:complexType name="CustomerProfileFLEX">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustAccountProfileId</xsd:attribute>
+                            <xsd:attribute>EffectiveStartDate</xsd:attribute>
+                            <xsd:attribute>EffectiveEndDate</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="CustAccountProfileId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="EffectiveStartDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EffectiveEndDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/financials/receivables/customerSetup/customerProfiles/model/flex/CustomerProfileGdf/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/financials/receivables/customerSetup/customerProfiles/model/flex/CustomerProfileGdf/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:sdoXML="commonj.sdo/xml">
+            <xs:import namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+            <xsd:complexType name="CustomerProfileGdf">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustAccountProfileId</xsd:attribute>
+                            <xsd:attribute>EffectiveStartDate</xsd:attribute>
+                            <xsd:attribute>EffectiveEndDate</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="CustAccountProfileId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="EffectiveStartDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EffectiveEndDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="FLEX_PARAM_GLOBAL_COUNTRY_CODE" nillable="true"
+                         type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CustomerProfileGdfJE_5FDE_5FZ4_5FREPORTING">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustAccountProfileId</xsd:attribute>
+                            <xsd:attribute>EffectiveStartDate</xsd:attribute>
+                            <xsd:attribute>EffectiveEndDate</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="CustomerProfileGdf">
+                        <xsd:sequence>
+                            <xsd:element minOccurs="0" name="_Record__Type" nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="_Record__Type_Display" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="_Reason" nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="_Reason_Display" nillable="true" type="xsd:string"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="JExITCustomerProfileInfo">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustAccountProfileId</xsd:attribute>
+                            <xsd:attribute>EffectiveStartDate</xsd:attribute>
+                            <xsd:attribute>EffectiveEndDate</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="CustomerProfileGdf">
+                        <xsd:sequence>
+                            <xsd:element minOccurs="0" name="DateOfBirth" nillable="true" type="ns0:date-Date"/>
+                            <xsd:element minOccurs="0" name="PlaceOfBirth" nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="ProvinceCodeOfBirth" nillable="true" type="xsd:string"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="JExESOnlineVatReporting">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustAccountProfileId</xsd:attribute>
+                            <xsd:attribute>EffectiveStartDate</xsd:attribute>
+                            <xsd:attribute>EffectiveEndDate</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="CustomerProfileGdf">
+                        <xsd:sequence>
+                            <xsd:element minOccurs="0" name="Code" nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="Code_Display" nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="ReceiptReportedStatus" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="ReceiptReportedStatus_Display" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="TaxAuthorityStatus" nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="TaxAuthorityStatus_Display" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="MessageCode" nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="MessageDescription" nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="SpecialRegime" nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="SpecialRegime_Display" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="ExcludeFromOnlineVATReporting" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="ExcludeFromOnlineVATReporting_Display"
+                                 nillable="true" type="xsd:string"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="CustomerProfileGdfJL_5FBR_5FARXCUDCI_5FAdditional">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustAccountProfileId</xsd:attribute>
+                            <xsd:attribute>EffectiveStartDate</xsd:attribute>
+                            <xsd:attribute>EffectiveEndDate</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="CustomerProfileGdf">
+                        <xsd:sequence>
+                            <xsd:element minOccurs="0" name="_Remittance__Protest__Instruction" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="_Remittance__Protest__Instruction_Display"
+                                 nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="_Remittance__Interest__Instructio" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="_Remittance__Interest__Instructio_Display"
+                                 nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="_Interest__Type" nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="_Interest__Type_Display" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="_Interest__Rate___2F__Amount" nillable="true"
+                                 type="xsd:decimal"/>
+                            <xsd:element minOccurs="0" name="_Interest__Period" nillable="true" type="xsd:decimal"/>
+                            <xsd:element minOccurs="0" name="_Interest__Formula" nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="_Interest__Formula_Display" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="_Interest__Grace__Days" nillable="true"
+                                 type="xsd:decimal"/>
+                            <xsd:element minOccurs="0" name="_Interest__Penalty__Type" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="_Interest__Penalty__Type_Display" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="_Interest__Penalty__Rate___2F__Amount"
+                                 nillable="true" type="xsd:decimal"/>
+                            <xsd:element minOccurs="0" name="_Consolidate__Payment__Schedules" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="_Consolidate__Payment__Schedules_Display"
+                                 nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="_Installment__Due__Date__Derivatio" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="_Installment__Due__Date__Derivatio_Display"
+                                 nillable="true" type="xsd:string"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="JExPTAdditionalInfo">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustAccountProfileId</xsd:attribute>
+                            <xsd:attribute>EffectiveStartDate</xsd:attribute>
+                            <xsd:attribute>EffectiveEndDate</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="CustomerProfileGdf">
+                        <xsd:sequence>
+                            <xsd:element minOccurs="0" name="GenericCustomer" nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="GenericCustomer_Display" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="SelfBillingIndicator" nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="SelfBillingIndicator_Display" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="PaymentType" nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="PaymentType_Display" nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="CashVATSchemeIndicator" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="CashVATSchemeIndicator_Display" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="ThirdPartiesBillingIndicator" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="ThirdPartiesBillingIndicator_Display"
+                                 nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="StartDate" nillable="true" type="ns0:date-Date"/>
+                            <xsd:element minOccurs="0" name="EndDate" nillable="true" type="ns0:date-Date"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="JExTRAdditionalInfo">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustAccountProfileId</xsd:attribute>
+                            <xsd:attribute>EffectiveStartDate</xsd:attribute>
+                            <xsd:attribute>EffectiveEndDate</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="CustomerProfileGdf">
+                        <xsd:sequence>
+                            <xsd:element minOccurs="0" name="BaBsTerritoryCode" nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="BaBsTerritoryCode_Display" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="ExchangeRateDifferenceCreation" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="ExchangeRateDifferenceCreation_Display"
+                                 nillable="true" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="ExchangeRateDifferenceOption" nillable="true"
+                                 type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="ExchangeRateDifferenceOption_Display"
+                                 nillable="true" type="xsd:string"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="JExRUCustomerProfileInfo">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustAccountProfileId</xsd:attribute>
+                            <xsd:attribute>EffectiveStartDate</xsd:attribute>
+                            <xsd:attribute>EffectiveEndDate</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="CustomerProfileGdf">
+                        <xsd:sequence>
+                            <xsd:element minOccurs="0" name="OKPOCode" nillable="true" type="xsd:string"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/financials/receivables/customers/customerProfileService/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/financials/receivables/customers/customerProfileService/"
+             xmlns:sdoJava="commonj.sdo/java" sdoJava:package="oracle.apps.financials.receivables.customers.customerProfileService"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/"
+             xmlns:sdoXML="commonj.sdo/xml" xmlns:ns2="http://xmlns.oracle.com/apps/financials/receivables/customerSetup/customerProfiles/model/flex/CustomerProfileGdf/"
+             xmlns:ns1="http://xmlns.oracle.com/apps/financials/receivables/customerSetup/customerProfiles/model/flex/CustomerProfileDff/"
+             xmlns:sdo="commonj.sdo">
+            <xs:import namespace="http://xmlns.oracle.com/apps/financials/receivables/customerSetup/customerProfiles/model/flex/CustomerProfileGdf/"/>
+            <xs:import namespace="http://xmlns.oracle.com/apps/financials/receivables/customerSetup/customerProfiles/model/flex/CustomerProfileDff/"/>
+            <xs:import namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+            <xsd:complexType name="CustomerProfile">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustomerAccountProfileId</xsd:attribute>
+                            <xsd:attribute>EffectiveEndDate</xsd:attribute>
+                            <xsd:attribute>EffectiveStartDate</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="AccountNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SiteNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ProfileClassName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ClearingDays" nillable="true" type="xsd:int"/>
+                    <xsd:element minOccurs="0" name="CreditBalanceStatements" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditChecking" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditHold" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CustomerAccountProfileId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="DiscountGraceDays" nillable="true" type="xsd:int"/>
+                    <xsd:element minOccurs="0" name="DiscountTerms" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DunningLetters" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EffectiveEndDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EffectiveStartDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="LastCreditReviewDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="NextCreditReviewDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="OverrideTerms" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PercentCollectable" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="SendStatements" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CustomerAccountId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="Tolerance" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="CollectorName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ConversionRateType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PaymentTerms" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AutoCashRuleSet" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ApplicationExceptionRuleSet" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AutoMatchRuleSet" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ReminderRuleSet" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StatementCycle" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="GroupingRule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditClassificationValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AccountStatusValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RiskCodeValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditRatingValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="BillLevel" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="BillType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="MatchReceiptsBy" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferredContactMethod" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferredDeliveryMethod" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="GenerateBill" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="MatchByAutoupdate" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AutoReceiptsIncludeDisputedItems" nillable="true"
+                         type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ConsolidatedInvoice" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditReviewCycleName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditAnalystName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditLimit" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="CreditCurrencyCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StatementDeliveryMethod" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrderAmountLimit" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="CustomerProfileFLEX" type="ns1:CustomerProfileFLEX"
+                         sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="CustomerProfileGdf" type="ns2:CustomerProfileGdf"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CustomerProfileResult">
+                <xsd:complexContent>
+                    <xsd:extension base="ns0:MethodResult">
+                        <xsd:sequence>
+                            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Value" type="CustomerProfile"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefCreateCustProfile/types"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefCreateCustProfile/types"
+             xmlns:ns2="http://xmlns.oracle.com/apps/financials/receivables/customers/customerProfileService/"
+             xmlns:tns0="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefCreateCustProfile/types">
+            <xs:import namespace="http://xmlns.oracle.com/apps/financials/receivables/customers/customerProfileService/"/>
+            <xs:element name="createCustomerProfile" type="tns0:createCustomerProfileType"/>
+            <xs:complexType name="createCustomerProfileType">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="ns2:CustomerProfile" name="customerProfile"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="createCustomerProfileResponse" type="tns0:createCustomerProfileResponseType"/>
+            <xs:complexType name="createCustomerProfileResponseType">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="ns2:CustomerProfileResult" name="result"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="createCustomerProfileRequestMessage">
+        <wsdl:part name="parameters" element="ns0:createCustomerProfile"/>
+    </wsdl:message>
+    <wsdl:message name="createCustomerProfileResponseMessage">
+        <wsdl:part name="parameters" element="ns0:createCustomerProfileResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceException">
+        <wsdl:part name="parameters" element="errors:ServiceErrorMessage"/>
+    </wsdl:message>
+    <wsdl:portType name="erpRefCreateCustProfilePortType">
+        <wsdl:operation name="createCustomerProfile">
+            <cloud:CloudOperation xmlns:cloud="http://xml.oracle.com/types" targetOperation="createCustomerProfile"/>
+            <wsdl:input message="ns1:createCustomerProfileRequestMessage"/>
+            <wsdl:output message="ns1:createCustomerProfileResponseMessage"/>
+            <wsdl:fault name="ServiceException" message="ns1:ServiceException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,21 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_EAMWorkOrdersTec/EAMWorkOrdersTecBS" name="EAMWorkOrdersTecBS-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="EAMWorkOrdersTecWSDL.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_EAMWorkOrdersTec/EAMWorkOrdersTecBS"/>
+    <wsdl:binding name="EAMWorkOrdersTecBS_ptt-binding" type="eam:EAMWorkOrdersTecBS_ptt" xmlns:eam="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_EAMWorkOrdersTec/EAMWorkOrdersTecBS">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="merge">
+            <soap:operation soapAction="merge"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="EAMWorkOrdersTecBSSelect">
+            <soap:operation soapAction="EAMWorkOrdersTecBSSelect"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

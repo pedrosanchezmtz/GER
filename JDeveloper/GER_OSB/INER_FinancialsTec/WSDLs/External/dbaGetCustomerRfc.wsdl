@@ -1,0 +1,24 @@
+<wsdl:definitions name="dbaGetCustomerRfc" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaGetCustomerRfc" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaGetCustomerRfc" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbaGetCustomerRfc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="dbaGetCustomerRfc_plt">
+    <plt:role name="dbaGetCustomerRfc_role">
+      <plt:portType name="tns:dbaGetCustomerRfc_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbaGetCustomerRfc" schemaLocation="../../Schemas/External/dbaGetCustomerRfc_table.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="dbaGetCustomerRfcSelect_inputParameters">
+        <wsdl:part name="dbaGetCustomerRfcSelect_inputParameters" element="top:dbaGetCustomerRfcSelectInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="XxerArCustomerRfcVCollection_msg">
+        <wsdl:part name="XxerArCustomerRfcVCollection" element="top:XxerArCustomerRfcVCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="dbaGetCustomerRfc_ptt">
+        <wsdl:operation name="dbaGetCustomerRfcSelect">
+            <wsdl:input message="tns:dbaGetCustomerRfcSelect_inputParameters"/>
+            <wsdl:output message="tns:XxerArCustomerRfcVCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

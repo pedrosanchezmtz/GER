@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="root_descriptor_alias">XXER_AR_CUSTOMERS_V</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.CUSTOMER_ID:db_column_precision">38</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.CUSTOMER_TYPE:db_column_size">12</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.CUSTOMER_LAST_NAME:db_column_not_null">false</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.ACCOUNT_ID:db_column_not_null">false</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.REPLICATION_MSG:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.ACCOUNT_NAME:db_column_not_null">false</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.REPLICATION_IND:db_column_not_null">false</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.ACCOUNT_ID:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.CUSTOMER_ID:db_column_type">NUMBER</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.DUNS_NUMBER:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.REPLICATION_MSG:db_column_size">220</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.CUSTOMER_ID:db_column_scale">0</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.CUSTOMER_NAME:db_column_not_null">false</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.ACCOUNT_ID:db_column_size">120</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.FISCAL_CODE:db_column_not_null">false</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.CUSTOMER_NAME:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.DUNS_NUMBER:db_column_size">0</entry>
+   <entry key="XXER_AR_CUSTOMERS_V:db_column_9">REPLICATION_MSG</entry>
+   <entry key="XXER_AR_CUSTOMERS_V:db_column_8">REPLICATION_IND</entry>
+   <entry key="XXER_AR_CUSTOMERS_V:db_column_7">CUSTOMER_TYPE</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.ACCOUNT_NAME:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_AR_CUSTOMERS_V:db_column_6">ACCOUNT_NAME</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.CUSTOMER_MIDDLE_NAME:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_AR_CUSTOMERS_V:db_column_5">DUNS_NUMBER</entry>
+   <entry key="XXER_AR_CUSTOMERS_V:db_column_4">FISCAL_CODE</entry>
+   <entry key="XXER_AR_CUSTOMERS_V:db_column_3">CUSTOMER_LAST_NAME</entry>
+   <entry key="XXER_AR_CUSTOMERS_V:db_column_2">CUSTOMER_MIDDLE_NAME</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.REPLICATION_IND:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_AR_CUSTOMERS_V:db_column_1">CUSTOMER_NAME</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.CUSTOMER_ID:db_column_not_null">false</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.FISCAL_CODE:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_AR_CUSTOMERS_V:db_column_0">CUSTOMER_ID</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.CUSTOMER_TYPE:db_column_not_null">false</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.CUSTOMER_NAME:db_column_size">200</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.CUSTOMER_LAST_NAME:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_AR_CUSTOMERS_V:db_column_10">ACCOUNT_ID</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.ACCOUNT_NAME:db_column_size">0</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.CUSTOMER_MIDDLE_NAME:db_column_size">100</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.CUSTOMER_MIDDLE_NAME:db_column_not_null">false</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.REPLICATION_IND:db_column_size">1</entry>
+   <entry key="XXER_AR_CUSTOMERS_V:db_table_type">TABLE</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.CUSTOMER_TYPE:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.FISCAL_CODE:db_column_size">20</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.DUNS_NUMBER:db_column_not_null">false</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.REPLICATION_MSG:db_column_not_null">false</entry>
+   <entry key="XXER_AR_CUSTOMERS_V.CUSTOMER_LAST_NAME:db_column_size">100</entry>
+</properties>

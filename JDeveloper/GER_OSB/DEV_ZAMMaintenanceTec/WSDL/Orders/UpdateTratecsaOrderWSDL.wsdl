@@ -1,0 +1,20 @@
+<wsdl:definitions name="UpdateTratecsaOrder" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_ZAMMaintenanceTec/UpdateTratecsaOrder" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_ZAMMaintenanceTec/UpdateTratecsaOrder" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/UpdateTratecsaOrder" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="UpdateTratecsaOrder_plt">
+    <plt:role name="UpdateTratecsaOrder_role">
+      <plt:portType name="tns:UpdateTratecsaOrder_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/UpdateTratecsaOrder" schemaLocation="../../XSD/Orders/UpdateTratecsaOrderXSD.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="UpdateTratecsaOrderInput_msg">
+        <wsdl:part name="UpdateTratecsaOrderInput_msg" element="db:UpdateTratecsaOrderInput"/>
+    </wsdl:message>
+    <wsdl:portType name="UpdateTratecsaOrder_ptt">
+        <wsdl:operation name="UpdateTratecsaOrder">
+            <wsdl:input message="tns:UpdateTratecsaOrderInput_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

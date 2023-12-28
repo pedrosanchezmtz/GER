@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="INER_ValidacionAutomaticTec/WSDLs/ERPValidacionConsultBS"/>
+            <con:binding>
+                <con:name>ERPValidacionConsultBS_ptt-binding</con:name>
+                <con:namespace>http://soa.estrellaroja.com.mx/ValidacionAutomaticTec</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline type="request" name="request-N53e02fff.31e86e4d.0.175037b4ce8.N7dd4">
+            <con:stage id="_StageId-N53e02fff.31e86e4d.0.175037b4ce8.N7dd2" name="StageRequest">
+                <con:context>
+                    <con1:userNsDecl prefix="val" namespace="http://soa.estrellaroja.com.mx/ValidacionAutomaticaConsulta"/>
+                    <con1:userNsDecl prefix="val1" namespace="http://soa.estrellaroja.com.mx/ValidacionAutomaticTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:assign varName="varCFDIJsonSchema">
+                        <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7dc4</con1:id>
+                        <con2:expr>
+                            <con1:xsltTransform>
+                                <con1:resource ref="INER_ValidacionAutomaticTec/Transformations/ValidacionConsultaCFDI"/>
+                                <con1:input>$body/val1:ValidationConsultRequest</con1:input>
+                            </con1:xsltTransform>
+                        </con2:expr>
+                    </con2:assign>
+                    <con2:nxsdTranslation>
+                        <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7dbe</con1:id>
+                        <con2:type>XML-To-Native</con2:type>
+                        <con2:sourceExpr>
+                            <con1:xqueryText>$varCFDIJsonSchema</con1:xqueryText>
+                        </con2:sourceExpr>
+                        <con2:nxsd ref="INER_ValidacionAutomaticTec/Schemas/External/ValidacionAutomaticaConsulta"/>
+                        <con2:schemaElement xmlns:val="http://soa.estrellaroja.com.mx/ValidacionAutomaticaConsulta">val:PostValidationCOnsultRequest</con2:schemaElement>
+                        <con2:assign-variable>varCFDIJsonRq</con2:assign-variable>
+                    </con2:nxsdTranslation>
+                    <con2:javaCallout varName="varJsonStringRq">
+                        <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7db2</con1:id>
+                        <con2:archive ref="INER_ValidacionAutomaticTec/Resources/commons-codec-1.7"/>
+                        <con2:className>org.apache.commons.codec.binary.StringUtils</con2:className>
+                        <con2:method>public static java.lang.String newStringUsAscii([B)</con2:method>
+                        <con2:expr>
+                            <con1:xqueryText>$varCFDIJsonRq</con1:xqueryText>
+                        </con2:expr>
+                        <con2:return-param-as-ref>false</con2:return-param-as-ref>
+                    </con2:javaCallout>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N53e02fff.31e86e4d.0.175037b4ce8.N7dd3">
+            <con:stage id="_StageId-N53e02fff.31e86e4d.0.175037b4ce8.N7dd1" name="StageResponse">
+                <con:context>
+                    <con1:userNsDecl prefix="val" namespace="http://soa.estrellaroja.com.mx/ValidacionAutomaticaConsulta"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7dca</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText>$varResponse</con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fed0.N20f9937c.0.17ac554289e.N7b1f">
+            <con:stage id="_StageId-N3f57fed0.N20f9937c.0.17ac554289e.N7b1e" name="StageResponse">
+                <con:context/>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N7b1d</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText>&lt;dig:MergeReportValidationResponse xmlns:dig="http://soa.estrellaroja.com.mx/ValidacionAutomaticTec">
+    &lt;dig:Return>
+    &lt;cmn:Success xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+    &lt;/dig:Return>
+  &lt;/dig:MergeReportValidationResponse></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fed0.N20f9937c.0.17ac554289e.N7aba">
+            <con:stage id="_StageId-N3f57fed0.N20f9937c.0.17ac554289e.N79ad" name="StageError">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/DigitalStampTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N79ac</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<dig:MergeReportValidationResponse xmlns:dig="http://soa.estrellaroja.com.mx/ValidacionAutomaticTec">
+    <dig:Return>
+    <cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+        <cmn:Error>
+            <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+            <cmn:ShortDescription>{$body/text()}</cmn:ShortDescription>
+            <cmn:Description>{fn:concat("Error when invoking ", "ValidacionAutomatica",$fault/ctx:details," ErApi: ",$body/text() )}</cmn:Description>
+            <cmn:BusinessProcess>ValidacionAutomaticaTec</cmn:BusinessProcess>
+            <cmn:FailedService>ValidacionAutomaticaTec</cmn:FailedService>
+            <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+        </cmn:Error>
+    </cmn:Errors>
+    </dig:Return>
+  </dig:MergeReportValidationResponse>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N79ab</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fed0.N20f9937c.0.17ac554289e.N7a87">
+            <con:stage id="_StageId-N3f57fed0.N20f9937c.0.17ac554289e.N79e5" name="StageError">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/DigitalStampTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N79e4</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<dig:GetReportValidationResponse xmlns:dig="http://soa.estrellaroja.com.mx/ValidacionAutomaticTec">
+    <dig:Return>
+    <cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+        <cmn:Error>
+            <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+            <cmn:ShortDescription>{$body/text()}</cmn:ShortDescription>
+            <cmn:Description>{fn:concat("Error when invoking ", "ValidacionAutomatica",$fault/ctx:details," ErApi: ",$body/text() )}</cmn:Description>
+            <cmn:BusinessProcess>ValidacionAutomaticaTec</cmn:BusinessProcess>
+            <cmn:FailedService>ValidacionAutomaticaTec</cmn:FailedService>
+            <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+        </cmn:Error>
+    </cmn:Errors>
+    </dig:Return>
+  </dig:GetReportValidationResponse>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N79e3</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N53e02fff.31e86e4d.0.175037b4ce8.N7dd0">
+            <con:stage id="_StageId-N53e02fff.31e86e4d.0.175037b4ce8.N7dce" name="Stage1">
+                <con:context>
+                    <con1:userNsDecl prefix="val" namespace="http://soa.estrellaroja.com.mx/ValidacionAutomaticaConsulta"/>
+                    <con1:userNsDecl prefix="val1" namespace="http://soa.estrellaroja.com.mx/ValidacionAutomaticTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:assign varName="varXMLJsonSchema">
+                        <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7dc1</con1:id>
+                        <con2:expr>
+                            <con1:xsltTransform>
+                                <con1:resource ref="INER_ValidacionAutomaticTec/Transformations/ValidacionXmlOracle"/>
+                                <con1:input>$body/val1:ValidationOracleXmlRequest</con1:input>
+                            </con1:xsltTransform>
+                        </con2:expr>
+                    </con2:assign>
+                    <con2:nxsdTranslation>
+                        <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7dbb</con1:id>
+                        <con2:type>XML-To-Native</con2:type>
+                        <con2:sourceExpr>
+                            <con1:xqueryText>$varXMLJsonSchema</con1:xqueryText>
+                        </con2:sourceExpr>
+                        <con2:nxsd ref="INER_ValidacionAutomaticTec/Schemas/External/ValidacionAutomaticaConsulta"/>
+                        <con2:schemaElement xmlns:val="http://soa.estrellaroja.com.mx/ValidacionAutomaticaConsulta">val:PostValidationOracleXmlRequest</con2:schemaElement>
+                        <con2:assign-variable>varXMLJsonRq</con2:assign-variable>
+                    </con2:nxsdTranslation>
+                    <con2:javaCallout varName="varXJsonStringRq">
+                        <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7db6</con1:id>
+                        <con2:archive ref="INER_ValidacionAutomaticTec/Resources/commons-codec-1.7"/>
+                        <con2:className>org.apache.commons.codec.binary.StringUtils</con2:className>
+                        <con2:method>public static java.lang.String newStringUsAscii([B)</con2:method>
+                        <con2:expr>
+                            <con1:xqueryText>$varXMLJsonRq</con1:xqueryText>
+                        </con2:expr>
+                        <con2:return-param-as-ref>false</con2:return-param-as-ref>
+                    </con2:javaCallout>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N53e02fff.31e86e4d.0.175037b4ce8.N7dcf">
+            <con:stage id="_StageId-N53e02fff.31e86e4d.0.175037b4ce8.N7dcd" name="Stage1">
+                <con:context/>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7dc7</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText>$varResponse</con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fed0.N20f9937c.0.17ac554289e.N7c7f">
+            <con:stage id="_StageId-N3f57fed0.N20f9937c.0.17ac554289e.N7c7d" name="StageRequest">
+                <con:context>
+                    <con1:userNsDecl prefix="val" namespace="http://soa.estrellaroja.com.mx/ValidacionAutomaticTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:assign varName="varRequest">
+                        <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N7c73</con1:id>
+                        <con2:expr>
+                            <con1:xsltTransform>
+                                <con1:resource ref="INER_ValidacionAutomaticTec/Transformations/inputGetValidation"/>
+                                <con1:input>$body/val:GetReportValidationRequest</con1:input>
+                            </con1:xsltTransform>
+                        </con2:expr>
+                    </con2:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fed0.N20f9937c.0.17ac554289e.N7b22">
+            <con:stage id="_StageId-N3f57fed0.N20f9937c.0.17ac554289e.N7b21" name="StageRequest">
+                <con:context>
+                    <con1:userNsDecl prefix="val" namespace="http://soa.estrellaroja.com.mx/ValidacionAutomaticTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:assign varName="varRequest">
+                        <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N7b20</con1:id>
+                        <con2:expr>
+                            <con1:xsltTransform>
+                                <con1:resource ref="INER_ValidacionAutomaticTec/Transformations/InMergeReportValidation"/>
+                                <con1:input>$body/*[1]</con1:input>
+                            </con1:xsltTransform>
+                        </con2:expr>
+                    </con2:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fed0.N20f9937c.0.17ac554289e.N7c7e">
+            <con:stage id="_StageId-N3f57fed0.N20f9937c.0.17ac554289e.N7c7c" name="StageResponse">
+                <con:context/>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N7c66</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText>$varResponse</con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N53e02fff.31e86e4d.0.175037b4ce8.N7cb2">
+            <con:stage id="_StageId-N53e02fff.31e86e4d.0.175037b4ce8.N7cb1" name="StageError">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/DigitalStampTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7c72</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<dig:ValidationConsultResponse xmlns:dig="http://soa.estrellaroja.com.mx/ValidacionAutomaticTec">
+    <dig:Return>
+    <cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+        <cmn:Error>
+            <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+            <cmn:ShortDescription>{$body/text()}</cmn:ShortDescription>
+            <cmn:Description>{fn:concat("Error when invoking ", "ValidacionAutomatica",$fault/ctx:details," ErApi: ",$body/text() )}</cmn:Description>
+            <cmn:BusinessProcess>ValidacionAutomaticaTec</cmn:BusinessProcess>
+            <cmn:FailedService>ValidacionAutomaticaTec</cmn:FailedService>
+            <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+        </cmn:Error>
+    </cmn:Errors>
+    </dig:Return>
+  </dig:ValidationConsultResponse>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7c78</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N53e02fff.31e86e4d.0.175037b4ce8.N7c7f">
+            <con:stage id="_StageId-N3f57fed0.N20f9937c.0.17ac554289e.N7a1d" name="StageError">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/DigitalStampTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N7a1c</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<dig:ValidationOracleXmlResponse xmlns:dig="http://soa.estrellaroja.com.mx/ValidacionAutomaticTec">
+    <dig:Return>
+    <cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+        <cmn:Error>
+            <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+            <cmn:ShortDescription>{$body/text()}</cmn:ShortDescription>
+            <cmn:Description>{fn:concat("Error when invoking ", "ValidacionAutomatica",$fault/ctx:details," ErApi: ",$body/text() )}</cmn:Description>
+            <cmn:BusinessProcess>ValidacionAutomaticaTec</cmn:BusinessProcess>
+            <cmn:FailedService>ValidacionAutomaticaTec</cmn:FailedService>
+            <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+        </cmn:Error>
+    </cmn:Errors>
+    </dig:Return>
+  </dig:ValidationOracleXmlResponse>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N7a1b</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N53e02fff.31e86e4d.0.175037b4ce8.N7dd5" name="BranchNode1">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="ConsultaSatCFDI">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair ConsultaSAT">
+                                <con:request>request-N53e02fff.31e86e4d.0.175037b4ce8.N7dd4</con:request>
+                                <con:response>response-N53e02fff.31e86e4d.0.175037b4ce8.N7dd3</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteNode1" error-handler="error-N53e02fff.31e86e4d.0.175037b4ce8.N7cb2">
+                                <con:context>
+                                    <con1:userNsDecl prefix="val" namespace="http://soa.estrellaroja.com.mx/ValidacionAutomaticaConsulta"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7d49</con1:id>
+                                        <con3:service ref="INER_ValidacionAutomaticTec/Business/ERPValidacionConsultBS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>ConsultaSatCFDI</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con2:delete varName="outbound">
+                                                <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7c6f</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>./ctx:transport/ctx:request/tp:headers/http:Content-Type</con1:xpathText>
+                                                </con2:location>
+                                            </con2:delete>
+                                            <con2:insert varName="outbound">
+                                                <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7c1a</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>$outbound/ctx:transport/ctx:request/tp:headers</con1:xpathText>
+                                                </con2:location>
+                                                <con2:where>first-child</con2:where>
+                                                <con2:expr>
+                                                    <con1:xqueryText>&lt;http:Content-Type>{'application/json'}&lt;/http:Content-Type></con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:insert>
+                                            <con2:insert varName="outbound">
+                                                <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7c53</con1:id>
+                                                <con1:disabled>true</con1:disabled>
+                                                <con2:location>
+                                                    <con1:xpathText>$outbound/ctx:transport/ctx:request</con1:xpathText>
+                                                </con2:location>
+                                                <con2:where>first-child</con2:where>
+                                                <con2:expr>
+                                                    <con1:xqueryText>&lt;http:http-method>POST&lt;/http:http-method></con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:insert>
+                                            <con4:report>
+                                                <con1:id>_ActionId-N3f57f5e8.N2f775d71.0.175054f3a1b.N7ff3</con1:id>
+                                                <con4:expr>
+                                                    <con1:xqueryText>replace($varJsonStringRq,'null','""')</con1:xqueryText>
+                                                </con4:expr>
+                                            </con4:report>
+                                            <con2:replace varName="body" contents-only="true">
+                                                <con1:id>_ActionId-N3f57f5e8.N2f775d71.0.175054f3a1b.N7fdf</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>.</con1:xpathText>
+                                                </con2:location>
+                                                <con2:expr>
+                                                    <con1:xqueryText>$varJsonStringRq</con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con2:nxsdTranslation>
+                                                <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7c66</con1:id>
+                                                <con2:type>Native-To-XML</con2:type>
+                                                <con2:sourceExpr>
+                                                    <con1:xqueryText>$body/text()</con1:xqueryText>
+                                                </con2:sourceExpr>
+                                                <con2:nxsd ref="INER_ValidacionAutomaticTec/Schemas/External/ValidacionAutomaticaConsulta"/>
+                                                <con2:schemaElement xmlns:val="http://soa.estrellaroja.com.mx/ValidacionAutomaticaConsulta">val:PostValidationConsultResponse</con2:schemaElement>
+                                                <con2:assign-variable>varJsonCFDIRs</con2:assign-variable>
+                                            </con2:nxsdTranslation>
+                                            <con2:assign varName="varResponse">
+                                                <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7c63</con1:id>
+                                                <con2:expr>
+                                                    <con1:xsltTransform>
+                                                        <con1:resource ref="INER_ValidacionAutomaticTec/Transformations/outValidacionConsultaCFDI"/>
+                                                        <con1:input>$varJsonCFDIRs</con1:input>
+                                                    </con1:xsltTransform>
+                                                </con2:expr>
+                                            </con2:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ValidaOracleXml">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair ValidaOracleXML">
+                                <con:request>request-N53e02fff.31e86e4d.0.175037b4ce8.N7dd0</con:request>
+                                <con:response>response-N53e02fff.31e86e4d.0.175037b4ce8.N7dcf</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteNode2" error-handler="error-N53e02fff.31e86e4d.0.175037b4ce8.N7c7f">
+                                <con:context/>
+                                <con:actions>
+                                    <con3:route>
+                                        <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7d46</con1:id>
+                                        <con3:service ref="INER_ValidacionAutomaticTec/Business/ERPOracleXmlBS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>ValidaOracleXml</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con2:delete varName="outbound">
+                                                <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7c6c</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>./ctx:transport/ctx:request/tp:headers/http:Content-Type</con1:xpathText>
+                                                </con2:location>
+                                            </con2:delete>
+                                            <con2:insert varName="outbound">
+                                                <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7c5c</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>$outbound/ctx:transport/ctx:request/tp:headers</con1:xpathText>
+                                                </con2:location>
+                                                <con2:where>first-child</con2:where>
+                                                <con2:expr>
+                                                    <con1:xqueryText>&lt;http:Content-Type>{'application/json'}&lt;/http:Content-Type></con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:insert>
+                                            <con2:insert varName="outbound">
+                                                <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7c56</con1:id>
+                                                <con1:disabled>true</con1:disabled>
+                                                <con2:location>
+                                                    <con1:xpathText>$outbound/ctx:transport/ctx:request</con1:xpathText>
+                                                </con2:location>
+                                                <con2:where>first-child</con2:where>
+                                                <con2:expr>
+                                                    <con1:xqueryText>&lt;http:http-method>POST&lt;/http:http-method></con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:insert>
+                                            <con4:report>
+                                                <con1:id>_ActionId-N3f57f5f4.4f2a3023.0.17508acbb7a.N7ffe</con1:id>
+                                                <con4:expr>
+                                                    <con1:xqueryText>replace($varXJsonStringRq,'null','""')</con1:xqueryText>
+                                                </con4:expr>
+                                            </con4:report>
+                                            <con2:replace varName="body" contents-only="true">
+                                                <con1:id>_ActionId-N3f57f5f4.4f2a3023.0.17508acbb7a.N7ffb</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>.</con1:xpathText>
+                                                </con2:location>
+                                                <con2:expr>
+                                                    <con1:xqueryText>$varXJsonStringRq</con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con2:nxsdTranslation>
+                                                <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7c69</con1:id>
+                                                <con2:type>Native-To-XML</con2:type>
+                                                <con2:sourceExpr>
+                                                    <con1:xqueryText>$body/text()</con1:xqueryText>
+                                                </con2:sourceExpr>
+                                                <con2:nxsd ref="INER_ValidacionAutomaticTec/Schemas/External/ValidacionAutomaticaConsulta"/>
+                                                <con2:schemaElement xmlns:val="http://soa.estrellaroja.com.mx/ValidacionAutomaticaConsulta">val:PostValidationOracleXmlResponse</con2:schemaElement>
+                                                <con2:assign-variable>varJsonXMLRs</con2:assign-variable>
+                                            </con2:nxsdTranslation>
+                                            <con2:assign varName="varResponse">
+                                                <con1:id>_ActionId-N53e02fff.31e86e4d.0.175037b4ce8.N7c5f</con1:id>
+                                                <con2:expr>
+                                                    <con1:xsltTransform>
+                                                        <con1:resource ref="INER_ValidacionAutomaticTec/Transformations/outValidacionXmlOracle"/>
+                                                        <con1:input>$varJsonXMLRs</con1:input>
+                                                    </con1:xsltTransform>
+                                                </con2:expr>
+                                            </con2:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="GetReportValidation">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair ReportValidacion">
+                                <con:request>request-N3f57fed0.N20f9937c.0.17ac554289e.N7c7f</con:request>
+                                <con:response>response-N3f57fed0.N20f9937c.0.17ac554289e.N7c7e</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteGetValidaction" error-handler="error-N3f57fed0.N20f9937c.0.17ac554289e.N7a87">
+                                <con:context/>
+                                <con:actions>
+                                    <con3:route>
+                                        <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N7c76</con1:id>
+                                        <con3:service ref="INER_ValidacionAutomaticTec/Business/dbInvoicesAP" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>queryByExample</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con2:replace varName="body" contents-only="true">
+                                                <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N7c70</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>.</con1:xpathText>
+                                                </con2:location>
+                                                <con2:expr>
+                                                    <con1:xqueryText>$varRequest</con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con2:assign varName="varResponse">
+                                                <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N7c6d</con1:id>
+                                                <con2:expr>
+                                                    <con1:xsltTransform>
+                                                        <con1:resource ref="INER_ValidacionAutomaticTec/Transformations/outputGetValidation"/>
+                                                        <con1:input>$body/*[1]</con1:input>
+                                                    </con1:xsltTransform>
+                                                </con2:expr>
+                                            </con2:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="MergeReportValidation">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair MergeReport">
+                                <con:request>request-N3f57fed0.N20f9937c.0.17ac554289e.N7b22</con:request>
+                                <con:response>response-N3f57fed0.N20f9937c.0.17ac554289e.N7b1f</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteMergeReport" error-handler="error-N3f57fed0.N20f9937c.0.17ac554289e.N7aba">
+                                <con:context/>
+                                <con:actions>
+                                    <con3:route>
+                                        <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N7b91</con1:id>
+                                        <con3:service ref="INER_ValidacionAutomaticTec/Business/dbInvoicesAP" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>merge</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con2:replace varName="body" contents-only="true">
+                                                <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N7b90</con1:id>
+                                                <con2:location>
+                                                    <con1:xpathText>.</con1:xpathText>
+                                                </con2:location>
+                                                <con2:expr>
+                                                    <con1:xqueryText>$varRequest</con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con2:assign varName="varResponse">
+                                                <con1:id>_ActionId-N3f57fed0.N20f9937c.0.17ac554289e.N7b8f</con1:id>
+                                                <con1:disabled>true</con1:disabled>
+                                                <con2:expr>
+                                                    <con1:xsltTransform>
+                                                        <con1:resource ref="INER_ValidacionAutomaticTec/Transformations/outputGetValidation"/>
+                                                        <con1:input>$body/*[1]</con1:input>
+                                                    </con1:xsltTransform>
+                                                </con2:expr>
+                                            </con2:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+        <con:partner-links>
+            <con:partner-link>
+                <con:service ref="INER_ValidacionAutomaticTec/ERPOracleXmlBS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+            </con:partner-link>
+        </con:partner-links>
+    </con:router>
+</con:pipelineEntry>

@@ -1,0 +1,61 @@
+<schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/dbaGetComplementInvoiceBs" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/sp/dbaGetComplementInvoiceBs" elementFormDefault="qualified">
+   <element name="InputParameters">
+      <complexType>
+         <sequence>
+            <element name="P_INVOICES_TO_UPDATE" type="db:XERINTUSER.XXER_INVOICES_TO_UPDATE_TTYPE" db:index="1" db:type="Array" minOccurs="0" nillable="true"/>
+         </sequence>
+      </complexType>
+   </element>
+   <element name="OutputParameters">
+      <complexType>
+         <sequence>
+            <element name="P_COMPLEMENT_UPD_UUID_ID" type="db:XERINTUSER.XXER_COMPLEMENT_UPD_UUID_TTYPE" db:index="2" db:type="Array" minOccurs="0" nillable="true"/>
+            <element name="P_ERROR" type="decimal" db:index="3" db:type="NUMBER" minOccurs="0" nillable="true"/>
+            <element name="P_ERROR_DESC" type="string" db:index="4" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         </sequence>
+      </complexType>
+   </element>
+   <complexType name="XERINTUSER.XXER_COMPLEMENT_UPD_UUID_TTYPE">
+      <sequence>
+         <element name="P_COMPLEMENT_UPD_UUID_ID_ITEM" type="db:XERINTUSER.XXER_COMPLEMENT_UPD_UUID_TYPE" db:type="Struct" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+      </sequence>
+   </complexType>
+   <complexType name="XERINTUSER.XXER_INVOICES_TO_UPDATE_TYPE">
+      <sequence>
+         <element name="TRX_NUMBER" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="STATUS" type="db:string10" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+      </sequence>
+   </complexType>
+   <complexType name="XERINTUSER.XXER_INVOICES_TO_UPDATE_TTYPE">
+      <sequence>
+         <element name="P_INVOICES_TO_UPDATE_ITEM" type="db:XERINTUSER.XXER_INVOICES_TO_UPDATE_TYPE" db:type="Struct" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+      </sequence>
+   </complexType>
+   <complexType name="XERINTUSER.XXER_COMPLEMENT_UPD_UUID_TYPE">
+      <sequence>
+         <element name="TRX_NUMBER" type="db:string50" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ORG_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="UUID" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+      </sequence>
+   </complexType>
+   <simpleType name="string100">
+      <restriction base="string">
+         <maxLength value="100"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string10">
+      <restriction base="string">
+         <maxLength value="10"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string50">
+      <restriction base="string">
+         <maxLength value="50"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string150">
+      <restriction base="string">
+         <maxLength value="150"/>
+      </restriction>
+   </simpleType>
+</schema>

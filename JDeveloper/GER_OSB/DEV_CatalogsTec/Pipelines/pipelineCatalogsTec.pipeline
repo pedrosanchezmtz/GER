@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="DEV_CatalogsTec/WSDLs/CatalogsTec"/>
+            <con:binding>
+                <con:name>CatalogsTecBinding</con:name>
+                <con:namespace>http://soa.estrellaroja.com.mx/CatalogsTec</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router errorHandler="error-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7d3a">
+        <con:pipeline type="request" name="request-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7f9d">
+            <con:stage id="_StageId-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7f9b" name="StageRequest">
+                <con:context>
+                    <con2:userNsDecl prefix="cat" namespace="http://soa.estrellaroja.com.mx/CatalogsTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7f32</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_CatalogsTec/XSLs/trPipelineRq_To_DbaReadCountryMapingRq"/>
+                                <con2:input>$body/cat:GetCountryCodeRq</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7f9c">
+            <con:stage id="_StageId-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7f9a" name="StageResponse">
+                <con:context/>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7eff</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>$varResponse</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7e36">
+            <con:stage id="_StageId-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7e35" name="StageErrorHandler">
+                <con:context>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estreallaroja.com.mx/EstrellaRojaCommons"/>
+                    <con2:userNsDecl prefix="tns" namespace="http://soa.estrellaroja.com.mx/CatalogsTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7e02</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<tns:GetCountryCodeRs>
+<cmn:Errors>
+ <cmn:Error>
+   <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+      <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+      <cmn:Description>{fn:concat("Error when invoking GetCountryCode",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+      <cmn:BusinessProcess>GetCountryCode</cmn:BusinessProcess>
+      <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+   <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+ </cmn:Error>
+</cmn:Errors>
+</tns:GetCountryCodeRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply isError="false">
+                        <con2:id>_ActionId-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7d6d</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7d3a">
+            <con:stage id="_StageId-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7d39" name="StageGeneralError">
+                <con:context>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con2:userNsDecl prefix="cat" namespace="http://soa.estrellaroja.com.mx/CatalogsTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="fault" contents-only="true">
+                        <con2:id>_ActionId-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7d06</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<cat:ServiceFault>
+ <cmn:Error>
+   <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+      <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+      <cmn:Description>{fn:concat("Error when invoking CatalogsTec",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+      <cmn:BusinessProcess>CatalogsTec</cmn:BusinessProcess>
+      <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+   <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+ </cmn:Error>
+</cat:ServiceFault>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply>
+                        <con2:id>_ActionId-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7cd3</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7fcf" name="SelectOperation">
+                <con:context>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estreallaroja.com.mx/EstrellaRojaCommons"/>
+                    <con2:userNsDecl prefix="tns" namespace="http://soa.estrellaroja.com.mx/CatalogsTec"/>
+                </con:context>
+                <con:branch-table>
+                    <con:branch name="GetCountryCode">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="PipelineGetCountryCode">
+                                <con:request>request-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7f9d</con:request>
+                                <con:response>response-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7f9c</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="Route2dbaReadCountryMapping" error-handler="error-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7e36">
+                                <con:context>
+                                    <con2:userNsDecl prefix="ns0" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbaReadCountryMapping"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7f65</con2:id>
+                                        <con3:service ref="DEV_CatalogsTec/Business/dbaReadCountryMapping" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>dbaReadCountryMappingSelect</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7ecc</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varResponse">
+                                                <con2:id>_ActionId-N3f57fffe.N7d1b2a23.0.160996fcbfc.N7e99</con2:id>
+                                                <con1:expr>
+                                                    <con2:xsltTransform>
+                                                        <con2:resource ref="DEV_CatalogsTec/XSLs/trDbaReadCountryMappingRs_To_PipelineRs"/>
+                                                        <con2:input>$body/ns0:XxerCountriesMappingCollection</con2:input>
+                                                    </con2:xsltTransform>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

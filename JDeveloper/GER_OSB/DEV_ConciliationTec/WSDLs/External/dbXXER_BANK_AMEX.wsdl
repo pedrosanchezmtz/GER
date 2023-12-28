@@ -1,0 +1,20 @@
+<wsdl:definitions name="dbXXER_BANK_AMEX" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/DEV_ConciliationTec/dbXXER_BANK_AMEX" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/DEV_ConciliationTec/dbXXER_BANK_AMEX" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbXXER_BANK_AMEX" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="dbXXER_BANK_AMEX_plt">
+    <plt:role name="dbXXER_BANK_AMEX_role">
+      <plt:portType name="tns:dbXXER_BANK_AMEX_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbXXER_BANK_AMEX" schemaLocation="../../Schemas/External/dbXXER_BANK_AMEX_table.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="XxerBancosAmexHeaderTblCollection_msg">
+        <wsdl:part name="XxerBancosAmexHeaderTblCollection" element="top:XxerBancosAmexHeaderTblCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="dbXXER_BANK_AMEX_ptt">
+        <wsdl:operation name="insert">
+            <wsdl:input message="tns:XxerBancosAmexHeaderTblCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

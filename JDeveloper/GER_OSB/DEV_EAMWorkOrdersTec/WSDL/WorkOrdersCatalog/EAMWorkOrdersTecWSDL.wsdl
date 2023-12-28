@@ -1,0 +1,27 @@
+<wsdl:definitions name="EAMWorkOrdersTecBS" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_EAMWorkOrdersTec/EAMWorkOrdersTecBS" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_EAMWorkOrdersTec/EAMWorkOrdersTecBS" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/EAMWorkOrdersTecBS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="EAMWorkOrdersTecBS_plt">
+    <plt:role name="EAMWorkOrdersTecBS_role">
+      <plt:portType name="tns:EAMWorkOrdersTecBS_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/EAMWorkOrdersTecBS" schemaLocation="../../XSD/WorkOrdersCatalog/EAMWorkOrdersTecXSD.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="EAMWorkOrdersTecBSSelect_inputParameters">
+        <wsdl:part name="EAMWorkOrdersTecBSSelect_inputParameters" element="top:EAMWorkOrdersTecBSSelect_workOrderNumberInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="XxerEamWorkOrdersFsTblCollection_msg">
+        <wsdl:part name="XxerEamWorkOrdersFsTblCollection" element="top:XxerEamWorkOrdersFsTblCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="EAMWorkOrdersTecBS_ptt">
+        <wsdl:operation name="merge">
+            <wsdl:input message="tns:XxerEamWorkOrdersFsTblCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="EAMWorkOrdersTecBSSelect">
+            <wsdl:input message="tns:EAMWorkOrdersTecBSSelect_inputParameters"/>
+            <wsdl:output message="tns:XxerEamWorkOrdersFsTblCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

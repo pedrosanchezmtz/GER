@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="DEV_APIUnitMetricsTec/WSDL/TOMTOM/Mileage/GetMileageTomTomWSDL"/>
+            <con:binding>
+                <con:name>GetMileageTomTom_ptt-binding</con:name>
+                <con:namespace>http://xmlns.oracle.com/OSB_EstrellaRoja/DEV_APIUnitMetricsTec/GetMileageTomTom</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:flow>
+            <con:route-node name="RouteNode1">
+                <con:context>
+                    <con1:varNsDecl prefix="mil" namespace="http://soa.estrellaroja.com.mx/MileageTomTom"/>
+                </con:context>
+                <con:actions>
+                    <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N53ef9bf9.6bc0b0b1.9.16f5560f8e0.N7fff</con2:id>
+                        <con1:service ref="DEV_APIUnitMetricsTec/BusinessService/TOMTOM/Mileage/GetMileageTomTomBS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:outboundTransform>
+                            <con2:routing-options xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config">
+                                <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-N53ef9bf9.6bc0b0b1.5.16f54713495.N7ffe</con3:id>
+                                <con2:uriExpr>
+                                    <con3:xqueryText xmlns:con3="http://www.bea.com/wli/sb/stages/config">fn:concat('http://184.172.32.74:5050/api/consultas/consumoCombustible?cFechaInicio=',$body/mil:GetMileageTomTomRequest/mil:fechaInicio,'%2000:00','&amp;amp;','cFechaFin=',$body/mil:GetMileageTomTomRequest/mil:fechaFin,'%2023:59')</con3:xqueryText>
+                                </con2:uriExpr>
+                                <con2:restOptions>
+                                    <con2:verb>GET</con2:verb>
+                                    <con2:accept>application/json</con2:accept>
+                                </con2:restOptions>
+                            </con2:routing-options>
+                        </con1:outboundTransform>
+                        <con1:responseTransform>
+                            <con2:assign varName="MileageResponse" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config">
+                                <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-N53ef9bf9.6bc0b0b1.7.16f54846824.N7ffe</con3:id>
+                                <con2:expr>
+                                    <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">$body/text()</con:xqueryText>
+                                </con2:expr>
+                            </con2:assign>
+                            <con2:nxsdTranslation xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config">
+                                <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-N53ef9bf9.6bc0b0b1.b.16f55782693.N8000</con3:id>
+                                <con2:type>Native-To-XML</con2:type>
+                                <con2:sourceExpr>
+                                    <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">$MileageResponse</con:xqueryText>
+                                </con2:sourceExpr>
+                                <con2:nxsd ref="DEV_APIUnitMetricsTec/XSD/TOMTOM/Mileage/MileageTomTomTecNXSD"/>
+                                <con2:schemaElement xmlns:mil="http://soa.estrellaroja.com.mx/MileageTomTom">mil:GetMileageTomTomResponse</con2:schemaElement>
+                                <con2:replace-body-content/>
+                                <con2:enforceSchemaOrder>true</con2:enforceSchemaOrder>
+                            </con2:nxsdTranslation>
+                        </con1:responseTransform>
+                    </con1:route>
+                </con:actions>
+            </con:route-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

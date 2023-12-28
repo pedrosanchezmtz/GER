@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ser:businessServiceEntry xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:tran="http://www.bea.com/wli/sb/transports" xmlns:env="http://www.bea.com/wli/config/env" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ser:coreEntry>
+        <ser:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType" xmlns:con="http://www.bea.com/wli/sb/services/bindings/config">
+            <con:wsdl ref="ERPIntegrationServiceTec/WSDL/Externals/Cloud/Customers/erpRefMergePerson-concrete"/>
+            <con:binding>
+                <con:name>erpRefMergePersonPortType-binding</con:name>
+                <con:namespace>http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefMergePerson</con:namespace>
+            </con:binding>
+        </ser:binding>
+        <ops:operations enabled="true">
+            <ops:sla-alerting enabled="true"/>
+        </ops:operations>
+        <ser:ws-policy>
+            <svc:binding-mode>no-policies</svc:binding-mode>
+        </ser:ws-policy>
+        <ser:xqConfiguration>
+            <svc:snippetVersion>1.0</svc:snippetVersion>
+        </ser:xqConfiguration>
+    </ser:coreEntry>
+    <ser:endpointConfig>
+        <tran:provider-id>jca</tran:provider-id>
+        <tran:inbound>false</tran:inbound>
+        <tran:URI weight="0">
+            <env:value>jca://cloud/CloudAdapter</env:value>
+        </tran:URI>
+        <tran:outbound-properties>
+            <tran:load-balancing-algorithm>round-robin</tran:load-balancing-algorithm>
+            <tran:retry-count>0</tran:retry-count>
+            <tran:retry-interval>30</tran:retry-interval>
+            <tran:retry-application-errors>true</tran:retry-application-errors>
+        </tran:outbound-properties>
+        <tran:all-headers>false</tran:all-headers>
+        <tran:provider-specific xsi:type="jca:JCAEndPointConfiguration">
+            <jca:jca-file ref="ERPIntegrationServiceTec/Adapters/Customers/erpRefMergePerson"/>
+            <jca:adapter-name>erp</jca:adapter-name>
+            <jca:adapter-type>cloud</jca:adapter-type>
+            <jca:dispatch-policy>SBDefaultResponseWorkManager</jca:dispatch-policy>
+            <jca:always-use-wsdl>true</jca:always-use-wsdl>
+            <jca:connection-mode>non-managed</jca:connection-mode>
+            <jca:connection-property-username-password-overwrite>false</jca:connection-property-username-password-overwrite>
+            <jca:connection-factory-properties>
+                <jca:property>
+                    <jca:name>csfMap</jca:name>
+                    <jca:value>oracle.wsm.security</jca:value>
+                </jca:property>
+                <jca:property>
+                    <jca:name>csfkey</jca:name>
+                    <jca:value>erpKey</jca:value>
+                </jca:property>
+                <jca:property>
+                    <jca:name>targetWSDLURL</jca:name>
+                    <jca:value>https://egte.fa.us2.oraclecloud.com:443/fscmService/ServiceCatalogService?WSDL</jca:value>
+                </jca:property>
+                <jca:property>
+                    <jca:name>eventCatalogURL</jca:name>
+                    <jca:value/>
+                </jca:property>
+                <jca:property>
+                    <jca:name>applicationVersion</jca:name>
+                    <jca:value>1.0</jca:value>
+                </jca:property>
+            </jca:connection-factory-properties>
+            <jca:outbound-properties>
+                <jca:operation-properties>
+                    <jca:operation-name>mergePerson</jca:operation-name>
+                    <jca:spec-properties>
+                        <jca:property>
+                            <jca:name>outboundRequestOperation</jca:name>
+                            <jca:value>{http://xmlns.oracle.com/apps/cdm/foundation/parties/personService/applicationModule/}mergePerson</jca:value>
+                        </jca:property>
+                        <jca:property>
+                            <jca:name>browseBySelection</jca:name>
+                            <jca:value>browseByBusinessObject</jca:value>
+                        </jca:property>
+                        <jca:property>
+                            <jca:name>operationPath</jca:name>
+                            <jca:value>http://xmlns.oracle.com/apps/cdm/foundation/parties/personService/applicationModule/mergePerson</jca:value>
+                        </jca:property>
+                        <jca:property>
+                            <jca:name>targetOperation</jca:name>
+                            <jca:value>mergePerson</jca:value>
+                        </jca:property>
+                        <jca:property>
+                            <jca:name>serviceWSDLURL</jca:name>
+                            <jca:value>https://egte.fa.us2.oraclecloud.com:443/crmService/FoundationPartiesPersonService?WSDL</jca:value>
+                        </jca:property>
+                        <jca:property>
+                            <jca:name>outboundRequestObject</jca:name>
+                            <jca:value>{http://xmlns.oracle.com/apps/cdm/foundation/parties/personService/applicationModule/OSCAdapter}Trading Community Person</jca:value>
+                        </jca:property>
+                    </jca:spec-properties>
+                </jca:operation-properties>
+            </jca:outbound-properties>
+        </tran:provider-specific>
+    </ser:endpointConfig>
+</ser:businessServiceEntry>

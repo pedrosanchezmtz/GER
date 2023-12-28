@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions targetNamespace="http://soa.estrellaroja.com.mx/SFTPEstrellaRojaTec" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soa.estrellaroja.com.mx/SFTPEstrellaRojaTec" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:types>
+<xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/SFTPEstrellaRojaTec/types" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:import namespace="http://soa.estrellaroja.com.mx/SFTPEstrellaRojaTec" schemaLocation="SFTPEstrellaRojaTec.xsd"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="SendFileRq">
+<wsdl:part name="SendFileRq" element="tns:SendFileRq"/>
+</wsdl:message>
+<wsdl:message name="SendFileRs">
+<wsdl:part name="SendFileRs" element="tns:SendFileRs"/>
+</wsdl:message>
+<wsdl:portType name="SFTPEstrellaRojaTecPort">
+<wsdl:operation name="SendFile">
+<wsdl:input message="tns:SendFileRq"/>
+<wsdl:output message="tns:SendFileRs"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="SFTPEstrellaRojaTecBinding" type="tns:SFTPEstrellaRojaTecPort">
+<soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="SendFile">
+<soap12:operation style="document" soapAction="http://soa.estrellarojacleyton.com.mx/SFTPEstrellaRojaTec/SendFile" soapActionRequired="false"/>
+<wsdl:input>
+<soap12:body use="literal" parts="SendFileRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal" parts="SendFileRs"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="SFTPEstrellaRojaTec">
+<wsdl:port name="SFTPEstrellaRojaTecPort" binding="tns:SFTPEstrellaRojaTecBinding">
+<soap:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/Commons/SFTPEstrellaRojaTec/SFTPEstrellaRojaTec"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

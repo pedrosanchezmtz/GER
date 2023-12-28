@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbTMS_COCILIACION_BANCOS_TBL" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbTMS_COCILIACION_BANCOS_TBL" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="TmsCociliacionBancosTblCollection" type="TmsCociliacionBancosTblCollection"/>
+   <xs:complexType name="TmsCociliacionBancosTblCollection">
+      <xs:sequence>
+         <xs:element name="TmsCociliacionBancosTbl" type="TmsCociliacionBancosTbl" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="TmsCociliacionBancosTbl">
+      <xs:sequence>
+         <xs:element name="id" type="xs:decimal" nillable="true"/>
+         <xs:element name="noOperacion" type="xs:decimal" minOccurs="0"/>
+         <xs:element name="sucursal" type="string100" minOccurs="0" nillable="true"/>
+         <xs:element name="referencia" type="string200" minOccurs="0" nillable="true"/>
+         <xs:element name="usuario" type="string200" minOccurs="0" nillable="true"/>
+         <xs:element name="usrtrx" type="string100" minOccurs="0" nillable="true"/>
+         <xs:element name="tipoPago" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="lote" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="nombreArchivo" type="string300" minOccurs="0" nillable="true"/>
+         <xs:element name="tarjeta" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="nombreTh" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="autorizacion" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="afiliacion" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="nombreAfiliacion" type="string200" minOccurs="0" nillable="true"/>
+         <xs:element name="importe" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="moneda" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaOperacion" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="horaOperacion" type="string200" minOccurs="0" nillable="true"/>
+         <xs:element name="tipoTarjeta" type="string200" minOccurs="0" nillable="true"/>
+         <xs:element name="marcaTarjeta" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="bancoEmisor" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="tipoOperacion" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaDeposito" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="tipoBuzon" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaCreacion" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="importeTasa" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="ivaTasa" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="importeSobretasa" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="ivaSobretasa" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="importeNeto" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="tipoImporteNeto" type="string1" minOccurs="0" nillable="true"/>
+         <xs:element name="paymentNumber" type="string100" minOccurs="0" nillable="true"/>
+         <xs:element name="chbReference" type="xs:decimal" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="string100">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="100"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string200">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="200"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string50">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="50"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string300">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="300"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string150">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="150"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string1">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="1"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

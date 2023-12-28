@@ -1,0 +1,24 @@
+<wsdl:definitions name="dbaReadCustomers" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaReadCustomers" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaReadCustomers" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/dbaReadCustomersBs" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="dbaReadCustomers_plt">
+    <plt:role name="dbaReadCustomers_role">
+      <plt:portType name="tns:dbaReadCustomers_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/dbaReadCustomers" schemaLocation="../../Schemas/External/dbaReadCustomers.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="dbaReadCustomersInput_msg">
+        <wsdl:part name="dbaReadCustomersInput_msg" element="db:dbaReadCustomersInput" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/dbaReadCustomers"/>
+    </wsdl:message>
+    <wsdl:message name="dbaReadCustomersOutputCollection_msg">
+        <wsdl:part name="dbaReadCustomersOutputCollection" element="db:dbaReadCustomersOutputCollection" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/dbaReadCustomers"/>
+    </wsdl:message>
+    <wsdl:portType name="dbaReadCustomers_ptt">
+        <wsdl:operation name="dbaReadCustomers">
+            <wsdl:input message="tns:dbaReadCustomersInput_msg"/>
+            <wsdl:output message="tns:dbaReadCustomersOutputCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

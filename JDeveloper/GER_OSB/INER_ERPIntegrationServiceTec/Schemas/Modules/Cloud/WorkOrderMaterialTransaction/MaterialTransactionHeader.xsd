@@ -1,0 +1,93 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/" sdoJava:package="oracle.apps.scm.commonWorkExecution.workOrderMaterialTransactions.materialTransactionsService" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:sdoJava="commonj.sdo/java" xmlns="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation xmlns:oer="http://xmlns.oracle.com/oer">
+            <name>Material Transaction Header Output</name>
+            <description>Import Material transaction vo</description>
+            <oer:category name="lbo">
+                <value>SCM-SCM : WIE-Common Work Execution :
+                    ORA_WO_MATERIAL_TRANSACTION-Work Order Material Transaction</value>
+            </oer:category>
+            <oer:attributes>
+                <oer:attribute description="The status of the processing of the material transaction." name="InterfaceStatusCode"/>
+                <oer:attribute description="An internal unique identifier of the inventory transaction." name="InvTransactionId"/>
+                <oer:attribute description="The user identifier for the material transaction." name="HeaderNumber"/>
+                <oer:attribute description="The organization where the material is either drawn from or where the product completes to." name="Organization"/>
+                <oer:attribute description="The work order for which the material is transacted." name="WorkOrderNumber"/>
+                <oer:attribute description="The serial number of the item associated to work order for which the material transaction is performed. It is applicable to serialization enabled work orders only." name="WorkOrderSerial"/>
+                <oer:attribute description="The work order operation for which the resource is transacted." name="OperationSequence"/>
+                <oer:attribute description="The date when the transaction is performed." name="TransactionDate"/>
+                <oer:attribute description="The code that determines whether the transaction is an orderless transaction or a WIP component issue or a WIP component return." name="TransactionType"/>
+                <oer:attribute description="The material transacted or the product completed." name="InventoryItemNumber"/>
+                <oer:attribute description="The item revision for the material transacted or the product completed." name="ItemRevision"/>
+                <oer:attribute description="The transacted quantity of the component for the work order." name="TransactionQuantity"/>
+                <oer:attribute description="The unit of measure to report the transacted quantity." name="TransactionUnitOfMeasure"/>
+                <oer:attribute description="The code of the subinventory from where the component was issued." name="Subinventory"/>
+                <oer:attribute description="The inventory locator where the materials are drawn from or where the products are completed to." name="Locator"/>
+                <oer:attribute description="The user specified work definition that is used to backflush materials and resources. Only applicable to orderless transactions." name="WorkDefinition"/>
+                <oer:attribute description="The version of the work definition that is used to execute the work order." name="WorkDefinitionVersion"/>
+                <oer:attribute description="The user specified indicator to indicate the specific nature of the work that is reported through orderless transaction for costing to derive the necessary accounts for orderless transaction accounting. Only applicable to orderless transactions." name="WorkOrderType"/>
+                <oer:attribute description="The user specified indicator to indicate the specific nature of the work that is reported through orderless transaction for costing to derive the necessary accounts for orderless transaction accounting. Only applicable to orderless transactions." name="WorkOrderSubType"/>
+                <oer:attribute description="Header level reference of the source system object." name="SourceHeaderReference"/>
+                <oer:attribute description="The unique identifier of the source system object header." name="SourceHeaderReferenceIdentifier"/>
+                <oer:attribute description="Line level reference of the source system object." name="SourceLineReference"/>
+                <oer:attribute description="The unique identifier of the source system object line." name="SourceLineReferenceIdentifier"/>
+                <oer:attribute description="The code that specifies the reason for reporting scrap or returning from the scrap for orderless transaction." name="ReasonCode"/>
+                <oer:attribute description="The number of the purchasing document." name="PONumber"/>
+                <oer:attribute description="The unique identifier of a line on a document." name="POLineNumber"/>
+                <oer:attribute description="Sold to organization in the purchase order document." name="SoldToLegalEntityName"/>
+                <oer:attribute description="The mode of manufacturing used to execute the work order." name="WorkMethod"/>
+                <oer:attribute description="The output payload for the response messages after processing the material transaction batch." name="MessageDetail"/>
+                <oer:attribute description="The output payload for the material transaction lot information after processing the material transaction batch." name="TransactionLotHeader"/>
+                <oer:attribute description="The output payload for the material transaction serial information after processing the material transaction batch." name="TransactionSerialHeader"/>
+            </oer:attributes>
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="../Commons/BC4JService.xsd"/>
+    <xsd:import namespace="commonj.sdo/java" schemaLocation="../Commons/sdoJava.xsd"/>
+    <xsd:include schemaLocation="MessageDetail.xsd"/>
+    <xsd:include schemaLocation="TransactionLotHeader.xsd"/>
+    <xsd:include schemaLocation="TransactionSerialHeader.xsd"/>
+    <xsd:complexType name="MaterialTransactionHeader">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>InterfaceRowId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="InterfaceStatusCode" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="InvTransactionId" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="HeaderNumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="Organization" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="WorkOrderNumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="WorkOrderSerial" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="OperationSequence" nillable="true" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="TransactionDate" type="ns0:dateTime-Timestamp"/>
+            <xsd:element minOccurs="0" name="TransactionType" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="InventoryItemNumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ItemRevision" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="TransactionQuantity" type="ns0:MeasureType"/>
+            <xsd:element minOccurs="0" name="TransactionUnitOfMeasure" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="Subinventory" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="Locator" nillable="true" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="WorkDefinition" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="WorkDefinitionVersion" nillable="true" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="WorkOrderType" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="WorkOrderSubType" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="SourceHeaderReference" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="SourceHeaderReferenceIdentifier" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="SourceLineReference" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="SourceLineReferenceIdentifier" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="ReasonCode" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="PONumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="POLineNumber" nillable="true" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="SoldToLegalEntityName" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="WorkMethod" nillable="true" type="xsd:string"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="MessageDetail" type="MessageDetail"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="TransactionLotHeader" type="TransactionLotHeader"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="TransactionSerialHeader" type="TransactionSerialHeader"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="materialTransactionHeader" type="MaterialTransactionHeader"/>
+</xsd:schema>

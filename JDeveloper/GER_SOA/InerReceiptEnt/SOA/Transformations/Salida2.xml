@@ -1,0 +1,3918 @@
+<rec:ReceiptApplyRq xmlns:rec="http://soa.estrellaroja.com.mx/ReceiptBiz">
+  <rec:GetHtmlControlRq>
+    <rec:ErrorsDetails>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-78693} - REC{03 DICKA L}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-123740} - REC{03 DICKA L}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12275} - REC{03 ENERGET}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12274} - REC{03 ENERGET}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12227} - REC{03 ENERGET}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12277} - REC{03 ENERGET}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12276} - REC{03 ENERGET}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12279} - REC{03 ENERGET}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12278} - REC{03 ENERGET}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12259} - REC{03 ENERGET}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12260} - REC{03 ENERGET}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12262} - REC{03 ENERGET}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12263} - REC{03 ENERGET}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-119983} - REC{03 INNOVAT}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-120251} - REC{03 INNOVAT}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80824} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128216} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128217} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80826} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80825} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128652} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81045} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128081} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128074} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81097} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81077} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81006} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81004} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80843} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80733} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127706} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127930} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127928} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80684} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80936} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80928} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80835} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80923} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80922} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80939} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80934} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80836} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128075} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81009} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81043} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81040} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80789} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81051} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81049} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80793} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80792} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80791} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80790} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81046} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80815} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80817} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80700} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80645} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80827} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80864} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127919} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128060} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80639} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80658} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80672} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80983} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80862} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128681} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80964} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128377} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128190} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80982} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80676} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128378} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80893} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128424} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81005} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80837} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128213} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80986} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80990} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80987} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80677} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80945} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80985} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80734} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81023} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128210} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80998} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80727} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128236} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128345} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128059} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127990} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128549} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127886} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128003} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128048} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128232} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128057} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128551} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128670} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128425} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128359} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128358} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128343} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128238} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128235} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128234} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128671} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128675} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128685} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128494} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128676} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128668} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128684} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128678} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128664} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128651} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128314} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128162} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128269} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80679} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128181} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128609} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81108} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80989} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128093} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80808} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80783} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80788} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80794} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80786} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80813} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80796} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80797} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80772} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81037} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81038} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80795} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81047} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80754} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80751} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81044} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81086} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81104} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80756} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81033} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80749} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81075} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81066} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81026} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81103} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81102} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81098} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81090} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81099} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81107} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81084} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81088} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81110} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81091} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81092} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81094} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80944} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128590} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80784} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80785} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80768} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80753} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80800} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80807} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80775} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80774} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80769} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81109} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80773} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80811} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80787} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80805} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80771} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81050} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81096} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81101} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81042} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81035} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81028} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81039} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81025} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81027} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81029} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81079} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81083} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81093} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81095} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81087} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81105} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81100} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81081} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81089} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128076} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128069} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128079} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128089} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128063} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128326} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128329} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128317} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128311} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128714} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128721} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128723} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128310} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128309} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128308} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128095} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128484} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127843} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128485} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128594} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128585} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128053} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80932} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81014} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127993} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128000} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127997} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128056} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128054} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128233} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128058} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128055} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128051} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128049} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128526} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128524} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128523} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128237} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128679} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128673} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128649} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128687} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128360} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128160} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80697} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128380} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80955} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128201} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80713} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80583} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81021} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80731} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80840} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128417} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80937} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80959} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80718} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128050} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128481} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128482} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128483} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128157} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127852} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128061} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80766} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80765} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80760} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80759} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80758} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80757} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80782} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81061} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81074} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81073} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81072} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81071} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81070} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80767} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80763} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80764} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80762} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80761} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81062} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81078} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81080} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81058} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80781} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81064} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81056} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80776} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80777} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80778} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80779} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81085} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81054} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80780} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81076} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81082} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81068} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81069} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81052} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81067} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81065} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81060} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81059} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81055} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81053} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81063} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81057} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80952} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127831} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128028} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128030} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127984} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127834} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127835} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127836} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127863} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127866} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128117} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128031} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128024} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128020} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128407} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128408} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128193} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128220} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128706} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128633} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128704} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128625} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128725} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128634} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128640} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128301} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128299} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128361} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128347} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128207} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128065} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128448} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128498} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128105} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80960} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128582} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128793} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128282} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81010} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80743} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128478} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81019} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128479} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80954} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80957} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80941} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81036} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128091} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80966} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127982} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128781} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128575} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80958} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128574} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127847} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128783} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128632} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128692} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128090} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81041} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81001} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128073} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128192} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81015} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128379} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128278} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128504} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127994} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128277} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80963} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128631} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80867} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128780} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128159} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127988} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80737} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80723} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80962} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80725} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128283} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80965} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80712} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128782} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128285} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80647} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80681} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128275} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128777} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80913} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80863} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80933} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127826} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128047} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128156} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127992} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128046} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80968} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128250} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80981} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127845} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80711} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80969} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128151} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80930} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80915} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80738} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80866} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80695} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80946} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80943} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128150} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128195} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80644} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80675} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81007} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128182} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128094} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80925} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81018} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128546} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128506} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80869} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81017} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80999} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81000} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81031} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80704} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81011} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128187} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128499} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127989} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80701} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80729} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128577} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127855} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80850} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128460} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80967} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80947} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80905} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128153} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128545} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80742} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80961} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128375} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128581} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80916} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81013} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128179} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128203} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80838} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80865} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80844} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128225} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128198} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80736} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128211} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128411} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128647} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128518} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80917} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80906} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128423} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128776} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80927} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80919} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80646} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128191} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128356} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127881} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80696} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128184} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81034} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80861} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80673} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80846} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127848} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128505} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127829} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128775} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81012} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128648} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128496} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128501} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128630} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127981} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81016} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128515} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80839} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80710} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81008} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81030} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128422} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80926} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80902} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128507} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128773} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128410} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80868} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80988} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80820} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128510} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81032} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128770} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80706} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80856} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80682} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80691} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81020} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81002} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80911} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127828} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128420} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128106} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128445} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128374} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128078} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128509} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128188} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128627} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128771} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128500} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128717} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128016} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80992} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80991} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80971} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80993} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80980} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127987} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128511} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80899} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80716} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128784} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128579} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128166} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128396} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128043} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128163} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81048} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81003} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128086} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128072} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80739} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80949} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128357} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128416} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128802} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128628} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127979} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128691} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80744} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80908} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80854} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128413} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128414} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128772} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80842} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80709} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128418} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128100} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128052} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80851} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80847} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80848} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80642} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80829} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81022} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80948} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128342} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127978} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80950} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128341} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80920} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80845} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128412} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80669} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80940} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128459} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128787} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128788} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128442} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80994} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128564} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80975} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80860} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80979} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80977} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128587} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128733} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80978} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80859} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128508} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80640} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80984} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128164} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127871} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128426} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128427} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128268} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127958} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80833} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80834} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80942} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80855} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80832} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80841} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128042} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127916} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128711} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80746} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128786} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80741} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80951} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128650} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128350} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128768} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80745} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128286} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80708} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80857} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80853} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128762} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80740} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127999} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128514} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80688} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127827} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127983} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80921} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80924} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80935} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128754} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128218} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80663} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80666} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80972} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80918} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128400} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80852} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80849} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80929} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80931} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80914} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80831} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80828} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80830} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80912} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80953} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80956} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80995} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128154} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128149} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128402} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128419} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128355} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128165} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128689} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128789} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80641} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80996} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127872} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128226} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128724} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128399} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80664} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80973} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128503} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128267} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80643} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80661} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80690} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80976} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128434} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128431} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128103} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128221} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80938} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128645} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128206} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128266} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80655} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127986} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80637} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80653} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80693} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80651} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80686} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80638} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80974} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80858} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80970} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80656} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128017} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127947} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128021} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128791} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128690} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128382} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128019} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127867} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80997} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128433} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80649} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127877} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128022} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128432} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80907} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80809} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80897} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80822} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80816} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80900} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80890} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80889} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80883} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80687} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80752} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80887} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80726} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80715} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80717} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80674} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80667} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80730} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80665} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80803} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80698} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80885} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80748} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80654} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80882} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127985} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128001} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128367} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128785} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128401} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128603} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128669} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128598} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128435} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128464} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128466} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128373} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127909} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128381} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80689} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80886} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80755} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80683} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80680} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80670} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80668} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80910} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80662} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80699} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80694} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80692} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80801} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80799} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80798} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80685} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80732} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80735} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80747} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80750} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80705} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80707} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80821} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80714} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80719} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80721} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80722} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80891} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80806} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80898} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80810} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80812} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80892} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80804} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80818} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80814} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80888} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80802} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80659} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80909} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80823} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80648} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80657} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80650} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128244} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80652} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80660} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128014} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128132} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128140} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128036} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128004} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128012} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128265} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128214} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128260} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128169} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128366} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128353} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128344} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128351} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128792} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128404} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128372} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128371} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128415} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128659} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128595} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128429} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128430} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128612} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128398} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128663} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128774} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80703} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80702} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80728} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80724} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80819} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80896} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80895} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80894} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80884} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80678} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80904} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80903} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80901} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80671} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128009} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128062} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128228} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128349} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128346} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128392} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128779} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128778} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128606} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80880} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80881} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80879} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80877} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-80878} - REC{06 WALMART}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VER-81114} - REC{03 VIDIMPO}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128519} - REC{03 VIDIMPO}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128655} - REC{03 VIDIMPO}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128517} - REC{03 VIDIMPO}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-128658} - REC{03 VIDIMPO}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{VERP-127119} - REC{03 VIDIMPO}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12256} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12265} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12264} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12212} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12213} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12215} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12268} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12255} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12269} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12253} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12254} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12267} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12266} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12214} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12222} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12221} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12210} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12185} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12211} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12186} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TT-6266} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12198} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TTP-12197} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TT-6269} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TT-6272} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TT-6270} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TT-6274} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TT-6271} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TT-6265} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TT-6264} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{TT-6273} - REC{03 WP SOLU}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B23279ERP4MSERTF} - REC{AFIL.-008180414}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B23279ERP04PERTF} - REC{AFIL.-008180414}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B23279ERP04PERTF} - REC{AFIL.-008180414}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B23292ERT4MSRTPTF} - REC{AFIL.-008376766}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B23292ERT4MSRTPTF} - REC{AFIL.-008376766}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B23292ERT04ITPTF} - REC{AFIL.-008376766}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B23292ERT04ITPTF} - REC{AFIL.-008376766}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B2318ERT4MSRTPTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B2325ERP4MSERTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B2320ERT4MSRTPTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B2320ERP04PERTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B2318ERP4MSERTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A2318ERP04PERTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B2320ERT04ITPTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A2318ERP04SERTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B2320ERT04ITPTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B2318ERT04ITPTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B2320ERP04PERTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B2318ERT04ITPTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B2325ERP04PERTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B2320ERP04SERTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B2320ERP04SERTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B2318ERP04PERTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B2318ERP04SERTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B2325ERP04PERTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B2318ERP04PERTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B2318ERP04SERTF} - REC{AFIL.-009181868}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B23102ERP04D1ERTF} - REC{AFIL.-009627191}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B23102ERP04DERTF} - REC{AFIL.-009627191}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B23102ERP04DERTF} - REC{AFIL.-009627191}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B23102ERP04D1ERTF} - REC{AFIL.-009627191}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B23487ERP4MSERTF} - REC{AFIL.-009270083}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B2319ERP4MSERTF} - REC{AFIL.-009270083}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B23487ERT04G1TP1TF} - REC{AFIL.-009270083}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B23487ERT04G1TP1TF} - REC{AFIL.-009270083}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B23487ERP04AERTF} - REC{AFIL.-009270083}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B23487ERP04AERTF} - REC{AFIL.-009270083}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A2319ERP04AERTF} - REC{AFIL.-009270083}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B2319ERP04AERTF} - REC{AFIL.-009270083}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B2319ERP04AERTF} - REC{AFIL.-009270083}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{30A23277ERP04PERTF} - REC{AMEXCO SE 9359908044}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A23277ERT4MSTP1TF} - REC{AMEXCO SE 9359908044}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A23277ERT04GTP1TF} - REC{AMEXCO SE 9359908044}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{30A23277ERT04GTP1TF} - REC{AMEXCO SE 9359908044}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{30A23277ERP04AERTF} - REC{AMEXCO SE 9359908044}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A23277ERP04AERTF} - REC{AMEXCO SE 9359908044}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A2315ERP04PERTF} - REC{AMEXCO SE 9356614447}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A2315ERP44AERTF} - REC{AMEXCO SE 9356614447}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A2315ERP04SERTF} - REC{AMEXCO SE 9356614447}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{30A2315ERP04PERTF} - REC{AMEXCO SE 9356614447}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A23277ERP4MSERTF} - REC{AFIL.-008139649}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B23277ERT4MSTP1TF} - REC{AFIL.-008139649}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B23277ERP04SERTF} - REC{AFIL.-008139649}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B23277ERT4MSTP1TF} - REC{AFIL.-008139649}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B23277ERP4MSERTF} - REC{AFIL.-008139649}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B23277ERP4MSERTF} - REC{AFIL.-008139649}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B23277ERP04PERTF} - REC{AFIL.-008139649}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A23277ERP04AERTF} - REC{AFIL.-008139649}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B23277ERP04PERTF} - REC{AFIL.-008139649}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B23277ERT04GTP1TF} - REC{AFIL.-008139649}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B23277ERT04GTP1TF} - REC{AFIL.-008139649}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{02B23277ERP04AERTF} - REC{AFIL.-008139649}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{01B23277ERP04AERTF} - REC{AFIL.-008139649}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A2315ERT44GTP1TF} - REC{AMEXCO SE 9350060670}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{30A2315ERT44GTP1TF} - REC{AMEXCO SE 9350060670}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{30A2325ERP4MSERTF} - REC{AMEXCO SE 9350021565}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A2318ERT04ITPTF} - REC{AMEXCO SE 9350021565}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{29A2318ERP4MSERTF} - REC{AMEXCO SE 9350021565}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A2325ERP04PERTF} - REC{AMEXCO SE 9350021565}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A2318ERP04SERTF} - REC{AMEXCO SE 9350021565}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{30A2318ERP04PERTF} - REC{AMEXCO SE 9350021565}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A2320ERP04SERTF} - REC{AMEXCO SE 9350021565}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{30A2317ERT04BTPTF} - REC{AMEXCO SE 9356623992}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{30A2321ERT4MSTP1TF} - REC{AMEXCO SE 9356623992}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{30A2321ERT04ITPTF} - REC{AMEXCO SE 9356623992}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{30A2321ERT04GTP1TF} - REC{AMEXCO SE 9356623992}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{30A2391ERT04GTP1TF} - REC{AMEXCO SE 9356623992}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A23223ERT04GTP1TF} - REC{AMEXCO SE 9356623992}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{30A23223ERT04GTP1TF} - REC{AMEXCO SE 9356623992}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A23102ERP04D1ERTF} - REC{AMEXCO SE 9350232261}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{30A23487ERT04G1TP1TF} - REC{AMEXCO SE 9350021532}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{29A2319ERP04AERTF} - REC{AMEXCO SE 9350021532}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{30A2319ERP04AERTF} - REC{AMEXCO SE 9350021532}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+      <rec:ErrorDetail>
+        <rec:DataValue>APP{31A2319ERP04AERTF} - REC{AMEXCO SE 9350021532}</rec:DataValue>
+        <rec:ErrorMessage>no existe</rec:ErrorMessage>
+      </rec:ErrorDetail>
+    </rec:ErrorsDetails>
+  </rec:GetHtmlControlRq>
+</rec:ReceiptApplyRq>

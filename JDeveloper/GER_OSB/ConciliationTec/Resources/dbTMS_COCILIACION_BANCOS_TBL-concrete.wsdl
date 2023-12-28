@@ -1,0 +1,15 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/DEV_ConciliationTec/dbTMS_COCILIACION_BANCOS_TBL" name="dbTMS_COCILIACION_BANCOS_TBL-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="../WSDLs/External/dbTMS_COCILIACION_BANCOS_TBL.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/DEV_ConciliationTec/dbTMS_COCILIACION_BANCOS_TBL"/>
+    <wsdl:binding name="dbTMS_COCILIACION_BANCOS_TBL_ptt-binding" type="dbt:dbTMS_COCILIACION_BANCOS_TBL_ptt" xmlns:dbt="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/DEV_ConciliationTec/dbTMS_COCILIACION_BANCOS_TBL">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="insert">
+            <soap:operation soapAction="insert"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

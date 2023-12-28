@@ -1,0 +1,75 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" sdoJava:package="oracle.apps.financials.receivables.receipts.shared.standardReceiptService.commonService" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:sdoJava="commonj.sdo/java" xmlns:sdoXML="commonj.sdo/xml" xmlns="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation xmlns:oer="http://xmlns.oracle.com/oer">
+            <name>Receivables Standard Receipt and Receipt Application SDO</name>
+            <description>Receipt Appliaction</description>
+            <oer:attributes>
+                <oer:attribute description="Receipt amount to be applied to the transaction." name="AmountApplied"/>
+                <oer:attribute description="Unique identifier of the receipt that is to be applied." name="ReceiptId"/>
+                <oer:attribute description="Comments given on the Receipt." name="Comments"/>
+                <oer:attribute description="Unique identifier of the transaction that is used to apply the receipt." name="CustomerTrxId"/>
+                <oer:attribute description="Unearned discount to be applied on the transaction." name="Discount"/>
+                <oer:attribute description="Installment of the transaction that the receipt should apply to." name="Instalment"/>
+                <oer:attribute description="Number that identifies the Receipt." name="ReceiptNumber"/>
+                <oer:attribute description="Transaction that is used to apply the receipt." name="TransactionNumber"/>
+                <oer:attribute description="Amount of the Receipt." name="ReceiptAmount"/>
+                <oer:attribute description="Date on which the Receipt is created." name="ReceiptDate"/>
+                <oer:attribute description="Name of the customer on whom the receipt was created." name="CustomerName"/>
+                <oer:attribute description="Date on which the transaction is created." name="TransactionDate"/>
+                <oer:attribute description="Transaction Source reference." name="TransactionSource"/>
+                <oer:attribute description="The amount applied to the transaction in the receipt currency." name="AmountReceiptCurrency"/>
+                <oer:attribute description="Receipt Currency Code." name="ReceiptCurrency"/>
+                <oer:attribute description="The exchange rate used to convert the amount applied in the transaction currency to the amount applied in the receipt currency." name="ExchangeRate"/>
+                <oer:attribute description="Date on which the receipt is applied to transaction." name="ApplicationDate"/>
+                <oer:attribute description="Date on which the application of receipt should get accounted in general ledger." name="AccountingDate"/>
+                <oer:attribute description="Allows receipt application to closed invoices." name="ApplyClosedInvoices"/>
+                <oer:attribute description="Unique identifier of the instalment that the receipt should apply to." name="InstalmentId"/>
+            </oer:attributes>
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="XMLSchema_469750432.xsd"/>
+    <xsd:import namespace="commonj.sdo/java" schemaLocation="XMLSchema_-1644098047.xsd"/>
+    <xsd:import namespace="commonj.sdo/xml" schemaLocation="XMLSchema_293054946.xsd"/>
+    <xsd:complexType name="ApplyReceipt">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>ReceivableApplicationId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="AmountApplied" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="ReceiptId" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="Comments" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CustomerTrxId" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="Discount" nillable="true" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="Instalment" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="ReceiptNumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="TransactionNumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ReceiptAmount" nillable="true" type="ns0:AmountType"/>
+            <xsd:element minOccurs="0" name="ReceiptDate" nillable="true" type="ns0:date-Date"/>
+            <xsd:element minOccurs="0" name="CustomerName" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="TransactionDate" nillable="true" type="ns0:date-Date"/>
+            <xsd:element minOccurs="0" name="TransactionSource" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="AmountReceiptCurrency" nillable="true" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="ReceiptCurrency" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ExchangeRate" nillable="true" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="ApplicationDate" type="ns0:date-Date"/>
+            <xsd:element minOccurs="0" name="AccountingDate" type="ns0:date-Date"/>
+            <xsd:element minOccurs="0" name="ApplyClosedInvoices" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="InstalmentId" nillable="true" type="xsd:long"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ApplyReceiptResult">
+        <xsd:complexContent>
+            <xsd:extension base="ns0:MethodResult">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Value" type="ApplyReceipt"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="applyReceiptResult" type="ApplyReceiptResult"/>
+    <xsd:element name="applyReceipt" type="ApplyReceipt"/>
+</xsd:schema>

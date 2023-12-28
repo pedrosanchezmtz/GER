@@ -1,0 +1,42 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/" sdoJava:package="oracle.apps.scm.commonWorkExecution.workOrderMaterialTransactions.materialTransactionsService" xmlns:sdoJava="commonj.sdo/java" xmlns="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation xmlns:oer="http://xmlns.oracle.com/oer">
+            <name>Material Transaction Process Status</name>
+            <description>Import Material Transactions</description>
+            <oer:category name="lbo">
+                <value>SCM-SCM : WIE-Common Work Execution : ORA_WO_MATERIAL_TRANSACTION-Work Order
+                    Material Transaction</value>
+            </oer:category>
+            <oer:attributes>
+                <oer:attribute description="The status of the processing of material transaction batch." name="InterfaceBatchStatus"/>
+                <oer:attribute description="Type of source system. Valid values are INTERNAL or EXTERNAL." name="SourceSystemType"/>
+                <oer:attribute description="Depending on the source system type, it is a product code or the Trade Community Architecture source system reference." name="SourceSystemCode"/>
+                <oer:attribute description="The output payload for the material transaction header information after processing the material transaction batch." name="MaterialTransactionHeader"/>
+                <oer:attribute description="The output payload for the material transaction message after processing the material transaction batch." name="TransactionInterfaceMessage"/>
+                <oer:attribute description="The output payload for the material transaction processing status after processing the material transaction batch." name="ProcessStatusTranslation"/>
+            </oer:attributes>
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="commonj.sdo/java" schemaLocation="../Commons/sdoJava.xsd"/>
+    <xsd:include schemaLocation="MaterialTransactionHeader.xsd"/>
+    <xsd:include schemaLocation="TransactionInterfaceMessage.xsd"/>
+    <xsd:include schemaLocation="ProcessStatusTranslation.xsd"/>
+    <xsd:complexType name="ProcessStatus">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>InterfaceBatchId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="InterfaceBatchStatus" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="SourceSystemType" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="SourceSystemCode" nillable="true" type="xsd:string"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="MaterialTransactionHeader" type="MaterialTransactionHeader"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="TransactionInterfaceMessage" type="TransactionInterfaceMessage"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="ProcessStatusTranslation" type="ProcessStatusTranslation"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="processStatus" type="ProcessStatus"/>
+</xsd:schema>

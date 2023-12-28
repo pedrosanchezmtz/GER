@@ -1,0 +1,34 @@
+<schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+        targetNamespace="http://soa.estrellaroja.com.mx/LetterPorteBiz"
+        xmlns:tns="http://soa.estrellaroja.com.mx/LetterPorteBiz"
+        xmlns="http://www.w3.org/2001/XMLSchema">
+<element name="GenerateRelationCFDIsRq" type="tns:GenerateRelationCFDIsRqType"/>
+    <element name="GenerateRelationCFDIsRs" type="tns:GenerateRelationCFDIsRsType"/>
+    <element name="GenerateURLRelationCFDIsRq" type="tns:GenerateURLRelationCFDIsRqType"/>
+    <complexType name="GenerateURLRelationCFDIsRqType">
+        <sequence>
+            <element name="Transactions" minOccurs="0" maxOccurs="unbounded">
+                <complexType>
+                    <sequence>
+                        <element name="TransactionNumber" type="string"/>
+                        <element name="CustomerTrxID" type="integer" minOccurs="0"/>
+                        <element name="BusinessUnit" type="string" minOccurs="0"/>
+                        <element name="TransactionSource" type="string" minOccurs="0"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType name="GenerateRelationCFDIsRsType">
+        <sequence>
+            <element name="FileContent" type="base64Binary"/>
+            <element name="FileName" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="GenerateRelationCFDIsRqType">
+        <sequence>
+            <element name="Transaction" type="string"/>
+            <element name="BusinessUnit" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

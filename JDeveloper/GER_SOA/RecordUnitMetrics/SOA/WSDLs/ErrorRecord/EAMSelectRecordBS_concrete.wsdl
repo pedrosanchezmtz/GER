@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<wsdl:definitions
+     name="EAMSelectRecordBS-concrete"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB/DEV_EAMUnitMetricsTec/EAMSelectRecordBS"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    >
+    <wsdl:import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB/DEV_EAMUnitMetricsTec/EAMSelectRecordBS"
+         location="ErrorRecord/EAMSelectRecordBS.wsdl"/>
+    <wsdl:binding name="EAMSelectRecordBS_ptt-binding" xmlns:eam="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB/DEV_EAMUnitMetricsTec/EAMSelectRecordBS"
+         type="eam:EAMSelectRecordBS_ptt">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="EAMSelectRecordBS">
+            <soap:operation soapAction="EAMSelectRecordBS"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

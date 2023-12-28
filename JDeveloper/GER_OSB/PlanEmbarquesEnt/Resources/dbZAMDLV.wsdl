@@ -1,0 +1,24 @@
+<wsdl:definitions name="dbZAMDLV" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/PlanEmbarquesEnt/dbZAMDLV" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/PlanEmbarquesEnt/dbZAMDLV" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbZAMDLV" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="dbZAMDLV_plt">
+    <plt:role name="dbZAMDLV_role">
+      <plt:portType name="tns:dbZAMDLV_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbZAMDLV" schemaLocation="dbZAMDLV_table.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="dbZAMDLVSelect_inputParameters">
+        <wsdl:part name="dbZAMDLVSelect_inputParameters" element="top:dbZAMDLVSelect_fechaViajeInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="VBitacoraBlacZamCollection_msg">
+        <wsdl:part name="VBitacoraBlacZamCollection" element="top:VBitacoraBlacZamCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="dbZAMDLV_ptt">
+        <wsdl:operation name="dbZAMDLVSelect">
+            <wsdl:input message="tns:dbZAMDLVSelect_inputParameters"/>
+            <wsdl:output message="tns:VBitacoraBlacZamCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

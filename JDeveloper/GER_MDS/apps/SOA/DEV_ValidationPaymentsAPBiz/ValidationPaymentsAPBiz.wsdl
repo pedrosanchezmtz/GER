@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="ValidationPaymentsAPBiz" targetNamespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:tns="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/types" elementFormDefault="qualified">
+<xsd:import namespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" schemaLocation="ValidationPaymentsAPBiz.xsd"/>
+
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="SendPaymentsAPRq">
+<wsdl:part name="SendPaymentsAPRqPart" element="tns:SendPaymentsAPRq"/>
+</wsdl:message>
+<wsdl:message name="SendNotificationsRq">
+<wsdl:part name="SendNotificationsRqPart" element="tns:SendNotificationsRq"/>
+</wsdl:message>
+<wsdl:message name="GenerateFoldersRq">
+<wsdl:part name="GenerateFoldersRqPart" element="tns:GenerateFoldersRq"/>
+</wsdl:message>
+<wsdl:message name="GenerateFoldersRs">
+<wsdl:part name="GenerateFoldersRsPart" element="tns:GenerateFoldersRs"/>
+</wsdl:message>
+<wsdl:message name="UpdateInvoicesInstallmentsAPRq">
+<wsdl:part name="UpdateInvoicesInstallmentsAPRqPart" element="tns:UpdateInvoicesInstallmentsAPRq"/>
+</wsdl:message>
+<wsdl:message name="UpdateInvoicesInstallmentsAPRs">
+<wsdl:part name="UpdateInvoicesInstallmentsAPRsPart" element="tns:UpdateInvoicesInstallmentsAPRs"/>
+</wsdl:message>
+
+<wsdl:portType name="ValidationPaymentsAPBizPortType">
+<wsdl:operation name="SendPaymentsAP">
+<wsdl:input message="tns:SendPaymentsAPRq"/>
+</wsdl:operation>
+<wsdl:operation name="SendNotifications">
+<wsdl:input message="tns:SendNotificationsRq"/>
+</wsdl:operation>
+<wsdl:operation name="GenerateFolders">
+<wsdl:input message="tns:GenerateFoldersRq"/>
+<wsdl:output message="tns:GenerateFoldersRs"/>
+</wsdl:operation>
+<wsdl:operation name="UpdateInvoicesInstallmentsAP">
+<wsdl:input message="tns:UpdateInvoicesInstallmentsAPRq"/>
+<wsdl:output message="tns:UpdateInvoicesInstallmentsAPRs"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="ValidationPaymentsAPBizBinding" type="tns:ValidationPaymentsAPBizPortType">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="SendPaymentsAP">
+<soap:operation soapAction="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/SendPaymentsAP"/>
+<wsdl:input>
+<soap:body use="literal" parts="SendPaymentsAPRqPart"/>
+</wsdl:input>
+</wsdl:operation>
+<wsdl:operation name="SendNotifications">
+<soap:operation soapAction="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/SendNotifications"/>
+<wsdl:input>
+<soap:body use="literal" parts="SendNotificationsRqPart"/>
+</wsdl:input>
+</wsdl:operation>
+<wsdl:operation name="GenerateFolders">
+<soap:operation soapAction="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/GenerateFolders"/>
+<wsdl:input>
+<soap:body use="literal" parts="GenerateFoldersRqPart"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="GenerateFoldersRsPart"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="UpdateInvoicesInstallmentsAP">
+<soap:operation soapAction="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/UpdateInvoicesInstallmentsAP"/>
+<wsdl:input>
+<soap:body use="literal" parts="UpdateInvoicesInstallmentsAPRqPart"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="UpdateInvoicesInstallmentsAPRsPart"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="ValidationPaymentsAPBiz">
+<wsdl:port name="ValidationPaymentsAPBizPortType" binding="tns:ValidationPaymentsAPBizBinding">
+<soap:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

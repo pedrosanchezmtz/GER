@@ -1,0 +1,772 @@
+<xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/AuditControlTec" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/AuditControlTec" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+  <xsd:import schemaLocation="Commons/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+  <xsd:element name="GetConfValInvoicesAPRq" type="GetConfValInvoicesAPRqType">
+    <xsd:annotation>
+      <xsd:documentation>Element for Request.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="GetConfValInvoicesAPRs" type="GetConfValInvoicesAPRsType">
+    <xsd:annotation>
+      <xsd:documentation>Element for Response.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MergeInvoicesAPRq" type="MergeInvoicesAPRqType"/>
+  <xsd:element name="MergeInvoicesAPRs" type="MergeInvoicesAPRsType"/>
+  <xsd:element name="MergeComplementsAPRq" type="MergeComplementsAPRqType"/>
+  <xsd:element name="MergeComplementsAPRs" type="MergeComplementsAPRsType"/>
+  <xsd:element name="GetComplementsAPRq" type="GetComplementsRqType"/>
+  <xsd:element name="GetComplementsAPRs" type="GetComplementsRsType"/>
+  <!-- Start Elements Electronic Invoice Insert-->
+  <xsd:element name="InsertArElecInvoiceRq" type="InsertArElecInvoiceRqType"/>
+  <xsd:element name="InsertArElecInvoiceRs" type="InsertArElecInvoiceRsType"/>
+  <!-- End Elements Electronic Invoice Insert-->
+  <!-- Start Elements Electronic Invoice Insert-->
+  <xsd:element name="InsertArElecInvoiceErrorsRq" type="InsertArElecInvoiceErrorsRqType"/>
+  <xsd:element name="InsertArElecInvoiceErrorsRs" type="InsertArElecInvoiceErrorsRsType"/>
+  <xsd:element name="MergeIncPaymentComplementRq" type="MergeIncPaymentComplementRqType"/>
+  <xsd:element name="MergeIncPaymentComplementRs" type="MergeIncPaymentComplementRsType"/>
+  <xsd:element name="GetAllValidIncPaymentComplementsRq" type="GetAllValidIncPaymentComplementsRqType"/>
+  <xsd:element name="GetAllValidIncPaymentComplementsRs" type="GetAllValidIncPaymentComplementsRsType"/>
+  <xsd:element name="CreateLogRq" type="CreateLogRqType">
+    <xsd:annotation>
+      <xsd:documentation>Element for Request.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CreateLogRs" type="CreateLogRsType">
+    <xsd:annotation>
+      <xsd:documentation>Element for Response.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MergeCtrlTransRq" type="MergeCtrlTransRqType">
+    <xsd:annotation>
+      <xsd:documentation>Element for Request.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MergeCtrlTransRs" type="MergeCtrlTransRsType">
+    <xsd:annotation>
+      <xsd:documentation>Element for Response.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="GetCtrlTransRq" type="GetCtrlTransTypeRq">
+    <xsd:annotation>
+      <xsd:documentation>Element for Request.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="GetCtrlTransRs" type="GetCtrlTransRsType">
+    <xsd:annotation>
+      <xsd:documentation>Element for Response.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CreateJobsStatusRq" type="CreateJobsStatusRqType"/>
+  <xsd:element name="CreateJobsStatusRs" type="CreateJobsStatusRsType"/>
+  <xsd:element name="GetJobsStatusRq" type="GetJobsStatusRqType"/>
+  <xsd:element name="GetJobsStatusRs" type="GetJobsStatusRsType"/>
+  <xsd:element name="MergeCustomerSiteLogRq" type="MergeCustomerSiteLogRqType"/>
+  <xsd:element name="MergeCustomerSiteLogRs" type="MergeCustomerSiteLogRsType"/>
+  <xsd:element name="GetCustomerSiteLogRq" type="GetCustomerSiteLogRqType"/>
+  <xsd:element name="GetCustomerSiteLogRs" type="GetCustomerSiteLogRsType"/>
+  <xsd:element name="GetInvoicesAPByExampleRq" type="GetInvoicesAPByExampleRqType"/>
+  <xsd:element name="GetInvoicesAPByExampleRs" type="GetInvoicesAPByExampleRsType"/>
+  <xsd:element name="GetValPaymentComplementsResumeRq" type="GetValPaymentComplementsResumeRqType"/>
+  <!-- End Elements Electronic Invoice Insert-->
+  <xsd:element name="GetValPaymentComplementsResumeRs" type="GetValPaymentComplementsResumeRsType"/>
+  <!-- Start ComplexTypes MergeInvoicesAP Insert-->
+  <xsd:complexType name="GetComplementsRqType">
+    <xsd:sequence>
+      <xsd:element name="Complement" type="ComplementType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetComplementsRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="Return" maxOccurs="1" minOccurs="0">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="Complements" type="ComplementsType"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MergeComplementsAPRqType">
+    <xsd:sequence>
+      <xsd:element name="Complements" type="ComplementsType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MergeComplementsAPRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ComplementsType">
+    <xsd:sequence>
+      <xsd:element name="Complement" type="ComplementType" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ComplementType">
+    <xsd:sequence>
+      <xsd:element name="paymentId" type="xsd:decimal"/>
+      <xsd:element name="paymentNumber" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="nombreEmisor" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="emisorRfc" type="string13" minOccurs="0" nillable="true"/>
+      <xsd:element name="nombrePreceptor" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="receptorRfc" type="string13" minOccurs="0" nillable="true"/>
+      <xsd:element name="paymentAmount" type="xsd:decimal" minOccurs="0" nillable="true"/>
+      <xsd:element name="paymentCurrency" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="paymentDate" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="status" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="statusDesc" type="string300" minOccurs="0" nillable="true"/>
+      <xsd:element name="folioXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="serieXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="nombreEmisorXml" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="emisorRfcXml" type="string13" minOccurs="0" nillable="true"/>
+      <xsd:element name="nombreReceptorXml" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="receptorRfcXml" type="string13" minOccurs="0" nillable="true"/>
+      <xsd:element name="totalXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="subtotalXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="tipoCambioXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="monedaXml" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="usoCfdiXml" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="formaPagoXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="tipoComprobanteXml" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="descripcionXml" type="string350" minOccurs="0" nillable="true"/>
+      <xsd:element name="uuidXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="fechaXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="fechaTimbradoXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute1" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute2" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute3" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute4" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute5" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="createdBy" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="creationDate" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+      <xsd:element name="lastUpdatedBy" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="lastUpdateDate" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+      <xsd:element name="objectVersionNumber" type="xsd:int" minOccurs="0" nillable="true"/>
+      <xsd:element name="objetoImpXml" type="string2" minOccurs="0" nillable="true"/>
+      <xsd:element name="receptorRegimenXml" type="string3" minOccurs="0" nillable="true"/>
+      <xsd:element name="emisorRegimenXml" type="string3" minOccurs="0" nillable="true"/>
+      <xsd:element name="receptorRegimen" type="string3" minOccurs="0" nillable="true"/>
+      <xsd:element name="emisorRegimen" type="string3" minOccurs="0" nillable="true"/>
+      <xsd:element name="versionXml" type="string3" minOccurs="0" nillable="true"/>
+      <xsd:element name="paymentStatus" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="ComplementsLinesAp" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="XxerComplementsLinesApTbl" type="XxerComplementsLinesApTbl" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="XxerComplementsLinesApTbl">
+    <xsd:sequence>
+      <xsd:element name="drId" type="xsd:decimal"/>
+      <xsd:element name="invoiceId" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="status" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="statusDesc" type="string300" minOccurs="0" nillable="true"/>
+      <xsd:element name="folioDrXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="serieDrXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="uuidDrXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="impSaldoAntDrXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="impPagoDrXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="impSaldoInsolutoDrXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="monedaDrXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="metodoPagoDrXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="tipoCambioDrXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="formaPagoDrXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="fechaDrXml" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute1" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute2" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute3" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute4" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute5" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="createdBy" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="creationDate" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+      <xsd:element name="lastUpdatedBy" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="lastUpdateDate" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+      <xsd:element name="objectVersionNumber" type="xsd:int" minOccurs="0" nillable="true"/>
+      <xsd:element name="objetoImpDrXml" type="string2" minOccurs="0" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- Start ComplexTypes MergeInvoicesAP Insert-->
+  <xsd:complexType name="MergeInvoicesAPRqType">
+    <xsd:sequence>
+      <xsd:element name="Invoices" type="InvoicesType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MergeInvoicesAPRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvoicesType">
+    <xsd:sequence>
+      <xsd:element name="Invoice" type="InvoiceType" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InvoiceType">
+    <xsd:complexContent>
+      <xsd:extension base="WhoFieldsType">
+        <xsd:sequence>
+          <xsd:element name="invoiceId" type="xsd:decimal"/>
+          <xsd:element name="emisorRfc" type="string13" minOccurs="0"/>
+          <xsd:element name="receptorRfc" type="string13" minOccurs="0"/>
+          <xsd:element name="amount" type="xsd:decimal" minOccurs="0"/>
+          <xsd:element name="uuid" type="string150" minOccurs="0"/>
+          <xsd:element name="status" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="businessUnit" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="invoiceNumber" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="supplierNumber" type="string50" minOccurs="0" nillable="true"/>
+          <xsd:element name="attribute1" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="attribute2" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="attribute3" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="attribute4" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="attribute5" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="numeroPago" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="documentoPago" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="estadoPago" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="tipoPago" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="conciliadas" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="beneficio" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="sitioBeneficio" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="fechaPago" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+          <xsd:element name="monedaPago" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="direccionPago" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="noCuentaPago" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="proveedorParte" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="sitioProveedor" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="unidadNegocio" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="nomBancoPagador" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="fecPagoBanco" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+          <xsd:element name="importePagadoBanco" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="cuentaBancariaPago" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="importPagoBanco" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="nombreActual" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="detalles" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="tercerSegmCotable" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="conceptoCuenCotble3" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="quintoSegmContable" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="conceptoCuenContable5" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="tipoComprobante" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="fechaTimbrado" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="tipoRelacion" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="uuidRelacion" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="nombreEmisor" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="usoCfdi" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="subtotal" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="descuento" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="totalIeps" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="iva16" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="retenidoIva" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="retenidoIsr" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="ish" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="total" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="moneda" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="tipoCambio" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="formaPago" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="metodoPago" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="conceptos" type="string3000" minOccurs="0" nillable="true"/>
+          <xsd:element name="combustible" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="iva8" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="estatusValidacion" type="string300" minOccurs="0" nillable="true"/>
+          <xsd:element name="estatusValidacionDesc" type="string300" minOccurs="0" nillable="true"/>
+          <xsd:element name="objetoImpXml" type="string2" minOccurs="0" nillable="true"/>
+          <xsd:element name="receptorRegimenXml" type="string3" minOccurs="0" nillable="true"/>
+          <xsd:element name="emisorRegimenXml" type="string3" minOccurs="0" nillable="true"/>
+          <xsd:element name="receptorRegimen" type="string3" minOccurs="0" nillable="true"/>
+          <xsd:element name="emisorRegimen" type="string3" minOccurs="0" nillable="true"/>
+          <xsd:element name="versionXml" type="string3" minOccurs="0" nillable="true"/>
+          <xsd:element name="tipoFactura" type="string50" minOccurs="0" nillable="true"/>
+          <xsd:element name="folioFiscal" type="string50" minOccurs="0" nillable="true"/>
+          <xsd:element name="totalOracle" type="xsd:decimal" minOccurs="0" nillable="true"/>
+          <xsd:element name="supplierName" type="string150" minOccurs="0" nillable="true"/>
+          <xsd:element name="creationDateOracle" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+          <xsd:element name="numeroPedimentoXml" type="string50" minOccurs="0" nillable="true"/>
+          <xsd:element name="cuentaPredialXml" type="string100" minOccurs="0" nillable="true"/>
+          <xsd:element name="supplierSiteAwtGroupCode" type="string50" minOccurs="0" nillable="true"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- Start ComplexTypes Electronic Invoice Insert-->
+  <xsd:complexType name="InsertArElecInvoiceRqType">
+    <xsd:sequence>
+      <xsd:element name="ElecInvoice" type="ArElecInvoiceType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InsertArElecInvoiceRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArElecInvoiceType">
+    <xsd:sequence>
+      <xsd:element name="customerTrxId" type="xsd:decimal"/>
+      <xsd:element name="numeroFactura" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="tipocfd" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="uuid" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="payload" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="attribute1" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute2" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute3" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute4" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute5" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="creationDate" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="lastUpdateDate" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+      <xsd:element name="createdBy" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="lastUpdatedBy" type="xsd:string" minOccurs="0" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- End ComplexTypes Electronic Invoice Insert-->
+  <!-- Start ComplexTypes Electronic Invoice Errors Insert-->
+  <xsd:complexType name="InsertArElecInvoiceErrorsRqType">
+    <xsd:sequence>
+      <xsd:element name="ElecInvoiceErrors" type="ArElecInvoiceErrorsType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InsertArElecInvoiceErrorsRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArElecInvoiceErrorsType">
+    <xsd:sequence>
+      <xsd:element name="customerTrxId" type="xsd:decimal" minOccurs="0" nillable="true"/>
+      <xsd:element name="numeroFactura" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="tipocfd" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="payload" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="errorCode" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="errorDescription" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute1" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute2" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute3" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute4" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute5" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="creationDate" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="lastUpdateDate" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+      <xsd:element name="createdBy" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="lastUpdatedBy" type="xsd:string" minOccurs="0" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- End ComplexTypes Electronic Invoice Errors Insert-->
+  <xsd:complexType name="MergeIncPaymentComplementRqType">
+    <xsd:complexContent>
+      <xsd:extension base="WhoFieldsType">
+        <xsd:sequence>
+          <xsd:element name="IncPaymentComplementId" type="xsd:long" maxOccurs="1"/>
+          <xsd:element name="RfcIssuer" type="xsd:string" maxOccurs="1"/>
+          <xsd:element name="RfcReceiver" type="xsd:string" maxOccurs="1"/>
+          <xsd:element name="TotalAmount" type="xsd:decimal" maxOccurs="1"/>
+          <xsd:element name="Uuid" type="xsd:string" maxOccurs="1"/>
+          <xsd:element name="UuidDate" type="xsd:dateTime" maxOccurs="1"/>
+          <xsd:element name="Status" type="IncPaymentComplementStatus" maxOccurs="1"/>
+          <xsd:element name="StatusDesc" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+          <xsd:element name="Attatchment" type="xsd:string" maxOccurs="1"/>
+          <xsd:element name="ValidationResponse" type="xsd:string" maxOccurs="1"/>
+          <xsd:element name="CheckNumber" type="xsd:long" maxOccurs="1" minOccurs="0"/>
+          <xsd:element name="Invoice" type="MergeIncPaymentComplementInvoiceType" maxOccurs="unbounded" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MergeIncPaymentComplementInvoiceType">
+    <xsd:complexContent>
+      <xsd:extension base="WhoFieldsType">
+        <xsd:sequence>
+          <xsd:element name="IncPaymentCmpInvoiceId" type="xsd:long" maxOccurs="1"/>
+          <xsd:element name="Uuid" type="xsd:string" maxOccurs="1"/>
+          <xsd:element name="InstallmentNumber" type="xsd:string" maxOccurs="1"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MergeIncPaymentComplementRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="Return" maxOccurs="1" minOccurs="0" type="MergeIncPaymentComplementReturnType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MergeIncPaymentComplementReturnType">
+    <xsd:sequence>
+      <xsd:element name="IncPaymentComplementId" type="xsd:long" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetAllValidIncPaymentComplementsRqType">
+    <xsd:sequence/>
+  </xsd:complexType>
+  <xsd:complexType name="GetAllValidIncPaymentComplementsRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="Return" maxOccurs="1" minOccurs="0">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="IncPaymentComplement" type="MergeIncPaymentComplementRqType" minOccurs="0" maxOccurs="unbounded"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CreateLogRqType">
+    <xsd:sequence>
+      <xsd:element name="CompositeError" type="CompositeErrors" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CreateLogRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:annotation>
+          <xsd:documentation>Extends BaseRsType (Success and Errors nodes). Contains a node which should be used for the specific response of the corresponding service.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MergeCtrlTransRqType">
+    <xsd:sequence>
+      <xsd:element name="integrationTransactions" type="MergeIntegrationTransactionsType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MergeCtrlTransRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CompositeErrors">
+    <xsd:sequence>
+      <xsd:element name="codeError" type="xsd:string" minOccurs="0" nillable="false"/>
+      <xsd:element name="error" type="xsd:string" minOccurs="0" nillable="false"/>
+      <xsd:element name="payload" type="xsd:string" minOccurs="0" nillable="false"/>
+      <xsd:element name="serviceName" type="xsd:string" minOccurs="0" nillable="false"/>
+      <xsd:element name="operationName" type="xsd:string" minOccurs="0" nillable="false"/>
+      <xsd:element name="instanceNumber" type="xsd:string" minOccurs="0" nillable="false"/>
+      <xsd:element name="attribute1" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute2" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute3" type="xsd:string" minOccurs="0" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MergeIntegrationTransactionsType">
+    <xsd:sequence>
+      <xsd:element name="integrationName" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="processName" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="importCreationDate" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="attribute1" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute2" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute3" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute4" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="attribute5" type="xsd:string" minOccurs="0" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetCtrlTransTypeRq">
+    <xsd:sequence>
+      <xsd:element name="integrationName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="processName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetCtrlTransRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="Return" type="GetCtrlTransReturnType" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GetCtrlTransReturnType">
+    <xsd:sequence>
+      <xsd:element name="transactionId" type="xsd:decimal" nillable="true"/>
+      <xsd:element name="integrationName" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="importCreationDate" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="processName" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="creationDate" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+      <xsd:element name="lastUpdateDate" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CreateJobsStatusRqType">
+    <xsd:sequence>
+      <xsd:element name="Process" type="ProcessType"/>
+      <xsd:element name="Jobs" type="JobsType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CreateJobsStatusRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GetJobsStatusRqType">
+    <xsd:sequence>
+      <xsd:element name="Process" type="ProcessType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetJobsStatusRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="Return" minOccurs="0" type="GetJobsStatusReturnType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GetJobsStatusReturnType">
+    <xsd:sequence>
+      <xsd:element name="Jobs" type="JobsType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ProcessType">
+    <xsd:sequence>
+      <xsd:element name="IntegrationName" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="InstanceId" type="xsd:integer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="JobsType">
+    <xsd:sequence>
+      <xsd:element name="Job" minOccurs="0" maxOccurs="unbounded" type="JobType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="JobType">
+    <xsd:sequence>
+      <xsd:element name="RequestId" type="xsd:integer"/>
+      <xsd:element name="Name" type="xsd:string"/>
+      <xsd:element name="Status" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="IncPaymentComplementStatus">
+    <xsd:restriction>
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="PENDING"/>
+          <xsd:enumeration value="VALIDATED"/>
+          <xsd:enumeration value="ERRORED"/>
+          <xsd:enumeration value="NOT_CONNECTED"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="MergeCustomerSiteLogRqType">
+    <xsd:sequence>
+      <xsd:element name="CustomerSiteLog" type="CustomerLogType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MergeCustomerSiteLogRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GetCustomerSiteLogRqType">
+    <xsd:sequence>
+      <xsd:element name="CustomerSite" type="CustomerLogPkType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetCustomerSiteLogRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="Return" minOccurs="0" maxOccurs="1">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="CustomerSiteLog" type="CustomerLogType" minOccurs="0" maxOccurs="unbounded"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CustomerLogType">
+    <xsd:sequence>
+      <xsd:element name="CustomerSiteId" type="xsd:decimal"/>
+      <xsd:element name="LocationId" type="xsd:decimal"/>
+      <xsd:element name="UseCode" type="xsd:string"/>
+      <xsd:element name="CreatedDate" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="UpdatedDate" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+      <xsd:element name="Attribute1" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="Attribute2" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="Attribute3" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="Attribute4" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="Attribute5" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="PartySiteId" type="xsd:decimal" minOccurs="0" nillable="true"/>
+      <xsd:element name="CustAcctSiteId" type="xsd:decimal" minOccurs="0" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CustomerLogPkType">
+    <xsd:sequence>
+      <xsd:element name="CustomerSiteId" type="xsd:decimal" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="UseCode" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetInvoicesAPByExampleRqType">
+    <xsd:complexContent>
+      <xsd:extension base="InvoiceType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GetInvoicesAPByExampleRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="Return" maxOccurs="1" minOccurs="0" type="GetInvoicesAPByExampleReturnType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GetInvoicesAPByExampleReturnType">
+    <xsd:complexContent>
+      <xsd:extension base="InvoicesType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="WhoFieldsType">
+    <xsd:sequence>
+      <xsd:element name="CreatedBy" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+      <xsd:element name="CreationDate" type="xsd:dateTime" maxOccurs="1" minOccurs="0"/>
+      <xsd:element name="LastUpdatedBy" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+      <xsd:element name="LastUpdateDate" type="xsd:dateTime" maxOccurs="1" minOccurs="0"/>
+      <xsd:element name="ObjectVersionNumber" type="xsd:long" maxOccurs="1" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetValPaymentComplementsResumeRqType">
+    <xsd:sequence>
+      <xsd:element name="RfcIssuer" maxOccurs="1" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="RfcReceiver" maxOccurs="1" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Uuid" maxOccurs="1" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Status" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+      <xsd:element name="StartDate" maxOccurs="1" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="EndDate" maxOccurs="1" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetValPaymentComplementsResumeRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="Return" type="GetValPaymentComplementsResumeReturnType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GetValPaymentComplementsResumeReturnType">
+    <xsd:sequence>
+      <xsd:element name="ResumeEntry" type="GetValPaymentComplementsResumeEntryType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetValPaymentComplementsResumeEntryType">
+    <xsd:sequence>
+      <xsd:element name="IncPaymentComplementId" maxOccurs="1" minOccurs="1" type="xsd:long"/>
+      <xsd:element name="ComplementRfcIssuer" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="ComplementRfcReceiver" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="ComplementTotalAmount" maxOccurs="1" minOccurs="1" type="xsd:decimal"/>
+      <xsd:element name="ComplementUuid" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="UuidDate" maxOccurs="1" minOccurs="1" type="xsd:dateTime"/>
+      <xsd:element name="Status" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="StatusDesc" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="Attatchment" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="ValidationResponse" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="CheckNumber" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="IncPaymentCmpInvoiceId" maxOccurs="1" minOccurs="1" type="xsd:long"/>
+      <xsd:element name="InvoiceUuid" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="InstallmentNumber" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="InvoiceRfcIssuer" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="InvoiceRfcReceiver" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="InvoiceTotalAmount" maxOccurs="1" minOccurs="1" type="xsd:decimal"/>
+      <xsd:element name="BusinessUnit" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="InvoiceNumber" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="SupplierNumber" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetConfValInvoicesAPRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="Return" maxOccurs="1" minOccurs="0">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="XxerInvoicesApConfTbl" type="XxerInvoicesApConfTbl" minOccurs="0" maxOccurs="unbounded"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="XxerInvoicesApConfTbl">
+    <xsd:sequence>
+      <xsd:element name="id" type="xsd:decimal"/>
+      <xsd:element name="code" type="string50" minOccurs="0"/>
+      <xsd:element name="proccess" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="action" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="orderProccess" type="xsd:decimal" minOccurs="0" nillable="true"/>
+      <xsd:element name="validationName" type="string2000" minOccurs="0" nillable="true"/>
+      <xsd:element name="documentType" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="cfdiVersion" type="string50" minOccurs="0" nillable="true"/>
+      <xsd:element name="notificationMessage" type="string3000" minOccurs="0" nillable="true"/>
+      <xsd:element name="proccessDesc" type="string3000" minOccurs="0" nillable="true"/>
+      <xsd:element name="parameter1" type="string3000" minOccurs="0" nillable="true"/>
+      <xsd:element name="parameter2" type="string3000" minOccurs="0" nillable="true"/>
+      <xsd:element name="parameter3" type="string3000" minOccurs="0" nillable="true"/>
+      <xsd:element name="parameter4" type="string3000" minOccurs="0" nillable="true"/>
+      <xsd:element name="parameter5" type="string3000" minOccurs="0" nillable="true"/>
+      <xsd:element name="creationDate" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+      <xsd:element name="createdBy" type="string150" minOccurs="0" nillable="true"/>
+      <xsd:element name="lastUpdateDate" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+      <xsd:element name="lastUpdatedBy" type="string150" minOccurs="0" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetConfValInvoicesAPRqType">
+    <xsd:sequence/>
+  </xsd:complexType>
+  <xsd:simpleType name="string13">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="13"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="string150">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="150"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="string100">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="100"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="string50">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="50"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="string300">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="300"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="string350">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="350"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="string3000">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="3000"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="string2000">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="2000"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="string2">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="2"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="string3">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="3"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

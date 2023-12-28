@@ -1,0 +1,24 @@
+<wsdl:definitions name="dbGetValPaymentComplementsResume" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbGetValPaymentComplementsResume" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbGetValPaymentComplementsResume" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbGetValPaymentComplementsResume" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="dbGetValPaymentComplementsResume_plt">
+    <plt:role name="dbGetValPaymentComplementsResume_role">
+      <plt:portType name="tns:dbGetValPaymentComplementsResume_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbGetValPaymentComplementsResume" schemaLocation="../../Schemas/External/dbGetValPaymentComplementsResume_table.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="dbGetValPaymentComplementsResumeSelect_inputParameters">
+        <wsdl:part name="dbGetValPaymentComplementsResumeSelect_inputParameters" element="top:dbGetValPaymentComplementsResumeSelect_pComplementUuid_pComplementRfcIssuer_pComplementRfcReceiver_pStatus_pStartDate_pEndDateInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="XeerApValpmtComplementsVCollection_msg">
+        <wsdl:part name="XeerApValpmtComplementsVCollection" element="top:XeerApValpmtComplementsVCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="dbGetValPaymentComplementsResume_ptt">
+        <wsdl:operation name="dbGetValPaymentComplementsResumeSelect">
+            <wsdl:input message="tns:dbGetValPaymentComplementsResumeSelect_inputParameters"/>
+            <wsdl:output message="tns:XeerApValpmtComplementsVCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

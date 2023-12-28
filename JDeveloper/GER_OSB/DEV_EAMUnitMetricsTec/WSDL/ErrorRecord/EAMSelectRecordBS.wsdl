@@ -1,0 +1,24 @@
+<wsdl:definitions name="EAMSelectRecordBS" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB/DEV_EAMUnitMetricsTec/EAMSelectRecordBS" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB/DEV_EAMUnitMetricsTec/EAMSelectRecordBS" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/EAMSelectRecordBS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="EAMSelectRecordBS_plt">
+    <plt:role name="EAMSelectRecordBS_role">
+      <plt:portType name="tns:EAMSelectRecordBS_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/EAMSelectRecordBS" schemaLocation="../../XSD/ErrorRecord/EAMSelectRecordBS.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="EAMSelectRecordBSInput_msg">
+        <wsdl:part name="EAMSelectRecordBSInput_msg" element="db:EAMSelectRecordBSInput"/>
+    </wsdl:message>
+    <wsdl:message name="EAMSelectRecordBSOutputCollection_msg">
+        <wsdl:part name="EAMSelectRecordBSOutputCollection" element="db:EAMSelectRecordBSOutputCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="EAMSelectRecordBS_ptt">
+        <wsdl:operation name="EAMSelectRecordBS">
+            <wsdl:input message="tns:EAMSelectRecordBSInput_msg"/>
+            <wsdl:output message="tns:EAMSelectRecordBSOutputCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,12 @@
+<adapter-config name="EAMSelectUnprocessedWorkOrders" adapter="db" wsdlLocation="../../WSDL/TransactionalWorkOrders/EAMSelectUnprocessedWorkOrdersWSDL.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="DEV/ERSEPDB1" location="eis/DB/DEV/ERSEPDB1"/>
+  <endpoint-interaction portType="EAMSelectUnprocessedWorkOrders_ptt" operation="EAMSelectUnprocessedWorkOrders">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="select * from xxer_zam_wo_blks_tbl where process_status IN (#status1,#status2)"/>
+      <property name="QueryTimeout" value="10"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

@@ -1,0 +1,213 @@
+<schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/dbaGetJournalsNEBs" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/sp/dbaGetJournalsNEBs" elementFormDefault="qualified">
+   <element name="InputParameters">
+      <complexType>
+         <sequence>
+            <element name="P_SOURCE" type="string" db:index="1" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_STATUS" type="string" db:index="2" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_BATCH_ID" type="string" db:index="3" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         </sequence>
+      </complexType>
+   </element>
+   <element name="OutputParameters">
+      <complexType>
+         <sequence>
+            <element name="P_JOURNALS" type="db:PXERINTNOM.XXER_GL_INTERFACE_TYPE_T" db:index="4" db:type="Array" minOccurs="0" nillable="true"/>
+            <element name="P_ERROR" type="decimal" db:index="5" db:type="NUMBER" minOccurs="0" nillable="true"/>
+            <element name="P_ERROR_DESC" type="string" db:index="6" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         </sequence>
+      </complexType>
+   </element>
+   <complexType name="PXERINTNOM.XXER_GL_INTERFACE_TYPE_T">
+      <sequence>
+         <element name="P_JOURNALS_ITEM" type="db:PXERINTNOM.XXER_GL_INTERFACE_TYPE" db:type="Struct" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+      </sequence>
+   </complexType>
+   <complexType name="PXERINTNOM.XXER_GL_INTERFACE_TYPE">
+      <sequence>
+         <element name="STATUS" type="db:string50" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LEDGER_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="ACCOUNTING_DATE" type="dateTime" db:type="DATE" minOccurs="0" nillable="true"/>
+         <element name="CURRENCY_CODE" type="db:string15" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="DATE_CREATED" type="dateTime" db:type="DATE" minOccurs="0" nillable="true"/>
+         <element name="CREATED_BY" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="ACTUAL_FLAG" type="db:string1" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="USER_JE_CATEGORY_NAME" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="USER_JE_SOURCE_NAME" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="CURRENCY_CONVERSION_DATE" type="dateTime" db:type="DATE" minOccurs="0" nillable="true"/>
+         <element name="ENCUMBRANCE_TYPE_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="BUDGET_VERSION_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="USER_CURRENCY_CONVERSION_TYPE" type="db:string30" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="CURRENCY_CONVERSION_RATE" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="AVERAGE_JOURNAL_FLAG" type="db:string1" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ORIGINATING_BAL_SEG_VALUE" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT1" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT2" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT3" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT4" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT5" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT6" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT7" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT8" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT9" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT10" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT11" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT12" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT13" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT14" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT15" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT16" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT17" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT18" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT19" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT20" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT21" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT22" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT23" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT24" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT25" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT26" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT27" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT28" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT29" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SEGMENT30" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ENTERED_DR" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="ENTERED_CR" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="ACCOUNTED_DR" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="ACCOUNTED_CR" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="TRANSACTION_DATE" type="dateTime" db:type="DATE" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE1" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE2" type="db:string240" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE3" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE4" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE5" type="db:string240" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE6" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE7" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE8" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE9" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE10" type="db:string240" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE11" type="db:string240" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE12" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE13" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE14" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE15" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE16" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE17" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE18" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE19" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE20" type="db:string100" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE21" type="db:string240" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE22" type="db:string240" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE23" type="db:string240" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE24" type="db:string240" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE25" type="db:string240" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE26" type="db:string240" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE27" type="db:string240" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE28" type="db:string240" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE29" type="db:string240" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE30" type="db:string240" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="JE_BATCH_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="PERIOD_NAME" type="db:string15" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="JE_HEADER_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="JE_LINE_NUM" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="CHART_OF_ACCOUNTS_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="FUNCTIONAL_CURRENCY_CODE" type="db:string15" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="CODE_COMBINATION_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="DATE_CREATED_IN_GL" type="dateTime" db:type="DATE" minOccurs="0" nillable="true"/>
+         <element name="WARNING_CODE" type="db:string4" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="STATUS_DESCRIPTION" type="db:string240" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="STAT_AMOUNT" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="GROUP_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="REQUEST_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="SUBLEDGER_DOC_SEQUENCE_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="SUBLEDGER_DOC_SEQUENCE_VALUE" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE1" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE2" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="GL_SL_LINK_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="GL_SL_LINK_TABLE" type="db:string30" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE3" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE4" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE5" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE6" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE7" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE8" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE9" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE10" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE11" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE12" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE13" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE14" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE15" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE16" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE17" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE18" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE19" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="ATTRIBUTE20" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="CONTEXT" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="CONTEXT2" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_DATE" type="dateTime" db:type="DATE" minOccurs="0" nillable="true"/>
+         <element name="TAX_CODE" type="db:string15" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_IDENTIFIER" type="db:string20" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="INVOICE_AMOUNT" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="CONTEXT3" type="db:string150" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="USSGL_TRANSACTION_CODE" type="db:string30" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="DESCR_FLEX_ERROR_MESSAGE" type="db:string240" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="JGZZ_RECON_REF" type="db:string240" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="REFERENCE_DATE" type="dateTime" db:type="DATE" minOccurs="0" nillable="true"/>
+         <element name="SET_OF_BOOKS_ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="BALANCING_SEGMENT_VALUE" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="MANAGEMENT_SEGMENT_VALUE" type="db:string25" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="FUNDS_RESERVED_FLAG" type="db:string1" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="CODE_COMBINATION_ID_INTERIM" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+      </sequence>
+   </complexType>
+   <simpleType name="string50">
+      <restriction base="string">
+         <maxLength value="50"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string15">
+      <restriction base="string">
+         <maxLength value="15"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string1">
+      <restriction base="string">
+         <maxLength value="1"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string25">
+      <restriction base="string">
+         <maxLength value="25"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string30">
+      <restriction base="string">
+         <maxLength value="30"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string100">
+      <restriction base="string">
+         <maxLength value="100"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string240">
+      <restriction base="string">
+         <maxLength value="240"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string4">
+      <restriction base="string">
+         <maxLength value="4"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string150">
+      <restriction base="string">
+         <maxLength value="150"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="string20">
+      <restriction base="string">
+         <maxLength value="20"/>
+      </restriction>
+   </simpleType>
+</schema>

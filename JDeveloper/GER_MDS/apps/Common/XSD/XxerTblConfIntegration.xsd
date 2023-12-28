@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/XxerTblConfIntegration" targetNamespace="http://soa.estrellaroja.com.mx/XxerTblConfIntegration" elementFormDefault="qualified" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+<xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+<xsd:element name="XxerTblConfIntegration">
+<xsd:complexType>
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="ROW" type="tns:ConfigType" maxOccurs="unbounded" minOccurs="0"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="ConfigType">
+<xsd:sequence>
+<xsd:element name="ID" nillable="true" type="xsd:integer" minOccurs="0"/>
+<xsd:element name="INTEGRACION" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="CODE" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PROCCESS" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="ACTION" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="ORDER" nillable="true" type="xsd:integer" minOccurs="0"/>
+<xsd:element name="NAME" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="TYPE" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="VERSION" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="MESSAGE" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="DESC" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PARAMETER1" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PARAMETER2" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PARAMETER3" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PARAMETER4" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PARAMETER5" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PARAMETER6" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PARAMETER7" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PARAMETER8" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PARAMETER9" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="PARAMETER10" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="CREATION_DATE" nillable="true" type="xsd:date" minOccurs="0"/>
+<xsd:element name="CREATED_BY" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="LAST_UPDATE_DATE" nillable="true" type="xsd:date" minOccurs="0"/>
+<xsd:element name="LAST_UPDATED_BY" nillable="true" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,2396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cus:Customizations xmlns:cus="http://www.bea.com/wli/config/customizations" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xt="http://www.bea.com/wli/config/xmltypes">
+    <cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+        <cus:description/>
+        <cus:owners>
+            <xt:owner>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetComplementInvoiceBs</xt:path>
+            </xt:owner>
+        </cus:owners>
+        <cus:actions>
+            <xt:replace>
+                <xt:envValueType>Service Operational Settings</xt:envValueType>
+                <xt:value>
+                    <ops:operations enabled="true" xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                        <ops:sla-alerting enabled="true"/>
+                    </ops:operations>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Weight</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">jca://eis/DB/DEV/ERSEPDB1</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Table</xt:envValueType>
+                <xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                    <tran:tableElement>
+                        <tran:URI>jca://eis/DB/DEV/ERSEPDB1</tran:URI>
+                        <tran:weight>0</tran:weight>
+                    </tran:tableElement>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Count</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Always Use WSDL Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">true</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Connection Mode</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">managed</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Overwrite Connection Authentication Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+            </xt:replace>
+        </cus:actions>
+    </cus:customization>
+    <cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+        <cus:description/>
+        <cus:owners>
+            <xt:owner>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetCustomerRfcBs</xt:path>
+            </xt:owner>
+        </cus:owners>
+        <cus:actions>
+            <xt:replace>
+                <xt:envValueType>Service Operational Settings</xt:envValueType>
+                <xt:value>
+                    <ops:operations enabled="true" xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                        <ops:sla-alerting enabled="true"/>
+                    </ops:operations>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Weight</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">jca://eis/DB/DEV/ERSEPDB1</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Table</xt:envValueType>
+                <xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                    <tran:tableElement>
+                        <tran:URI>jca://eis/DB/DEV/ERSEPDB1</tran:URI>
+                        <tran:weight>0</tran:weight>
+                    </tran:tableElement>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Count</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Always Use WSDL Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">true</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Connection Mode</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">managed</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Overwrite Connection Authentication Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+            </xt:replace>
+        </cus:actions>
+    </cus:customization>
+    <cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+        <cus:description/>
+        <cus:owners>
+            <xt:owner>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetJournalsNEBs</xt:path>
+            </xt:owner>
+        </cus:owners>
+        <cus:actions>
+            <xt:replace>
+                <xt:envValueType>Service Operational Settings</xt:envValueType>
+                <xt:value>
+                    <ops:operations enabled="true" xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                        <ops:sla-alerting enabled="true"/>
+                    </ops:operations>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Weight</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">jca://eis/DB/DEV/ERSRC3</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Table</xt:envValueType>
+                <xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                    <tran:tableElement>
+                        <tran:URI>jca://eis/DB/DEV/ERSRC3</tran:URI>
+                        <tran:weight>0</tran:weight>
+                    </tran:tableElement>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Count</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Always Use WSDL Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">true</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Connection Mode</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">managed</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Overwrite Connection Authentication Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+            </xt:replace>
+        </cus:actions>
+    </cus:customization>
+    <cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+        <cus:description/>
+        <cus:owners>
+            <xt:owner>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetJournalsTMSBs</xt:path>
+            </xt:owner>
+        </cus:owners>
+        <cus:actions>
+            <xt:replace>
+                <xt:envValueType>Service Operational Settings</xt:envValueType>
+                <xt:value>
+                    <ops:operations enabled="true" xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                        <ops:sla-alerting enabled="true"/>
+                    </ops:operations>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Weight</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">jca://eis/DB/DEV/ERSEPDB1</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Table</xt:envValueType>
+                <xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                    <tran:tableElement>
+                        <tran:URI>jca://eis/DB/DEV/ERSEPDB1</tran:URI>
+                        <tran:weight>0</tran:weight>
+                    </tran:tableElement>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Count</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Always Use WSDL Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">true</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Connection Mode</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">managed</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Overwrite Connection Authentication Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+            </xt:replace>
+        </cus:actions>
+    </cus:customization>
+    <cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+        <cus:description/>
+        <cus:owners>
+            <xt:owner>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetReceiptOrInvoicesBs</xt:path>
+            </xt:owner>
+        </cus:owners>
+        <cus:actions>
+            <xt:replace>
+                <xt:envValueType>Service Operational Settings</xt:envValueType>
+                <xt:value>
+                    <ops:operations enabled="true" xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                        <ops:sla-alerting enabled="true"/>
+                    </ops:operations>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Weight</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">jca://eis/DB/DEV/ERSEPDB1</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Table</xt:envValueType>
+                <xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                    <tran:tableElement>
+                        <tran:URI>jca://eis/DB/DEV/ERSEPDB1</tran:URI>
+                        <tran:weight>0</tran:weight>
+                    </tran:tableElement>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Count</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Always Use WSDL Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">true</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Connection Mode</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">managed</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Overwrite Connection Authentication Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+            </xt:replace>
+        </cus:actions>
+    </cus:customization>
+    <cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+        <cus:description/>
+        <cus:owners>
+            <xt:owner>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaProcessedApplyReceipstBs</xt:path>
+            </xt:owner>
+        </cus:owners>
+        <cus:actions>
+            <xt:replace>
+                <xt:envValueType>Service Operational Settings</xt:envValueType>
+                <xt:value>
+                    <ops:operations enabled="true" xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                        <ops:sla-alerting enabled="true"/>
+                    </ops:operations>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Weight</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">jca://eis/DB/DEV/ERSEPDB1</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Table</xt:envValueType>
+                <xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                    <tran:tableElement>
+                        <tran:URI>jca://eis/DB/DEV/ERSEPDB1</tran:URI>
+                        <tran:weight>0</tran:weight>
+                    </tran:tableElement>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Count</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Always Use WSDL Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">true</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Connection Mode</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">managed</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Overwrite Connection Authentication Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+            </xt:replace>
+        </cus:actions>
+    </cus:customization>
+    <cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+        <cus:description/>
+        <cus:owners>
+            <xt:owner>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaProcessedReceipstBs</xt:path>
+            </xt:owner>
+        </cus:owners>
+        <cus:actions>
+            <xt:replace>
+                <xt:envValueType>Service Operational Settings</xt:envValueType>
+                <xt:value>
+                    <ops:operations enabled="true" xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                        <ops:sla-alerting enabled="true"/>
+                    </ops:operations>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Weight</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">jca://eis/DB/DEV/ERSEPDB1</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Table</xt:envValueType>
+                <xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                    <tran:tableElement>
+                        <tran:URI>jca://eis/DB/DEV/ERSEPDB1</tran:URI>
+                        <tran:weight>0</tran:weight>
+                    </tran:tableElement>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Count</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Always Use WSDL Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">true</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Connection Mode</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">managed</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Overwrite Connection Authentication Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+            </xt:replace>
+        </cus:actions>
+    </cus:customization>
+    <cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+        <cus:description/>
+        <cus:owners>
+            <xt:owner>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaReadCustomerSitesBs</xt:path>
+            </xt:owner>
+        </cus:owners>
+        <cus:actions>
+            <xt:replace>
+                <xt:envValueType>Service Operational Settings</xt:envValueType>
+                <xt:value>
+                    <ops:operations enabled="true" xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                        <ops:sla-alerting enabled="true"/>
+                    </ops:operations>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Weight</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">jca://eis/DB/DEV/ERSEPDB1</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Table</xt:envValueType>
+                <xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                    <tran:tableElement>
+                        <tran:URI>jca://eis/DB/DEV/ERSEPDB1</tran:URI>
+                        <tran:weight>0</tran:weight>
+                    </tran:tableElement>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Count</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Always Use WSDL Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">true</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Connection Mode</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">managed</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Overwrite Connection Authentication Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+            </xt:replace>
+        </cus:actions>
+    </cus:customization>
+    <cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+        <cus:description/>
+        <cus:owners>
+            <xt:owner>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaReadCustomersBs</xt:path>
+            </xt:owner>
+        </cus:owners>
+        <cus:actions>
+            <xt:replace>
+                <xt:envValueType>Service Operational Settings</xt:envValueType>
+                <xt:value>
+                    <ops:operations enabled="true" xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                        <ops:sla-alerting enabled="true"/>
+                    </ops:operations>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Weight</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">jca://eis/DB/DEV/ERSEPDB1</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Table</xt:envValueType>
+                <xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                    <tran:tableElement>
+                        <tran:URI>jca://eis/DB/DEV/ERSEPDB1</tran:URI>
+                        <tran:weight>0</tran:weight>
+                    </tran:tableElement>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Count</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Always Use WSDL Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">true</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Connection Mode</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">managed</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Overwrite Connection Authentication Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+            </xt:replace>
+        </cus:actions>
+    </cus:customization>
+    <cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+        <cus:description/>
+        <cus:owners>
+            <xt:owner>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaReadInventoryTransactionsBs</xt:path>
+            </xt:owner>
+        </cus:owners>
+        <cus:actions>
+            <xt:replace>
+                <xt:envValueType>Service Operational Settings</xt:envValueType>
+                <xt:value>
+                    <ops:operations enabled="true" xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                        <ops:sla-alerting enabled="true"/>
+                    </ops:operations>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Weight</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">jca://eis/DB/DEV/ERSEPDBSCM</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Table</xt:envValueType>
+                <xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                    <tran:tableElement>
+                        <tran:URI>jca://eis/DB/DEV/ERSEPDBSCM</tran:URI>
+                        <tran:weight>0</tran:weight>
+                    </tran:tableElement>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Count</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Always Use WSDL Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">true</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Connection Mode</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">managed</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Overwrite Connection Authentication Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+            </xt:replace>
+        </cus:actions>
+    </cus:customization>
+    <cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+        <cus:description/>
+        <cus:owners>
+            <xt:owner>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateCustomerSitesBs</xt:path>
+            </xt:owner>
+        </cus:owners>
+        <cus:actions>
+            <xt:replace>
+                <xt:envValueType>Service Operational Settings</xt:envValueType>
+                <xt:value>
+                    <ops:operations enabled="true" xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                        <ops:sla-alerting enabled="true"/>
+                    </ops:operations>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Weight</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">jca://eis/DB/DEV/ERSEPDB1</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Table</xt:envValueType>
+                <xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                    <tran:tableElement>
+                        <tran:URI>jca://eis/DB/DEV/ERSEPDB1</tran:URI>
+                        <tran:weight>0</tran:weight>
+                    </tran:tableElement>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Count</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Always Use WSDL Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">true</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Connection Mode</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">managed</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Overwrite Connection Authentication Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+            </xt:replace>
+        </cus:actions>
+    </cus:customization>
+    <cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+        <cus:description/>
+        <cus:owners>
+            <xt:owner>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateCustomersBs</xt:path>
+            </xt:owner>
+        </cus:owners>
+        <cus:actions>
+            <xt:replace>
+                <xt:envValueType>Service Operational Settings</xt:envValueType>
+                <xt:value>
+                    <ops:operations enabled="true" xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                        <ops:sla-alerting enabled="true"/>
+                    </ops:operations>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Weight</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">jca://eis/DB/DEV/ERSEPDB1</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Table</xt:envValueType>
+                <xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                    <tran:tableElement>
+                        <tran:URI>jca://eis/DB/DEV/ERSEPDB1</tran:URI>
+                        <tran:weight>0</tran:weight>
+                    </tran:tableElement>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Count</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Always Use WSDL Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">true</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Connection Mode</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">managed</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Overwrite Connection Authentication Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+            </xt:replace>
+        </cus:actions>
+    </cus:customization>
+    <cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+        <cus:description/>
+        <cus:owners>
+            <xt:owner>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateInventoryTransactions</xt:path>
+            </xt:owner>
+        </cus:owners>
+        <cus:actions>
+            <xt:replace>
+                <xt:envValueType>Service Operational Settings</xt:envValueType>
+                <xt:value>
+                    <ops:operations enabled="true" xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                        <ops:sla-alerting enabled="true"/>
+                    </ops:operations>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Weight</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">jca://eis/DB/DEV/ERSEPDBSCM</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Table</xt:envValueType>
+                <xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                    <tran:tableElement>
+                        <tran:URI>jca://eis/DB/DEV/ERSEPDBSCM</tran:URI>
+                        <tran:weight>0</tran:weight>
+                    </tran:tableElement>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Count</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Always Use WSDL Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">true</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Connection Mode</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">managed</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Overwrite Connection Authentication Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+            </xt:replace>
+        </cus:actions>
+    </cus:customization>
+    <cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+        <cus:description/>
+        <cus:owners>
+            <xt:owner>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateJournalsBs</xt:path>
+            </xt:owner>
+        </cus:owners>
+        <cus:actions>
+            <xt:replace>
+                <xt:envValueType>Service Operational Settings</xt:envValueType>
+                <xt:value>
+                    <ops:operations enabled="true" xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                        <ops:sla-alerting enabled="true"/>
+                    </ops:operations>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Weight</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">jca://eis/DB/DEV/ERSEPDB1</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Table</xt:envValueType>
+                <xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                    <tran:tableElement>
+                        <tran:URI>jca://eis/DB/DEV/ERSEPDB1</tran:URI>
+                        <tran:weight>0</tran:weight>
+                    </tran:tableElement>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Count</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Always Use WSDL Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">true</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Connection Mode</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">managed</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Overwrite Connection Authentication Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+            </xt:replace>
+        </cus:actions>
+    </cus:customization>
+    <cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+        <cus:description/>
+        <cus:owners>
+            <xt:owner>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateStatusInvoicesBs</xt:path>
+            </xt:owner>
+        </cus:owners>
+        <cus:actions>
+            <xt:replace>
+                <xt:envValueType>Service Operational Settings</xt:envValueType>
+                <xt:value>
+                    <ops:operations enabled="true" xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                        <ops:sla-alerting enabled="true"/>
+                    </ops:operations>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Weight</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI</xt:envValueType>
+                <xt:location>0</xt:location>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">jca://eis/DB/DEV/ERSEPDB1</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service URI Table</xt:envValueType>
+                <xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+                    <tran:tableElement>
+                        <tran:URI>jca://eis/DB/DEV/ERSEPDB1</tran:URI>
+                        <tran:weight>0</tran:weight>
+                    </tran:tableElement>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Count</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Always Use WSDL Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">true</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Connection Mode</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">managed</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>JCA Overwrite Connection Authentication Flag</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+            </xt:replace>
+        </cus:actions>
+    </cus:customization>
+    <cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+        <cus:description/>
+        <cus:owners>
+            <xt:owner>
+                <xt:type>ProxyService</xt:type>
+                <xt:path>DEV_FinancialsTec/Proxies/FinancialsTecPs</xt:path>
+            </xt:owner>
+        </cus:owners>
+        <cus:actions>
+            <xt:replace>
+                <xt:envValueType>Service URI</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">DEV_FinancialsTecPs</xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>Service Operational Settings</xt:envValueType>
+                <xt:value>
+                    <oper:operations enabled="true" xmlns:ser="http://www.bea.com/wli/sb/services" xmlns:con="http://www.bea.com/wli/sb/services/security/config" xmlns:oper="http://xmlns.oracle.com/servicebus/proxy/operations" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports"/>
+                </xt:value>
+            </xt:replace>
+            <xt:replace>
+                <xt:envValueType>UDDI Auto Publish</xt:envValueType>
+                <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+            </xt:replace>
+        </cus:actions>
+    </cus:customization>
+    <cus:customization xsi:type="cus:FindAndReplaceCustomizationType">
+        <cus:description/>
+        <cus:query>
+            <xt:resourceTypes>BusinessService</xt:resourceTypes>
+            <xt:resourceTypes>ProxyService</xt:resourceTypes>
+            <xt:envValueTypes>JCA Always Use WSDL Flag</xt:envValueTypes>
+            <xt:envValueTypes>JCA Connection Mode</xt:envValueTypes>
+            <xt:envValueTypes>JCA Overwrite Connection Authentication Flag</xt:envValueTypes>
+            <xt:envValueTypes>Service Retry Count</xt:envValueTypes>
+            <xt:envValueTypes>Service Retry Iteration Interval</xt:envValueTypes>
+            <xt:envValueTypes>Service URI</xt:envValueTypes>
+            <xt:envValueTypes>Service URI Weight</xt:envValueTypes>
+            <xt:envValueTypes>UDDI Auto Publish</xt:envValueTypes>
+            <xt:refsToSearch xsi:type="xt:ResourceRefType">
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetComplementInvoiceBs</xt:path>
+            </xt:refsToSearch>
+            <xt:refsToSearch xsi:type="xt:ResourceRefType">
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetCustomerRfcBs</xt:path>
+            </xt:refsToSearch>
+            <xt:refsToSearch xsi:type="xt:ResourceRefType">
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetJournalsNEBs</xt:path>
+            </xt:refsToSearch>
+            <xt:refsToSearch xsi:type="xt:ResourceRefType">
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetJournalsTMSBs</xt:path>
+            </xt:refsToSearch>
+            <xt:refsToSearch xsi:type="xt:ResourceRefType">
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetReceiptOrInvoicesBs</xt:path>
+            </xt:refsToSearch>
+            <xt:refsToSearch xsi:type="xt:ResourceRefType">
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaProcessedApplyReceipstBs</xt:path>
+            </xt:refsToSearch>
+            <xt:refsToSearch xsi:type="xt:ResourceRefType">
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaProcessedReceipstBs</xt:path>
+            </xt:refsToSearch>
+            <xt:refsToSearch xsi:type="xt:ResourceRefType">
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaReadCustomerSitesBs</xt:path>
+            </xt:refsToSearch>
+            <xt:refsToSearch xsi:type="xt:ResourceRefType">
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaReadCustomersBs</xt:path>
+            </xt:refsToSearch>
+            <xt:refsToSearch xsi:type="xt:ResourceRefType">
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaReadInventoryTransactionsBs</xt:path>
+            </xt:refsToSearch>
+            <xt:refsToSearch xsi:type="xt:ResourceRefType">
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateCustomerSitesBs</xt:path>
+            </xt:refsToSearch>
+            <xt:refsToSearch xsi:type="xt:ResourceRefType">
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateCustomersBs</xt:path>
+            </xt:refsToSearch>
+            <xt:refsToSearch xsi:type="xt:ResourceRefType">
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateInventoryTransactions</xt:path>
+            </xt:refsToSearch>
+            <xt:refsToSearch xsi:type="xt:ResourceRefType">
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateJournalsBs</xt:path>
+            </xt:refsToSearch>
+            <xt:refsToSearch xsi:type="xt:ResourceRefType">
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateStatusInvoicesBs</xt:path>
+            </xt:refsToSearch>
+            <xt:refsToSearch xsi:type="xt:ResourceRefType">
+                <xt:type>ProxyService</xt:type>
+                <xt:path>DEV_FinancialsTec/Proxies/FinancialsTecPs</xt:path>
+            </xt:refsToSearch>
+            <xt:includeOnlyModifiedResources>false</xt:includeOnlyModifiedResources>
+            <xt:searchString>Search String</xt:searchString>
+            <xt:isCompleteMatch>false</xt:isCompleteMatch>
+        </cus:query>
+        <cus:replacement>Replacement String</cus:replacement>
+    </cus:customization>
+    <cus:customization xsi:type="cus:ReferenceCustomizationType">
+        <cus:description/>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>JCA</xt:type>
+            <xt:path>DEV_FinancialsTec/Adapters/dbaGetComplementInvoiceBs_db</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>JCA</xt:type>
+            <xt:path>DEV_FinancialsTec/Adapters/dbaGetCustomerRfc_db</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>JCA</xt:type>
+            <xt:path>DEV_FinancialsTec/Adapters/dbaGetJournalsNEBs_db</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>JCA</xt:type>
+            <xt:path>DEV_FinancialsTec/Adapters/dbaGetJournalsTMSBs_db</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>JCA</xt:type>
+            <xt:path>DEV_FinancialsTec/Adapters/dbaGetReceiptOrInvoicesBs_db</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>JCA</xt:type>
+            <xt:path>DEV_FinancialsTec/Adapters/dbaProcessedApplyReceipstBs_db</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>JCA</xt:type>
+            <xt:path>DEV_FinancialsTec/Adapters/dbaProcessedReceiptBs_db</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>JCA</xt:type>
+            <xt:path>DEV_FinancialsTec/Adapters/dbaReadCustomerSites_db</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>JCA</xt:type>
+            <xt:path>DEV_FinancialsTec/Adapters/dbaReadCustomers_db</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>JCA</xt:type>
+            <xt:path>DEV_FinancialsTec/Adapters/dbaReadInventoryTransactions_db</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>JCA</xt:type>
+            <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateCustomerSites_db</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>JCA</xt:type>
+            <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateCustomers_db</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>JCA</xt:type>
+            <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateInventoryTransactions_db</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>JCA</xt:type>
+            <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateJournalsBs_db</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>JCA</xt:type>
+            <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateStatusInvoicesBs_db</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>BusinessService</xt:type>
+            <xt:path>DEV_FinancialsTec/Business/dbaGetComplementInvoiceBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>BusinessService</xt:type>
+            <xt:path>DEV_FinancialsTec/Business/dbaGetCustomerRfcBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>BusinessService</xt:type>
+            <xt:path>DEV_FinancialsTec/Business/dbaGetJournalsNEBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>BusinessService</xt:type>
+            <xt:path>DEV_FinancialsTec/Business/dbaGetJournalsTMSBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>BusinessService</xt:type>
+            <xt:path>DEV_FinancialsTec/Business/dbaGetReceiptOrInvoicesBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>BusinessService</xt:type>
+            <xt:path>DEV_FinancialsTec/Business/dbaProcessedApplyReceipstBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>BusinessService</xt:type>
+            <xt:path>DEV_FinancialsTec/Business/dbaProcessedReceipstBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>BusinessService</xt:type>
+            <xt:path>DEV_FinancialsTec/Business/dbaReadCustomerSitesBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>BusinessService</xt:type>
+            <xt:path>DEV_FinancialsTec/Business/dbaReadCustomersBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>BusinessService</xt:type>
+            <xt:path>DEV_FinancialsTec/Business/dbaReadInventoryTransactionsBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>BusinessService</xt:type>
+            <xt:path>DEV_FinancialsTec/Business/dbaUpdateCustomerSitesBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>BusinessService</xt:type>
+            <xt:path>DEV_FinancialsTec/Business/dbaUpdateCustomersBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>BusinessService</xt:type>
+            <xt:path>DEV_FinancialsTec/Business/dbaUpdateInventoryTransactions</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>BusinessService</xt:type>
+            <xt:path>DEV_FinancialsTec/Business/dbaUpdateJournalsBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>BusinessService</xt:type>
+            <xt:path>DEV_FinancialsTec/Business/dbaUpdateStatusInvoicesBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>Pipeline</xt:type>
+            <xt:path>DEV_FinancialsTec/Pipelines/pipelineFinancialsTec</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>ProxyService</xt:type>
+            <xt:path>DEV_FinancialsTec/Proxies/FinancialsTecPs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XMLSchema</xt:type>
+            <xt:path>DEV_FinancialsTec/Schemas/FinancialsTec</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/FinancialsTec</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trDbaGetCustomerRFCRs_To_PipelineGetCustomerRFCRs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trDbaGetReceiptOrInvoicesRs_To_PipelineGetReceiptOrInvoicesRs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trDbaGetcomplementInvoiceRs_To_PipelineGetcomplementInvoiceRs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trDbaJournasNERs_To_GetJournalNERs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trDbaJournasTMSRs_To_GetJournalTMSRs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trDbaProcessedApplyReceiptBs_To_pipelineProcessedApplyReceiptRs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trDbaProcessedReceiptBs_To_pipelineProcessedReceiptRs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trDbaReadCustomerSitesRs_To_PipelineGetCustomerSitesRs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trDbaReadCustomersRs_To_GetCustomersRs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trDbaReadInventoryTransactionsRs_To_GetInventoryTransactionsRs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trDbaUpdateStatusInvoicesBs_To_pipelineUpdateStatusInvoicesRs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetComplementInvoiceRq_To_DbaGetComplementInvoiceRq.xsll</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetCustomerRFCRq_To_DbaGetCustomerRFCRq</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetCustomerSitesRq_To_DbaReadCustomerSitesRq</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetJornalNERq_To_DbaGetJournalNERq</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetJornalTMSRq_To_DbaGetJournalTMSRq</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetReceiptOrInvoicesRq_To_DbaGetReceiptOrInvoicesRq</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trPipelineProcessedApplyReceiptRq_To_DbaProcessedApplyReceiptBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trPipelineProcessedReceiptRq_To_DbaProcessedReceiptBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trPipelineUpdateCustomerSitesRq_To_DbaUpdateCustomerSitesRq</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trPipelineUpdateCustomersRq_To_DbaUpdateCustomersRq</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trPipelineUpdateInventoryTransactionsRq_To_DbaUpdateInventoryTransactionsRq</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trPipelineUpdateJournalTMSRq_To_DbaUpdateJournalTMSRq</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>XSLT</xt:type>
+            <xt:path>DEV_FinancialsTec/XSLs/trPipelineUpdateStatusInvoicesRq_To_DbaUpdateStatusInvoicesBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetComplementInvoiceBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetComplementInvoiceBs-concrete</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetCustomerRfc</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetCustomerRfc-concrete</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetJournalsNEBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetJournalsNEBs-concrete</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetJournalsTMSBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetJournalsTMSBs-concrete</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetReceiptOrInvoicesBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetReceiptOrInvoicesBs-concrete</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaProcessedApplyReceipstBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaProcessedApplyReceipstBs-concrete</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaProcessedReceiptBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaProcessedReceiptBs-concrete</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadCustomerSites</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadCustomerSites-concrete</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadCustomers</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadCustomers-concrete</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadInventoryTransactions</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadInventoryTransactions-concrete</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateCustomerSites</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateCustomerSites-concrete</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateCustomers</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateCustomers-concrete</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateInventoryTransactions</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateInventoryTransactions-concrete</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateJournalsBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateJournalsBs-concrete</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateStatusInvoicesBs</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+            <xt:type>WSDL</xt:type>
+            <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateStatusInvoicesBs-concrete</xt:path>
+        </cus:refsToBeConsidered>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaGetComplementInvoiceBs_db</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaGetComplementInvoiceBs_db</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XML</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaGetCustomerRfc-or-mappings</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XML</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaGetCustomerRfc-or-mappings</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaGetCustomerRfc_db</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaGetCustomerRfc_db</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaGetJournalsNEBs_db</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaGetJournalsNEBs_db</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaGetJournalsTMSBs_db</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaGetJournalsTMSBs_db</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaGetReceiptOrInvoicesBs_db</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaGetReceiptOrInvoicesBs_db</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaProcessedApplyReceipstBs_db</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaProcessedApplyReceipstBs_db</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaProcessedReceiptBs_db</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaProcessedReceiptBs_db</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaReadCustomerSites_db</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaReadCustomerSites_db</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaReadCustomers_db</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaReadCustomers_db</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaReadInventoryTransactions_db</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaReadInventoryTransactions_db</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XML</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateCustomerSites-or-mappings</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XML</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateCustomerSites-or-mappings</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateCustomerSites_db</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateCustomerSites_db</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XML</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateCustomers-or-mappings</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XML</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateCustomers-or-mappings</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateCustomers_db</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateCustomers_db</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateInventoryTransactions_db</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateInventoryTransactions_db</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateJournalsBs_db</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateJournalsBs_db</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateStatusInvoicesBs_db</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>JCA</xt:type>
+                <xt:path>DEV_FinancialsTec/Adapters/dbaUpdateStatusInvoicesBs_db</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetComplementInvoiceBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetComplementInvoiceBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetCustomerRfcBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetCustomerRfcBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetJournalsNEBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetJournalsNEBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetJournalsTMSBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetJournalsTMSBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetReceiptOrInvoicesBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaGetReceiptOrInvoicesBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaProcessedApplyReceipstBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaProcessedApplyReceipstBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaProcessedReceipstBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaProcessedReceipstBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaReadCustomerSitesBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaReadCustomerSitesBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaReadCustomersBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaReadCustomersBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaReadInventoryTransactionsBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaReadInventoryTransactionsBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateCustomerSitesBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateCustomerSitesBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateCustomersBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateCustomersBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateInventoryTransactions</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateInventoryTransactions</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateJournalsBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateJournalsBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateStatusInvoicesBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>BusinessService</xt:type>
+                <xt:path>DEV_FinancialsTec/Business/dbaUpdateStatusInvoicesBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>Pipeline</xt:type>
+                <xt:path>DEV_FinancialsTec/Pipelines/pipelineFinancialsTec</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>Pipeline</xt:type>
+                <xt:path>DEV_FinancialsTec/Pipelines/pipelineFinancialsTec</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/FinancialsTec</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/FinancialsTec</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/FinancialsTec</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/FinancialsTec</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaGetCustomerRFCRs_To_PipelineGetCustomerRFCRs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaGetCustomerRFCRs_To_PipelineGetCustomerRFCRs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaGetReceiptOrInvoicesRs_To_PipelineGetReceiptOrInvoicesRs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaGetReceiptOrInvoicesRs_To_PipelineGetReceiptOrInvoicesRs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaGetcomplementInvoiceRs_To_PipelineGetcomplementInvoiceRs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaGetcomplementInvoiceRs_To_PipelineGetcomplementInvoiceRs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaJournasNERs_To_GetJournalNERs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaJournasNERs_To_GetJournalNERs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaJournasTMSRs_To_GetJournalTMSRs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaJournasTMSRs_To_GetJournalTMSRs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaProcessedApplyReceiptBs_To_pipelineProcessedApplyReceiptRs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaProcessedApplyReceiptBs_To_pipelineProcessedApplyReceiptRs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaProcessedReceiptBs_To_pipelineProcessedReceiptRs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaProcessedReceiptBs_To_pipelineProcessedReceiptRs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaReadCustomerSitesRs_To_PipelineGetCustomerSitesRs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaReadCustomerSitesRs_To_PipelineGetCustomerSitesRs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaReadCustomersRs_To_GetCustomersRs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaReadCustomersRs_To_GetCustomersRs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaReadInventoryTransactionsRs_To_GetInventoryTransactionsRs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaReadInventoryTransactionsRs_To_GetInventoryTransactionsRs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaUpdateStatusInvoicesBs_To_pipelineUpdateStatusInvoicesRs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trDbaUpdateStatusInvoicesBs_To_pipelineUpdateStatusInvoicesRs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetComplementInvoiceRq_To_DbaGetComplementInvoiceRq.xsll</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetComplementInvoiceRq_To_DbaGetComplementInvoiceRq.xsll</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetCustomerRFCRq_To_DbaGetCustomerRFCRq</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetCustomerRFCRq_To_DbaGetCustomerRFCRq</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetCustomerSitesRq_To_DbaReadCustomerSitesRq</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetCustomerSitesRq_To_DbaReadCustomerSitesRq</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetJornalNERq_To_DbaGetJournalNERq</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetJornalNERq_To_DbaGetJournalNERq</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetJornalTMSRq_To_DbaGetJournalTMSRq</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetJornalTMSRq_To_DbaGetJournalTMSRq</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetReceiptOrInvoicesRq_To_DbaGetReceiptOrInvoicesRq</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineGetReceiptOrInvoicesRq_To_DbaGetReceiptOrInvoicesRq</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineProcessedApplyReceiptRq_To_DbaProcessedApplyReceiptBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineProcessedApplyReceiptRq_To_DbaProcessedApplyReceiptBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineProcessedReceiptRq_To_DbaProcessedReceiptBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineProcessedReceiptRq_To_DbaProcessedReceiptBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineUpdateCustomerSitesRq_To_DbaUpdateCustomerSitesRq</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineUpdateCustomerSitesRq_To_DbaUpdateCustomerSitesRq</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineUpdateCustomersRq_To_DbaUpdateCustomersRq</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineUpdateCustomersRq_To_DbaUpdateCustomersRq</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineUpdateInventoryTransactionsRq_To_DbaUpdateInventoryTransactionsRq</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineUpdateInventoryTransactionsRq_To_DbaUpdateInventoryTransactionsRq</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineUpdateJournalTMSRq_To_DbaUpdateJournalTMSRq</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineUpdateJournalTMSRq_To_DbaUpdateJournalTMSRq</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineUpdateStatusInvoicesRq_To_DbaUpdateStatusInvoicesBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XSLT</xt:type>
+                <xt:path>DEV_FinancialsTec/XSLs/trPipelineUpdateStatusInvoicesRq_To_DbaUpdateStatusInvoicesBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/Commons/EstrellaRojaCommons</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/Commons/EstrellaRojaCommons</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaGetComplementInvoiceBs_sp</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaGetComplementInvoiceBs_sp</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaGetCustomerRfc_table</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaGetCustomerRfc_table</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaGetJournalsNEBs_sp</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaGetJournalsNEBs_sp</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaGetJournalsTMSBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaGetJournalsTMSBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaGetReceiptOrInvoicesBs_sp</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaGetReceiptOrInvoicesBs_sp</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaProcessedApplyReceipstBs_sp</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaProcessedApplyReceipstBs_sp</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaProcessedReceiptBs_sp</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaProcessedReceiptBs_sp</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaReadCustomerSites</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaReadCustomerSites</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaReadCustomers</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaReadCustomers</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaReadInventoryTransactions</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaReadInventoryTransactions</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaUpdateCustomerSites_table</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaUpdateCustomerSites_table</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaUpdateCustomers_table</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaUpdateCustomers_table</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaUpdateInventoryTransactions</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaUpdateInventoryTransactions</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaUpdateJournalsBs_sp</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaUpdateJournalsBs_sp</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaUpdateStatusInvoicesBs_sp</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>XMLSchema</xt:type>
+                <xt:path>DEV_FinancialsTec/Schemas/External/dbaUpdateStatusInvoicesBs_sp</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetComplementInvoiceBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetComplementInvoiceBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetComplementInvoiceBs-concrete</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetComplementInvoiceBs-concrete</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetCustomerRfc</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetCustomerRfc</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetCustomerRfc-concrete</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetCustomerRfc-concrete</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetJournalsNEBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetJournalsNEBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetJournalsNEBs-concrete</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetJournalsNEBs-concrete</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetJournalsTMSBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetJournalsTMSBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetJournalsTMSBs-concrete</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetJournalsTMSBs-concrete</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetReceiptOrInvoicesBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetReceiptOrInvoicesBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetReceiptOrInvoicesBs-concrete</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaGetReceiptOrInvoicesBs-concrete</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaProcessedApplyReceipstBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaProcessedApplyReceipstBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaProcessedApplyReceipstBs-concrete</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaProcessedApplyReceipstBs-concrete</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaProcessedReceiptBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaProcessedReceiptBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaProcessedReceiptBs-concrete</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaProcessedReceiptBs-concrete</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadCustomerSites</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadCustomerSites</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadCustomerSites-concrete</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadCustomerSites-concrete</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadCustomers</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadCustomers</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadCustomers-concrete</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadCustomers-concrete</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadInventoryTransactions</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadInventoryTransactions</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadInventoryTransactions-concrete</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaReadInventoryTransactions-concrete</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateCustomerSites</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateCustomerSites</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateCustomerSites-concrete</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateCustomerSites-concrete</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateCustomers</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateCustomers</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateCustomers-concrete</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateCustomers-concrete</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateInventoryTransactions</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateInventoryTransactions</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateInventoryTransactions-concrete</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateInventoryTransactions-concrete</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateJournalsBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateJournalsBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateJournalsBs-concrete</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateJournalsBs-concrete</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateStatusInvoicesBs</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateStatusInvoicesBs</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+        <cus:externalReferenceMap>
+            <xt:oldRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateStatusInvoicesBs-concrete</xt:path>
+            </xt:oldRef>
+            <xt:newRef>
+                <xt:type>WSDL</xt:type>
+                <xt:path>DEV_FinancialsTec/WSDLs/External/dbaUpdateStatusInvoicesBs-concrete</xt:path>
+            </xt:newRef>
+        </cus:externalReferenceMap>
+    </cus:customization>
+</cus:Customizations>

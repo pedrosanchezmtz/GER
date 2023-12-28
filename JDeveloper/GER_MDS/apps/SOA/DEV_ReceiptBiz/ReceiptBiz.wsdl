@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="ReceiptBiz" targetNamespace="http://soa.estrellaroja.com.mx/ReceiptBiz" xmlns:tns="http://soa.estrellaroja.com.mx/ReceiptBiz" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://soa.estrellaroja.com.mx/ReceiptBiz" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.estrellaroja.com.mx/ReceiptBiz/types" elementFormDefault="qualified">
+<xsd:import namespace="http://soa.estrellaroja.com.mx/ReceiptBiz" schemaLocation="ReceiptBiz.xsd"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="DigitalStampReceiptsRq">
+<wsdl:part name="DigitalStampReceiptsRq" element="ns0:DigitalStampReceiptsRq"/>
+</wsdl:message>
+<wsdl:message name="DigitalStampReceiptsRs">
+<wsdl:part name="DigitalStampReceiptsRs" element="ns0:DigitalStampReceiptsRs"/>
+</wsdl:message>
+<wsdl:portType name="ReceiptBizCallbackPortType">
+<wsdl:operation name="ReceiptApplyCallback">
+<wsdl:input message="tns:ReceiptApplyRs"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:portType name="ReceiptBizPortType">
+<wsdl:operation name="DigitalStampReceipts">
+<wsdl:input message="tns:DigitalStampReceiptsRq"/>
+<wsdl:output message="tns:DigitalStampReceiptsRs"/>
+</wsdl:operation>
+<wsdl:operation name="ReceiptApply">
+<wsdl:input message="tns:ReceiptApplyRq"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="ReceiptBizBinding" type="tns:ReceiptBizPortType">
+<soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="DigitalStampReceipts">
+<soap12:operation soapAction="http://soa.estrellaroja.com.mx/ReceiptBiz/DigitalStampReceipts"/>
+<wsdl:input>
+<soap12:body use="literal" parts="DigitalStampReceiptsRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal" parts="DigitalStampReceiptsRs"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ReceiptApply">
+<soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ReceiptBiz/ReceiptApply"/>
+<wsdl:input>
+<soap12:body use="literal" parts="ReceiptApplyRq"/>
+</wsdl:input>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:message name="ReceiptApplyRq">
+<wsdl:part name="ReceiptApplyRq" element="tns:ReceiptApplyRq"/>
+</wsdl:message>
+<wsdl:message name="ReceiptApplyRs">
+<wsdl:part name="ReceiptApplyRs" element="tns:ReceiptApplyRs"/>
+</wsdl:message>
+<wsdl:service name="ReceiptBiz">
+<wsdl:port name="ReceiptBizPort" binding="tns:ReceiptBizBinding">
+<soap12:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/DEV/ReceiptBiz/ReceiptBiz"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

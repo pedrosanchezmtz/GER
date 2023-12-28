@@ -1,0 +1,15 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaGetComplementInvoiceBs" name="dbaGetComplementInvoiceBs-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="dbaGetComplementInvoiceBs.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaGetComplementInvoiceBs"/>
+    <wsdl:binding name="dbaGetComplementInvoiceBs_ptt-binding" type="dbag:dbaGetComplementInvoiceBs_ptt" xmlns:dbag="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaGetComplementInvoiceBs">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="dbaGetComplementInvoiceBs">
+            <soap:operation soapAction="dbaGetComplementInvoiceBs"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

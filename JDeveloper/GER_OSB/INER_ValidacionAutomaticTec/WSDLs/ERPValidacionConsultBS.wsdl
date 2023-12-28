@@ -1,0 +1,91 @@
+<wsdl:definitions name="ERPValidacionConsultBS" targetNamespace="http://soa.estrellaroja.com.mx/ValidacionAutomaticTec" xmlns:tns="http://soa.estrellaroja.com.mx/ValidacionAutomaticTec" xmlns:inp1="http://soa.estrellaroja.com.mx/ValidacionAutomaticTec" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <plnk:partnerLinkType name="ERPValidacionConsultBS">
+    <plnk:role name="ERPValidacionConsultBSProvider" portType="tns:ERPValidacionConsultBS_ptt"/>
+  </plnk:partnerLinkType>
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://soa.estrellaroja.com.mx/ValidacionAutomaticTec" schemaLocation="../Schemas/ValidacionAutomaticTec.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultaSatCFDI_inputMessage">
+    <wsdl:part name="request" element="tns:ValidationConsultRequest"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultaSatCFDI_outputMessage">
+    <wsdl:part name="reply" element="inp1:ValidationConsultResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ValidaOracleXml_inputMessage">
+    <wsdl:part name="request" element="inp1:ValidationOracleXmlRequest"/>
+  </wsdl:message>
+  <wsdl:message name="ValidaOracleXml_outputMessage">
+    <wsdl:part name="request" element="inp1:ValidationOracleXmlResponse"/>
+  </wsdl:message>
+    <wsdl:message name="MergeReportValidation_inputMessage">
+    <wsdl:part name="request" element="tns:MergeReportValidationRequest"/>
+  </wsdl:message>
+  <wsdl:message name="MergeReportValidation_outputMessage">
+    <wsdl:part name="reply" element="inp1:MergeReportValidationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetReportValidation_inputMessage">
+    <wsdl:part name="request" element="inp1:GetReportValidationRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetReportValidation_outputMessage">
+    <wsdl:part name="request" element="inp1:GetReportValidationResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ERPValidacionConsultBS_ptt">
+    <wsdl:operation name="ConsultaSatCFDI">
+      <wsdl:input message="tns:ConsultaSatCFDI_inputMessage"/>
+      <wsdl:output message="tns:ConsultaSatCFDI_outputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaOracleXml">
+      <wsdl:input message="tns:ValidaOracleXml_inputMessage"/>
+      <wsdl:output message="tns:ValidaOracleXml_outputMessage"/>
+    </wsdl:operation>
+     <wsdl:operation name="MergeReportValidation">
+      <wsdl:input message="tns:MergeReportValidation_inputMessage"/>
+      <wsdl:output message="tns:MergeReportValidation_outputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportValidation">
+      <wsdl:input message="tns:GetReportValidation_inputMessage"/>
+      <wsdl:output message="tns:GetReportValidation_outputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ERPValidacionConsultBS_ptt-binding" type="tns:ERPValidacionConsultBS_ptt">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConsultaSatCFDI">
+      <soap:operation soapAction="ConsultaSatCFDI"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaOracleXml">
+      <soap:operation soapAction="ValidaOracleXml"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+     <wsdl:operation name="MergeReportValidation">
+      <soap:operation soapAction="MergeReportValidation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportValidation">
+      <soap:operation soapAction="GetReportValidation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

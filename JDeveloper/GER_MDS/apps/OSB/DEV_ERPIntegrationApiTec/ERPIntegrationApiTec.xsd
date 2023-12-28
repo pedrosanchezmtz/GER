@@ -1,0 +1,80 @@
+<xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/ERPIntegrationApiTec"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/ERPIntegrationApiTec"
+            xmlns:tns="http://soa.estrellaroja.com.mx/ERPIntegrationApiTec"
+            xmlns:inv="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP"
+            xmlns:wo="http://soa.estrellaroja.com.mx/erpMaintenanceWorkOrders"
+            xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+  <xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd"
+              namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+  <xsd:import schemaLocation="../../Common/XSD/InvoiceAP/erpInvoiceInstallmentsAP.xsd"
+              namespace="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP"/>
+  <xsd:import schemaLocation="../../Common/XSD/WorkOrder/erpMaintenanceWorkOrders.xsd"
+              namespace="http://soa.estrellaroja.com.mx/erpMaintenanceWorkOrders"/>
+  <xsd:element name="GetInvoiceInstallmentsAPRq" type="getInvoiceInstallmentsAPRqType"/>
+  <xsd:element name="GetInvoiceInstallmentsAPRs" type="getInvoiceInstallmentsAPRsType"/>
+  <xsd:element name="UpdateInvoiceInstallmentsAPRq" type="updateInvoiceInstallmentsAPRqType"/>
+  <xsd:element name="UpdateInvoiceInstallmentsAPRs" type="updateInvoiceInstallmentsAPRsType"/>
+  <xsd:element name="UpdateFlexMaintenanceWORq" type="updateFlexMaintenanceWORqType"/>
+  <xsd:element name="UpdateFlexMaintenanceWORs" type="updateFlexMaintenanceWORsType"/>
+  <xsd:complexType name="updateFlexMaintenanceWORqType">
+    <xsd:complexContent>
+      <xsd:extension base="wo:FlexMaintenanceWOType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="updateFlexMaintenanceWORsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element type="wo:FlexMaintenanceWOType" name="Result"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="getInvoiceInstallmentsAPRqType">
+    <xsd:complexContent>
+      <xsd:extension base="inv:QueryParametersType">
+        <xsd:sequence>
+          <xsd:element name="invoice_id" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="getInvoiceInstallmentsAPRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="Result">
+            <xsd:complexType>
+              <xsd:complexContent>
+                <xsd:extension base="inv:ResponseAPIType">
+                  <xsd:sequence>
+                    <xsd:element name="items" type="inv:InvoiceInstallmentsType" maxOccurs="unbounded" minOccurs="0"/>
+                  </xsd:sequence>
+                </xsd:extension>
+              </xsd:complexContent>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="updateInvoiceInstallmentsAPRqType">
+    <xsd:complexContent>
+      <xsd:extension base="inv:InvoiceInstallmentsType">
+        <xsd:sequence>
+          <xsd:element name="invoice_id" type="xsd:string"/>
+          <xsd:element name="invoice_installments_id" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="updateInvoiceInstallmentsAPRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element type="inv:InvoiceInstallmentsType" name="Result"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,12 @@
+<adapter-config name="InsertDeliverOrders" adapter="db" wsdlLocation="../../WSDL/Orders/InsertDeliverOrdersWSDL.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="DEV/ERSEPDB1" location="eis/DB/ERSEPDB1"/>
+  <endpoint-interaction portType="InsertDeliverOrders_ptt" operation="InsertDeliverOrders">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="INSERT INTO mtto_orden@HSMSSQLDLV.ESTRELLAROJA.COM.MX (&quot;id_area&quot;, &quot;id_orden&quot;, &quot;fecha_inicio,estado&quot;, &quot;id_unidad&quot;, &quot;observaciones&quot;, &quot;kms_inicio&quot;) VALUES ( #idArea,#idOrden,#fechInicio,#estado,#idUnidad,#observaciones,#kilometrosInicio)"/>
+      <property name="QueryTimeout" value="10"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

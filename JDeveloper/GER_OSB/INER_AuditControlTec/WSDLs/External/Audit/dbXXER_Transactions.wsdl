@@ -1,0 +1,28 @@
+<wsdl:definitions name="dbXXER_Transactions" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbXXER_Transactions" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbXXER_Transactions" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbXXER_Transactions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="dbXXER_Transactions_plt">
+    <plt:role name="dbXXER_Transactions_role">
+      <plt:portType name="tns:dbXXER_Transactions_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbXXER_Transactions" schemaLocation="../../../Schemas/External/Audit/dbXXER_Transactions_table.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="dbXXER_TransactionsSelect_inputParameters">
+        <wsdl:part name="dbXXER_TransactionsSelect_inputParameters" element="top:dbXXER_TransactionsSelect_p_integrationName_p_processNameInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="XxerIntegrationsTransactionsCollection_msg">
+        <wsdl:part name="XxerIntegrationsTransactionsCollection" element="top:XxerIntegrationsTransactionsCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="dbXXER_Transactions_ptt">
+        <wsdl:operation name="merge">
+            <wsdl:input message="tns:XxerIntegrationsTransactionsCollection_msg"/>
+            <wsdl:output message="tns:XxerIntegrationsTransactionsCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="dbXXER_TransactionsSelect">
+            <wsdl:input message="tns:dbXXER_TransactionsSelect_inputParameters"/>
+            <wsdl:output message="tns:XxerIntegrationsTransactionsCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

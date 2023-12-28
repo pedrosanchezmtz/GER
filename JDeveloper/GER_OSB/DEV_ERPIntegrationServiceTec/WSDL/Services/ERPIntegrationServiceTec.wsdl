@@ -1,0 +1,613 @@
+<wsdl:definitions targetNamespace="http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	TYPE DEFINITION - List of services participating in this process.
+        You can define or import any XML Schema type and use them as part of the message types.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec/types" elementFormDefault="qualified">
+      <xsd:import namespace="http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec" schemaLocation="../../Schemas/ERPIntegrationServiceTec.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	MESSAGE TYPE DEFINITION - Definition of the message types used as 
+	part of the port type defintions
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!--********************************* BEGIN Customers Service *********************************-->
+  <wsdl:message name="FindOrganizationRq">
+    <wsdl:part name="FindOrganizationRqPart" element="tns:FindOrganizationRq"/>
+  </wsdl:message>
+  <wsdl:message name="FindOrganizationRs">
+    <wsdl:part name="FindOrganizationRsPart" element="tns:FindOrganizationRs"/>
+  </wsdl:message>
+  <wsdl:message name="FindCustomerAccountRq">
+    <wsdl:part name="FindCustomerAcctRqPart" element="tns:FindCustomerAccountRq"/>
+  </wsdl:message>
+  <wsdl:message name="FindCustomerAccountRs">
+    <wsdl:part name="FindCustomerAcctRsPart" element="tns:FindCustomerAccountRs"/>
+  </wsdl:message>
+  <wsdl:message name="FindPersonRq">
+    <wsdl:part name="FindPersonRqPart" element="tns:FindPersonRq"/>
+  </wsdl:message>
+  <wsdl:message name="FindPersonRs">
+    <wsdl:part name="FindPersonRsPart" element="tns:FindPersonRs"/>
+  </wsdl:message>
+  <wsdl:message name="MergePersonRq">
+    <wsdl:part name="MergePersonRqPart" element="tns:MergePersonRq"/>
+  </wsdl:message>
+  <wsdl:message name="MergePersonRs">
+    <wsdl:part name="MergePersonRsPart" element="tns:MergePersonRs"/>
+  </wsdl:message>
+  <wsdl:message name="MergeOrganizationRq">
+    <wsdl:part name="MergeOrganizationRqPart" element="tns:MergeOrganizationRq"/>
+  </wsdl:message>
+  <wsdl:message name="MergeOrganizationRs">
+    <wsdl:part name="MergeOrganizationRsPart" element="tns:MergeOrganizationRs"/>
+  </wsdl:message>
+  <wsdl:message name="MergeLocationRq">
+    <wsdl:part name="MergeLocationRq" element="tns:MergeLocationRq"/>
+  </wsdl:message>
+  <wsdl:message name="MergeLocationRs">
+    <wsdl:part name="MergeLocationRs" element="tns:MergeLocationRs"/>
+  </wsdl:message>
+  <wsdl:message name="CreateCustProfileRq">
+    <wsdl:part name="CreateCustProfileRq" element="tns:CreateCustomerProfileRq"/>
+  </wsdl:message>
+  <wsdl:message name="CreateCustProfileRs">
+    <wsdl:part name="CreateCustProfileRs" element="tns:CreateCustomerProfileRs"/>
+  </wsdl:message>
+  <!--********************************* BEGIN LoadInterface *********************************-->
+  <wsdl:message name="LoadInterfaceRq">
+    <wsdl:part name="LoadInterfaceRqPart" element="tns:LoadInterfaceRq"/>
+  </wsdl:message>
+  <wsdl:message name="LoadInterfaceRs">
+    <wsdl:part name="LoadInterfaceRsPart" element="tns:LoadInterfaceRs"/>
+  </wsdl:message>
+  <!--********************************* BEGIN UPLOAD FILE *********************************-->
+  <wsdl:message name="UploadFileRq">
+    <wsdl:part name="UploadFileRqPart" element="tns:UploadFileRq"/>
+  </wsdl:message>
+  <wsdl:message name="UploadFileRs">
+    <wsdl:part name="UploadFileRsPart" element="tns:UploadFileRs"/>
+  </wsdl:message>
+  <!--********************************* BEGIN JournalImport *********************************-->
+  <wsdl:message name="JournalImportRq">
+    <wsdl:part name="JournalImportRqPart" element="tns:JournalImportRq"/>
+  </wsdl:message>
+  <wsdl:message name="JournalImportRs">
+    <wsdl:part name="JournalImportRsPart" element="tns:JournalImportRs"/>
+  </wsdl:message>
+  <!--********************************* BEGIN UpdateObject *********************************-->
+  <wsdl:message name="UpdateObjectRq">
+    <wsdl:part name="UpdateObjectRqPart" element="tns:UpdateObjectRq"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateObjectRs">
+    <wsdl:part name="UpdateObjectRsPart" element="tns:UpdateObjectRs"/>
+  </wsdl:message>
+  <!--********************************* BEGIN CreateOrderTransactions *******************-->
+  <wsdl:message name="CreateOrderTransactionsRq">
+    <wsdl:part name="CreateOrderTransactionsRqPart" element="tns:CreateOrderTransactionsRq"/>
+  </wsdl:message>
+  <wsdl:message name="CreateOrderTransactionsRs">
+    <wsdl:part name="CreateOrderTransactionsRsPart" element="tns:CreateOrderTransactionsRs"/>
+  </wsdl:message>
+  <!--********************************* BEGIN RunDataModel *******************-->
+  <wsdl:message name="RunDataModelRq">
+    <wsdl:part name="RunDataModelRqPart" element="tns:RunDataModelRq"/>
+  </wsdl:message>
+  <wsdl:message name="RunDataModelRs">
+    <wsdl:part name="RunDataModelRsPart" element="tns:RunDataModelRs"/>
+  </wsdl:message>
+  <!--********************************* BEGIN GetEssJobStatus *********************************-->
+  <wsdl:message name="GetEssJobStatusRq">
+    <wsdl:part name="GetEssJobStatusRqPart" element="tns:GetEssJobStatusRq"/>
+  </wsdl:message>
+  <wsdl:message name="GetEssJobStatusRs">
+    <wsdl:part name="GetEssJobStatusRsPart" element="tns:GetEssJobStatusRs"/>
+  </wsdl:message>
+  <!--********************************* BEGIN DownloadESSJobExecutionDetails *********************************-->
+  <wsdl:message name="DownloadESSJobExecutionDetailsRq">
+    <wsdl:part name="DownloadESSJobExecutionDetailsRqPart" element="tns:DownloadESSJobExecutionDetailsRq"/>
+  </wsdl:message>
+  <wsdl:message name="DownloadESSJobExecutionDetailsRs">
+    <wsdl:part name="DownloadESSJobExecutionDetailsRsPart" element="tns:DownloadESSJobExecutionDetailsRs"/>
+  </wsdl:message>
+  <!--********************************* BEGIN CreateReceipt     *********************************-->
+  <wsdl:message name="CreateReceiptRq">
+    <wsdl:part name="CreateReceiptRq" element="tns:CreateReceiptRq"/>
+  </wsdl:message>
+  <wsdl:message name="CreateReceiptRs">
+    <wsdl:part name="CreateReceiptRs" element="tns:CreateReceiptRs"/>
+  </wsdl:message>
+  <!--********************************* BEGIN Customers     *********************************-->
+  <wsdl:message name="CreateOrganizationRq">
+    <wsdl:part name="CreateOrganizationRq" element="tns:CreateOrganizationRq"/>
+  </wsdl:message>
+  <wsdl:message name="CreateOrganizationRs">
+    <wsdl:part name="CreateOrganizationRs" element="tns:CreateOrganizationRs"/>
+  </wsdl:message>
+  <wsdl:message name="CreatePersonRq">
+    <wsdl:part name="CreatePersonRq" element="tns:CreatePersonRq"/>
+  </wsdl:message>
+  <wsdl:message name="CreatePersonRs">
+    <wsdl:part name="CreatePersonRs" element="tns:CreatePersonRs"/>
+  </wsdl:message>
+  <wsdl:message name="CreateCustomerAccountRq">
+    <wsdl:part name="CreateCustomerAccountRq" element="tns:CreateCustomerAccountRq"/>
+  </wsdl:message>
+  <wsdl:message name="CreateCustomerAccountRs">
+    <wsdl:part name="CreateCustomerAccountRs" element="tns:CreateCustomerAccountRs"/>
+  </wsdl:message>
+  <wsdl:message name="CreatePersonSiteRq">
+    <wsdl:part name="CreatePersonSiteRq" element="tns:CreatePersonSiteRq"/>
+  </wsdl:message>
+  <wsdl:message name="CreatePersonSiteRs">
+    <wsdl:part name="CreatePersonSiteRs" element="tns:CreatePersonSiteRs"/>
+  </wsdl:message>
+  <wsdl:message name="CreateOrganizationSiteRq">
+    <wsdl:part name="CreateOrganizationSiteRq" element="tns:CreateOrganizationSiteRq"/>
+  </wsdl:message>
+  <wsdl:message name="CreateOrganizationSiteRs">
+    <wsdl:part name="CreateOrganizationSiteRs" element="tns:CreateOrganizationSiteRs"/>
+  </wsdl:message>
+  <wsdl:message name="CreateLocationRq">
+    <wsdl:part name="CreateLocationRq" element="tns:CreateLocationRq"/>
+  </wsdl:message>
+  <wsdl:message name="CreateLocationRs">
+    <wsdl:part name="CreateLocationRs" element="tns:CreateLocationRs"/>
+  </wsdl:message>
+  <wsdl:message name="AssignSiteToAccountRq">
+    <wsdl:part name="AssignSiteToAccountRq" element="tns:AssignSiteToAccountRq"/>
+  </wsdl:message>
+  <wsdl:message name="AssignSiteToAccountRs">
+    <wsdl:part name="AssignSiteToAccountRs" element="tns:AssignSiteToAccountRs"/>
+  </wsdl:message>
+  <wsdl:message name="CancelInvoiceRq">
+    <wsdl:part name="CancelInvoiceRq" element="tns:CancelInvoiceRq"/>
+  </wsdl:message>
+  <wsdl:message name="CancelInvoiceRs">
+    <wsdl:part name="CancelInvoiceRs" element="tns:CancelInvoiceRs"/>
+  </wsdl:message>
+  <wsdl:message name="InsertSingleHoldRq">
+    <wsdl:part name="InsertSingleHoldRq" element="tns:InsertSingleHoldRq"/>
+  </wsdl:message>
+  <wsdl:message name="InsertSingleHoldRs">
+    <wsdl:part name="InsertSingleHoldRs" element="tns:InsertSingleHoldRs"/>
+  </wsdl:message>
+  <wsdl:message name="ReleaseSingleHoldRq">
+    <wsdl:part name="ReleaseSingleHoldRq" element="tns:ReleaseSingleHoldRq"/>
+  </wsdl:message>
+  <wsdl:message name="ReleaseSingleHoldRs">
+    <wsdl:part name="ReleaseSingleHoldRs" element="tns:ReleaseSingleHoldRs"/>
+  </wsdl:message>
+  <wsdl:message name="UploadAttachmentRq">
+    <wsdl:part name="UploadAttachmentRq" element="tns:UploadAttachmentRq"/>
+  </wsdl:message>
+  <wsdl:message name="UploadAttachmentRs">
+    <wsdl:part name="UploadAttachmentRs" element="tns:UploadAttachmentRs"/>
+  </wsdl:message>
+  <wsdl:message name="DownloadAttachmentRq">
+    <wsdl:part name="DownloadAttachmentRq" element="tns:DownloadAttachmentRq"/>
+  </wsdl:message>
+  <wsdl:message name="DownloadAttachmentRs">
+    <wsdl:part name="DownloadAttachmentRs" element="tns:DownloadAttachmentRs"/>
+  </wsdl:message>
+  <wsdl:message name="CreateApplyReceiptRq">
+    <wsdl:part name="CreateApplyReceiptRq" element="tns:CreateApplyReceiptRq"/>
+  </wsdl:message>
+  <wsdl:message name="CreateApplyReceiptRs">
+    <wsdl:part name="CreateApplyReceiptRs" element="tns:CreateApplyReceiptRs"/>
+  </wsdl:message>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	PORT TYPE DEFINITION - A port type groups a set of operations into
+	a logical service unit.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:portType name="ERPIntegrationTecPortType">
+    <!--********************************* BEGIN Customer Service *********************************-->
+    <wsdl:operation name="FindOrganization">
+      <wsdl:input message="tns:FindOrganizationRq"/>
+      <wsdl:output message="tns:FindOrganizationRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindCustomerAccount">
+      <wsdl:input message="tns:FindCustomerAccountRq"/>
+      <wsdl:output message="tns:FindCustomerAccountRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindPerson">
+      <wsdl:input message="tns:FindPersonRq"/>
+      <wsdl:output message="tns:FindPersonRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="MergeOrganization">
+      <wsdl:input message="tns:MergeOrganizationRq"/>
+      <wsdl:output message="tns:MergeOrganizationRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="MergePerson">
+      <wsdl:input message="tns:MergePersonRq"/>
+      <wsdl:output message="tns:MergePersonRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="MergeLocation">
+      <wsdl:input message="tns:MergeLocationRq"/>
+      <wsdl:output message="tns:MergeLocationRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN LoadInterface *********************************-->
+    <wsdl:operation name="LoadInterface">
+      <wsdl:input message="tns:LoadInterfaceRq"/>
+      <wsdl:output message="tns:LoadInterfaceRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN UPLOAD FILE *********************************-->
+    <wsdl:operation name="UploadFile">
+      <wsdl:input message="tns:UploadFileRq"/>
+      <wsdl:output message="tns:UploadFileRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN JournalImport  *****************************-->
+    <wsdl:operation name="JournalImport">
+      <wsdl:input message="tns:JournalImportRq"/>
+      <wsdl:output message="tns:JournalImportRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN UpdateObject  *****************************-->
+    <wsdl:operation name="UpdateObject">
+      <wsdl:input message="tns:UpdateObjectRq"/>
+      <wsdl:output message="tns:UpdateObjectRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN CreateOrderTransactions  *****************************-->
+    <wsdl:operation name="CreateOrderTransactions">
+      <wsdl:input message="tns:CreateOrderTransactionsRq"/>
+      <wsdl:output message="tns:CreateOrderTransactionsRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN RunDataModel     *****************************-->
+    <wsdl:operation name="RunDataModel">
+      <wsdl:input message="tns:RunDataModelRq"/>
+      <wsdl:output message="tns:RunDataModelRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN GetEssJobStatus *********************************-->
+    <wsdl:operation name="GetEssJobStatus">
+      <wsdl:input message="tns:GetEssJobStatusRq"/>
+      <wsdl:output message="tns:GetEssJobStatusRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN DownloadESSJobExecutionDetails *********************************-->
+    <wsdl:operation name="DownloadESSJobExecutionDetails">
+      <wsdl:input message="tns:DownloadESSJobExecutionDetailsRq"/>
+      <wsdl:output message="tns:DownloadESSJobExecutionDetailsRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN CreateReceipt     *********************************-->
+    <wsdl:operation name="CreateReceipt">
+      <wsdl:input message="tns:CreateReceiptRq"/>
+      <wsdl:output message="tns:CreateReceiptRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN Customers     *********************************-->
+    <wsdl:operation name="CreateOrganization">
+      <wsdl:input message="tns:CreateOrganizationRq"/>
+      <wsdl:output message="tns:CreateOrganizationRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePerson">
+      <wsdl:input message="tns:CreatePersonRq"/>
+      <wsdl:output message="tns:CreatePersonRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePersonSite">
+      <wsdl:input message="tns:CreatePersonSiteRq"/>
+      <wsdl:output message="tns:CreatePersonSiteRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrganizationSite">
+      <wsdl:input message="tns:CreateOrganizationSiteRq"/>
+      <wsdl:output message="tns:CreateOrganizationSiteRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomerAccount">
+      <wsdl:input message="tns:CreateCustomerAccountRq"/>
+      <wsdl:output message="tns:CreateCustomerAccountRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLocation">
+      <wsdl:input message="tns:CreateLocationRq"/>
+      <wsdl:output message="tns:CreateLocationRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="AssignSiteToAccount">
+      <wsdl:input message="tns:AssignSiteToAccountRq"/>
+      <wsdl:output message="tns:AssignSiteToAccountRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="CancelInvoice">
+      <wsdl:input message="tns:CancelInvoiceRq"/>
+      <wsdl:output message="tns:CancelInvoiceRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSingleHold">
+      <wsdl:input message="tns:InsertSingleHoldRq"/>
+      <wsdl:output message="tns:InsertSingleHoldRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseSingleHold">
+      <wsdl:input message="tns:ReleaseSingleHoldRq"/>
+      <wsdl:output message="tns:ReleaseSingleHoldRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="UploadAttachment">
+      <wsdl:input message="tns:UploadAttachmentRq"/>
+      <wsdl:output message="tns:UploadAttachmentRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadAttachment">
+      <wsdl:input message="tns:DownloadAttachmentRq"/>
+      <wsdl:output message="tns:DownloadAttachmentRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="CreateApplyReceipt">
+      <wsdl:input message="tns:CreateApplyReceiptRq"/>
+      <wsdl:output message="tns:CreateApplyReceiptRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustProfile">
+      <wsdl:input message="tns:CreateCustProfileRq"/>
+      <wsdl:output message="tns:CreateCustProfileRs"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	BINDING OPERATIONS DEFINITION
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:binding name="ERPIntegrationTecBinding" type="tns:ERPIntegrationTecPortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <!--********************************* BEGIN Customer Services *********************************-->
+    <wsdl:operation name="FindOrganization">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/ErpIntegrationServiceTec/findCustomer"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="FindOrganizationRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="FindOrganizationRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindCustomerAccount">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/ErpIntegrationServiceTec/findCustomerAccount"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="FindCustomerAcctRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="FindCustomerAcctRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindPerson">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/ErpIntegrationServiceTec/findPerson"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="FindPersonRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="FindPersonRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MergeOrganization">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/ErpIntegrationServiceTec/MergeCustomer"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="MergeOrganizationRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="MergeOrganizationRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MergePerson">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/ErpIntegrationServiceTec/MergePerson"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="MergePersonRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="MergePersonRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MergeLocation">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/ErpIntegrationServiceTec/MergeLocation"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="MergeLocationRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="MergeLocationRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN PickConfirm *********************************-->
+    <!--********************************* BEGIN LoadInterface *********************************-->
+    <wsdl:operation name="LoadInterface">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/ErpIntegrationServiceTec/LoadInterface"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="LoadInterfaceRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="LoadInterfaceRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN UPLOAD FILE *********************************-->
+    <wsdl:operation name="UploadFile">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/ErpIntegrationServiceTec/UploadFile"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="UploadFileRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="UploadFileRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN JournalImport *********************************-->
+    <wsdl:operation name="JournalImport">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/ErpIntegrationServiceTec/JournalImport"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="JournalImportRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="JournalImportRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN UpdateObject *********************************-->
+    <wsdl:operation name="UpdateObject">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/ErpIntegrationServiceTec/UpdateObject"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="UpdateObjectRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="UpdateObjectRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN QueryAllInventory *********************************-->
+    <!--********************************* BEGIN CreateOrderTransactions *********************************-->
+    <wsdl:operation name="CreateOrderTransactions">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/ErpIntegrationServiceTec/CreateOrderTransactions"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="CreateOrderTransactionsRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="CreateOrderTransactionsRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN RunDataModel *********************************-->
+    <wsdl:operation name="RunDataModel">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/ErpIntegrationServiceTec/RunDataModel"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="RunDataModelRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="RunDataModelRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN GetEssJobStatus *********************************-->
+    <wsdl:operation name="GetEssJobStatus">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/ErpIntegrationServiceTec/GetEssJobStatus"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="GetEssJobStatusRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="GetEssJobStatusRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN DownloadESSJobExecutionDetails *********************************-->
+    <wsdl:operation name="DownloadESSJobExecutionDetails">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/ErpIntegrationServiceTec/DownloadESSJobExecutionDetails"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="DownloadESSJobExecutionDetailsRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="DownloadESSJobExecutionDetailsRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN CreateReceipt     *********************************-->
+    <wsdl:operation name="CreateReceipt">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/CreateReceipt"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="CreateReceiptRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="CreateReceiptRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN Customers     *********************************-->
+    <wsdl:operation name="CreateOrganization">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/CreateOrganization"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="CreateOrganizationRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="CreateOrganizationRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePerson">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/CreatePerson"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="CreatePersonRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="CreatePersonRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePersonSite">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/CreatePersonSite"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="CreatePersonSiteRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="CreatePersonSiteRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrganizationSite">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/CreateOrganizationSite"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="CreateOrganizationSiteRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="CreateOrganizationSiteRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomerAccount">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/CreateCustomerAccount"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="CreateCustomerAccountRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="CreateCustomerAccountRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLocation">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/CreateLocation"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="CreateLocationRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="CreateLocationRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignSiteToAccount">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/AssignSiteToAccount"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="AssignSiteToAccountRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="AssignSiteToAccountRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelInvoice">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/CancelInvoice"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="CancelInvoiceRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="CancelInvoiceRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSingleHold">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/InsertSingleHold"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="InsertSingleHoldRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="InsertSingleHoldRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseSingleHold">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/ReleaseSingleHold"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="ReleaseSingleHoldRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="ReleaseSingleHoldRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadAttachment">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/UploadAttachment"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="UploadAttachmentRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="UploadAttachmentRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadAttachment">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/DownloadAttachment"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="DownloadAttachmentRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="DownloadAttachmentRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateApplyReceipt">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/CreateApplyReceipt"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="CreateApplyReceiptRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="CreateApplyReceiptRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustProfile">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/ErpIntegrationServiceTec/CreateCustProfile"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="CreateCustProfileRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="CreateCustProfileRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

@@ -1,0 +1,629 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/InvoicesBiz" targetNamespace="http://soa.estrellaroja.com.mx/InvoicesBiz" elementFormDefault="qualified" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:erp="http://soa.estrellaroja.com.mx/InvoicesBiz/ERPIntegrationServiceTec">
+<xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+<xsd:import schemaLocation="../../Common/XSD/ERPIntegrationServiceTec.xsd" namespace="http://soa.estrellaroja.com.mx/InvoicesBiz/ERPIntegrationServiceTec"/>
+<xsd:element name="BuildInvoicesZipRq" type="tns:BuildInvoicesZipRqType">
+<xsd:annotation>
+<xsd:documentation>Element for Request.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="BuildInvoicesZipRs" type="tns:BuildInvoicesZipRsType">
+<xsd:annotation>
+<xsd:documentation>Element for Response.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="DigitalStampRq" type="tns:DigitalStampRqType">
+<xsd:annotation>
+<xsd:documentation>Element for Request.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="DigitalStampRs" type="tns:DigitalStampRsType">
+<xsd:annotation>
+<xsd:documentation>Element for Response.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="ValidateInvoicesAPRq" type="tns:ValidateInvoicesAPRqType"/>
+<xsd:element name="UploadAttachementsRq" type="erp:UploadAttachmentRqType"/>
+<xsd:element name="ValidateInvoicesAPRs" type="tns:ValidateInvoicesAPRsType"/>
+<xsd:element name="InvoiceAP" type="tns:InvoiceAPType"/>
+<xsd:element name="ValidatePaymentComplementsRq" type="tns:ValidatePaymentComplementsRqType"/>
+<xsd:element name="ValidatePaymentComplementsRs" type="tns:ValidatePaymentComplementsRsType"/>
+<xsd:element name="ContextInfo" type="tns:ContextInfoType"/>
+<xsd:element name="LogPaymentComplement" type="tns:LogPaymentComplementType"/>
+<xsd:element name="PaymentComplement" type="tns:PaymentComplementBundleType"/>
+<xsd:element name="ExtPaymentComplement" type="tns:ExtPaymentComplementBundleType"/>
+<xsd:element name="UploadPaymentComplementsRq" type="tns:UploadPaymentComplementsRqType"/>
+<xsd:element name="UploadPaymentComplementsRs" type="tns:UploadPaymentComplementsRsType"/>
+<xsd:element name="PaymentInfo" type="tns:PaymentInfoType"/>
+<xsd:element name="NotifyLoadInvoicesRq" type="tns:NotifyLoadInvoicesRqType"/>
+<xsd:element name="NotifyLoadInvoicesRs" type="tns:NotifyLoadInvoicesRsType"/>
+<xsd:element name="ListTrxNumber">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="TrxNumberInProcess" type="tns:TrxNumberType"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="ListBu" type="tns:ListBuType"/>
+<xsd:element name="SecondPartOfOutAttributes" type="tns:SecondPartOfOutAttributesType"/>
+<xsd:element name="StatusLoadInvoicesRs" type="tns:StatusLoadInvoiceRsType"/>
+<xsd:element name="StatusLoadInvoicesRq">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="StatusLoadInvoicesList" type="tns:StatusLoadInvoicesRqType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="UpdateUuidRq">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ListUpdateUuidRq" type="tns:UpdateUuidRqType" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="UpdateUuidRs" type="tns:UpdateUuidRsType"/>
+<xsd:element name="GetComplementToUpdInvoicesRq" type="tns:GetComplementToUpdInvoicesRqType"/>
+<xsd:element name="GetComplementToUpdInvoicesRs" type="tns:GetComplementToUpdInvoicesRsType"/>
+<xsd:element name="ResultUpdateUuId" type="tns:ResultUpdateUuIdType"/>
+<xsd:element name="ErrorDetailsHelper" type="tns:ErrorsDetailsType"/>
+<xsd:element name="TotalUuIdsUpdated" type="tns:TotalUuIdsUpdatedType"/>
+<xsd:element name="IntegerHelper" type="tns:IntegerHelperType"/>
+<xsd:element name="UpdateStatusInvoicesRq" type="tns:UpdateStatusInvoicesRqType"/>
+<xsd:element name="UpdateStatusInvoicesRs" type="tns:UpdateStatusInvoicesRsType"/>
+<xsd:complexType name="InputDm">
+<xsd:sequence>
+<xsd:element name="DATA_DS">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="P_RFC" type="xsd:string"/>
+<xsd:element name="Q_CUSTOMER" maxOccurs="unbounded" minOccurs="0">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="RFC" type="xsd:string"/>
+<xsd:element name="PARTY_NAME" type="xsd:string"/>
+<xsd:element name="PARTY_NUMBER" type="xsd:integer"/>
+<xsd:element name="PARTY_ID" type="xsd:integer"/>
+<xsd:element name="ACCOUNT_NUMBER" type="xsd:integer"/>
+<xsd:element name="CUST_ACCOUNT_ID" type="xsd:integer"/>
+<xsd:element name="CUST_ACCT_SITE_ID" type="xsd:integer"/>
+<xsd:element name="PARTY_SITE_NUMBER" type="xsd:integer"/>
+<xsd:element name="SITE_USE_ID" type="xsd:integer"/>
+<xsd:element name="SITE_USE_CODE" type="xsd:string"/>
+<xsd:element name="PRIMARY_FLAG" type="xsd:string"/>
+<xsd:element name="LOCATION" type="xsd:integer"/>
+<xsd:element name="LOCATION_ID" type="xsd:integer"/>
+<xsd:element name="PAYMENT_TERMS" type="xsd:string"/>
+<xsd:element type="xsd:integer" name="ORG_ID"/>
+<xsd:element type="xsd:string" name="BU_NAME"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ValidateInvoicesAPRqType">
+<xsd:sequence>
+<xsd:element name="InvoicesAP" type="tns:InvoicesAPType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ValidateInvoicesAPRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="InvoicesAPType">
+<xsd:sequence>
+<xsd:element name="InvoiceAP" type="tns:InvoiceAPType" maxOccurs="unbounded" minOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="InvoiceAPType">
+<xsd:sequence>
+<xsd:element type="xsd:long" name="SupplierId"/>
+<xsd:element type="xsd:string" name="SupplierRFC"/>
+<xsd:element type="xsd:double" name="Total"/>
+<xsd:element type="xsd:short" name="Subtotal" minOccurs="0"/>
+<xsd:element type="xsd:string" name="SupplierName"/>
+<xsd:element type="xsd:dateTime" name="InvoiceDate"/>
+<xsd:element type="xsd:dateTime" name="CreationDate"/>
+<xsd:element type="xsd:dateTime" name="LastUpdateDate"/>
+<xsd:element type="xsd:string" name="Status"/>
+<xsd:element type="xsd:string" name="Currency"/>
+<xsd:element type="xsd:string" name="ReceptorRFC"/>
+<xsd:element type="xsd:string" name="NameRFC"/>
+<xsd:element type="xsd:integer" name="InvoiceId"/>
+<xsd:element type="xsd:short" name="SupplierNumber"/>
+<xsd:element type="xsd:integer" name="InvoiceNumber"/>
+<xsd:element type="xsd:double" name="TotalTaxAmount" minOccurs="0"/>
+<xsd:element type="xsd:string" name="BusinessUnit"/>
+<xsd:element type="xsd:string" name="InvoiceSource"/>
+<xsd:element type="xsd:string" name="InvoiceType"/>
+<xsd:element type="xsd:integer" name="InvoiceAwtGroupId"/>
+<xsd:element type="xsd:string" name="InvoiceAwtGroupCode"/>
+<xsd:element type="xsd:double" name="InvoiceAwtPercentageRate"/>
+<xsd:element type="xsd:integer" name="InvoiceTermsId"/>
+<xsd:element type="xsd:string" name="InvoiceTermsName"/>
+<xsd:element type="xsd:string" name="InvoiceTermsDesc"/>
+<xsd:element type="xsd:string" name="ApprovalStatus"/>
+<xsd:element type="xsd:integer" name="SupplierPartyId"/>
+<xsd:element type="xsd:integer" name="SupplierSiteId"/>
+<xsd:element type="xsd:string" name="SupplierSiteCode"/>
+<xsd:element type="xsd:integer" name="SupplierSiteBusinessUnitId"/>
+<xsd:element type="xsd:integer" name="SupplierSiteAwtGroupId"/>
+<xsd:element type="xsd:string" name="SupplierSiteAwtGroupCode"/>
+<xsd:element type="xsd:double" name="SupplierSiteAwtPercentageRate"/>
+<xsd:element type="xsd:string" name="SupplierType"/>
+<xsd:element type="xsd:string" name="State"/>
+<xsd:element type="xsd:string" name="City"/>
+<xsd:element type="xsd:string" name="Address"/>
+<xsd:element type="xsd:integer" name="ZipCode"/>
+<xsd:element type="xsd:integer" name="OrderId"/>
+<xsd:element type="xsd:integer" name="OrderNumber"/>
+<xsd:element type="xsd:integer" name="OrderBillbuId"/>
+<xsd:element type="xsd:integer" name="OrderSupplierId"/>
+<xsd:element type="xsd:string" name="OrdereMail"/>
+<xsd:element type="xsd:integer" name="OrderTermsId"/>
+<xsd:element type="xsd:integer" name="OrganizationId"/>
+<xsd:element type="xsd:integer" name="LegalentityId"/>
+<xsd:element type="xsd:integer" name="LegalEntitySegment"/>
+<xsd:element type="xsd:string" name="Xml"/>
+<xsd:element type="xsd:integer" name="XmlRegistrados"/>
+<xsd:element type="xsd:string" name="Pdf"/>
+<xsd:element type="xsd:integer" name="PdfRegistrados"/>
+<xsd:element name="details" maxOccurs="unbounded" minOccurs="0">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element type="xsd:integer" name="IdLineNumber"/>
+<xsd:element type="xsd:string" name="idLineType"/>
+<xsd:element type="xsd:string" name="idDescription"/>
+<xsd:element type="xsd:string" name="idLineSource"/>
+<xsd:element type="xsd:integer" name="idOrganizationId"/>
+<xsd:element type="xsd:integer" name="idItemId"/>
+<xsd:element type="xsd:string" name="idItemDescription"/>
+<xsd:element type="xsd:string" name="idUnitCode"/>
+<xsd:element type="xsd:double" name="idUnitPrice"/>
+<xsd:element type="xsd:integer" name="idQuantity"/>
+<xsd:element type="xsd:integer" name="idAmount"/>
+<xsd:element type="xsd:string" name="idBaseAmount"/>
+<xsd:element type="xsd:integer" name="idTaxLineId"/>
+<xsd:element type="xsd:string" name="idTaxRegimeCode"/>
+<xsd:element type="xsd:string" name="idTax"/>
+<xsd:element type="xsd:string" name="idTaxJurisdictionCode"/>
+<xsd:element type="xsd:string" name="idTaxStatusCode"/>
+<xsd:element type="xsd:integer" name="idTaxRateId"/>
+<xsd:element type="xsd:string" name="idTaxRateCode"/>
+<xsd:element type="xsd:double" name="idTaxRate"/>
+<xsd:element type="xsd:string" name="idTaxClassCode"/>
+<xsd:element type="xsd:integer" name="idAwtGroupId"/>
+<xsd:element type="xsd:string" name="idAwtGroupCode"/>
+<xsd:element type="xsd:double" name="awtPercentageRate"/>
+<xsd:element type="xsd:integer" name="orderId"/>
+<xsd:element type="xsd:integer" name="orderDetailId"/>
+<xsd:element type="xsd:integer" name="odDiscount"/>
+<xsd:element type="xsd:double" name="odListPrice"/>
+<xsd:element type="xsd:integer" name="odLineTypeId"/>
+<xsd:element type="xsd:integer" name="odItemId"/>
+<xsd:element type="xsd:string" name="odItemDescription"/>
+<xsd:element type="xsd:string" name="odUnitCode"/>
+<xsd:element type="xsd:double" name="odUnitPrice"/>
+<xsd:element type="xsd:integer" name="odQuantity"/>
+<xsd:element type="xsd:integer" name="odAmount"/>
+<xsd:element type="xsd:integer" name="odCodeCombinationId"/>
+<xsd:element type="xsd:integer" name="odDestOrganizationId"/>
+<xsd:element type="xsd:string" name="gccAccountType"/>
+<xsd:element type="xsd:integer" name="gccSegment1"/>
+<xsd:element type="xsd:integer" name="gccSegment2"/>
+<xsd:element type="xsd:integer" name="gccSegment3"/>
+<xsd:element type="xsd:integer" name="gccSegment4"/>
+<xsd:element type="xsd:integer" name="gccSegment5"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="BuildInvoicesZipRqType">
+<xsd:sequence>
+<xsd:element name="DocumentType" type="xsd:string"/>
+<xsd:element name="InputDm" type="tns:InputDm"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="BuildInvoicesZipRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:annotation>
+<xsd:documentation>Extends BaseRsType (Success and Errors nodes). Contains a node which should be used for the specific response of the corresponding service.</xsd:documentation>
+</xsd:annotation>
+<xsd:sequence>
+<xsd:element name="Return" minOccurs="0" type="tns:BuildInvoicesZipReturnType" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="BuildInvoicesZipReturnType">
+<xsd:sequence>
+<xsd:element name="ListOutPutBuildInvoices" type="tns:BuildInvoicesZipReturn"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="BuildInvoicesZipReturn">
+<xsd:sequence>
+<xsd:element name="ListTrxNumber" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Trx_Number" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="BatchId" type="xsd:string"/>
+<xsd:element name="ListZipFile" maxOccurs="unbounded" minOccurs="0">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ContentBase64" type="xsd:base64Binary"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="ListUniqueBus" maxOccurs="unbounded" minOccurs="0">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="BusinessUnidName" type="xsd:string"/>
+<xsd:element name="OrganizationId" type="xsd:decimal"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="SecondPartOfOutAttributesType">
+<xsd:sequence>
+<xsd:element name="ListTrxNumber" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Trx_Number" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="BatchId" type="xsd:string"/>
+<xsd:element name="ListBu" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Bu" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ListBuType">
+<xsd:sequence>
+<xsd:element name="Return" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Bu" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="FirstDataType">
+<xsd:sequence>
+<xsd:element name="FirstElement"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="DigitalStampRqType">
+<xsd:sequence>
+<xsd:element name="xml" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="DigitalStampRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:annotation>
+<xsd:documentation>Extends BaseRsType (Success and Errors nodes). Contains a node which should be used for the specific response of the corresponding service.</xsd:documentation>
+</xsd:annotation>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="ValidatePaymentComplementsRqType">
+<xsd:sequence/>
+</xsd:complexType>
+<xsd:complexType name="ValidatePaymentComplementsRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="Return" type="tns:ValidatePaymentComplementsReturnType" maxOccurs="1" minOccurs="0"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="ValidatePaymentComplementsReturnType">
+<xsd:sequence>
+<xsd:element name="ValidatedCount" type="xsd:long" maxOccurs="1"/>
+<xsd:element name="ErroredCount" type="xsd:long" maxOccurs="1"/>
+<xsd:element name="NotConnetedCount" type="xsd:long" maxOccurs="1"/>
+<xsd:element name="PaymentComplement" type="tns:PaymentComplementBundleType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ContextInfoType">
+<xsd:sequence>
+<xsd:element name="RetryCount" type="xsd:long" maxOccurs="1" minOccurs="1"/>
+<xsd:element name="LastProcessedIndex" type="xsd:long" maxOccurs="1" minOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="PaymentComplementBundleType">
+<xsd:sequence>
+<xsd:element name="IncPaymentComplementId" type="xsd:long" maxOccurs="1"/>
+<xsd:element name="Uuid" type="xsd:string" maxOccurs="1"/>
+<xsd:element name="Status" maxOccurs="1" type="xsd:string"/>
+<xsd:element name="StatusDesc" maxOccurs="1" type="xsd:string" minOccurs="0"/>
+<xsd:element name="XmlContent" type="xsd:string"/>
+<xsd:element name="Invoice" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="IncPaymentCmpInvoiceId" type="xsd:long" maxOccurs="1"/>
+<xsd:element name="Uuid" type="xsd:string" maxOccurs="1"/>
+<xsd:element name="InvoiceNumber" type="xsd:string" maxOccurs="1"/>
+<xsd:element name="InstallmentNumber" type="xsd:long" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ExtPaymentComplementBundleType">
+<xsd:complexContent>
+<xsd:extension base="tns:PaymentComplementBundleType">
+<xsd:sequence>
+<xsd:element name="PaymentInfo" maxOccurs="1" minOccurs="0" type="tns:PaymentInfoType"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="LogPaymentComplementType">
+<xsd:sequence>
+<xsd:element name="IncPaymentComplementId" type="xsd:long" maxOccurs="1"/>
+<xsd:element name="Status" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+<xsd:element name="StatusDesc" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+<xsd:element name="Invoice" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="IncPaymentCmpInvoiceId" type="xsd:long" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="UploadPaymentComplementsRqType">
+<xsd:sequence>
+<xsd:element name="SuccessCount" type="xsd:long" maxOccurs="1"/>
+<xsd:element name="FailureCount" type="xsd:long" maxOccurs="1"/>
+<xsd:element name="PaymentComplement" type="tns:ExtPaymentComplementBundleType" maxOccurs="unbounded" minOccurs="0"/>
+<xsd:element name="CarriedErrors" type="cmn:ErrorsType" maxOccurs="1" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="UploadPaymentComplementsRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="PaymentInfoType">
+<xsd:sequence>
+<xsd:element name="CheckId" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="CheckNumber" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="NotifyLoadInvoicesRqType">
+<xsd:sequence>
+<xsd:element name="TotalSucceeded" type="xsd:int" minOccurs="0"/>
+<xsd:element name="TotalErrors" type="xsd:int" minOccurs="0"/>
+<xsd:element name="TotalProcessed" type="xsd:int"/>
+<xsd:element name="ErrorsDetails" type="tns:ErrorDetailType" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ErrorDetailType">
+<xsd:sequence>
+<xsd:element name="DataValue" type="xsd:string"/>
+<xsd:element name="ErrorMessage" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ErrorsDetailsType">
+<xsd:sequence>
+<xsd:element name="ErrorDetail" type="tns:ErrorDetailType" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="NotifyLoadInvoicesReturnType">
+<xsd:sequence>
+<xsd:element name="HtmlControl" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="NotifyLoadInvoicesRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="Return" type="tns:NotifyLoadInvoicesReturnType" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="StatusLoadInvoicesRqType">
+<xsd:sequence>
+<xsd:element type="xsd:string" name="STATUS"/>
+<xsd:element type="xsd:string" name="TRX_NUMBER"/>
+<xsd:element type="xsd:string" name="MESSAGE_TEXT"/>
+<xsd:element type="xsd:string" name="INVALID_VALUE"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="StatusLoadInvoicesReturnType">
+<xsd:sequence>
+<xsd:element name="TotalSucceeded" type="xsd:int" minOccurs="0"/>
+<xsd:element name="TotalErrors" type="xsd:int" minOccurs="0"/>
+<xsd:element name="TotalProcessed" type="xsd:int"/>
+<xsd:element name="ErrorsDetails" type="tns:ErrorsDetailsType" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="StatusLoadInvoiceRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="Return" type="tns:StatusLoadInvoicesReturnType" minOccurs="0"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="DocumentDetailsType">
+<xsd:sequence>
+<xsd:element name="Content" nillable="true" type="xsd:base64Binary" minOccurs="0"/>
+<xsd:element name="FileName" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element minOccurs="0" name="ContentType" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="DocumentTitle" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="DocumentAuthor" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="DocumentSecurityGroup" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="DocumentAccount" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="DocumentName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="DocumentId" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ErpObjectDetailsType">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="EntityName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="ContextValue" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="UserKeyA" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="UserKeyB" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="UserKeyC" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="UserKeyD" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="UserKeyE" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="DFFAttributes" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="UpdateUuidRqType">
+<xsd:sequence>
+<xsd:element name="Document" type="erp:DocumentDetailsType"/>
+<xsd:element name="OperationMode" type="xsd:string"/>
+<xsd:element name="Object" type="erp:ErpObjectDetailsType"/>
+<xsd:element name="NotificationCode" type="xsd:string"/>
+<xsd:element name="CallbackUrl" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="UpdateUuidReturnType">
+<xsd:sequence>
+<xsd:element name="TrxNumber" type="xsd:string"/>
+<xsd:element name="UuId" type="xsd:string"/>
+<xsd:element name="Status" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="UpdateUuidRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:annotation>
+<xsd:documentation>Extends BaseRsType (Success and Errors nodes). Contains a node which should be used for the specific response of the corresponding service.</xsd:documentation>
+</xsd:annotation>
+<xsd:sequence>
+<xsd:element name="Return" minOccurs="0" type="tns:UpdateUuidReturnType" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="GetComplementToUpdInvoicesRqType">
+<xsd:sequence>
+<xsd:element name="GetComplementInvoiceList" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="TRX_NUMBER" type="xsd:string" minOccurs="1"/>
+<xsd:element name="STATUS" type="xsd:string" minOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetComplementToUpdInvoicesRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="Return" type="tns:GetComplementToUpdInvoicesRsReturnType" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="GetComplementToUpdInvoicesRsReturnType">
+<xsd:sequence>
+<xsd:element name="GetComplementInvoiceList" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="TRX_NUMBER" type="xsd:string" minOccurs="1"/>
+<xsd:element name="ORG_ID" type="xsd:string" minOccurs="1"/>
+<xsd:element name="UUID" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="P_ERROR" type="xsd:decimal"/>
+<xsd:element name="P_ERROR_DESC" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ResultUpdateUuIdType">
+<xsd:sequence>
+<xsd:element name="ListElements" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="TrxNumber" type="xsd:string"/>
+<xsd:element name="UuId" type="xsd:string"/>
+<xsd:element name="Status" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TotalUuIdsUpdatedType">
+<xsd:sequence>
+<xsd:element name="ResultList">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="TotalSucceeded" type="xsd:integer"/>
+<xsd:element name="TotalErrors" type="xsd:integer"/>
+<xsd:element name="TotalProcessed" type="xsd:integer"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="IntegerHelperType">
+<xsd:sequence>
+<xsd:element name="integerValue" type="xsd:integer"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="UpdateStatusInvoicesRqType">
+<xsd:sequence>
+<xsd:element name="ListElements" minOccurs="1" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="BatchId" type="xsd:string"/>
+<xsd:element name="TransactionNumber" type="xsd:string"/>
+<xsd:element name="Status" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="UpdateStatusInvoicesRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="Return" type="tns:UpdateStatusInvoicesRsReturnType"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="UpdateStatusInvoicesRsReturnType">
+<xsd:sequence>
+<xsd:element name="NumberError" type="xsd:integer" minOccurs="0"/>
+<xsd:element name="ErrorDesc" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TrxNumberType">
+<xsd:sequence>
+<xsd:element name="ListTrxNumber" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Trx_Number" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="BatchId" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

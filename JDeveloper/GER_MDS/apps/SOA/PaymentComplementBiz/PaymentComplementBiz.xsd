@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/PaymentComplementBiz" targetNamespace="http://soa.estrellaroja.com.mx/PaymentComplementBiz" elementFormDefault="qualified" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+<xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+<xsd:element name="StampPaymentComplementRq" type="tns:StampPaymentComplementRqType">
+<xsd:annotation>
+<xsd:documentation>Element for Request.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="StampPaymentComplementRs" type="tns:StampPaymentComplementRsType">
+<xsd:annotation>
+<xsd:documentation>Element for Response.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="HandleMergedStampingRq" type="tns:HandleMergedStampingRqType"/>
+<xsd:element name="HandleMergedStampingRs" type="tns:HandleMergedStampingRsType"/>
+<xsd:element name="CurrentHeader" type="tns:HeaderType"/>
+<xsd:element name="CurrentMergedHeader" type="tns:MergedHeader"/>
+<xsd:element name="RetriableHeaders">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="CurrentHeader" type="tns:HeaderType" maxOccurs="unbounded" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="ContextInfo" type="tns:ContextInfoType"/>
+<xsd:complexType name="StampPaymentComplementRqType">
+<xsd:sequence>
+<xsd:element name="Header" type="tns:HeaderType" maxOccurs="unbounded" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="StampPaymentComplementRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:annotation>
+<xsd:documentation>Extends BaseRsType (Success and Errors nodes). Contains a node which should be used for the specific response of the corresponding service.</xsd:documentation>
+</xsd:annotation>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="HandleMergedStampingRqType">
+<xsd:sequence>
+<xsd:element name="MergedHeader" minOccurs="0" maxOccurs="unbounded" type="tns:MergedHeader"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="HandleMergedStampingRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="HeaderType">
+<xsd:sequence>
+<xsd:element name="CashReceiptId" type="xsd:integer"/>
+<xsd:element name="ReceiptNumber" type="xsd:integer"/>
+<xsd:element name="IssuerRfc" type="xsd:string"/>
+<xsd:element name="IssuerName" type="xsd:string"/>
+<xsd:element name="IssuerZipCode" type="xsd:integer"/>
+<xsd:element name="IssuerStreet" type="xsd:string"/>
+<xsd:element name="IssuerColony" type="xsd:string"/>
+<xsd:element name="IssuerMunicipality" type="xsd:string"/>
+<xsd:element name="IssuerState" type="xsd:string"/>
+<xsd:element name="IssuerCountry" type="xsd:string"/>
+<xsd:element name="InvoiceDate" type="xsd:dateTime"/>
+<xsd:element name="DocumentType" type="xsd:string"/>
+<xsd:element name="AdditionalInformation" type="xsd:string"/>
+<xsd:element name="TotalWords" type="xsd:string"/>
+<xsd:element name="DescriptionItm" type="xsd:string"/>
+<xsd:element name="ProdservkeyItm" type="xsd:integer"/>
+<xsd:element name="QuantityItm" type="xsd:integer"/>
+<xsd:element name="VatPercentageItm" type="xsd:integer"/>
+<xsd:element name="UnitKeyItm" type="xsd:string"/>
+<xsd:element name="AmountItm" type="xsd:integer"/>
+<xsd:element name="SubtotalItm" type="xsd:integer"/>
+<xsd:element name="VatItm" type="xsd:integer"/>
+<xsd:element name="TotalItm" type="xsd:integer"/>
+<xsd:element name="TaxObjectItm" type="xsd:string"/>
+<xsd:element name="TotalVat" type="xsd:integer"/>
+<xsd:element name="Subtotal" type="xsd:integer"/>
+<xsd:element name="Total" type="xsd:integer"/>
+<xsd:element name="Serie" type="xsd:string"/>
+<xsd:element name="BranchName" type="xsd:string"/>
+<xsd:element name="BranchZipCode" type="xsd:integer"/>
+<xsd:element name="ReceiverName" type="xsd:string"/>
+<xsd:element name="ReceiverRfc" type="xsd:string"/>
+<xsd:element name="ReceiverPhone" type="xsd:string"/>
+<xsd:element name="ReceiverAddress" type="xsd:string"/>
+<xsd:element name="ReceiverCounty" type="xsd:string"/>
+<xsd:element name="ReceiverExtNumber" type="xsd:integer"/>
+<xsd:element name="ReceiverIntNumber" type="xsd:string"/>
+<xsd:element name="ReceiverStreet" type="xsd:string"/>
+<xsd:element name="ReceiverMunicipality" type="xsd:string"/>
+<xsd:element name="ReceiverState" type="xsd:string"/>
+<xsd:element name="ReceiverCountry" type="xsd:string"/>
+<xsd:element name="ReceiverColony" type="xsd:string"/>
+<xsd:element name="ReceiverCfdiUse" type="xsd:string"/>
+<xsd:element name="ReceiverTaxRegime" type="xsd:string"/>
+<xsd:element name="ReceiverZipCode" type="xsd:string"/>
+<xsd:element name="Currency" type="xsd:string"/>
+<xsd:element name="IssuerTaxRegime" type="xsd:integer"/>
+<xsd:element name="Comments" type="xsd:string"/>
+<xsd:element name="Service" type="xsd:string"/>
+<xsd:element name="PaymentDatePc" type="xsd:dateTime"/>
+<xsd:element name="PaymentWayPc" type="xsd:integer"/>
+<xsd:element name="CurrencyPc" type="xsd:string"/>
+<xsd:element name="CurrencyExchangePc" type="xsd:integer"/>
+<xsd:element name="AmountPc" type="xsd:float"/>
+<xsd:element name="OperationNumberPc" type="xsd:integer"/>
+<xsd:element name="BankNamePc" type="xsd:string"/>
+<xsd:element name="PayerAccountPc" type="xsd:string"/>
+<xsd:element name="BenAccIssuerRfcPc" type="xsd:string"/>
+<xsd:element name="BeneficiaryAccountPc" type="xsd:string"/>
+<xsd:element name="PaymentStringTypePc" type="xsd:string"/>
+<xsd:element name="PaymentCertPc" type="xsd:string"/>
+<xsd:element name="PaymentStringPc" type="xsd:string"/>
+<xsd:element name="PaymentSealPc" type="xsd:string"/>
+<xsd:element name="VersionPc" type="xsd:integer"/>
+<xsd:element name="CustomerNumber" type="xsd:integer"/>
+<xsd:element name="AccountNumber" type="xsd:integer"/>
+<xsd:element name="SiteNumber" type="xsd:integer"/>
+<xsd:element name="LastUpdateDate" type="xsd:dateTime"/>
+<xsd:element name="LastUpatedby" type="xsd:string"/>
+<xsd:element name="BusinessUnit" type="xsd:string"/>
+<xsd:element name="EstatusCFDI" type="xsd:string"/>
+<xsd:element name="Exportacion" type="xsd:string"/>
+<xsd:element name="ReceiptMethod" type="xsd:string"/>
+<xsd:element name="Lines" type="tns:LineType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MergedHeader">
+<xsd:sequence>
+<xsd:element name="Header" type="tns:HeaderType" maxOccurs="1"/>
+<xsd:element name="Restored" maxOccurs="1" type="xsd:boolean" default="false"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="LineType">
+<xsd:sequence>
+<xsd:element name="CashReceiptId" type="xsd:integer"/>
+<xsd:element name="InvoiceNumber" type="xsd:string"/>
+<xsd:element name="DocumentId" type="xsd:string"/>
+<xsd:element name="Serie" type="xsd:string"/>
+<xsd:element name="Folio" type="xsd:string"/>
+<xsd:element name="Currency" type="xsd:string"/>
+<xsd:element name="CurrencyExchange" type="xsd:integer"/>
+<xsd:element name="PaymentMethod" minOccurs="0" type="xsd:string"/>
+<xsd:element name="PartialityNumber" type="xsd:integer"/>
+<xsd:element name="PreviousBalance" type="xsd:float"/>
+<xsd:element name="PaidAmount" type="xsd:float"/>
+<xsd:element name="OutStandingBalance" type="xsd:float"/>
+<xsd:element name="CustomerTrxLineId" type="xsd:integer"/>
+<xsd:element name="ReceiptNumber" type="xsd:integer"/>
+<xsd:element name="InstallmentNumber" type="xsd:integer"/>
+<xsd:element name="ReceivableApplicationId" type="xsd:integer"/>
+<xsd:element name="TrxNumber" type="xsd:string"/>
+<xsd:element name="Exportacion" type="xsd:string"/>
+<xsd:element name="TaxObject" type="xsd:string"/>
+<xsd:element name="RetainedTaxBase" type="xsd:string"/>
+<xsd:element name="RetainedTax" type="xsd:string"/>
+<xsd:element name="RetainedRateFee" type="xsd:string"/>
+<xsd:element name="RetainedFactorType" type="xsd:string"/>
+<xsd:element name="RetainedAmount" type="xsd:string"/>
+<xsd:element name="TransferredsTaxBase" type="xsd:string"/>
+<xsd:element name="TransferredsTax" type="xsd:string"/>
+<xsd:element name="TransferredsRateFee" type="xsd:string"/>
+<xsd:element name="TransferredsFactorType" type="xsd:string"/>
+<xsd:element name="TransferredsAmount" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ContextInfoType">
+<xsd:sequence>
+<xsd:element name="RetryCount" maxOccurs="1" type="xsd:int"/>
+<xsd:element name="LastProcessedIndex" maxOccurs="1" type="xsd:int"/>
+<xsd:element name="LastError" type="cmn:ErrorType" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="UrlAttachments">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="UrlPDF" type="xsd:string"/>
+<xsd:element name="UrlXML" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="StampData">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="UUID" type="xsd:string"/>
+<xsd:element name="UUIDDate" type="xsd:string" minOccurs="0" nillable="true"/>
+<xsd:element name="UrlXML" type="xsd:string"/>
+<xsd:element name="UrlPDF" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="ControlData">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="SuccessfulRecords" type="xsd:integer"/>
+<xsd:element name="WrongRecords" type="xsd:integer"/>
+<xsd:element name="DetailType" type="tns:DetailType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="DetailErrors">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="DetailType" type="tns:DetailType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="DetailType">
+<xsd:sequence>
+<xsd:element name="ReceiptNumber" type="xsd:integer"/>
+<xsd:element name="ErrorDescription" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

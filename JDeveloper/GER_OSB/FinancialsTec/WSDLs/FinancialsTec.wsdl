@@ -1,0 +1,374 @@
+<wsdl:definitions name="FinancialsTec" targetNamespace="http://soa.estrellaroja.com.mx/FinancialsTec" xmlns:tns="http://soa.estrellaroja.com.mx/FinancialsTec" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://soa.estrellaroja.com.mx/FinancialsTec" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	TYPE DEFINITION - List of services participating in this process.
+        You can define or import any XML Schema type and use them as part of the message types.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/FinancialsTec/types" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://soa.estrellaroja.com.mx/FinancialsTec" schemaLocation="../Schemas/FinancialsTec.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	MESSAGE TYPE DEFINITION - Definition of the message types used as 
+	part of the port type defintions
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!--********************************* BEGIN GetCustomers *********************************-->
+  <wsdl:message name="GetCustomersRq">
+    <wsdl:part name="GetCustomersRq" element="ns0:GetCustomersRq"/>
+  </wsdl:message>
+  <wsdl:message name="GetCustomersRs">
+    <wsdl:part name="GetCustomersRs" element="ns0:GetCustomersRs"/>
+  </wsdl:message>
+  <wsdl:message name="ValidationLinesInvoiceConfigRq">
+    <wsdl:part name="ValidationLinesInvoiceConfigRq" element="ns0:ValidationLinesInvoiceConfigRq"/>
+  </wsdl:message>
+  <wsdl:message name="ValidationLinesInvoiceConfigRs">
+    <wsdl:part name="ValidationLinesInvoiceConfigRs" element="ns0:ValidationLinesInvoiceConfigRs"/>
+  </wsdl:message>
+    <wsdl:message name="GetTransactionsReconcileRq">
+    <wsdl:part name="GetTransactionsReconcileRq" element="ns0:GetTransactionsReconcileRq"/>
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsReconcileRs">
+    <wsdl:part name="GetTransactionsReconcileRs" element="ns0:GetTransactionsReconcileRs"/>
+  </wsdl:message>
+  <wsdl:message name="GetCustomerSitesRq">
+    <wsdl:part name="GetCustomerSitesRq" element="ns0:GetCustomerSitesRq"/>
+  </wsdl:message>
+  <wsdl:message name="GetCustomerSitesRs">
+    <wsdl:part name="GetCustomerSitesRs" element="ns0:GetCustomerSitesRs"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerSitesRq">
+    <wsdl:part name="UpdateCustomerSitesRq" element="ns0:UpdateCustomerSitesRq"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerSitesRs">
+    <wsdl:part name="UpdateCustomerSitesRs" element="ns0:UpdateCustomerSitesRs"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomersRq">
+    <wsdl:part name="UpdateCustomersRq" element="ns0:UpdateCustomersRq"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomersRs">
+    <wsdl:part name="UpdateCustomersRs" element="ns0:UpdateCustomersRs"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateInventoryTransactionsRq">
+    <wsdl:part name="UpdateInventoryTransactionsRq" element="ns0:UpdateInventoryTransactionsRq"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateInventoryTransactionsRs">
+    <wsdl:part name="UpdateInventoryTransactionsRs" element="ns0:UpdateInventoryTransactionsRs"/>
+  </wsdl:message>
+  <wsdl:message name="GetInventoryTransactionsRq">
+    <wsdl:part name="GetInventoryTransactionsRq" element="ns0:GetInventoryTransactionsRq"/>
+  </wsdl:message>
+  <wsdl:message name="GetInventoryTransactionsRs">
+    <wsdl:part name="GetInventoryTransactionsRs" element="ns0:GetInventoryTransactionsRs"/>
+  </wsdl:message>
+  <wsdl:message name="GetJournalTMSRq">
+    <wsdl:part name="GetJournalTMSRq" element="ns0:GetJournalTMSRq"/>
+  </wsdl:message>
+  <wsdl:message name="GetJournalTMSRs">
+    <wsdl:part name="GetJournalTMSRs" element="ns0:GetJournalTMSRs"/>
+  </wsdl:message>
+  <wsdl:message name="GetJournalNERq">
+    <wsdl:part name="GetJournalNERq" element="ns0:GetJournalNERq"/>
+  </wsdl:message>
+  <wsdl:message name="GetJournalNERs">
+    <wsdl:part name="GetJournalNERs" element="ns0:GetJournalNERs"/>
+  </wsdl:message>
+  <wsdl:message name="GetCustomerRFCRq">
+    <wsdl:part name="GetCustomerRFCRq" element="ns0:GetCustomerRFCRq"/>
+  </wsdl:message>
+  <wsdl:message name="GetCustomerRFCRs">
+    <wsdl:part name="GetCustomerRFCRs" element="ns0:GetCustomerRFCRs"/>
+  </wsdl:message>
+  <wsdl:message name="GetReceiptOrInvoicesRq">
+    <wsdl:part name="GetReceiptOrInvoicesRq" element="ns0:GetReceiptOrInvoicesRq"/>
+  </wsdl:message>
+  <wsdl:message name="GetReceiptOrInvoicesRs">
+    <wsdl:part name="GetReceiptOrInvoicesRs" element="ns0:GetReceiptOrInvoicesRs"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateJournalTMSRq">
+    <wsdl:part name="UpdateJournalTMSRq" element="ns0:UpdateJournalTMSRq"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateJournalTMSRs">
+    <wsdl:part name="UpdateJournalTMSRs" element="ns0:UpdateJournalTMSRs"/>
+  </wsdl:message>
+  <wsdl:message name="ProcessedReceiptRq">
+    <wsdl:part name="ProcessedReceiptRq" element="ns0:ProcessedReceiptRq"/>
+  </wsdl:message>
+  <wsdl:message name="ProcessedReceiptRs">
+    <wsdl:part name="ProcessedReceiptRs" element="ns0:ProcessedReceiptRs"/>
+  </wsdl:message>
+  <wsdl:message name="ProcessedApplyReceiptRq">
+    <wsdl:part name="ProcessedApplyReceiptRq" element="ns0:ProcessedApplyReceiptRq"/>
+  </wsdl:message>
+  <wsdl:message name="ProcessedApplyReceiptRs">
+    <wsdl:part name="ProcessedApplyReceiptRs" element="ns0:ProcessedApplyReceiptRs"/>
+  </wsdl:message>
+  <wsdl:message name="GetComplementInvoiceRq">
+    <wsdl:part name="GetComplementInvoiceRqPart" element="tns:GetComplementInvoiceRq"/>
+  </wsdl:message>
+  <wsdl:message name="GetComplementInvoiceRs">
+    <wsdl:part name="GetComplementInvoiceRsPart" element="tns:GetComplementInvoiceRs"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateStatusInvoiceRq">
+    <wsdl:part name="UpdateStatusInvoiceRqPart" element="tns:UpdateStatusInvoiceRq"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateStatusInvoiceRs">
+    <wsdl:part name="UpdateStatusInvoiceRsPart" element="tns:UpdateStatusInvoiceRs"/>
+  </wsdl:message>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	PORT TYPE DEFINITION - A port type groups a set of operations into
+	a logical service unit.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:portType name="FinancialsTecPortType">
+    <!--********************************* BEGIN GetCustomers *********************************-->
+        <wsdl:operation name="ValidationLinesInvoiceConfig">
+      <wsdl:input message="tns:ValidationLinesInvoiceConfigRq"/>
+      <wsdl:output message="tns:ValidationLinesInvoiceConfigRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsReconcile">
+      <wsdl:input message="tns:GetTransactionsReconcileRq"/>
+      <wsdl:output message="tns:GetTransactionsReconcileRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomers">
+      <wsdl:input message="tns:GetCustomersRq"/>
+      <wsdl:output message="tns:GetCustomersRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerSites">
+      <wsdl:input message="tns:GetCustomerSitesRq"/>
+      <wsdl:output message="tns:GetCustomerSitesRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerSites">
+      <wsdl:input message="tns:UpdateCustomerSitesRq"/>
+      <wsdl:output message="tns:UpdateCustomerSitesRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomers">
+      <wsdl:input message="tns:UpdateCustomersRq"/>
+      <wsdl:output message="tns:UpdateCustomersRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInventoryTransactions">
+      <wsdl:input message="tns:UpdateInventoryTransactionsRq"/>
+      <wsdl:output message="tns:UpdateInventoryTransactionsRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN GetInventoryTransactions *********************************-->
+    <wsdl:operation name="GetInventoryTransactions">
+      <wsdl:input message="tns:GetInventoryTransactionsRq"/>
+      <wsdl:output message="tns:GetInventoryTransactionsRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN GetJournalTMS *********************************-->
+    <wsdl:operation name="GetJournalTMS">
+      <wsdl:input message="tns:GetJournalTMSRq"/>
+      <wsdl:output message="tns:GetJournalTMSRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN UpdateJournalTMS *********************************-->
+    <wsdl:operation name="UpdateJournalTMS">
+      <wsdl:input message="tns:UpdateJournalTMSRq"/>
+      <wsdl:output message="tns:UpdateJournalTMSRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN GetJournalNE *********************************-->
+    <wsdl:operation name="GetJournalNE">
+      <wsdl:input message="tns:GetJournalNERq"/>
+      <wsdl:output message="tns:GetJournalNERs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN GetCustomerRFC *********************************-->
+    <wsdl:operation name="GetCustomerRFC">
+      <wsdl:input message="tns:GetCustomerRFCRq"/>
+      <wsdl:output message="tns:GetCustomerRFCRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN ReceiptOrInvoices *********************************-->
+    <wsdl:operation name="GetReceiptOrInvoices">
+      <wsdl:input message="tns:GetReceiptOrInvoicesRq"/>
+      <wsdl:output message="tns:GetReceiptOrInvoicesRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN ProcessedReceipt *********************************-->
+    <wsdl:operation name="ProcessedReceipt">
+      <wsdl:input message="tns:ProcessedReceiptRq"/>
+      <wsdl:output message="tns:ProcessedReceiptRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN UpdateStatusInvoices *********************************-->
+    <!--********************************* BEGIN ProcessedApplyReceipt *********************************-->
+    <wsdl:operation name="ProcessedApplyReceipt">
+      <wsdl:input message="tns:ProcessedApplyReceiptRq"/>
+      <wsdl:output message="tns:ProcessedApplyReceiptRs"/>
+    </wsdl:operation>
+    <!--********************************* BEGIN GetComplementInvoice *********************************-->
+    <wsdl:operation name="GetComplementInvoice">
+      <wsdl:input message="tns:GetComplementInvoiceRq"/>
+      <wsdl:output message="tns:GetComplementInvoiceRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusInvoice">
+      <wsdl:input message="tns:UpdateStatusInvoiceRq"/>
+      <wsdl:output message="tns:UpdateStatusInvoiceRs"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	BINDING OPERATIONS DEFINITION
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:binding name="FinancialsTecBinding" type="tns:FinancialsTecPortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <!--********************************* BEGIN GetCustomers *********************************-->
+        <wsdl:operation name="GetTransactionsReconcile">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialsTec/GetTransactionsReconcile"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="GetTransactionsReconcileRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="GetTransactionsReconcileRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidationLinesInvoiceConfig">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialsTec/ValidationLinesInvoiceConfig"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="ValidationLinesInvoiceConfigRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="ValidationLinesInvoiceConfigRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomers">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialsTec/GetCustomers"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="GetCustomersRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="GetCustomersRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerSites">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialsTec/GetCustomerSites"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="GetCustomerSitesRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="GetCustomerSitesRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerSites">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialsTec/UpdateCustomerSites"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="UpdateCustomerSitesRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="UpdateCustomerSitesRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomers">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialsTec/UpdateCustomers"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="UpdateCustomersRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="UpdateCustomersRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInventoryTransactions">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialsTec/UpdateInventoryTransactions"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="UpdateInventoryTransactionsRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="UpdateInventoryTransactionsRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN GetInventoryTransactions *********************************-->
+    <wsdl:operation name="GetInventoryTransactions">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialsTec/GetInventoryTransactions"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="GetInventoryTransactionsRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="GetInventoryTransactionsRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN GetJournalTMS *********************************-->
+    <wsdl:operation name="GetJournalTMS">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialsTec/GetJournalTMS"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="GetJournalTMSRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="GetJournalTMSRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN UpdateJournalTMS *********************************-->
+    <wsdl:operation name="UpdateJournalTMS">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialsTec/UpdateJournalTMS"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="UpdateJournalTMSRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="UpdateJournalTMSRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN GetJournalNE *********************************-->
+    <wsdl:operation name="GetJournalNE">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialsTec/GetJournalNE"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="GetJournalNERq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="GetJournalNERs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN GetCustomerRFC *********************************-->
+    <wsdl:operation name="GetCustomerRFC">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialsTec/GetCustomerRFC"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="GetCustomerRFCRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="GetCustomerRFCRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN GetReceiptOrInvoices *********************************-->
+    <wsdl:operation name="GetReceiptOrInvoices">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialsTec/GetReceiptOrInvoices"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="GetReceiptOrInvoicesRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="GetReceiptOrInvoicesRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN ProcessedReceipt *********************************-->
+    <wsdl:operation name="ProcessedReceipt">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialsTec/ProcessedReceipt"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="ProcessedReceiptRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="ProcessedReceiptRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN UpdateStatusInvoices *********************************-->
+    <!--********************************* BEGIN ProcessedApplyReceipt *********************************-->
+    <wsdl:operation name="ProcessedApplyReceipt">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialsTec/ProcessedApplyReceipt"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="ProcessedApplyReceiptRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="ProcessedApplyReceiptRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN ProcessedApplyReceipt *********************************-->
+    <wsdl:operation name="GetComplementInvoice">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialsTec/GetComplementInvoice"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="GetComplementInvoiceRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="GetComplementInvoiceRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--********************************* BEGIN UpdateStatusInvoice *********************************-->
+    <wsdl:operation name="UpdateStatusInvoice">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/FinancialsTec/UpdateStatusInvoice"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="UpdateStatusInvoiceRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="UpdateStatusInvoiceRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

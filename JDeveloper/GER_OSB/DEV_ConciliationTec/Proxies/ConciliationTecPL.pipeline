@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="DEV_ConciliationTec/WSDLs/ConciliationTec"/>
+            <con:binding>
+                <con:name>ConciliationTecBinding</con:name>
+                <con:namespace>http://soa.estrellaroja.com.mx/ConciliationTec</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router errorHandler="error-N3f57fca4.e25285a.0.17a22fb8afa.N7f9b">
+        <con:pipeline type="error" name="error-N3f57fca4.e25285a.0.17a22fb8afa.N7d5e" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57fca4.e25285a.0.17a22fb8afa.N7d5d" name="StageErrorHandler">
+                <con:context>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con2:userNsDecl prefix="fin" namespace="http://soa.estrellaroja.com.mx/FinancialsTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config">
+                        <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7d5c</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<fin:ConciliationCashRs> <cmn:Errors> <cmn:Error>
+                               <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+                               <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+                               <cmn:Description>{fn:concat("Unhandled exceptions in operation.",
+                               "ConciliationCash
+                               ",$inbound/ctx:service/ctx:operation,$fault/ctx:details)}</cmn:Description>
+                               <cmn:BusinessProcess>{fn:concat("ConciliationCash",$inbound/ctx:service/ctx:operation)}</cmn:BusinessProcess>
+                               <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage:
+                               ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text(),"
+                               Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+                               <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp> </cmn:Error>
+                               </cmn:Errors> </fin:ConciliationCashRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply>
+                        <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7d5b</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fca4.e25285a.0.17a22fb8afa.N7c68" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57fca4.e25285a.0.17a22fb8afa.N7c67" name="StageRequest">
+                <con:context>
+                    <con2:userNsDecl prefix="fin" namespace="http://soa.estrellaroja.com.mx/FinancialsTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7c66</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_ConciliationTec/Xslt/inputPLConciliationCash_to_inputdbConciliationCash"/>
+                                <con2:input>$body/*[1]</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fca4.e25285a.0.17a22fb8afa.N7c65" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57fca4.e25285a.0.17a22fb8afa.N7c64" name="StageResponse">
+                <con:context>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con2:userNsDecl prefix="fin" namespace="http://soa.estrellaroja.com.mx/FinancialsTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7b88</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>$varResponse</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fca4.e25285a.0.17a22fb8afa.N7f9b">
+            <con:stage id="_StageId-N3f57fca4.e25285a.0.17a22fb8afa.N7f64" name="StageGeneralError" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                <con:context>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config">
+                        <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7f63</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<cmn:Errors> <cmn:Error>
+                               <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+                               <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+                               <cmn:Description>{fn:concat("Unhandled exceptions in proxy.", "ConciliationTec
+                               ",$inbound/ctx:service/ctx:operation,$fault/ctx:details)}</cmn:Description>
+                               <cmn:BusinessProcess>{fn:concat("PipelineConciliationTec",$inbound/ctx:service/ctx:operation)}</cmn:BusinessProcess>
+                               <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage:
+                               ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text(),"
+                               Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+                               <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp> </cmn:Error>
+                               </cmn:Errors>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply>
+                        <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7f62</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fca4.e25285a.0.17a22fb8afa.N7d17" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57fca4.e25285a.0.17a22fb8afa.N7d16" name="StageErrorHandler">
+                <con:context>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con2:userNsDecl prefix="fin" namespace="http://soa.estrellaroja.com.mx/FinancialsTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config">
+                        <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7d15</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<fin:ConciliationTransactionsRs> <cmn:Errors> <cmn:Error>
+                               <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+                               <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+                               <cmn:Description>{fn:concat("Unhandled exceptions in operation.",
+                               "ConciliationTransactions
+                               ",$inbound/ctx:service/ctx:operation,$fault/ctx:details)}</cmn:Description>
+                               <cmn:BusinessProcess>{fn:concat("ConciliationTransactions",$inbound/ctx:service/ctx:operation)}</cmn:BusinessProcess>
+                               <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage:
+                               ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text(),"
+                               Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+                               <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp> </cmn:Error>
+                               </cmn:Errors> </fin:ConciliationTransactionsRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply>
+                        <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7d14</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fca4.e25285a.0.17a22fb8afa.N7da5" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57fca4.e25285a.0.17a22fb8afa.N7da4" name="StageErrorHandler">
+                <con:context>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con2:userNsDecl prefix="fin" namespace="http://soa.estrellaroja.com.mx/FinancialsTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config">
+                        <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7da3</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<fin:GetConciliationsRs> <cmn:Errors> <cmn:Error>
+                               <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+                               <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+                               <cmn:Description>{fn:concat("Unhandled exceptions in operation.",
+                               "GetConciliations
+                               ",$inbound/ctx:service/ctx:operation,$fault/ctx:details)}</cmn:Description>
+                               <cmn:BusinessProcess>{fn:concat("GetConciliations",$inbound/ctx:service/ctx:operation)}</cmn:BusinessProcess>
+                               <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage:
+                               ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text(),"
+                               Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+                               <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp> </cmn:Error>
+                               </cmn:Errors> </fin:GetConciliationsRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply>
+                        <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7da2</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fca4.e25285a.0.17a22fb8afa.N7c26" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57fca4.e25285a.0.17a22fb8afa.N7c25" name="StageResponse">
+                <con:context>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con2:userNsDecl prefix="fin" namespace="http://soa.estrellaroja.com.mx/FinancialsTec"/>
+                    <con2:varNsDecl prefix="con" namespace="http://soa.estrellaroja.com.mx/ConciliationTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7b55</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">$varResponse</con:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fca4.e25285a.0.17a22fb8afa.N7ca7" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57fca4.e25285a.0.17a22fb8afa.N7ca6" name="StageRequest">
+                <con:context>
+                    <con2:userNsDecl prefix="fin" namespace="http://soa.estrellaroja.com.mx/FinancialsTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7ca5</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_ConciliationTec/Xslt/inputPLGetConciliation_to_inputdbGetConciliation"/>
+                                <con2:input>$body/*[1]</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fca4.e25285a.0.17a22fb8afa.N7ca4" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57fca4.e25285a.0.17a22fb8afa.N7ca3" name="StageResponse">
+                <con:context>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con2:userNsDecl prefix="fin" namespace="http://soa.estrellaroja.com.mx/FinancialsTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7ca2</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>$varResponse</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fca4.e25285a.0.17a22fb8afa.N7c29" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57fca4.e25285a.0.17a22fb8afa.N7c28" name="StageRequest">
+                <con:context>
+                    <con2:userNsDecl prefix="fin" namespace="http://soa.estrellaroja.com.mx/FinancialsTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7c27</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_ConciliationTec/Xslt/inputPLConciliationTransactions_to_inputdbConciliationTransactions"/>
+                                <con2:input>$body/*[1]</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57ef30.N15f3d086.0.17b79c3e009.N7f83" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57ef30.N15f3d086.0.17b79c3e009.N7f82" name="StageErrorHandler">
+                <con:context>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con2:userNsDecl prefix="fin" namespace="http://soa.estrellaroja.com.mx/FinancialsTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config">
+                        <con2:id>_ActionId-N3f57ef30.N15f3d086.0.17b79c3e009.N7f81</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<fin:SendConciliationsBankRs xmlns:dig="http://soa.estrellaroja.com.mx/ConciliationTec">
+<fin:Return>
+<cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+<cmn:Error>
+                               <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+                               <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+                               <cmn:Description>{fn:concat("Unhandled exceptions in operation.",
+                               "SendConciliationBank
+                               ",$inbound/ctx:service/ctx:operation,$fault/ctx:details)}</cmn:Description>
+                               <cmn:BusinessProcess>{fn:concat("SendConciliationBank",$inbound/ctx:service/ctx:operation)}</cmn:BusinessProcess>
+                               <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage:
+                               ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text(),"
+                               Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+                               <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp> </cmn:Error>
+                               </cmn:Errors>
+                               </fin:Return>
+                               </fin:SendConciliationsBankRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply>
+                        <con2:id>_ActionId-N3f57ef30.N15f3d086.0.17b79c3e009.N7f80</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57ef30.N15f3d086.0.17b79c3e009.N7f13" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57ef30.N15f3d086.0.17b79c3e009.N7f12" name="StageRequest">
+                <con:context>
+                    <con2:userNsDecl prefix="fin" namespace="http://soa.estrellaroja.com.mx/FinancialsTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57ef30.N15f3d086.0.17b79c3e009.N7f11</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_ConciliationTec/Xslt/inputSendBank_to_dbTMS_BANCOS"/>
+                                <con2:input>$body/*[1]</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57ef30.N15f3d086.0.17b79c3e009.N7f10" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57ef30.N15f3d086.0.17b79c3e009.N7f0f" name="StageResponse">
+                <con:context>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con2:userNsDecl prefix="fin" namespace="http://soa.estrellaroja.com.mx/FinancialsTec"/>
+                    <con2:varNsDecl prefix="con" namespace="http://soa.estrellaroja.com.mx/ConciliationTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con5:id xmlns:con5="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57ef30.N15f3d086.0.17b79c3e009.N7eda</con5:id>
+                        <con2:location>
+                            <con1:xpathText xmlns:con5="http://www.bea.com/wli/sb/stages/config">.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con5:xqueryText xmlns:con5="http://www.bea.com/wli/sb/stages/config">&lt;dig:SendConciliationsBankRs xmlns:dig="http://soa.estrellaroja.com.mx/ConciliationTec">
+    &lt;dig:Return>
+    &lt;cmn:Success xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+    &lt;/dig:Return>
+  &lt;/dig:SendConciliationsBankRs></con5:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fedb.N2374c147.0.17b84fb6359.N7e52" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57fedb.N2374c147.0.17b84fb6359.N7e51" name="StageErrorHandler">
+                <con:context>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con2:userNsDecl prefix="fin" namespace="http://soa.estrellaroja.com.mx/FinancialsTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config">
+                        <con2:id>_ActionId-N3f57fedb.N2374c147.0.17b84fb6359.N7e50</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<fin:SendConciliationsBankAMEXRs xmlns:dig="http://soa.estrellaroja.com.mx/ConciliationTec">
+<fin:Return>
+<cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+<cmn:Error>
+                               <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+                               <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+                               <cmn:Description>{fn:concat("Unhandled exceptions in operation.",
+                               "SendConciliationBankAMEX
+                               ",$inbound/ctx:service/ctx:operation,$fault/ctx:details)}</cmn:Description>
+                               <cmn:BusinessProcess>{fn:concat("SendConciliationBankAMEX",$inbound/ctx:service/ctx:operation)}</cmn:BusinessProcess>
+                               <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage:
+                               ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text(),"
+                               Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+                               <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp> </cmn:Error>
+                               </cmn:Errors>
+                               </fin:Return>
+                               </fin:SendConciliationsBankAMEXRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply>
+                        <con2:id>_ActionId-N3f57fedb.N2374c147.0.17b84fb6359.N7e4f</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fedb.N2374c147.0.17b84fb6359.N7daf" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57fedb.N2374c147.0.17b84fb6359.N7dae" name="StageRequest">
+                <con:context>
+                    <con2:userNsDecl prefix="fin" namespace="http://soa.estrellaroja.com.mx/FinancialsTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57fedb.N2374c147.0.17b84fb6359.N7dad</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_ConciliationTec/Xslt/inputSendBankAmex_to_insertBankAmex"/>
+                                <con2:input>$body/*[1]</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fedb.N2374c147.0.17b84fb6359.N7dac" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57fedb.N2374c147.0.17b84fb6359.N7dab" name="StageResponse">
+                <con:context>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con2:userNsDecl prefix="fin" namespace="http://soa.estrellaroja.com.mx/FinancialsTec"/>
+                    <con2:varNsDecl prefix="con" namespace="http://soa.estrellaroja.com.mx/ConciliationTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con5:id xmlns:con5="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57fedb.N2374c147.0.17b84fb6359.N7daa</con5:id>
+                        <con2:location>
+                            <con1:xpathText xmlns:con5="http://www.bea.com/wli/sb/stages/config">.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con5:xqueryText xmlns:con5="http://www.bea.com/wli/sb/stages/config">&lt;dig:SendConciliationsBankAMEXRs xmlns:dig="http://soa.estrellaroja.com.mx/ConciliationTec">
+    &lt;dig:Return>
+    &lt;cmn:Success xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+    &lt;/dig:Return>
+  &lt;/dig:SendConciliationsBankAMEXRs></con5:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57fca4.e25285a.0.17a22fb8afa.N8000" name="BranchNode1">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="GetConciliations">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair Node1" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                <con:request>request-N3f57fca4.e25285a.0.17a22fb8afa.N7ca7</con:request>
+                                <con:response>response-N3f57fca4.e25285a.0.17a22fb8afa.N7ca4</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteNode1" error-handler="error-N3f57fca4.e25285a.0.17a22fb8afa.N7da5" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                <con:context/>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7da7</con2:id>
+                                        <con3:service ref="DEV_ConciliationTec/Business/dbConciliation" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>GetConciliations</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7da6</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varResponse">
+                                                <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7bf0</con2:id>
+                                                <con1:expr>
+                                                    <con2:xsltTransform>
+                                                        <con2:resource ref="DEV_ConciliationTec/Xslt/outputPLGetConciliation_to_outputdbGetConciliation"/>
+                                                        <con2:input>$body/*[1]</con2:input>
+                                                    </con2:xsltTransform>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ConciliationCash">
+                        <con:operator>equals</con:operator>
+                        <con:value>ConciliationCash</con:value>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair Node2" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                <con:request>request-N3f57fca4.e25285a.0.17a22fb8afa.N7c68</con:request>
+                                <con:response>response-N3f57fca4.e25285a.0.17a22fb8afa.N7c65</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteNode2" error-handler="error-N3f57fca4.e25285a.0.17a22fb8afa.N7d5e" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                <con:context/>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7d60</con2:id>
+                                        <con3:service ref="DEV_ConciliationTec/Business/dbConciliation" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>ConciliationCash</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7d5f</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varResponse">
+                                                <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7bbc</con2:id>
+                                                <con1:expr>
+                                                    <con2:xsltTransform>
+                                                        <con2:resource ref="DEV_ConciliationTec/Xslt/outputPLConciliationCash_to_outputdbConciliationCash"/>
+                                                        <con2:input>$body/*[1]</con2:input>
+                                                    </con2:xsltTransform>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ConciliationTransactions">
+                        <con:operator>equals</con:operator>
+                        <con:value>ConciliationTransactions</con:value>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair Node3" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                <con:request>request-N3f57fca4.e25285a.0.17a22fb8afa.N7c29</con:request>
+                                <con:response>response-N3f57fca4.e25285a.0.17a22fb8afa.N7c26</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteNode3" error-handler="error-N3f57fca4.e25285a.0.17a22fb8afa.N7d17" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                <con:context>
+                                    <con2:varNsDecl prefix="est" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                                    <con2:varNsDecl prefix="con" namespace="http://soa.estrellaroja.com.mx/ConciliationTec"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7d19</con2:id>
+                                        <con3:service ref="DEV_ConciliationTec/Business/dbConciliation" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>ConciliationTransactions</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7d18</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varResponse">
+                                                <con2:id>_ActionId-N3f57fca4.e25285a.0.17a22fb8afa.N7b21</con2:id>
+                                                <con1:expr>
+                                                    <con:xsltTransform xmlns:con="http://www.bea.com/wli/sb/stages/config">
+                                                        <con:resource ref="DEV_ConciliationTec/Xslt/outputPLConciliationTransactions_to_outputdbConciliationTransactions"/>
+                                                        <con:input>$body/*[1]</con:input>
+                                                    </con:xsltTransform>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="SendConciliationBank">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair Node4" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                <con:request>request-N3f57ef30.N15f3d086.0.17b79c3e009.N7f13</con:request>
+                                <con:response>response-N3f57ef30.N15f3d086.0.17b79c3e009.N7f10</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteNode4" error-handler="error-N3f57ef30.N15f3d086.0.17b79c3e009.N7f83" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                <con:context>
+                                    <con2:varNsDecl prefix="est" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                                    <con2:varNsDecl prefix="con" namespace="http://soa.estrellaroja.com.mx/ConciliationTec"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57ef30.N15f3d086.0.17b79c3e009.N7f86</con2:id>
+                                        <con3:service ref="DEV_ConciliationTec/Business/dbTMS_COCILIACION_BANCOS_TBL" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>insert</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57ef30.N15f3d086.0.17b79c3e009.N7f85</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varResponse">
+                                                <con2:id>_ActionId-N3f57ef30.N15f3d086.0.17b79c3e009.N7f84</con2:id>
+                                                <con2:disabled>true</con2:disabled>
+                                                <con1:expr>
+                                                    <con:xsltTransform xmlns:con="http://www.bea.com/wli/sb/stages/config">
+                                                        <con:resource ref="DEV_ConciliationTec/Xslt/outputPLConciliationTransactions_to_outputdbConciliationTransactions"/>
+                                                        <con:input>$body/*[1]</con:input>
+                                                    </con:xsltTransform>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="SendConciliationBankAMEX">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair Node5" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                <con:request>request-N3f57fedb.N2374c147.0.17b84fb6359.N7daf</con:request>
+                                <con:response>response-N3f57fedb.N2374c147.0.17b84fb6359.N7dac</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteNode5" error-handler="error-N3f57fedb.N2374c147.0.17b84fb6359.N7e52" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                <con:context>
+                                    <con2:varNsDecl prefix="est" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                                    <con2:varNsDecl prefix="con" namespace="http://soa.estrellaroja.com.mx/ConciliationTec"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57fedb.N2374c147.0.17b84fb6359.N7e55</con2:id>
+                                        <con3:service ref="DEV_ConciliationTec/Business/dbXXER_BANK_AMEX" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>insert</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57fedb.N2374c147.0.17b84fb6359.N7e54</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varResponse">
+                                                <con2:id>_ActionId-N3f57fedb.N2374c147.0.17b84fb6359.N7e53</con2:id>
+                                                <con2:disabled>true</con2:disabled>
+                                                <con1:expr>
+                                                    <con:xsltTransform xmlns:con="http://www.bea.com/wli/sb/stages/config">
+                                                        <con:resource ref="DEV_ConciliationTec/Xslt/outputPLConciliationTransactions_to_outputdbConciliationTransactions"/>
+                                                        <con:input>$body/*[1]</con:input>
+                                                    </con:xsltTransform>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+        <con:partner-links>
+            <con:partner-link>
+                <con:service ref="DEV_ConciliationTec/dbTMS_COCILIACION_BANCOS_TBL" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+            </con:partner-link>
+        </con:partner-links>
+    </con:router>
+    <aler:alertRules xsi:nil="true" xmlns:aler="http://xmlns.oracle.com/servicebus/monitoring/alert"/>
+</con:pipelineEntry>

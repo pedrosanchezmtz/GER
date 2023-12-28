@@ -1,0 +1,31 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/" sdoJava:package="oracle.apps.scm.commonWorkExecution.workOrderMaterialTransactions.materialTransactionsService" xmlns:sdoJava="commonj.sdo/java" xmlns="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation xmlns:oer="http://xmlns.oracle.com/oer">
+            <name>Material Transaction Message Detail</name>
+            <description>Import Material Transactions</description>
+            <oer:category name="lbo">
+                <value>SCM-SCM : WIE-Common Work Execution :
+                    ORA_WO_MATERIAL_TRANSACTION-Work Order Material Transaction</value>
+            </oer:category>
+            <oer:attributes>
+                <oer:attribute description="The message text in language of batch execution." name="ErrorText"/>
+                <oer:attribute description="The message text in language of batch execution." name="ErrorMessageText"/>
+            </oer:attributes>
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="commonj.sdo/java" schemaLocation="../Commons/sdoJava.xsd"/>
+    <xsd:complexType name="MessageDetail">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>InterfaceErrorId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="ErrorText" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ErrorMessageText" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="messageDetail" type="MessageDetail"/>
+</xsd:schema>

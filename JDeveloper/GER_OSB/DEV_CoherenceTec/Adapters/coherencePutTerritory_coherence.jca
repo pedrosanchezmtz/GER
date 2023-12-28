@@ -1,0 +1,13 @@
+<adapter-config name="coherenceCreateTerritoryCache" adapter="coherence" wsdlLocation="../WSDLs/External/coherencePutTerritory.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/Coherence/ERCache"/>
+  <endpoint-interaction portType="Put_ptt" operation="Put" UICacheItemType="XML">
+    <interaction-spec className="oracle.tip.adapter.coherence.jca.CoherenceInteractionSpec">
+      <property name="TimeToLive" value="0"/>
+      <property name="KeyType" value="java.lang.String"/>
+      <property name="CacheOperation" value="put"/>
+      <property name="CacheName" value="ERCache"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

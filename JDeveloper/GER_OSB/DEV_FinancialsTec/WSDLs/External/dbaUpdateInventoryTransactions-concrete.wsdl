@@ -1,0 +1,12 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaUpdateInventoryTransactions" name="dbaUpdateInventoryTransactions-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="dbaUpdateInventoryTransactions.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaUpdateInventoryTransactions"/>
+    <wsdl:binding name="dbaUpdateInventoryTransactions_ptt-binding" type="dba:dbaUpdateInventoryTransactions_ptt" xmlns:dba="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaUpdateInventoryTransactions">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="dbaUpdateInventoryTransactions">
+            <soap:operation soapAction="dbaUpdateInventoryTransactions"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

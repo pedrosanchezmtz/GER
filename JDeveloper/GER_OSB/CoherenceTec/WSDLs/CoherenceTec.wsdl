@@ -1,0 +1,141 @@
+<wsdl:definitions targetNamespace="http://soa.estrellaroja.com.mx/CoherenceTec" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soa.estrellaroja.com.mx/CoherenceTec" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	TYPE DEFINITION - List of services participating in this process.
+        You can define or import any XML Schema type and use them as part of the message types.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/CoherenceTec/types" elementFormDefault="qualified">
+      <xsd:import namespace="http://soa.estrellaroja.com.mx/CoherenceTec" schemaLocation="../Schemas/CoherenceTec.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	MESSAGE TYPE DEFINITION - Definition of the message types used as 
+	part of the port type defintions
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:message name="CreateOrgsCacheRq">
+    <wsdl:part name="CreateOrgsCacheRq" element="tns:CreateOrgsCacheRq"/>
+  </wsdl:message>
+  <wsdl:message name="CreateOrgsCacheRs">
+    <wsdl:part name="CreateOrgsCacheRs" element="tns:CreateOrgsCacheRs"/>
+  </wsdl:message>
+  <wsdl:message name="GetOrgsCacheRq">
+    <wsdl:part name="GetOrgsCacheRq" element="tns:GetOrgsCacheRq"/>
+  </wsdl:message>
+  <wsdl:message name="GetOrgsCacheRs">
+    <wsdl:part name="GetOrgsCacheRs" element="tns:GetOrgsCacheRs"/>
+  </wsdl:message>
+  <wsdl:message name="GetOrgListRq">
+    <wsdl:part name="GetOrgListRq" element="tns:GetOrgListRq"/>
+  </wsdl:message>
+  <wsdl:message name="GetOrgListRs">
+    <wsdl:part name="GetOrgListRs" element="tns:GetOrgListRs"/>
+  </wsdl:message>
+   <wsdl:message name="DeleteAllOrgsRq">
+    <wsdl:part name="DeleteAllOrgsRq" element="tns:DeleteAllOrgsRq"/>
+  </wsdl:message>
+  <wsdl:message name="DeleteAllOrgsRs">
+    <wsdl:part name="DeleteAllOrgsRs" element="tns:DeleteAllOrgsRs"/>
+  </wsdl:message>
+  <wsdl:message name="CreateTerritoryCacheRq">
+    <wsdl:part name="CreateTerritoryCacheRq" element="tns:CreateTerritoryCacheRq"/>
+  </wsdl:message>
+  <wsdl:message name="CreateTerritoryCacheRs">
+    <wsdl:part name="CreateTerritoryCacheRs" element="tns:CreateTerritoryCacheRs"/>
+  </wsdl:message>
+  <wsdl:message name="GetTerritoryCacheRq">
+    <wsdl:part name="GetTerritoryCacheRq" element="tns:GetTerritoryCacheRq"/>
+  </wsdl:message>
+  <wsdl:message name="GetTerritoryCacheRs">
+    <wsdl:part name="GetTerritoryCacheRs" element="tns:GetTerritoryCacheRs"/>
+  </wsdl:message>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	PORT TYPE DEFINITION - A port type groups a set of operations into
+	a logical service unit.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:portType name="CoherenceTecPortType">
+    <wsdl:operation name="CreateOrgsCache">
+      <wsdl:input message="tns:CreateOrgsCacheRq"/>
+      <wsdl:output message="tns:CreateOrgsCacheRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgsCache">
+      <wsdl:input message="tns:GetOrgsCacheRq"/>
+      <wsdl:output message="tns:GetOrgsCacheRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTerritoryCache">
+      <wsdl:input message="tns:CreateTerritoryCacheRq"/>
+      <wsdl:output message="tns:CreateTerritoryCacheRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetTerritoryCache">
+      <wsdl:input message="tns:GetTerritoryCacheRq"/>
+      <wsdl:output message="tns:GetTerritoryCacheRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgList">
+      <wsdl:input message="tns:GetOrgListRq"/>
+      <wsdl:output message="tns:GetOrgListRs"/>
+    </wsdl:operation>
+     <wsdl:operation name="DeleteAllOrgs">
+      <wsdl:input message="tns:DeleteAllOrgsRq"/>
+      <wsdl:output message="tns:DeleteAllOrgsRs"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	BINDING OPERATIONS DEFINITION
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:binding name="CoherenceTecBinding" type="tns:CoherenceTecPortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CreateOrgsCache">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/CoherenceTec/CreateOrgsCache"/>
+      <wsdl:input>
+        <soap12:body/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgsCache">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/CoherenceTec/GetOrgsCache"/>
+      <wsdl:input>
+        <soap12:body/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTerritoryCache">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/CoherenceTec/CreateTerritoryCache"/>
+      <wsdl:input>
+        <soap12:body/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTerritoryCache">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/CoherenceTec/GetTerritoryCache"/>
+      <wsdl:input>
+        <soap12:body/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgList">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/CoherenceTec/GetOrgList"/>
+      <wsdl:input>
+        <soap12:body/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body/>
+      </wsdl:output>
+    </wsdl:operation>
+     <wsdl:operation name="DeleteAllOrgs">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/CoherenceTec/DeleteAllOrgs"/>
+      <wsdl:input>
+        <soap12:body/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

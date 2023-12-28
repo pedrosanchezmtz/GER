@@ -1,0 +1,11 @@
+<adapter-config name="dbaGetJournalsTMSBs" adapter="db" wsdlLocation="../WSDLs/External/dbaGetJournalsTMSBs.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="ERSEPDB1DS" location="eis/DB/ERSEPDB1"/>
+  <endpoint-interaction portType="dbaGetJournalsTMSBs_ptt" operation="dbaGetJournalsTMSBs">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="SELECT * FROM TABLE(xxer_utilities_pkg.MERGE_JOURNALS_TMS(#psource,                        #pStatus, #pBatchId                      ) )"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

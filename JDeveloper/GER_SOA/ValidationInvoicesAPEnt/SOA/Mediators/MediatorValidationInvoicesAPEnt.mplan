@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Mediator name="MediatorValidationInvoicesAPEnt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.oracle.com/sca/1.0/mediator" wsdlTargetNamespace="http://soa.estrellaroja.com.mx/ValidationInvoicesAPEnt">
+   <operation name="ValidationInvoicesAP" deliveryPolicy="AllOrNothing" priority="4" validateSchema="false">
+      <switch>
+         <case executionType="sequential" name="BPELValidationInvoicesAPEnt.bpelvalidationinvoicesapent_client.ValidationInvoicesAP">
+            <action>
+               <assign>
+                  <copy expression="$in.ValidationInvoicesAPRqPart/tns:ValidationInvoicesAPRq" target="$out.payload/tns:ValidationInvoicesAPRq" xmlns:tns="http://soa.estrellaroja.com.mx/ValidationInvoicesAPEnt"/>
+               </assign>
+               <invoke reference="BPELValidationInvoicesAPEnt.bpelvalidationinvoicesapent_client" operation="ValidationInvoicesAP">
+                  <onReply>
+                     <assign>
+                        <copy expression="$in.payload/ns1:ValidationInvoicesAPRs" target="$out.ValidationInvoicesAPRsPart/ns1:ValidationInvoicesAPRs" xmlns:ns1="http://soa.estrellaroja.com.mx/ValidationInvoicesAPEnt"/>
+                     </assign>
+                     <reply/>
+                  </onReply>
+               </invoke>
+            </action>
+         </case>
+      </switch>
+   </operation>
+</Mediator>

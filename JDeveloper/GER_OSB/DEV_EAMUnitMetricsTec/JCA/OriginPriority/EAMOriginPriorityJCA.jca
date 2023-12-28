@@ -1,0 +1,22 @@
+<adapter-config name="EAMOriginPriority" adapter="db" wsdlLocation="../../WSDL/OriginPriority/EAMOriginPriorityWSDL.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="/DEV/ERSEPDB1" location="eis/DB/DEV/ERSEPDB1"/>
+  <endpoint-interaction portType="EAMOriginPriority_ptt" operation="EAMOriginPriority">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="SELECT ID, ORIGIN, PRIORITY, ASSET_NUMBER 
+FROM XXER_EAM_ORIGIN_PRIORITY_TBL 
+WHERE ASSET_NUMBER IN  
+(
+SELECT 
+SUBSTR (DELIMITED_INPUT_STRING ,
+DECODE(LEVEL, 1, 1, INSTR(DELIMITED_INPUT_STRING, DELIMITER, 1, LEVEL-1)+1) , 
+INSTR(DELIMITED_INPUT_STRING, DELIMITER, 1, LEVEL) - DECODE(LEVEL, 1, 1, INSTR(DELIMITED_INPUT_STRING, DELIMITER, 1, LEVEL-1)+1) )   
+FROM (SELECT #assetNumber || ',' AS DELIMITED_INPUT_STRING , ',' AS DELIMITER FROM DUAL)  CONNECT BY INSTR(DELIMITED_INPUT_STRING, DELIMITER, 1, LEVEL)>0
+) 
+order by priority asc"/>
+      <property name="QueryTimeout" value="10"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

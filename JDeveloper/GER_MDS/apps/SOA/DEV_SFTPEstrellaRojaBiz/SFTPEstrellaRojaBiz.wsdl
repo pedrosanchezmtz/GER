@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="SFTPEstrellaRojaBiz" targetNamespace="http://soa.estrellaroja.com.mx/SFTPEstrellaRojaBiz" xmlns:tns="http://soa.estrellaroja.com.mx/SFTPEstrellaRojaBiz" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://soa.estrellaroja.com.mx/SFTPEstrellaRojaBiz" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.estrellaroja.com.mx/SFTPEstrellaRojaBiz/types" elementFormDefault="qualified">
+<xsd:import namespace="http://soa.estrellaroja.com.mx/SFTPEstrellaRojaBiz" schemaLocation="SFTPEstrellaRojaBiz.xsd"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="GetBankStatementsRq">
+<wsdl:part name="GetBankStatementsRq" element="tns:GetBankStatementsRq"/>
+</wsdl:message>
+<wsdl:message name="GetBankStatementsRs">
+<wsdl:part name="GetBankStatementsRs" element="tns:GetBankStatementsRs"/>
+</wsdl:message>
+<wsdl:portType name="SFTPEstrellaRojaBizPortType">
+<wsdl:operation name="GetBankStatements">
+<wsdl:input message="tns:GetBankStatementsRq"/>
+<wsdl:output message="tns:GetBankStatementsRs"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="SFTPEstrellaRojaBizBinding" type="tns:SFTPEstrellaRojaBizPortType">
+<soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="GetBankStatements">
+<soap12:operation soapAction="http://soa.estrellaroja.com.mx/SFTPEstrellaRojaBiz/GetBankStatements" soapActionRequired="false"/>
+<wsdl:input>
+<soap12:body use="literal" parts="GetBankStatementsRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal" parts="GetBankStatementsRs"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="SFTPEstrellaRojaBiz">
+<wsdl:port name="SFTPEstrellaRojaBizPort" binding="tns:SFTPEstrellaRojaBizBinding">
+<soap12:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/DEV/SFTPEstrellaRojaBiz/SFTPEstrellaRojaBiz"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

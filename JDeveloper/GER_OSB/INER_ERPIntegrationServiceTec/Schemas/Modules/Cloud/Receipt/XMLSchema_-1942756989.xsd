@@ -1,0 +1,31 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/flex/financials/receivables/receipts/shared/standardReceiptService/commonService/ApplyOnAccountGdf/" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns="http://xmlns.oracle.com/apps/flex/financials/receivables/receipts/shared/standardReceiptService/commonService/ApplyOnAccountGdf/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="XMLSchema_469750432.xsd"/>
+    <xsd:include schemaLocation="XMLSchema_595088285.xsd"/>
+    <xsd:complexType name="ReceivableApplicationGdfJL_5FBR_5FARXRWMAI_5FAdditional">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>ReceivableApplicationId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ReceivableApplicationGdf">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="_Main__Amount__Received" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="_Base__Interest__Calculation" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_Calculated__Interest" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="_Received__Interest" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="_Interest__Difference__Action" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_Write__Off__Reason" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_Interest__Payment__Date" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="_Write_2DOff__Date" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="_Calculated__Interest__Tmp" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="_Received__Interest__Tmp" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="_Interest__Payment__Date__Tmp" nillable="true" type="ns0:date-Date"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="receivableApplicationGdfJL_5FBR_5FARXRWMAI_5FAdditional" type="ReceivableApplicationGdfJL_5FBR_5FARXRWMAI_5FAdditional"/>
+</xsd:schema>

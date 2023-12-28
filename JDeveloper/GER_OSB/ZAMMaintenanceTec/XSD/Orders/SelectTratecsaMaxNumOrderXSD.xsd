@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/SelectTratecsaMaxNumOrder" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/SelectTratecsaMaxNumOrder" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="SelectTratecsaMaxNumOrderInput" type="SelectTratecsaMaxNumOrderInput"/>
+   <xs:complexType name="SelectTratecsaMaxNumOrderInput">
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:element name="SelectTratecsaMaxNumOrderOutput" type="SelectTratecsaMaxNumOrderOutput"/>
+   <xs:complexType name="SelectTratecsaMaxNumOrderOutput">
+      <xs:sequence>
+         <xs:element name="MAX_ID_ORDEN_" type="xs:decimal" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

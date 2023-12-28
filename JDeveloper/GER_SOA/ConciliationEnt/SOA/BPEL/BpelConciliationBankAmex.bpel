@@ -1,0 +1,263 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Wed Aug 25 22:45:17 CDT 2021
+  Author:  PedroSánchezMartínez
+  Type: BPEL 2.0 Process
+  Purpose: One Way BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="BpelConciliationBankAmex"
+               targetNamespace="http://soa.estrellaroja.com.mx/ConciliationEnt/BpelConciliationBankAmex"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://soa.estrellaroja.com.mx/ConciliationEnt/BpelConciliationBankAmex"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:ui="http://xmlns.oracle.com/soa/designer"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://soa.estrellaroja.com.mx/SOAUtilitiesTec"
+         xmlns:ns2="http://soa.estrellaroja.com.mx/MessageTec"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+         xmlns:ns3="http://soa.estrellaroja.com.mx/ConciliationEnt/NXSDBankAmexPayments"
+         xmlns:ns4="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"
+         xmlns:ns5="http://soa.estrellaroja.com.mx/ConciliationEnt"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ns6="http://soa.estrellaroja.com.mx/ConciliationTec" xmlns:ns7="http://soa.estrellaroja.com.mx/SftpTec">
+
+<import namespace="http://soa.estrellaroja.com.mx/ConciliationEnt/NXSDBankAmexPayments"
+          location="../Schemas/nxsd_paymentsAmex.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
+                 <import location="oracle.xml.parser.v2.XMLElement" importType="http://schemas.oracle.com/bpel/extension/java"/>
+
+  <import ui:processWSDL="true" namespace="http://soa.estrellaroja.com.mx/ConciliationEnt/BpelConciliationBankAmex" location="../WSDLs/BpelConciliationBankAmex.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      PARTNERLINKS                                                      
+      List of services participating in this BPEL process               
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  --> 
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="bpelconciliationbankamex_client" partnerLinkType="client:BpelConciliationBankAmex" myRole="BpelConciliationBankAmexProvider"/>
+    <partnerLink name="SOAUtilitiesTec" partnerLinkType="ns1:SOAUtilitiesTec" partnerRole="SOAUtilitiesTecPortType"/>
+    <partnerLink name="MessageTec" partnerLinkType="ns2:MessageTec" partnerRole="MessageTecPortType"
+                 myRole="MessageTecPortType"/>
+    <partnerLink name="ConciliationTec" partnerLinkType="ns6:ConciliationTec" partnerRole="ConciliationTecPortType"/>
+    <partnerLink name="SftpTec" partnerLinkType="ns7:SftpTec" partnerRole="SftpTec_ptt"/>
+  </partnerLinks>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="client:BpelConciliationBankAmexRequestMessage"/>
+    <variable name="WsMessage_SendEmailRq" messageType="ns2:MessageRq"/>
+    <variable name="v_FileString" type="xsd:string"/>
+    <variable name="WsSftpTecPutFileERRq" messageType="ns7:PutFileERRqM"/>
+    <variable name="WsSftpTecPutFileERRs" messageType="ns7:PutFileERRsM"/>
+    <variable name="v_fileName" type="xsd:string"/>
+  </variables>
+  <faultHandlers>
+    <catchAll><scope name="ScopeNotification" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <variables>
+         <variable name="WsSOAUtilitiesGetHtmlControlRq" messageType="ns1:GetHtmlControlRq"/>
+         <variable name="WsSOAUtilitiesGetHtmlControlRs" messageType="ns1:GetHtmlControlRs"/>
+         <variable name="WsMessage_SendEmailRq" messageType="ns2:MessageRq"/>
+      </variables>
+      <sequence name="SeqNotification"><assign name="AssignPutError"
+                                               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+            <copy>
+              <from>$v_fileName</from>
+              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSftpTecPutFileERRq.payload/ns7:FileName</to>
+            </copy>
+            <copy>
+              <from>concat(dvm:lookupValue("DVM/dvmConciliationEnt.dvm","Code","DirName","Value","","Component","BancoAmex"),'/ERRORS/')</from>
+              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSftpTecPutFileERRq.payload/ns7:DirName</to>
+            </copy>
+            <copy>
+              <from>$inputVariable.payload/ns5:FileB64</from>
+              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSftpTecPutFileERRq.payload/ns7:FileB64</to>
+            </copy>
+          </assign>
+          <invoke name="WsSftpTec" partnerLink="SftpTec" portType="ns7:SftpTec_ptt" operation="PutFileER"
+                  inputVariable="WsSftpTecPutFileERRq" outputVariable="WsSftpTecPutFileERRs"
+                  xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                  xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable" bpelx:invokeAsDetail="no"/>
+          <assign name="AssignErrorMsg">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+         <copy>
+               <from>0</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns1:TotalSucceeded</to>
+            </copy><copy>
+               <from>1</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns1:TotalErrors</to>
+            </copy><copy>
+               <from>1</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns1:TotalProcessed</to>
+            </copy><copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+               <from>ora:getCompositeName()</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns1:ErrorsDetails/ns1:ErrorDetail[1]/ns1:ErrorMessage</to>
+            </copy><copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+               <from>'Integraticion:'</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns1:ErrorsDetails/ns1:ErrorDetail[1]/ns1:DataValue</to>
+            </copy><copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+               <from>'Intancia: '</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns1:ErrorsDetails/ns1:ErrorDetail[2]/ns1:DataValue</to>
+            </copy><copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+               <from>ora:getFlowId()</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns1:ErrorsDetails/ns1:ErrorDetail[2]/ns1:ErrorMessage</to>
+            </copy><copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+               <from>'Detalle Error: '</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns1:ErrorsDetails/ns1:ErrorDetail[4]/ns1:DataValue</to>
+            </copy><copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+               <from>ora:getFaultAsString()</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns1:ErrorsDetails/ns1:ErrorDetail[4]/ns1:ErrorMessage</to>
+            </copy><copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+               <from>ora:getFaultName()</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns1:ErrorsDetails/ns1:ErrorDetail[3]/ns1:ErrorMessage</to>
+            </copy><copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+               <from>'Nombre Error: '</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns1:ErrorsDetails/ns1:ErrorDetail[3]/ns1:DataValue</to>
+            </copy></assign>
+         <invoke name="WsSOAUtilities" partnerLink="SOAUtilitiesTec" portType="ns1:SOAUtilitiesTecPortType"
+                 inputVariable="WsSOAUtilitiesGetHtmlControlRq" outputVariable="WsSOAUtilitiesGetHtmlControlRs"
+                 xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                 operation="GetHtmlControl" bpelx:invokeAsDetail="no"/><assign name="assignHtmlResult"
+                                                                               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+            
+            
+         <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+               <from>"Conciliation"</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsMessage_SendEmailRq.CustomHeader/ns2:IntegrationName</to>
+            </copy><copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                         xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+               <from>$WsSOAUtilitiesGetHtmlControlRs.GetHtmlControlRs/ns1:Return/ns1:HtmlControl</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsMessage_SendEmailRq.MessageRq/ns2:Message/ns2:Message</to>
+            </copy></assign>
+         
+         <invoke name="WsMessage" partnerLink="MessageTec" portType="ns2:MessageTecPortType" operation="SendEmail"
+                 inputVariable="WsMessage_SendEmailRq" xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                 bpelx:invokeAsDetail="no"/>
+      </sequence>
+   </scope></catchAll>
+  </faultHandlers>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in BpelConciliationBankAmex.wsdl) --><receive name="receiveInput" partnerLink="bpelconciliationbankamex_client" portType="client:BpelConciliationBankAmex" operation="process" variable="inputVariable" createInstance="yes">
+      <bpelx:fromProperties>
+        <bpelx:fromProperty name="jca.ftp.FileName" variable="v_fileName"/>
+      </bpelx:fromProperties>
+    </receive>
+    <scope name="ScopeSendBank" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <variables>
+         <variable name="v_NXSDPayments" element="ns3:PaymentsAmex"/>
+         <variable name="v_FileString" type="xsd:string"/>
+        <variable name="WsConciliationTecSendConciliationBankAMEXRq" messageType="ns6:SendConciliationBankAMEXRq"/>
+        <variable name="WsConciliationTecSendConciliationBankAMEXRs" messageType="ns6:SendConciliationBankAMEXRs"/>
+      </variables>
+      <sequence name="SeqSendBank"><extensionActivity>
+            <bpelx:exec name="Java_decode" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+            <![CDATA[addAuditTrailEntry("Base64decode started");                                                     
+try {                                 
+XMLElement input = (XMLElement) getVariableData("inputVariable","payload","ns5:FileB64");                                                     
+String input_str = input.getTextContent();                                                     
+addAuditTrailEntry("Base64decode input_str="+input_str);                                                     
+oracle.soa.common.util.Base64Decoder decoder = new oracle.soa.common.util.Base64Decoder();                                                         
+String decoded = null;                                                        
+decoded = decoder.decode(input_str);                                             
+                                                                                                             
+addAuditTrailEntry("Base64decode decoded="+decoded);                                                     
+setVariableData("v_FileString",decoded);                                                     
+} catch (Exception e) {                                                     
+  addAuditTrailEntry("Base64decode Exception: "+e.getMessage());                                                     
+}                                                     
+addAuditTrailEntry("Base64decode ended");]]>
+          </bpelx:exec>
+         </extensionActivity>
+         <assign name="Trs_StringFileToXMLPayments">
+            <bpelx:annotation xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+               <bpelx:pattern>translate</bpelx:pattern>
+            </bpelx:annotation>
+          <copy>
+            <from>ora:doTranslateFromNative(string($v_FileString), 'Schemas/nxsd_paymentsAmex.xsd', 'PaymentsAmex', 'DOM')</from>
+            <to>$v_NXSDPayments</to>
+          </copy>
+        </assign>
+        <assign name="Trs_SendConciliationBankAMEXRq">
+          <bpelx:annotation>
+            <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+          </bpelx:annotation>
+          <copy>
+            <from>ora:doXSLTransformForDoc("../Transformations/Trs_sendConciliationBankAMEXRq.xsl", $v_NXSDPayments)</from>
+            <to variable="WsConciliationTecSendConciliationBankAMEXRq" part="SendConciliationBankAMEXRq"/>
+          </copy>
+        </assign>
+        <invoke name="WsConciliationTec" partnerLink="ConciliationTec"
+                portType="ns6:ConciliationTecPortType" operation="SendConciliationBankAMEX"
+                inputVariable="WsConciliationTecSendConciliationBankAMEXRq"
+                outputVariable="WsConciliationTecSendConciliationBankAMEXRs" bpelx:invokeAsDetail="no"/>
+        <if name="If_Error" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <documentation>
+            <![CDATA[ErrorConciliationTec]]>
+          </documentation>
+      <condition>count($WsConciliationTecSendConciliationBankAMEXRs.SendConciliationBankAMEXRs/ns6:Return/ns4:Errors/ns4:Error)&gt;0</condition>
+      <throw name="Throw" faultName="bpelx:remoteFault"/>
+   </if>
+      </sequence>
+   </scope>
+    <assign name="AssignPutSuccess" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <copy>
+        <from>$v_fileName</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSftpTecPutFileERRq.payload/ns7:FileName</to>
+      </copy>
+      <copy>
+        <from>concat(dvm:lookupValue("DVM/dvmConciliationEnt.dvm","Code","DirName","Value","","Component","BancoAmex"),'/SUCCESS/')</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSftpTecPutFileERRq.payload/ns7:DirName</to>
+      </copy>
+      <copy>
+        <from>$inputVariable.payload/ns5:FileB64</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSftpTecPutFileERRq.payload/ns7:FileB64</to>
+      </copy>
+    </assign>
+    <invoke name="WsSftpTec" partnerLink="SftpTec" portType="ns7:SftpTec_ptt" operation="PutFileER"
+            inputVariable="WsSftpTecPutFileERRq" outputVariable="WsSftpTecPutFileERRs"
+            xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+            xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable" bpelx:invokeAsDetail="no"/>
+  </sequence>
+</process>

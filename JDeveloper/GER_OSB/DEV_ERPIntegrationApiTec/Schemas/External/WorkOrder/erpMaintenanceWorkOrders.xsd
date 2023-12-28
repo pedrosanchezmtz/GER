@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/erpMaintenanceWorkOrders"
+            targetNamespace="http://soa.estrellaroja.com.mx/erpMaintenanceWorkOrders" elementFormDefault="qualified">
+
+  <xsd:element name="updateFlexMaintenanceWORq" type="FlexMaintenanceWOType"/>
+  <xsd:element name="updateFlexMaintenanceWORs" type="FlexMaintenanceWOType"/>
+  
+  
+    <xsd:complexType name="LinksType">
+    <xsd:sequence>
+      <xsd:element name="href" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="kind" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="name" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="properties" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="changeIndicator" type="xsd:string" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rel" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FlexMaintenanceWOType">
+    <xsd:sequence>
+        <xsd:element name="Reclasificacion" type="xsd:string" minOccurs="0"/>
+        <xsd:element type="xsd:long" name="WorkOrderId" minOccurs="0"/>
+        <xsd:element type="xsd:string" name="centroDeCosto" minOccurs="0"/>
+        <xsd:element type="xsd:string" name="comentarios" minOccurs="0"/>
+        <xsd:element type="xsd:byte" name="estatusZam" minOccurs="0"/>
+        <xsd:element type="xsd:dateTime" name="fechaCompromiso" minOccurs="0"/>
+        <xsd:element name="ingreso" type="xsd:string" minOccurs="0"/>
+        <xsd:element type="xsd:float" name="lectura" minOccurs="0"/>
+        <xsd:element type="xsd:dateTime" name="nuevaFechaCompromiso" minOccurs="0"/>
+        <xsd:element name="numeroDeAccidente" type="xsd:string" minOccurs="0"/>
+        <xsd:element name="numeroDeSolicitudDeMantenimien" type="xsd:string" minOccurs="0"/>
+        <xsd:element name="observaciones" type="xsd:string" minOccurs="0"/>
+        <xsd:element type="xsd:short" name="operador" minOccurs="0"/>
+        <xsd:element name="ordenFacturada" type="xsd:string" minOccurs="0"/>
+        <xsd:element name="ordenPrimariaOSecundaria" type="xsd:string" minOccurs="0"/>
+        <xsd:element name="pasajeros" type="xsd:string" minOccurs="0"/>
+        <xsd:element name="reparacionRealizada" type="xsd:string" minOccurs="0"/>
+        <xsd:element type="xsd:string" name="responsabilidadTirado" minOccurs="0"/>
+        <xsd:element type="xsd:string" name="responsable" minOccurs="0"/>
+        <xsd:element name="seMandoGrua" type="xsd:string" minOccurs="0"/>
+        <xsd:element type="xsd:string" name="tallerDeServicio" minOccurs="0"/>
+      <xsd:element name="links" type="LinksType" maxOccurs="unbounded" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="QueryParametersType">
+    <xsd:sequence>
+      <xsd:element name="finder" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="fields" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="expand" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="dependency" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="onlyData" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="limit" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="offset" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="orderBy" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="q" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="totalResults" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="links" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseAPIType">
+    <xsd:sequence>
+      <xsd:element name="count" type="xsd:integer" minOccurs="0"  />
+      <xsd:element name="hasMore" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="limit" type="xsd:integer" minOccurs="0"/>
+      <xsd:element name="links" type="LinksType" maxOccurs="unbounded" minOccurs="0"/>
+      <xsd:element name="offset" type="xsd:integer" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

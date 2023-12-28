@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>GER_OSB</groupId>
+    <artifactId>GER_OSB</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>System</module>
+        <module>ZAMMaintenanceTec</module>
+        <module>AuditControlTec</module>
+        <module>DEV_FinancialsTec</module>
+        <module>DEV_ERPIntegrationServiceTec</module>
+        <module>DEV_CatalogsTec</module>
+        <module>UtilityTec</module>
+        <module>INERDEV_DigitalStampTec</module>
+        <module>ERPIntegrationServiceTec</module>
+        <module>DEV_ZAMMaintenanceTec</module>
+        <module>INER_ValidacionAutomaticTec</module>
+        <module>INERDEV_ERPIntegrationServiceTec</module>
+        <module>DEV_CoherenceTec</module>
+        <module>INERDEV_FinancialsTec</module>
+        <module>INER_FinancialsTec</module>
+        <module>EAMUnitMetricsTec</module>
+        <module>INER_AuditControlTec</module>
+        <module>DEV_ERPUnitMetricsTec</module>
+        <module>DEV_EAMUnitMetricsTec</module>
+        <module>INER_ERPIntegrationServiceTec</module>
+        <module>DEV_DigitalStampTec</module>
+        <module>DEV_ConciliationTec</module>
+        <module>ERPUnitMetricsTec</module>
+        <module>INERDEV_AuditControlTec</module>
+        <module>SBProject</module>
+        <module>DEV_EAMWorkOrdersTec</module>
+        <module>FinancialsTec</module>
+        <module>APIUnitMetricsTec</module>
+        <module>CustomerEnt</module>
+        <module>ZamDbTec</module>
+        <module>DEV_AuditControlTec</module>
+        <module>CoherenceTec</module>
+        <module>DigitalStampTec</module>
+        <module>ConciliationTec</module>
+        <module>EAMWorkOrdersTec</module>
+        <module>INERDEV_ValidacionAutomaticTec</module>
+        <module>DEV_SftpTec</module>
+        <module>DigitalStampGERTec</module>
+        <module>DEV_LetterPorteTec</module>
+        <module>INER_DigitalStampTec</module>
+        <module>DEV_APIUnitMetricsTec</module>
+        <module>DEV_DigitalStampGERTec</module>
+        <module>ReportsSOA</module>
+        <module>SftpTec</module>
+        <module>DEV_UtilityTec</module>
+        <module>LetterPorteTec</module>
+        <module>DEV_ReportsSOA</module>
+        <module>SCMWorkOrdersTec</module>
+        <module>DEV_CustomerEnt</module>
+        <module>DEV_BanxicoTec</module>
+        <module>BanxicoTec</module>
+        <module>DEV_SCMWorkOrdersTec</module>
+        <module>PlanEmbarquesEnt</module>
+        <module>CatalogsTec</module>
+        <module>ERPIntegrationApiTec</module>
+        <module>DEV_ERPIntegrationApiTec</module>
+    </modules>
+
+</project>

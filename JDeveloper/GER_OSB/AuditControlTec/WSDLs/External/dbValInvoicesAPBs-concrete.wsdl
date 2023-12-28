@@ -1,0 +1,15 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/AuditControlTec/dbValInvoicesAPBs" name="dbValInvoicesAPBs-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="dbValInvoicesAPBs.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/AuditControlTec/dbValInvoicesAPBs"/>
+    <wsdl:binding name="dbValInvoicesAPBs_ptt-binding" type="dbv:dbValInvoicesAPBs_ptt" xmlns:dbv="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/AuditControlTec/dbValInvoicesAPBs">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="dbValInvoicesAPBsSelect">
+            <soap:operation soapAction="dbValInvoicesAPBsSelect"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

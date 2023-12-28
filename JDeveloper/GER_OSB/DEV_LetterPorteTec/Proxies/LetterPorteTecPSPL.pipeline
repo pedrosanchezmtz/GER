@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="DEV_LetterPorteTec/WSDLs/LetterPorteTec"/>
+            <con:binding>
+                <con:name>LetterPorteTec_bind</con:name>
+                <con:namespace>http://soa.estrellaroja.com.mx/LetterPorteTec</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router errorHandler="error-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7f57">
+        <con:pipeline type="request" name="request-N3f57fc7e.N2d6e1daa.0.17d5f193083.N8000">
+            <con:stage id="_StageId-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7ffe" name="StageRequet">
+                <con:context>
+                    <con1:userNsDecl prefix="typ" namespace="http://soa.estrellaroja.com.mx/LetterPorteTec/Types" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace contents-only="true" varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7fc2</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">&lt;InputParameters xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/sp/dbGetRelationsCFDIs">
+&lt;P_TRANSACTION>{$body/typ:GetRelationsCFDIsRq/typ:TransactionNumber/text()}&lt;/P_TRANSACTION>
+&lt;/InputParameters></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7fff">
+            <con:stage id="_StageId-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7ffd" name="StageResponse">
+                <con:context>
+                    <con1:userNsDecl prefix="typ" namespace="http://soa.estrellaroja.com.mx/LetterPorteTec/Types" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace contents-only="true" varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7ffa</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xsltTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="DEV_LetterPorteTec/XSLs/DbgetRelationsCFDIsToGetRelationsCFDIsRs"/>
+                                <con2:input>$body/*[1]</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7f57">
+            <con:stage id="_StageId-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7eed" name="StageGeneralError" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                <con:context>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config">
+                        <con2:id>_ActionId-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7eec</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<cmn:Errors> <cmn:Error>
+                               <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+                               <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+                               <cmn:Description>{fn:concat("Unhandled exceptions in proxy.", "LetterPorteTec
+                               ",$inbound/ctx:service/ctx:operation,$fault/ctx:details)}</cmn:Description>
+                               <cmn:BusinessProcess>{fn:concat("PipelineLetterPorteTec",$inbound/ctx:service/ctx:operation)}</cmn:BusinessProcess>
+                               <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage:
+                               ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text(),"
+                               Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+                               <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp> </cmn:Error>
+                               </cmn:Errors>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply>
+                        <con2:id>_ActionId-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7eeb</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7df3">
+            <con:stage id="_StageId-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7dbc" name="StageErrorHandler" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                <con:context>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con2:userNsDecl prefix="fin" namespace="http://soa.estrellaroja.com.mx/LetterPorteTec/Types"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7dbb</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<fin:GetRelationsCFDIsRs> 
+<cmn:Errors>
+    <cmn:Error>
+       <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+       <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+       <cmn:Description>{fn:concat("Error when invoking
+       GetRelationsCFDIs",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+       <cmn:BusinessProcess>ProcessedReceipt</cmn:BusinessProcess>
+       <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage:
+       ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text(),"
+       Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+       <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp> 
+    </cmn:Error>
+</cmn:Errors> 
+</fin:GetRelationsCFDIsRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply>
+                        <con2:id>_ActionId-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7dba</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7fc1" name="BranchNode1">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="GetRelationsCFDIs">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair Node1">
+                                <con:request>request-N3f57fc7e.N2d6e1daa.0.17d5f193083.N8000</con:request>
+                                <con:response>response-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7fff</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteNode1" error-handler="error-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7df3">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
+                                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57fc7e.N2d6e1daa.0.17d5f193083.N7ff6</con2:id>
+                                        <con1:service ref="DEV_LetterPorteTec/Business/dbGetRelationsCFDIs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con1:operation>dbGetRelationsCFDIs</con1:operation>
+                                        <con1:outboundTransform/>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

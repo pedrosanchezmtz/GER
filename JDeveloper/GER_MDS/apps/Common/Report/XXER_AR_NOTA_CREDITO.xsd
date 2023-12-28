@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/Reports/XXER_AR_NOTA_CREDITO" targetNamespace="http://soa.estrellaroja.com.mx/Reports/XXER_AR_NOTA_CREDITO" elementFormDefault="qualified">
+<xsd:element name="DATA_DS">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="G_2" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="CUSTOMER_TRX_ID" type="xsd:integer"/>
+<xsd:element name="TRX_DATE" type="xsd:dateTime"/>
+<xsd:element name="METODO_RECIBO" type="xsd:string"/>
+<xsd:element name="REFERENCE_PAYMENT" type="xsd:string"/>
+<xsd:element name="NUMERO_DOCUMENTO" type="xsd:integer"/>
+<xsd:element name="TOTAL" type="xsd:float"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>

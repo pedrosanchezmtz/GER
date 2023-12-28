@@ -1,0 +1,69 @@
+<wsdl:definitions name="ERPIntegrationApiTec" targetNamespace="http://soa.estrellaroja.com.mx/ERPIntegrationApiTec" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/ERPIntegrationApiTec" xmlns:inp1="http://soa.estrellaroja.com.mx/ERPIntegrationApiTec" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/ERPIntegrationApiTec/types" elementFormDefault="qualified">
+      <xsd:import namespace="http://soa.estrellaroja.com.mx/ERPIntegrationApiTec" schemaLocation="../Schemas/ERPIntegrationApiTec.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="updateFlexMaintenanceWORqMessage">
+    <wsdl:part name="request" element="inp1:UpdateFlexMaintenanceWORq"/>
+  </wsdl:message>
+  <wsdl:message name="updateFlexMaintenanceWORsMessage">
+    <wsdl:part name="reply" element="inp1:UpdateFlexMaintenanceWORs"/>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceInstallmentsAP_inputMessage">
+    <wsdl:part name="request" element="inp1:GetInvoiceInstallmentsAPRq"/>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceInstallmentsAP_outputMessage">
+    <wsdl:part name="reply" element="inp1:GetInvoiceInstallmentsAPRs"/>
+  </wsdl:message>
+  <wsdl:message name="updateInvoiceInstallmentAP_inputMessage">
+    <wsdl:part name="request" element="inp1:UpdateInvoiceInstallmentsAPRq"/>
+  </wsdl:message>
+  <wsdl:message name="updateInvoiceInstallmentAP_outputMessage">
+    <wsdl:part name="reply" element="inp1:UpdateInvoiceInstallmentsAPRs"/>
+  </wsdl:message>
+  <wsdl:portType name="ERPIntegrationApiTecPortType">
+    <wsdl:operation name="UpdateFlexMaintenanceWO">
+      <wsdl:input message="tns:updateFlexMaintenanceWORqMessage"/>
+      <wsdl:output message="tns:updateFlexMaintenanceWORsMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceInstallmentsAP">
+      <wsdl:input message="tns:getInvoiceInstallmentsAP_inputMessage"/>
+      <wsdl:output message="tns:getInvoiceInstallmentsAP_outputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoiceInstallmentAP">
+      <wsdl:input message="tns:updateInvoiceInstallmentAP_inputMessage"/>
+      <wsdl:output message="tns:updateInvoiceInstallmentAP_outputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ERPIntegrationApiTecPortTypeSOAP11Binding" type="tns:ERPIntegrationApiTecPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="UpdateFlexMaintenanceWO">
+      <soap:operation style="document" soapAction="UpdateFlexMaintenanceWO"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="request"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="reply"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceInstallmentsAP">
+      <soap:operation soapAction="GetInvoiceInstallmentsAP"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoiceInstallmentAP">
+      <soap:operation soapAction="UpdateInvoiceInstallmentAP"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

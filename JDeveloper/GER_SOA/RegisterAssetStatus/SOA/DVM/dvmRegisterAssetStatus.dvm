@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dvm name="dvmRegisterAssetStatus" xmlns="http://xmlns.oracle.com/dvm">
+   <description/>
+   <columns>
+      <column name="Component" order="1" qualifier="true"/>
+      <column name="Code" order="2"/>
+      <column name="Value" order="1"/>
+   </columns>
+   <rows>
+      <row markdefault="false">
+         <cell>RegisterAssetStatus</cell>
+         <cell>TargetInterface</cell>
+         <cell>RegisterAssetStatus</cell>
+      </row>
+      <row markdefault="false">
+         <cell>RegisterAssetStatus</cell>
+         <cell>ReportName</cell>
+         <cell>XXER_ORDENES_DE _TRABAJO.xdm</cell>
+      </row>
+   </rows>
+</dvm>

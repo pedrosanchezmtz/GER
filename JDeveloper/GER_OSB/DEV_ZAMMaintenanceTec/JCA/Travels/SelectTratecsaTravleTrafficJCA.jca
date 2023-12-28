@@ -1,0 +1,12 @@
+<adapter-config name="SelectTratecsaTravleTraffic" adapter="db" wsdlLocation="../../WSDL/Travels/SelectTratecsaTravleTrafficWSDL.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="DEV/ERSEPDB1" location="eis/DB/ERSEPDB1"/>
+  <endpoint-interaction portType="SelectTratecsaTravleTraffic_ptt" operation="SelectTratecsaTravleTraffic">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="select * from trafico_viaje@HSMSSQLTRA.ESTRELLAROJA.COM.MX where 1=1 and &quot;id_unidad&quot; = #idUnidad and &quot;viajeactual&quot;=#viajeActual"/>
+      <property name="QueryTimeout" value="10"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

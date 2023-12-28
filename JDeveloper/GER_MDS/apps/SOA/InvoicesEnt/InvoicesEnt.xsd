@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/InvoicesEnt" targetNamespace="http://soa.estrellaroja.com.mx/InvoicesEnt" elementFormDefault="qualified" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+<xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+<xsd:element name="GetInvoicesRq" type="tns:GetInvoicesRqType">
+<xsd:annotation>
+<xsd:documentation>Element for Request.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="GetInvoicesRs" type="tns:GetInvoicesRsType">
+<xsd:annotation>
+<xsd:documentation>Element for Response.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="ElecInvoicesRq" type="tns:ElecInvoicesRqType"/>
+<xsd:element name="ElecInvoicesRs" type="tns:ElecInvoicesRsType"/>
+<xsd:element name="ValidateInvoicesAPRq" type="tns:ValidateInvoicesAPRqType"/>
+<xsd:element name="ValidateInvoicesAPRs" type="tns:ValidateInvoicesAPRsType"/>
+<xsd:element name="ValidatePaymentComplementsRq" type="tns:ValidatePaymentComplementsRqType"/>
+<xsd:element name="ValidatePaymentComplementsRs" type="tns:ValidatePaymentComplementsRsType"/>
+<xsd:element name="LoadInvoicesRq" type="tns:LoadInvoicesRqType"/>
+<xsd:element name="LoadInvoicesRs" type="tns:LoadInvoicesRsType"/>
+<xsd:element name="ListImportToErpCloudRq" type="tns:ListImportToErpCloudRqType"/>
+<xsd:complexType name="ValidateInvoicesAPRqType">
+<xsd:sequence>
+<xsd:element name="InvoiceDate" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ValidateInvoicesAPRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="GetInvoicesRqType">
+<xsd:sequence>
+<xsd:element name="DocumentType" type="xsd:string" minOccurs="1" nillable="false"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetInvoicesRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:annotation>
+<xsd:documentation>Extends BaseRsType (Success and Errors nodes). Contains a node which should be used for the specific response of the corresponding service.</xsd:documentation>
+</xsd:annotation>
+<xsd:sequence>
+<xsd:element name="Return" minOccurs="0" type="tns:GetInvoicesReturnType" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="GetInvoicesReturnType">
+<xsd:sequence>
+<xsd:element name="FirstData" type="tns:FirstDataType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="FirstDataType">
+<xsd:sequence>
+<xsd:element name="FirstElement"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ElecInvoicesRqType">
+<xsd:sequence/>
+</xsd:complexType>
+<xsd:complexType name="ElecInvoicesRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="ValidatePaymentComplementsRqType">
+<xsd:sequence/>
+</xsd:complexType>
+<xsd:complexType name="ValidatePaymentComplementsRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="FileType">
+<xsd:sequence>
+<xsd:element name="Content" nillable="true" type="xsd:base64Binary"/>
+<xsd:element name="FileName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="ContentType" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="DocumentTitle" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="DocumentName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="DocumentId" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="LoadInvoicesRqType">
+<xsd:sequence>
+<xsd:element name="TargetInterface" type="xsd:string"/>
+<xsd:element name="File" type="tns:FileType" maxOccurs="unbounded"/>
+<xsd:element name="BatchId" type="xsd:string"/>
+<xsd:element name="NumLines" type="xsd:integer"/>
+<xsd:element name="ListBusAndOrgId" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="OrgId" type="xsd:decimal"/>
+<xsd:element name="BuName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="LoadInvoicesRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="Return">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="OutputLoadInvoice" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="ListImportToErpCloudRqType">
+<xsd:sequence>
+<xsd:element name="TargetInterface" type="xsd:string"/>
+<xsd:element name="ListFile" type="tns:FileType" minOccurs="1" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

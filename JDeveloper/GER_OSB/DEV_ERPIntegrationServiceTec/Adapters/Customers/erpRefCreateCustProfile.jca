@@ -1,0 +1,21 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefCreateCustProfile/types" name="erpRefCreateCustProfilePortType" adapter="erp" wsdlLocation="../../WSDL/Externals/Cloud/Customers/erpRefCreateCustProfile.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="cloud/CloudAdapter">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.cloud.connector.fa.FAConnectionFactory">
+      <property name="targetWSDLURL" value="https://egte-test.fa.us2.oraclecloud.com:443/fscmService/ServiceCatalogService?WSDL"/>
+      <property name="csfkey" value="erpKey"/>
+      <property name="csfMap" value="oracle.wsm.security"/>
+      <property name="eventCatalogURL" value=""/>
+      <property name="applicationVersion" value="1.0"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-interaction portType="erpRefCreateCustProfilePortType" operation="createCustomerProfile">
+    <interaction-spec className="oracle.tip.adapter.cloud.CloudInteractionSpec">
+      <property name="targetOperation" value="createCustomerProfile"/>
+      <property name="operationPath" value="http://xmlns.oracle.com/apps/financials/receivables/customers/customerProfileService/createCustomerProfile"/>
+      <property name="outboundRequestOperation" value="{http://xmlns.oracle.com/apps/financials/receivables/customers/customerProfileService/}createCustomerProfile"/>
+      <property name="browseBySelection" value="browseByService"/>
+      <property name="serviceWSDLURL" value="https://egte-test.fa.us2.oraclecloud.com:443/fscmService/ReceivablesCustomerProfileService?WSDL"/>
+      <property name="outboundRequestObject" value="{http://xmlns.oracle.com/apps/financials/receivables/customers/customerProfileService/OSCAdapter}CustomerProfileService"/>
+    </interaction-spec>
+  </endpoint-interaction>
+</adapter-config>

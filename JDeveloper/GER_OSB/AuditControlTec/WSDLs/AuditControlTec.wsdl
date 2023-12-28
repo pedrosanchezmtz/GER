@@ -1,0 +1,347 @@
+<definitions targetNamespace="http://soa.estrellaroja.com.mx/AuditControlTec" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soa.estrellaroja.com.mx/AuditControlTec" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/AuditControlTec/types" elementFormDefault="qualified">
+      <xsd:import schemaLocation="../Schemas/AuditControlTec.xsd" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+    </xsd:schema>
+  </types>
+      <message name="GetConfValInvoicesAPRq">
+    <part name="GetConfValInvoicesAPRq" element="tns:GetConfValInvoicesAPRq"/>
+  </message>
+  <message name="GetConfValInvoicesAPRs">
+    <part name="GetConfValInvoicesAPRs" element="tns:GetConfValInvoicesAPRs"/>
+  </message>
+  <message name="MergeIncPaymentComplementRq">
+    <part name="MergeIncPaymentComplementRqPart" element="tns:MergeIncPaymentComplementRq"/>
+  </message>
+  <message name="MergeIncPaymentComplementRs">
+    <part name="MergeIncPaymentComplementRsPart" element="tns:MergeIncPaymentComplementRs"/>
+  </message>
+  <message name="CreateLogRq">
+    <part name="CreateLogRq" element="tns:CreateLogRq"/>
+  </message>
+  <message name="CreateLogRs">
+    <part name="CreateLogRs" element="tns:CreateLogRs"/>
+  </message>
+  <message name="MergeCtrlTransRq">
+    <part name="MergeCtrlTransRq" element="tns:MergeCtrlTransRq"/>
+  </message>
+  <message name="MergeCtrlTransRs">
+    <part name="MergeCtrlTransRs" element="tns:MergeCtrlTransRs"/>
+  </message>
+  <message name="getCtrlTransRq">
+    <part name="GetCtrlTransRq" element="tns:GetCtrlTransRq"/>
+  </message>
+  <message name="getCtrlTransRs">
+    <part name="GetCtrlTransRs" element="tns:GetCtrlTransRs"/>
+  </message>
+   <!-- Start Message Parts MergeComplementsAPRq GetComplementsRq -->
+    <message name="MergeComplementsAPRq">
+    <part name="MergeComplementsAPRq" element="tns:MergeComplementsAPRq"/>
+  </message>
+  <message name="MergeComplementsAPRs">
+    <part name="MergeComplementsAPRs" element="tns:MergeComplementsAPRs"/>
+  </message>
+      <message name="GetComplementsAPRq">
+    <part name="GetComplementsAPRq" element="tns:GetComplementsAPRq"/>
+  </message>
+  <message name="GetComplementsAPRs">
+    <part name="GetComplementsAPRs" element="tns:GetComplementsAPRs"/>
+  </message>
+  <!-- Start Message Parts Electronic Invoice-->
+  <message name="MergeInvoicesAPRq">
+    <part name="MergeInvoicesAPRq" element="tns:MergeInvoicesAPRq"/>
+  </message>
+  <message name="MergeInvoicesAPRs">
+    <part name="MergeInvoicesAPRs" element="tns:MergeInvoicesAPRs"/>
+  </message>
+  <!-- Start Message Parts Electronic Invoice-->
+  <message name="InsertArElecInvoiceRq">
+    <part name="InsertArElecInvoiceRq" element="tns:InsertArElecInvoiceRq"/>
+  </message>
+  <message name="InsertArElecInvoiceRs">
+    <part name="InsertArElecInvoiceRs" element="tns:InsertArElecInvoiceRs"/>
+  </message>
+  <!-- End Message Parts Electronic Invoice-->
+  <!-- Start Message Parts Electronic Invoice-->
+  <message name="InsertArElecInvoiceErrorsRq">
+    <part name="InsertArElecInvoiceErrorsRq" element="tns:InsertArElecInvoiceErrorsRq"/>
+  </message>
+  <message name="InsertArElecInvoiceErrorsRs">
+    <part name="InsertArElecInvoiceErrorsRs" element="tns:InsertArElecInvoiceErrorsRs"/>
+  </message>
+  <!-- End Message Parts Electronic Invoice-->
+  <message name="CreateJobsStatusRq">
+    <part name="CreateJobsStatusRq" element="tns:CreateJobsStatusRq"/>
+  </message>
+  <message name="CreateJobsStatusRs">
+    <part name="CreateJobsStatusRs" element="tns:CreateJobsStatusRs"/>
+  </message>
+  <message name="GetJobsStatusRq">
+    <part name="GetJobsStatusRq" element="tns:GetJobsStatusRq"/>
+  </message>
+  <message name="GetJobsStatusRs">
+    <part name="GetJobsStatusRs" element="tns:GetJobsStatusRs"/>
+  </message>
+  <message name="MergeCustomerSiteLogRq">
+    <part name="MergeCustomerSiteLogRq" element="tns:MergeCustomerSiteLogRq"/>
+  </message>
+  <message name="MergeCustomerSiteLogRs">
+    <part name="MergeCustomerSiteLogRs" element="tns:MergeCustomerSiteLogRs"/>
+  </message>
+  <message name="GetCustomerSiteLogRq">
+    <part name="GetCustomerSiteLogRq" element="tns:GetCustomerSiteLogRq"/>
+  </message>
+  <message name="GetCustomerSiteLogRs">
+    <part name="GetCustomerSiteLogRs" element="tns:GetCustomerSiteLogRs"/>
+  </message>
+    <message name="GetInvoicesAPByExampleRq">
+    <part name="GetInvoicesAPByExampleRqPart" element="tns:GetInvoicesAPByExampleRq"/>
+  </message>
+  <message name="GetInvoicesAPByExampleRs">
+    <part name="GetInvoicesAPByExampleRsPart" element="tns:GetInvoicesAPByExampleRs"/>
+  </message>
+  <message name="GetValPaymentComplementsResumeRq">
+    <part name="GetValPaymentComplementsResumeRqPart" element="tns:GetValPaymentComplementsResumeRq"/>
+  </message>
+  <message name="GetValPaymentComplementsResumeRs">
+    <part name="GetValPaymentComplementsResumeRsPart" element="tns:GetValPaymentComplementsResumeRs"/>
+  </message>
+  <portType name="AuditControlTecPortType">
+    <operation name="MergeInvoicesAP">
+      <input message="tns:MergeInvoicesAPRq"/>
+      <output message="tns:MergeInvoicesAPRs"/>
+    </operation>
+    <!-- Start Operation Electronic Invoice-->
+    <operation name="InsertArElecInvoice">
+      <input message="tns:InsertArElecInvoiceRq"/>
+      <output message="tns:InsertArElecInvoiceRs"/>
+    </operation>
+    <!-- End Operation Electronic Invoice-->
+    <!-- Start Operation Electronic Invoice-->
+    <operation name="InsertArElecInvoiceErrors">
+      <input message="tns:InsertArElecInvoiceErrorsRq"/>
+      <output message="tns:InsertArElecInvoiceErrorsRs"/>
+    </operation>
+    <!-- End Operation Electronic Invoice-->
+    <operation name="MergeIncPaymentComplement">
+      <input message="tns:MergeIncPaymentComplementRq"/>
+      <output message="tns:MergeIncPaymentComplementRs"/>
+    </operation>
+        <!-- Start OperationMergeInvoicesAP GetComplementsAP-->
+    <operation name="GetComplementsAP">
+      <input message="tns:GetComplementsAPRq"/>
+      <output message="tns:GetComplementsAPRs"/>
+    </operation>
+        <operation name="MergeComplementsAP">
+      <input message="tns:MergeComplementsAPRq"/>
+      <output message="tns:MergeComplementsAPRs"/>
+    </operation>
+    <!-- End Operation MergeInvoicesAP-->
+    <operation name="CreateLog">
+      <input message="tns:CreateLogRq"/>
+      <output message="tns:CreateLogRs"/>
+    </operation>
+    <operation name="MergeCtrlTrans">
+      <input message="tns:MergeCtrlTransRq"/>
+      <output message="tns:MergeCtrlTransRs"/>
+    </operation>
+    <operation name="GetCtrlTrans">
+      <input message="tns:getCtrlTransRq"/>
+      <output message="tns:getCtrlTransRs"/>
+    </operation>
+    <operation name="CreateJobsStatus">
+      <input message="tns:CreateJobsStatusRq"/>
+      <output message="tns:CreateJobsStatusRs"/>
+    </operation>
+    <operation name="GetJobsStatus">
+      <input message="tns:GetJobsStatusRq"/>
+      <output message="tns:GetJobsStatusRs"/>
+    </operation>
+    <operation name="GetAllValidIncPaymentComplements">
+      <input message="tns:GetAllValidIncPaymentComplementsRq"/>
+      <output message="tns:GetAllValidIncPaymentComplementsRs"/>
+    </operation>
+    <operation name="MergeCustomerSiteLog">
+      <input message="tns:MergeCustomerSiteLogRq"/>
+      <output message="tns:MergeCustomerSiteLogRs"/>
+    </operation>
+    <operation name="GetCustomerSiteLog">
+      <input message="tns:GetCustomerSiteLogRq"/>
+      <output message="tns:GetCustomerSiteLogRs"/>
+    </operation>
+    <operation name="GetInvoicesAPByExample">
+      <input message="tns:GetInvoicesAPByExampleRq"/>
+      <output message="tns:GetInvoicesAPByExampleRs"/>
+    </operation>
+    <operation name="GetValPaymentComplementsResume">
+      <input message="tns:GetValPaymentComplementsResumeRq"/>
+      <output message="tns:GetValPaymentComplementsResumeRs"/>
+    </operation>
+    <operation name="GetConfValInvoicesAP">
+      <input message="tns:GetConfValInvoicesAPRq"/>
+      <output message="tns:GetConfValInvoicesAPRs"/>
+    </operation>
+  </portType>
+  <message name="GetAllValidIncPaymentComplementsRq">
+    <part name="GetAllValidIncPaymentComplementsRqPart" element="tns:GetAllValidIncPaymentComplementsRq"/>
+  </message>
+  <message name="GetAllValidIncPaymentComplementsRs">
+    <part name="GetAllValidIncPaymentComplementsRsPart" element="tns:GetAllValidIncPaymentComplementsRs"/>
+  </message>
+  <binding name="AuditControlTecBinding" type="tns:AuditControlTecPortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="MergeComplementsAP">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/AuditControlTec/MergeComplementsAP"/>
+      <input>
+        <soap12:body use="literal" parts="MergeComplementsAPRq"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="MergeComplementsAPRs"/>
+      </output>
+    </operation>
+     <operation name="GetConfValInvoicesAP">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/AuditControlTec/GetConfValInvoicesAP"/>
+      <input>
+        <soap12:body use="literal" parts="GetConfValInvoicesAPRq"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="GetConfValInvoicesAPRs"/>
+      </output>
+    </operation>
+    <operation name="GetComplementsAP">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/AuditControlTec/GetComplementsAP"/>
+      <input>
+        <soap12:body use="literal" parts="GetComplementsAPRq"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="GetComplementsAPRs"/>
+      </output>
+    </operation>
+    <operation name="MergeInvoicesAP">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/AuditControlTec/MergeInvoicesAP"/>
+      <input>
+        <soap12:body use="literal" parts="MergeInvoicesAPRq"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="MergeInvoicesAPRs"/>
+      </output>
+    </operation>
+    <operation name="InsertArElecInvoice">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/AuditControlTec/InsertArElecInvoice"/>
+      <input>
+        <soap12:body use="literal" parts="InsertArElecInvoiceRq"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="InsertArElecInvoiceRs"/>
+      </output>
+    </operation>
+    <operation name="InsertArElecInvoiceErrors">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/AuditControlTec/InsertArElecInvoiceErrors"/>
+      <input>
+        <soap12:body use="literal" parts="InsertArElecInvoiceErrorsRq"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="InsertArElecInvoiceErrorsRs"/>
+      </output>
+    </operation>
+    <operation name="MergeIncPaymentComplement">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/AuditControlTec/MergeIncPaymentComplement"/>
+      <input>
+        <soap12:body use="literal" parts="MergeIncPaymentComplementRqPart"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="MergeIncPaymentComplementRsPart"/>
+      </output>
+    </operation>
+    <operation name="CreateLog">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/AuditControlTec/CreateLog"/>
+      <input>
+        <soap12:body use="literal" parts="CreateLogRq"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="CreateLogRs"/>
+      </output>
+    </operation>
+    <operation name="MergeCtrlTrans">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/AuditControlTec/MergeCtrlTrans"/>
+      <input>
+        <soap12:body use="literal" parts="MergeCtrlTransRq"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="MergeCtrlTransRs"/>
+      </output>
+    </operation>
+    <operation name="GetCtrlTrans">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/AuditControlTec/GetCtrlTrans"/>
+      <input>
+        <soap12:body use="literal" parts="GetCtrlTransRq"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="GetCtrlTransRs"/>
+      </output>
+    </operation>
+    <operation name="CreateJobsStatus">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/AuditControlTec/CreateJobsStatus"/>
+      <input>
+        <soap12:body use="literal" parts="CreateJobsStatusRq"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="CreateJobsStatusRs"/>
+      </output>
+    </operation>
+    <operation name="GetJobsStatus">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/AuditControlTec/GetJobsStatus"/>
+      <input>
+        <soap12:body use="literal" parts="GetJobsStatusRq"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="GetJobsStatusRs"/>
+      </output>
+    </operation>
+    <operation name="GetAllValidIncPaymentComplements">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/AuditControlTec/GetAllValidIncPaymentComplements"/>
+      <input>
+        <soap12:body use="literal" parts="GetAllValidIncPaymentComplementsRqPart"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="GetAllValidIncPaymentComplementsRsPart"/>
+      </output>
+    </operation>
+    <operation name="MergeCustomerSiteLog">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/AuditControlTec/MergeCustomerSiteLog"/>
+      <input>
+        <soap12:body use="literal" parts="MergeCustomerSiteLogRq"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="MergeCustomerSiteLogRs"/>
+      </output>
+    </operation>
+    <operation name="GetCustomerSiteLog">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/AuditControlTec/GetCustomerSiteLog"/>
+      <input>
+        <soap12:body use="literal" parts="GetCustomerSiteLogRq"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="GetCustomerSiteLogRs"/>
+      </output>
+    </operation>
+    <operation name="GetInvoicesAPByExample">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/AuditControlTec/GetInvoicesAPByExample"/>
+      <input>
+        <soap12:body use="literal" parts="GetInvoicesAPByExampleRqPart"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="GetInvoicesAPByExampleRsPart"/>
+      </output>
+    </operation>
+    <operation name="GetValPaymentComplementsResume">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/AuditControlTec/GetValPaymentComplementsResume"/>
+      <input>
+        <soap12:body use="literal" parts="GetValPaymentComplementsResumeRqPart"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="GetValPaymentComplementsResumeRsPart"/>
+      </output>
+    </operation>
+  </binding>
+</definitions>

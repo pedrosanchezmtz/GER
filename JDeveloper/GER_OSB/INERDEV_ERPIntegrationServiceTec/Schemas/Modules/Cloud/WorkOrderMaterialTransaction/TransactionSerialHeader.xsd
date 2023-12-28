@@ -1,0 +1,35 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/" sdoJava:package="oracle.apps.scm.commonWorkExecution.workOrderMaterialTransactions.materialTransactionsService" xmlns:sdoJava="commonj.sdo/java" xmlns="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation xmlns:oer="http://xmlns.oracle.com/oer">
+            <name>Material Transaction Serial Details Output</name>
+            <description>Import Material Transactions</description>
+            <oer:category name="lbo">
+                <value>SCM-SCM : WIE-Common Work Execution :
+                    ORA_WO_MATERIAL_TRANSACTION-Work Order Material Transaction</value>
+            </oer:category>
+            <oer:attributes>
+                <oer:attribute description="The user specified lot number to which the material is issued from or returned to." name="LotNumber"/>
+                <oer:attribute description="Start serial number of the component issued for the work order." name="FromSerialNumber"/>
+                <oer:attribute description="End serial number of the component issued for the work order." name="ToSerialNumber"/>
+                <oer:attribute description="The serial number of the item associated to work order for which the material transaction is performed. It is applicable to serialization enabled work orders only." name="ParentSerialNumber"/>
+            </oer:attributes>
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="commonj.sdo/java" schemaLocation="../Commons/sdoJava.xsd"/>
+    <xsd:complexType name="TransactionSerialHeader">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>InterfaceRowId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="LotNumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="FromSerialNumber" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ToSerialNumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ParentSerialNumber" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="transactionSerialHeader" type="TransactionSerialHeader"/>
+</xsd:schema>

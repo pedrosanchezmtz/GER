@@ -1,0 +1,14 @@
+<adapter-config name="ZAMUnblockAssetBS" adapter="db" wsdlLocation="../../WSDL/Orders/ZAMUnblockAssetWSDL.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="DEV_OCI" location="eis/DB/DEV/ERSEPDB1"/>
+  <endpoint-interaction portType="ZAMUnblockAsset_ptt" operation="ZAMUnblockAsset">
+    <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
+      <property name="SchemaName" value="XERINTUSER"/>
+      <property name="PackageName" value="XXER_EAM_BLK_ASSETS_PKG"/>
+      <property name="ProcedureName" value="UNBLOCK_ASSET_ZAM"/>
+      <property name="QueryTimeout" value="10"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

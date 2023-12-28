@@ -1,0 +1,33 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/" sdoJava:package="oracle.apps.scm.commonWorkExecution.workOrderMaterialTransactions.materialTransactionsService" xmlns:sdoJava="commonj.sdo/java" xmlns="http://xmlns.oracle.com/apps/scm/commonWorkExecution/workOrderMaterialTransactions/materialTransactionsService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation xmlns:oer="http://xmlns.oracle.com/oer">
+            <name>Material Transaction Serial Details</name>
+            <description>Import Material Transactions</description>
+            <oer:category name="lbo">
+                <value>SCM-SCM : WIE-Common Work Execution :
+                    ORA_WO_MATERIAL_TRANSACTION-Work Order Material Transaction</value>
+            </oer:category>
+            <oer:attributes>
+                <oer:attribute description="The user specified lot number to which the material is issued from or returned to." name="LotNumber"/>
+                <oer:attribute description="The user specified single serial number or the beginning serial number in a range of serial numbers." name="FromSerialNumber"/>
+                <oer:attribute description="The user specified single serial number or the ending serial number in a range of serial numbers." name="ToSerialNumber"/>
+            </oer:attributes>
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="commonj.sdo/java" schemaLocation="../Commons/sdoJava.xsd"/>
+    <xsd:complexType name="TransactionSerialInput">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>HeaderNumber</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="LotNumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="FromSerialNumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ToSerialNumber" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="transactionSerialInput" type="TransactionSerialInput"/>
+</xsd:schema>

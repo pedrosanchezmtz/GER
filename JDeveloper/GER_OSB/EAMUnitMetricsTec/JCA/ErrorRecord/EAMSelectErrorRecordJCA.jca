@@ -1,0 +1,12 @@
+<adapter-config name="EAMSelectErrorRecord" adapter="db" wsdlLocation="../../WSDL/ErrorRecord/EAMSelectErrorRecordWSDL.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="/DEV/ERSEPDB1" location="eis/DB/ERSEPDB1"/>
+  <endpoint-interaction portType="EAMSelectErrorRecord_ptt" operation="EAMSelectErrorRecord">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="select * from xxer_eam_error_log where reading_date >= #fechaInicio and reading_date &lt; #fechaFin"/>
+      <property name="QueryTimeout" value="10"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

@@ -1,0 +1,21 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefMergeLocation/types" name="erpRefMergeLocationPortType" adapter="erp" wsdlLocation="../../WSDL/Externals/Cloud/Customers/erpRefMergeLocation.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="cloud/CloudAdapter">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.cloud.connector.fa.FAConnectionFactory">
+      <property name="targetWSDLURL" value="https://egte.fa.us2.oraclecloud.com:443/fscmService/ServiceCatalogService?WSDL"/>
+      <property name="csfkey" value="erpKey"/>
+      <property name="csfMap" value="oracle.wsm.security"/>
+      <property name="eventCatalogURL" value=""/>
+      <property name="applicationVersion" value="1.0"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-interaction portType="erpRefMergeLocationPortType" operation="mergeLocation">
+    <interaction-spec className="oracle.tip.adapter.cloud.CloudInteractionSpec">
+      <property name="targetOperation" value="mergeLocation"/>
+      <property name="operationPath" value="http://xmlns.oracle.com/apps/cdm/foundation/parties/locationService/applicationModule/mergeLocation"/>
+      <property name="outboundRequestOperation" value="{http://xmlns.oracle.com/apps/cdm/foundation/parties/locationService/applicationModule/}mergeLocation"/>
+      <property name="browseBySelection" value="browseByBusinessObject"/>
+      <property name="serviceWSDLURL" value="https://egte.fa.us2.oraclecloud.com:443/crmService/FoundationPartiesLocationService?WSDL"/>
+      <property name="outboundRequestObject" value="{http://xmlns.oracle.com/apps/cdm/foundation/parties/locationService/applicationModule/OSCAdapter}Trading Community Location"/>
+    </interaction-spec>
+  </endpoint-interaction>
+</adapter-config>

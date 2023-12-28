@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="ERPIntegrationBiz" targetNamespace="http://soa.estrellaroja.com.mx/ERPIntegrationBiz" xmlns:tns="http://soa.estrellaroja.com.mx/ERPIntegrationBiz" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://soa.estrellaroja.com.mx/ERPIntegrationBiz" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.estrellaroja.com.mx/ERPIntegrationBiz/types" elementFormDefault="qualified">
+<xsd:import namespace="http://soa.estrellaroja.com.mx/ERPIntegrationBiz" schemaLocation="ERPIntegrationBiz.xsd"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="ImportToERPCloudRq">
+<wsdl:part name="ImportToERPCloudRq" element="tns:ImportToERPCloudRq"/>
+</wsdl:message>
+<wsdl:message name="ImportToERPCloudRs">
+<wsdl:part name="ImportToERPCloudRs" element="tns:ImportToERPCloudRs"/>
+</wsdl:message>
+<wsdl:message name="GenerateReportRq">
+<wsdl:part name="GenerateReportRq" element="tns:GenerateReportRq"/>
+</wsdl:message>
+<wsdl:message name="GenerateReportRs">
+<wsdl:part name="GenerateReportRs" element="tns:GenerateReportRs"/>
+</wsdl:message>
+<wsdl:message name="GetJobsStatusRq">
+<wsdl:part name="GetJobsStatusRq" element="tns:GetJobsStatusRq"/>
+</wsdl:message>
+<wsdl:message name="GetJobsStatusRs">
+<wsdl:part name="GetJobsStatusRs" element="tns:GetJobsStatusRs"/>
+</wsdl:message>
+<wsdl:message name="ImportToERPCloudCallbackRs">
+<wsdl:part name="ImportToERPCloudCallbackRs" element="tns:ImportToERPCloudCallbackRs"/>
+</wsdl:message>
+<wsdl:portType name="ERPIntegrationBizPortType">
+<wsdl:operation name="ImportToERPCloud">
+<wsdl:input message="tns:ImportToERPCloudRq"/>
+<wsdl:output message="tns:ImportToERPCloudRs"/>
+</wsdl:operation>
+<wsdl:operation name="GenerateReport">
+<wsdl:input message="tns:GenerateReportRq"/>
+<wsdl:output message="tns:GenerateReportRs"/>
+</wsdl:operation>
+<wsdl:operation name="GetJobsStatus">
+<wsdl:input message="tns:GetJobsStatusRq"/>
+<wsdl:output message="tns:GetJobsStatusRs"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:portType name="ERPIntegrationBizCallbackPortType">
+<wsdl:operation name="ImportToERPCloudCallback">
+<wsdl:input message="tns:ImportToERPCloudCallbackRs"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="ERPIntegrationBizBinding" type="tns:ERPIntegrationBizPortType">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="ImportToERPCloud">
+<soap:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ERPIntegrationBiz/ImportToERPCloud"/>
+<wsdl:input>
+<soap:body use="literal" parts="ImportToERPCloudRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="ImportToERPCloudRs"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GenerateReport">
+<soap:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ERPIntegrationBiz/GenerateReport"/>
+<wsdl:input>
+<soap:body use="literal" parts="GenerateReportRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="GenerateReportRs"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetJobsStatus">
+<soap:operation style="document" soapAction="http://soa.estrellaroja.com.mx/ERPIntegrationBiz/GetJobsStatus"/>
+<wsdl:input>
+<soap:body use="literal" parts="GetJobsStatusRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="GetJobsStatusRs"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="ERPIntegrationBiz">
+<wsdl:port name="ERPIntegrationBizPort" binding="tns:ERPIntegrationBizBinding">
+<soap:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/Commons/ERPIntegrationBiz/ERPIntegrationBiz"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

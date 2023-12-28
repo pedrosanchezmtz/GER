@@ -1,0 +1,15 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/LetterPorteTec/dbGetRelationsCFDIs" name="dbGetRelationsCFDIs-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="dbGetRelationsCFDIs.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/LetterPorteTec/dbGetRelationsCFDIs"/>
+    <wsdl:binding name="dbGetRelationsCFDIs_ptt-binding" type="dbg:dbGetRelationsCFDIs_ptt" xmlns:dbg="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/LetterPorteTec/dbGetRelationsCFDIs">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="dbGetRelationsCFDIs">
+            <soap:operation soapAction="dbGetRelationsCFDIs"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

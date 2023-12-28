@@ -1,0 +1,25 @@
+<AssetMetricReading xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions" xmlns:ns2="http://soa.estrellaroja.com.mx/ReportReadings" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns1="http://soa.estrellaroja.com.mx/ReportAsset" xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:ns6="http://soa.estrellaroja.com.mx/AssetMetricReadingExcel" xmlns:ns5="http://xmlns.oracle.com/pcbpel/adapter/db/EAMOriginPriority" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/RecordUnitMterics" xmlns:mhdr="http://www.oracle.com/XSL/Transform/java/oracle.tip.mediator.service.common.functions.MediatorExtnFunction" xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue" xmlns:socket="http://www.oracle.com/XSL/Transform/java/oracle.tip.adapter.socket.ProtocolTranslator" xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.estrellaroja.com.mx/AssetMetricReadings" xmlns="http://soa.estrellaroja.com.mx/AssetMetricReadings">
+	<tns:Reading>
+		<tns:assetNumber>0001</tns:assetNumber>
+		<tns:Records>
+			<tns:readingDate>2023-11-02</tns:readingDate>
+			<tns:readingValue>500</tns:readingValue>
+			<tns:origin>EXCEL</tns:origin>
+		</tns:Records>
+                <tns:Records>
+			<tns:readingDate>2023-11-03</tns:readingDate>
+			<tns:readingValue>1500</tns:readingValue>
+			<tns:origin>EXCEL</tns:origin>
+		</tns:Records>
+                <tns:Records>
+			<tns:readingDate>2023-11-04</tns:readingDate>
+			<tns:readingValue>10</tns:readingValue>
+			<tns:origin>EXCEL</tns:origin>
+		</tns:Records>
+                <tns:Records>
+			<tns:readingDate>2023-11-05</tns:readingDate>
+			<tns:readingValue>200</tns:readingValue>
+			<tns:origin>EXCEL</tns:origin>
+		</tns:Records>
+	</tns:Reading>
+</AssetMetricReading>

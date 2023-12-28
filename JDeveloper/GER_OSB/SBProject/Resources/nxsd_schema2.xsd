@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://TargetNamespace.com/RestReference_Operation1_response" targetNamespace="http://TargetNamespace.com/RestReference_Operation1_response" elementFormDefault="qualified" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON" nxsd:encoding="US-ASCII">
+   <xsd:element name="response">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="ElementEntryId" type="xsd:integer"/>
+            <xsd:element name="EffectiveStartDate" type="xsd:string"/>
+            <xsd:element name="EffectiveEndDate" type="xsd:string"/>
+            <xsd:element name="CreatorType" type="xsd:string"/>
+            <xsd:element name="ElementTypeId" type="xsd:integer"/>
+            <xsd:element name="EntryType" type="xsd:string"/>
+            <xsd:element name="EntrySequence" type="xsd:integer"/>
+            <xsd:element name="PersonId" type="xsd:integer"/>
+            <xsd:element name="Reason" type="xsd:string"/>
+            <xsd:element name="Subpriority" type="xsd:string"/>
+            <xsd:element name="PersonNumber" type="xsd:string"/>
+            <xsd:element name="AssignmentId" type="xsd:integer"/>
+            <xsd:element name="AssignmentNumber" type="xsd:string"/>
+            <xsd:element name="PayrollRelationshipNumber" type="xsd:string"/>
+            <xsd:element name="ElementName" type="xsd:string"/>
+            <xsd:element name="UsageLevel" type="xsd:string"/>
+            <xsd:element name="elementEntryValues" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="ScreenEntryValue" type="xsd:string"/>
+                     <xsd:element name="ElementEntryValueId" type="xsd:integer"/>
+                     <xsd:element name="InputValueId" type="xsd:integer"/>
+                     <xsd:element name="InputValueName" type="xsd:string"/>
+                     <xsd:element name="links" maxOccurs="unbounded">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="rel" type="xsd:string"/>
+                              <xsd:element name="href" type="xsd:string"/>
+                              <xsd:element name="name" type="xsd:string"/>
+                              <xsd:element name="kind" type="xsd:string"/>
+                              <xsd:element name="properties" minOccurs="0">
+                                 <xsd:complexType>
+                                    <xsd:sequence>
+                                       <xsd:element name="changeIndicator" type="xsd:string"/>
+                                    </xsd:sequence>
+                                 </xsd:complexType>
+                              </xsd:element>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="links" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="rel" type="xsd:string"/>
+                     <xsd:element name="href" type="xsd:string"/>
+                     <xsd:element name="name" type="xsd:string"/>
+                     <xsd:element name="kind" type="xsd:string"/>
+                     <xsd:element name="properties" minOccurs="0">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="changeIndicator" type="xsd:string"/>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+<xsd:annotation xmlns="">
+      <xsd:appinfo>NXSDSAMPLE=</xsd:appinfo>
+      <xsd:appinfo>USEHEADER=false</xsd:appinfo>
+   </xsd:annotation>
+</xsd:schema>

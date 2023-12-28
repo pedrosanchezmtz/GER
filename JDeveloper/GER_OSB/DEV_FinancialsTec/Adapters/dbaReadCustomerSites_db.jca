@@ -1,0 +1,11 @@
+<adapter-config name="dbaReadCustomerSites" adapter="db" wsdlLocation="../WSDLs/External/dbaReadCustomerSites.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="ERSEPDB1DS" location="eis/DB/DEV/ERSEPDB1"/>
+  <endpoint-interaction portType="dbaReadCustomerSites_ptt" operation="dbaReadCustomerSites">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="select    sites.customer_site_id as &quot;CustomerSiteId&quot; , sites.customer_id as &quot;CustomerId&quot; , sites.street_name as &quot;StreetName&quot; , sites.external_number as &quot;ExternalNumber&quot; , sites.internal_number as &quot;InternalNumber&quot; , sites.postal_code as &quot;PostalCode&quot; , sites.province as &quot;Province&quot; , sites.city as &quot;City&quot; , sites.state as &quot;State&quot; , sites.country as &quot;Country&quot; , sites.site_name as &quot;SiteName&quot; , sites.site_description as &quot;SiteDescription&quot; , sites.site_use as &quot;SiteUse&quot; , sites.created_date as &quot;CreatedDate&quot;  , sites.src_tbl as &quot;SourceTable&quot; , sites.account_address_set as &quot;AccountAddressSet&quot; from xxer_ar_customer_sites_v sites where 1=1    and src_tbl = #PSiteSrc    and customer_id = #PCustomerId"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

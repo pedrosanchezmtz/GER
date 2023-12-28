@@ -1,0 +1,79 @@
+<wsdl:definitions name="DigitalStampTec" targetNamespace="http://soa.estrellaroja.com.mx/DigitalStampTec" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soa.estrellaroja.com.mx/DigitalStampTec" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                  
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	TYPE DEFINITION - List of services participating in this process.
+        You can define or import any XML Schema type and use them as part of the message types.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/DigitalStampTec/types" elementFormDefault="qualified">
+      <xsd:import schemaLocation="../Schemas/DigitalStampTec.xsd" namespace="http://soa.estrellaroja.com.mx/DigitalStampTec"/>
+    </xsd:schema>
+  </wsdl:types>
+  
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	MESSAGE TYPE DEFINITION - Definition of the message types used as 
+	part of the port type defintions
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+  <!--  STARTS MESSAGE QueryRemittances  -->
+  <!--********************************* STARTS DigitalStampTec *********************************-->
+  
+  
+  <wsdl:message name="createTrxCFDIRq">
+    <wsdl:part name="createTrxCFDIRq" element="tns:createTrxCFDIRq"/>
+  </wsdl:message>
+  
+  <wsdl:message name="createTrxCFDIRs">
+    <wsdl:part name="createTrxCFDIRs" element="tns:createTrxCFDIRs"/>
+  </wsdl:message>
+  
+  <!--  ENDS MESSAGE DigitalStampTec  -->
+  
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	PORT TYPE DEFINITION - A port type groups a set of operations into
+	a logical service unit.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:portType name="DigitalStampTePortType">
+  
+  <!--  ENDS PORTTYPE OPERATION createCFDI  -->  
+      <wsdl:operation name="createTrxCFDI">
+      <wsdl:input message="tns:createTrxCFDIRq"/>
+      <wsdl:output message="tns:createTrxCFDIRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePayment">
+      <wsdl:input message="tns:ValidatePaymentRq"/>
+      <wsdl:output message="tns:ValidatePaymentRs"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  
+  
+  
+  <!--  *********************************** BINDING OPERATIONS DEFINITIONS ***********************************  -->
+  <wsdl:message name="ValidatePaymentRq">
+    <wsdl:part name="ValidatePaymentRqPart" element="tns:ValidatePaymentRq"/>
+  </wsdl:message>
+  <wsdl:message name="ValidatePaymentRs">
+    <wsdl:part name="ValidatePaymentRsPart" element="tns:ValidatePaymentRs"/>
+  </wsdl:message>
+  <wsdl:binding name="DigitalStampTeBinding" type="tns:DigitalStampTePortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createTrxCFDI">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/DigitalStampTec/createTrxCFDI"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="createTrxCFDIRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="createTrxCFDIRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePayment">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/DigitalStampTec/ValidatePayment"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="ValidatePaymentRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="ValidatePaymentRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

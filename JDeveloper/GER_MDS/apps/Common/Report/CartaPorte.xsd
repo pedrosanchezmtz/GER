@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/CartaPorte" targetNamespace="http://soa.estrellaroja.com.mx/CartaPorte" elementFormDefault="qualified">
+<xsd:element name="CartaPorte" type="CartaPorteType"/>
+<xsd:complexType name="CartaPorteType">
+<xsd:sequence>
+<xsd:element name="ID_Carga_WTMS" type="xsd:integer"/>
+<xsd:element name="NumTotalMercancias" type="xsd:integer"/>
+<xsd:element name="RFCTransportista" type="xsd:string"/>
+<xsd:element name="RFCDestinatario" type="xsd:string"/>
+<xsd:element name="SubTipoRem" type="xsd:string"/>
+<xsd:element name="FechaCargaOrigen" type="xsd:dateTime"/>
+<xsd:element name="FechaCitaDestino" type="xsd:dateTime"/>
+<xsd:element name="trasladoMercancias">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Remolque">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Placa" type="xsd:string"/>
+<xsd:element name="Traslados">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Traslado" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="FacturaDestino" type="xsd:integer"/>
+<xsd:element name="IDDestino" type="xsd:integer"/>
+<xsd:element name="DireccionDestino">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Calle" type="xsd:string"/>
+<xsd:element name="Estado" type="xsd:string"/>
+<xsd:element name="Pais" type="xsd:string"/>
+<xsd:element name="CodigoPostal" type="xsd:integer"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="IDOrigen" type="xsd:integer"/>
+<xsd:element name="DireccionOrigen">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Calle" type="xsd:string"/>
+<xsd:element name="Estado" type="xsd:string"/>
+<xsd:element name="Pais" type="xsd:string"/>
+<xsd:element name="CodigoPostal" type="xsd:integer"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="UnidadPeso" type="xsd:string"/>
+<xsd:element name="DistanciaRecorrida" type="xsd:float"/>
+<xsd:element name="Mercancias">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Mercancia" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="BienesTransp" type="xsd:integer"/>
+<xsd:element name="CantidadTipo" type="xsd:integer"/>
+<xsd:element name="CantidadItem" type="xsd:integer"/>
+<xsd:element name="ClaveUnidad" type="xsd:string"/>
+<xsd:element name="CveMaterialPeligroso" type="xsd:integer"/>
+<xsd:element name="Descripcion" type="xsd:string"/>
+<xsd:element name="DescripEmbalaje" type="xsd:string"/>
+<xsd:element name="MaterialPeligroso" type="xsd:integer"/>
+<xsd:element name="PesoEnKg" type="xsd:float"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

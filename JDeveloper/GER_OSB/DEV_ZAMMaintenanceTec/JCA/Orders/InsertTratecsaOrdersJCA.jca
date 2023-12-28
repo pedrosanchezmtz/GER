@@ -1,0 +1,12 @@
+<adapter-config name="InsertTratecsaOrders" adapter="db" wsdlLocation="../../WSDL/Orders/InsertTratecsaOrdersWSDL.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="DEV/ERSEPDB1" location="eis/DB/DEV/ERSEPDB1"/>
+  <endpoint-interaction portType="InsertTratecsaOrders_ptt" operation="InsertTratecsaOrders">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="insert into  mtto_orden@hsmssqltra_t.estrellaroja.com.mx (&quot;id_area&quot;,&quot;id_orden&quot;,&quot;fecha_inicio&quot;,&quot;estado&quot;,&quot;id_unidad&quot;,&quot;observaciones&quot;,&quot;kms_inicio&quot;) values ( #idArea, #idOrden, #fechaInicio, #estado ,#idUnidad, #observaciones, #kilimetrosInicio);"/>
+      <property name="QueryTimeout" value="10"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

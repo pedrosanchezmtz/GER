@@ -1,0 +1,71 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" sdoJava:package="oracle.apps.financials.receivables.receipts.shared.standardReceiptService.commonService" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:ns1="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/model/flex/StandardReceiptDff/" xmlns:ns2="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/model/flex/StandardReceiptGdf/" xmlns:sdo="commonj.sdo" xmlns:sdoJava="commonj.sdo/java" xmlns:sdoXML="commonj.sdo/xml" xmlns="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation>
+            <name>Standard Receipt SDO</name>
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="XMLSchema_469750432.xsd"/>
+    <xsd:import namespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/model/flex/StandardReceiptDff/" schemaLocation="XMLSchema_1072329212.xsd"/>
+    <xsd:import namespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/model/flex/StandardReceiptGdf/" schemaLocation="XMLSchema_1361782915.xsd"/>
+    <xsd:import namespace="commonj.sdo/java" schemaLocation="XMLSchema_-1644098047.xsd"/>
+    <xsd:import namespace="commonj.sdo/xml" schemaLocation="XMLSchema_293054946.xsd"/>
+    <xsd:import namespace="commonj.sdo" schemaLocation="XMLSchema_-2075211952.xsd"/>
+    <xsd:complexType name="StandardReceipt">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>CashReceiptId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Amount" type="ns0:AmountType"/>
+            <xsd:element minOccurs="0" name="AnticipatedClearingDate" nillable="true" type="ns0:date-Date"/>
+            <xsd:element minOccurs="0" name="CashReceiptId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+            <xsd:element minOccurs="0" name="Comments" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CustomerBankAccountId" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="CustomerReceiptReference" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CustomerSiteUseId" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="DefaultSiteUse" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="DepositDate" nillable="true" type="ns0:date-Date"/>
+            <xsd:element minOccurs="0" name="CurrencyCode" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="DocumentSequenceValue" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="ExchangeDate" nillable="true" type="ns0:date-Date"/>
+            <xsd:element minOccurs="0" name="ExchangeRate" nillable="true" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="ExchangeRateType" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="FactorDiscountAmount" nillable="true" type="ns0:AmountType"/>
+            <xsd:element minOccurs="0" name="GlDate" nillable="true" type="ns0:date-Date"/>
+            <xsd:element minOccurs="0" name="Installment" nillable="true" type="xsd:int"/>
+            <xsd:element minOccurs="0" name="IssueDate" nillable="true" type="ns0:date-Date"/>
+            <xsd:element minOccurs="0" name="IssuerBankBranchId" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="IssuerName" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="Location" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="MaturityDate" nillable="true" type="ns0:date-Date"/>
+            <xsd:element minOccurs="0" name="OrgId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+            <xsd:element minOccurs="0" name="CustomerId" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="OverrideRemitAccountFlag" nillable="true" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="PaymentTransactionExtensionId" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="PostmarkDate" nillable="true" type="ns0:date-Date"/>
+            <xsd:element minOccurs="0" name="ReceiptDate" type="ns0:date-Date"/>
+            <xsd:element minOccurs="0" name="ReceiptMethodId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+            <xsd:element minOccurs="0" name="ReceiptNumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="RemittanceBankAccountId" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="UserExchangeRateType" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="USSGLTransactionCode" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="UserCurrencyCode" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="StandardReceiptFLEXVA" type="ns1:StandardReceiptFLEX" sdoXML:dataType="sdo:DataObject"/>
+            <xsd:element minOccurs="0" name="StandardReceiptGdfVA" type="ns2:StandardReceiptGdf" sdoXML:dataType="sdo:DataObject"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="StandardReceiptResult">
+        <xsd:complexContent>
+            <xsd:extension base="ns0:MethodResult">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Value" type="StandardReceipt"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="standardReceiptResult" type="StandardReceiptResult"/>
+    <xsd:element name="standardReceipt" type="StandardReceipt"/>
+</xsd:schema>

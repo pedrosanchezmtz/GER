@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAConfigPlan xmlns:jca="http://platform.integration.oracle/blocks/adapter/fw/metadata" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy" xmlns:edl="http://schemas.oracle.com/events/edl" xmlns="http://schemas.oracle.com/soa/configplan">
+   <composite name="XMLValidatorBiz">
+      <import>
+         <searchReplace>
+            <search/>
+            <replace/>
+         </searchReplace>
+      </import>
+      <service name="XMLValidatorBiz">
+         <!--Add search and replace rules for the binding properties-->
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://soa.estrellaroja.com.mx/XMLValidatorBiz#wsdl.endpoint(XMLValidatorBiz/XMLValidatorBizPort)</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>NEVER</replace>
+            </property>
+         </binding>
+      </service>
+      <property name="productVersion">
+         <replace>12.2.1.4.0.190828</replace>
+      </property>
+      <property name="compositeID">
+         <replace>b4313873-8364-4821-ac13-7069488514e0</replace>
+      </property>
+      <property name="bpel.preference.environment">
+         <replace>PROD</replace>
+      </property>
+      <reference name="XXER_ERRORES_TEMP_TBL">
+         <!--Add search and replace rules for the binding properties-->
+         <binding type="jca">
+            <property name="jca.retry.count">
+               <replace>4</replace>
+            </property>
+            <property name="jca.retry.interval">
+               <replace>1</replace>
+            </property>
+            <property name="jca.retry.backoff">
+               <replace>2</replace>
+            </property>
+            <property name="jca.retry.maxInterval">
+               <replace>120</replace>
+            </property>
+         </binding>
+      </reference>
+   </composite>
+   <wsdlAndSchema name="Adapters/XXER_ERRORES_TEMP_TBL_db.jca|Schemas/XXER_ERRORES_TEMP_TBL_table.xsd|WSDLs/XMLValidatorBizWrapper.wsdl|WSDLs/XXER_ERRORES_TEMP_TBL.wsdl">
+      <jca:property name="SchemaName">
+      <replace>XERINTUSER</replace>
+    </jca:property>
+    <searchReplace>
+      <search>eis/DB/ERSEPDB1</search>
+      <replace>eis/DB/DEV/ERSEPDB1</replace>
+    </searchReplace>
+   </wsdlAndSchema>
+</SOAConfigPlan>

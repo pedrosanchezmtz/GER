@@ -1,0 +1,1468 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/CFDI" xmlns:catCFDI="http://www.sat.gob.mx/sitio_internet/cfd/catalogos" xmlns:tdCFDI="http://www.sat.gob.mx/sitio_internet/cfd/tipoDatos/tdCFDI" xmlns:catPagos="http://www.sat.gob.mx/sitio_internet/cfd/catalogos/Pagos" targetNamespace="http://soa.estrellaroja.com.mx/CFDI" elementFormDefault="qualified">
+<xsd:import namespace="http://www.sat.gob.mx/sitio_internet/cfd/catalogos/Pagos" schemaLocation="CFDI40/catPagos.xsd"/>
+<xsd:import namespace="http://www.sat.gob.mx/sitio_internet/cfd/catalogos" schemaLocation="CFDI40/catCFDI.xsd"/>
+<xsd:import namespace="http://www.sat.gob.mx/sitio_internet/cfd/tipoDatos/tdCFDI" schemaLocation="CFDI40/tdCFDI.xsd"/>
+<xsd:element name="Comprobante" type="ComprobanteType"/>
+<xsd:complexType name="ComprobanteType">
+<xsd:sequence>
+<xsd:element name="InformacionGlobal" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Nodo condicional para precisar la información relacionada con el comprobante global.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="Periodicidad" type="catCFDI:c_Periodicidad" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar el período al que corresponde la información del comprobante global.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="Meses" type="catCFDI:c_Meses" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar el mes o los meses al que corresponde la información del comprobante global.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="Año" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar el año al que corresponde la información del comprobante global.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:short">
+<xsd:minInclusive value="2021"/>
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="CfdiRelacionados" minOccurs="0" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>Nodo opcional para precisar la información de los comprobantes relacionados.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="CfdiRelacionado" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>Nodo requerido para precisar la información de los comprobantes relacionados.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="UUID" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para registrar el folio fiscal (UUID) de un CFDI relacionado con el presente comprobante, por ejemplo: Si el CFDI relacionado es un comprobante de traslado que sirve para registrar el movimiento de la mercancía. Si este comprobante se usa como nota de crédito o nota de débito del comprobante relacionado. Si este comprobante es una devolución sobre el comprobante relacionado. Si éste sustituye a una factura cancelada.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:length value="36"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[a-f0-9A-F]{8}-[a-f0-9A-F]{4}-[a-f0-9A-F]{4}-[a-f0-9A-F]{4}-[a-f0-9A-F]{12}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+<xsd:attribute name="TipoRelacion" type="catCFDI:c_TipoRelacion" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para indicar la clave de la relación que existe entre éste que se está generando y el o los CFDI previos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Emisor">
+<xsd:annotation>
+<xsd:documentation>Nodo requerido para expresar la información del contribuyente emisor del comprobante.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="Rfc" type="tdCFDI:t_RFC" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para registrar la Clave del Registro Federal de Contribuyentes correspondiente al contribuyente emisor del comprobante.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="Nombre" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para registrar el nombre, denominación o razón social del contribuyente inscrito en el RFC, del emisor del comprobante.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="300"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[^|]{1,300}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="RegimenFiscal" type="catCFDI:c_RegimenFiscal" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para incorporar la clave del régimen del contribuyente emisor al que aplicará el efecto fiscal de este comprobante.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="FacAtrAdquirente" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el número de operación proporcionado por el SAT cuando se trate de un comprobante a través de un PCECFDI o un PCGCFDISP.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:whiteSpace value="collapse"/>
+<xsd:length value="10"/>
+<xsd:pattern value="[0-9]{10}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Receptor">
+<xsd:annotation>
+<xsd:documentation>Nodo requerido para precisar la información del contribuyente receptor del comprobante.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="Rfc" type="tdCFDI:t_RFC" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para registrar la Clave del Registro Federal de Contribuyentes correspondiente al contribuyente receptor del comprobante.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="Nombre" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para registrar el nombre(s), primer apellido, segundo apellido, según corresponda, denominación o razón social del contribuyente, inscrito en el RFC, del receptor del comprobante.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="300"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[^|]{1,300}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="DomicilioFiscalReceptor" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para registrar el código postal del domicilio fiscal del receptor del comprobante.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:length value="5"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[0-9]{5}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="ResidenciaFiscal" type="catCFDI:c_Pais" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para registrar la clave del país de residencia para efectos fiscales del receptor del comprobante, cuando se trate de un extranjero, y que es conforme con la especificación ISO 3166-1 alpha-3. Es requerido cuando se incluya el complemento de comercio exterior o se registre el atributo NumRegIdTrib.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="NumRegIdTrib" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el número de registro de identidad fiscal del receptor cuando sea residente en el extranjero. Es requerido cuando se incluya el complemento de comercio exterior.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="40"/>
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="RegimenFiscalReceptor" type="catCFDI:c_RegimenFiscal" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para incorporar la clave del régimen fiscal del contribuyente receptor al que aplicará el efecto fiscal de este comprobante.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="UsoCFDI" type="catCFDI:c_UsoCFDI" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar la clave del uso que dará a esta factura el receptor del CFDI.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Conceptos">
+<xsd:annotation>
+<xsd:documentation>Nodo requerido para listar los conceptos cubiertos por el comprobante.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Concepto" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>Nodo requerido para registrar la información detallada de un bien o servicio amparado en el comprobante.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Impuestos" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Nodo condicional para capturar los impuestos aplicables al presente concepto.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Traslados" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Nodo opcional para asentar los impuestos trasladados aplicables al presente concepto.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Traslado" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>Nodo requerido para asentar la información detallada de un traslado de impuestos aplicable al presente concepto.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="Base" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la base para el cálculo del impuesto, la determinación de la base se realiza de acuerdo con las disposiciones fiscales vigentes. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:minInclusive value="0.000001"/>
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Impuesto" type="catCFDI:c_Impuesto" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la clave del tipo de impuesto trasladado aplicable al concepto.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TipoFactor" type="catCFDI:c_TipoFactor" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la clave del tipo de factor que se aplica a la base del impuesto.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TasaOCuota" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para señalar el valor de la tasa o cuota del impuesto que se traslada para el presente concepto. Es requerido cuando el atributo TipoFactor tenga una clave que corresponda a Tasa o Cuota.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:minInclusive value="0.000000"/>
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Importe" type="tdCFDI:t_Importe" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para señalar el importe del impuesto trasladado que aplica al concepto. No se permiten valores negativos. Es requerido cuando TipoFactor sea Tasa o Cuota.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Retenciones" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Nodo opcional para asentar los impuestos retenidos aplicables al presente concepto.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Retencion" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>Nodo requerido para asentar la información detallada de una retención de impuestos aplicable al presente concepto.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="Base" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la base para el cálculo de la retención, la determinación de la base se realiza de acuerdo con las disposiciones fiscales vigentes. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:minInclusive value="0.000001"/>
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Impuesto" type="catCFDI:c_Impuesto" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la clave del tipo de impuesto retenido aplicable al concepto.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TipoFactor" type="catCFDI:c_TipoFactor" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la clave del tipo de factor que se aplica a la base del impuesto.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TasaOCuota" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la tasa o cuota del impuesto que se retiene para el presente concepto.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:decimal">
+<xsd:whiteSpace value="collapse"/>
+<xsd:minInclusive value="0.000000"/>
+<xsd:fractionDigits value="6"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Importe" type="tdCFDI:t_Importe" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar el importe del impuesto retenido que aplica al concepto. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="ACuentaTerceros" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Nodo opcional para registrar información del contribuyente Tercero, a cuenta del que se realiza la operación.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="RfcACuentaTerceros" type="tdCFDI:t_RFC" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para registrar la Clave del Registro Federal de Contribuyentes del contribuyente Tercero, a cuenta del que se realiza la operación.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="NombreACuentaTerceros" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para registrar el nombre, denominación o razón social del contribuyente Tercero correspondiente con el Rfc, a cuenta del que se realiza la operación.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="300"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[^|]{1,300}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="RegimenFiscalACuentaTerceros" type="catCFDI:c_RegimenFiscal" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para incorporar la clave del régimen del contribuyente Tercero, a cuenta del que se realiza la operación.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="DomicilioFiscalACuentaTerceros" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para incorporar el código postal del domicilio fiscal del Tercero, a cuenta del que se realiza la operación.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:length value="5"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[0-9]{5}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="InformacionAduanera" minOccurs="0" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>Nodo opcional para introducir la información aduanera aplicable cuando se trate de ventas de primera mano de mercancías importadas o se trate de operaciones de comercio exterior con bienes o servicios.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="NumeroPedimento" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar el número del pedimento que ampara la importación del bien que se expresa en el siguiente formato: últimos 2 dígitos del año de validación seguidos por dos espacios, 2 dígitos de la aduana de despacho seguidos por dos espacios, 4 dígitos del número de la patente seguidos por dos espacios, 1 dígito que corresponde al último dígito del año en curso, salvo que se trate de un pedimento consolidado iniciado en el año inmediato anterior o del pedimento original de una rectificación, seguido de 6 dígitos de la numeración progresiva por aduana.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:length value="21"/>
+<xsd:pattern value="[0-9]{2}  [0-9]{2}  [0-9]{4}  [0-9]{7}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="CuentaPredial" minOccurs="0" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>Nodo opcional para asentar el número de cuenta predial con el que fue registrado el inmueble, en el sistema catastral de la entidad federativa de que trate, o bien para incorporar los datos de identificación del certificado de participación inmobiliaria no amortizable.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="Numero" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para precisar el número de la cuenta predial del inmueble cubierto por el presente concepto, o bien para incorporar los datos de identificación del certificado de participación inmobiliaria no amortizable, tratándose de arrendamiento.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="150"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[0-9a-zA-Z]{1,150}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="ComplementoConcepto" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Nodo opcional donde se incluyen los nodos complementarios de extensión al concepto definidos por el SAT, de acuerdo con las disposiciones particulares para un sector o actividad específica.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:any maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Parte" minOccurs="0" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>Nodo opcional para expresar las partes o componentes que integran la totalidad del concepto expresado en el comprobante fiscal digital por Internet.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="InformacionAduanera" minOccurs="0" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>Nodo opcional para introducir la información aduanera aplicable cuando se trate de ventas de primera mano de mercancías importadas o se trate de operaciones de comercio exterior con bienes o servicios.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="NumeroPedimento" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar el número del pedimento que ampara la importación del bien que se expresa en el siguiente formato: últimos 2 dígitos del año de validación seguidos por dos espacios, 2 dígitos de la aduana de despacho seguidos por dos espacios, 4 dígitos del número de la patente seguidos por dos espacios, 1 dígito que corresponde al último dígito del año en curso, salvo que se trate de un pedimento consolidado iniciado en el año inmediato anterior o del pedimento original de una rectificación, seguido de 6 dígitos de la numeración progresiva por aduana.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:length value="21"/>
+<xsd:pattern value="[0-9]{2}  [0-9]{2}  [0-9]{4}  [0-9]{7}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+<xsd:attribute name="ClaveProdServ" type="catCFDI:c_ClaveProdServ" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar la clave del producto o del servicio amparado por la presente parte. Es requerido y deben utilizar las claves del catálogo de productos y servicios, cuando los conceptos que registren por sus actividades correspondan con dichos conceptos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="NoIdentificacion" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo opcional para expresar el número de serie, número de parte del bien o identificador del producto o del servicio amparado por la presente parte. Opcionalmente se puede utilizar claves del estándar GTIN.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="100"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[^|]{1,100}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Cantidad" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para precisar la cantidad de bienes o servicios del tipo particular definido por la presente parte.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:minInclusive value="0.000001"/>
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Unidad" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo opcional para precisar la unidad de medida propia de la operación del emisor, aplicable para la cantidad expresada en la parte. La unidad debe corresponder con la descripción de la parte. </xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="20"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[^|]{1,20}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Descripcion" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para precisar la descripción del bien o servicio cubierto por la presente parte.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1000"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[^|]{1,1000}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="ValorUnitario" type="tdCFDI:t_Importe" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo opcional para precisar el valor o precio unitario del bien o servicio cubierto por la presente parte. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="Importe" type="tdCFDI:t_Importe" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo opcional para precisar el importe total de los bienes o servicios de la presente parte. Debe ser equivalente al resultado de multiplicar la cantidad por el valor unitario expresado en la parte. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+<xsd:attribute name="ClaveProdServ" type="catCFDI:c_ClaveProdServ" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar la clave del producto o del servicio amparado por el presente concepto. Es requerido y deben utilizar las claves del catálogo de productos y servicios, cuando los conceptos que registren por sus actividades correspondan con dichos conceptos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="NoIdentificacion" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo opcional para expresar el número de parte, identificador del producto o del servicio, la clave de producto o servicio, SKU o equivalente, propia de la operación del emisor, amparado por el presente concepto. Opcionalmente se puede utilizar claves del estándar GTIN.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:whiteSpace value="collapse"/>
+<xsd:minLength value="1"/>
+<xsd:maxLength value="100"/>
+<xsd:pattern value="[^|]{1,100}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Cantidad" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para precisar la cantidad de bienes o servicios del tipo particular definido por el presente concepto.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:minInclusive value="0.000001"/>
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="ClaveUnidad" type="catCFDI:c_ClaveUnidad" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para precisar la clave de unidad de medida estandarizada aplicable para la cantidad expresada en el concepto. La unidad debe corresponder con la descripción del concepto.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="Unidad" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo opcional para precisar la unidad de medida propia de la operación del emisor, aplicable para la cantidad expresada en el concepto. La unidad debe corresponder con la descripción del concepto.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="20"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[^|]{1,20}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Descripcion" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para precisar la descripción del bien o servicio cubierto por el presente concepto.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1000"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[^|]{1,1000}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="ValorUnitario" type="tdCFDI:t_Importe" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para precisar el valor o precio unitario del bien o servicio cubierto por el presente concepto.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="Importe" type="tdCFDI:t_Importe" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para precisar el importe total de los bienes o servicios del presente concepto. Debe ser equivalente al resultado de multiplicar la cantidad por el valor unitario expresado en el concepto. No se permiten valores negativos. </xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="Descuento" type="tdCFDI:t_Importe" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo opcional para representar el importe de los descuentos aplicables al concepto. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="ObjetoImp" type="catCFDI:c_ObjetoImp" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar si la operación comercial es objeto o no de impuesto.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Impuestos" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Nodo condicional para expresar el resumen de los impuestos aplicables.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Retenciones" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Nodo condicional para capturar los impuestos retenidos aplicables. Es requerido cuando en los conceptos se registre algún impuesto retenido.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Retencion" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>Nodo requerido para la información detallada de una retención de impuesto específico.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="Impuesto" type="catCFDI:c_Impuesto" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la clave del tipo de impuesto retenido.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="Importe" type="tdCFDI:t_Importe" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar el monto del impuesto retenido. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Traslados" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Nodo condicional para capturar los impuestos trasladados aplicables. Es requerido cuando en los conceptos se registre un impuesto trasladado.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Traslado" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>Nodo requerido para la información detallada de un traslado de impuesto específico.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="Base" type="tdCFDI:t_Importe" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la suma de los atributos Base de los conceptos del impuesto trasladado. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="Impuesto" type="catCFDI:c_Impuesto" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la clave del tipo de impuesto trasladado.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TipoFactor" type="catCFDI:c_TipoFactor" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la clave del tipo de factor que se aplica a la base del impuesto.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TasaOCuota" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para señalar el valor de la tasa o cuota del impuesto que se traslada por los conceptos amparados en el comprobante.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:decimal">
+<xsd:whiteSpace value="collapse"/>
+<xsd:minInclusive value="0.000000"/>
+<xsd:fractionDigits value="6"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Importe" type="tdCFDI:t_Importe" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para señalar la suma del importe del impuesto trasladado, agrupado por impuesto, TipoFactor y TasaOCuota. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+<xsd:attribute name="TotalImpuestosRetenidos" type="tdCFDI:t_Importe" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el total de los impuestos retenidos que se desprenden de los conceptos expresados en el comprobante fiscal digital por Internet. No se permiten valores negativos. Es requerido cuando en los conceptos se registren impuestos retenidos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TotalImpuestosTrasladados" type="tdCFDI:t_Importe" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el total de los impuestos trasladados que se desprenden de los conceptos expresados en el comprobante fiscal digital por Internet. No se permiten valores negativos. Es requerido cuando en los conceptos se registren impuestos trasladados.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Complemento" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Nodo opcional donde se incluye el complemento Timbre Fiscal Digital de manera obligatoria y los nodos complementarios determinados por el SAT, de acuerdo con las disposiciones particulares para un sector o actividad específica.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="TimbreFiscalDigital">
+<xsd:annotation>
+<xsd:documentation>Complemento requerido para el Timbrado Fiscal Digital que da validez al Comprobante fiscal digital por Internet.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="Version" use="required" fixed="1.1">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para la expresión de la versión del estándar del Timbre Fiscal Digital</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="UUID" use="required" id="UUID">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar los 36 caracteres del folio fiscal (UUID) de la transacción de timbrado conforme al estándar RFC 4122</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:whiteSpace value="collapse"/>
+<xsd:length value="36"/>
+<xsd:pattern value="[a-f0-9A-F]{8}-[a-f0-9A-F]{4}-[a-f0-9A-F]{4}-[a-f0-9A-F]{4}-[a-f0-9A-F]{12}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="FechaTimbrado" use="required" type="tdCFDI:t_FechaH">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar la fecha y hora, de la generación del timbre por la certificación digital del SAT. Se expresa en la forma AAAA-MM-DDThh:mm:ss y debe corresponder con la hora de la Zona Centro del Sistema de Horario en México.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="RfcProvCertif" use="required" type="tdCFDI:t_RFC_PM">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar el RFC del proveedor de certificación de comprobantes fiscales digitales que genera el timbre fiscal digital.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="Leyenda" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo opcional para registrar información que el SAT comunique a los usuarios del CFDI.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:whiteSpace value="collapse"/>
+<xsd:minLength value="12"/>
+<xsd:maxLength value="150"/>
+<xsd:pattern value="([A-Z]|[a-z]|[0-9]| |Ñ|ñ|!|&quot;|%|&amp;|'|¿|-|:|;|>|=|&lt;|@|_|,|\{|\}|`|~|á|é|í|ó|ú|Á|É|Í|Ó|Ú|ü|Ü){1,150}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="SelloCFD" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para contener el sello digital del comprobante fiscal o del comprobante de retenciones, que se ha timbrado. El sello debe ser expresado como una cadena de texto en formato Base 64.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="NoCertificadoSAT" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar el número de serie del certificado del SAT usado para generar el sello digital del Timbre Fiscal Digital.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:length value="20"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[0-9]{20}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="SelloSAT" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para contener el sello digital del Timbre Fiscal Digital, al que hacen referencia las reglas de la Resolución Miscelánea vigente. El sello debe ser expresado como una cadena de texto en formato Base 64.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Pagos">
+<xsd:annotation>
+<xsd:documentation>Complemento para el Comprobante Fiscal Digital por Internet (CFDI) para registrar información sobre la recepción de pagos. El emisor de este complemento para recepción de pagos debe ser quien las leyes le obligue a expedir comprobantes por los actos o actividades que realicen, por los ingresos que se perciban o por las retenciones de contribuciones que efectúen.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Totales">
+<xsd:annotation>
+<xsd:documentation>Nodo requerido para especificar el monto total de los pagos y el total de los impuestos, deben ser expresados en MXN.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="TotalRetencionesIVA" type="tdCFDI:t_ImporteMXN" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el total de los impuestos retenidos de IVA que se desprenden de los pagos. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TotalRetencionesISR" type="tdCFDI:t_ImporteMXN" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el total de los impuestos retenidos de ISR que se desprenden de los pagos. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TotalRetencionesIEPS" type="tdCFDI:t_ImporteMXN" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el total de los impuestos retenidos de IEPS que se desprenden de los pagos. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TotalTrasladosBaseIVA16" type="tdCFDI:t_ImporteMXN" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el total de la base de IVA trasladado a la tasa del 16% que se desprende de los pagos. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TotalTrasladosImpuestoIVA16" type="tdCFDI:t_ImporteMXN" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el total de los impuestos de IVA trasladado a la tasa del 16% que se desprenden de los pagos. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TotalTrasladosBaseIVA8" type="tdCFDI:t_ImporteMXN" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el total de la base de IVA trasladado a la tasa del 8% que se desprende de los pagos. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TotalTrasladosImpuestoIVA8" type="tdCFDI:t_ImporteMXN" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el total de los impuestos de IVA trasladado a la tasa del 8% que se desprenden de los pagos. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TotalTrasladosBaseIVA0" type="tdCFDI:t_ImporteMXN" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el total de la base de IVA trasladado a la tasa del 0% que se desprende de los pagos. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TotalTrasladosImpuestoIVA0" type="tdCFDI:t_ImporteMXN" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el total de los impuestos de IVA trasladado a la tasa del 0% que se desprenden de los pagos. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TotalTrasladosBaseIVAExento" type="tdCFDI:t_ImporteMXN" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el total de la base de IVA trasladado exento que se desprende de los pagos. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="MontoTotalPagos" type="tdCFDI:t_ImporteMXN" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar el total de los pagos que se desprenden de los nodos Pago. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Pago" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>Elemento requerido para incorporar la información de la recepción de pagos.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="DoctoRelacionado" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>Nodo requerido para expresar la lista de documentos relacionados con los pagos. Por cada documento que se relacione se debe generar un nodo DoctoRelacionado.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ImpuestosDR" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Nodo condicional para registrar los impuestos aplicables conforme al monto del pago recibido, expresados a la moneda del documento relacionado.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="RetencionesDR" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Nodo opcional para capturar los impuestos retenidos aplicables conforme al monto del pago recibido.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="RetencionDR" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>Nodo requerido para registrar la información detallada de una retención de impuesto específico conforme al monto del pago recibido.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="BaseDR" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la base para el cálculo de la retención conforme al monto del pago, aplicable al documento relacionado, la determinación de la base se realiza de acuerdo con las disposiciones fiscales vigentes. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:decimal">
+<xsd:minInclusive value="0.000001"/>
+<xsd:fractionDigits value="6"/>
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="ImpuestoDR" type="catCFDI:c_Impuesto" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la clave del tipo de impuesto retenido conforme al monto del pago, aplicable al documento relacionado.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TipoFactorDR" type="catCFDI:c_TipoFactor" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la clave del tipo de factor que se aplica a la base del impuesto.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TasaOCuotaDR" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar el valor de la tasa o cuota del impuesto que se retiene.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:decimal">
+<xsd:minInclusive value="0.000000"/>
+<xsd:fractionDigits value="6"/>
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="ImporteDR" type="tdCFDI:t_Importe" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar el importe del impuesto retenido conforme al monto del pago, aplicable al documento relacionado. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="TrasladosDR" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Nodo opcional para capturar los impuestos trasladados aplicables conforme al monto del pago recibido.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="TrasladoDR" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>Nodo requerido para asentar la información detallada de un traslado de impuesto específico conforme al monto del pago recibido.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="BaseDR" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la base para el cálculo del impuesto trasladado conforme al monto del pago, aplicable al documento relacionado, la determinación de la base se realiza de acuerdo con las disposiciones fiscales vigentes. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:decimal">
+<xsd:minInclusive value="0.000001"/>
+<xsd:fractionDigits value="6"/>
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="ImpuestoDR" type="catCFDI:c_Impuesto" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la clave del tipo de impuesto trasladado conforme al monto del pago, aplicable al documento relacionado.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TipoFactorDR" type="catCFDI:c_TipoFactor" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la clave del tipo de factor que se aplica a la base del impuesto.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TasaOCuotaDR" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para señalar el valor de la tasa o cuota del impuesto que se traslada. Es requerido cuando el atributo TipoFactorDR contenga una clave que corresponda a Tasa o Cuota.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:decimal">
+<xsd:minInclusive value="0.000000"/>
+<xsd:fractionDigits value="6"/>
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="ImporteDR" type="tdCFDI:t_Importe" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para señalar el importe del impuesto trasladado conforme al monto del pago, aplicable al documento relacionado. No se permiten valores negativos. Es requerido cuando el tipo factor sea Tasa o Cuota.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+<xsd:attribute name="IdDocumento" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar el identificador del documento relacionado con el pago. Este dato puede ser un Folio Fiscal de la Factura Electrónica o bien el número de operación de un documento digital.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="16"/>
+<xsd:maxLength value="36"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="([a-f0-9A-F]{8}-[a-f0-9A-F]{4}-[a-f0-9A-F]{4}-[a-f0-9A-F]{4}-[a-f0-9A-F]{12})|([0-9]{3}-[0-9]{2}-[0-9]{9})"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Serie" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo opcional para precisar la serie del comprobante para control interno del contribuyente, acepta una cadena de caracteres.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="25"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[^|]{1,25}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Folio" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo opcional para precisar el folio del comprobante para control interno del contribuyente, acepta una cadena de caracteres.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="40"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[^|]{1,40}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="MonedaDR" type="catCFDI:c_Moneda" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para identificar la clave de la moneda utilizada en los importes del documento relacionado, cuando se usa moneda nacional o el documento relacionado no especifica la moneda se registra MXN. Los importes registrados en los atributos ¿ImpSaldoAnt¿, ¿ImpPagado¿ e ¿ImpSaldoInsoluto¿ de éste nodo, deben corresponder a esta moneda. Conforme con la especificación ISO 4217.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="EquivalenciaDR" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el tipo de cambio conforme con la moneda registrada en el documento relacionado. Es requerido cuando la moneda del documento relacionado es distinta de la moneda de pago. Se debe registrar el número de unidades de la moneda señalada en el documento relacionado que equivalen a una unidad de la moneda del pago. Por ejemplo: El documento relacionado se registra en USD. El pago se realiza por 100 EUR. Este atributo se registra como 1.114700 USD/EUR. El importe pagado equivale a 100 EUR * 1.114700 USD/EUR = 111.47 USD.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:minInclusive value="0.000001"/>
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="TipoCambioDR" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el tipo de cambio conforme con la moneda registrada en el documento relacionado. Es requerido cuando la moneda del documento relacionado es distinta de la moneda de pago. Se debe registrar el número de unidades de la moneda señalada en el documento relacionado que equivalen a una unidad de la moneda del pago. Por ejemplo: El documento relacionado se registra en USD El pago se realiza por 100 EUR. Este atributo se registra como 1.114700 USD/EUR. El importe pagado equivale a 100 EUR * 1.114700 USD/EUR = 111.47 USD.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:minInclusive value="0.000001"/>
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="MetodoDePagoDR" use="required" type="catCFDI:c_MetodoPago">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar la clave del método de pago que se registró en el documento relacionado.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="NumParcialidad" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar el número de parcialidad que corresponde al pago.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:integer">
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[1-9][0-9]{0,2}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="ImpSaldoAnt" type="tdCFDI:t_Importe" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar el monto del saldo insoluto de la parcialidad anterior. En el caso de que sea la primer parcialidad este atributo debe contener el importe total del documento relacionado.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="ImpPagado" type="tdCFDI:t_Importe" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar el importe pagado para el documento relacionado.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="ImpSaldoInsoluto" type="tdCFDI:t_Importe" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar la diferencia entre el importe del saldo anterior y el monto del pago.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="ObjetoImpDR" type="catCFDI:c_ObjetoImp" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar si el pago del documento relacionado es objeto o no de impuesto.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="ImpuestosP" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Nodo condicional para registrar el resumen de los impuestos aplicables conforme al monto del pago recibido, expresados a la moneda de pago.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="RetencionesP" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Nodo condicional para señalar los impuestos retenidos aplicables conforme al monto del pago recibido. Es requerido cuando en los documentos relacionados se registre algún impuesto retenido.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="RetencionP" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>Nodo requerido para señalar la información detallada de una retención de impuesto específico conforme al monto del pago recibido.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="ImpuestoP" type="catCFDI:c_Impuesto" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la clave del tipo de impuesto retenido conforme al monto del pago.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="ImporteP" type="tdCFDI:t_Importe" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar el importe del impuesto retenido conforme al monto del pago. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="TrasladosP" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Nodo condicional para capturar los impuestos trasladados aplicables conforme al monto del pago recibido. Es requerido cuando en los documentos relacionados se registre un impuesto trasladado.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="TrasladoP" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>Nodo requerido para señalar la información detallada de un traslado de impuesto específico conforme al monto del pago recibido.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:attribute name="BaseP" type="tdCFDI:t_Importe" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la suma de los atributos BaseDR de los documentos relacionados del impuesto trasladado. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="ImpuestoP" type="catCFDI:c_Impuesto" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la clave del tipo de impuesto trasladado conforme al monto del pago.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TipoFactorP" type="catCFDI:c_TipoFactor" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para señalar la clave del tipo de factor que se aplica a la base del impuesto.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TasaOCuotaP" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para señalar el valor de la tasa o cuota del impuesto que se traslada en los documentos relacionados.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:minInclusive value="0.000000"/>
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="ImporteP" type="tdCFDI:t_Importe" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para señalar la suma del impuesto trasladado, agrupado por ImpuestoP, TipoFactorP y TasaOCuotaP. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+<xsd:attribute name="FechaPago" type="tdCFDI:t_FechaH" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar la fecha y hora en la que el beneficiario recibe el pago. Se expresa en la forma aaaa-mm-ddThh:mm:ss, de acuerdo con la especificación ISO 8601.En caso de no contar con la hora se debe registrar 12:00:00.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="FormaDePagoP" type="catCFDI:c_FormaPago" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar la clave de la forma en que se realiza el pago.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="MonedaP" type="catCFDI:c_Moneda" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para identificar la clave de la moneda utilizada para realizar el pago conforme a la especificación ISO 4217. Cuando se usa moneda nacional se registra MXN. El atributo Pagos:Pago:Monto debe ser expresado en la moneda registrada en este atributo.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TipoCambioP" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el tipo de cambio de la moneda a la fecha en que se realizó el pago. El valor debe reflejar el número de pesos mexicanos que equivalen a una unidad de la divisa señalada en el atributo MonedaP. Es requerido cuando el atributo MonedaP es diferente a MXN.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:minInclusive value="0.000001"/>
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Monto" type="tdCFDI:t_Importe" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar el importe del pago.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="NumOperacion" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el número de cheque, número de autorización, número de referencia, clave de rastreo en caso de ser SPEI, línea de captura o algún número de referencia análogo que identifique la operación que ampara el pago efectuado.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="100"/>
+<xsd:pattern value="[^|]{1,100}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="RfcEmisorCtaOrd" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar la clave RFC de la entidad emisora de la cuenta origen, es decir, la operadora, el banco, la institución financiera, emisor de monedero electrónico, etc., en caso de ser extranjero colocar XEXX010101000, considerar las reglas de obligatoriedad publicadas en la página del SAT para éste atributo de acuerdo con el catálogo catCFDI:c_FormaPago.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="12"/>
+<xsd:maxLength value="13"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="XEXX010101000|[A-Z&amp;Ñ]{3}[0-9]{2}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])[A-Z0-9]{2}[0-9A]"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="NomBancoOrdExt" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar el nombre del banco ordenante, es requerido en caso de ser extranjero. Considerar las reglas de obligatoriedad publicadas en la página del SAT para éste atributo de acuerdo con el catálogo catCFDI:c_FormaPago.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="300"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[^|]{1,300}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="CtaOrdenante" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para incorporar el número de la cuenta con la que se realizó el pago. Considerar las reglas de obligatoriedad publicadas en la página del SAT para éste atributo de acuerdo con el catálogo catCFDI:c_FormaPago.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="10"/>
+<xsd:maxLength value="50"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[A-Z0-9_]{10,50}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="RfcEmisorCtaBen" type="tdCFDI:t_RFC_PM" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar la clave RFC de la entidad operadora de la cuenta destino, es decir, la operadora, el banco, la institución financiera, emisor de monedero electrónico, etc. Considerar las reglas de obligatoriedad publicadas en la página del SAT para éste atributo de acuerdo con el catálogo catCFDI:c_FormaPago.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="CtaBeneficiario" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para incorporar el número de cuenta en donde se recibió el pago. Considerar las reglas de obligatoriedad publicadas en la página del SAT para éste atributo de acuerdo con el catálogo catCFDI:c_FormaPago.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="10"/>
+<xsd:maxLength value="50"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[A-Z0-9_]{10,50}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="TipoCadPago" type="catPagos:c_TipoCadenaPago" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para identificar la clave del tipo de cadena de pago que genera la entidad receptora del pago. Considerar las reglas de obligatoriedad publicadas en la página del SAT para éste atributo de acuerdo con el catálogo catCFDI:c_FormaPago.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="CertPago" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional que sirve para incorporar el certificado que ampara al pago, como una cadena de texto en formato base 64. Es requerido en caso de que el atributo TipoCadPago contenga información.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:base64Binary">
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="CadPago" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar la cadena original del comprobante de pago generado por la entidad emisora de la cuenta beneficiaria. Es requerido en caso de que el atributo TipoCadPago contenga información.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="8192"/>
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="SelloPago" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para integrar el sello digital que se asocie al pago. La entidad que emite el comprobante de pago, ingresa una cadena original y el sello digital en una sección de dicho comprobante, este sello digital es el que se debe registrar en este atributo. Debe ser expresado como una cadena de texto en formato base 64. Es requerido en caso de que el atributo TipoCadPago contenga información.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+<xsd:attribute name="Version" use="required" fixed="2.0">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido que indica la versión del complemento para recepción de pagos.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Addenda" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Nodo opcional para recibir las extensiones al presente formato que sean de utilidad al contribuyente. Para las reglas de uso del mismo, referirse al formato origen.</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:any maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+<xsd:attribute name="Version" use="required" fixed="4.0">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido con valor prefijado a 4.0 que indica la versión del estándar bajo el que se encuentra expresado el comprobante.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Serie" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo opcional para precisar la serie para control interno del contribuyente. Este atributo acepta una cadena de caracteres.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="25"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[^|]{1,25}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Folio" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo opcional para control interno del contribuyente que expresa el folio del comprobante, acepta una cadena de caracteres.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="40"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[^|]{1,40}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Fecha" type="tdCFDI:t_FechaH" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para la expresión de la fecha y hora de expedición del Comprobante Fiscal Digital por Internet. Se expresa en la forma AAAA-MM-DDThh:mm:ss y debe corresponder con la hora local donde se expide el comprobante.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="Sello" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para contener el sello digital del comprobante fiscal, al que hacen referencia las reglas de resolución miscelánea vigente. El sello debe ser expresado como una cadena de texto en formato Base 64.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="FormaPago" type="catCFDI:c_FormaPago" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar la clave de la forma de pago de los bienes o servicios amparados por el comprobante.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="NoCertificado" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar el número de serie del certificado de sello digital que ampara al comprobante, de acuerdo con el acuse correspondiente a 20 posiciones otorgado por el sistema del SAT.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:length value="20"/>
+<xsd:whiteSpace value="collapse"/>
+<xsd:pattern value="[0-9]{20}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Certificado" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido que sirve para incorporar el certificado de sello digital que ampara al comprobante, como texto en formato base 64.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="CondicionesDePago" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para expresar las condiciones comerciales aplicables para el pago del comprobante fiscal digital por Internet. Este atributo puede ser condicionado mediante atributos o complementos.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:whiteSpace value="collapse"/>
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1000"/>
+<xsd:pattern value="[^|]{1,1000}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="SubTotal" type="tdCFDI:t_Importe" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para representar la suma de los importes de los conceptos antes de descuentos e impuesto. No se permiten valores negativos.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="Descuento" type="tdCFDI:t_Importe" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para representar el importe total de los descuentos aplicables antes de impuestos. No se permiten valores negativos. Se debe registrar cuando existan conceptos con descuento.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="Moneda" type="catCFDI:c_Moneda" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para identificar la clave de la moneda utilizada para expresar los montos, cuando se usa moneda nacional se registra MXN. Conforme con la especificación ISO 4217.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TipoCambio" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para representar el tipo de cambio FIX conforme con la moneda usada. Es requerido cuando la clave de moneda es distinta de MXN y de XXX. El valor debe reflejar el número de pesos mexicanos que equivalen a una unidad de la divisa señalada en el atributo moneda. Si el valor está fuera del porcentaje aplicable a la moneda tomado del catálogo c_Moneda, el emisor debe obtener del PAC que vaya a timbrar el CFDI, de manera no automática, una clave de confirmación para ratificar que el valor es correcto e integrar dicha clave en el atributo Confirmacion.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:minInclusive value="0.000001"/>
+<xsd:whiteSpace value="collapse"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="Total" type="tdCFDI:t_Importe" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para representar la suma del subtotal, menos los descuentos aplicables, más las contribuciones recibidas (impuestos trasladados - federales y/o locales, derechos, productos, aprovechamientos, aportaciones de seguridad social, contribuciones de mejoras) menos los impuestos retenidos federales y/o locales. Si el valor es superior al límite que establezca el SAT en la Resolución Miscelánea Fiscal vigente, el emisor debe obtener del PAC que vaya a timbrar el CFDI, de manera no automática, una clave de confirmación para ratificar que el valor es correcto e integrar dicha clave en el atributo Confirmacion. No se permiten valores negativos. </xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="TipoDeComprobante" type="catCFDI:c_TipoDeComprobante" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar la clave del efecto del comprobante fiscal para el contribuyente emisor.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="Exportacion" type="catCFDI:c_Exportacion" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para expresar si el comprobante ampara una operación de exportación.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="MetodoPago" type="catCFDI:c_MetodoPago" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para precisar la clave del método de pago que aplica para este comprobante fiscal digital por Internet, conforme al Artículo 29-A fracción VII incisos a y b del CFF.</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="LugarExpedicion" type="catCFDI:c_CodigoPostal" use="required">
+<xsd:annotation>
+<xsd:documentation>Atributo requerido para incorporar el código postal del lugar de expedición del comprobante (domicilio de la matriz o de la sucursal).</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="Confirmacion" use="optional">
+<xsd:annotation>
+<xsd:documentation>Atributo condicional para registrar la clave de confirmación que entregue el PAC para expedir el comprobante con importes grandes, con un tipo de cambio fuera del rango establecido o con ambos casos. Es requerido cuando se registra un tipo de cambio o un total fuera del rango establecido.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:whiteSpace value="collapse"/>
+<xsd:length value="5"/>
+<xsd:pattern value="[0-9a-zA-Z]{5}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+</xsd:complexType>
+</xsd:schema>

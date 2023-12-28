@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/dbaReadCustomers" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/dbaReadCustomers" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="dbaReadCustomersInput" type="dbaReadCustomersInput"/>
+   <xs:complexType name="dbaReadCustomersInput">
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:element name="dbaReadCustomersOutputCollection" type="dbaReadCustomersOutputCollection"/>
+   <xs:complexType name="dbaReadCustomersOutputCollection">
+      <xs:sequence>
+         <xs:element name="dbaReadCustomersOutput" type="dbaReadCustomersOutput" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dbaReadCustomersOutput">
+      <xs:sequence>
+         <xs:element name="CustomerId" type="xs:string" nillable="true"/>
+         <xs:element name="Name" type="xs:string" nillable="true"/>
+         <xs:element name="LastName" type="xs:string" nillable="true"/>
+         <xs:element name="FiscalCode" type="xs:string" nillable="true"/>
+         <xs:element name="DunsNumber" type="xs:string" nillable="true"/>
+         <xs:element name="AccountName" type="xs:string" nillable="true"/>
+         <xs:element name="CustomerType" type="xs:string" nillable="true"/>
+         <xs:element name="ReplicationInd" type="xs:string" nillable="true"/>
+         <xs:element name="ReplicationMsg" type="xs:string" nillable="true"/>
+         <xs:element name="AccountId" type="xs:string" nillable="true"/>
+         <xs:element name="PaymentTerms" type="xs:string" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

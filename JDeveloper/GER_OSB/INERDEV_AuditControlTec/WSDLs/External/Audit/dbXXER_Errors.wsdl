@@ -1,0 +1,21 @@
+<wsdl:definitions name="dbXXER_Errors" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbXXER_Errors" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbXXER_Errors" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbXXER_Errors" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbXXER_Errors" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="dbXXER_Errors_plt">
+    <plt:role name="dbXXER_Errors_role">
+      <plt:portType name="tns:dbXXER_Errors_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbXXER_Errors" schemaLocation="../../../Schemas/External/Audit/dbXXER_Errors_table.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="XxerCompositeErrorsCollection_msg">
+        <wsdl:part name="XxerCompositeErrorsCollection" element="db:XxerCompositeErrorsCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="dbXXER_Errors_ptt">
+        <wsdl:operation name="insert">
+            <wsdl:input message="tns:XxerCompositeErrorsCollection_msg"/>
+            <wsdl:output message="tns:XxerCompositeErrorsCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

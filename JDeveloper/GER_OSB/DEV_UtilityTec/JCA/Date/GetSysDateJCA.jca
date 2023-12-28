@@ -1,0 +1,14 @@
+<adapter-config name="GetSysDate" adapter="db" wsdlLocation="../../WSDL/Date/GetSysDateWSDL.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="DEV/ERSEPDB1" location="eis/DB/DEV/ERSEPDB1"/>
+  <endpoint-interaction portType="GetSysDate_ptt" operation="GetSysDate">
+    <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
+      <property name="SchemaName" value="XERINTUSER"/>
+      <property name="PackageName" value="XXER_EAM_FS_REPORTS_PKG"/>
+      <property name="ProcedureName" value="GET_SYSDATE"/>
+      <property name="QueryTimeout" value="10"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

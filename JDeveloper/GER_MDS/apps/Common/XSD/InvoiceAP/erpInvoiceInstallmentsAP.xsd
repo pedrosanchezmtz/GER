@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP"
+            targetNamespace="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP" elementFormDefault="qualified">
+  <xsd:element name="getInvoiceInstallmentsAPRq">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="QueryParametersType">
+          <xsd:sequence>
+            <xsd:element name="invoice_id" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="getInvoiceInstallmentsAPRs">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="ResponseAPIType">
+          <xsd:sequence>
+            <xsd:element name="items" type="InvoiceInstallmentsType" maxOccurs="unbounded" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="updateInvoiceInstallmentsAPRq">
+    <xsd:complexType>
+      <xsd:complexContent>
+      <xsd:extension base="InvoiceInstallmentsType">
+       <!--  <xsd:sequence>
+         <xsd:element name="invoice_id" type="xsd:string" minOccurs="0" nillable="true"/>
+          <xsd:element name="invoice_installments_id" type="xsd:string" minOccurs="0" nillable="true"/>
+        </xsd:sequence>-->
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="updateInvoiceInstallmentsAPRs" type="InvoiceInstallmentsType"/>
+  
+  
+    <xsd:complexType name="LinksType">
+    <xsd:sequence>
+      <xsd:element name="href" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="kind" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="name" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="properties" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="changeIndicator" type="xsd:string" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rel" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="QueryParametersType">
+    <xsd:sequence>
+      <xsd:element name="finder" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="fields" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="expand" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="dependency" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="onlyData" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="limit" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="offset" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="orderBy" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="q" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="totalResults" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="links" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InvoiceInstallmentsType">
+    <xsd:sequence>
+      <xsd:element name="BankAccount" type="xsd:integer" minOccurs="0"/>
+      <xsd:element name="CreatedBy" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="CreationDate" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="DueDate" type="xsd:date" minOccurs="0"/>
+      <xsd:element name="ExternalBankAccountId" type="xsd:integer" minOccurs="0"/>
+      <xsd:element name="FirstDiscountAmount" type="xsd:string" minOccurs="0"/> 
+      <xsd:element name="FirstDiscountDate"  type="xsd:string" minOccurs="0"/> 
+      <xsd:element name="GrossAmount" type="xsd:integer" minOccurs="0"/>
+      <xsd:element name="HeldBy" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="HoldDate" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="HoldFlag" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="HoldReason" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="HoldType" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="InstallmentNumber" type="xsd:integer" minOccurs="0"/>
+      <xsd:element name="LastUpdateDate" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="LastUpdateLogin" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="LastUpdatedBy" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="NetAmountOne"  type="xsd:string" minOccurs="0"/> 
+      <xsd:element name="NetAmountThree"  type="xsd:string" minOccurs="0"/> 
+      <xsd:element name="NetAmountTwo" type="xsd:string" minOccurs="0"/> 
+      <xsd:element name="PaymentMethod" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PaymentMethodCode" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PaymentPriority" type="xsd:integer" minOccurs="0"/>
+      <xsd:element name="RemitToAddressName" type="xsd:string" minOccurs="0"/> 
+      <xsd:element name="RemitToSupplier"  type="xsd:string" minOccurs="0"/> 
+      <xsd:element name="RemittanceMessageOne"  type="xsd:string" minOccurs="0"/> 
+      <xsd:element name="RemittanceMessageThree"  type="xsd:string" minOccurs="0"/> 
+      <xsd:element name="RemittanceMessageTwo" type="xsd:string" minOccurs="0"/> 
+      <xsd:element name="SecondDiscountAmount" type="xsd:string" minOccurs="0"/> 
+      <xsd:element name="SecondDiscountDate" type="xsd:string" minOccurs="0"/> 
+      <xsd:element name="ThirdDiscountAmount"  type="xsd:string" minOccurs="0"/> 
+      <xsd:element name="ThirdDiscountDate" type="xsd:string" minOccurs="0"/> 
+      <xsd:element name="UnpaidAmount" type="xsd:integer" minOccurs="0"/>
+      <xsd:element name="links" type="LinksType" maxOccurs="unbounded" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseAPIType">
+    <xsd:sequence>
+      <xsd:element name="count" type="xsd:integer" minOccurs="0"  />
+      <xsd:element name="hasMore" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="limit" type="xsd:integer" minOccurs="0"/>
+      <xsd:element name="links" type="LinksType" maxOccurs="unbounded" minOccurs="0"/>
+      <xsd:element name="offset" type="xsd:integer" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

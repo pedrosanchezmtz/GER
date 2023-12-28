@@ -1,0 +1,22 @@
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://xmlns.oracle.com/ReportsSOA" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="ReportsSOARestService">RestService</doc>
+   <grammars>
+      <xsd:schema>
+            <xsd:import namespace="http://xmlns.oracle.com/ReportsSOA" schemaLocation="../Schemas/XMLSchema_2098908805.xsd"/>
+        </xsd:schema>
+   </grammars>
+   <resources>
+      <resource path="/">
+         <method name="GET" soa:wsdlOperation="ReportsSOA">
+ <request soa:paramElement="pns:reportsSOARq" xmlns:pns="http://xmlns.oracle.com/ReportsSOA">
+               <param name="reportName" style="query" soa:expression="$msg.request/tns:reportName" type="xsd:string"/>
+               <param name="dateInitial" style="query" soa:expression="$msg.request/tns:dateInitial" type="xsd:string"/>
+               <param name="dateFinal" style="query" soa:expression="$msg.request/tns:dateFinal" type="xsd:string"/>
+               <param name="invoiceNumber" style="query" soa:expression="$msg.request/tns:invoiceNumber" type="xsd:string"/>
+               <param name="email" style="query" soa:expression="$msg.request/tns:email" type="xsd:string"/>
+            </request>
+            <response status="204"/>
+         </method>
+      </resource>
+   </resources>
+</application>

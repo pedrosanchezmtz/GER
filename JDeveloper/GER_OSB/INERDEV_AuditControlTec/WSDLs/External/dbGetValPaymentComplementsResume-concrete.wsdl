@@ -1,0 +1,15 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbGetValPaymentComplementsResume" name="dbGetValPaymentComplementsResume-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="dbGetValPaymentComplementsResume.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbGetValPaymentComplementsResume"/>
+    <wsdl:binding name="dbGetValPaymentComplementsResume_ptt-binding" type="dbg:dbGetValPaymentComplementsResume_ptt" xmlns:dbg="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbGetValPaymentComplementsResume">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="dbGetValPaymentComplementsResumeSelect">
+            <soap:operation soapAction="dbGetValPaymentComplementsResumeSelect"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

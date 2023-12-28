@@ -1,0 +1,994 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Tue Dec 31 13:14:23 CST 2019
+  Author:  ivanr
+  Type: BPEL 2.0 Process
+  Purpose: One Way BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="RecordUnitMterics"
+         targetNamespace="http://xmlns.oracle.com/ER_AssetsApplication_BPEL/RecordUnitMetrics/RecordUnitMterics"
+         xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:client="http://soa.estrellaroja.com.mx/RecordUnitMterics"
+         xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+         xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns0="http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec"
+         xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_UtilityTec/GetSysDate"
+         xmlns:ns2="http://xmlns.oracle.com/OSB_EstrellaRoja/DEV_APIUnitMetricsTec/GetMileageControlnet"
+         xmlns:ns3="http://xmlns.oracle.com/OSB_EstrellaRoja/DEV_APIUnitMetricsTec/GetMileageOmnitracs"
+         xmlns:ns4="http://xmlns.oracle.com/OSB_EstrellaRoja/DEV_APIUnitMetricsTec/GetMileageSine"
+         xmlns:ns5="http://xmlns.oracle.com/OSB_EstrellaRoja/DEV_APIUnitMetricsTec/GetMileageTomTom"
+         xmlns:ns6="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_APIUnitMetricsTec/GetMileageExcel"
+         xmlns:ns7="http://xmlns.oracle.com/pcbpel/adapter/db/sp/GetSysDate"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:ns8="http://soa.estrellaroja.com.mx/MileageControlnet"
+         xmlns:ns9="http://soa.estrellaroja.com.mx/MileageSine"
+         xmlns:ns10="http://soa.estrellaroja.com.mx/MileageOmnitracs"
+         xmlns:ns12="http://soa.estrellaroja.com.mx/RecordUnitMterics"
+         xmlns:ns11="http://soa.estrellaroja.com.mx/MileageTomTom"
+         xmlns:ns13="http://xmlns.oracle.com/oxp/service/PublicReportService"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns14="http://soa.estrellaroja.com.mx/ReportAsset"
+         xmlns:ns15="http://soa.estrellaroja.com.mx/ReportReadings"
+         xmlns:ns16="http://xmlns.oracle.com/OSB_EstrellaRoja/DEV_ERPUnitMetricsTec/ERPMeterReadings"
+         xmlns:ns17="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_APIUnitMetricsTec/TruncMileageExcel"
+         xmlns:ns18="http://xmlns.oracle.com/pcbpel/adapter/db/GetMileageExcel"
+         xmlns:ns19="http://soa.estrellaroja.com.mx/ERPMeterReadings"
+         xmlns:ns20="http://xmlns.oracle.com/ER_AssetsApplication_BPEL/DecodeBase64/DecodeBase64"
+         xmlns:ns21="http://soa.estrellaroja.com.mx/DecodeBase64"
+         xmlns:ns22="http://soa.estrellaroja.com.mx/ReadingsCommon"
+         xmlns:ns23="http://soa.estrellaroja.com.mx/AssetMetricReadings"
+         xmlns:ns24="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_ESTRELLA_ROJA/DEV_EAMUnitMetricsTec/EAMOriginPriority"
+         xmlns:ns25="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_ESTRELLA_ROJA/DEV_EAMUnitMetricsTec/EAMErrorRecord"
+         xmlns:ns26="http://xmlns.oracle.com/pcbpel/adapter/db/top/EAMOriginPriority"
+         xmlns:ns27="http://xmlns.oracle.com/pcbpel/adapter/db/top/EAMErrorRecord"
+         xmlns:ns28="http://xmlns.oracle.com/pcbpel/adapter/db/EAMOriginPriority"
+         xmlns:ns29="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_ESTRELLA_ROJA/DEV_EAMUnitMetricsTec/EAMOriginDataByAsset"
+         xmlns:ns30="http://xmlns.oracle.com/pcbpel/adapter/db/EAMOriginDataByAsset"
+         xmlns:ns31="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_ESTRELLA_ROJA/DEV_EAMUnitMetricsTec/EAMInsertErrorRecord"
+         xmlns:ns32="http://xmlns.oracle.com/pcbpel/adapter/db/top/EAMInsertErrorRecord"
+         xmlns:ns33="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_ESTRELLA_ROJA/DEV_EAMUnitMetricsTec/EAMSelectErrorRecord"
+         xmlns:ns34="http://xmlns.oracle.com/pcbpel/adapter/db/EAMSelectErrorRecord"
+         xmlns:ns35="http://soa.estrellaroja.com.mx/SOAUtilitiesTec"
+         xmlns:ns36="http://soa.estrellaroja.com.mx/MessageTec"
+         xmlns:ns37="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"
+         xmlns:ns38="http://soa.estrellaroja.com.mx/AssetMetricReadingExcel"
+         xmlns:ns39="http://soa.estrellaroja.com.mx/ERPIntegrationBiz"
+         xmlns:ns40="http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec"
+         xmlns:ns41="http://xmlns.oracle.com/pcbpel/adapter/db/TruncMileageExcel"
+         xmlns:ns42="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB/DEV_EAMUnitMetricsTec/EAMSelectRecordBS"
+         xmlns:ns43="http://xmlns.oracle.com/pcbpel/adapter/db/EAMSelectRecordBS"
+                  xmlns:strClass="http://www.oracle.com/XSL/Transform/java/java.lang.String">
+  <import namespace="http://soa.estrellaroja.com.mx/RecordUnitMterics" location="../Schemas/RecordUnitMterics.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://soa.estrellaroja.com.mx/AssetMetricReadingExcel"
+          location="../Schemas/AssetMetricsReadingExcel.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/EAMOriginPriority"
+          location="../Schemas/OriginPriority/EAMOriginPriority.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://soa.estrellaroja.com.mx/AssetMetricReadings" location="../Schemas/AssetMetricReadings.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://soa.estrellaroja.com.mx/ReadingsCommon" location="../Schemas/MetricsReadingCommon.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://soa.estrellaroja.com.mx/ReportReadings" location="../Schemas/Readings_Data.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://soa.estrellaroja.com.mx/ReportAsset" location="../Schemas/Asset_Data.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
+
+  <import ui:processWSDL="true" namespace="http://soa.estrellaroja.com.mx/RecordUnitMterics"
+          location="../WSDLs/RecordUnitMterics.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      PARTNERLINKS                                                      
+      List of services participating in this BPEL process               
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <import location="oracle.soa.common.util.Base64Decoder" importType="http://schemas.oracle.com/bpel/extension/java"/>
+  <import location="oracle.xml.parser.v2.XMLElement" importType="http://schemas.oracle.com/bpel/extension/java"/>
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="wsDateService" partnerLinkType="ns1:GetSysDate_plt" partnerRole="GetSysDate_role"/>
+    <partnerLink name="wsMileageControlnetService" partnerLinkType="ns2:GetMileageControlnet"
+                 partnerRole="GetMileageControlnetProvider"/>
+    <partnerLink name="wsMileageOmnitracsService" partnerLinkType="ns3:GetMileageOmnitracs"
+                 partnerRole="GetMileageOmnitracsProvider"/>
+    <partnerLink name="wsMileageSine" partnerLinkType="ns4:GetMileageSine" partnerRole="GetMileageSineProvider"/>
+    <partnerLink name="wsMileageTomTomService" partnerLinkType="ns5:GetMileageTomTom"
+                 partnerRole="GetMileageTomTomProvider"/>
+    <partnerLink name="recordunitmterics_client_ep" partnerLinkType="ns12:RecordUnitMterics"
+                 myRole="RecordUnitMtericsProvider"/>
+
+    <partnerLink name="wsGetMileageExcelService" partnerLinkType="ns6:GetMileageExcel_plt"
+                 partnerRole="GetMileageExcel_role"/>
+    <partnerLink name="wsTruncMileageExcelService" partnerLinkType="ns17:TruncMileageExcel_plt"
+                 partnerRole="TruncMileageExcel_role"/>
+    <partnerLink name="wsEAMOriginPriorityService" partnerLinkType="ns24:EAMOriginPriority_plt"
+                 partnerRole="EAMOriginPriority_role"/>
+    <partnerLink name="wsEAMInsertErrorRecordService" partnerLinkType="ns31:EAMInsertErrorRecord_plt"
+                 partnerRole="EAMInsertErrorRecord_role"/>
+    <partnerLink name="wsEAMSelectErrorRecordService" partnerLinkType="ns33:EAMSelectErrorRecord_plt"
+                 partnerRole="EAMSelectErrorRecord_role"/>
+    <partnerLink name="wsSOAUtilitiesService" partnerLinkType="ns35:wsSOAUtilitiesService"
+                 partnerRole="SOAUtilitiesTecPortType"/>
+    <partnerLink name="wsSendEmailService" partnerLinkType="ns36:wsSendEmailService" partnerRole="MessageTecPortType"
+                 myRole="MessageTecCallbackPortType"/>
+    <partnerLink name="wsERPIntegrationServiceTec" partnerLinkType="ns40:wsERPIntegrationServiceTec"
+                 partnerRole="ERPIntegrationTecPortType"/>
+    <partnerLink name="wsEAMSelectRecordService" partnerLinkType="ns42:EAMSelectRecordBS_plt"
+                 partnerRole="EAMSelectRecordBS_role"/>
+                         <partnerLink name="wsERPReadingMetricsService" partnerLinkType="ns16:ERPMeterReadings" partnerRole="ERPMeterReadingsProvider"/>
+
+  </partnerLinks>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="ns12:RecordUnitMtericsRequestMessage"/>
+    <variable name="In_GetSysDate" messageType="ns1:args_in_msg"/>
+    <variable name="Out_GetSysDate" messageType="ns1:args_out_msg"/>
+    <variable name="In_TruncMileageExcel" messageType="ns17:TruncMileageExcelInput_msg"/>
+    <variable name="Asset_DATAVar" element="ns14:DATA_DS"/>
+    <variable name="Readings_DATAVar" element="ns15:DATA_DS"/>
+    <variable name="AssetMetricReadingsVar" element="ns23:AssetMetricReading"/>
+    <variable name="In_OriginPriority" messageType="ns24:EAMOriginPriorityInput_msg"/>
+    <variable name="Out_OriginPriority" messageType="ns24:EAMOriginPriorityOutputCollection_msg"/>
+    <variable name="In_EAMInsertError" messageType="ns31:XxerEamErrorLogCollection_msg"/>
+    <variable name="Out_EAMInsertError" messageType="ns31:XxerEamErrorLogCollection_msg"/>
+    <variable name="In_EAMSelectErrorRecord" messageType="ns33:EAMSelectErrorRecordInput_msg"/>
+    <variable name="Out_EAMSelectErrorRecord" messageType="ns33:EAMSelectErrorRecordOutputCollection_msg"/>
+    <variable name="DateSelectErrorVar" type="xsd:date"/>
+    <variable name="In_GetHTML" messageType="ns35:GetHtmlControlRq"/>
+    <variable name="StartDateVar" type="xsd:date"/>
+    <variable name="EndDateVar" type="xsd:date"/>
+    <variable name="OriginVar" type="xsd:string"/>
+    <variable name="v_dates" element="ns12:DATES"/>
+    <variable name="Out_GetHTML" messageType="ns35:GetHtmlControlRs"/>
+    <variable name="In_SendMail" messageType="ns36:MessageRq"/>
+    <variable name="EAMSelectRecordRs" messageType="ns42:EAMSelectRecordBSOutputCollection_msg"/>
+    <variable name="EAMSelectRecordRq" messageType="ns42:EAMSelectRecordBSInput_msg"/>
+    <variable name="Out_ERPReadingMetrics" messageType="ns16:postMeterReadings_outputMessage"/>
+    <variable name="In_ERPReadingMetrics" messageType="ns16:postMeterReadings_inputMessage"/>
+  </variables>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+    <!-- Receive input from requestor. (Note: This maps to operation defined in RecordUnitMterics.wsdl) --><receive name="receiveInput" partnerLink="recordunitmterics_client_ep" portType="ns12:RecordUnitMterics"
+             operation="process" createInstance="yes" variable="inputVariable"/>
+    <assign name="AssignOrigin">
+      <copy bpelx:insertMissingToData="yes">
+        <from>$inputVariable.payload/ns12:Origin</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$OriginVar</to>
+      </copy>
+    </assign>
+    <if name="IfDateParameter">
+      <condition>(string-length($inputVariable.payload/ns12:StartDate) &gt; 0) or (string-length($inputVariable.payload/ns12:EndDate) &gt; 0)</condition>
+      <scope name="ScopeGetConfigsTbl" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <variables>
+         <variable name="v_consultaString" type="xsd:string"/>
+         <variable name="v_queryConsulta" type="xsd:string"/>
+      </variables>
+      <faultHandlers>
+         <catchAll>
+            <empty name="Empty1" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/>
+         </catchAll>
+      </faultHandlers>
+      <sequence name="Sequence4"><assign name="AssignQueryConsulta">
+            <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                  xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+              <from>dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","QueryDates","Value","","Component","RecordUnitMetrics")</from>
+              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_queryConsulta</to>
+            </copy>
+            <copy>
+              <from>strClass:replaceAll($v_queryConsulta,'@FECHA_INICIO@',$inputVariable.payload/ns12:StartDate)</from>
+              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_queryConsulta</to>
+            </copy>
+            <copy>
+              <from>strClass:replaceAll($v_queryConsulta,'@FECHA_FIN@',$inputVariable.payload/ns12:EndDate)</from>
+              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_queryConsulta</to>
+            </copy>
+          </assign>
+          <assign name="AssignGetURLsCFDIs">
+            <copy>
+              <from>strClass:replaceAll(oraext:get-content-as-string(oraext:query-database(bpws:getVariableData('v_queryConsulta'),true(),true(),'jdbc/ERSEPDB1DS')),'&lt;ROWSET&gt;','&lt;ROWSET xmlns="http://soa.estrellaroja.com.mx/RecordUnitMterics"&gt;')</from>
+              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_consultaString</to>
+            </copy>
+          </assign>
+          <assign name="AssignGetURLsCFDIs" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      
+      
+      
+   <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+         xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+         <from>oraext:parseXML($v_consultaString)</from>
+         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_dates</to>
+      </copy><copy>
+              <from>ora:getContentAsString($v_dates)</from>
+              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_consultaString</to>
+            </copy></assign>
+          <extensionActivity>
+            <bpelx:exec name="Java_Embedding1">
+              <![CDATA[addAuditTrailEntry("Base64encode started");     
+try {     
+ 
+ 
+addAuditTrailEntry("-----------------------Mostrando variables Validadas-----------------");       
+java.lang.String VarString =null;        
+VarString = (java.lang.String)getVariableData("v_queryConsulta");    
+   
+addAuditTrailEntry("v_queryConsulta="+VarString);   
+VarString = (java.lang.String)getVariableData("v_consultaString");   
+addAuditTrailEntry("v_consultaString="+VarString);   
+ 
+oracle.soa.common.util.Base64Encoder encoder = new oracle.soa.common.util.Base64Encoder();   
+java.lang.String encoded = null;        
+encoded = encoder.encode(VarString);     
+addAuditTrailEntry("Base64encode encoded="+encoded);   
+   
+ } catch (Exception e) {     
+  addAuditTrailEntry("Base64encode Exception: "+e.getMessage());     
+}     
+addAuditTrailEntry("Base64encode ended");]]>
+            </bpelx:exec>
+          </extensionActivity>
+        </sequence>
+   </scope>
+      <else>
+        <sequence>
+          <invoke name="Invoke_GetSysDate" bpelx:invokeAsDetail="no" partnerLink="wsDateService"
+                  portType="ns1:GetSysDate_ptt" operation="GetSysDate" inputVariable="In_GetSysDate"
+                  outputVariable="Out_GetSysDate"/>
+          <assign name="AssignSysdate">
+            <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+              <from>$Out_GetSysDate.OutputParameters/ns7:GET_SYSDATE</from>
+              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_dates/ns12:ROW/ns12:FECHA</to>
+            </copy>
+            <copy>
+              <from>'All'</from>
+              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$OriginVar</to>
+            </copy>
+            <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+              <from>$Out_GetSysDate.OutputParameters/ns7:GET_SYSDATE</from>
+              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_dates/ns12:ROW/ns12:FECHA</to>
+            </copy>
+          </assign>
+        </sequence>
+      </else>
+    </if>
+    <forEach parallel="no" counterName="count_Dates" name="ForEach_Dates">
+      <startCounterValue>1</startCounterValue>
+      <finalCounterValue>count($v_dates/ns12:ROW)</finalCounterValue>
+      <scope name="Scope5">
+        <sequence>
+          <assign name="AssignDateParam">
+            <copy bpelx:insertMissingToData="yes">
+              <from>$v_dates/ns12:ROW[$count_Dates]/ns12:FECHA</from>
+              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$StartDateVar</to>
+            </copy>
+            <copy bpelx:insertMissingToData="yes">
+              <from>$v_dates/ns12:ROW[$count_Dates]/ns12:FECHA</from>
+              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$EndDateVar</to>
+            </copy>
+          </assign>
+          <scope name="ScopeGetDataAPIS">
+            <variables>
+              <variable name="In_GetMileageControlnet" messageType="ns2:getMileage_inputMessage"/>
+              <variable name="Out_GetMileageControlnet" messageType="ns2:getMileage_outputMessage"/>
+              <variable name="In_GetMileageSine" messageType="ns4:getMileage_inputMessage"/>
+              <variable name="Out_GetMileageSine" messageType="ns4:getMileage_outputMessage"/>
+              <variable name="In_GetMileageOmnitracs" messageType="ns3:getMileage_inputMessage"/>
+              <variable name="Out_GetMileageOmnitracs" messageType="ns3:getMileage_outputMessage"/>
+              <variable name="In_GetTomTom" messageType="ns5:getMileage_inputMessage"/>
+              <variable name="Out_GetTomTom" messageType="ns5:getMileage_outputMessage"/>
+              <variable name="In_GetMileageExcel" messageType="ns6:GetMileageExcelInput_msg"/>
+              <variable name="Out_GetMileageExcel" messageType="ns6:GetMileageExcelOutputCollection_msg"/>
+              <variable name="MetricsReadingVar" element="ns22:MetricsReading"/>
+            </variables>
+            <faultHandlers>
+              <catchAll>
+                <sequence name="Sequence23" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                  <assign name="AssignError">
+                    <copy>
+                      <from>'0'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:TotalSucceeded</to>
+                    </copy>
+                    <copy>
+                      <from>'0'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:TotalProcessed</to>
+                    </copy>
+                    <copy>
+                      <from>'ER-0001'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:ErrorsDetails/ns35:ErrorDetail/ns35:DataValue</to>
+                    </copy>
+                    <copy>
+                      <from>"Error al obtener las lecturas de los origenes, consulte con el Administrador y reprocese las lecturas manualmente."</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:ErrorsDetails/ns35:ErrorDetail/ns35:ErrorMessage</to>
+                    </copy>
+                  </assign>
+                  <invoke name="Invoke_GetHTML" partnerLink="wsSOAUtilitiesService"
+                          portType="ns35:SOAUtilitiesTecPortType" operation="GetHtmlControl" inputVariable="In_GetHTML"
+                          outputVariable="Out_GetHTML" bpelx:invokeAsDetail="no"
+                          xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                          xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/>
+                  <assign name="AssignEmail" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                    <copy>
+                      <from>$Out_GetHTML.GetHtmlControlRs/ns35:Return/ns35:HtmlControl</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_SendMail.MessageRq/ns36:Message/ns36:Message</to>
+                    </copy>
+                    <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                      <from>'RecordUnitMetrics'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_SendMail.CustomHeader/ns36:IntegrationName</to>
+                    </copy>
+                  </assign>
+                  <invoke name="Invoke_SendMail" partnerLink="wsSendEmailService" portType="ns36:MessageTecPortType"
+                          operation="SendEmail" inputVariable="In_SendMail" bpelx:invokeAsDetail="no"
+                          xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                          xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/>
+                  <exit name="Exit1"/>
+                </sequence>
+              </catchAll>
+            </faultHandlers>
+            <sequence name="SeqGetDataAPIS">
+              <assign name="AssignDate">
+                <copy>
+                  <from>xp20:format-dateTime($StartDateVar,"[Y001]-[M01]-[D01]")</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetMileageOmnitracs.request/ns10:fechaInicio</to>
+                </copy>
+                <copy>
+                  <from>xp20:format-dateTime($StartDateVar,"[Y001]-[M01]-[D01]")</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetMileageExcel.GetMileageExcelInput_msg/ns18:fechaInicio</to>
+                </copy>
+                <copy>
+                  <from>xp20:format-dateTime($EndDateVar,"[Y001]-[M01]-[D01]")</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetMileageOmnitracs.request/ns10:fechaFin</to>
+                </copy>
+                <copy>
+                  <from>xp20:format-dateTime($EndDateVar,"[Y001]-[M01]-[D01]")</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetMileageExcel.GetMileageExcelInput_msg/ns18:fechaFin</to>
+                </copy>
+                <copy>
+                  <from>xp20:format-dateTime($StartDateVar,"[Y001]-[M01]-[D01]")</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetMileageSine.request/ns9:fechaInicio</to>
+                </copy>
+                <copy>
+                  <from>xp20:format-dateTime($StartDateVar,"[Y001]-[M01]-[D01]")</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetMileageControlnet.request/ns8:fechaInicio</to>
+                </copy>
+                <copy>
+                  <from>xp20:format-dateTime($EndDateVar,"[Y001]-[M01]-[D01]")</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetMileageControlnet.request/ns8:fechaFin</to>
+                </copy>
+                <copy>
+                  <from>xp20:format-dateTime($EndDateVar,"[Y001]-[M01]-[D01]")</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetMileageSine.request/ns9:fechaFin</to>
+                </copy>
+                <copy>
+                  <from>xp20:format-dateTime($StartDateVar,"[D01]/[M01]/[Y001]")</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetTomTom.request/ns11:fechaInicio</to>
+                </copy>
+                <copy>
+                  <from>xp20:format-dateTime($EndDateVar,"[D01]/[M01]/[Y001]")</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetTomTom.request/ns11:fechaFin</to>
+                </copy>
+              </assign>
+              <invoke name="Invoke_GetMileageControlnet" partnerLink="wsMileageControlnetService"
+                      portType="ns2:GetMileageControlnet_ptt" operation="getMileage"
+                      inputVariable="In_GetMileageControlnet" outputVariable="Out_GetMileageControlnet"
+                      bpelx:invokeAsDetail="no">
+                <bpelx:skipCondition>($OriginVar != 'ControlNet') and ($OriginVar != 'All')</bpelx:skipCondition>
+              </invoke>
+              <invoke name="Invoke_GetTomTom" partnerLink="wsMileageTomTomService" portType="ns5:GetMileageTomTom_ptt"
+                      operation="getMileage" inputVariable="In_GetTomTom" outputVariable="Out_GetTomTom"
+                      bpelx:invokeAsDetail="no">
+                <bpelx:skipCondition>($OriginVar != 'TomTom') and ($OriginVar != 'All')</bpelx:skipCondition>
+              </invoke>
+              <invoke name="Invoke_GetMileageOmnitracs" partnerLink="wsMileageOmnitracsService"
+                      portType="ns3:GetMileageOmnitracs_ptt" operation="getMileage"
+                      inputVariable="In_GetMileageOmnitracs" outputVariable="Out_GetMileageOmnitracs"
+                      bpelx:invokeAsDetail="no">
+                <bpelx:skipCondition>($OriginVar != 'Omnitracs') and ($OriginVar != 'All')</bpelx:skipCondition>
+              </invoke>
+              <invoke name="Invoke_GetMileageSine" partnerLink="wsMileageSine" portType="ns4:GetMileageSine_ptt"
+                      operation="getMileage" inputVariable="In_GetMileageSine" outputVariable="Out_GetMileageSine"
+                      bpelx:invokeAsDetail="no">
+                <bpelx:skipCondition>(($OriginVar != 'Sine') and ($OriginVar != 'All')) or true()</bpelx:skipCondition>
+              </invoke>
+              <invoke name="Invoke_GetMileageExcel" partnerLink="wsGetMileageExcelService"
+                      portType="ns6:GetMileageExcel_ptt" operation="GetMileageExcel" inputVariable="In_GetMileageExcel"
+                      outputVariable="Out_GetMileageExcel" bpelx:invokeAsDetail="no">
+                <bpelx:skipCondition>($OriginVar != 'Excel') and ($OriginVar != 'All')</bpelx:skipCondition>
+              </invoke>
+              <assign name="Tr_MetricsReadingResponse">
+                <bpelx:annotation>
+                  <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+                </bpelx:annotation>
+                <copy>
+                  <from>ora:doXSLTransformForDoc("../Transformations/Tr_MetricsReadingResponse.xsl", $Out_GetMileageControlnet.reply, "Out_GetMileageSine.reply", $Out_GetMileageSine.reply, "Out_GetMileageOmnitracs.reply", $Out_GetMileageOmnitracs.reply, "Out_GetTomTom.reply", $Out_GetTomTom.reply, "Out_GetMileageExcel.GetMileageExcelOutputCollection", $Out_GetMileageExcel.GetMileageExcelOutputCollection)</from>
+                  <to variable="MetricsReadingVar"/>
+                </copy>
+              </assign>
+              <assign name="Tr_AssetMetricReadingsResponse">
+                <bpelx:annotation>
+                  <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+                </bpelx:annotation>
+                <copy>
+                  <from>ora:doXSLTransformForDoc("../Transformations/Tr_AssetMetricReadingsResponse.xsl", $MetricsReadingVar)</from>
+                  <to variable="AssetMetricReadingsVar"/>
+                </copy>
+              </assign>
+            </sequence>
+          </scope>
+          <scope name="ScopeGetDataERP">
+            <variables>
+              <variable name="RunDataModelRq" messageType="ns40:RunDataModelRq"/>
+              <variable name="RunDataModelRs" messageType="ns40:RunDataModelRs"/>
+              <variable name="decodedValue" type="xsd:string"/>
+            </variables>
+            <faultHandlers>
+              <catchAll>
+                <sequence name="SeqError" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                  <assign name="AssignError">
+                    <copy>
+                      <from>'0'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:TotalSucceeded</to>
+                    </copy>
+                    <copy>
+                      <from>'0'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:TotalProcessed</to>
+                    </copy>
+                    <copy>
+                      <from>'ER-0002'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:ErrorsDetails/ns35:ErrorDetail/ns35:DataValue</to>
+                    </copy>
+                    <copy>
+                      <from>"Error al obtener los datos del ERP."</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:ErrorsDetails/ns35:ErrorDetail/ns35:ErrorMessage</to>
+                    </copy>
+                  </assign>
+                  <invoke name="Invoke_GetHTML" partnerLink="wsSOAUtilitiesService"
+                          portType="ns35:SOAUtilitiesTecPortType" operation="GetHtmlControl" inputVariable="In_GetHTML"
+                          outputVariable="Out_GetHTML" bpelx:invokeAsDetail="no"
+                          xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                          xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/>
+                  <assign name="AssignEmail" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                    <copy>
+                      <from>$Out_GetHTML.GetHtmlControlRs/ns35:Return/ns35:HtmlControl</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_SendMail.MessageRq/ns36:Message/ns36:Message</to>
+                    </copy>
+                    <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                      <from>'RecordUnitMetrics'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_SendMail.CustomHeader/ns36:IntegrationName</to>
+                    </copy>
+                  </assign>
+                  <invoke name="Invoke_SendMail" partnerLink="wsSendEmailService" portType="ns36:MessageTecPortType"
+                          operation="SendEmail" inputVariable="In_SendMail" bpelx:invokeAsDetail="no"
+                          xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                          xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/>
+                  <exit name="Exit1"/>
+                </sequence>
+              </catchAll>
+            </faultHandlers>
+            <sequence name="SeqGetDataERP">
+              <assign name="assignParams" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                      xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <from>concat(dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","Path","Value","","Component","RecordUnitMetrics"),dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","MD_assets","Value","","Component","RecordUnitMetrics"))</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RunDataModelRq.RunDataModelRqPart/ns0:reportRequest/ns0:reportAbsolutePath</to>
+                </copy>
+                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                  <from>'P_ACTIVO'</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RunDataModelRq.RunDataModelRqPart/ns0:reportRequest/ns0:parameterNameValues/ns0:listOfParamNameValues/ns0:item/ns0:name</to>
+                </copy>
+                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                  <from>oraext:create-delimited-string($AssetMetricReadingsVar/ns23:Reading/ns23:assetNumber,',')</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RunDataModelRq.RunDataModelRqPart/ns0:reportRequest/ns0:parameterNameValues/ns0:listOfParamNameValues/ns0:item/ns0:values/ns0:item</to>
+                </copy>
+              </assign>
+              <invoke name="ERPFusionReportASSETS" partnerLink="wsERPIntegrationServiceTec"
+                      portType="ns40:ERPIntegrationTecPortType" operation="RunDataModel" inputVariable="RunDataModelRq"
+                      outputVariable="RunDataModelRs" bpelx:invokeAsDetail="no"/>
+              <extensionActivity xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                <bpelx:exec name="Decoded" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <![CDATA[addAuditTrailEntry("decoding started");      
+try           
+{      
+XMLElement input = (XMLElement) getVariableData("RunDataModelRs","RunDataModelRsPart","ns0:Return/ns0:reportBytes");         
+String encodedString = input.getTextContent();           
+oracle.soa.common.util.Base64Decoder Decoder = new oracle.soa.common.util.Base64Decoder();           
+addAuditTrailEntry("encoded String = "+encodedString);           
+         
+String decoded = Decoder.decode(encodedString);    
+decoded = "<DATA_DS xmlns=\"http://soa.estrellaroja.com.mx/ReportAsset\">"+ decoded.substring(decoded.indexOf("<P_ACTIVO>"), decoded.length());                                       
+ 
+addAuditTrailEntry("decoded string = "+decoded);            
+setVariableData("decodedValue",decoded);           
+}           
+catch(Exception e)           
+{           
+  addAuditTrailEntry("Exception: "+e.getMessage());           
+}]]>
+                </bpelx:exec>
+              </extensionActivity>
+              <assign name="AssignDecoded" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                <copy>
+                  <from>ora:parseEscapedXML($decodedValue)</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Asset_DATAVar</to>
+                </copy>
+                <extensionAssignOperation>
+                  <bpelx:remove>
+                    <bpelx:target expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RunDataModelRq</bpelx:target>
+                  </bpelx:remove>
+                </extensionAssignOperation>
+                <extensionAssignOperation>
+                  <bpelx:remove>
+                    <bpelx:target expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RunDataModelRs</bpelx:target>
+                  </bpelx:remove>
+                </extensionAssignOperation>
+                <extensionAssignOperation>
+                  <bpelx:remove>
+                    <bpelx:target expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$decodedValue</bpelx:target>
+                  </bpelx:remove>
+                </extensionAssignOperation>
+              </assign>
+              <assign name="assignParams" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                      xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <from>concat(dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","Path","Value","","Component","RecordUnitMetrics"),dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","MD_medidores","Value","","Component","RecordUnitMetrics"))</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RunDataModelRq.RunDataModelRqPart/ns0:reportRequest/ns0:reportAbsolutePath</to>
+                </copy>
+                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                      xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <from>'P_ACTIVO'</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RunDataModelRq.RunDataModelRqPart/ns0:reportRequest/ns0:parameterNameValues/ns0:listOfParamNameValues/ns0:item/ns0:name</to>
+                </copy>
+                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                      xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <from>oraext:create-delimited-string($AssetMetricReadingsVar/ns23:Reading/ns23:assetNumber,',')</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RunDataModelRq.RunDataModelRqPart/ns0:reportRequest/ns0:parameterNameValues/ns0:listOfParamNameValues/ns0:item/ns0:values/ns0:item</to>
+                </copy>
+              </assign>
+              <invoke name="ERPFusionReportReadings" partnerLink="wsERPIntegrationServiceTec"
+                      portType="ns40:ERPIntegrationTecPortType" operation="RunDataModel" inputVariable="RunDataModelRq"
+                      outputVariable="RunDataModelRs" bpelx:invokeAsDetail="no"/>
+              <extensionActivity xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                <bpelx:exec name="Decoded" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <![CDATA[addAuditTrailEntry("decoding started");      
+try           
+{      
+XMLElement input = (XMLElement) getVariableData("RunDataModelRs","RunDataModelRsPart","ns0:Return/ns0:reportBytes");         
+String encodedString = input.getTextContent();           
+oracle.soa.common.util.Base64Decoder Decoder = new oracle.soa.common.util.Base64Decoder();           
+addAuditTrailEntry("encoded String = "+encodedString);           
+         
+String decoded = Decoder.decode(encodedString);    
+ 
+decoded = "<DATA_DS xmlns=\"http://soa.estrellaroja.com.mx/ReportReadings\">"+ decoded.substring(decoded.indexOf("<P_ITEM/>"), decoded.length());                                       
+ 
+addAuditTrailEntry("decoded string = "+decoded);            
+setVariableData("decodedValue",decoded);           
+}           
+catch(Exception e)           
+{           
+  addAuditTrailEntry("Exception: "+e.getMessage());           
+}]]>
+                  <![CDATA[addAuditTrailEntry("decoding started");      
+try           
+{      
+XMLElement input = (XMLElement) getVariableData("RunDataModelRs","RunDataModelRsPart","ns0:Return/ns0:reportBytes");         
+String encodedString = input.getTextContent();           
+oracle.soa.common.util.Base64Decoder Decoder = new oracle.soa.common.util.Base64Decoder();           
+addAuditTrailEntry("encoded String = "+encodedString);           
+         
+String decoded = Decoder.decode(encodedString);    
+ 
+decoded = "<DATA_DS xmlns=\"http://soa.estrellaroja.com.mx/ReportReadings\">"+ decoded.substring(decoded.indexOf("<P_ACTIVO>"), decoded.length());                                       
+ 
+addAuditTrailEntry("decoded string = "+decoded);            
+setVariableData("decodedValue",decoded);           
+}           
+catch(Exception e)           
+{           
+  addAuditTrailEntry("Exception: "+e.getMessage());           
+}]]>
+                </bpelx:exec>
+              </extensionActivity>
+              <assign name="AssignDecoded" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                <copy>
+                  <from>ora:parseEscapedXML($decodedValue)</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Readings_DATAVar</to>
+                </copy>
+              </assign>
+            </sequence>
+          </scope>
+          <scope name="ScopeDatosCloud">
+            <variables>
+              <variable name="v_name_medidor" type="xsd:string"/>
+            </variables>
+            <faultHandlers>
+              <catchAll>
+                <sequence name="SeqError" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                  <assign name="AssignError">
+                    <copy>
+                      <from>'0'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:TotalSucceeded</to>
+                    </copy>
+                    <copy>
+                      <from>'0'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:TotalProcessed</to>
+                    </copy>
+                    <copy>
+                      <from>'ER-0003'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:ErrorsDetails/ns35:ErrorDetail/ns35:DataValue</to>
+                    </copy>
+                    <copy>
+                      <from>"Error al obtener los datos de Cloud."</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:ErrorsDetails/ns35:ErrorDetail/ns35:ErrorMessage</to>
+                    </copy>
+                  </assign>
+                  <invoke name="Invoke_GetHTML" partnerLink="wsSOAUtilitiesService"
+                          portType="ns35:SOAUtilitiesTecPortType" operation="GetHtmlControl" inputVariable="In_GetHTML"
+                          outputVariable="Out_GetHTML" bpelx:invokeAsDetail="no"
+                          xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                          xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/>
+                  <assign name="AssignEmail" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                    <copy>
+                      <from>$Out_GetHTML.GetHtmlControlRs/ns35:Return/ns35:HtmlControl</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_SendMail.MessageRq/ns36:Message/ns36:Message</to>
+                    </copy>
+                    <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                      <from>'RecordUnitMetrics'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_SendMail.CustomHeader/ns36:IntegrationName</to>
+                    </copy>
+                  </assign>
+                  <invoke name="Invoke_SendMail" partnerLink="wsSendEmailService" portType="ns36:MessageTecPortType"
+                          operation="SendEmail" inputVariable="In_SendMail" bpelx:invokeAsDetail="no"
+                          xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                          xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/>
+                  <exit name="Exit1"/>
+                </sequence>
+              </catchAll>
+            </faultHandlers>
+            <sequence name="SeqDatosCloud">
+              <assign name="AssignParameters">
+                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes" keepSrcElementName="yes">
+                  <from>oraext:create-delimited-string($AssetMetricReadingsVar/ns23:Reading/ns23:assetNumber,',')</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$EAMSelectRecordRq.EAMSelectRecordBSInput_msg/ns43:assets</to>
+                </copy>
+                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                  <from>oraext:create-delimited-string($AssetMetricReadingsVar/ns23:Reading/ns23:assetNumber,',')</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_OriginPriority.EAMOriginPriorityInput_msg/ns28:assetNumber</to>
+                </copy>
+                <copy>
+                  <from>dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","MeterCode","Value","","Component","postMeterReadings")</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_name_medidor</to>
+                </copy>
+              </assign>
+              <invoke name="Invoke_OriginPriority" partnerLink="wsEAMOriginPriorityService"
+                      portType="ns24:EAMOriginPriority_ptt" operation="EAMOriginPriority"
+                      inputVariable="In_OriginPriority" outputVariable="Out_OriginPriority" bpelx:invokeAsDetail="no"/>
+              <invoke name="wsEAMSelectRecordService" bpelx:invokeAsDetail="no" partnerLink="wsEAMSelectRecordService"
+                      portType="ns42:EAMSelectRecordBS_ptt" operation="EAMSelectRecordBS"
+                      inputVariable="EAMSelectRecordRq" outputVariable="EAMSelectRecordRs"/>
+              <scope name="ScopeLogData">
+                <variables>
+                  <variable name="v_lecturas" type="xsd:string"/>
+                  <variable name="v_assets" type="xsd:string"/>
+                  <variable name="v_meters" type="xsd:string"/>
+                  <variable name="v_prioritys" type="xsd:string"/>
+                  <variable name="v_cloud" type="xsd:string"/>
+                </variables>
+                <sequence name="SeqLog">
+                  <assign name="AssignVariablesFGlobal"
+                          xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                    <copy>
+                      <from>oraext:get-content-as-string($AssetMetricReadingsVar)</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_lecturas</to>
+                    </copy>
+                    <copy>
+                      <from>oraext:get-content-as-string($EAMSelectRecordRs.EAMSelectRecordBSOutputCollection)</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_cloud</to>
+                    </copy>
+                    <copy>
+                      <from>oraext:get-content-as-string($Out_OriginPriority.EAMOriginPriorityOutputCollection)</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_prioritys</to>
+                    </copy>
+                    <copy>
+                      <from>oraext:get-content-as-string($Asset_DATAVar)</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_assets</to>
+                    </copy>
+                    <copy>
+                      <from>oraext:get-content-as-string($Readings_DATAVar)</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_meters</to>
+                    </copy>
+                  </assign>
+                  <extensionActivity>
+                    <bpelx:exec name="Java_LogsVars">
+                      <![CDATA[addAuditTrailEntry("Base64encode started");    
+try {    
+addAuditTrailEntry("-----------------------Mostrando variables Validadas-----------------");      
+java.lang.String VarString =null;       
+VarString = (java.lang.String)getVariableData("v_lecturas");	   
+VarString = VarString+(java.lang.String)getVariableData("v_assets");	  
+VarString = VarString+(java.lang.String)getVariableData("v_meters");	   
+VarString = VarString+(java.lang.String)getVariableData("v_prioritys");	  
+VarString = VarString+(java.lang.String)getVariableData("v_cloud");	   
+  
+  
+oracle.soa.common.util.Base64Encoder encoder = new oracle.soa.common.util.Base64Encoder();  
+java.lang.String encoded = null;       
+encoded = encoder.encode(VarString);    
+addAuditTrailEntry("Base64encode encoded="+encoded);  
+  
+addAuditTrailEntry("---------------fin------------------");  
+ } catch (Exception e) {    
+  addAuditTrailEntry("Base64encode Exception: "+e.getMessage());    
+}    
+addAuditTrailEntry("Base64encode ended");]]>
+                    </bpelx:exec>
+                  </extensionActivity>
+                </sequence>
+              </scope>
+              <assign name="XQTrs_ValidateERP">
+                <bpelx:annotation>
+                  <bpelx:pattern patternName="bpelx:xquery"></bpelx:pattern>
+                </bpelx:annotation>
+                <copy>
+                  <from>ora:processXQuery10('../Transformations/XQTransform_ValidateERP.xqy', 'AssetMetricReadingsVar', $AssetMetricReadingsVar, 'Asset_DATAVar', $Asset_DATAVar, 'Readings_DATAVar', $Readings_DATAVar, 'Out_OriginPriority', $Out_OriginPriority.EAMOriginPriorityOutputCollection, 'EAMSelectRecordRs', $EAMSelectRecordRs.EAMSelectRecordBSOutputCollection,'v_name_medidor',$v_name_medidor)</from>
+                  <to variable="In_EAMInsertError" part="XxerEamErrorLogCollection"/>
+                </copy>
+              </assign>
+            </sequence>
+          </scope>
+          <forEach parallel="no" counterName="countRecords" name="ForEach_Records">
+            <startCounterValue>1</startCounterValue>
+            <finalCounterValue>count($In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog)</finalCounterValue>
+            <scope name="ScopePostMeters">
+              <sequence name="SeqPostMeters">
+                <if name="If_Sucess">
+                  <documentation>
+                    <![CDATA[Sucess]]>
+                  </documentation>
+                  <condition>$In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:errorMessage='Success'</condition>
+                  <sequence name="SeqSucess">
+                    <assign name="AssignReadingMeterExcel">
+                      <copy>
+                        <from>$Readings_DATAVar/ns15:G_2[ns15:ASSET_NUMBER=$In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:assetNumber and ns15:NAME=dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","MeterCode","Value","","Component","postMeterReadings") ]/ns15:METER_ID</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:MeterId</to>
+                      </copy>
+                      <copy>
+                        <from>dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","MeterCode","Value","","Component","postMeterReadings")</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:MeterCode</to>
+                      </copy>
+                      <copy>
+                        <from>concat(substring-before($In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:readingDateCal,'.'),'-06:00')</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:ReadingDate</to>
+                      </copy>
+                      <copy>
+                        <from>dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","ReadingTypeCode","Value","","Component","postMeterReadings")</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:ReadingTypeCode</to>
+                      </copy>
+                      <copy>
+                        <from>dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","MeterUsageCode","Value","","Component","postMeterReadings")</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:MeterUsageCode</to>
+                      </copy>
+                      <copy ignoreMissingFromData="yes">
+                        <from>$In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:origin</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:Comments</to>
+                      </copy>
+                      <copy ignoreMissingFromData="yes">
+                        <from>$In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:readingValueCal</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:ReadingValue</to>
+                      </copy>
+                    </assign>
+                    <scope name="Scope4">
+                      <faultHandlers>
+                        <catch faultName="ns16:fault" faultVariable="FaultSvc" faultMessageType="ns16:faultMessage">
+                          <sequence>
+                            <assign name="AssignError">
+                              <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                                <from>$FaultSvc.fault/ns19:Description</from>
+                                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:errorMessage</to>
+                              </copy>
+                            </assign>
+                            <compensate name="Compensate1"/>
+                          </sequence>
+                        </catch>
+                      </faultHandlers>
+                      <sequence name="Sequence10">
+                        <invoke name="Invoke_ERPReadingMetrics" partnerLink="wsERPReadingMetricsService"
+                                portType="ns16:ERPMeterReadings_ptt" operation="postMeterReadings"
+                                inputVariable="In_ERPReadingMetrics" outputVariable="Out_ERPReadingMetrics"
+                                bpelx:invokeAsDetail="no"/>
+                      </sequence>
+                    </scope>
+                  </sequence>
+                </if>
+              </sequence>
+            </scope>
+          </forEach>
+          <scope name="ScopeLog">
+            <faultHandlers>
+              <catchAll>
+                <sequence name="SeqError" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                  <assign name="AssignError">
+                    <copy>
+                      <from>'0'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:TotalSucceeded</to>
+                    </copy>
+                    <copy>
+                      <from>'0'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:TotalErrors</to>
+                    </copy>
+                    <copy>
+                      <from>'0'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:TotalProcessed</to>
+                    </copy>
+                    <copy>
+                      <from>'ER-0006'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:ErrorsDetails/ns35:ErrorDetail/ns35:DataValue</to>
+                    </copy>
+                    <copy>
+                      <from>"Error insertando log "</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:ErrorsDetails/ns35:ErrorDetail/ns35:ErrorMessage</to>
+                    </copy>
+                  </assign>
+                  <invoke name="Invoke_GetHTML" partnerLink="wsSOAUtilitiesService"
+                          portType="ns35:SOAUtilitiesTecPortType" operation="GetHtmlControl" inputVariable="In_GetHTML"
+                          outputVariable="Out_GetHTML" bpelx:invokeAsDetail="no"
+                          xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                          xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/>
+                  <assign name="AssignEmail" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                    <copy>
+                      <from>$Out_GetHTML.GetHtmlControlRs/ns35:Return/ns35:HtmlControl</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_SendMail.MessageRq/ns36:Message/ns36:Message</to>
+                    </copy>
+                    <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                      <from>'RecordUnitMetrics'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_SendMail.CustomHeader/ns36:IntegrationName</to>
+                    </copy>
+                  </assign>
+                  <invoke name="Invoke_SendMail" partnerLink="wsSendEmailService" portType="ns36:MessageTecPortType"
+                          operation="SendEmail" inputVariable="In_SendMail" bpelx:invokeAsDetail="no"
+                          xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                          xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/>
+                  <exit name="Exit1"/>
+                </sequence>
+              </catchAll>
+            </faultHandlers>
+            <sequence name="SeqInsertLog">
+              <if name="If_ExistLog">
+                <documentation>
+                  <![CDATA[InsertLog]]>
+                </documentation>
+                <condition>count($In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog)=0</condition>
+                <sequence name="SeqSinLog" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                  <assign name="AssignError">
+                    <copy>
+                      <from>'0'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:TotalSucceeded</to>
+                    </copy>
+                    <copy>
+                      <from>'0'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:TotalErrors</to>
+                    </copy>
+                    <copy>
+                      <from>'0'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:TotalProcessed</to>
+                    </copy>
+                    <copy>
+                      <from>'ER-0005'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:ErrorsDetails/ns35:ErrorDetail/ns35:DataValue</to>
+                    </copy>
+                    <copy>
+                      <from>"Apis Empty"</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_GetHTML.GetHtmlControlRq/ns35:ErrorsDetails/ns35:ErrorDetail/ns35:ErrorMessage</to>
+                    </copy>
+                  </assign>
+                  <invoke name="Invoke_GetHTML" partnerLink="wsSOAUtilitiesService"
+                          portType="ns35:SOAUtilitiesTecPortType" operation="GetHtmlControl" inputVariable="In_GetHTML"
+                          outputVariable="Out_GetHTML" bpelx:invokeAsDetail="no"
+                          xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                          xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/>
+                  <assign name="AssignEmail" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                    <copy>
+                      <from>$Out_GetHTML.GetHtmlControlRs/ns35:Return/ns35:HtmlControl</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_SendMail.MessageRq/ns36:Message/ns36:Message</to>
+                    </copy>
+                    <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                      <from>'RecordUnitMetrics'</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_SendMail.CustomHeader/ns36:IntegrationName</to>
+                    </copy>
+                  </assign>
+                  <invoke name="Invoke_SendMail" partnerLink="wsSendEmailService" portType="ns36:MessageTecPortType"
+                          operation="SendEmail" inputVariable="In_SendMail" bpelx:invokeAsDetail="no"
+                          xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                          xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/>
+                </sequence>
+                <else>
+                  <sequence>
+                    <invoke name="Invoke_EAMErrorRecord" partnerLink="wsEAMInsertErrorRecordService"
+                            portType="ns31:EAMInsertErrorRecord_ptt" operation="insert"
+                            inputVariable="In_EAMInsertError" outputVariable="Out_EAMInsertError"
+                            bpelx:invokeAsDetail="no" xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                            xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/>
+                    <assign name="AssignSelectErrorRecord">
+                      <copy>
+                        <from>xp20:format-dateTime($StartDateVar,'[Y001]-[M01]-[D01]')</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_EAMSelectErrorRecord.EAMSelectErrorRecordInput_msg/ns34:fechaInicio</to>
+                      </copy>
+                      <copy>
+                        <from>xp20:format-dateTime($EndDateVar,'[Y001]-[M01]-[D01]')</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$DateSelectErrorVar</to>
+                      </copy>
+                      <copy>
+                        <from>xp20:add-dayTimeDuration-to-dateTime($DateSelectErrorVar,'P1D')</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_EAMSelectErrorRecord.EAMSelectErrorRecordInput_msg/ns34:fechaFin</to>
+                      </copy>
+                      <copy>
+                        <from>substring-before($In_EAMSelectErrorRecord.EAMSelectErrorRecordInput_msg/ns34:fechaFin,'T')</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_EAMSelectErrorRecord.EAMSelectErrorRecordInput_msg/ns34:fechaFin</to>
+                      </copy>
+                    </assign>
+                    <invoke name="Invoke_EAMSelectErrorRecord" partnerLink="wsEAMSelectErrorRecordService"
+                            portType="ns33:EAMSelectErrorRecord_ptt" operation="EAMSelectErrorRecord"
+                            inputVariable="In_EAMSelectErrorRecord" outputVariable="Out_EAMSelectErrorRecord"
+                            bpelx:invokeAsDetail="no"/>
+                    <assign name="Tr_GetHTMLResponse">
+                      <bpelx:annotation>
+                        <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+                      </bpelx:annotation>
+                      <copy>
+                        <from>ora:doXSLTransformForDoc("../Transformations/Tr_GetHTMLResponse.xsl", $AssetMetricReadingsVar, "Out_EAMSelectErrorRecord.EAMSelectErrorRecordOutputCollection", $Out_EAMSelectErrorRecord.EAMSelectErrorRecordOutputCollection)</from>
+                        <to variable="In_GetHTML" part="GetHtmlControlRq"/>
+                      </copy>
+                    </assign>
+                    <invoke name="Invoke_GetHTML" partnerLink="wsSOAUtilitiesService"
+                            portType="ns35:SOAUtilitiesTecPortType" operation="GetHtmlControl"
+                            inputVariable="In_GetHTML" outputVariable="Out_GetHTML" bpelx:invokeAsDetail="no"/>
+                    <assign name="AssignEmail">
+                      <copy>
+                        <from>$Out_GetHTML.GetHtmlControlRs/ns35:Return/ns35:HtmlControl</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_SendMail.MessageRq/ns36:Message/ns36:Message</to>
+                      </copy>
+                      <copy bpelx:insertMissingToData="yes">
+                        <from>'RecordUnitMetrics'</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_SendMail.CustomHeader/ns36:IntegrationName</to>
+                      </copy>
+                    </assign>
+                    <invoke name="Invoke_SendMail" partnerLink="wsSendEmailService" portType="ns36:MessageTecPortType"
+                            operation="SendEmail" inputVariable="In_SendMail" bpelx:invokeAsDetail="no"/>
+                  </sequence>
+                </else>
+              </if>
+            </sequence>
+          </scope>
+        </sequence>
+      </scope>
+    </forEach>
+    <invoke name="Invoke_TruncMileageExcel" partnerLink="wsTruncMileageExcelService"
+            portType="ns17:TruncMileageExcel_ptt" operation="TruncMileageExcel" inputVariable="In_TruncMileageExcel"
+            bpelx:invokeAsDetail="no"/>
+  </sequence>
+</process>

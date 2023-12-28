@@ -1,0 +1,12 @@
+<adapter-config name="EAMOriginData" adapter="db" wsdlLocation="../../WSDL/DataOrigin/EAMOriginDataWSDL.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="DEV/ERSEPDB1" location="eis/DB/DEV/ERSEPDB1"/>
+  <endpoint-interaction portType="EAMOriginData_ptt" operation="EAMOriginData">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="select * from xxer_eam_data_origin_tbl where origin = #pOrigin and creation_date BETWEEN #pFechaInicio and #pFechaFin"/>
+      <property name="QueryTimeout" value="10"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

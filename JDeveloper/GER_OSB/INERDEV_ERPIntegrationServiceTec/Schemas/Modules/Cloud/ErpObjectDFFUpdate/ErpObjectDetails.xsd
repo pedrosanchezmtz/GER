@@ -1,0 +1,40 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/" sdoJava:package="oracle.apps.financials.commonModules.shared.model.erpIntegrationService" xmlns:sdoJava="commonj.sdo/java" xmlns="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation xmlns:oer="http://xmlns.oracle.com/oer">
+            <name>Object Information SDO</name>
+            <description>Object details containing information like entity name,context
+                value, user key values and name value pairs of DFF atributes</description>
+            <oer:attributes>
+                <oer:attribute description="Entity Name of the ERP Object" name="EntityName"/>
+                <oer:attribute description="Context value of the DFF Object" name="ContextValue"/>
+                <oer:attribute description="User key value" name="UserKeyA"/>
+                <oer:attribute description="User key value" name="UserKeyB"/>
+                <oer:attribute description="User key value" name="UserKeyC"/>
+                <oer:attribute description="User key value" name="UserKeyD"/>
+                <oer:attribute description="User key value" name="UserKeyE"/>
+                <oer:attribute description="List of name value pairs of DFF attributes to be updated" name="DFFAttributes"/>
+            </oer:attributes>
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="commonj.sdo/java" schemaLocation="../Commons/sdoJava.xsd"/>
+    <xsd:complexType name="ErpObjectDetails">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>EntityName</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="EntityName" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ContextValue" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="UserKeyA" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="UserKeyB" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="UserKeyC" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="UserKeyD" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="UserKeyE" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="DFFAttributes" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="erpObjectDetails" type="ErpObjectDetails"/>
+</xsd:schema>

@@ -1,0 +1,29 @@
+<wsdl:definitions name="InsertDeliverOrders" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_ZAMMaintenanceTec/InsertDeliverOrders" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_ZAMMaintenanceTec/InsertDeliverOrders" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/InsertDeliverOrders" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="InsertDeliverOrders_plt">
+    <plt:role name="InsertDeliverOrders_role">
+      <plt:portType name="tns:InsertDeliverOrders_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/InsertDeliverOrders" schemaLocation="../../XSD/Orders/InsertDeliverOrdersXSD.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/InsertDeliverOrders" schemaLocation="../../XSD/Orders/InsertDeliverOrdersXSD.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/InsertDeliverOrders" schemaLocation="../../XSD/Orders/InsertDeliverOrdersXSD.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/InsertDeliverOrders" schemaLocation="../../XSD/Orders/InsertDeliverOrdersXSD.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="InsertDeliverOrdersInput_msg">
+        <wsdl:part name="InsertDeliverOrdersInput_msg" element="db:InsertDeliverOrdersInput"/>
+    </wsdl:message>
+    <wsdl:portType name="InsertDeliverOrders_ptt">
+        <wsdl:operation name="InsertDeliverOrders">
+            <wsdl:input message="tns:InsertDeliverOrdersInput_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

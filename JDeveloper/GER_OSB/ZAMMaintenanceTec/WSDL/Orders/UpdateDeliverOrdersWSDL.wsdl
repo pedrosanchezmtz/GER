@@ -1,0 +1,20 @@
+<wsdl:definitions name="UpdateDeliverOrders" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_ZAMMaintenanceTec/UpdateDeliverOrders" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_ZAMMaintenanceTec/UpdateDeliverOrders" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/UpdateDeliverOrders" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="UpdateDeliverOrders_plt">
+    <plt:role name="UpdateDeliverOrders_role">
+      <plt:portType name="tns:UpdateDeliverOrders_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/UpdateDeliverOrders" schemaLocation="../../XSD/Orders/UpdateDeliverOrdersXSD.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="UpdateDeliverOrdersInput_msg">
+        <wsdl:part name="UpdateDeliverOrdersInput_msg" element="db:UpdateDeliverOrdersInput"/>
+    </wsdl:message>
+    <wsdl:portType name="UpdateDeliverOrders_ptt">
+        <wsdl:operation name="UpdateDeliverOrders">
+            <wsdl:input message="tns:UpdateDeliverOrdersInput_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

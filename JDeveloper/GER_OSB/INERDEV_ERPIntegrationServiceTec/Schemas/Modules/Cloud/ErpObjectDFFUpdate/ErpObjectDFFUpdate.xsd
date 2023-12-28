@@ -1,0 +1,41 @@
+<schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/types/" xmlns:ns0="http://xmlns.oracle.com/adf/svc/errors/" xmlns:ns1="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/" xmlns:tns="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/types/" xmlns="http://www.w3.org/2001/XMLSchema">
+    <import namespace="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/" schemaLocation="DocumentDetails.xsd"/>
+    <import namespace="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/" schemaLocation="ErpObjectDetails.xsd"/>
+    <import namespace="http://xmlns.oracle.com/adf/svc/errors/" schemaLocation="../Commons/ServiceException.xsd"/>
+    <element name="updateDffEntityDetails">
+        <complexType>
+            <sequence>
+                <element maxOccurs="1" minOccurs="0" name="document" nillable="true" type="ns1:DocumentDetails"/>
+                <element name="operationMode" type="string"/>
+                <element maxOccurs="1" minOccurs="0" name="object" nillable="true" type="ns1:ErpObjectDetails"/>
+                <element maxOccurs="1" minOccurs="0" name="notificationCode" nillable="true" type="string"/>
+                <element maxOccurs="1" minOccurs="0" name="callbackURL" nillable="true" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateDffEntityDetailsResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateDffEntityDetailsAsync">
+        <complexType>
+            <sequence>
+                <element maxOccurs="1" minOccurs="0" name="document" nillable="true" type="ns1:DocumentDetails"/>
+                <element name="operationMode" type="string"/>
+                <element maxOccurs="1" minOccurs="0" name="object" nillable="true" type="ns1:ErpObjectDetails"/>
+                <element maxOccurs="1" minOccurs="0" name="notificationCode" nillable="true" type="string"/>
+                <element maxOccurs="1" minOccurs="0" name="callbackURL" nillable="true" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateDffEntityDetailsAsyncResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

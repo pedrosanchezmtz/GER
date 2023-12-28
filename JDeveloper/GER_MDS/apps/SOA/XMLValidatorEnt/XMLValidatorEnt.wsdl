@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="XMLValidatorEnt" targetNamespace="http://soa.estrellaroja.com.mx/XMLValidatorEnt" xmlns:tns="http://soa.estrellaroja.com.mx/XMLValidatorEnt" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://soa.estrellaroja.com.mx/XMLValidatorEnt" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.estrellaroja.com.mx/XMLValidatorEnt/types" elementFormDefault="qualified">
+<xsd:import namespace="http://soa.estrellaroja.com.mx/XMLValidatorEnt" schemaLocation="XMLValidatorEnt.xsd"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="XMLValidatorZAMRq">
+<wsdl:part name="XMLValidatorZAMRqPart" element="tns:XMLValidatorZAMRq"/>
+</wsdl:message>
+<wsdl:message name="XMLValidatorZAMRs">
+<wsdl:part name="XMLValidatorZAMRsPart" element="tns:XMLValidatorZAMRs"/>
+</wsdl:message>
+<wsdl:portType name="XMLValidatorEntPortType">
+<wsdl:operation name="XMLValidatorZAM">
+<wsdl:input message="tns:XMLValidatorZAMRq"/>
+<wsdl:output message="tns:XMLValidatorZAMRs"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="XMLValidatorEntBinding" type="tns:XMLValidatorEntPortType">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="XMLValidatorZAM">
+<soap:operation soapAction="http://soa.estrellaroja.com.mx/XMLValidatorEnt/XMLValidatorZAM"/>
+<wsdl:input>
+<soap:body use="literal" parts="XMLValidatorZAMRqPart"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="XMLValidatorZAMRsPart"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="XMLValidatorEntService">
+<wsdl:port name="XMLValidatorEntPort" binding="tns:XMLValidatorEntBinding">
+<soap:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/PROD/XMLValidatorEnt/XMLValidatorEnt"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

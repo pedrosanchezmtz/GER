@@ -1,0 +1,2218 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<tns:XxerBancosAmexHeaderTblCollection xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbXXER_BANK_AMEX" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbXXER_BANK_AMEX file:/P:/Desarrollo/JDeveloper/GER/GER_OSB_OCI/DEV_ConciliationTec/Schemas/External/dbXXER_BANK_AMEX_table.xsd">
+   <tns:XxerBancosAmexHeaderTbl>
+      <tns:fechaCreacionArchivo>20210825</tns:fechaCreacionArchivo>
+      <tns:horaCreacionArchivo>033931</tns:horaCreacionArchivo>
+      <tns:numSecuencial>0000000001</tns:numSecuencial>
+      <tns:identidiacionArchivo>GRRCN</tns:identidiacionArchivo>
+      <tns:nombreArchivo>ESTRELLA ROJA LAC</tns:nombreArchivo>
+      <tns:numVersionArchivo>2.01</tns:numVersionArchivo>
+      <tns:sumaTotalRegistros>0000000091</tns:sumaTotalRegistros>
+      <tns:xxerBancosAmexSummaryTblCollection>
+         <tns:XxerBancosAmexSummaryTbl>
+            <tns:identificacionEstablecimiento>9359908044</tns:identificacionEstablecimiento>
+            <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+            <tns:numPagoAmex>2360083780</tns:numPagoAmex>
+            <tns:fechaPago>20210826</tns:fechaPago>
+            <tns:monedaPago>MXN</tns:monedaPago>
+            <tns:numUnicoReferenciaPago/>
+            <tns:montoNetoPago> 000000000082172</tns:montoNetoPago>
+            <tns:montoBrutoPago> 000000000087000</tns:montoBrutoPago>
+            <tns:montoDescuento> 000000000003915</tns:montoDescuento>
+            <tns:montoServicio> 000000000000000</tns:montoServicio>
+            <tns:montoAjuste>-000000000000287</tns:montoAjuste>
+            <tns:montoImpuestos> 000000000000626</tns:montoImpuestos>
+            <tns:montoSaldoDebitoInicial> 000000000000000</tns:montoSaldoDebitoInicial>
+            <tns:numDepositoDirecto/>
+            <tns:numCuentaBancaria/>
+            <tns:numCuentaBancariaInternacional>00014650655017535508</tns:numCuentaBancariaInternacional>
+            <tns:codigoBanco>014      000000</tns:codigoBanco>
+            <tns:xxerBancosAmexAdjustmentTblCollection>
+               <tns:XxerBancosAmexAdjustmentTbl>
+                  <tns:numEstablecimiento>9359908044</tns:numEstablecimiento>
+                  <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                  <tns:fechaPago>20210826</tns:fechaPago>
+                  <tns:monedaPago>MXN</tns:monedaPago>
+                  <tns:numEstablecimientoPresentacion>9359908044</tns:numEstablecimientoPresentacion>
+                  <tns:fechaEnvio>20210824</tns:fechaEnvio>
+                  <tns:ubicacionEstablecimiento/>
+                  <tns:numFacturaReferencia/>
+                  <tns:identificacionVendedor/>
+                  <tns:numTarjeta/>
+                  <tns:numReferenciaIndustria/>
+                  <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                  <tns:numFactura>000000000000000</tns:numFactura>
+                  <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                  <tns:numAjuste>000000000234358</tns:numAjuste>
+                  <tns:codigoMotivoAjuste>ADJ1090001</tns:codigoMotivoAjuste>
+                  <tns:descripcionMotivoAjuste>AJUSTE ESPECIAL</tns:descripcionMotivoAjuste>
+                  <tns:montoBruto> 000000000000000</tns:montoBruto>
+                  <tns:montoDescuento> 000000000000000</tns:montoDescuento>
+                  <tns:montoCargoServicio> 000000000000247</tns:montoCargoServicio>
+                  <tns:montoImpuesto> 000000000000040</tns:montoImpuesto>
+                  <tns:montoNeto>-000000000000287</tns:montoNeto>
+                  <tns:tasaDescuento/>
+                  <tns:tasaCargoServicio> 000000</tns:tasaCargoServicio>
+                  <tns:codigoLote/>
+                  <tns:codigoFactura/>
+               </tns:XxerBancosAmexAdjustmentTbl>
+            </tns:xxerBancosAmexAdjustmentTblCollection>
+            <tns:xxerBancosAmexChargebackTblCollection/>
+            <tns:xxerBancosAmexSubmissionTblCollection>
+               <tns:XxerBancosAmexSubmissionTbl>
+                  <tns:numEstablecimiento>9359908044</tns:numEstablecimiento>
+                  <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                  <tns:fechaPago>20210826</tns:fechaPago>
+                  <tns:monedaPago>MXN</tns:monedaPago>
+                  <tns:numEstablecimientoPresention>9359908044</tns:numEstablecimientoPresention>
+                  <tns:fechaEnvioComercial>20210824</tns:fechaEnvioComercial>
+                  <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                  <tns:numFactura>000000000001609</tns:numFactura>
+                  <tns:moneda>MXN</tns:moneda>
+                  <tns:relleno/>
+                  <tns:tasaCambio/>
+                  <tns:montoBrutoMonedaPresentacion> 000000000087000</tns:montoBrutoMonedaPresentacion>
+                  <tns:montoBrutoMonedaPago> 000000000087000</tns:montoBrutoMonedaPago>
+                  <tns:montoDescuentoRsentcion> 000000000003915</tns:montoDescuentoRsentcion>
+                  <tns:montoCargoServicio> 000000000000000</tns:montoCargoServicio>
+                  <tns:montoImpuesto> 000000000000626</tns:montoImpuesto>
+                  <tns:montoNeto> 000000000082459</tns:montoNeto>
+                  <tns:tasaDescuento/>
+                  <tns:tasaImpuesto/>
+                  <tns:sumaTransacciones>0000002</tns:sumaTransacciones>
+                  <tns:identificacionSeguimiento/>
+                  <tns:numCuota>0</tns:numCuota>
+                  <tns:numAceleracion>41306235</tns:numAceleracion>
+                  <tns:fechaLiquidacionOriginal>20210831</tns:fechaLiquidacionOriginal>
+                  <tns:fechaAceleracion>20210824</tns:fechaAceleracion>
+                  <tns:cantidadDiasAdelantados>5</tns:cantidadDiasAdelantados>
+                  <tns:montoCargoAceleracion> 000000000000247</tns:montoCargoAceleracion>
+                  <tns:montoNetoCargoAceleracion> 000000000082212</tns:montoNetoCargoAceleracion>
+                  <tns:montoBrutoDebito> 000000000087000</tns:montoBrutoDebito>
+                  <tns:montoBrutoCredito> 000000000000000</tns:montoBrutoCredito>
+                  <tns:xxerBancosAmexTransactnTblCollection>
+                     <tns:XxerBancosAmexTransactnTbl>
+                        <tns:numEstablecimiento>9359908044</tns:numEstablecimiento>
+                        <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                        <tns:fechaPagoAmex>20210826</tns:fechaPagoAmex>
+                        <tns:monedaPago>MXN</tns:monedaPago>
+                        <tns:numEstablecimiento2>9359908044</tns:numEstablecimiento2>
+                        <tns:fechaPresentacion>20210824</tns:fechaPresentacion>
+                        <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                        <tns:numFactura>000000000001609</tns:numFactura>
+                        <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                        <tns:identificacionUbicacionEstablecimiento>AUTO PASEO DEST</tns:identificacionUbicacionEstablecimiento>
+                        <tns:numFacturaReferencia>361552179</tns:numFacturaReferencia>
+                        <tns:numVendedor/>
+                        <tns:numTarjeta>376690XXXXX1008</tns:numTarjeta>
+                        <tns:numReferenciaEspecificoIndustria/>
+                        <tns:montoBrutoPresentacion> 000000000087000</tns:montoBrutoPresentacion>
+                        <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                        <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                        <tns:horaTransaccion>190643</tns:horaTransaccion>
+                        <tns:numTransaccion>003345124878063</tns:numTransaccion>
+                        <tns:codigoAprobacion>815100</tns:codigoAprobacion>
+                        <tns:numTerminal>0670032</tns:numTerminal>
+                        <tns:codigoCategoriaEstablecimiento>4131</tns:codigoCategoriaEstablecimiento>
+                        <tns:numReferenciaSocio/>
+                        <tns:numReferenciaAdquirente>P82LHOJ0556BB000000072C</tns:numReferenciaAdquirente>
+                        <tns:codigoErrorIncumplimientoCalidadDatos/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos1/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos2/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos3/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos4/>
+                        <tns:indicadorLecturaBanda/>
+                        <tns:indicadorTransaccionRechazada>   </tns:indicadorTransaccionRechazada>
+                        <tns:montoPrimeraCuota> 000000000000000</tns:montoPrimeraCuota>
+                        <tns:montoCuotaSiguiente> 000000000000000</tns:montoCuotaSiguiente>
+                        <tns:cantidadCuotas>00000</tns:cantidadCuotas>
+                        <tns:numCuota>00000</tns:numCuota>
+                        <tns:relleno/>
+                        <tns:montoServicio> 000000000000000</tns:montoServicio>
+                        <tns:montoAceleracion> 000000000000098</tns:montoAceleracion>
+                        <tns:xxerBancosAmexTxnpricingTblCollection>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9359908044</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9359908044</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTO PASEO DEST</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361552179</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376690XXXXX1008</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento> 004500</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000015660000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9359908044</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9359908044</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTO PASEO DEST</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361552179</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376690XXXXX1008</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000002505600</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                        </tns:xxerBancosAmexTxnpricingTblCollection>
+                     </tns:XxerBancosAmexTransactnTbl>
+                     <tns:XxerBancosAmexTransactnTbl>
+                        <tns:numEstablecimiento>9359908044</tns:numEstablecimiento>
+                        <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                        <tns:fechaPagoAmex>20210826</tns:fechaPagoAmex>
+                        <tns:monedaPago>MXN</tns:monedaPago>
+                        <tns:numEstablecimiento2>9359908044</tns:numEstablecimiento2>
+                        <tns:fechaPresentacion>20210824</tns:fechaPresentacion>
+                        <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                        <tns:numFactura>000000000001609</tns:numFactura>
+                        <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                        <tns:identificacionUbicacionEstablecimiento>AUTO PASEO DEST</tns:identificacionUbicacionEstablecimiento>
+                        <tns:numFacturaReferencia>361339206</tns:numFacturaReferencia>
+                        <tns:numVendedor/>
+                        <tns:numTarjeta>376694XXXXX4004</tns:numTarjeta>
+                        <tns:numReferenciaEspecificoIndustria/>
+                        <tns:montoBrutoPresentacion> 000000000087000</tns:montoBrutoPresentacion>
+                        <tns:montoTransaccion> 000000000052200</tns:montoTransaccion>
+                        <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                        <tns:horaTransaccion>150336</tns:horaTransaccion>
+                        <tns:numTransaccion>003342002209065</tns:numTransaccion>
+                        <tns:codigoAprobacion>842455</tns:codigoAprobacion>
+                        <tns:numTerminal>0670032</tns:numTerminal>
+                        <tns:codigoCategoriaEstablecimiento>4131</tns:codigoCategoriaEstablecimiento>
+                        <tns:numReferenciaSocio/>
+                        <tns:numReferenciaAdquirente>P82LHOJ0556BB000000072B</tns:numReferenciaAdquirente>
+                        <tns:codigoErrorIncumplimientoCalidadDatos/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos1/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos2/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos3/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos4/>
+                        <tns:indicadorLecturaBanda/>
+                        <tns:indicadorTransaccionRechazada>   </tns:indicadorTransaccionRechazada>
+                        <tns:montoPrimeraCuota> 000000000000000</tns:montoPrimeraCuota>
+                        <tns:montoCuotaSiguiente> 000000000000000</tns:montoCuotaSiguiente>
+                        <tns:cantidadCuotas>00000</tns:cantidadCuotas>
+                        <tns:numCuota>00000</tns:numCuota>
+                        <tns:relleno/>
+                        <tns:montoServicio> 000000000000000</tns:montoServicio>
+                        <tns:montoAceleracion> 000000000000149</tns:montoAceleracion>
+                        <tns:xxerBancosAmexTxnpricingTblCollection>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9359908044</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9359908044</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTO PASEO DEST</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361339206</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376694XXXXX4004</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000052200</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento> 004500</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000023490000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9359908044</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9359908044</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTO PASEO DEST</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361339206</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376694XXXXX4004</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000052200</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000003758400</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                        </tns:xxerBancosAmexTxnpricingTblCollection>
+                     </tns:XxerBancosAmexTransactnTbl>
+                  </tns:xxerBancosAmexTransactnTblCollection>
+               </tns:XxerBancosAmexSubmissionTbl>
+            </tns:xxerBancosAmexSubmissionTblCollection>
+         </tns:XxerBancosAmexSummaryTbl>
+         <tns:XxerBancosAmexSummaryTbl>
+            <tns:identificacionEstablecimiento>9356614447</tns:identificacionEstablecimiento>
+            <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+            <tns:numPagoAmex>2360080315</tns:numPagoAmex>
+            <tns:fechaPago>20210826</tns:fechaPago>
+            <tns:monedaPago>MXN</tns:monedaPago>
+            <tns:numUnicoReferenciaPago/>
+            <tns:montoNetoPago> 000000000105710</tns:montoNetoPago>
+            <tns:montoBrutoPago> 000000000112400</tns:montoBrutoPago>
+            <tns:montoDescuento> 000000000003788</tns:montoDescuento>
+            <tns:montoServicio> 000000000000000</tns:montoServicio>
+            <tns:montoAjuste>-000000000002296</tns:montoAjuste>
+            <tns:montoImpuestos> 000000000000606</tns:montoImpuestos>
+            <tns:montoSaldoDebitoInicial> 000000000000000</tns:montoSaldoDebitoInicial>
+            <tns:numDepositoDirecto/>
+            <tns:numCuentaBancaria/>
+            <tns:numCuentaBancariaInternacional>00014650655017535508</tns:numCuentaBancariaInternacional>
+            <tns:codigoBanco>014      000000</tns:codigoBanco>
+            <tns:xxerBancosAmexAdjustmentTblCollection>
+               <tns:XxerBancosAmexAdjustmentTbl>
+                  <tns:numEstablecimiento>9356614447</tns:numEstablecimiento>
+                  <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                  <tns:fechaPago>20210826</tns:fechaPago>
+                  <tns:monedaPago>MXN</tns:monedaPago>
+                  <tns:numEstablecimientoPresentacion>9356614447</tns:numEstablecimientoPresentacion>
+                  <tns:fechaEnvio>20210824</tns:fechaEnvio>
+                  <tns:ubicacionEstablecimiento/>
+                  <tns:numFacturaReferencia/>
+                  <tns:identificacionVendedor/>
+                  <tns:numTarjeta/>
+                  <tns:numReferenciaIndustria/>
+                  <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                  <tns:numFactura>000000000000000</tns:numFactura>
+                  <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                  <tns:numAjuste>000000000234357</tns:numAjuste>
+                  <tns:codigoMotivoAjuste>ADJ1090001</tns:codigoMotivoAjuste>
+                  <tns:descripcionMotivoAjuste>AJUSTE ESPECIAL</tns:descripcionMotivoAjuste>
+                  <tns:montoBruto> 000000000000000</tns:montoBruto>
+                  <tns:montoDescuento> 000000000000000</tns:montoDescuento>
+                  <tns:montoCargoServicio> 000000000001979</tns:montoCargoServicio>
+                  <tns:montoImpuesto> 000000000000317</tns:montoImpuesto>
+                  <tns:montoNeto>-000000000002296</tns:montoNeto>
+                  <tns:tasaDescuento/>
+                  <tns:tasaCargoServicio> 000000</tns:tasaCargoServicio>
+                  <tns:codigoLote/>
+                  <tns:codigoFactura/>
+               </tns:XxerBancosAmexAdjustmentTbl>
+            </tns:xxerBancosAmexAdjustmentTblCollection>
+            <tns:xxerBancosAmexChargebackTblCollection/>
+            <tns:xxerBancosAmexSubmissionTblCollection>
+               <tns:XxerBancosAmexSubmissionTbl>
+                  <tns:numEstablecimiento>9356614447</tns:numEstablecimiento>
+                  <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                  <tns:fechaPago>20210826</tns:fechaPago>
+                  <tns:monedaPago>MXN</tns:monedaPago>
+                  <tns:numEstablecimientoPresention>9356614447</tns:numEstablecimientoPresention>
+                  <tns:fechaEnvioComercial>20210824</tns:fechaEnvioComercial>
+                  <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                  <tns:numFactura>000000000001364</tns:numFactura>
+                  <tns:moneda>MXN</tns:moneda>
+                  <tns:relleno/>
+                  <tns:tasaCambio/>
+                  <tns:montoBrutoMonedaPresentacion> 000000000112400</tns:montoBrutoMonedaPresentacion>
+                  <tns:montoBrutoMonedaPago> 000000000112400</tns:montoBrutoMonedaPago>
+                  <tns:montoDescuentoRsentcion> 000000000003788</tns:montoDescuentoRsentcion>
+                  <tns:montoCargoServicio> 000000000000000</tns:montoCargoServicio>
+                  <tns:montoImpuesto> 000000000000606</tns:montoImpuesto>
+                  <tns:montoNeto> 000000000108006</tns:montoNeto>
+                  <tns:tasaDescuento/>
+                  <tns:tasaImpuesto/>
+                  <tns:sumaTransacciones>0000004</tns:sumaTransacciones>
+                  <tns:identificacionSeguimiento/>
+                  <tns:numCuota>0</tns:numCuota>
+                  <tns:numAceleracion>41305321</tns:numAceleracion>
+                  <tns:fechaLiquidacionOriginal>20210923</tns:fechaLiquidacionOriginal>
+                  <tns:fechaAceleracion>20210824</tns:fechaAceleracion>
+                  <tns:cantidadDiasAdelantados>28</tns:cantidadDiasAdelantados>
+                  <tns:montoCargoAceleracion> 000000000001979</tns:montoCargoAceleracion>
+                  <tns:montoNetoCargoAceleracion> 000000000106027</tns:montoNetoCargoAceleracion>
+                  <tns:montoBrutoDebito> 000000000112400</tns:montoBrutoDebito>
+                  <tns:montoBrutoCredito> 000000000000000</tns:montoBrutoCredito>
+                  <tns:xxerBancosAmexTransactnTblCollection>
+                     <tns:XxerBancosAmexTransactnTbl>
+                        <tns:numEstablecimiento>9356614447</tns:numEstablecimiento>
+                        <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                        <tns:fechaPagoAmex>20210826</tns:fechaPagoAmex>
+                        <tns:monedaPago>MXN</tns:monedaPago>
+                        <tns:numEstablecimiento2>9356614447</tns:numEstablecimiento2>
+                        <tns:fechaPresentacion>20210824</tns:fechaPresentacion>
+                        <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                        <tns:numFactura>000000000001364</tns:numFactura>
+                        <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                        <tns:identificacionUbicacionEstablecimiento>AUTOB MEX PUE E</tns:identificacionUbicacionEstablecimiento>
+                        <tns:numFacturaReferencia>361612666</tns:numFacturaReferencia>
+                        <tns:numVendedor/>
+                        <tns:numTarjeta>371774XXXXX3007</tns:numTarjeta>
+                        <tns:numReferenciaEspecificoIndustria/>
+                        <tns:montoBrutoPresentacion> 000000000112400</tns:montoBrutoPresentacion>
+                        <tns:montoTransaccion> 000000000023400</tns:montoTransaccion>
+                        <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                        <tns:horaTransaccion>201717</tns:horaTransaccion>
+                        <tns:numTransaccion>003345871246068</tns:numTransaccion>
+                        <tns:codigoAprobacion>876395</tns:codigoAprobacion>
+                        <tns:numTerminal>0670018</tns:numTerminal>
+                        <tns:codigoCategoriaEstablecimiento>4131</tns:codigoCategoriaEstablecimiento>
+                        <tns:numReferenciaSocio/>
+                        <tns:numReferenciaAdquirente>P82LHOJ0556BB00000005XX</tns:numReferenciaAdquirente>
+                        <tns:codigoErrorIncumplimientoCalidadDatos/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos1/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos2/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos3/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos4/>
+                        <tns:indicadorLecturaBanda/>
+                        <tns:indicadorTransaccionRechazada>   </tns:indicadorTransaccionRechazada>
+                        <tns:montoPrimeraCuota> 000000000000000</tns:montoPrimeraCuota>
+                        <tns:montoCuotaSiguiente> 000000000000000</tns:montoCuotaSiguiente>
+                        <tns:cantidadCuotas>00000</tns:cantidadCuotas>
+                        <tns:numCuota>00000</tns:numCuota>
+                        <tns:relleno/>
+                        <tns:montoServicio> 000000000000000</tns:montoServicio>
+                        <tns:montoAceleracion> 000000000000411</tns:montoAceleracion>
+                        <tns:xxerBancosAmexTxnpricingTblCollection>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9356614447</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9356614447</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361612666</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>371774XXXXX3007</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000023400</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento> 004000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000009360000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9356614447</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9356614447</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361612666</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>371774XXXXX3007</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000023400</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000001497600</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9356614447</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9356614447</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361612666</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>371774XXXXX3007</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000023400</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-000630</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000001474200</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9356614447</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9356614447</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361612666</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>371774XXXXX3007</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000023400</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000000235872</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                        </tns:xxerBancosAmexTxnpricingTblCollection>
+                     </tns:XxerBancosAmexTransactnTbl>
+                     <tns:XxerBancosAmexTransactnTbl>
+                        <tns:numEstablecimiento>9356614447</tns:numEstablecimiento>
+                        <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                        <tns:fechaPagoAmex>20210826</tns:fechaPagoAmex>
+                        <tns:monedaPago>MXN</tns:monedaPago>
+                        <tns:numEstablecimiento2>9356614447</tns:numEstablecimiento2>
+                        <tns:fechaPresentacion>20210824</tns:fechaPresentacion>
+                        <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                        <tns:numFactura>000000000001364</tns:numFactura>
+                        <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                        <tns:identificacionUbicacionEstablecimiento>AUTOB MEX PUE E</tns:identificacionUbicacionEstablecimiento>
+                        <tns:numFacturaReferencia>361327990</tns:numFacturaReferencia>
+                        <tns:numVendedor/>
+                        <tns:numTarjeta>379590XXXXX2001</tns:numTarjeta>
+                        <tns:numReferenciaEspecificoIndustria/>
+                        <tns:montoBrutoPresentacion> 000000000112400</tns:montoBrutoPresentacion>
+                        <tns:montoTransaccion> 000000000041200</tns:montoTransaccion>
+                        <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                        <tns:horaTransaccion>145031</tns:horaTransaccion>
+                        <tns:numTransaccion>003341797345068</tns:numTransaccion>
+                        <tns:codigoAprobacion>871831</tns:codigoAprobacion>
+                        <tns:numTerminal>0670018</tns:numTerminal>
+                        <tns:codigoCategoriaEstablecimiento>4131</tns:codigoCategoriaEstablecimiento>
+                        <tns:numReferenciaSocio/>
+                        <tns:numReferenciaAdquirente>P82LHOJ0556BB00000005XW</tns:numReferenciaAdquirente>
+                        <tns:codigoErrorIncumplimientoCalidadDatos/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos1/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos2/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos3/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos4/>
+                        <tns:indicadorLecturaBanda/>
+                        <tns:indicadorTransaccionRechazada>   </tns:indicadorTransaccionRechazada>
+                        <tns:montoPrimeraCuota> 000000000000000</tns:montoPrimeraCuota>
+                        <tns:montoCuotaSiguiente> 000000000000000</tns:montoCuotaSiguiente>
+                        <tns:cantidadCuotas>00000</tns:cantidadCuotas>
+                        <tns:numCuota>00000</tns:numCuota>
+                        <tns:relleno/>
+                        <tns:montoServicio> 000000000000000</tns:montoServicio>
+                        <tns:montoAceleracion> 000000000000725</tns:montoAceleracion>
+                        <tns:xxerBancosAmexTxnpricingTblCollection>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9356614447</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9356614447</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361327990</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>379590XXXXX2001</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000041200</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento> 004000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000016480000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9356614447</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9356614447</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361327990</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>379590XXXXX2001</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000041200</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000002636800</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9356614447</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9356614447</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361327990</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>379590XXXXX2001</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000041200</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-000630</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000002595600</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9356614447</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9356614447</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361327990</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>379590XXXXX2001</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000041200</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000000415296</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                        </tns:xxerBancosAmexTxnpricingTblCollection>
+                     </tns:XxerBancosAmexTransactnTbl>
+                     <tns:XxerBancosAmexTransactnTbl>
+                        <tns:numEstablecimiento>9356614447</tns:numEstablecimiento>
+                        <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                        <tns:fechaPagoAmex>20210826</tns:fechaPagoAmex>
+                        <tns:monedaPago>MXN</tns:monedaPago>
+                        <tns:numEstablecimiento2>9356614447</tns:numEstablecimiento2>
+                        <tns:fechaPresentacion>20210824</tns:fechaPresentacion>
+                        <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                        <tns:numFactura>000000000001364</tns:numFactura>
+                        <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                        <tns:identificacionUbicacionEstablecimiento>AUTOB MEX PUE E</tns:identificacionUbicacionEstablecimiento>
+                        <tns:numFacturaReferencia>361042935</tns:numFacturaReferencia>
+                        <tns:numVendedor/>
+                        <tns:numTarjeta>371774XXXXX1006</tns:numTarjeta>
+                        <tns:numReferenciaEspecificoIndustria/>
+                        <tns:montoBrutoPresentacion> 000000000112400</tns:montoBrutoPresentacion>
+                        <tns:montoTransaccion> 000000000005800</tns:montoTransaccion>
+                        <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                        <tns:horaTransaccion>091558</tns:horaTransaccion>
+                        <tns:numTransaccion>003337229667061</tns:numTransaccion>
+                        <tns:codigoAprobacion>886845</tns:codigoAprobacion>
+                        <tns:numTerminal>0670018</tns:numTerminal>
+                        <tns:codigoCategoriaEstablecimiento>4131</tns:codigoCategoriaEstablecimiento>
+                        <tns:numReferenciaSocio/>
+                        <tns:numReferenciaAdquirente>P82LHOJ0556BB00000005XV</tns:numReferenciaAdquirente>
+                        <tns:codigoErrorIncumplimientoCalidadDatos/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos1/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos2/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos3/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos4/>
+                        <tns:indicadorLecturaBanda/>
+                        <tns:indicadorTransaccionRechazada>   </tns:indicadorTransaccionRechazada>
+                        <tns:montoPrimeraCuota> 000000000000000</tns:montoPrimeraCuota>
+                        <tns:montoCuotaSiguiente> 000000000000000</tns:montoCuotaSiguiente>
+                        <tns:cantidadCuotas>00000</tns:cantidadCuotas>
+                        <tns:numCuota>00000</tns:numCuota>
+                        <tns:relleno/>
+                        <tns:montoServicio> 000000000000000</tns:montoServicio>
+                        <tns:montoAceleracion> 000000000000102</tns:montoAceleracion>
+                        <tns:xxerBancosAmexTxnpricingTblCollection>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9356614447</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9356614447</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361042935</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>371774XXXXX1006</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000005800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento> 004000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000002320000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9356614447</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9356614447</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361042935</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>371774XXXXX1006</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000005800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000000371200</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9356614447</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9356614447</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361042935</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>371774XXXXX1006</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000005800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-000630</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000000365400</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9356614447</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9356614447</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361042935</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>371774XXXXX1006</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000005800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000000058464</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                        </tns:xxerBancosAmexTxnpricingTblCollection>
+                     </tns:XxerBancosAmexTransactnTbl>
+                     <tns:XxerBancosAmexTransactnTbl>
+                        <tns:numEstablecimiento>9356614447</tns:numEstablecimiento>
+                        <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                        <tns:fechaPagoAmex>20210826</tns:fechaPagoAmex>
+                        <tns:monedaPago>MXN</tns:monedaPago>
+                        <tns:numEstablecimiento2>9356614447</tns:numEstablecimiento2>
+                        <tns:fechaPresentacion>20210824</tns:fechaPresentacion>
+                        <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                        <tns:numFactura>000000000001364</tns:numFactura>
+                        <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                        <tns:identificacionUbicacionEstablecimiento>AUTOB MEX PUE E</tns:identificacionUbicacionEstablecimiento>
+                        <tns:numFacturaReferencia>361034440</tns:numFacturaReferencia>
+                        <tns:numVendedor/>
+                        <tns:numTarjeta>376694XXXXX1006</tns:numTarjeta>
+                        <tns:numReferenciaEspecificoIndustria/>
+                        <tns:montoBrutoPresentacion> 000000000112400</tns:montoBrutoPresentacion>
+                        <tns:montoTransaccion> 000000000042000</tns:montoTransaccion>
+                        <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                        <tns:horaTransaccion>085440</tns:horaTransaccion>
+                        <tns:numTransaccion>003336998225069</tns:numTransaccion>
+                        <tns:codigoAprobacion>802511</tns:codigoAprobacion>
+                        <tns:numTerminal>0670018</tns:numTerminal>
+                        <tns:codigoCategoriaEstablecimiento>4131</tns:codigoCategoriaEstablecimiento>
+                        <tns:numReferenciaSocio/>
+                        <tns:numReferenciaAdquirente>P82LHOJ0556BB00000005XU</tns:numReferenciaAdquirente>
+                        <tns:codigoErrorIncumplimientoCalidadDatos/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos1/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos2/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos3/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos4/>
+                        <tns:indicadorLecturaBanda/>
+                        <tns:indicadorTransaccionRechazada>   </tns:indicadorTransaccionRechazada>
+                        <tns:montoPrimeraCuota> 000000000000000</tns:montoPrimeraCuota>
+                        <tns:montoCuotaSiguiente> 000000000000000</tns:montoCuotaSiguiente>
+                        <tns:cantidadCuotas>00000</tns:cantidadCuotas>
+                        <tns:numCuota>00000</tns:numCuota>
+                        <tns:relleno/>
+                        <tns:montoServicio> 000000000000000</tns:montoServicio>
+                        <tns:montoAceleracion> 000000000000741</tns:montoAceleracion>
+                        <tns:xxerBancosAmexTxnpricingTblCollection>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9356614447</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9356614447</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361034440</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376694XXXXX1006</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000042000</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento> 004000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000016800000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9356614447</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9356614447</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361034440</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376694XXXXX1006</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000042000</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000002688000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9356614447</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9356614447</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361034440</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376694XXXXX1006</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000042000</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-000630</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000002646000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9356614447</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9356614447</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361034440</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376694XXXXX1006</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000042000</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000000423360</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                        </tns:xxerBancosAmexTxnpricingTblCollection>
+                     </tns:XxerBancosAmexTransactnTbl>
+                  </tns:xxerBancosAmexTransactnTblCollection>
+               </tns:XxerBancosAmexSubmissionTbl>
+            </tns:xxerBancosAmexSubmissionTblCollection>
+         </tns:XxerBancosAmexSummaryTbl>
+         <tns:XxerBancosAmexSummaryTbl>
+            <tns:identificacionEstablecimiento>9350058864</tns:identificacionEstablecimiento>
+            <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+            <tns:numPagoAmex>2360064921</tns:numPagoAmex>
+            <tns:fechaPago>20210826</tns:fechaPago>
+            <tns:monedaPago>MXN</tns:monedaPago>
+            <tns:numUnicoReferenciaPago/>
+            <tns:montoNetoPago> 000000000007598</tns:montoNetoPago>
+            <tns:montoBrutoPago> 000000000008000</tns:montoBrutoPago>
+            <tns:montoDescuento> 000000000000320</tns:montoDescuento>
+            <tns:montoServicio> 000000000000000</tns:montoServicio>
+            <tns:montoAjuste>-000000000000031</tns:montoAjuste>
+            <tns:montoImpuestos> 000000000000051</tns:montoImpuestos>
+            <tns:montoSaldoDebitoInicial> 000000000000000</tns:montoSaldoDebitoInicial>
+            <tns:numDepositoDirecto/>
+            <tns:numCuentaBancaria/>
+            <tns:numCuentaBancariaInternacional>00014650655017535508</tns:numCuentaBancariaInternacional>
+            <tns:codigoBanco>014      000000</tns:codigoBanco>
+            <tns:xxerBancosAmexAdjustmentTblCollection>
+               <tns:XxerBancosAmexAdjustmentTbl>
+                  <tns:numEstablecimiento>9350058864</tns:numEstablecimiento>
+                  <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                  <tns:fechaPago>20210826</tns:fechaPago>
+                  <tns:monedaPago>MXN</tns:monedaPago>
+                  <tns:numEstablecimientoPresentacion>9350058864</tns:numEstablecimientoPresentacion>
+                  <tns:fechaEnvio>20210824</tns:fechaEnvio>
+                  <tns:ubicacionEstablecimiento/>
+                  <tns:numFacturaReferencia/>
+                  <tns:identificacionVendedor/>
+                  <tns:numTarjeta/>
+                  <tns:numReferenciaIndustria/>
+                  <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                  <tns:numFactura>000000000000000</tns:numFactura>
+                  <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                  <tns:numAjuste>000000000234353</tns:numAjuste>
+                  <tns:codigoMotivoAjuste>ADJ1090001</tns:codigoMotivoAjuste>
+                  <tns:descripcionMotivoAjuste>AJUSTE ESPECIAL</tns:descripcionMotivoAjuste>
+                  <tns:montoBruto> 000000000000000</tns:montoBruto>
+                  <tns:montoDescuento> 000000000000000</tns:montoDescuento>
+                  <tns:montoCargoServicio> 000000000000027</tns:montoCargoServicio>
+                  <tns:montoImpuesto> 000000000000004</tns:montoImpuesto>
+                  <tns:montoNeto>-000000000000031</tns:montoNeto>
+                  <tns:tasaDescuento/>
+                  <tns:tasaCargoServicio> 000000</tns:tasaCargoServicio>
+                  <tns:codigoLote/>
+                  <tns:codigoFactura/>
+               </tns:XxerBancosAmexAdjustmentTbl>
+            </tns:xxerBancosAmexAdjustmentTblCollection>
+            <tns:xxerBancosAmexChargebackTblCollection/>
+            <tns:xxerBancosAmexSubmissionTblCollection>
+               <tns:XxerBancosAmexSubmissionTbl>
+                  <tns:numEstablecimiento>9350058864</tns:numEstablecimiento>
+                  <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                  <tns:fechaPago>20210826</tns:fechaPago>
+                  <tns:monedaPago>MXN</tns:monedaPago>
+                  <tns:numEstablecimientoPresention>9350058864</tns:numEstablecimientoPresention>
+                  <tns:fechaEnvioComercial>20210824</tns:fechaEnvioComercial>
+                  <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                  <tns:numFactura>000000000000411</tns:numFactura>
+                  <tns:moneda>MXN</tns:moneda>
+                  <tns:relleno/>
+                  <tns:tasaCambio/>
+                  <tns:montoBrutoMonedaPresentacion> 000000000008000</tns:montoBrutoMonedaPresentacion>
+                  <tns:montoBrutoMonedaPago> 000000000008000</tns:montoBrutoMonedaPago>
+                  <tns:montoDescuentoRsentcion> 000000000000320</tns:montoDescuentoRsentcion>
+                  <tns:montoCargoServicio> 000000000000000</tns:montoCargoServicio>
+                  <tns:montoImpuesto> 000000000000051</tns:montoImpuesto>
+                  <tns:montoNeto> 000000000007629</tns:montoNeto>
+                  <tns:tasaDescuento/>
+                  <tns:tasaImpuesto/>
+                  <tns:sumaTransacciones>0000001</tns:sumaTransacciones>
+                  <tns:identificacionSeguimiento/>
+                  <tns:numCuota>0</tns:numCuota>
+                  <tns:numAceleracion>41300960</tns:numAceleracion>
+                  <tns:fechaLiquidacionOriginal>20210831</tns:fechaLiquidacionOriginal>
+                  <tns:fechaAceleracion>20210824</tns:fechaAceleracion>
+                  <tns:cantidadDiasAdelantados>5</tns:cantidadDiasAdelantados>
+                  <tns:montoCargoAceleracion> 000000000000027</tns:montoCargoAceleracion>
+                  <tns:montoNetoCargoAceleracion> 000000000007602</tns:montoNetoCargoAceleracion>
+                  <tns:montoBrutoDebito> 000000000008000</tns:montoBrutoDebito>
+                  <tns:montoBrutoCredito> 000000000000000</tns:montoBrutoCredito>
+                  <tns:xxerBancosAmexTransactnTblCollection>
+                     <tns:XxerBancosAmexTransactnTbl>
+                        <tns:numEstablecimiento>9350058864</tns:numEstablecimiento>
+                        <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                        <tns:fechaPagoAmex>20210826</tns:fechaPagoAmex>
+                        <tns:monedaPago>MXN</tns:monedaPago>
+                        <tns:numEstablecimiento2>9350058864</tns:numEstablecimiento2>
+                        <tns:fechaPresentacion>20210824</tns:fechaPresentacion>
+                        <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                        <tns:numFactura>000000000000411</tns:numFactura>
+                        <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                        <tns:identificacionUbicacionEstablecimiento>4PTE AEROMEXICO</tns:identificacionUbicacionEstablecimiento>
+                        <tns:numFacturaReferencia>361245679</tns:numFacturaReferencia>
+                        <tns:numVendedor/>
+                        <tns:numTarjeta>376690XXXXX1008</tns:numTarjeta>
+                        <tns:numReferenciaEspecificoIndustria/>
+                        <tns:montoBrutoPresentacion> 000000000008000</tns:montoBrutoPresentacion>
+                        <tns:montoTransaccion> 000000000008000</tns:montoTransaccion>
+                        <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                        <tns:horaTransaccion>132233</tns:horaTransaccion>
+                        <tns:numTransaccion>003340554353067</tns:numTransaccion>
+                        <tns:codigoAprobacion>829008</tns:codigoAprobacion>
+                        <tns:numTerminal>0670024</tns:numTerminal>
+                        <tns:codigoCategoriaEstablecimiento>4131</tns:codigoCategoriaEstablecimiento>
+                        <tns:numReferenciaSocio/>
+                        <tns:numReferenciaAdquirente>P82LHOJ0556BB00000002E7</tns:numReferenciaAdquirente>
+                        <tns:codigoErrorIncumplimientoCalidadDatos/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos1/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos2/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos3/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos4/>
+                        <tns:indicadorLecturaBanda/>
+                        <tns:indicadorTransaccionRechazada>   </tns:indicadorTransaccionRechazada>
+                        <tns:montoPrimeraCuota> 000000000000000</tns:montoPrimeraCuota>
+                        <tns:montoCuotaSiguiente> 000000000000000</tns:montoCuotaSiguiente>
+                        <tns:cantidadCuotas>00000</tns:cantidadCuotas>
+                        <tns:numCuota>00000</tns:numCuota>
+                        <tns:relleno/>
+                        <tns:montoServicio> 000000000000000</tns:montoServicio>
+                        <tns:montoAceleracion> 000000000000027</tns:montoAceleracion>
+                        <tns:xxerBancosAmexTxnpricingTblCollection>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350058864</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350058864</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>4PTE AEROMEXICO</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361245679</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376690XXXXX1008</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000008000</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento> 004000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000003200000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350058864</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350058864</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>4PTE AEROMEXICO</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361245679</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376690XXXXX1008</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000008000</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000000512000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                        </tns:xxerBancosAmexTxnpricingTblCollection>
+                     </tns:XxerBancosAmexTransactnTbl>
+                  </tns:xxerBancosAmexTransactnTblCollection>
+               </tns:XxerBancosAmexSubmissionTbl>
+            </tns:xxerBancosAmexSubmissionTblCollection>
+         </tns:XxerBancosAmexSummaryTbl>
+         <tns:XxerBancosAmexSummaryTbl>
+            <tns:identificacionEstablecimiento>9350021532</tns:identificacionEstablecimiento>
+            <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+            <tns:numPagoAmex>2360064852</tns:numPagoAmex>
+            <tns:fechaPago>20210826</tns:fechaPago>
+            <tns:monedaPago>MXN</tns:monedaPago>
+            <tns:numUnicoReferenciaPago/>
+            <tns:montoNetoPago> 000000000375881</tns:montoNetoPago>
+            <tns:montoBrutoPago> 000000000400200</tns:montoBrutoPago>
+            <tns:montoDescuento> 000000000013487</tns:montoDescuento>
+            <tns:montoServicio> 000000000000000</tns:montoServicio>
+            <tns:montoAjuste>-000000000008674</tns:montoAjuste>
+            <tns:montoImpuestos> 000000000002158</tns:montoImpuestos>
+            <tns:montoSaldoDebitoInicial> 000000000000000</tns:montoSaldoDebitoInicial>
+            <tns:numDepositoDirecto/>
+            <tns:numCuentaBancaria/>
+            <tns:numCuentaBancariaInternacional>00014650655017535508</tns:numCuentaBancariaInternacional>
+            <tns:codigoBanco>014      000000</tns:codigoBanco>
+            <tns:xxerBancosAmexAdjustmentTblCollection>
+               <tns:XxerBancosAmexAdjustmentTbl>
+                  <tns:numEstablecimiento>9350021532</tns:numEstablecimiento>
+                  <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                  <tns:fechaPago>20210826</tns:fechaPago>
+                  <tns:monedaPago>MXN</tns:monedaPago>
+                  <tns:numEstablecimientoPresentacion>9350021532</tns:numEstablecimientoPresentacion>
+                  <tns:fechaEnvio>20210824</tns:fechaEnvio>
+                  <tns:ubicacionEstablecimiento/>
+                  <tns:numFacturaReferencia/>
+                  <tns:identificacionVendedor/>
+                  <tns:numTarjeta/>
+                  <tns:numReferenciaIndustria/>
+                  <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                  <tns:numFactura>000000000000000</tns:numFactura>
+                  <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                  <tns:numAjuste>000000000234353</tns:numAjuste>
+                  <tns:codigoMotivoAjuste>ADJ1090001</tns:codigoMotivoAjuste>
+                  <tns:descripcionMotivoAjuste>AJUSTE ESPECIAL</tns:descripcionMotivoAjuste>
+                  <tns:montoBruto> 000000000000000</tns:montoBruto>
+                  <tns:montoDescuento> 000000000000000</tns:montoDescuento>
+                  <tns:montoCargoServicio> 000000000007478</tns:montoCargoServicio>
+                  <tns:montoImpuesto> 000000000001196</tns:montoImpuesto>
+                  <tns:montoNeto>-000000000008674</tns:montoNeto>
+                  <tns:tasaDescuento/>
+                  <tns:tasaCargoServicio> 000000</tns:tasaCargoServicio>
+                  <tns:codigoLote/>
+                  <tns:codigoFactura/>
+               </tns:XxerBancosAmexAdjustmentTbl>
+            </tns:xxerBancosAmexAdjustmentTblCollection>
+            <tns:xxerBancosAmexChargebackTblCollection/>
+            <tns:xxerBancosAmexSubmissionTblCollection>
+               <tns:XxerBancosAmexSubmissionTbl>
+                  <tns:numEstablecimiento>9350021532</tns:numEstablecimiento>
+                  <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                  <tns:fechaPago>20210826</tns:fechaPago>
+                  <tns:monedaPago>MXN</tns:monedaPago>
+                  <tns:numEstablecimientoPresention>9350021532</tns:numEstablecimientoPresention>
+                  <tns:fechaEnvioComercial>20210824</tns:fechaEnvioComercial>
+                  <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                  <tns:numFactura>000000000000403</tns:numFactura>
+                  <tns:moneda>MXN</tns:moneda>
+                  <tns:relleno/>
+                  <tns:tasaCambio/>
+                  <tns:montoBrutoMonedaPresentacion> 000000000400200</tns:montoBrutoMonedaPresentacion>
+                  <tns:montoBrutoMonedaPago> 000000000400200</tns:montoBrutoMonedaPago>
+                  <tns:montoDescuentoRsentcion> 000000000013487</tns:montoDescuentoRsentcion>
+                  <tns:montoCargoServicio> 000000000000000</tns:montoCargoServicio>
+                  <tns:montoImpuesto> 000000000002158</tns:montoImpuesto>
+                  <tns:montoNeto> 000000000384555</tns:montoNeto>
+                  <tns:tasaDescuento/>
+                  <tns:tasaImpuesto/>
+                  <tns:sumaTransacciones>0000007</tns:sumaTransacciones>
+                  <tns:identificacionSeguimiento/>
+                  <tns:numCuota>0</tns:numCuota>
+                  <tns:numAceleracion>41300919</tns:numAceleracion>
+                  <tns:fechaLiquidacionOriginal>20210923</tns:fechaLiquidacionOriginal>
+                  <tns:fechaAceleracion>20210824</tns:fechaAceleracion>
+                  <tns:cantidadDiasAdelantados>28</tns:cantidadDiasAdelantados>
+                  <tns:montoCargoAceleracion> 000000000007478</tns:montoCargoAceleracion>
+                  <tns:montoNetoCargoAceleracion> 000000000377077</tns:montoNetoCargoAceleracion>
+                  <tns:montoBrutoDebito> 000000000400200</tns:montoBrutoDebito>
+                  <tns:montoBrutoCredito> 000000000000000</tns:montoBrutoCredito>
+                  <tns:xxerBancosAmexTransactnTblCollection>
+                     <tns:XxerBancosAmexTransactnTbl>
+                        <tns:numEstablecimiento>9350021532</tns:numEstablecimiento>
+                        <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                        <tns:fechaPagoAmex>20210826</tns:fechaPagoAmex>
+                        <tns:monedaPago>MXN</tns:monedaPago>
+                        <tns:numEstablecimiento2>9350021532</tns:numEstablecimiento2>
+                        <tns:fechaPresentacion>20210824</tns:fechaPresentacion>
+                        <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                        <tns:numFactura>000000000000403</tns:numFactura>
+                        <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                        <tns:identificacionUbicacionEstablecimiento>AUTOB MEX PUE E</tns:identificacionUbicacionEstablecimiento>
+                        <tns:numFacturaReferencia>361332437</tns:numFacturaReferencia>
+                        <tns:numVendedor/>
+                        <tns:numTarjeta>376669XXXXX1001</tns:numTarjeta>
+                        <tns:numReferenciaEspecificoIndustria/>
+                        <tns:montoBrutoPresentacion> 000000000400200</tns:montoBrutoPresentacion>
+                        <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                        <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                        <tns:horaTransaccion>145543</tns:horaTransaccion>
+                        <tns:numTransaccion>003341868301065</tns:numTransaccion>
+                        <tns:codigoAprobacion>803251</tns:codigoAprobacion>
+                        <tns:numTerminal>0670021</tns:numTerminal>
+                        <tns:codigoCategoriaEstablecimiento>4131</tns:codigoCategoriaEstablecimiento>
+                        <tns:numReferenciaSocio/>
+                        <tns:numReferenciaAdquirente>P82LHOJ0556BB00000002DJ</tns:numReferenciaAdquirente>
+                        <tns:codigoErrorIncumplimientoCalidadDatos/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos1/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos2/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos3/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos4/>
+                        <tns:indicadorLecturaBanda/>
+                        <tns:indicadorTransaccionRechazada>   </tns:indicadorTransaccionRechazada>
+                        <tns:montoPrimeraCuota> 000000000000000</tns:montoPrimeraCuota>
+                        <tns:montoCuotaSiguiente> 000000000000000</tns:montoCuotaSiguiente>
+                        <tns:cantidadCuotas>00000</tns:cantidadCuotas>
+                        <tns:numCuota>00000</tns:numCuota>
+                        <tns:relleno/>
+                        <tns:montoServicio> 000000000000000</tns:montoServicio>
+                        <tns:montoAceleracion> 000000000000650</tns:montoAceleracion>
+                        <tns:xxerBancosAmexTxnpricingTblCollection>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361332437</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376669XXXXX1001</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento> 004000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000013920000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361332437</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376669XXXXX1001</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000002227200</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361332437</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376669XXXXX1001</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-000630</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000002192400</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361332437</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376669XXXXX1001</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000000350784</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                        </tns:xxerBancosAmexTxnpricingTblCollection>
+                     </tns:XxerBancosAmexTransactnTbl>
+                     <tns:XxerBancosAmexTransactnTbl>
+                        <tns:numEstablecimiento>9350021532</tns:numEstablecimiento>
+                        <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                        <tns:fechaPagoAmex>20210826</tns:fechaPagoAmex>
+                        <tns:monedaPago>MXN</tns:monedaPago>
+                        <tns:numEstablecimiento2>9350021532</tns:numEstablecimiento2>
+                        <tns:fechaPresentacion>20210824</tns:fechaPresentacion>
+                        <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                        <tns:numFactura>000000000000403</tns:numFactura>
+                        <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                        <tns:identificacionUbicacionEstablecimiento>AUTOB MEX PUE E</tns:identificacionUbicacionEstablecimiento>
+                        <tns:numFacturaReferencia>361231240</tns:numFacturaReferencia>
+                        <tns:numVendedor/>
+                        <tns:numTarjeta>376750XXXXX5001</tns:numTarjeta>
+                        <tns:numReferenciaEspecificoIndustria/>
+                        <tns:montoBrutoPresentacion> 000000000400200</tns:montoBrutoPresentacion>
+                        <tns:montoTransaccion> 000000000069600</tns:montoTransaccion>
+                        <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                        <tns:horaTransaccion>130649</tns:horaTransaccion>
+                        <tns:numTransaccion>003340330875060</tns:numTransaccion>
+                        <tns:codigoAprobacion>896511</tns:codigoAprobacion>
+                        <tns:numTerminal>0670021</tns:numTerminal>
+                        <tns:codigoCategoriaEstablecimiento>4131</tns:codigoCategoriaEstablecimiento>
+                        <tns:numReferenciaSocio/>
+                        <tns:numReferenciaAdquirente>P82LHOJ0556BB00000002DI</tns:numReferenciaAdquirente>
+                        <tns:codigoErrorIncumplimientoCalidadDatos/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos1/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos2/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos3/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos4/>
+                        <tns:indicadorLecturaBanda/>
+                        <tns:indicadorTransaccionRechazada>   </tns:indicadorTransaccionRechazada>
+                        <tns:montoPrimeraCuota> 000000000000000</tns:montoPrimeraCuota>
+                        <tns:montoCuotaSiguiente> 000000000000000</tns:montoCuotaSiguiente>
+                        <tns:cantidadCuotas>00000</tns:cantidadCuotas>
+                        <tns:numCuota>00000</tns:numCuota>
+                        <tns:relleno/>
+                        <tns:montoServicio> 000000000000000</tns:montoServicio>
+                        <tns:montoAceleracion> 000000000001300</tns:montoAceleracion>
+                        <tns:xxerBancosAmexTxnpricingTblCollection>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361231240</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376750XXXXX5001</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000069600</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento> 004000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000027840000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361231240</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376750XXXXX5001</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000069600</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000004454400</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361231240</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376750XXXXX5001</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000069600</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-000630</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000004384800</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361231240</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376750XXXXX5001</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000069600</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000000701568</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                        </tns:xxerBancosAmexTxnpricingTblCollection>
+                     </tns:XxerBancosAmexTransactnTbl>
+                     <tns:XxerBancosAmexTransactnTbl>
+                        <tns:numEstablecimiento>9350021532</tns:numEstablecimiento>
+                        <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                        <tns:fechaPagoAmex>20210826</tns:fechaPagoAmex>
+                        <tns:monedaPago>MXN</tns:monedaPago>
+                        <tns:numEstablecimiento2>9350021532</tns:numEstablecimiento2>
+                        <tns:fechaPresentacion>20210824</tns:fechaPresentacion>
+                        <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                        <tns:numFactura>000000000000403</tns:numFactura>
+                        <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                        <tns:identificacionUbicacionEstablecimiento>AUTOB MEX PUE E</tns:identificacionUbicacionEstablecimiento>
+                        <tns:numFacturaReferencia>361646719</tns:numFacturaReferencia>
+                        <tns:numVendedor/>
+                        <tns:numTarjeta>371773XXXXX1050</tns:numTarjeta>
+                        <tns:numReferenciaEspecificoIndustria/>
+                        <tns:montoBrutoPresentacion> 000000000400200</tns:montoBrutoPresentacion>
+                        <tns:montoTransaccion> 000000000087000</tns:montoTransaccion>
+                        <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                        <tns:horaTransaccion>205923</tns:horaTransaccion>
+                        <tns:numTransaccion>003346223734066</tns:numTransaccion>
+                        <tns:codigoAprobacion>845344</tns:codigoAprobacion>
+                        <tns:numTerminal>0670021</tns:numTerminal>
+                        <tns:codigoCategoriaEstablecimiento>4131</tns:codigoCategoriaEstablecimiento>
+                        <tns:numReferenciaSocio/>
+                        <tns:numReferenciaAdquirente>P82LHOJ0556BB00000002DO</tns:numReferenciaAdquirente>
+                        <tns:codigoErrorIncumplimientoCalidadDatos/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos1/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos2/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos3/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos4/>
+                        <tns:indicadorLecturaBanda/>
+                        <tns:indicadorTransaccionRechazada>   </tns:indicadorTransaccionRechazada>
+                        <tns:montoPrimeraCuota> 000000000000000</tns:montoPrimeraCuota>
+                        <tns:montoCuotaSiguiente> 000000000000000</tns:montoCuotaSiguiente>
+                        <tns:cantidadCuotas>00000</tns:cantidadCuotas>
+                        <tns:numCuota>00000</tns:numCuota>
+                        <tns:relleno/>
+                        <tns:montoServicio> 000000000000000</tns:montoServicio>
+                        <tns:montoAceleracion> 000000000001625</tns:montoAceleracion>
+                        <tns:xxerBancosAmexTxnpricingTblCollection>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361646719</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>371773XXXXX1050</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000087000</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento> 004000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000034800000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361646719</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>371773XXXXX1050</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000087000</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000005568000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361646719</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>371773XXXXX1050</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000087000</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-000630</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000005481000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361646719</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>371773XXXXX1050</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000087000</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000000876960</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                        </tns:xxerBancosAmexTxnpricingTblCollection>
+                     </tns:XxerBancosAmexTransactnTbl>
+                     <tns:XxerBancosAmexTransactnTbl>
+                        <tns:numEstablecimiento>9350021532</tns:numEstablecimiento>
+                        <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                        <tns:fechaPagoAmex>20210826</tns:fechaPagoAmex>
+                        <tns:monedaPago>MXN</tns:monedaPago>
+                        <tns:numEstablecimiento2>9350021532</tns:numEstablecimiento2>
+                        <tns:fechaPresentacion>20210824</tns:fechaPresentacion>
+                        <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                        <tns:numFactura>000000000000403</tns:numFactura>
+                        <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                        <tns:identificacionUbicacionEstablecimiento>AUTOB MEX PUE E</tns:identificacionUbicacionEstablecimiento>
+                        <tns:numFacturaReferencia>361572287</tns:numFacturaReferencia>
+                        <tns:numVendedor/>
+                        <tns:numTarjeta>374906XXXXX1003</tns:numTarjeta>
+                        <tns:numReferenciaEspecificoIndustria/>
+                        <tns:montoBrutoPresentacion> 000000000400200</tns:montoBrutoPresentacion>
+                        <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                        <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                        <tns:horaTransaccion>193015</tns:horaTransaccion>
+                        <tns:numTransaccion>003345389408069</tns:numTransaccion>
+                        <tns:codigoAprobacion>886873</tns:codigoAprobacion>
+                        <tns:numTerminal>0670021</tns:numTerminal>
+                        <tns:codigoCategoriaEstablecimiento>4131</tns:codigoCategoriaEstablecimiento>
+                        <tns:numReferenciaSocio/>
+                        <tns:numReferenciaAdquirente>P82LHOJ0556BB00000002DN</tns:numReferenciaAdquirente>
+                        <tns:codigoErrorIncumplimientoCalidadDatos/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos1/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos2/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos3/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos4/>
+                        <tns:indicadorLecturaBanda/>
+                        <tns:indicadorTransaccionRechazada>   </tns:indicadorTransaccionRechazada>
+                        <tns:montoPrimeraCuota> 000000000000000</tns:montoPrimeraCuota>
+                        <tns:montoCuotaSiguiente> 000000000000000</tns:montoCuotaSiguiente>
+                        <tns:cantidadCuotas>00000</tns:cantidadCuotas>
+                        <tns:numCuota>00000</tns:numCuota>
+                        <tns:relleno/>
+                        <tns:montoServicio> 000000000000000</tns:montoServicio>
+                        <tns:montoAceleracion> 000000000000650</tns:montoAceleracion>
+                        <tns:xxerBancosAmexTxnpricingTblCollection>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361572287</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>374906XXXXX1003</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento> 004000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000013920000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361572287</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>374906XXXXX1003</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000002227200</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361572287</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>374906XXXXX1003</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-000630</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000002192400</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361572287</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>374906XXXXX1003</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000000350784</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                        </tns:xxerBancosAmexTxnpricingTblCollection>
+                     </tns:XxerBancosAmexTransactnTbl>
+                     <tns:XxerBancosAmexTransactnTbl>
+                        <tns:numEstablecimiento>9350021532</tns:numEstablecimiento>
+                        <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                        <tns:fechaPagoAmex>20210826</tns:fechaPagoAmex>
+                        <tns:monedaPago>MXN</tns:monedaPago>
+                        <tns:numEstablecimiento2>9350021532</tns:numEstablecimiento2>
+                        <tns:fechaPresentacion>20210824</tns:fechaPresentacion>
+                        <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                        <tns:numFactura>000000000000403</tns:numFactura>
+                        <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                        <tns:identificacionUbicacionEstablecimiento>AUTOB MEX PUE E</tns:identificacionUbicacionEstablecimiento>
+                        <tns:numFacturaReferencia>361466298</tns:numFacturaReferencia>
+                        <tns:numVendedor/>
+                        <tns:numTarjeta>370740XXXXX2057</tns:numTarjeta>
+                        <tns:numReferenciaEspecificoIndustria/>
+                        <tns:montoBrutoPresentacion> 000000000400200</tns:montoBrutoPresentacion>
+                        <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                        <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                        <tns:horaTransaccion>172712</tns:horaTransaccion>
+                        <tns:numTransaccion>003343923331061</tns:numTransaccion>
+                        <tns:codigoAprobacion>804914</tns:codigoAprobacion>
+                        <tns:numTerminal>0670021</tns:numTerminal>
+                        <tns:codigoCategoriaEstablecimiento>4131</tns:codigoCategoriaEstablecimiento>
+                        <tns:numReferenciaSocio/>
+                        <tns:numReferenciaAdquirente>P82LHOJ0556BB00000002DM</tns:numReferenciaAdquirente>
+                        <tns:codigoErrorIncumplimientoCalidadDatos/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos1/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos2/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos3/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos4/>
+                        <tns:indicadorLecturaBanda/>
+                        <tns:indicadorTransaccionRechazada>   </tns:indicadorTransaccionRechazada>
+                        <tns:montoPrimeraCuota> 000000000000000</tns:montoPrimeraCuota>
+                        <tns:montoCuotaSiguiente> 000000000000000</tns:montoCuotaSiguiente>
+                        <tns:cantidadCuotas>00000</tns:cantidadCuotas>
+                        <tns:numCuota>00000</tns:numCuota>
+                        <tns:relleno/>
+                        <tns:montoServicio> 000000000000000</tns:montoServicio>
+                        <tns:montoAceleracion> 000000000000650</tns:montoAceleracion>
+                        <tns:xxerBancosAmexTxnpricingTblCollection>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361466298</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>370740XXXXX2057</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento> 004000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000013920000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361466298</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>370740XXXXX2057</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000002227200</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361466298</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>370740XXXXX2057</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-000630</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000002192400</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361466298</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>370740XXXXX2057</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000000350784</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                        </tns:xxerBancosAmexTxnpricingTblCollection>
+                     </tns:XxerBancosAmexTransactnTbl>
+                     <tns:XxerBancosAmexTransactnTbl>
+                        <tns:numEstablecimiento>9350021532</tns:numEstablecimiento>
+                        <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                        <tns:fechaPagoAmex>20210826</tns:fechaPagoAmex>
+                        <tns:monedaPago>MXN</tns:monedaPago>
+                        <tns:numEstablecimiento2>9350021532</tns:numEstablecimiento2>
+                        <tns:fechaPresentacion>20210824</tns:fechaPresentacion>
+                        <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                        <tns:numFactura>000000000000403</tns:numFactura>
+                        <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                        <tns:identificacionUbicacionEstablecimiento>AUTOB MEX PUE E</tns:identificacionUbicacionEstablecimiento>
+                        <tns:numFacturaReferencia>361406195</tns:numFacturaReferencia>
+                        <tns:numVendedor/>
+                        <tns:numTarjeta>376672XXXXX7002</tns:numTarjeta>
+                        <tns:numReferenciaEspecificoIndustria/>
+                        <tns:montoBrutoPresentacion> 000000000400200</tns:montoBrutoPresentacion>
+                        <tns:montoTransaccion> 000000000104400</tns:montoTransaccion>
+                        <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                        <tns:horaTransaccion>161526</tns:horaTransaccion>
+                        <tns:numTransaccion>003342986071069</tns:numTransaccion>
+                        <tns:codigoAprobacion>806506</tns:codigoAprobacion>
+                        <tns:numTerminal>0670021</tns:numTerminal>
+                        <tns:codigoCategoriaEstablecimiento>4131</tns:codigoCategoriaEstablecimiento>
+                        <tns:numReferenciaSocio/>
+                        <tns:numReferenciaAdquirente>P82LHOJ0556BB00000002DL</tns:numReferenciaAdquirente>
+                        <tns:codigoErrorIncumplimientoCalidadDatos/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos1/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos2/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos3/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos4/>
+                        <tns:indicadorLecturaBanda/>
+                        <tns:indicadorTransaccionRechazada>   </tns:indicadorTransaccionRechazada>
+                        <tns:montoPrimeraCuota> 000000000000000</tns:montoPrimeraCuota>
+                        <tns:montoCuotaSiguiente> 000000000000000</tns:montoCuotaSiguiente>
+                        <tns:cantidadCuotas>00000</tns:cantidadCuotas>
+                        <tns:numCuota>00000</tns:numCuota>
+                        <tns:relleno/>
+                        <tns:montoServicio> 000000000000000</tns:montoServicio>
+                        <tns:montoAceleracion> 000000000001950</tns:montoAceleracion>
+                        <tns:xxerBancosAmexTxnpricingTblCollection>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361406195</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376672XXXXX7002</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000104400</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento> 004000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000041760000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361406195</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376672XXXXX7002</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000104400</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000006681600</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361406195</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376672XXXXX7002</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000104400</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-000630</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000006577200</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361406195</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376672XXXXX7002</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000104400</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000001052352</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                        </tns:xxerBancosAmexTxnpricingTblCollection>
+                     </tns:XxerBancosAmexTransactnTbl>
+                     <tns:XxerBancosAmexTransactnTbl>
+                        <tns:numEstablecimiento>9350021532</tns:numEstablecimiento>
+                        <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                        <tns:fechaPagoAmex>20210826</tns:fechaPagoAmex>
+                        <tns:monedaPago>MXN</tns:monedaPago>
+                        <tns:numEstablecimiento2>9350021532</tns:numEstablecimiento2>
+                        <tns:fechaPresentacion>20210824</tns:fechaPresentacion>
+                        <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                        <tns:numFactura>000000000000403</tns:numFactura>
+                        <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                        <tns:identificacionUbicacionEstablecimiento>AUTOB MEX PUE E</tns:identificacionUbicacionEstablecimiento>
+                        <tns:numFacturaReferencia>361348248</tns:numFacturaReferencia>
+                        <tns:numVendedor/>
+                        <tns:numTarjeta>376703XXXXX2007</tns:numTarjeta>
+                        <tns:numReferenciaEspecificoIndustria/>
+                        <tns:montoBrutoPresentacion> 000000000400200</tns:montoBrutoPresentacion>
+                        <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                        <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                        <tns:horaTransaccion>151321</tns:horaTransaccion>
+                        <tns:numTransaccion>003342128968065</tns:numTransaccion>
+                        <tns:codigoAprobacion>817220</tns:codigoAprobacion>
+                        <tns:numTerminal>0670021</tns:numTerminal>
+                        <tns:codigoCategoriaEstablecimiento>4131</tns:codigoCategoriaEstablecimiento>
+                        <tns:numReferenciaSocio/>
+                        <tns:numReferenciaAdquirente>P82LHOJ0556BB00000002DK</tns:numReferenciaAdquirente>
+                        <tns:codigoErrorIncumplimientoCalidadDatos/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos1/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos2/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos3/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos4/>
+                        <tns:indicadorLecturaBanda/>
+                        <tns:indicadorTransaccionRechazada>   </tns:indicadorTransaccionRechazada>
+                        <tns:montoPrimeraCuota> 000000000000000</tns:montoPrimeraCuota>
+                        <tns:montoCuotaSiguiente> 000000000000000</tns:montoCuotaSiguiente>
+                        <tns:cantidadCuotas>00000</tns:cantidadCuotas>
+                        <tns:numCuota>00000</tns:numCuota>
+                        <tns:relleno/>
+                        <tns:montoServicio> 000000000000000</tns:montoServicio>
+                        <tns:montoAceleracion> 000000000000653</tns:montoAceleracion>
+                        <tns:xxerBancosAmexTxnpricingTblCollection>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361348248</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376703XXXXX2007</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento> 004000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000013920000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361348248</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376703XXXXX2007</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000002227200</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361348248</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376703XXXXX2007</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-000630</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000002192400</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350021532</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350021532</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>361348248</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376703XXXXX2007</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210824</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000000350784</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                        </tns:xxerBancosAmexTxnpricingTblCollection>
+                     </tns:XxerBancosAmexTransactnTbl>
+                  </tns:xxerBancosAmexTransactnTblCollection>
+               </tns:XxerBancosAmexSubmissionTbl>
+            </tns:xxerBancosAmexSubmissionTblCollection>
+         </tns:XxerBancosAmexSummaryTbl>
+         <tns:XxerBancosAmexSummaryTbl>
+            <tns:identificacionEstablecimiento>9350060670</tns:identificacionEstablecimiento>
+            <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+            <tns:numPagoAmex>2360064928</tns:numPagoAmex>
+            <tns:fechaPago>20210826</tns:fechaPago>
+            <tns:monedaPago>MXN</tns:monedaPago>
+            <tns:numUnicoReferenciaPago/>
+            <tns:montoNetoPago> 000000000098056</tns:montoNetoPago>
+            <tns:montoBrutoPago> 000000000104400</tns:montoBrutoPago>
+            <tns:montoDescuento> 000000000003518</tns:montoDescuento>
+            <tns:montoServicio> 000000000000000</tns:montoServicio>
+            <tns:montoAjuste>-000000000002263</tns:montoAjuste>
+            <tns:montoImpuestos> 000000000000563</tns:montoImpuestos>
+            <tns:montoSaldoDebitoInicial> 000000000000000</tns:montoSaldoDebitoInicial>
+            <tns:numDepositoDirecto/>
+            <tns:numCuentaBancaria/>
+            <tns:numCuentaBancariaInternacional>00014650655017535508</tns:numCuentaBancariaInternacional>
+            <tns:codigoBanco>014      000000</tns:codigoBanco>
+            <tns:xxerBancosAmexAdjustmentTblCollection>
+               <tns:XxerBancosAmexAdjustmentTbl>
+                  <tns:numEstablecimiento>9350060670</tns:numEstablecimiento>
+                  <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                  <tns:fechaPago>20210826</tns:fechaPago>
+                  <tns:monedaPago>MXN</tns:monedaPago>
+                  <tns:numEstablecimientoPresentacion>9350060670</tns:numEstablecimientoPresentacion>
+                  <tns:fechaEnvio>20210824</tns:fechaEnvio>
+                  <tns:ubicacionEstablecimiento/>
+                  <tns:numFacturaReferencia/>
+                  <tns:identificacionVendedor/>
+                  <tns:numTarjeta/>
+                  <tns:numReferenciaIndustria/>
+                  <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                  <tns:numFactura>000000000000000</tns:numFactura>
+                  <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                  <tns:numAjuste>000000000234353</tns:numAjuste>
+                  <tns:codigoMotivoAjuste>ADJ1090001</tns:codigoMotivoAjuste>
+                  <tns:descripcionMotivoAjuste>AJUSTE ESPECIAL</tns:descripcionMotivoAjuste>
+                  <tns:montoBruto> 000000000000000</tns:montoBruto>
+                  <tns:montoDescuento> 000000000000000</tns:montoDescuento>
+                  <tns:montoCargoServicio> 000000000001951</tns:montoCargoServicio>
+                  <tns:montoImpuesto> 000000000000312</tns:montoImpuesto>
+                  <tns:montoNeto>-000000000002263</tns:montoNeto>
+                  <tns:tasaDescuento/>
+                  <tns:tasaCargoServicio> 000000</tns:tasaCargoServicio>
+                  <tns:codigoLote/>
+                  <tns:codigoFactura/>
+               </tns:XxerBancosAmexAdjustmentTbl>
+            </tns:xxerBancosAmexAdjustmentTblCollection>
+            <tns:xxerBancosAmexChargebackTblCollection/>
+            <tns:xxerBancosAmexSubmissionTblCollection>
+               <tns:XxerBancosAmexSubmissionTbl>
+                  <tns:numEstablecimiento>9350060670</tns:numEstablecimiento>
+                  <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                  <tns:fechaPago>20210826</tns:fechaPago>
+                  <tns:monedaPago>MXN</tns:monedaPago>
+                  <tns:numEstablecimientoPresention>9350060670</tns:numEstablecimientoPresention>
+                  <tns:fechaEnvioComercial>20210824</tns:fechaEnvioComercial>
+                  <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                  <tns:numFactura>000000000000413</tns:numFactura>
+                  <tns:moneda>MXN</tns:moneda>
+                  <tns:relleno/>
+                  <tns:tasaCambio/>
+                  <tns:montoBrutoMonedaPresentacion> 000000000104400</tns:montoBrutoMonedaPresentacion>
+                  <tns:montoBrutoMonedaPago> 000000000104400</tns:montoBrutoMonedaPago>
+                  <tns:montoDescuentoRsentcion> 000000000003518</tns:montoDescuentoRsentcion>
+                  <tns:montoCargoServicio> 000000000000000</tns:montoCargoServicio>
+                  <tns:montoImpuesto> 000000000000563</tns:montoImpuesto>
+                  <tns:montoNeto> 000000000100319</tns:montoNeto>
+                  <tns:tasaDescuento/>
+                  <tns:tasaImpuesto/>
+                  <tns:sumaTransacciones>0000002</tns:sumaTransacciones>
+                  <tns:identificacionSeguimiento/>
+                  <tns:numCuota>0</tns:numCuota>
+                  <tns:numAceleracion>41300961</tns:numAceleracion>
+                  <tns:fechaLiquidacionOriginal>20210923</tns:fechaLiquidacionOriginal>
+                  <tns:fechaAceleracion>20210824</tns:fechaAceleracion>
+                  <tns:cantidadDiasAdelantados>28</tns:cantidadDiasAdelantados>
+                  <tns:montoCargoAceleracion> 000000000001951</tns:montoCargoAceleracion>
+                  <tns:montoNetoCargoAceleracion> 000000000098368</tns:montoNetoCargoAceleracion>
+                  <tns:montoBrutoDebito> 000000000104400</tns:montoBrutoDebito>
+                  <tns:montoBrutoCredito> 000000000000000</tns:montoBrutoCredito>
+                  <tns:xxerBancosAmexTransactnTblCollection>
+                     <tns:XxerBancosAmexTransactnTbl>
+                        <tns:numEstablecimiento>9350060670</tns:numEstablecimiento>
+                        <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                        <tns:fechaPagoAmex>20210826</tns:fechaPagoAmex>
+                        <tns:monedaPago>MXN</tns:monedaPago>
+                        <tns:numEstablecimiento2>9350060670</tns:numEstablecimiento2>
+                        <tns:fechaPresentacion>20210824</tns:fechaPresentacion>
+                        <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                        <tns:numFactura>000000000000413</tns:numFactura>
+                        <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                        <tns:identificacionUbicacionEstablecimiento>AUTOB MEX PUE E</tns:identificacionUbicacionEstablecimiento>
+                        <tns:numFacturaReferencia>360967035</tns:numFacturaReferencia>
+                        <tns:numVendedor/>
+                        <tns:numTarjeta>376694XXXXX2005</tns:numTarjeta>
+                        <tns:numReferenciaEspecificoIndustria/>
+                        <tns:montoBrutoPresentacion> 000000000104400</tns:montoBrutoPresentacion>
+                        <tns:montoTransaccion> 000000000069600</tns:montoTransaccion>
+                        <tns:fechaTransaccion>20210823</tns:fechaTransaccion>
+                        <tns:horaTransaccion>225645</tns:horaTransaccion>
+                        <tns:numTransaccion>003006236141077</tns:numTransaccion>
+                        <tns:codigoAprobacion>206605</tns:codigoAprobacion>
+                        <tns:numTerminal>0670018</tns:numTerminal>
+                        <tns:codigoCategoriaEstablecimiento>4131</tns:codigoCategoriaEstablecimiento>
+                        <tns:numReferenciaSocio/>
+                        <tns:numReferenciaAdquirente>P82LHOJ0556BB00000002EC</tns:numReferenciaAdquirente>
+                        <tns:codigoErrorIncumplimientoCalidadDatos/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos1/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos2/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos3/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos4/>
+                        <tns:indicadorLecturaBanda/>
+                        <tns:indicadorTransaccionRechazada>   </tns:indicadorTransaccionRechazada>
+                        <tns:montoPrimeraCuota> 000000000000000</tns:montoPrimeraCuota>
+                        <tns:montoCuotaSiguiente> 000000000000000</tns:montoCuotaSiguiente>
+                        <tns:cantidadCuotas>00000</tns:cantidadCuotas>
+                        <tns:numCuota>00000</tns:numCuota>
+                        <tns:relleno/>
+                        <tns:montoServicio> 000000000000000</tns:montoServicio>
+                        <tns:montoAceleracion> 000000000001300</tns:montoAceleracion>
+                        <tns:xxerBancosAmexTxnpricingTblCollection>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350060670</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350060670</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>360967035</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376694XXXXX2005</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000069600</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210823</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento> 004000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000027840000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350060670</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350060670</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>360967035</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376694XXXXX2005</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000069600</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210823</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000004454400</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350060670</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350060670</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>360967035</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376694XXXXX2005</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000069600</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210823</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-000630</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000004384800</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350060670</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350060670</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>360967035</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376694XXXXX2005</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000069600</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210823</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000000701568</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                        </tns:xxerBancosAmexTxnpricingTblCollection>
+                     </tns:XxerBancosAmexTransactnTbl>
+                     <tns:XxerBancosAmexTransactnTbl>
+                        <tns:numEstablecimiento>9350060670</tns:numEstablecimiento>
+                        <tns:codigoTipoCuenta>002</tns:codigoTipoCuenta>
+                        <tns:fechaPagoAmex>20210826</tns:fechaPagoAmex>
+                        <tns:monedaPago>MXN</tns:monedaPago>
+                        <tns:numEstablecimiento2>9350060670</tns:numEstablecimiento2>
+                        <tns:fechaPresentacion>20210824</tns:fechaPresentacion>
+                        <tns:fechaProcesamientoAmex>20210824</tns:fechaProcesamientoAmex>
+                        <tns:numFactura>000000000000413</tns:numFactura>
+                        <tns:monedaPresentacion>MXN</tns:monedaPresentacion>
+                        <tns:identificacionUbicacionEstablecimiento>AUTOB MEX PUE E</tns:identificacionUbicacionEstablecimiento>
+                        <tns:numFacturaReferencia>360957641</tns:numFacturaReferencia>
+                        <tns:numVendedor/>
+                        <tns:numTarjeta>376693XXXXX7007</tns:numTarjeta>
+                        <tns:numReferenciaEspecificoIndustria/>
+                        <tns:montoBrutoPresentacion> 000000000104400</tns:montoBrutoPresentacion>
+                        <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                        <tns:fechaTransaccion>20210823</tns:fechaTransaccion>
+                        <tns:horaTransaccion>223412</tns:horaTransaccion>
+                        <tns:numTransaccion>003335331695061</tns:numTransaccion>
+                        <tns:codigoAprobacion>289690</tns:codigoAprobacion>
+                        <tns:numTerminal>0670018</tns:numTerminal>
+                        <tns:codigoCategoriaEstablecimiento>4131</tns:codigoCategoriaEstablecimiento>
+                        <tns:numReferenciaSocio/>
+                        <tns:numReferenciaAdquirente>P82LHOJ0556BB00000002EB</tns:numReferenciaAdquirente>
+                        <tns:codigoErrorIncumplimientoCalidadDatos/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos1/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos2/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos3/>
+                        <tns:codigoErrorIncumplimientoCalidadDatos4/>
+                        <tns:indicadorLecturaBanda/>
+                        <tns:indicadorTransaccionRechazada>   </tns:indicadorTransaccionRechazada>
+                        <tns:montoPrimeraCuota> 000000000000000</tns:montoPrimeraCuota>
+                        <tns:montoCuotaSiguiente> 000000000000000</tns:montoCuotaSiguiente>
+                        <tns:cantidadCuotas>00000</tns:cantidadCuotas>
+                        <tns:numCuota>00000</tns:numCuota>
+                        <tns:relleno/>
+                        <tns:montoServicio> 000000000000000</tns:montoServicio>
+                        <tns:montoAceleracion> 000000000000651</tns:montoAceleracion>
+                        <tns:xxerBancosAmexTxnpricingTblCollection>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350060670</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350060670</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>360957641</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376693XXXXX7007</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210823</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento> 004000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000013920000</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350060670</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350060670</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>360957641</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376693XXXXX7007</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210823</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento> 000000000000002227200</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350060670</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350060670</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>360957641</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376693XXXXX7007</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210823</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-000630</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000002192400</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                           <tns:XxerBancosAmexTxnpricingTbl>
+                              <tns:numeroEstablcimiento>9350060670</tns:numeroEstablcimiento>
+                              <tns:codigoCuenta>002</tns:codigoCuenta>
+                              <tns:fechaPago>20210826</tns:fechaPago>
+                              <tns:monedaPago>MXN</tns:monedaPago>
+                              <tns:numEstablecimentoPresentacion>9350060670</tns:numEstablecimentoPresentacion>
+                              <tns:ubicacionEstablecimiento>AUTOB MEX PUE E</tns:ubicacionEstablecimiento>
+                              <tns:relleno/>
+                              <tns:numFacturaReferencia>360957641</tns:numFacturaReferencia>
+                              <tns:numeroVendedor/>
+                              <tns:numTarjeta>376693XXXXX7007</tns:numTarjeta>
+                              <tns:montoTransaccion> 000000000034800</tns:montoTransaccion>
+                              <tns:fechaTransaccion>20210823</tns:fechaTransaccion>
+                              <tns:codigoCargo>1A</tns:codigoCargo>
+                              <tns:relleno2/>
+                              <tns:montoCargo> 000000000000000000000</tns:montoCargo>
+                              <tns:tasaDescuento>-016000</tns:tasaDescuento>
+                              <tns:montoDescuento>-000000000000000350784</tns:montoDescuento>
+                           </tns:XxerBancosAmexTxnpricingTbl>
+                        </tns:xxerBancosAmexTxnpricingTblCollection>
+                     </tns:XxerBancosAmexTransactnTbl>
+                  </tns:xxerBancosAmexTransactnTblCollection>
+               </tns:XxerBancosAmexSubmissionTbl>
+            </tns:xxerBancosAmexSubmissionTblCollection>
+         </tns:XxerBancosAmexSummaryTbl>
+      </tns:xxerBancosAmexSummaryTblCollection>
+   </tns:XxerBancosAmexHeaderTbl>
+</tns:XxerBancosAmexHeaderTblCollection>

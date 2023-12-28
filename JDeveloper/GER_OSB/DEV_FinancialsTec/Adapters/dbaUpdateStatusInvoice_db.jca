@@ -1,0 +1,13 @@
+<adapter-config name="dbaUpdateStatusInvoice" adapter="db" wsdlLocation="../WSDLs/External/dbaUpdateStatusInvoice.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="ERSEPDB1DS" location="eis/DB/DEV/ERSEPDB1"/>
+  <endpoint-interaction portType="dbaUpdateStatusInvoice_ptt" operation="dbaUpdateStatusInvoice">
+    <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
+      <property name="SchemaName" value="XERINTUSER"/>
+      <property name="PackageName" value="XXER_UTILITIES_PKG"/>
+      <property name="ProcedureName" value="UPDATE_STATUS_INVOICES"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

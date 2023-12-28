@@ -1,0 +1,24 @@
+<wsdl:definitions name="dbaReadInventoryTransactions" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaReadInventoryTransactions" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaReadInventoryTransactions" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/dbaReadInventoryTransactions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="dbaReadInventoryTransactions_plt">
+    <plt:role name="dbaReadInventoryTransactions_role">
+      <plt:portType name="tns:dbaReadInventoryTransactions_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/dbaReadInventoryTransactions" schemaLocation="../../Schemas/External/dbaReadInventoryTransactions.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="dbaReadInventoryTransactionsInput_msg">
+        <wsdl:part name="dbaReadInventoryTransactionsInput_msg" element="db:dbaReadInventoryTransactionsInput"/>
+    </wsdl:message>
+    <wsdl:message name="dbaReadInventoryTransactionsOutputCollection_msg">
+        <wsdl:part name="dbaReadInventoryTransactionsOutputCollection" element="db:dbaReadInventoryTransactionsOutputCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="dbaReadInventoryTransactions_ptt">
+        <wsdl:operation name="dbaReadInventoryTransactions">
+            <wsdl:input message="tns:dbaReadInventoryTransactionsInput_msg"/>
+            <wsdl:output message="tns:dbaReadInventoryTransactionsOutputCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

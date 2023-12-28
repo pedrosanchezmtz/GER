@@ -1,0 +1,271 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbXXER_BANK_AMEX" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbXXER_BANK_AMEX" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxerBancosAmexHeaderTblCollection" type="XxerBancosAmexHeaderTblCollection"/>
+   <xs:complexType name="XxerBancosAmexHeaderTblCollection">
+      <xs:sequence>
+         <xs:element name="XxerBancosAmexHeaderTbl" type="XxerBancosAmexHeaderTbl" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerBancosAmexHeaderTbl">
+      <xs:sequence>
+         <xs:element name="id" type="xs:decimal" nillable="true"/>
+         <xs:element name="fechaCreacionArchivo" type="string20" minOccurs="0" nillable="true"/>
+         <xs:element name="horaCreacionArchivo" type="string20" minOccurs="0" nillable="true"/>
+         <xs:element name="numSecuencial" type="string20" minOccurs="0" nillable="true"/>
+         <xs:element name="identidiacionArchivo" type="string20" minOccurs="0" nillable="true"/>
+         <xs:element name="nombreArchivo" type="string40" minOccurs="0" nillable="true"/>
+         <xs:element name="numVersionArchivo" type="string8" minOccurs="0" nillable="true"/>
+         <xs:element name="sumaTotalRegistros" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="xxerBancosAmexSummaryTblCollection" minOccurs="0">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="XxerBancosAmexSummaryTbl" type="XxerBancosAmexSummaryTbl" minOccurs="0" maxOccurs="unbounded"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerBancosAmexSummaryTbl">
+      <xs:sequence>
+         <xs:element name="id" type="xs:decimal" minOccurs="0"/>
+         <xs:element name="identificacionEstablecimiento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoTipoCuenta" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numPagoAmex" type="string30" nillable="true"/>
+         <xs:element name="fechaPago" type="string30" nillable="true"/>
+         <xs:element name="monedaPago" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numUnicoReferenciaPago" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoNetoPago" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoBrutoPago" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoDescuento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoServicio" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoAjuste" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoImpuestos" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoSaldoDebitoInicial" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numDepositoDirecto" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numCuentaBancaria" type="string60" minOccurs="0" nillable="true"/>
+         <xs:element name="numCuentaBancariaInternacional" type="string60" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoBanco" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="xxerBancosAmexChargebackTblCollection" minOccurs="0">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="XxerBancosAmexChargebackTbl" type="XxerBancosAmexChargebackTbl" minOccurs="0" maxOccurs="unbounded"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="xxerBancosAmexAdjustmentTblCollection" minOccurs="0">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="XxerBancosAmexAdjustmentTbl" type="XxerBancosAmexAdjustmentTbl" minOccurs="0" maxOccurs="unbounded"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="xxerBancosAmexSubmissionTblCollection" minOccurs="0">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="XxerBancosAmexSubmissionTbl" type="XxerBancosAmexSubmissionTbl" minOccurs="0" maxOccurs="unbounded"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerBancosAmexChargebackTbl">
+      <xs:sequence>
+         <xs:element name="id" type="xs:decimal" minOccurs="0"/>
+         <xs:element name="numEstablecimiento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoTipoCuenta" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="monedaPago" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numEstablecimientoPresentacion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaPresentacion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="ubicacionEstablecimiento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numFacturaOReferencia" type="string60" minOccurs="0" nillable="true"/>
+         <xs:element name="identificacionVendedor" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numTarjeta" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numReferenciaIndustria" type="string60" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaProcesamientoAmex" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numFactura" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="monedaPresentacion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numContracargo" type="string60" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoMotivoContracargo" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="descripcionMotivoContracargo" type="string300" minOccurs="0" nillable="true"/>
+         <xs:element name="montoBruto" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoDescuento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoCargoServicio" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoImpuesto" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoNeto" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="tasaDescuento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="tasaCargoServicio" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoLote" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoFactura" type="string30" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerBancosAmexAdjustmentTbl">
+      <xs:sequence>
+         <xs:element name="id" type="xs:decimal" minOccurs="0"/>
+         <xs:element name="numEstablecimiento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoTipoCuenta" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="monedaPago" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numEstablecimientoPresentacion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaEnvio" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="ubicacionEstablecimiento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numFacturaReferencia" type="string60" minOccurs="0" nillable="true"/>
+         <xs:element name="identificacionVendedor" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numTarjeta" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numReferenciaIndustria" type="string60" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaProcesamientoAmex" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numFactura" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="monedaPresentacion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numAjuste" type="string60" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoMotivoAjuste" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="descripcionMotivoAjuste" type="string300" minOccurs="0" nillable="true"/>
+         <xs:element name="montoBruto" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoDescuento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoCargoServicio" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoImpuesto" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoNeto" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="tasaDescuento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="tasaCargoServicio" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoLote" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoFactura" type="string30" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerBancosAmexSubmissionTbl">
+      <xs:sequence>
+         <xs:element name="id" type="xs:decimal" minOccurs="0"/>
+         <xs:element name="numEstablecimiento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoTipoCuenta" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="monedaPago" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numEstablecimientoPresention" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaEnvioComercial" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaProcesamientoAmex" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numFactura" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="moneda" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="relleno" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="tasaCambio" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoBrutoMonedaPresentacion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoBrutoMonedaPago" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoDescuentoRsentcion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoCargoServicio" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoImpuesto" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoNeto" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="tasaDescuento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="tasaImpuesto" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="sumaTransacciones" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="identificacionSeguimiento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numCuota" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numAceleracion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaLiquidacionOriginal" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaAceleracion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="cantidadDiasAdelantados" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoCargoAceleracion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoNetoCargoAceleracion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoBrutoDebito" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoBrutoCredito" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="xxerBancosAmexTransactnTblCollection" minOccurs="0">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="XxerBancosAmexTransactnTbl" type="XxerBancosAmexTransactnTbl" minOccurs="0" maxOccurs="unbounded"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerBancosAmexTransactnTbl">
+      <xs:sequence>
+         <xs:element name="id" type="xs:decimal" minOccurs="0"/>
+         <xs:element name="numEstablecimiento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoTipoCuenta" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="monedaPago" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numEstablecimiento2" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaPresentacion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaProcesamientoAmex" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numFactura" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="monedaPresentacion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="identificacionUbicacionEstablecimiento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numFacturaReferencia" type="string60" nillable="true"/>
+         <xs:element name="numVendedor" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numTarjeta" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numReferenciaEspecificoIndustria" type="string60" minOccurs="0" nillable="true"/>
+         <xs:element name="montoBrutoPresentacion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoTransaccion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaTransaccion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="horaTransaccion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numTransaccion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoAprobacion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numTerminal" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoCategoriaEstablecimiento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numReferenciaSocio" type="string60" minOccurs="0" nillable="true"/>
+         <xs:element name="numReferenciaAdquirente" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoErrorIncumplimientoCalidadDatos" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoErrorIncumplimientoCalidadDatos1" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoErrorIncumplimientoCalidadDatos2" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoErrorIncumplimientoCalidadDatos3" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoErrorIncumplimientoCalidadDatos4" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="indicadorLecturaBanda" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="indicadorTransaccionRechazada" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoPrimeraCuota" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoCuotaSiguiente" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="cantidadCuotas" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numCuota" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="relleno" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoServicio" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoAceleracion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="xxerBancosAmexTxnpricingTblCollection" minOccurs="0">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="XxerBancosAmexTxnpricingTbl" type="XxerBancosAmexTxnpricingTbl" minOccurs="0" maxOccurs="unbounded"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerBancosAmexTxnpricingTbl">
+      <xs:sequence>
+         <xs:element name="id" type="xs:decimal"/>
+         <xs:element name="numeroEstablcimiento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoCuenta" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="monedaPago" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numEstablecimentoPresentacion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="ubicacionEstablecimiento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="relleno" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numeroVendedor" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="numTarjeta" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoTransaccion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaTransaccion" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="codigoCargo" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="relleno2" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoCargo" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="tasaDescuento" type="string30" minOccurs="0" nillable="true"/>
+         <xs:element name="montoDescuento" type="string30" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="string20">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="20"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string40">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="40"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string8">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="8"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string30">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="30"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string60">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="60"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string300">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="300"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

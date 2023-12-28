@@ -1,0 +1,15 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/coherence/CoherenceTec/CoherenceTec/coherenceGetOrgCodes" name="coherenceGetOrgCodes-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="coherenceGetOrgCodes.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/coherence/CoherenceTec/CoherenceTec/coherenceGetOrgCodes"/>
+    <wsdl:binding name="Get_ptt-binding" type="coh:Get_ptt" xmlns:coh="http://xmlns.oracle.com/pcbpel/adapter/coherence/CoherenceTec/CoherenceTec/coherenceGetOrgCodes">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="Get">
+            <soap:operation soapAction="Get"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

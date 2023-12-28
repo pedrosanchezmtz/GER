@@ -1,0 +1,27 @@
+<wsdl:definitions name="dbComplementsAP" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/DEV_AuditControlTec/dbComplementsAP" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OCI/DEV_AuditControlTec/dbComplementsAP" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbComplementsAP" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="dbComplementsAP_plt">
+    <plt:role name="dbComplementsAP_role">
+      <plt:portType name="tns:dbComplementsAP_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbComplementsAP" schemaLocation="../../Schemas/External/dbComplementsAP_table.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="XxerComplementsApTbl_msg">
+        <wsdl:part name="XxerComplementsApTbl" element="top:XxerComplementsApTbl"/>
+    </wsdl:message>
+    <wsdl:message name="XxerComplementsApTblCollection_msg">
+        <wsdl:part name="XxerComplementsApTblCollection" element="top:XxerComplementsApTblCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="dbComplementsAP_ptt">
+        <wsdl:operation name="merge">
+            <wsdl:input message="tns:XxerComplementsApTblCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryByExample">
+            <wsdl:input message="tns:XxerComplementsApTbl_msg"/>
+            <wsdl:output message="tns:XxerComplementsApTblCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/Reports/XXER_AP_INVOICE_VALIDATION_AUTOMATICA" targetNamespace="http://soa.estrellaroja.com.mx/Reports/XXER_AP_INVOICE_VALIDATION_AUTOMATICA" elementFormDefault="qualified">
+<xsd:element name="DATA_DS">
+
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="NUM_INTENTOS" type="xsd:integer"/>
+<xsd:element name="NUM_DIAS_INTENTOS" type="xsd:integer"/>
+<xsd:element name="G_INVOICES" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="INVOICE_PERCENTAGE_RATE" type="xsd:float"/>
+<xsd:element name="SUPPLIER_PERCENTAGE_RATE" type="xsd:float"/>
+<xsd:element name="INVOICE_SOURCE" type="xsd:string"/>
+<xsd:element name="INVOICE_ID" type="xsd:integer"/>
+<xsd:element name="INVOICE_NUMBER" type="xsd:string"/>
+<xsd:element name="INVOICE_TYPE" type="xsd:string"/>
+<xsd:element name="SUBTOTAL" type="xsd:float"/>
+<xsd:element name="TOTAL_TAX_AMOUNT" type="xsd:float"/>
+<xsd:element name="TOTAL" type="xsd:float"/>
+<xsd:element name="CURRENCY" type="xsd:string"/>
+<xsd:element name="CREATION_DATE" type="xsd:dateTime"/>
+<xsd:element name="LAST_UPDATE_DATE" type="xsd:dateTime"/>
+<xsd:element name="INVOICE_DATE" type="xsd:dateTime"/>
+<xsd:element name="INVOICETERMSID" type="xsd:integer"/>
+<xsd:element name="INVOICE_TERMS_NAME" type="xsd:string"/>
+<xsd:element name="INVOICE_TERMS_DESC" type="xsd:string"/>
+<xsd:element name="APPROVAL_STATUS_DESC" type="xsd:string"/>
+<xsd:element name="APPROVALS_TATUS" type="xsd:string"/>
+<xsd:element name="SUPPLIER_ID" type="xsd:integer"/>
+<xsd:element name="SUPPLIER_NUMBER" type="xsd:integer"/>
+<xsd:element name="SUPPLIER_PARTY_ID" type="xsd:integer"/>
+<xsd:element name="SUPPLIER_NAME" type="xsd:string"/>
+<xsd:element name="SUPPLIER_SITE_ID" type="xsd:integer"/>
+<xsd:element name="SUPPLIER_SITE_CODE" type="xsd:string"/>
+<xsd:element name="SUPPLIER_SITE_BUSINESSUNIT_ID" type="xsd:integer"/>
+<xsd:element name="SUPPLIER_RFC" type="xsd:string"/>
+<xsd:element name="SUPPLIER_TYPE" type="xsd:string"/>
+<xsd:element name="SUPPLIER_STATE" type="xsd:string"/>
+<xsd:element name="SUPPLIER_CITY" type="xsd:string"/>
+<xsd:element name="SUPPLIER_ADDRESS" type="xsd:string"/>
+<xsd:element name="SUPPLIER_ZIP_CODE" type="xsd:integer"/>
+<xsd:element name="ORDER_ID" type="xsd:integer"/>
+<xsd:element name="ORDER_NUMBER" type="xsd:string"/>
+<xsd:element name="ORDER_BILL_BU_ID" type="xsd:integer"/>
+<xsd:element name="ORDER_SUPPLIER_ID" type="xsd:integer"/>
+<xsd:element name="ORDER_EMAIL" type="xsd:string"/>
+<xsd:element name="ORDER_TERMS_ID" type="xsd:integer"/>
+<xsd:element name="REGISTRATION_NAME" type="xsd:string"/>
+<xsd:element name="LEGAL_ENTITY_ZIP_CODE" type="xsd:integer"/>
+<xsd:element name="LEGAL_ENTITY_NAME" type="xsd:string"/>
+<xsd:element name="LEGAL_ENTITY_REGIMEN" type="xsd:integer"/>
+<xsd:element name="LEGAL_ENTITY_SEGMENT" type="xsd:integer"/>
+<xsd:element name="ERROR_VALIDACION" type="xsd:string"/>
+<xsd:element name="XML_NAME" type="xsd:string"/>
+<xsd:element name="XML_REGISTRADOS" type="xsd:integer"/>
+<xsd:element name="ORGANIZATION_ID" type="xsd:integer"/>
+<xsd:element name="BUSINESS_UNIT" type="xsd:string"/>
+<xsd:element name="LEGAL_ENTITY_ID" type="xsd:integer"/>
+<xsd:element name="REGISTRATION_RFC" type="xsd:string"/>
+<xsd:element name="PDF_NAME" type="xsd:string"/>
+<xsd:element name="PDF_REGISTRADOS" type="xsd:integer"/>
+<xsd:element name="INVOICE_AWT_GROUP_ID" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="INVOICE_AWT_GROUP_CODE" minOccurs="0" type="xsd:string"/>
+<xsd:element name="INVOICE_RET_IVA" minOccurs="0" type="xsd:float"/>
+<xsd:element name="INVOICE_RET_ISR" minOccurs="0" type="xsd:float"/>
+<xsd:element name="SUPPLIER_SITE_AWT_GROUP_ID" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="SUPPLIER_SITE_AWT_GROUP_CODE" minOccurs="0" type="xsd:string"/>
+<xsd:element name="SUPPLIER_RET_IVA" minOccurs="0" type="xsd:float"/>
+<xsd:element name="SUPPLIER_RET_ISR" minOccurs="0" type="xsd:float"/>
+<xsd:element name="RETENCION" minOccurs="0" type="xsd:string"/>
+<xsd:element name="DIAS_INTENTADOS" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="INTENTOS_HOY" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="G_INVOICES1" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="PERCENTAGE_RATE" type="xsd:float"/>
+<xsd:element name="INVOICE_ID" type="xsd:integer"/>
+<xsd:element name="ID_LINE_NUMBER" type="xsd:integer"/>
+<xsd:element name="ID_LINE_TYPE" type="xsd:string"/>
+<xsd:element name="ID_DESCRIPTION" type="xsd:string"/>
+<xsd:element name="ID_LINE_SOURCE" type="xsd:string"/>
+<xsd:element name="ID_ORGANIZATION_ID" type="xsd:integer"/>
+<xsd:element name="ID_ITEM_ID" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="ID_ITEM_DESCRIPTION" minOccurs="0" type="xsd:string"/>
+<xsd:element name="ID_UNIT_CODE" minOccurs="0" type="xsd:string"/>
+<xsd:element name="ID_UNIT_PRICE" minOccurs="0" type="xsd:float"/>
+<xsd:element name="ID_QUANTITY" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="ID_AMOUNT" type="xsd:float"/>
+<xsd:element name="ID_TAX_CLASS_CODE" minOccurs="0" type="xsd:string"/>
+<xsd:element name="ORDER_ID" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="ORDER_DETAIL_ID" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="OD_LIST_PRICE" minOccurs="0" type="xsd:float"/>
+<xsd:element name="OD_LINE_TYPE_ID" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="OD_ITEM_ID" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="OD_ITEM_DESCRIPTION" minOccurs="0" type="xsd:string"/>
+<xsd:element name="OD_UNIT_CODE" minOccurs="0" type="xsd:string"/>
+<xsd:element name="OD_UNIT_PRICE" minOccurs="0" type="xsd:float"/>
+<xsd:element name="OD_QUANTITY" minOccurs="0" type="xsd:float"/>
+<xsd:element name="OD_AMOUNT" minOccurs="0" type="xsd:float"/>
+<xsd:element name="OD_CODE_COMBINATION_ID" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="OD_DEST_ORGANIZATION_ID" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="GCC_ACCOUN_TTYPE" minOccurs="0" type="xsd:string"/>
+<xsd:element name="GCC_SEGMENT1" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="GCC_SEGMENT2" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="GCC_SEGMENT3" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="GCC_SEGMENT4" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="GCC_SEGMENT5" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="ID_TAX_LINE_ID" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="ID_TAX_REGIME_CODE" minOccurs="0" type="xsd:string"/>
+<xsd:element name="ID_TAX" minOccurs="0" type="xsd:string"/>
+<xsd:element name="ID_TAX_JURIS_DICTION_CODE" minOccurs="0" type="xsd:string"/>
+<xsd:element name="ID_TAX_STATUS_CODE" minOccurs="0" type="xsd:string"/>
+<xsd:element name="ID_TAX_RATE_ID" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="ID_TAX_RATE_CODE" minOccurs="0" type="xsd:string"/>
+<xsd:element name="ID_TAX_RATE" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="ID_AWT_GROUP_ID" minOccurs="0" type="xsd:integer"/>
+<xsd:element name="ID_AWT_GROUP_CODE" minOccurs="0" type="xsd:string"/>
+<xsd:element name="INVOICE_RET_IVA" minOccurs="0" type="xsd:float"/>
+<xsd:element name="INVOICE_RET_ISR" minOccurs="0" type="xsd:float"/>
+<xsd:element name="ID_BASE_AMOUNT" minOccurs="0" type="xsd:integer"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>

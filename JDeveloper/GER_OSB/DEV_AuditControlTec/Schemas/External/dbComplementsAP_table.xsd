@@ -1,0 +1,131 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbComplementsAP" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbComplementsAP" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxerComplementsApTblCollection" type="XxerComplementsApTblCollection"/>
+   <xs:element name="XxerComplementsApTbl" type="XxerComplementsApTbl"/>
+   <xs:complexType name="XxerComplementsApTblCollection">
+      <xs:sequence>
+         <xs:element name="XxerComplementsApTbl" type="XxerComplementsApTbl" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerComplementsApTbl">
+      <xs:sequence>
+         <xs:element name="paymentId" type="xs:decimal"/>
+         <xs:element name="paymentNumber" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="nombreEmisor" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="emisorRfc" type="string13" minOccurs="0" nillable="true"/>
+         <xs:element name="nombrePreceptor" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="receptorRfc" type="string13" minOccurs="0" nillable="true"/>
+         <xs:element name="paymentAmount" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="paymentCurrency" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="paymentDate" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="status" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="statusDesc" type="string300" minOccurs="0" nillable="true"/>
+         <xs:element name="folioXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="serieXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="nombreEmisorXml" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="emisorRfcXml" type="string13" minOccurs="0" nillable="true"/>
+         <xs:element name="nombreReceptorXml" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="receptorRfcXml" type="string13" minOccurs="0" nillable="true"/>
+         <xs:element name="totalXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="subtotalXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="tipoCambioXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="monedaXml" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="usoCfdiXml" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="formaPagoXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="tipoComprobanteXml" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="descripcionXml" type="string350" minOccurs="0" nillable="true"/>
+         <xs:element name="uuidXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaTimbradoXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute1" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute2" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute3" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute4" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute5" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="createdBy" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="creationDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="lastUpdatedBy" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="lastUpdateDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="objectVersionNumber" type="xs:int" minOccurs="0" nillable="true"/>
+         <xs:element name="objetoImpXml" type="string2" minOccurs="0" nillable="true"/>
+         <xs:element name="receptorRegimenXml" type="string3" minOccurs="0" nillable="true"/>
+         <xs:element name="emisorRegimenXml" type="string3" minOccurs="0" nillable="true"/>
+         <xs:element name="receptorRegimen" type="string3" minOccurs="0" nillable="true"/>
+         <xs:element name="emisorRegimen" type="string3" minOccurs="0" nillable="true"/>
+         <xs:element name="versionXml" type="string3" minOccurs="0" nillable="true"/>
+         <xs:element name="xxerComplementsLinesApTblCollection" minOccurs="0">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="XxerComplementsLinesApTbl" type="XxerComplementsLinesApTbl" minOccurs="0"
+                              maxOccurs="unbounded"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerComplementsLinesApTbl">
+      <xs:sequence>
+         <xs:element name="drId" type="xs:decimal"/>
+         <xs:element name="invoiceId" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="status" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="statusDesc" type="string300" minOccurs="0" nillable="true"/>
+         <xs:element name="folioDrXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="serieDrXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="uuidDrXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="impSaldoAntDrXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="impPagoDrXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="impSaldoInsolutoDrXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="monedaDrXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="metodoPagoDrXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="tipoCambioDrXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="formaPagoDrXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaDrXml" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute1" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute2" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute3" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute4" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute5" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="createdBy" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="creationDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="lastUpdatedBy" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="lastUpdateDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="objectVersionNumber" type="xs:int" minOccurs="0" nillable="true"/>
+		 <xs:element name="objetoImpDrXml" type="string2" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="string150">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="150"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string13">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="13"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string50">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="50"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string300">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="300"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string350">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="350"/>
+      </xs:restriction>
+   </xs:simpleType>
+<xs:simpleType name="string2">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="2"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string3">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="3"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,22 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/financials/generalLedger/accounts/codeCombinations/publicFlex/Account/" xmlns="http://xmlns.oracle.com/apps/financials/generalLedger/accounts/codeCombinations/publicFlex/Account/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:include schemaLocation="Account.xsd"/>
+    <xsd:complexType name="SatChartOfAccount">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>_CODE_COMBINATION_ID</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="Account">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="company" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="account" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="mxContraAccount" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="satChartOfAccount" type="SatChartOfAccount"/>
+</xsd:schema>

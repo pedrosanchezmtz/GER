@@ -1,0 +1,44 @@
+<wsdl:definitions name="dbConciliation" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OLD/Conciliation/dbConciliation" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB_OLD/Conciliation/dbConciliation" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/sp/dbConciliation" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="dbConciliation_plt">
+    <plt:role name="dbConciliation_role">
+      <plt:portType name="tns:dbConciliation_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+     <schema xmlns="http://www.w3.org/2001/XMLSchema">
+       <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/dbConciliation" schemaLocation="../../Schemas/External/dbConciliation_sp.xsd"/>
+     </schema>
+    </wsdl:types>
+    <wsdl:message name="args_in_msg">
+        <wsdl:part name="InputParameters" element="db:GetConciliationsRq"/>
+    </wsdl:message>
+    <wsdl:message name="args_out_msg">
+        <wsdl:part name="OutputParameters" element="db:GetConciliationsRs"/>
+    </wsdl:message>
+    <wsdl:message name="ConciliationCashRq_msg">
+        <wsdl:part name="InputParameters" element="db:ConciliationCashRq"/>
+    </wsdl:message>
+    <wsdl:message name="ConciliationCashRs_msg">
+        <wsdl:part name="OutputParameters" element="db:ConciliationCashRs"/>
+    </wsdl:message>
+    <wsdl:message name="ConciliationTransactionsRq_msg">
+        <wsdl:part name="InputParameters" element="db:ConciliationTransactionsRq"/>
+    </wsdl:message>
+    <wsdl:message name="ConciliationTransactionsRs_msg">
+        <wsdl:part name="OutputParameters" element="db:ConciliationTransactionsRs"/>
+    </wsdl:message>
+    <wsdl:portType name="dbConciliation_ptt">
+        <wsdl:operation name="GetConciliations">
+            <wsdl:input message="tns:args_in_msg"/>
+            <wsdl:output message="tns:args_out_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="ConciliationCash">
+            <wsdl:input message="tns:ConciliationCashRq_msg"/>
+            <wsdl:output message="tns:ConciliationCashRs_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="ConciliationTransactions">
+            <wsdl:input message="tns:ConciliationTransactionsRq_msg"/>
+            <wsdl:output message="tns:ConciliationTransactionsRs_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

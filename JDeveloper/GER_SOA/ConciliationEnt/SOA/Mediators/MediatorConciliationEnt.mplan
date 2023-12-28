@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Mediator name="MediatorConciliationEnt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" wsdlTargetNamespace="http://soa.estrellaroja.com.mx/ConciliationEnt/MediatorConciliationEnt" xmlns="http://xmlns.oracle.com/sca/1.0/mediator">
+   <operation name="Conciliation" deliveryPolicy="AllOrNothing" priority="4" validateSchema="false">
+      <switch>
+         <case executionType="sequential" name="BpelGetConciliation.bpelgetconciliation_client.GetConciliation_2">
+            <action>
+               <assign>
+                  <copy expression="$in.ConciliationRqP/tns:ConciliationEntRq" target="$out.payload/tns:ConciliationEntRq" xmlns:tns="http://soa.estrellaroja.com.mx/ConciliationEnt"/>
+               </assign>
+               <invoke reference="BpelGetConciliation.bpelgetconciliation_client" operation="GetConciliation">
+                  <onReply>
+                     <assign>
+                        <copy expression="$in.payload/tns:ConciliationEntRs" target="$out.ConciliationRsP/tns:ConciliationEntRs" xmlns:tns="http://soa.estrellaroja.com.mx/ConciliationEnt"/>
+                     </assign>
+                     <reply/>
+                  </onReply>
+               </invoke>
+            </action>
+         </case>
+      </switch>
+   </operation>
+</Mediator>

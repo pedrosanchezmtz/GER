@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="GetCFDIs">RestReference</doc>
+   <resources>
+      <resource path="/facturacion/ger/cfdi">
+         <method name="GET" soa:name="GetCFDIFiles">
+            <request>
+               <param name="rfc" style="query" type="xsd:string"/>
+               <param name="uuid" style="query" type="xsd:string"/>
+               <param name="tipoArchivo" style="query" type="xsd:string"/>
+               <param name="base64" style="query" type="xsd:string"/>
+            </request>
+            <response>
+               <representation mediaType="application/xml"/>
+            </response>
+            <response>
+               <representation mediaType="application/xml"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/ERPManagementOfLoadImportBiz" targetNamespace="http://soa.estrellaroja.com.mx/ERPManagementOfLoadImportBiz" elementFormDefault="qualified" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+<xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+<xsd:element name="SendReportInterfaceRq" type="tns:SendReportInterfaceRqType"/>
+<xsd:element name="SendReportInterfaceRs" type="tns:SendReportInterfaceRsType"/>
+<xsd:element name="varInstanceId" type="xsd:integer"/>
+<xsd:element name="UploadFileRq" type="tns:UploadFileRqType"/>
+<xsd:element name="ListErrorLineId" type="tns:ListErrorLineIdType"/>
+<xsd:complexType name="ListErrorLineIdType">
+<xsd:sequence>
+<xsd:element name="List" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element type="xsd:long" name="LINEID"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="UploadFileRqType">
+<xsd:sequence>
+<xsd:element name="ContentFileProcessed" type="xsd:string"/>
+<xsd:element name="FileName" type="xsd:string"/>
+<xsd:element name="ProcessName" type="xsd:string"/>
+<xsd:element name="TypeProcessed">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="ERROR"/>
+<xsd:enumeration value="SUCCESS"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="SendReportInterfaceRqType">
+<xsd:sequence>
+<xsd:element name="IntegrationName" type="xsd:string"/>
+<xsd:element name="ProcessName" type="xsd:string"/>
+<xsd:element name="BatchId" minOccurs="1" nillable="true" type="xsd:string"/>
+<xsd:element name="Files" type="tns:FilesType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="FilesType">
+<xsd:sequence>
+<xsd:element name="ContentProcessedFile" type="xsd:string" minOccurs="0"/>
+<xsd:element name="FileName" type="xsd:string" minOccurs="0"/>
+<xsd:element name="LinesNumber" type="xsd:integer"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="SendReportInterfaceRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:annotation>
+<xsd:documentation>Extends BaseRsType (Success and Errors nodes). Contains a node which should be used for the specific response of the corresponding service.</xsd:documentation>
+</xsd:annotation>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

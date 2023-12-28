@@ -1,0 +1,25 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbaGetCustomerRfc" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbaGetCustomerRfc" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxerArCustomerRfcVCollection" type="XxerArCustomerRfcVCollection"/>
+   <xs:complexType name="XxerArCustomerRfcVCollection">
+      <xs:sequence>
+         <xs:element name="XxerArCustomerRfcV" type="XxerArCustomerRfcV" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerArCustomerRfcV">
+      <xs:sequence>
+         <xs:element name="rfcDestino" type="string25" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="dbaGetCustomerRfcSelectInputParameters" type="dbaGetCustomerRfcSelect"/>
+   <xs:complexType name="dbaGetCustomerRfcSelect">
+      <xs:sequence>
+         <xs:element name="pTipoDocumento" type="string25"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="string25">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="25"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

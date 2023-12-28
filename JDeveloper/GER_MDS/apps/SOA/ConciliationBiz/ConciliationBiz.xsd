@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/ConciliationBiz" targetNamespace="http://soa.estrellaroja.com.mx/ConciliationBiz" elementFormDefault="qualified" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+<xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+<xsd:element name="ConciliationCashTPRq" type="tns:ConciliationBizsRqType">
+<xsd:annotation>
+<xsd:documentation>Element for Request.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="ConciliationCashTPRs" type="tns:ConciliationBizsRsType">
+<xsd:annotation>
+<xsd:documentation>Element for Response.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="GetPaymentsCashRq" type="tns:GetPaymentsCashRqType">
+<xsd:annotation>
+<xsd:documentation>Element for Request.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="GetPaymentsCashPageRq" type="tns:GetPaymentsCashPageRqType">
+<xsd:annotation>
+<xsd:documentation>Element for Request.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="GetPaymentsCashRs" type="tns:GetPaymentsCashRsType">
+<xsd:annotation>
+<xsd:documentation>Element for Response.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="GetCreditMemoRq" type="tns:GetCreditMemoRqType">
+<xsd:annotation>
+<xsd:documentation>Element for Request.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="GetCreditMemoRs" type="tns:GetCreditMemoRsType">
+<xsd:annotation>
+<xsd:documentation>Element for Response.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:complexType name="ConciliationBizsRqType">
+<xsd:sequence>
+<xsd:element name="Conciliate" type="tns:PaymentType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetPaymentsCashRqType">
+<xsd:sequence>
+<xsd:element name="Payments" type="tns:PaymentType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetPaymentsCashPageRqType">
+<xsd:sequence>
+<xsd:element name="Page" type="tns:GetPaymentsCashRqType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="PaymentType">
+<xsd:sequence>
+<xsd:element name="ReceiptMethod" type="xsd:string" nillable="true"/>
+<xsd:element name="PaymentReference" type="xsd:string" nillable="true"/>
+<xsd:element name="PaymentDate" type="xsd:string" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetPaymentsCashRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:annotation>
+<xsd:documentation>Extends BaseRsType (Success and Errors nodes). Contains a node which should be used for the specific response of the corresponding service.</xsd:documentation>
+</xsd:annotation>
+<xsd:sequence>
+<xsd:element name="PaymentsResults" type="tns:PaymentResultType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="PaymentResultType">
+<xsd:sequence>
+<xsd:element name="ReceiptMethod" type="xsd:string" nillable="true"/>
+<xsd:element name="PaymentReference" type="xsd:string" nillable="true"/>
+<xsd:element name="PaymentNumber" type="xsd:string" nillable="true"/>
+<xsd:element name="PaymentResult" type="tns:PaymentResultDataType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="PaymentResultDataType">
+<xsd:sequence>
+<xsd:element name="AccountNumber" type="xsd:string" nillable="true"/>
+<xsd:element name="PaymentDate" type="xsd:string" nillable="true"/>
+<xsd:element name="Description" type="xsd:string" nillable="true"/>
+<xsd:element name="Total" type="xsd:string" nillable="true"/>
+<xsd:element name="AccountNumber" type="xsd:string" nillable="true"/>
+<xsd:element name="BalanceCheck" type="xsd:string" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetCreditMemoRqType">
+<xsd:sequence>
+<xsd:element name="CreditMemos" type="tns:CreditMemoType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="CreditMemoType">
+<xsd:sequence>
+<xsd:element name="ReceiptMethod" type="xsd:string" nillable="true"/>
+<xsd:element name="PaymentReference" type="xsd:string" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetCreditMemoRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:annotation>
+<xsd:documentation>Extends BaseRsType (Success and Errors nodes). Contains a node which should be used for the specific response of the corresponding service.</xsd:documentation>
+</xsd:annotation>
+<xsd:sequence>
+<xsd:element name="CreditMemosResults" type="tns:CreditMemoResultType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="CreditMemoResultType">
+<xsd:sequence>
+<xsd:element name="ReceiptMethod" type="xsd:string" nillable="true"/>
+<xsd:element name="PaymentReference" type="xsd:string" nillable="true"/>
+<xsd:element name="CreditMemoResult" type="tns:CreditMemoResultDataType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="CreditMemoResultDataType">
+<xsd:sequence>
+<xsd:element name="CustomerTrxId" type="xsd:string" nillable="true"/>
+<xsd:element name="TrxDate" type="xsd:string" nillable="true"/>
+<xsd:element name="NUMERO_DOCUMENTO" type="xsd:string" nillable="true"/>
+<xsd:element name="CreditMemoTotal" type="xsd:double" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ConciliationBizsRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:annotation>
+<xsd:documentation>Extends BaseRsType (Success and Errors nodes). Contains a node which should be used for the specific response of the corresponding service.</xsd:documentation>
+</xsd:annotation>
+<xsd:sequence>
+<xsd:element name="ReconciledResult" minOccurs="0" type="tns:ReconciledReturnType" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="ReconciledReturnType">
+<xsd:sequence>
+<xsd:element name="Reconciled" type="tns:ReconciledType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ReconciledType">
+<xsd:sequence>
+<xsd:element name="ReceiptMethod" type="xsd:string" nillable="true"/>
+<xsd:element name="PaymentReference" type="xsd:string" nillable="true"/>
+<xsd:element name="PaymentNumber" type="xsd:string" nillable="true"/>
+<xsd:element name="TotalTransactions" type="xsd:string" nillable="true"/>
+<xsd:element name="TotalPayment" type="xsd:string" nillable="true"/>
+<xsd:element name="Tolerance" type="xsd:string" nillable="true"/>
+<xsd:element name="Status" type="xsd:string" nillable="true"/>
+<xsd:element name="ValidationMsj" type="xsd:string" nillable="true"/>
+<xsd:element name="TransactionsReference" type="xsd:string" nillable="true"/>
+<xsd:element name="IdTransactionReference" type="xsd:string" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ConciliateType">
+<xsd:sequence>
+<xsd:element name="ReceiptMethod" type="xsd:string" nillable="true"/>
+<xsd:element name="PaymentReference" type="xsd:string" nillable="true"/>
+<xsd:element name="Tolerance" type="xsd:decimal" nillable="true"/>
+<xsd:element name="PaymentsCash" type="tns:PaymentCashType" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element name="Transactions" type="tns:TransactionType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="PaymentCashType">
+<xsd:sequence>
+<xsd:element name="PaymentNumber" type="xsd:string" nillable="true"/>
+<xsd:element name="PaymentDate" type="xsd:string" nillable="true"/>
+<xsd:element name="PaymentTotal" type="xsd:decimal" nillable="true"/>
+<xsd:element name="BalanceCheck" type="xsd:string" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TransactionType">
+<xsd:sequence>
+<xsd:element name="TransactionNumber" type="xsd:string" nillable="true"/>
+<xsd:element name="TransactionDate" type="xsd:string" nillable="true"/>
+<xsd:element name="Frequency" type="xsd:string" nillable="true"/>
+<xsd:element name="IdTransaction" type="xsd:string" nillable="true"/>
+<xsd:element name="TransactionTotal" type="xsd:decimal" nillable="true"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

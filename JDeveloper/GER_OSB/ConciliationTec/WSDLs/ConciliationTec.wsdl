@@ -1,0 +1,123 @@
+<wsdl:definitions targetNamespace="http://soa.estrellaroja.com.mx/ConciliationTec" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soa.estrellaroja.com.mx/ConciliationTec" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	TYPE DEFINITION - List of services participating in this process.
+        You can define or import any XML Schema type and use them as part of the message types.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/ConciliationTec/types" elementFormDefault="qualified">
+      <xsd:import namespace="http://soa.estrellaroja.com.mx/ConciliationTec" schemaLocation="../Schemas/ConciliationTec.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+ <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	MESSAGE TYPE DEFINITION - Definition of the message types used as 
+	part of the port type defintions
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:message name="GetConciliationsRq">
+    <wsdl:part name="GetConciliationsRq" element="tns:GetConciliationsRq"/>
+  </wsdl:message>
+  <wsdl:message name="GetConciliationsRs">
+    <wsdl:part name="GetConciliationsRs" element="tns:GetConciliationsRs"/>
+  </wsdl:message>
+    <wsdl:message name="ConciliationCashRq">
+    <wsdl:part name="ConciliationCashRq" element="tns:ConciliationCashRq"/>
+  </wsdl:message>
+  <wsdl:message name="ConciliationCashRs">
+    <wsdl:part name="ConciliationCashRs" element="tns:ConciliationCashRs"/>
+  </wsdl:message>
+    <wsdl:message name="ConciliationTransactionsRq">
+    <wsdl:part name="ConciliationTransactionsRq" element="tns:ConciliationTransactionsRq"/>
+  </wsdl:message>
+  <wsdl:message name="ConciliationTransactionsRs">
+    <wsdl:part name="ConciliationTransactionsRs" element="tns:ConciliationTransactionsRs"/>
+  </wsdl:message>
+  <wsdl:message name="SendConciliationBankRq">
+    <wsdl:part name="SendConciliationBankRq" element="tns:SendConciliationBankRq"/>
+  </wsdl:message>
+  <wsdl:message name="SendConciliationBankRs">
+    <wsdl:part name="SendConciliationBankRs" element="tns:SendConciliationBankRs"/>
+  </wsdl:message>
+    <wsdl:message name="SendConciliationBankAMEXRq">
+    <wsdl:part name="SendConciliationBankAMEXRq" element="tns:SendConciliationBankAMEXRq"/>
+  </wsdl:message>
+  <wsdl:message name="SendConciliationBankAMEXRs">
+    <wsdl:part name="SendConciliationBankAMEXRs" element="tns:SendConciliationBankAMEXRs"/>
+  </wsdl:message>
+ 
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	PORT TYPE DEFINITION - A port type groups a set of operations into
+	a logical service unit.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:portType name="ConciliationTecPortType">
+    <wsdl:operation name="GetConciliations">
+      <wsdl:input message="tns:GetConciliationsRq"/>
+      <wsdl:output message="tns:GetConciliationsRs"/>
+    </wsdl:operation>
+	<wsdl:operation name="ConciliationCash">
+      <wsdl:input message="tns:ConciliationCashRq"/>
+      <wsdl:output message="tns:ConciliationCashRs"/>
+    </wsdl:operation>
+	<wsdl:operation name="ConciliationTransactions">
+      <wsdl:input message="tns:ConciliationTransactionsRq"/>
+      <wsdl:output message="tns:ConciliationTransactionsRs"/>
+    </wsdl:operation>
+    	<wsdl:operation name="SendConciliationBank">
+      <wsdl:input message="tns:SendConciliationBankRq"/>
+      <wsdl:output message="tns:SendConciliationBankRs"/>
+    </wsdl:operation>
+      <wsdl:operation name="SendConciliationBankAMEX">
+      <wsdl:input message="tns:SendConciliationBankAMEXRq"/>
+      <wsdl:output message="tns:SendConciliationBankAMEXRs"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	BINDING OPERATIONS DEFINITION
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:binding name="ConciliationTecBinding" type="tns:ConciliationTecPortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetConciliations">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/ConciliationTec/GetConciliations"/>
+      <wsdl:input>
+        <soap12:body/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body/>
+      </wsdl:output>
+    </wsdl:operation>
+	<wsdl:operation name="ConciliationCash">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/ConciliationTec/ConciliationCash"/>
+      <wsdl:input>
+        <soap12:body/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body/>
+      </wsdl:output>
+    </wsdl:operation>
+	<wsdl:operation name="ConciliationTransactions">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/ConciliationTec/ConciliationTransactions"/>
+      <wsdl:input>
+        <soap12:body/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendConciliationBank">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/ConciliationTec/SendConciliationBank"/>
+      <wsdl:input>
+        <soap12:body/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendConciliationBankAMEX">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/ConciliationTec/SendConciliationBankAMEX"/>
+      <wsdl:input>
+        <soap12:body/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

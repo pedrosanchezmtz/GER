@@ -1,0 +1,25 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL.PRIORITY:db_column_scale">0</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL.PRIORITY:db_column_precision">38</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL.ID:db_column_precision">38</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL.PRIORITY:db_column_not_null">false</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL.ID:db_column_type">NUMBER</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL.ORIGIN:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL.ORIGIN:db_column_not_null">false</entry>
+   <entry key="return_single_result_set">false</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL.ASSET_NUMBER:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL:db_column_3">ASSET_NUMBER</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL:db_column_2">PRIORITY</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL:db_column_1">ORIGIN</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL:db_column_0">ID</entry>
+   <entry key="root_descriptor_alias">XXER_EAM_ORIGIN_PRIORITY_TBL</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL.ORIGIN:db_column_size">20</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL.PRIORITY:db_column_type">NUMBER</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL.ID:db_column_scale">0</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL.ID:db_column_not_null">false</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL.ASSET_NUMBER:db_column_not_null">false</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL.ASSET_NUMBER:db_column_size">60</entry>
+   <entry key="XXER_EAM_ORIGIN_PRIORITY_TBL:db_table_type">TABLE</entry>
+</properties>

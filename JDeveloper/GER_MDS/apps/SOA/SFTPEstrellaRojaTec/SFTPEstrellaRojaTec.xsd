@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/SFTPEstrellaRojaTec" targetNamespace="http://soa.estrellaroja.com.mx/SFTPEstrellaRojaTec" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" attributeFormDefault="qualified">
+<xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+<xsd:element name="SendFileRq" type="tns:SendFileRqType"/>
+<xsd:element name="SendFileRs" type="tns:SendFileRsType"/>
+<xsd:element name="StringElement" type="xsd:string"/>
+<xsd:complexType name="SendFileRqType">
+<xsd:sequence>
+<xsd:element name="FileName" type="xsd:string"/>
+<xsd:element name="FileExtension" type="xsd:string"/>
+<xsd:element name="File" type="xsd:base64Binary"/>
+<xsd:element name="Path" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="SendFileRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="Return" type="tns:SendFileReturnType" minOccurs="0"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="SendFileReturnType">
+<xsd:sequence>
+<xsd:element name="SendFile" type="tns:SendFileType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="SendFileType">
+<xsd:sequence>
+<xsd:element name="FileName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

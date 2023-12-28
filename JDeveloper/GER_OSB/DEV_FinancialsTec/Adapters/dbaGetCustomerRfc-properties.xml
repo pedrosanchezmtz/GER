@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="XXER_AR_CUSTOMER_RFC_V:db_column_1">TIPO_DOCUMENTO</entry>
+   <entry key="XXER_AR_CUSTOMER_RFC_V:db_table_type">TABLE</entry>
+   <entry key="XXER_AR_CUSTOMER_RFC_V:db_column_0">RFC_DESTINO</entry>
+   <entry key="XXER_AR_CUSTOMER_RFC_V.RFC_DESTINO:db_column_size">25</entry>
+   <entry key="XXER_AR_CUSTOMER_RFC_V.TIPO_DOCUMENTO:db_column_not_null">false</entry>
+   <entry key="XXER_AR_CUSTOMER_RFC_V.TIPO_DOCUMENTO:db_column_type">VARCHAR2</entry>
+   <entry key="return_single_result_set">false</entry>
+   <entry key="root_descriptor_alias">XXER_AR_CUSTOMER_RFC_V</entry>
+   <entry key="XXER_AR_CUSTOMER_RFC_V.RFC_DESTINO:db_column_not_null">false</entry>
+   <entry key="XXER_AR_CUSTOMER_RFC_V.TIPO_DOCUMENTO:db_column_size">50</entry>
+   <entry key="XXER_AR_CUSTOMER_RFC_V.RFC_DESTINO:db_column_type">VARCHAR2</entry>
+</properties>

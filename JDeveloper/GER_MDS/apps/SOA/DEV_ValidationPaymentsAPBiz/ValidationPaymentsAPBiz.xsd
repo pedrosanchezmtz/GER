@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz"
+            targetNamespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" elementFormDefault="qualified"
+            xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"
+            xmlns:cp="http://soa.estrellaroja.com.mx/Reports/XXER_ValidationComplement"
+            xmlns:inv="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">
+  <xsd:import schemaLocation="../../Common/Report/XXER_ValidationComplement.xsd"
+              namespace="http://soa.estrellaroja.com.mx/Reports/XXER_ValidationComplement"/>
+  <xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd"
+              namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+  <xsd:import schemaLocation="../../Common/XSD/InvoiceAP/erpInvoiceInstallmentsAP.xsd"
+              namespace="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP"/>
+  <xsd:element name="SendPaymentsAPRq" type="tns:SendPaymentsAPRqType"/>
+  <xsd:element name="SendPaymentsAPRs" type="tns:SendPaymentsAPRsType"/>
+  <xsd:element name="SendNotificationsRq" type="tns:SendNotificationsRqType"/>
+  <xsd:element name="SendNotificationsRs" type="tns:SendNotificationsRsType"/>
+  <xsd:element name="GenerateFoldersRq" type="tns:GenerateFoldersRqType"/>
+  <xsd:element name="GenerateFoldersRs" type="tns:GenerateFoldersRsType"/>
+  <xsd:element name="UpdateInvoicesInstallmentsAPRq" type="tns:UpdateInvoicesInstallmentsAPRqType"/>
+  <xsd:element name="UpdateInvoicesInstallmentsAPRs" type="tns:UpdateInvoicesInstallmentsAPRsType"/>
+  <xsd:element name="RepseTbl">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="cmn:BaseRsType">
+          <xsd:sequence>
+            <xsd:element name="ROW" type="tns:RepseTblType" maxOccurs="unbounded" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ExclusionTbl">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="cmn:BaseRsType">
+          <xsd:sequence>
+            <xsd:element name="ROW" type="tns:ExclusionTblType" maxOccurs="unbounded" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="RepseTblType">
+    <xsd:sequence>
+      <xsd:element name="RFC" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PROVEEDOR" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER1" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER2" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER3" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER4" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER5" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER6" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER7" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER8" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER9" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER10" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER11" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER12" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER13" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="CUMPLIMIENTO" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ExclusionTblType">
+    <xsd:sequence>
+      <xsd:element name="RFC" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PROVEEDOR" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="UpdateInvoicesInstallmentsAPRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="invoice" maxOccurs="unbounded" minOccurs="1">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="invoice_id" type="xsd:string"/>
+                <xsd:element name="InvoiceInstallment" maxOccurs="unbounded" minOccurs="1">
+                  <xsd:complexType>
+                    <xsd:complexContent>
+                      <xsd:extension base="cmn:BaseRsType">
+                        <xsd:sequence>
+                          <xsd:element type="inv:InvoiceInstallmentsType" name="Result"/>
+                        </xsd:sequence>
+                      </xsd:extension>
+                    </xsd:complexContent>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="UpdateInvoicesInstallmentsAPRqType">
+    <xsd:sequence>
+      <xsd:element name="invoice" maxOccurs="unbounded" minOccurs="1">
+        <xsd:complexType>
+          <xsd:complexContent>
+            <xsd:extension base="inv:InvoiceInstallmentsType">
+              <xsd:sequence>
+                <xsd:element name="invoice_id" type="xsd:string"/>
+                <xsd:element name="rfc" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:extension>
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SendPaymentsAPRqType">
+    <xsd:sequence>
+      <xsd:element ref="cp:DATA_DS"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SendPaymentsAPRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SendNotificationsRqType">
+    <xsd:sequence>
+      <xsd:element name="ID_PAGO" type="xsd:integer"/>
+      <xsd:element name="ID_CHECK" type="xsd:integer"/>
+      <xsd:element name="MONTO_PAGO" type="xsd:float"/>
+      <xsd:element name="FECHA_PAGO" type="xsd:string"/>
+      <xsd:element name="NUMERO_NOTIFICACION" type="xsd:string"/>
+      <xsd:element name="NOMBRE_PROVEEDOR" type="xsd:string"/>
+      <xsd:element name="EMAIL_NOTIFICACION" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="REFERENCE_NUMBER" minOccurs="0" type="xsd:integer"/>
+      <xsd:element name="NUMERO_PAGO" minOccurs="0" type="xsd:integer"/>
+      <xsd:element name="ESTATUS" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="ESTATUS_MSJ" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="DETAIL_LINES" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="COMPROBANTE_NAME" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="COMPROBANTE" minOccurs="0" type="xsd:base64Binary"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SendNotificationsRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GenerateFoldersRqType">
+    <xsd:sequence>
+      <xsd:element name="FECHA" minOccurs="0" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GenerateFoldersRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

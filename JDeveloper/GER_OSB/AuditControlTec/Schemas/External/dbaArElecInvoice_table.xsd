@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbArElecInvoiceBs"
+           xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbArElecInvoiceBs" elementFormDefault="qualified"
+           attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="XxerArElecInvoiceCollection" type="XxerArElecInvoiceCollection"/>
+  <xs:complexType name="XxerArElecInvoiceCollection">
+    <xs:sequence>
+      <xs:element name="XxerArElecInvoice" type="XxerArElecInvoice" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="XxerArElecInvoice">
+    <xs:sequence>
+      <xs:element name="customerTrxId" type="xs:decimal"/>
+      <xs:element name="numeroFactura" type="string50" minOccurs="0" nillable="true"/>
+      <xs:element name="tipocfd" type="string20" minOccurs="0" nillable="true"/>
+      <xs:element name="uuid" type="string100" minOccurs="0" nillable="true"/>
+      <xs:element name="payload" type="xs:string" minOccurs="0"/>
+      <xs:element name="attribute1" type="string150" minOccurs="0" nillable="true"/>
+      <xs:element name="attribute2" type="string150" minOccurs="0" nillable="true"/>
+      <xs:element name="attribute3" type="string150" minOccurs="0" nillable="true"/>
+      <xs:element name="attribute4" type="string150" minOccurs="0" nillable="true"/>
+      <xs:element name="attribute5" type="string150" minOccurs="0" nillable="true"/>
+      <xs:element name="creationDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="lastUpdateDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+      <xs:element name="createdBy" type="string100" minOccurs="0"/>
+      <xs:element name="lastUpdatedBy" type="string100" minOccurs="0" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="string50">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string20">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string100">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string150">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="150"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

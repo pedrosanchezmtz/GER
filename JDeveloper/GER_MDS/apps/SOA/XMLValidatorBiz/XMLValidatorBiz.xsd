@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/XMLValidatorBiz" xmlns:cp="http://soa.estrellaroja.com.mx/CartaPorte" targetNamespace="http://soa.estrellaroja.com.mx/XMLValidatorBiz" elementFormDefault="qualified" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:tbl="http://soa.estrellaroja.com.mx/Tables/XXER_CONF_VALIDADOR_XML_TBL">
+<xsd:import schemaLocation="../../Common/Report/CartaPorte.xsd" namespace="http://soa.estrellaroja.com.mx/CartaPorte"/>
+<xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+<xsd:import schemaLocation="../../Common/Tables/XXER_CONF_VALIDADOR_XML_TBL.xsd" namespace="http://soa.estrellaroja.com.mx/Tables/XXER_CONF_VALIDADOR_XML_TBL"/>
+<xsd:element name="ValidaCartaPorteRq" type="tns:XMLValidatorRqType"/>
+<xsd:element name="ValidaCartaPorteRs" type="tns:XMLValidatorRsType"/>
+<xsd:complexType name="XMLValidatorRqType">
+<xsd:sequence>
+<xsd:element name="Ambiente" nillable="true" type="xsd:string"/>
+<xsd:element name="Configuraciones" type="tns:ValidacionType" minOccurs="0"/>
+<xsd:element ref="cp:CartaPorte"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ValidacionType">
+<xsd:sequence>
+<xsd:element name="ROW" type="tbl:ConfigType" maxOccurs="unbounded" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="XMLValidatorRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="QueryProductosPeligrosos">
+<xsd:complexType>
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="ROW" type="tns:ProductosPeligrososType" maxOccurs="unbounded" minOccurs="0"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="ProductosPeligrososType">
+<xsd:sequence>
+<xsd:element name="clave" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="clasif_mat_peligroso" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="id_producto_servicio" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="id_producto" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="id_ingreso" nillable="true" type="xsd:string" minOccurs="0"/>
+<xsd:element name="fecha_ingreso" nillable="true" type="xsd:int" minOccurs="0"/>
+<xsd:element name="material_peligroso" nillable="true" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="QueryCP">
+<xsd:complexType>
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="ROW" type="tns:CPType" maxOccurs="unbounded" minOccurs="0"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="CPType">
+<xsd:sequence>
+<xsd:element name="cp_colonia" nillable="true" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

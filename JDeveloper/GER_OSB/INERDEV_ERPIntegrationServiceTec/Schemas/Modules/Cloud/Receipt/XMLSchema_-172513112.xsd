@@ -1,0 +1,23 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/flex/financials/receivables/receipts/shared/standardReceiptService/commonService/ActivityApplicationGdf/" xmlns:sdoJava="commonj.sdo/java" xmlns:sdoXML="commonj.sdo/xml" xmlns="http://xmlns.oracle.com/apps/flex/financials/receivables/receipts/shared/standardReceiptService/commonService/ActivityApplicationGdf/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:include schemaLocation="XMLSchema_624452124.xsd" xml:id="JExESOnlineVatReporting-xsd"/>
+    <xsd:include schemaLocation="XMLSchema_291285784.xsd" xml:id="ReceivableApplicationGdfJL_5FBR_5FARXRWMAI_5FAdditional-xsd"/>
+    <xsd:import namespace="commonj.sdo/java" schemaLocation="XMLSchema_-1644098047.xsd"/>
+    <xsd:import namespace="commonj.sdo/xml" schemaLocation="XMLSchema_293054946.xsd"/>
+    <xsd:complexType name="ReceivableApplicationGdf">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>ReceivableApplicationId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="ReceivableApplicationId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+            <xsd:element minOccurs="0" name="FLEX_PARAM_GLOBAL_COUNTRY_CODE" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="receivableApplicationGdf" type="ReceivableApplicationGdf"/>
+</xsd:schema>

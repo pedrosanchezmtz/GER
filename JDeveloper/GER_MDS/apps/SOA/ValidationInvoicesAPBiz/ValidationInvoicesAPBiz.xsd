@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/ValidationInvoicesAPBiz" targetNamespace="http://soa.estrellaroja.com.mx/ValidationInvoicesAPBiz" elementFormDefault="qualified" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:cfg="http://soa.estrellaroja.com.mx/ValidationInvoicesAPEnt" xmlns:inv="http://soa.estrellaroja.com.mx/Reports/XXER_AP_INVOICE_VALIDATION_AUTOMATICA">
+<xsd:import schemaLocation="../../Common/Report/XXER_AP_INVOICE_VALIDATION_AUTOMATICA.xsd" namespace="http://soa.estrellaroja.com.mx/Reports/XXER_AP_INVOICE_VALIDATION_AUTOMATICA"/>
+<xsd:import schemaLocation="../ValidationInvoicesAPEnt/ValidationInvoicesAPEnt.xsd" namespace="http://soa.estrellaroja.com.mx/ValidationInvoicesAPEnt"/>
+<xsd:element name="ValidateInvoicesAPRq" type="tns:ValidateInvoicesAPRqType"/>
+<xsd:complexType name="ValidateInvoicesAPRqType">
+<xsd:sequence>
+<xsd:element name="Config" type="cfg:ValidationInvoicesAPRqType"/>
+<xsd:element ref="inv:DATA_DS"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="InvoiceXML" type="tns:XMLDataType"/>
+<xsd:complexType name="XMLDataType">
+<xsd:sequence>
+<xsd:element name="Version" nillable="true" type="xsd:string"/>
+<xsd:element name="NoXML" nillable="true" type="xsd:string"/>
+<xsd:element name="Serie" nillable="true" type="xsd:string"/>
+<xsd:element name="Folio" nillable="true" type="xsd:string"/>
+<xsd:element name="Fecha" nillable="true" type="xsd:string"/>
+<xsd:element name="FormaPago" nillable="true" type="xsd:string"/>
+<xsd:element name="CondicionesDePago" nillable="true" type="xsd:string"/>
+<xsd:element name="SubTotal" nillable="true" type="xsd:string"/>
+<xsd:element name="Descuento" nillable="true" type="xsd:string"/>
+<xsd:element name="Moneda" nillable="true" type="xsd:string"/>
+<xsd:element name="TipoCambio" nillable="true" type="xsd:string"/>
+<xsd:element name="Total" nillable="true" type="xsd:string"/>
+<xsd:element name="TipoDeComprobante" nillable="true" type="xsd:string"/>
+<xsd:element name="Exportacion" nillable="true" type="xsd:string"/>
+<xsd:element name="MetodoPago" nillable="true" type="xsd:string"/>
+<xsd:element name="Confirmacion" nillable="true" type="xsd:string"/>
+<xsd:element name="CfdiRelacionados" nillable="true" type="tns:CfdiRelacionadosType" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element name="Emisor" nillable="true" type="tns:EmisorType"/>
+<xsd:element name="Receptor" nillable="true" type="tns:ReceptorType"/>
+<xsd:element name="Concepto" nillable="true" type="tns:ConceptoType" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element name="Complemento" nillable="true" type="tns:ComplementoType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ComplementoType">
+<xsd:sequence>
+<xsd:element name="TimbreFiscalDigital" nillable="true" type="tns:TimbreFiscalDigitalType"/>
+<xsd:element name="Pagos" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TimbreFiscalDigitalType">
+<xsd:sequence>
+<xsd:element name="Version" nillable="true" type="xsd:string"/>
+<xsd:element name="UUID" nillable="true" type="xsd:string"/>
+<xsd:element name="FechaTimbrado" nillable="true" type="xsd:string"/>
+<xsd:element name="RfcProvCertif" nillable="true" type="xsd:string"/>
+<xsd:element name="Leyenda" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="EmisorType">
+<xsd:sequence>
+<xsd:element name="Rfc" nillable="true" type="xsd:string"/>
+<xsd:element name="Nombre" nillable="true" type="xsd:string"/>
+<xsd:element name="RegimenFiscal" nillable="true" type="xsd:string"/>
+<xsd:element name="FacAtrAdquirente" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ReceptorType">
+<xsd:sequence>
+<xsd:element name="Rfc" nillable="true" type="xsd:string"/>
+<xsd:element name="Nombre" nillable="true" type="xsd:string"/>
+<xsd:element name="RegimenFiscalReceptor" nillable="true" type="xsd:string"/>
+<xsd:element name="DomicilioFiscalReceptor" nillable="true" type="xsd:string"/>
+<xsd:element name="ResidenciaFiscal" nillable="true" type="xsd:string"/>
+<xsd:element name="NumRegIdTrib" nillable="true" type="xsd:string"/>
+<xsd:element name="UsoCFDI" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="CfdiRelacionadosType">
+<xsd:sequence>
+<xsd:element name="TipoRelacion" nillable="true" type="xsd:string"/>
+<xsd:element name="UUID" nillable="true" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ConceptoType">
+<xsd:sequence>
+<xsd:element name="ClaveProdServ" nillable="true" type="xsd:string"/>
+<xsd:element name="NoIdentificacion" nillable="true" type="xsd:string"/>
+<xsd:element name="Cantidad" nillable="true" type="xsd:string"/>
+<xsd:element name="ClaveUnidad" nillable="true" type="xsd:string"/>
+<xsd:element name="Unidad" nillable="true" type="xsd:string"/>
+<xsd:element name="Importe" nillable="true" type="xsd:string"/>
+<xsd:element name="Descuento" nillable="true" type="xsd:string"/>
+<xsd:element name="ObjetoImp" nillable="true" type="xsd:string"/>
+<xsd:element name="Descripcion" nillable="true" type="xsd:string"/>
+<xsd:element name="ValorUnitario" nillable="true" type="xsd:string"/>
+<xsd:element name="Impuestos" nillable="true" type="tns:ImpuestosType"/>
+<xsd:element name="ACuentaTerceros" nillable="true" type="tns:ACuentaTercerosType"/>
+<xsd:element name="Parte" nillable="true" type="tns:ParteType" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element name="CuentaPredial" nillable="true" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element name="NumeroPedimento" nillable="true" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ParteType">
+<xsd:sequence>
+<xsd:element name="ClaveProdServ" nillable="true" type="xsd:string"/>
+<xsd:element name="NoIdentificacion" nillable="true" type="xsd:string"/>
+<xsd:element name="Cantidad" nillable="true" type="xsd:string"/>
+<xsd:element name="Unidad" nillable="true" type="xsd:string"/>
+<xsd:element name="Descripcion" nillable="true" type="xsd:string"/>
+<xsd:element name="ValorUnitario" nillable="true" type="xsd:string"/>
+<xsd:element name="Importe" nillable="true" type="xsd:string"/>
+<xsd:element name="NumeroPedimento" nillable="true" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ACuentaTercerosType">
+<xsd:sequence>
+<xsd:element name="RfcACuentaTerceros" nillable="true" type="xsd:string"/>
+<xsd:element name="NombreACuentaTerceros" nillable="true" type="xsd:string"/>
+<xsd:element name="RegimenFiscalACuentaTerceros" nillable="true" type="xsd:string"/>
+<xsd:element name="DomicilioFiscalACuentaTerceros" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ImpuestosType">
+<xsd:sequence>
+<xsd:element name="Traslado" nillable="true" type="tns:TrasladoType" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element name="Retencion" nillable="true" type="tns:RetencionType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TrasladoType">
+<xsd:sequence>
+<xsd:element name="Base" nillable="true" type="xsd:string"/>
+<xsd:element name="Impuesto" nillable="true" type="xsd:string"/>
+<xsd:element name="TipoFactor" nillable="true" type="xsd:string"/>
+<xsd:element name="TasaOCuota" nillable="true" type="xsd:string"/>
+<xsd:element name="Importe" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="RetencionType">
+<xsd:sequence>
+<xsd:element name="Base" nillable="true" type="xsd:string"/>
+<xsd:element name="Impuesto" nillable="true" type="xsd:string"/>
+<xsd:element name="TipoFactor" nillable="true" type="xsd:string"/>
+<xsd:element name="TasaOCuota" nillable="true" type="xsd:string"/>
+<xsd:element name="Importe" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

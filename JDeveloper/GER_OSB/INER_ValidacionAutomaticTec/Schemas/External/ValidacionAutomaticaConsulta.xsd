@@ -1,0 +1,207 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/ValidacionAutomaticaConsulta" targetNamespace="http://soa.estrellaroja.com.mx/ValidacionAutomaticaConsulta" elementFormDefault="qualified" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON" nxsd:encoding="UTF-8">
+     <xsd:element name="PostValidationCOnsultRequest">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="rfcEmisor" type="xsd:string"/>
+            <xsd:element name="rfcReceptor" type="xsd:string"/>
+            <xsd:element name="total" type="xsd:double"/>
+            <xsd:element name="uuid" type="xsd:string"/>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="PostValidationConsultResponse">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="responseCode" type="xsd:integer"/>
+            <xsd:element name="message" type="xsd:string"/>
+            <xsd:element name="data">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="codigoEstatus" type="xsd:string"/>
+                     <xsd:element name="esCancelable"/>
+                     <xsd:element name="estado" type="xsd:string"/>
+                     <xsd:element name="estatusCancelacion"/>
+                     <xsd:element name="expresionImpresa" type="xsd:string"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="ErrorMessageConsulta">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="timestamp" type="xsd:string"/>
+            <xsd:element name="status" type="xsd:integer"/>
+            <xsd:element name="error" type="xsd:string"/>
+            <xsd:element name="message" type="xsd:string"/>
+            <xsd:element name="path" type="xsd:string"/>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="PostValidationOracleXmlRequest">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="businessUnit" type="xsd:string"/>
+            <xsd:element name="creationDate" type="xsd:string"/>
+            <xsd:element name="currencyCode" type="xsd:string"/>
+            <xsd:element name="details" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="amount" type="xsd:double"/>
+                     <xsd:element name="baseAmount" type="xsd:double"/>
+                     <xsd:element name="description" type="xsd:string"/>
+                     <xsd:element name="itemDescription" type="xsd:string"/>
+                     <xsd:element name="itemId" type="xsd:integer"/>
+                     <xsd:element name="lineNumber" type="xsd:integer"/>
+                     <xsd:element name="lineSource" type="xsd:string"/>
+                     <xsd:element name="lineType" type="xsd:string"/>
+                     <xsd:element name="orderDetail">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="amount" type="xsd:double"/>
+                              <xsd:element name="codeCombination">
+                                 <xsd:complexType>
+                                    <xsd:sequence>
+                                       <xsd:element name="id" type="xsd:integer"/>
+                                       <xsd:element name="segment1" type="xsd:integer"/>
+                                       <xsd:element name="segment2" type="xsd:integer"/>
+                                       <xsd:element name="segment3" type="xsd:integer"/>
+                                       <xsd:element name="segment4" type="xsd:integer"/>
+                                       <xsd:element name="segment5" type="xsd:integer"/>
+                                       <xsd:element name="type" type="xsd:string"/>
+                                    </xsd:sequence>
+                                 </xsd:complexType>
+                              </xsd:element>
+                              <xsd:element name="destOrganizationId" type="xsd:integer"/>
+                              <xsd:element name="discount" type="xsd:integer"/>
+                              <xsd:element name="id" type="xsd:integer"/>
+                              <xsd:element name="itemDescription" type="xsd:string"/>
+                              <xsd:element name="itemId" type="xsd:integer"/>
+                              <xsd:element name="lineTypeId" type="xsd:integer"/>
+                              <xsd:element name="listPrice" type="xsd:double"/>
+                              <xsd:element name="orderId" type="xsd:integer"/>
+                              <xsd:element name="quantity" type="xsd:double"/>
+                              <xsd:element name="unitCode" type="xsd:string"/>
+                              <xsd:element name="unitPrice" type="xsd:double"/>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                     <xsd:element name="organizationId" type="xsd:integer"/>
+                     <xsd:element name="quantity" type="xsd:double"/>
+                     <xsd:element name="tax" type="xsd:string"/>
+                     <xsd:element name="taxClassCode" type="xsd:string"/>
+                     <xsd:element name="taxJurisdictionCode" type="xsd:string"/>
+                     <xsd:element name="taxLineId" type="xsd:integer"/>
+                     <xsd:element name="taxRate" type="xsd:double"/>
+                     <xsd:element name="taxRateCode" type="xsd:string"/>
+                     <xsd:element name="taxRateId" type="xsd:integer"/>
+                     <xsd:element name="taxRegimeCode" type="xsd:string"/>
+                     <xsd:element name="taxStatusCode" type="xsd:string"/>
+                     <xsd:element name="unitCode" type="xsd:string"/>
+                     <xsd:element name="unitPrice" type="xsd:double"/>
+                     <xsd:element name="awtGroupId" type="xsd:integer"/>
+                     <xsd:element name="awtGroupCode" type="xsd:string"/>
+                     <xsd:element name="awtPercentageRate" type="xsd:double"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="folio" type="xsd:string"/>
+            <xsd:element name="id" type="xsd:integer"/>
+            <xsd:element name="invoiceDate" type="xsd:string"/>
+            <xsd:element name="lastUpdateDate" type="xsd:string"/>
+            <xsd:element name="legalEntityId" type="xsd:integer"/>
+            <xsd:element name="legalEntityName" type="xsd:string"/>
+            <xsd:element name="legalEntityRfc" type="xsd:string"/>
+            <xsd:element name="legalEntitySegment" type="xsd:integer"/>
+            <xsd:element name="number" type="xsd:string"/>
+            <xsd:element name="order">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="billBuId" type="xsd:integer"/>
+                     <xsd:element name="email" type="xsd:string"/>
+                     <xsd:element name="id" type="xsd:integer"/>
+                     <xsd:element name="number" type="xsd:string"/>
+                     <xsd:element name="supplierId" type="xsd:integer"/>
+                     <xsd:element name="termsId" type="xsd:integer"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="organizationId" type="xsd:integer"/>
+            <xsd:element name="pdfCount" type="xsd:integer"/>
+            <xsd:element name="pdfFileName" type="xsd:string"/>
+            <xsd:element name="serie" type="xsd:string"/>
+            <xsd:element name="subtotal" type="xsd:double"/>
+            <xsd:element name="supplier">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="address" type="xsd:string"/>
+                     <xsd:element name="city" type="xsd:string"/>
+                     <xsd:element name="id" type="xsd:integer"/>
+                     <xsd:element name="name" type="xsd:string"/>
+                     <xsd:element name="number" type="xsd:integer"/>
+                     <xsd:element name="partyId" type="xsd:integer"/>
+                     <xsd:element name="rfc" type="xsd:string"/>
+                     <xsd:element name="state" type="xsd:string"/>
+                     <xsd:element name="type" type="xsd:string"/>
+                     <xsd:element name="zipCode" type="xsd:integer"/>
+                     <xsd:element name="siteId" type="xsd:integer"/>
+                     <xsd:element name="siteCode" type="xsd:string"/>
+                     <xsd:element name="siteBusinessUnitId" type="xsd:integer"/>
+                     <xsd:element name="siteAwtGroupId" type="xsd:string"/>
+                     <xsd:element name="siteAwtGroupCode" type="xsd:string"/>
+                    <xsd:element name="siteAwtPercentageRate" type="xsd:double"/>
+                     <xsd:element name="sendMailAfterValidation" type="xsd:string"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="tax" type="xsd:double"/>
+            <xsd:element name="termsDescription" type="xsd:string"/>
+            <xsd:element name="termsId" type="xsd:integer"/>
+            <xsd:element name="termsName" type="xsd:string"/>
+            <xsd:element name="total" type="xsd:double"/>
+            <xsd:element name="type" type="xsd:string"/>
+            <xsd:element name="validationStatus" type="xsd:string"/>
+            <xsd:element name="xmlCount" type="xsd:integer"/>
+            <xsd:element name="xmlFileName" type="xsd:string"/>
+            <xsd:element name="invoiceSource" type="xsd:string"/>
+            <xsd:element name="invoiceAwtGroupId" type="xsd:string"/>
+            <xsd:element name="invoiceAwtGroupCode" type="xsd:string"/>
+            <xsd:element name="invoiceAwtPercentageRate" type="xsd:double"/>
+            <xsd:element name="approvalStatus" type="xsd:string"/>
+            <xsd:element name="xmlBase64" type="xsd:string"/>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+    <xsd:element name="PostValidationOracleXmlResponse">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="success" type="xsd:string"/>
+            <xsd:element name="message" type="xsd:string"/>
+            <xsd:element name="log"/>
+            <xsd:element name="mustCancel" type="xsd:string"/>
+            <xsd:element name="mustModify" type="xsd:string"/>
+            <xsd:element name="emailSendedToSupplier" type="xsd:string"/>
+            <xsd:element name="invoiceId" type="xsd:integer"/>
+            <xsd:element name="supplierEmail" type="xsd:string"/>
+            <xsd:element name="oracleLookupCode" type="xsd:string"/>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="ErrorMessageOracle">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="timestamp" type="xsd:string"/>
+            <xsd:element name="status" type="xsd:integer"/>
+            <xsd:element name="error" type="xsd:string"/>
+            <xsd:element name="message" type="xsd:string"/>
+            <xsd:element name="path" type="xsd:string"/>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+<xsd:annotation xmlns="">
+      <xsd:appinfo>NXSDSAMPLE=</xsd:appinfo>
+      <xsd:appinfo>USEHEADER=false</xsd:appinfo>
+   </xsd:annotation>
+</xsd:schema>

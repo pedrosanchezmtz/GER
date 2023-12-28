@@ -1,0 +1,41 @@
+<xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/CatalogsTec" elementFormDefault="qualified" xmlns:tns="http://soa.estrellaroja.com.mx/CatalogsTec" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+  <xsd:import namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" schemaLocation="Commons/EstrellaRojaCommons.xsd"/>
+  <xsd:element name="GetCountryCodeRq" type="tns:GetCountryCodeRqType"/>
+  <xsd:element name="GetCountryCodeRs" type="tns:GetCountryCodeRsType"/>
+  <xsd:complexType name="GetCountryCodeRqType">
+    <xsd:sequence>
+      <xsd:element name="CountryName" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetCountryCodeRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="Return" type="tns:CountryTypeRs"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CountryTypeRs">
+  <xsd:sequence>
+    <xsd:element name="Country" type="tns:CountryType" minOccurs="0" maxOccurs="unbounded"/>
+  </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CountryType">
+      <xsd:sequence>
+         <xsd:element name="Country" type="xsd:string"/>
+         <xsd:element name="CountryName" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="CountryCode" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="IsoCountryCode" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="CreatedBy" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="CreatedDate" type="xsd:dateTime" minOccurs="0"/>
+         <xsd:element name="UpdatedDate" type="xsd:dateTime" minOccurs="0"/>
+         <xsd:element name="Atttribute1" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="Atttribute2" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="Atttribute3" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="Atttribute4" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="Atttribute5" type="xsd:string" minOccurs="0" nillable="true"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="ServiceFault" type="cmn:ErrorType"/>
+</xsd:schema>

@@ -1,0 +1,24 @@
+<wsdl:definitions name="dbaGetJournalsTMSBs" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaGetJournalsTMSBs" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaGetJournalsTMSBs" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/dbaGetJournalsTMSBs" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="dbaGetJournalsTMSBs_plt">
+    <plt:role name="dbaGetJournalsTMSBs_role">
+      <plt:portType name="tns:dbaGetJournalsTMSBs_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/dbaGetJournalsTMSBs" schemaLocation="../../Schemas/External/dbaGetJournalsTMSBs.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="dbaGetJournalsTMSBsInput_msg">
+        <wsdl:part name="dbaGetJournalsTMSBsInput_msg" element="db:dbaGetJournalsTMSBsInput"/>
+    </wsdl:message>
+    <wsdl:message name="dbaGetJournalsTMSBsOutputCollection_msg">
+        <wsdl:part name="dbaGetJournalsTMSBsOutputCollection" element="db:dbaGetJournalsTMSBsOutputCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="dbaGetJournalsTMSBs_ptt">
+        <wsdl:operation name="dbaGetJournalsTMSBs">
+            <wsdl:input message="tns:dbaGetJournalsTMSBsInput_msg"/>
+            <wsdl:output message="tns:dbaGetJournalsTMSBsOutputCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

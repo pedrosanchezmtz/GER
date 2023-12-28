@@ -1,0 +1,12 @@
+<adapter-config name="GetMileageExcel" adapter="db" wsdlLocation="../../../WSDL/EXCEL/Mileage/GetMileageExcelWSDL.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="DEV/ERSEPDB1" location="eis/DB/ERSEPDB1"/>
+  <endpoint-interaction portType="GetMileageExcel_ptt" operation="GetMileageExcel">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="select ASSET_NUMBER, ORIGIN, to_date (READING_DATE,'DD/MM/YYYY HH24:MI:SS') AS READING_DATE, READING_VALUE AS READING_VALUE, STATUS, ERROR_MESSAGE    from XXER_EAM_DATA_EXCEL_TBL  where to_date (reading_date,'DD/MM/YYYY HH24:MI:SS') between #fechaInicio and #fechaFin ORDER BY ASSET_NUMBER"/>
+      <property name="QueryTimeout" value="10"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

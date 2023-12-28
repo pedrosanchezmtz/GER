@@ -1,0 +1,50 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" sdoJava:package="oracle.apps.financials.receivables.receipts.shared.standardReceiptService.commonService" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:sdoJava="commonj.sdo/java" xmlns="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation xmlns:oer="http://xmlns.oracle.com/oer">
+            <name>Receivables Standard Receipt Unapplication SDO</name>
+            <description>Unapply Receipt.</description>
+            <oer:attributes>
+                <oer:attribute description="A unit of an enterprise that performs one or more business functions that can be rolled up in a management hierarchy." name="BusinessUnit"/>
+                <oer:attribute description="Number that identifies a receipt." name="ReceiptNumber"/>
+                <oer:attribute description="Transaction Number of invoice to unapply." name="TrxNumber"/>
+                <oer:attribute description="Transaction ID of invoice to unapply." name="CustomerTrxId"/>
+                <oer:attribute description="Installment." name="Installment"/>
+                <oer:attribute description="Applied Payment Schedule Id to unapply." name="AppliedPaymentScheduleId"/>
+                <oer:attribute description="Receivable Application Id to unapply." name="ReceivableApplicationId"/>
+                <oer:attribute description="The date, referenced from Oracle General Ledger, used to determine the accounting period for receipts to unapply." name="ReversalGlDate"/>
+            </oer:attributes>
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="XMLSchema_469750432.xsd"/>
+    <xsd:import namespace="commonj.sdo/java" schemaLocation="XMLSchema_-1644098047.xsd"/>
+    <xsd:complexType name="UnapplyReceiptResult">
+        <xsd:complexContent>
+            <xsd:extension base="ns0:MethodResult">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Value" type="UnapplyReceipt"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="UnapplyReceipt">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>CashReceiptId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="BusinessUnit" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ReceiptNumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="TrxNumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CustomerTrxId" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="Installment" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="AppliedPaymentScheduleId" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="ReceivableApplicationId" nillable="true" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="ReversalGlDate" nillable="true" type="ns0:date-Date"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="unapplyReceiptResult" type="UnapplyReceiptResult"/>
+    <xsd:element name="unapplyReceipt" type="UnapplyReceipt"/>
+</xsd:schema>

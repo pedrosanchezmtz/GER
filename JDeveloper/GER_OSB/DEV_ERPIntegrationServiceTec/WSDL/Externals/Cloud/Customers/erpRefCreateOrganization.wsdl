@@ -1,0 +1,1683 @@
+<wsdl:definitions
+    
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefCreateOrganization"
+     xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/"
+     xmlns:orafault="http://xmlns.oracle.com/oracleas/schema/oracle-fault-11_0"
+     xmlns:tns="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:types="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/applicationModule/types/"
+     xmlns:ns0="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefCreateOrganization/types"
+     xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefCreateOrganization"
+    >
+    <plnk:partnerLinkType name="createOrganization_plt">
+        <plnk:role name="createOrganization_role">
+            <plnk:portType name="ns1:erpRefCreateOrganizationPortType"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/contactPoint/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/contactPoint/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:sdoXML="commonj.sdo/xml">
+            <xsd:complexType name="ContactPointInformation">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>ContactPointId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="ContactPointId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="ContactPointType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/relationship/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/relationship/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:sdoXML="commonj.sdo/xml">
+            <xsd:complexType name="RelationshipInformation">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>RelationshipRecId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="RelationshipRecId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/sourceSystemRef/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/sourceSystemRef/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:sdoXML="commonj.sdo/xml">
+            <xsd:complexType name="SourceSystemRefInformation">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>OrigSystemRefId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="OrigSystemRefId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/orgContact/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/orgContact/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:sdoXML="commonj.sdo/xml">
+            <xsd:complexType name="OrganizationContactInformation">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>OrgContactId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="OrgContactId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/organization/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/organization/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:sdoXML="commonj.sdo/xml">
+            <xsd:complexType name="OrganizationInformation">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>OrganizationProfileId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="OrganizationProfileId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://xmlns.oracle.com/adf/svc/errors/" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:tns="http://xmlns.oracle.com/adf/svc/errors/" sdoJava:package="oracle.jbo.service.errors">
+            <xs:complexType name="ServiceMessage">
+                <xs:sequence>
+                    <xs:element maxOccurs="1" minOccurs="0" name="code" type="string"/>
+                    <xs:element maxOccurs="1" minOccurs="0" name="message" type="string"/>
+                    <xs:element maxOccurs="1" minOccurs="0" name="severity" type="string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="detail" type="tns:ServiceMessage"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="ServiceErrorMessage" type="tns:ServiceErrorMessage"/>
+            <xs:complexType name="ServiceErrorMessage">
+                <xs:complexContent>
+                    <xs:extension base="tns:ServiceMessage">
+                        <xs:sequence>
+                            <xs:element maxOccurs="1" minOccurs="0" name="sdoObject" type="anyType"/>
+                            <xs:element maxOccurs="1" minOccurs="0" name="exceptionClassName" type="string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/adf/svc/types/" elementFormDefault="qualified"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/adf/svc/types/"
+             xmlns:sdoJava="commonj.sdo/java" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:sdoXML="commonj.sdo/xml" xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/"
+             xmlns:sdo="commonj.sdo" sdoJava:package="oracle.jbo.common.service.types">
+            <xs:import namespace="http://xmlns.oracle.com/adf/svc/errors/"/>
+            <xsd:simpleType name="dateTime-Timestamp" sdoJava:instanceClass="java.sql.Timestamp">
+                <xsd:restriction base="xsd:dateTime"/>
+            </xsd:simpleType>
+            <xsd:complexType name="AmountType">
+                <xsd:simpleContent>
+                    <xsd:extension base="xsd:decimal">
+                        <xsd:attribute name="currencyCode" type="xsd:normalizedString" use="optional"/>
+                    </xsd:extension>
+                </xsd:simpleContent>
+            </xsd:complexType>
+            <xsd:simpleType name="date-Date" sdoJava:instanceClass="java.sql.Date">
+                <xsd:restriction base="xsd:date"/>
+            </xsd:simpleType>
+            <xsd:simpleType name="base64Binary-DataHandler" sdoJava:instanceClass="javax.activation.DataHandler">
+                <xsd:restriction base="xsd:base64Binary"/>
+            </xsd:simpleType>
+            <xsd:complexType name="MethodResult">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Message" type="errors:ServiceMessage"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/partySite/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/partySite/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:sdoXML="commonj.sdo/xml">
+            <xsd:complexType name="PartySiteInformation">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>PartySiteId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="PartySiteId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/contactPointService/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/contactPointService/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:sdoXML="commonj.sdo/xml"
+             xmlns:ns1="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/"
+             sdoJava:package="oracle.apps.cdm.foundation.parties.contactPointService" xmlns:ns2="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/contactPoint/"
+             xmlns:sdo="commonj.sdo">
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/contactPoint/"/>
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/"/>
+            <xs:import namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+            <xsd:complexType name="ContactPreference">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>ContactPreferenceId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="ContactPreferenceId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="ContactLevelTable" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ContactLevelTableId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="ContactType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferenceCode" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferenceTopicType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferenceTopicTypeId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PreferenceTopicTypeCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferenceStartDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="PreferenceEndDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="PreferenceStartTimeHR" nillable="true" type="xsd:int"/>
+                    <xsd:element minOccurs="0" name="PreferenceEndTimeHR" nillable="true" type="xsd:int"/>
+                    <xsd:element minOccurs="0" name="PreferenceStartTimeMi" nillable="true" type="xsd:int"/>
+                    <xsd:element minOccurs="0" name="PreferenceEndTimeMi" nillable="true" type="xsd:int"/>
+                    <xsd:element minOccurs="0" name="MaximumNoOfInteractions" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="MaximumNoOfInteractUOMCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ReasonCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns1:OriginalSystemReference"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Edi">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>ContactPointId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="ContactPointId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element default="EDI" minOccurs="0" name="ContactPointType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ContactPointPurpose" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryByPurpose" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StartDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EndDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="RelationshipId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PartyUsageCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrigSystem" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EDITransactionHandling" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EDIIdNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EDIPaymentMethod" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EDIPaymentFormat" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EDIRemittanceMethod" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EDIRemittanceInstruction" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EDITpHeaderId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="EDIEceTpLocationCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OverallPrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="ContactPreference" type="ContactPreference"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns1:OriginalSystemReference"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Eft">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>ContactPointId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="ContactPointId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element default="EFT" minOccurs="0" name="ContactPointType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ContactPointPurpose" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryByPurpose" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StartDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EndDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="RelationshipId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PartyUsageCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrigSystem" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EFTTransmissionProgramId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="EFTPrintingProgramId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="EFTUserNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EFTSWIFTCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OverallPrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="ContactPreference" type="ContactPreference"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns1:OriginalSystemReference"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Email">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>ContactPointId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="ContactPointId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element default="EMAIL" minOccurs="0" name="ContactPointType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element default="HZ_PARTIES" minOccurs="0" name="OwnerTableName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ContactPointPurpose" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryByPurpose" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StartDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EndDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="RelationshipId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PartyUsageCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrigSystem" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EmailFormat" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EmailAddress" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OverallPrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="ContactPreference" type="ContactPreference"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns1:OriginalSystemReference"/>
+                    <xsd:element minOccurs="0" name="EmailInformation" type="ns2:ContactPointInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="InstantMessaging">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>ContactPointId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="ContactPointId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element default="INSTANT_MESSAGING" minOccurs="0" name="ContactPointType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element default="HZ_PARTIES" minOccurs="0" name="OwnerTableName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ContactPointPurpose" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryByPurpose" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StartDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EndDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="RelationshipId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PartyUsageCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrigSystem" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="InstantMessengerType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="InstantMessagingAddress" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OverallPrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="ContactPreference" type="ContactPreference"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns1:OriginalSystemReference"/>
+                    <xsd:element minOccurs="0" name="InstantMessagingInformation" type="ns2:ContactPointInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Phone">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>ContactPointId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="ContactPointId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element default="PHONE" minOccurs="0" name="ContactPointType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element default="HZ_PARTIES" minOccurs="0" name="OwnerTableName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ContactPointPurpose" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryByPurpose" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StartDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EndDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="RelationshipId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PartyUsageCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrigSystem" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PhoneCallingCalendar" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastContactDtTime" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="PhoneAreaCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PhoneCountryCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PhoneNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PhoneExtension" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PhoneLineType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RawPhoneNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PagerTypeCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FormattedPhoneNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="TransposedPhoneNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="TimezoneCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OverallPrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="ContactPreference" type="ContactPreference"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns1:OriginalSystemReference"/>
+                    <xsd:element minOccurs="0" name="PhoneInformation" type="ns2:ContactPointInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Telex">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>ContactPointId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="ContactPointId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element default="TLX" minOccurs="0" name="ContactPointType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ContactPointPurpose" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryByPurpose" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StartDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EndDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="RelationshipId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PartyUsageCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrigSystem" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="TelexNumber" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OverallPrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="ContactPreference" type="ContactPreference"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns1:OriginalSystemReference"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Web">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>ContactPointId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="ContactPointId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element default="WEB" minOccurs="0" name="ContactPointType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element default="HZ_PARTIES" minOccurs="0" name="OwnerTableName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ContactPointPurpose" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryByPurpose" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StartDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EndDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="RelationshipId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PartyUsageCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrigSystem" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="WebType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="URL" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OverallPrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="ContactPreference" type="ContactPreference"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns1:OriginalSystemReference"/>
+                    <xsd:element minOccurs="0" name="WebInformation" type="ns2:ContactPointInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/" elementFormDefault="qualified"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:sdoXML="commonj.sdo/xml"
+             xmlns:ns1="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/sourceSystemRef/"
+             xmlns:sdo="commonj.sdo" sdoJava:package="oracle.apps.cdm.foundation.parties.partyService"
+             xmlns:ns2="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/partySite/"
+             xmlns:ns3="http://xmlns.oracle.com/apps/cdm/foundation/parties/contactPointService/">
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/partySite/"/>
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/contactPointService/"/>
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/sourceSystemRef/"/>
+            <xs:import namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+            <xsd:complexType name="OriginalSystemReference">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>OrigSystemReferenceId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="OrigSystemReferenceId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="OrigSystem" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ReasonCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OldOrigSystemReference" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StartDateActive" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EndDateActive" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="SourceSystemRefInformation" type="ns1:SourceSystemRefInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AdditionalPartyId">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>PartyIdentifierId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="PartyIdentifierId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PartyId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PartyName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyIdentifierType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyIdentifierValue" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Country" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StateProvince" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="IssuingAuthorityName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="IssuingAuthorityPartyId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="IssueDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="ExpirationDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StatusCode" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PartyIdentifierType1" type="xsd:string"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="OriginalSystemReference"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Certification">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CertificationId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="CertificationId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="CertificationName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CurrentStatus" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="ExpiresOnDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="Grade" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="IssuedByAuthority" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="IssuedOnDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="Status" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CodeAssignment">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CodeAssignmentId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="CodeAssignmentId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element default="HZ_PARTIES" minOccurs="0" name="OwnerTableName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="ClassCategory" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ClassCode" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="StartDateActive" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EndDateActive" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Status" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Rank" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="OwnerTableKey1" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableKey2" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableKey3" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableKey4" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableKey5" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="OriginalSystemReference"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CreditRating">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CreditRatingId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="CreditRatingId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="Rating" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RatedAsOfDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="RatingOrganization" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="Comments" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DetHistoryInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FinclEmbtInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CriminalProceedingInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ClaimsInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SecuredFlngInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FinclLglEventInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DisasterInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OprgSpecificationEvntInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OtherSpecificationEvntInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Status" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AverageHighCredit" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="CreditScore" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditScoreAge" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="CreditScoreClass" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="CreditScoreCommentary" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditScoreCommentary2" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditScoreCommentary3" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditScoreCommentary4" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditScoreCommentary5" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditScoreCommentary6" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditScoreCommentary7" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditScoreCommentary8" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditScoreCommentary9" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditScoreCommentary10" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditScoreDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="CreditScoreIncdDefault" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="CreditScoreNatlPercentile" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="DebarmentInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DebarmentsCount" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="DebarmentsDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="HighCredit" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="MaximumCreditCurrencyCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="MaximumCreditRecommendationAmount" nillable="true"
+                         type="ns0:AmountType"/>
+                    <xsd:element minOccurs="0" name="PaydexNorm" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PaydexScore" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PaydexThreeMonthsAgo" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditScoreOverrideCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreditRiskScoreExplain" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LowRngDelqScr" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="HighRngDelqScr" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="DelqPmtRngPrcnt" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="DelqPmtPctgForAllFirms" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="NumberTradeExperiences" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="PaydexFirmDays" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PaydexFirmComment" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PaydexIndustryDays" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PaydexIndustryComment" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PaydexComment" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SuitInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LienInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="JudgementInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="BankruptcyInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="NoTradeInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ParentHQBankruptcyInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="NumberParentBankruptcyFiling" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="PrntBkcyFilgType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrntBkcyFilgChapter" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="PrntBkcyFilgDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="NumberParentBankruptcyConversions" nillable="true"
+                         type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="PrntBkcyConvDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="PrntBkcyChapterConv" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SlowTradeExpl" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="NegvPmtExpl" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PubRecExpl" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="BusinessDiscontinued" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SpecialEventComment" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="NumberSpecialEvent" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="SpecialEventUpdateDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="SpecialEventText" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FailureScore" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FailureScoreAge" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="FailureScoreClass" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="FailureScoreCommentary" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FailureScoreCommentary2" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FailureScoreCommentary3" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FailureScoreCommentary4" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FailureScoreCommentary5" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FailureScoreCommentary6" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FailureScoreCommentary7" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FailureScoreCommentary8" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FailureScoreCommentary9" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FailureScoreCommentary10" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FailureScoreDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="FailureScoreIncdDefault" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="FailureScoreNatnlPercentile" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="FailureScoreOverrideCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="GlobalFailureScore" nillable="true" type="xsd:string"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="OriginalSystemReference"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="EmailDomain">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>EmailDomainId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="PartyId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="DomainName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="TransposedDomain" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Status" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EmailDomainId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="FinancialProfile">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>FinancialProfileId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="FinancialProfileId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="AccessAuthorityDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="AccessAuthorityGranted" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="BalanceAmount" nillable="true" type="ns0:AmountType"/>
+                    <xsd:element minOccurs="0" name="BalanceVerifiedOnDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="FinancialAccountNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FinancialAccountType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FinancialOrgType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FinancialOrganizationName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="PartyId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="Status" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="PreferredFunctionalCurrency" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="PartyPreference">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>PartyPreferenceId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="PartyPreferenceId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PartyId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="Module" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Category" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferenceCode" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ValueVarchar2" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ValueNumber" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="ValueDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="ValueName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalValue1" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalValue2" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalValue3" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalValue4" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalValue5" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StatusFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="PartySite">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>PartySiteId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="PartySiteId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PartyId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="LocationId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="PartySiteNumber" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="OrigSystem" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StartDateActive" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EndDateActive" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="Mailstop" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="IdentifyingAddressFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="Language" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartySiteName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Addressee" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="GlobalLocationNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DUNSNumberC" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Comments" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartySiteType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyNameDba" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyNameDivision" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyNameLegal" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RelationshipId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PartyUsageCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="UsageCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FormattedAddress" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Country" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address1" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address2" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address3" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address4" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="City" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PostalCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="State" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Province" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="County" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AddressStyle" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ValidatedFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="AddressLinesPhonetic" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PostalPlus4Code" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Position" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LocationDirections" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AddressExpirationDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="LocationLanguage" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ValidationStatusCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DateValidated" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="DoNotValidateFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="HouseType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FormattedMultilineAddress" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Country1" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber1" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="ContactPreferenceExistFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="FormattedLocaleAddress" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CurrencyCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CorpCurrencyCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CurcyConvRateType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="InternalFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="OverallPrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="EmailAddress" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Latitude" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="Longitude" nillable="true" type="xsd:decimal"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="ContactPreference" type="ns3:ContactPreference"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Eft" type="ns3:Eft" sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Email" type="ns3:Email" sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="InstantMessaging" type="ns3:InstantMessaging"
+                         sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="OriginalSystemReference"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="PartySiteUse" type="PartySiteUse"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Phone" type="ns3:Phone" sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Telex" type="ns3:Telex" sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Web" type="ns3:Web" sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element minOccurs="0" name="PartySiteInformation" type="ns2:PartySiteInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="PartySiteUse">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>PartySiteUseId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="PartySiteUseId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="BeginDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="Comments" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EndDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="PartySiteId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="IntegrationKey" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SiteUseType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryPerType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Status" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="OriginalSystemReference"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="PartyUsageAssignment">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>PartyUsgAssignmentId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="PartyUsgAssignmentId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PartyId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PartyUsageCode" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EffectiveStartDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EffectiveEndDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="StatusFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="Comments" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/relationshipService/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/relationshipService/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:sdoXML="commonj.sdo/xml"
+             xmlns:ns2="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/"
+             xmlns:ns1="http://xmlns.oracle.com/apps/cdm/foundation/parties/contactPointService/"
+             xmlns:ns3="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/relationship/"
+             xmlns:sdo="commonj.sdo" xmlns:ns4="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/orgContact/"
+             xmlns:ns5="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/"
+             sdoJava:package="oracle.apps.cdm.foundation.parties.relationshipService" xmlns:ns6="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/">
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/relationship/"/>
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/contactPointService/"/>
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/orgContact/"/>
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/"/>
+            <xs:import namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+            <xsd:complexType name="Relationship">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>RelationshipRecId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="RelationshipRecId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="RelationshipId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="SubjectId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="SubjectType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SubjectTableName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ObjectId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="ObjectType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ObjectTableName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RelationshipCode" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RelationshipType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Role" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Comments" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StartDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EndDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation1" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation2" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation3" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation4" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation5" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation6" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation7" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation8" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation9" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation10" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation11" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation12" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation13" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation14" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation15" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation16" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation17" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation18" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation19" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation20" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation21" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation22" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation23" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation24" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation25" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation26" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation27" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation28" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation29" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AdditionalInformation30" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DirectionCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PercentageOwnership" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="ObjectUsageCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SubjectUsageCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferredContactFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="ObjectPartyName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CurrencyCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CurcyConvRateType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CorpCurrencyCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryCustomerFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="SubjectEmailAddress" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ObjectEmailAddress" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrganizationContact" type="OrganizationContact"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Phone" type="ns1:Phone" sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="PartySite" type="ns2:PartySite"/>
+                    <xsd:element minOccurs="0" name="RelationshipInformation" type="ns3:RelationshipInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns2:OriginalSystemReference"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Email" type="ns1:Email" sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="PartyUsageAssignment" type="ns2:PartyUsageAssignment"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="SubjectPartyUsageAssignment"
+                         type="ns2:PartyUsageAssignment"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="InstantMessaging" type="ns1:InstantMessaging"
+                         sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Web" type="ns1:Web" sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="OrganizationContact">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>OrgContactId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="OrgContactId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PartyRelationshipId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="ContactPartyId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PersonFirstName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PersonLastName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ContactName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PersonPreNameAdjunct" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PersonMiddleName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PersonNameSuffix" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PersonPreviousLastName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PersonAcademicTitle" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Salutation" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PersonLastNamePrefix" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferredName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PersonSecondLastName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PersonLanguageName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PersonTitle" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PersonCertificationLevel" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PersonCertReasonCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CustomerPartyId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="CustomerUniqueName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CustomerName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CustomerPartyNumber" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FormattedPhoneNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EmailAddress" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="WebUrl" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Comments" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ContactNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DepartmentCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Department" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="JobTitle" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DecisionMakerFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="JobTitleCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ReferenceUseFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="Rank" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PartySiteId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="PartySiteName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SalesAffinityCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SalesAffinityComments" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SalesBuyingRoleCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SalesInfluenceLevelCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FormattedAddress" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferredContactMethod" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CurrencyCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CurcyConvRateType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CorpCurrencyCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferredContactFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="ContactFormattedAddress" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ContactFormattedMultilineAddress" nillable="true"
+                         type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CustomerEmailAddress" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryCustomerFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OrganizationContactRole"
+                         type="OrganizationContactRole"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns5:OriginalSystemReference"/>
+                    <xsd:element minOccurs="0" name="OrgContactInformation" type="ns4:OrganizationContactInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="OrganizationContactRole">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>OrgContactRoleId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="OrgContactRoleId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RoleType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrgContactId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="RoleLevel" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryContactPerRoleType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" type="xsd:string"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns6:OriginalSystemReference"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/"
+             xmlns:sdoJava="commonj.sdo/java" sdoJava:package="oracle.apps.cdm.foundation.parties.organizationService"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/"
+             xmlns:sdoXML="commonj.sdo/xml" xmlns:ns2="http://xmlns.oracle.com/apps/cdm/foundation/parties/contactPointService/"
+             xmlns:ns1="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/"
+             xmlns:ns3="http://xmlns.oracle.com/apps/cdm/foundation/parties/relationshipService/"
+             xmlns:sdo="commonj.sdo" xmlns:ns4="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/organization/">
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/relationshipService/"/>
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/organization/"/>
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/contactPointService/"/>
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/"/>
+            <xs:import namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+            <xsd:complexType name="OrganizationParty">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>PartyId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="PartyNumber" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element default="ORGANIZATION" minOccurs="0" name="PartyType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ValidatedFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="HQBranchIndicator" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DUNSNumberC" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SICCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="JgzzFiscalCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address1" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Country" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address3" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="GroupType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address2" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Address4" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="City" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PostalCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="County" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="YearEstablished" nillable="true" type="xsd:int"/>
+                    <xsd:element minOccurs="0" name="Province" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="State" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="URL" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AnalysisFy" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SICCodeType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EmailAddress" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FiscalYearendMonth" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EmployeesTotal" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="CurrentFiscalYearPotentialRevenueAmount" nillable="true"
+                         type="ns0:AmountType"/>
+                    <xsd:element minOccurs="0" name="NextFyPotentialRevenueAmount" nillable="true" type="ns0:AmountType"/>
+                    <xsd:element minOccurs="0" name="GSAIndicatorFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="CategoryCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LanguageName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="MissionStatement" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ThirdPartyFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="HomeCountry" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CertificationLevel" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CertReasonCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryPhonePurpose" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryPhoneContactPointId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PrimaryPhoneLineType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryPhoneCountryCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryPhoneAreaCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryPhoneNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferredContactMethod" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryPhoneExtension" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="IdenAddrLocationId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PrimaryURLContactPointId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PrimaryEmailContactPointId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="IdenAddrPartySiteId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PreferredName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PersonSecondLastName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferredNameId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="TradingPartnerIdentifier" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferredContactPersonId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PreferredFunctionalCurrency" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="InternalFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="Comments" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CeoName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrincipalName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrganizationSize" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyUniqueName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SourceSystem" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SourceSystemReferenceValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SourceSystemUpdateDate" nillable="true" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="AdditionalOrganizationName"
+                         type="AdditionalOrganizationName"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="AdditionalPartyId" type="ns1:AdditionalPartyId"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Certification" type="ns1:Certification"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="CodeAssignment" type="ns1:CodeAssignment"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="ContactPreference" type="ns2:ContactPreference"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="CreditRating" type="ns1:CreditRating"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Edi" type="ns2:Edi" sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Eft" type="ns2:Eft" sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="EmailDomain" type="ns1:EmailDomain"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Email" type="ns2:Email" sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="FinancialProfile" type="ns1:FinancialProfile"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="FinancialReport" type="FinancialReport"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="InstantMessaging" type="ns2:InstantMessaging"
+                         sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OrganizationProfile" type="OrganizationProfile"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns1:OriginalSystemReference"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="PartyPreference" type="ns1:PartyPreference"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="PartySite" type="ns1:PartySite"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="PartyUsageAssignment" type="ns1:PartyUsageAssignment"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Phone" type="ns2:Phone" sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Telex" type="ns2:Telex" sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Web" type="ns2:Web" sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Relationship" type="ns3:Relationship"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AdditionalOrganizationName">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>PartyNameId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="PartyNameId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PartyId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PartyNameType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferredFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StatusFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="TransliterationLang" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OverallPreferredFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="OrigSystem" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" nillable="true" type="xsd:string"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns1:OriginalSystemReference"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="FinancialReport">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>FinancialReportId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="FinancialReportId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="DateReportIssued" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="PartyId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="DocumentReference" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="IssuedPeriod" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequiringAuthority" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="TypeOfFinancialReport" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ReportStartDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="ReportEndDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="AuditInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ConsolidatedInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EstimatedInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FiscalInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FinalInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ForecastInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OpeningInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ProformaInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="QualifiedInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RestatedInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SignedByPrincipalsInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="TrialBalanceInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="UnbalancedInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="WhUdpateId" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="Status" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="FinancialNumber" type="FinancialNumber"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="FinancialNumber">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>FinancialNumberId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="FinancialNumberId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="FinancialReportId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="FinancialNumber" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="FinancialNumberName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FinancialUnitsApplied" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="FinancialNumberCurrency" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ProjectedActualCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="Status" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="OrganizationProfile">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>OrganizationProfileId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="OrganizationProfileId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PartyId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="OrganizationName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EnquiryDUNS" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CeoName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CeoTitle" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrincipalName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrincipalTitle" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LegalStatus" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ControlYr" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="EmployeesTotal" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="HQBranchIndicator" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="BranchFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="OobInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LineOfBusiness" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CongDistCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ImportInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ExportInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LaborSurplusInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="MinorityOwnedInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="MinorityOwnedType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="WomanOwnedInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Disadv8aInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SmallBusInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RentOwnInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DbRating" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="GSAIndicatorFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="JgzzFiscalCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AnalysisFy" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="FiscalYearendMonth" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CurrentFiscalYearPotentialRevenueAmount" nillable="true"
+                         type="ns0:AmountType"/>
+                    <xsd:element minOccurs="0" name="NextFyPotentialRevenueAmount" nillable="true" type="ns0:AmountType"/>
+                    <xsd:element minOccurs="0" name="YearEstablished" nillable="true" type="xsd:int"/>
+                    <xsd:element minOccurs="0" name="MissionStatement" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrganizationType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="BusinessScope" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CorporationClass" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LocalBusIdenType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LocalBusIdentifier" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferredFunctionalCurrency" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RegistrationType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="TotalEmployeesText" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="TotalEmployeesInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="TotalEmployeesEstimatedIndicator" nillable="true"
+                         type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="TotalEmployeesMinimumIndicator" nillable="true"
+                         type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ParentSubInd" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="IncorpYear" nillable="true" type="xsd:int"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="ContentSourceNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EffectiveStartDate" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EffectiveEndDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="PublicPrivateOwnershipFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="LocalActivityCodeType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LocalActivityCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EmployeesAtPrimaryAddress" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EmployeesAtPrimaryAddressText" nillable="true"
+                         type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EmployeesAtPrimaryAddressEstimation" nillable="true"
+                         type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EmployeesAtPrimaryAddressMinimum" nillable="true"
+                         type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="InternalFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="TotalPaymentAmount" nillable="true" type="ns0:AmountType"/>
+                    <xsd:element minOccurs="0" name="DisplayedDUNSPartyIdentifier" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="Status" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="BusinessReport" nillable="true" type="ns0:base64Binary-DataHandler"/>
+                    <xsd:element minOccurs="0" name="DUNSNumberC" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="BankOrBranchNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="BankCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="BranchCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DoNotConfuseWith" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="HomeCountry" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="GrowthStrategyDescription" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SeblUserKeyLoc" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StockSymbol" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="TradingPartnerIdentifier" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrigSystem" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EffectiveSequence" nillable="true" type="xsd:int"/>
+                    <xsd:element minOccurs="0" name="Comments" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="EffectiveLatestChange" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrganizationSize" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SuffixOverriddenFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="UniqueNameAlias" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="UniqueNameSuffix" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DomesticUltimateDUNSNumberC" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="GlobalUltimateDUNSNumberC" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ParentDUNSNumberC" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CorpCurrencyCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CurcyConvRateType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CurrencyCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyNumber" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CertificationLevel" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CertReasonCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferredContactMethod" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferredContactPersonId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PreferredContactName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferredContactEmailAddress" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferredContactFormattedPhoneNumber" nillable="true"
+                         type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryAddressLine1" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryAddressLine2" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryAddressLine3" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryAddressLine4" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Alias" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryAddressCity" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryAddressCountry" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryAddressCounty" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryEmailAddress" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryFormattedAddress" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryFormattedPhoneNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="IdenAddrLocationId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="IdenAddrPartySiteId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PrimaryLanguage" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyUniqueName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryAddressPostalCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferredName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PreferredNameId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PrimaryEmailId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PrimaryPhoneAreaCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryPhoneId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PrimaryPhoneCountryCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryPhoneExtension" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryPhoneLineType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryPhoneNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryPhonePurpose" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryWebId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="Pronunciation" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryAddressProvince" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SICCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SICCodeType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryAddressState" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryURL" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ValidatedFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="ThirdPartyFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="LastUpdateSourceSystem" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastSourceUpdateDate" nillable="true" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="DataCloudStatus" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastEnrichmentDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="OrgInformation" type="ns4:OrganizationInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="OrganizationPartyResult">
+                <xsd:complexContent>
+                    <xsd:extension base="ns0:MethodResult">
+                        <xsd:sequence>
+                            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Value" type="OrganizationParty"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefCreateOrganization/types"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefCreateOrganization/types"
+             xmlns:ns2="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/"
+             xmlns:tns0="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefCreateOrganization/types">
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/"/>
+            <xs:element name="createOrganization" type="tns0:createOrganizationType"/>
+            <xs:complexType name="createOrganizationType">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="ns2:OrganizationParty" name="organizationParty"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="createOrganizationResponse" type="tns0:createOrganizationResponseType"/>
+            <xs:complexType name="createOrganizationResponseType">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="ns2:OrganizationPartyResult"
+                         name="result"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="createOrganizationRequestMessage">
+        <wsdl:part name="parameters" element="ns0:createOrganization"/>
+    </wsdl:message>
+    <wsdl:message name="createOrganizationResponseMessage">
+        <wsdl:part name="parameters" element="ns0:createOrganizationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceException">
+        <wsdl:part name="parameters" element="errors:ServiceErrorMessage"/>
+    </wsdl:message>
+    <wsdl:portType name="erpRefCreateOrganizationPortType">
+        <wsdl:operation name="createOrganization">
+            <cloud:CloudOperation xmlns:cloud="http://xml.oracle.com/types" targetOperation="createOrganization"/>
+            <wsdl:input message="ns1:createOrganizationRequestMessage"/>
+            <wsdl:output message="ns1:createOrganizationResponseMessage"/>
+            <wsdl:fault name="ServiceException" message="ns1:ServiceException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

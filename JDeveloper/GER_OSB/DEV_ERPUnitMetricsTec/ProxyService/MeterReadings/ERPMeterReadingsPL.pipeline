@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="DEV_ERPUnitMetricsTec/WSDL/MeterReadings/ERPMeterReadingsWSDL"/>
+            <con:binding>
+                <con:name>ERPMeterReadings_ptt-binding</con:name>
+                <con:namespace>http://xmlns.oracle.com/OSB_EstrellaRoja/DEV_ERPUnitMetricsTec/ERPMeterReadings</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline name="PipelinePairNode1_response" type="response"/>
+        <con:pipeline name="PipelinePairNode1_request" type="request">
+            <con:stage name="stage1" errorHandler="_onErrorHandler-N53ef9bf9.479c2404.2.16fa04a7737.N8000">
+                <con:context>
+                    <con2:userNsDecl prefix="erp" namespace="http://soa.estrellaroja.com.mx/ERPMeterReadings"/>
+                </con:context>
+                <con:actions>
+                    <con3:wsCallout>
+                        <con2:id>_ActionId-N53ef9bf9.6bc0b0b1.7.16f54846824.N7ffb</con2:id>
+                        <con3:service ref="DEV_ERPUnitMetricsTec/BusinessService/MeterReadings/ERPMeterReadingsBS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con3:request>
+                            <con3:payload wrapped="false">meterReadingsReqJSON</con3:payload>
+                        </con3:request>
+                        <con3:response>
+                            <con3:payload wrapped="false">meterReadingsResJSON</con3:payload>
+                        </con3:response>
+                        <con3:requestTransform>
+                            <con3:transport-headers copy-all="false">
+                                <con2:id>_ActionId-N53ef9bf9.6bc0b0b1.3.16f546c352e.N7ffb</con2:id>
+                                <con3:header-set>outbound-request</con3:header-set>
+                                <con3:header name="Content-Type" value="expression">
+                                    <con2:xqueryText>'application/json'</con2:xqueryText>
+                                </con3:header>
+                            </con3:transport-headers>
+                            <con3:nxsdTranslation>
+                                <con2:id>_ActionId-N53ef9bf9.6bc0b0b1.c.16f6522b754.N8000</con2:id>
+                                <con3:type>XML-To-Native</con3:type>
+                                <con3:sourceExpr>
+                                    <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">$body/erp:PostMeterReadingsRequest</con:xqueryText>
+                                </con3:sourceExpr>
+                                <con3:nxsd ref="DEV_ERPUnitMetricsTec/XSD/MetricsReadings/ERPMeterReadingsTecNXSD"/>
+                                <con3:schemaElement xmlns:erp="http://soa.estrellaroja.com.mx/ERPMeterReadings">erp:PostMeterReadingsRequest</con3:schemaElement>
+                                <con3:assign-variable>meterReadingsBinaryJSON</con3:assign-variable>
+                                <con3:enforceSchemaOrder>false</con3:enforceSchemaOrder>
+                            </con3:nxsdTranslation>
+                            <con3:assign varName="meterReadingsReqJSON">
+                                <con2:id>_ActionId-N53ef9bf9.6bc0b0b1.a.16f55631f2a.N7ffe</con2:id>
+                                <con3:expr>
+                                    <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">fn-bea:binary-to-text($meterReadingsBinaryJSON,'UTF-8')</con:xqueryText>
+                                </con3:expr>
+                            </con3:assign>
+                            <con3:routing-options>
+                                <con2:id>_ActionId-N53ef9bf9.6bc0b0b1.3.16f546c352e.N7ffa</con2:id>
+                                <con3:restOptions>
+                                    <con3:verb>POST</con3:verb>
+                                </con3:restOptions>
+                            </con3:routing-options>
+                        </con3:requestTransform>
+                        <con3:responseTransform>
+                            <con3:assign varName="meterReadingsResponseJSON">
+                                <con2:id>_ActionId-N53ef9bf9.6bc0b0b1.b.16f55782693.N7ffa</con2:id>
+                                <con2:disabled>true</con2:disabled>
+                                <con3:expr>
+                                    <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">fn-bea:binary-to-text($meterReadingsResJSON,'UTF-8')</con:xqueryText>
+                                </con3:expr>
+                            </con3:assign>
+                            <con3:nxsdTranslation>
+                                <con2:id>_ActionId-N53ef9bf9.6bc0b0b1.7.16f54846824.N7ffa</con2:id>
+                                <con3:type>Native-To-XML</con3:type>
+                                <con3:sourceExpr>
+                                    <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">$meterReadingsResJSON</con:xqueryText>
+                                </con3:sourceExpr>
+                                <con3:nxsd ref="DEV_ERPUnitMetricsTec/XSD/MetricsReadings/ERPMeterReadingsTecNXSD"/>
+                                <con3:schemaElement xmlns:erp="http://soa.estrellaroja.com.mx/ERPMeterReadings">erp:PostMeterReadingsResponse</con3:schemaElement>
+                                <con3:replace-body-content/>
+                                <con3:enforceSchemaOrder>false</con3:enforceSchemaOrder>
+                            </con3:nxsdTranslation>
+                        </con3:responseTransform>
+                    </con3:wsCallout>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline name="_onErrorHandler-N53ef9bf9.479c2404.2.16fa04a7737.N8000" type="error">
+            <con:stage name="stage1">
+                <con:context>
+                    <con2:userNsDecl prefix="con1" namespace="http://www.bea.com/wli/sb/stages/transform/config"/>
+                    <con2:userNsDecl prefix="tns" namespace="http://xmlns.oracle.com/OSB_EstrellaRoja/DEV_ERPUnitMetricsTec/ERPMeterReadings"/>
+                    <con2:varNsDecl prefix="erp" namespace="http://soa.estrellaroja.com.mx/ERPMeterReadings"/>
+                </con:context>
+                <con:actions>
+                    <con3:assign varName="errorDetail">
+                        <con2:id>_ActionId-N53ef9bf9.479c2404.3.16fa04a85ce.N8000</con2:id>
+                        <con3:expr>
+                            <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">fn-bea:inlinedXML($fault/ctx:details/con1:ErrorResponseDetail/con1:detail)</con:xqueryText>
+                        </con3:expr>
+                    </con3:assign>
+                    <con3:assign varName="detalleError">
+                        <con2:id>_ActionId-N53ef9bf9.479c2404.3.16fa04a85ce.N7fff</con2:id>
+                        <con3:expr>
+                            <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">fn-bea:binary-to-text($errorDetail,'UTF-8')</con:xqueryText>
+                        </con3:expr>
+                    </con3:assign>
+                    <con3:assign varName="body">
+                        <con2:id>_ActionId-N53ef9bf9.479c2404.3.16fa04a85ce.N7ffe</con2:id>
+                        <con2:disabled>true</con2:disabled>
+                        <con3:expr>
+                            <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config"><![CDATA[<soap:Fault xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" >
+            <faultcode>ERP:ReadingMetrics</faultcode>            
+                 <faultstring>Error Técnico</faultstring>                
+                     <detail>
+		          <erp:ErrorMessage>
+			        <erp:Description>{$detalleError}</erp:Description>
+		          </erp:ErrorMessage>
+                     </detail>
+</soap:Fault>]]></con:xqueryText>
+                        </con3:expr>
+                    </con3:assign>
+                    <con3:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N53ef9bf9.479c2404.4.16fa070d402.N8000</con2:id>
+                        <con3:expr>
+                            <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config"><![CDATA[<soap:Fault xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="http://xmlns.oracle.com/OSB_EstrellaRoja/DEV_ERPUnitMetricsTec/ERPMeterReadings">
+            <faultcode>tns:fault</faultcode>            
+                 <faultstring>Error Técnico</faultstring>                
+                     <detail>
+		          <erp:ErrorMessage>
+			        <erp:Description>{$detalleError}</erp:Description>
+		          </erp:ErrorMessage>
+                     </detail>
+</soap:Fault>]]></con:xqueryText>
+                        </con3:expr>
+                    </con3:replace>
+                    <con2:reply isError="true">
+                        <con2:id>_ActionId-N53ef9bf9.479c2404.3.16fa04a85ce.N7ffd</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:pipeline-node name="PipelinePairNode1">
+                <con:request>PipelinePairNode1_request</con:request>
+                <con:response>PipelinePairNode1_response</con:response>
+            </con:pipeline-node>
+        </con:flow>
+    </con:router>
+    <aler:alertRules xsi:nil="true" xmlns:aler="http://xmlns.oracle.com/servicebus/monitoring/alert"/>
+</con:pipelineEntry>

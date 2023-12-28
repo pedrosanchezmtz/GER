@@ -1,0 +1,22 @@
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="BanxicoSieBs">RestReference</doc>
+   <grammars>
+      <xsd:schema>
+            <xsd:import namespace="http://soa.estrellaroja.com.mx/BanxicoSie" schemaLocation="../Schemas/External/BanxicoSie.xsd"/>
+        </xsd:schema>
+   </grammars>
+   <resources>
+      <resource path="/SieAPIRest/service/v1/series/{idSeries}/datos/{fechaInicial}/{fechaFinal}">
+         <method name="GET" soa:wsdlOperation="GetSeries">
+            <request soa:paramElement="pns:GetSeries_params" xmlns:pns="http://soa.estrellaroja.com.mx/BanxicoSie">
+               <param name="idSeries" style="template" soa:expression="$msg.request/pns:idSeries" type="xsd:string"/>
+               <param name="fechaInicial" style="template" soa:expression="$msg.request/pns:fechaInicial" type="xsd:string"/>
+               <param name="fechaFinal" style="template" soa:expression="$msg.request/pns:fechaFinal" type="xsd:string"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/xml" element="cns:series" xmlns:cns="http://soa.estrellaroja.com.mx/BanxicoSie"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

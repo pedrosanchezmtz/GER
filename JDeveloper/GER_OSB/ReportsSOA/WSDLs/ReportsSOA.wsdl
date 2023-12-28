@@ -1,0 +1,35 @@
+<wsdl:definitions name="ReportsSOA" targetNamespace="http://xmlns.oracle.com/ReportsSOA" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://xmlns.oracle.com/ReportsSOA" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:documentation>
+        <abstractWSDL>http://129.150.99.167:80/soa-infra/services/INERDEV/ReportsSOA!1.0/WSDLs/ReportsSOA.wsdl</abstractWSDL>
+    </wsdl:documentation>
+    <plnk:partnerLinkType name="ReportsSOA">
+        <plnk:role name="ReportsSOAProvider" portType="client:ReportsSOA"/>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://xmlns.oracle.com/ReportsSOA" schemaLocation="../Schemas/XMLSchema_2098908805.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="ReportsSOARequestMessage">
+        <wsdl:part name="payload" element="client:reportsSOARq"/>
+    </wsdl:message>
+    <wsdl:portType name="ReportsSOA">
+        <wsdl:operation name="ReportsSOA">
+            <wsdl:input message="client:ReportsSOARequestMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ReportsSOABinding" type="client:ReportsSOA">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="ReportsSOA">
+            <soap:operation style="document" soapAction="ReportsSOA"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="MediatorReportsSOA_ep">
+        <wsdl:port name="ReportsSOA_pt" binding="client:ReportsSOABinding">
+            <soap:address location="http://129.150.99.167:80/soa-infra/services/INERDEV/ReportsSOA/ReportsSOA"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

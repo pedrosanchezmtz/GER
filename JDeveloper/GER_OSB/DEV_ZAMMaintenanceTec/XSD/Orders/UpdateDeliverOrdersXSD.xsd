@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/UpdateDeliverOrders" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/UpdateDeliverOrders" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="UpdateDeliverOrdersInput" type="UpdateDeliverOrdersInput"/>
+   <xs:complexType name="UpdateDeliverOrdersInput">
+      <xs:sequence>
+         <xs:element name="fechaCierre" type="xs:date" nillable="true"/>
+         <xs:element name="zamStatus" type="xs:string" nillable="true"/>
+         <xs:element name="fechaLiberacion" type="xs:date" nillable="true"/>
+         <xs:element name="idUnidad" type="xs:string" nillable="true"/>
+         <xs:element name="idOrden" type="xs:string" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

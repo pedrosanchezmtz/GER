@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="DigitalStampGERTec" targetNamespace="http://soa.estrellaroja.com.mx/DigitalStampGERTec" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soa.estrellaroja.com.mx/DigitalStampGERTec" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:types>
+<xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/DigitalStampGERTec/types" elementFormDefault="qualified">
+<xsd:import schemaLocation="DigitalStampGERTec.xsd" namespace="http://soa.estrellaroja.com.mx/DigitalStampGERTec"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="createTrxCFDIRq">
+<wsdl:part name="createTrxCFDIRq" element="tns:createTrxCFDIRq"/>
+</wsdl:message>
+<wsdl:message name="createTrxCFDIRs">
+<wsdl:part name="createTrxCFDIRs" element="tns:createTrxCFDIRs"/>
+</wsdl:message>
+<wsdl:message name="consultaCFDIRq">
+<wsdl:part name="consultaCFDIRq" element="tns:consultaCFDIRq"/>
+</wsdl:message>
+<wsdl:message name="consultaCFDIRs">
+<wsdl:part name="consultaCFDIRs" element="tns:consultaCFDIRs"/>
+</wsdl:message>
+<wsdl:message name="GetCFDIFileRq">
+<wsdl:part name="GetCFDIFileRq" element="tns:GetCFDIFileRq"/>
+</wsdl:message>
+<wsdl:message name="GetCFDIFileRs">
+<wsdl:part name="GetCFDIFileRs" element="tns:GetCFDIFileRs"/>
+</wsdl:message>
+<wsdl:portType name="DigitalStampGERTecPortType">
+<wsdl:operation name="createTrxCFDI">
+<wsdl:input message="tns:createTrxCFDIRq"/>
+<wsdl:output message="tns:createTrxCFDIRs"/>
+</wsdl:operation>
+<wsdl:operation name="consultaCFDI">
+<wsdl:input message="tns:consultaCFDIRq"/>
+<wsdl:output message="tns:consultaCFDIRs"/>
+</wsdl:operation>
+<wsdl:operation name="GetCFDIFile">
+<wsdl:input message="tns:GetCFDIFileRq"/>
+<wsdl:output message="tns:GetCFDIFileRs"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="DigitalStampGERTecBinding" type="tns:DigitalStampGERTecPortType">
+<soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="createTrxCFDI">
+<soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/DigitalStampGERTec/createTrxCFDI"/>
+<wsdl:input>
+<soap12:body use="literal" parts="createTrxCFDIRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal" parts="createTrxCFDIRs"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="consultaCFDI">
+<soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/DigitalStampGERTec/consultaCFDI"/>
+<wsdl:input>
+<soap12:body use="literal" parts="consultaCFDIRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal" parts="consultaCFDIRs"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCFDIFile">
+<soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/DigitalStampGERTec/GetCFDIFile"/>
+<wsdl:input>
+<soap12:body use="literal" parts="GetCFDIFileRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal" parts="GetCFDIFileRs"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="DigitalStampGERTecServices">
+<wsdl:documentation>OSB Service</wsdl:documentation>
+<wsdl:port name="DigitalStampGERTecType" binding="tns:DigitalStampGERTecBinding">
+<soap12:address location="sb://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/DigitalStampGERTecPS"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

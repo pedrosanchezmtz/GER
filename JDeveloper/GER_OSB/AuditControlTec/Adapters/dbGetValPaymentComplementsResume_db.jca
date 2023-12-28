@@ -1,0 +1,14 @@
+<adapter-config name="dbGetValPaymentComplementsResume" adapter="db" wsdlLocation="../WSDLs/External/dbGetValPaymentComplementsResume.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="dbCloud" location="eis/DB/ERSEPDB1"/>
+  <endpoint-interaction portType="dbGetValPaymentComplementsResume_ptt" operation="dbGetValPaymentComplementsResumeSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="dbGetValPaymentComplementsResume.XeerApValpmtComplementsV"/>
+      <property name="QueryName" value="dbGetValPaymentComplementsResumeSelect"/>
+      <property name="MappingsMetaDataURL" value="dbGetValPaymentComplementsResume-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

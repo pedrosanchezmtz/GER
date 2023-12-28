@@ -1,0 +1,51 @@
+<definitions targetNamespace="http://soa.estrellaroja.com.mx/CatalogsTec" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soa.estrellaroja.com.mx/CatalogsTec" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	TYPE DEFINITION - List of services participating in this process.
+        You can define or import any XML Schema type and use them as part of the message types.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <types>
+    <xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/CatalogsTec/types" elementFormDefault="qualified">
+      <xsd:import namespace="http://soa.estrellaroja.com.mx/CatalogsTec" schemaLocation="../Schemas/CatalogsTec.xsd"/>
+    </xsd:schema>
+  </types>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	MESSAGE TYPE DEFINITION - Definition of the message types used as 
+	part of the port type defintions
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!--********************************* BEGIN GetCountryCode *********************************-->
+  <message name="GetCountryCodeRq">
+    <part name="GetCountryCodeRq" element="tns:GetCountryCodeRq"/>
+  </message>
+  <message name="GetCountryCodeRs">
+    <part name="GetCountryCodeRs" element="tns:GetCountryCodeRs"/>
+  </message>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	PORT TYPE DEFINITION - A port type groups a set of operations into
+	a logical service unit.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <portType name="CatalogsTecPortType">
+    <operation name="GetCountryCode">
+      <input message="tns:GetCountryCodeRq"/>
+      <output message="tns:GetCountryCodeRs"/>
+      <fault name="ServiceFault" message="tns:ServiceFaultMessage"/>
+    </operation>
+  </portType>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	BINDING OPERATIONS DEFINITION
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <binding name="CatalogsTecBinding" type="tns:CatalogsTecPortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="GetCountryCode">
+      <soap12:operation style="document" soapAction="http://soa.estrellaroja.com.mx/CatalogsTec/GetCountryCode"/>
+      <input>
+        <soap12:body use="literal" parts="GetCountryCodeRq"/>
+      </input>
+      <output>
+        <soap12:body use="literal" parts="GetCountryCodeRs"/>
+      </output>
+    </operation>
+  </binding>
+  <message name="ServiceFaultMessage">
+    <part name="ServiceFault" element="tns:ServiceFault"/>
+  </message>
+</definitions>

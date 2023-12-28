@@ -1,0 +1,27 @@
+<schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/ReportsSOA" xmlns:tns="http://xmlns.oracle.com/ReportsSOA" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+    <import schemaLocation="XMLSchema_1968264628.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+    <element name="reportsSOARq" type="tns:reportsSOARqType"/>
+    <element name="reportsSOARs" type="tns:reportsSOARsType"/>
+    <complexType name="reportsSOARqType">
+        <sequence>
+            <element name="reportName" type="string"/>
+            <element name="dateInitial" type="string" minOccurs="0"/>
+            <element name="dateFinal" type="string" minOccurs="0"/>
+            <element name="invoiceNumber" type="string" minOccurs="0"/>
+            <element name="email" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="reportsSOARsType">
+        <complexContent>
+            <extension base="cmn:BaseRsType">
+                <annotation>
+                    <documentation>Extends BaseRsType (Success and Errors nodes). Contains a node which should be used for the specific response of the corresponding service.</documentation>
+                </annotation>
+                <sequence>
+                    <element name="items" type="string"/>
+                    <element name="report" type="string"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+</schema>

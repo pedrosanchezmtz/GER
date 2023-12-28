@@ -1,0 +1,106 @@
+<wsdl:definitions
+    
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpUploadAttachment"
+     xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/"
+     xmlns:orafault="http://xmlns.oracle.com/oracleas/schema/oracle-fault-11_0"
+     xmlns:tns="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:types="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/types/"
+     xmlns:ns0="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpUploadAttachment/types"
+     xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpUploadAttachment"
+    >
+    <plnk:partnerLinkType name="uploadAttachment_plt">
+        <plnk:role name="uploadAttachment_role">
+            <plnk:portType name="ns1:erpUploadAttachmentPortType"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <xs:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://xmlns.oracle.com/adf/svc/errors/" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:tns="http://xmlns.oracle.com/adf/svc/errors/" sdoJava:package="oracle.jbo.service.errors">
+            <xs:element name="ServiceErrorMessage" type="tns:ServiceErrorMessage"/>
+            <xs:complexType name="ServiceErrorMessage">
+                <xs:complexContent>
+                    <xs:extension base="tns:ServiceMessage">
+                        <xs:sequence>
+                            <xs:element maxOccurs="1" minOccurs="0" name="sdoObject" type="anyType"/>
+                            <xs:element maxOccurs="1" minOccurs="0" name="exceptionClassName" type="string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ServiceMessage">
+                <xs:sequence>
+                    <xs:element maxOccurs="1" minOccurs="0" name="code" type="string"/>
+                    <xs:element maxOccurs="1" minOccurs="0" name="message" type="string"/>
+                    <xs:element maxOccurs="1" minOccurs="0" name="severity" type="string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="detail" type="tns:ServiceMessage"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/"
+             xmlns:sdoJava="commonj.sdo/java" sdoJava:package="oracle.apps.financials.commonModules.shared.model.erpIntegrationService"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="AttachmentDetails">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>Title</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="UserKeyA" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="UserKeyB" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="UserKeyC" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="UserKeyD" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="UserKeyE" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AttachmentType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Title" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Content" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpUploadAttachment/types"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpUploadAttachment/types"
+             xmlns:ns2="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/"
+             xmlns:tns0="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpUploadAttachment/types">
+            <xs:import namespace="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/"/>
+            <xs:element name="uploadAttachment" type="tns0:uploadAttachmentType"/>
+            <xs:complexType name="uploadAttachmentType">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="xs:string" name="entityName"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="xs:string" name="categoryName"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="xs:string" name="allowDuplicate"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="ns2:AttachmentDetails" name="attachmentRows"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="uploadAttachmentResponse" type="tns0:uploadAttachmentResponseType"/>
+            <xs:complexType name="uploadAttachmentResponseType">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="xs:string" name="result"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="uploadAttachmentRequestMessage">
+        <wsdl:part name="parameters" element="ns0:uploadAttachment"/>
+    </wsdl:message>
+    <wsdl:message name="uploadAttachmentResponseMessage">
+        <wsdl:part name="parameters" element="ns0:uploadAttachmentResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceException">
+        <wsdl:part name="parameters" element="errors:ServiceErrorMessage"/>
+    </wsdl:message>
+    <wsdl:portType name="erpUploadAttachmentPortType">
+        <wsdl:operation name="uploadAttachment">
+            <cloud:CloudOperation xmlns:cloud="http://xml.oracle.com/types" targetOperation="uploadAttachment"/>
+            <wsdl:input message="ns1:uploadAttachmentRequestMessage"/>
+            <wsdl:output message="ns1:uploadAttachmentResponseMessage"/>
+            <wsdl:fault name="ServiceException" message="ns1:ServiceException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

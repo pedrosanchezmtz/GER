@@ -1,0 +1,26 @@
+<adapter-config name="dbIncPaymentComplements" adapter="db" wsdlLocation="../WSDLs/External/dbIncPaymentComplements.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="dbCloud" location="eis/DB/DEV/ERSEPDB1"/>
+  <endpoint-interaction portType="dbIncPaymentComplements_ptt" operation="merge">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="dbIncPaymentComplements.XxerIncPaymentComplements"/>
+      <property name="DmlType" value="merge"/>
+      <property name="OutputCompletedXml" value="true"/>
+      <property name="MappingsMetaDataURL" value="dbIncPaymentComplements-or-mappings.xml"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="DetectOmissions" value="true"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="dbIncPaymentComplements_ptt" operation="dbIncPaymentComplementsSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="dbIncPaymentComplements.XxerIncPaymentComplements"/>
+      <property name="QueryName" value="dbIncPaymentComplementsSelect"/>
+      <property name="MappingsMetaDataURL" value="dbIncPaymentComplements-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

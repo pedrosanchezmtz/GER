@@ -1,0 +1,52 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" sdoJava:package="oracle.apps.financials.receivables.receipts.shared.standardReceiptService.commonService" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:sdoJava="commonj.sdo/java" xmlns="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation xmlns:oer="http://xmlns.oracle.com/oer">
+            <name>Receivables Reverse Receipt SDO</name>
+            <description>Reverse receipt.</description>
+            <oer:attributes>
+                <oer:attribute description="Number that identifies a receipt." name="ReceiptNumber"/>
+                <oer:attribute description="Identifies the reason why the payment entry was reversed." name="ReversalCategory"/>
+                <oer:attribute description="The date, referenced from Oracle General Ledger, used to determine the accounting period for receipts to unapply." name="ReversalDate"/>
+                <oer:attribute description="Indicates reason for reversing receipt, defined by user." name="ReversalReasonCode"/>
+                <oer:attribute description="Comments regarding reversal." name="ReversalComments"/>
+                <oer:attribute description="A unit of an enterprise that performs one or more business functions that can be rolled up in a management hierarchy." name="BusinessUnit"/>
+                <oer:attribute description="Identifies the reason why the payment entry was reversed." name="ReversalCategoryName"/>
+                <oer:attribute description="GL date payment entry reversed." name="ReversalGlDate"/>
+                <oer:attribute description="Indicates reason for reversing receipt, defined by user." name="ReversalReasonName"/>
+            </oer:attributes>
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="XMLSchema_469750432.xsd"/>
+    <xsd:import namespace="commonj.sdo/java" schemaLocation="XMLSchema_-1644098047.xsd"/>
+    <xsd:complexType name="ReverseReceiptResult">
+        <xsd:complexContent>
+            <xsd:extension base="ns0:MethodResult">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Value" type="ReverseReceipt"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ReverseReceipt">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>CashReceiptId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="ReceiptNumber" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ReversalCategory" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ReversalDate" nillable="true" type="ns0:date-Date"/>
+            <xsd:element minOccurs="0" name="ReversalReasonCode" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ReversalComments" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="BusinessUnit" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ReversalCategoryName" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ReversalGlDate" nillable="true" type="ns0:date-Date"/>
+            <xsd:element minOccurs="0" name="ReversalReasonName" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="reverseReceiptResult" type="ReverseReceiptResult"/>
+    <xsd:element name="reverseReceipt" type="ReverseReceipt"/>
+</xsd:schema>

@@ -1,0 +1,22 @@
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns0="http://soa.estrellaroja.com.mx/erpMaintenanceWorkOrders" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="erpUpdateMaintenanceWorkOrders">RestReference</doc>
+  <grammars>
+    <xsd:schema>
+      <xsd:import namespace="http://soa.estrellaroja.com.mx/erpMaintenanceWorkOrders" schemaLocation="../../../Schemas/External/WorkOrder/erpMaintenanceWorkOrders.xsd"/>
+    </xsd:schema>
+  </grammars>
+  <resources>
+    <resource path="/fscmRestApi/resources/11.13.18.05/maintenanceWorkOrders/{WorkOrderId}/child/WorkOrderDFF/{WorkOrderId3}">
+      <method name="PATCH" soa:wsdlOperation="updateFlexMaintenanceWO">
+        <request soa:paramElement="pns:updateFlexMaintenanceWORq" xmlns:pns="http://soa.estrellaroja.com.mx/erpMaintenanceWorkOrders">
+          <param name="WorkOrderId" style="template" soa:expression="$msg.request/ns0:WorkOrderId" type="xsd:string"/>
+          <param name="WorkOrderId3" style="template" soa:expression="$msg.request/ns0:WorkOrderId" type="xsd:string"/>
+          <representation mediaType="application/json" element="cns:updateFlexMaintenanceWORq" xmlns:cns="http://soa.estrellaroja.com.mx/erpMaintenanceWorkOrders"/>
+        </request>
+        <response status="200">
+          <representation mediaType="application/json" element="cns:updateFlexMaintenanceWORs" xmlns:cns="http://soa.estrellaroja.com.mx/erpMaintenanceWorkOrders"/>
+        </response>
+      </method>
+    </resource>
+  </resources>
+</application>

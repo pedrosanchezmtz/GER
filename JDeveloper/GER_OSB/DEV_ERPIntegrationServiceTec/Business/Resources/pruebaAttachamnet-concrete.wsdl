@@ -1,0 +1,15 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/cloud/adapter/erp/pruebaAttachamnet" name="pruebaAttachamnet-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="pruebaAttachamnet.wsdl" namespace="http://xmlns.oracle.com/cloud/adapter/erp/pruebaAttachamnet"/>
+    <wsdl:binding name="pruebaAttachamnetPortType-binding" type="pru:pruebaAttachamnetPortType" xmlns:pru="http://xmlns.oracle.com/cloud/adapter/erp/pruebaAttachamnet">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="uploadAttachment">
+            <soap:operation soapAction="uploadAttachment"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

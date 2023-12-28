@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="XXER_EAM_EXECUTIONS_TBL.RUN_ID:db_column_precision">38</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL.READ_STATUS:db_column_precision">38</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL.READ_STATUS:db_column_scale">0</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL.DATA_SOURCE:db_column_size">80</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL.RUN_ID:db_column_scale">0</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL.RUN_ID:db_column_not_null">false</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL.RUN_DATE_OFF:db_column_type">DATE</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL:db_column_4">READ_STATUS</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL:db_column_3">RUN_DATE_OFF</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL:db_column_2">DATA_NAME</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL:db_column_1">DATA_SOURCE</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL:db_column_0">RUN_ID</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL.DATA_NAME:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL.RUN_DATE_OFF:db_column_not_null">true</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL.DATA_SOURCE:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL.DATA_NAME:db_column_not_null">true</entry>
+   <entry key="root_descriptor_alias">XXER_EAM_EXECUTIONS_TBL</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL.READ_STATUS:db_column_not_null">true</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL.DATA_SOURCE:db_column_not_null">true</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL.READ_STATUS:db_column_type">NUMBER</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL.DATA_NAME:db_column_size">80</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL:db_table_type">TABLE</entry>
+   <entry key="XXER_EAM_EXECUTIONS_TBL.RUN_ID:db_column_type">NUMBER</entry>
+</properties>

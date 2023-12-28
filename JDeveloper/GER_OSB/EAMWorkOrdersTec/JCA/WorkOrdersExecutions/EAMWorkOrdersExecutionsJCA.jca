@@ -1,0 +1,15 @@
+<adapter-config name="EAMWorkOrdersExecutions" adapter="db" wsdlLocation="../../WSDL/WorkOrdersExecutions/EAMWorkOrdersExecutionsWSDL.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="/DEV/ERSEPDB1" location="eis/DB/ERSEPDB1"/>
+  <endpoint-interaction portType="EAMWorkOrdersExecutions_ptt" operation="insert">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="EAMWorkOrdersExecutions.XxerEamExecutionsTbl"/>
+      <property name="DmlType" value="insert"/>
+      <property name="OutputCompletedXml" value="true"/>
+      <property name="MappingsMetaDataURL" value="EAMWorkOrdersExecutionsOrMappingsJCA.xml"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+      <property name="DetectOmissions" value="true"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

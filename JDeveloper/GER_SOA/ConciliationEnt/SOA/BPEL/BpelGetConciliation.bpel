@@ -1,0 +1,340 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Thu May 27 12:39:25 CDT 2021
+  Author:  PedroSánchezMartínez
+  Type: BPEL 2.0 Process
+  Purpose: Synchronous BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="BpelGetConciliation"
+               targetNamespace="http://soa.estrellaroja.com.mx/ConciliationEnt/BpelGetConciliation"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://soa.estrellaroja.com.mx/ConciliationEnt/BpelGetConciliation"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:ui="http://xmlns.oracle.com/soa/designer"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+         xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://soa.estrellaroja.com.mx/ConciliationEnt"
+         xmlns:ns4="http://soa.estrellaroja.com.mx/FinancialsTec"
+         xmlns:ns5="http://soa.estrellaroja.com.mx/ConciliationBiz"
+         xmlns:ns2="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+         xmlns:ns3="http://soa.estrellaroja.com.mx/ConciliationTec"
+         xmlns:ns6="http://soa.estrellaroja.com.mx/MessageTec"
+         xmlns:ns7="http://soa.estrellaroja.com.mx/SOAUtilitiesTec"
+         xmlns:ns8="http://soa.estrellaroja.com.mx/esb/data/generic/CommonTypes/v1/">
+    <import ui:processWSDL="true" namespace="http://soa.estrellaroja.com.mx/ConciliationEnt/BpelGetConciliation"
+            location="../WSDLs/BpelGetConciliation.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        PARTNERLINKS                                                      
+        List of services participating in this BPEL process               
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    --> 
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="bpelgetconciliation_client" partnerLinkType="client:BpelGetConciliation" myRole="BpelGetConciliationProvider" />
+      <partnerLink name="ConciliationBiz" partnerLinkType="ns5:ConciliationBiz" partnerRole="ConciliationBizPortType"/>
+      <partnerLink name="ConciliationTec" partnerLinkType="ns3:ConciliationTec" partnerRole="ConciliationTecPortType"/>
+      <partnerLink name="SOAUtilitiesTec" partnerLinkType="ns7:SOAUtilitiesTec" partnerRole="SOAUtilitiesTecPortType"/>
+      <partnerLink name="MessageTec" partnerLinkType="ns6:MessageTec" partnerRole="MessageTecPortType"
+                   myRole="MessageTecPortType"/>
+   </partnerLinks>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="client:BpelGetConciliationRequestMessage"/>
+
+    <!-- Reference to the message that will be returned to the requester-->
+    <variable name="outputVariable" messageType="client:BpelGetConciliationResponseMessage"/>
+      <variable name="v_title" type="xsd:string"/>
+   </variables>
+  <faultHandlers>
+    <catchAll><sequence name="sequenceCatchAll" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <documentation>
+         <![CDATA[Secuencia de actividades para preparar la salida del proceso BPEL una vez que se ha atrapado una excepción no conocida o no controlada de forma específica.]]>
+      </documentation><assign name="assignCatchAll">
+         <documentation>
+                  <![CDATA[Se asigna la información correspondiente a la excepción CatchAll en el nodo de errores.]]>
+               </documentation>
+               <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <from>
+               <literal>SOA-00001</literal>
+            </from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns2:Errors/ns2:Error/ns2:ErrorCode</to>
+               </copy>
+               <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <from>ora:getFaultName()</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns2:Errors/ns2:Error/ns2:ShortDescription</to>
+               </copy>
+               <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <from>concat('Unknown error in service integration: ',ora:getFaultAsString())</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns2:Errors/ns2:Error/ns2:Description</to>
+               </copy>
+               <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <from><literal>[GetConciliation]</literal></from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns2:Errors/ns2:Error/ns2:BusinessProcess</to>
+               </copy>
+               <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <from>
+               <literal>[ConciliationEnt]</literal>
+            </from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns2:Errors/ns2:Error/ns2:FailedService</to>
+               </copy>
+               <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <from>xp20:current-dateTime()</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns2:Errors/ns2:Error/ns2:TimeStamp</to>
+               </copy>
+               <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <from>
+               <literal>
+                  <Element xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/>
+               </literal>
+            </from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns2:Success</to>
+               </copy>
+               <extensionAssignOperation>
+                  <bpelx:remove xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                     <?audit suppress oracle.ide.xml.validation-incomplete?>
+                     <bpelx:target expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns2:Success</bpelx:target>
+                  </bpelx:remove>
+               </extensionAssignOperation>
+               <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <from>
+               <literal>
+                  <Element xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/>
+               </literal>
+            </from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns1:Return</to>
+               </copy>
+               <extensionAssignOperation>
+                  <bpelx:remove xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                     <?audit suppress oracle.ide.xml.validation-incomplete?>
+                     <bpelx:target expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns1:Return</bpelx:target>
+                  </bpelx:remove>
+               </extensionAssignOperation>
+            </assign>
+            <scope name="ScopeNotification">
+               <variables>
+                  <variable name="WsSOAUtilitiesGetHtmlControlRq" messageType="ns7:GetHtmlControlRq"/>
+                  <variable name="WsSOAUtilitiesGetHtmlControlRs" messageType="ns7:GetHtmlControlRs"/>
+                  <variable name="WsMessage_SendEmailRq" messageType="ns6:MessageRq"/>
+               </variables>
+               <sequence name="SeqNotification"><assign name="AssignErrorMsg">
+                     <copy>
+                        <from>0</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns7:TotalSucceeded</to>
+                     </copy>
+                     <copy>
+                        <from>1</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns7:TotalErrors</to>
+                     </copy>
+                     <copy>
+                        <from>0</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns7:TotalProcessed</to>
+                     </copy>
+                     <copy bpelx:insertMissingToData="yes">
+                        <from>ora:getCompositeName()</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns7:ErrorsDetails/ns7:ErrorDetail[1]/ns7:ErrorMessage</to>
+                     </copy>
+                     <copy bpelx:insertMissingToData="yes">
+                        <from>'Integraticion:'</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns7:ErrorsDetails/ns7:ErrorDetail[1]/ns7:DataValue</to>
+                     </copy>
+                     <copy bpelx:insertMissingToData="yes">
+                        <from>'Intancia: '</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns7:ErrorsDetails/ns7:ErrorDetail[2]/ns7:DataValue</to>
+                     </copy>
+                     <copy bpelx:insertMissingToData="yes">
+                        <from>ora:getFlowId()</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns7:ErrorsDetails/ns7:ErrorDetail[2]/ns7:ErrorMessage</to>
+                     </copy>
+                     <copy bpelx:insertMissingToData="yes">
+                        <from>'Detalle Error: '</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns7:ErrorsDetails/ns7:ErrorDetail[4]/ns7:DataValue</to>
+                     </copy>
+                     <copy bpelx:insertMissingToData="yes">
+                        <from>ora:getFaultAsString()</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns7:ErrorsDetails/ns7:ErrorDetail[4]/ns7:ErrorMessage</to>
+                     </copy>
+                     <copy bpelx:insertMissingToData="yes">
+                        <from>ora:getFaultName()</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns7:ErrorsDetails/ns7:ErrorDetail[3]/ns7:ErrorMessage</to>
+                     </copy>
+                     <copy bpelx:insertMissingToData="yes">
+                        <from>'Nombre Error: '</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSOAUtilitiesGetHtmlControlRq.GetHtmlControlRq/ns7:ErrorsDetails/ns7:ErrorDetail[3]/ns7:DataValue</to>
+                     </copy>
+                  </assign>
+                  <invoke name="WsSOAUtilities" bpelx:invokeAsDetail="no" partnerLink="SOAUtilitiesTec"
+                          portType="ns7:SOAUtilitiesTecPortType" operation="GetHtmlControl"
+                          inputVariable="WsSOAUtilitiesGetHtmlControlRq"
+                          outputVariable="WsSOAUtilitiesGetHtmlControlRs"/>
+                  <assign name="assignHtmlResult" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      
+      
+   <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+         xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+         <from>"Conciliation"</from>
+         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsMessage_SendEmailRq.CustomHeader/ns6:IntegrationName</to>
+      </copy><copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                   xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+         <from>$WsSOAUtilitiesGetHtmlControlRs.GetHtmlControlRs/ns7:Return/ns7:HtmlControl</from>
+         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsMessage_SendEmailRq.MessageRq/ns6:Message/ns6:Message</to>
+      </copy></assign>
+                  <invoke name="WsMessage" bpelx:invokeAsDetail="no" partnerLink="MessageTec"
+                          portType="ns6:MessageTecPortType" operation="SendEmail"
+                          inputVariable="WsMessage_SendEmailRq"/>
+               </sequence>
+            </scope>
+            <reply name="Reply1" partnerLink="bpelgetconciliation_client" variable="outputVariable"
+                   portType="client:BpelGetConciliation" operation="GetConciliation"/>
+   </sequence></catchAll>
+  </faultHandlers>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in BpelGetConciliation.wsdl) --><receive name="receiveInput" partnerLink="bpelgetconciliation_client" portType="client:BpelGetConciliation" operation="GetConciliation"
+                                                                                                                      variable="inputVariable" createInstance="yes"/>
+      <scope name="ScopeGetInfoTP" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+         <variables>
+            <variable name="WsConciliationTecGetConciliations_GetGetConciliationsRq"
+                      messageType="ns3:GetConciliationsRq"/>
+            <variable name="WsConciliationTecGetConciliations_GetGetConciliationsRs"
+                      messageType="ns3:GetConciliationsRs"/>
+            <variable name="v_error" type="xsd:string">
+               <from>'Error Ejecutando Consulta de Transacciones a Conciliar'</from>
+            </variable>
+         </variables>
+         <sequence name="SeqGetConsciliation"><assign name="assignRs"
+                                                      xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      
+      
+      
+   <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+         <from><literal><Element xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/></literal></from>
+         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns2:Success</to>
+      </copy><copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+         <from><literal><Element xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/></literal></from>
+         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns2:Errors</to>
+      </copy><copy>
+                  <from><literal><Element xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/></literal></from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns1:Return</to>
+               </copy><extensionAssignOperation>
+                  <bpelx:remove xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+            <?audit suppress oracle.ide.xml.validation-incomplete?>
+            <bpelx:target expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns2:Errors</bpelx:target>
+         </bpelx:remove>
+               </extensionAssignOperation><extensionAssignOperation>
+                  <bpelx:remove>
+                     <bpelx:target expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns1:Return</bpelx:target>
+                  </bpelx:remove>
+               </extensionAssignOperation></assign><assign name="AssignVars">
+               <copy ignoreMissingFromData="yes">
+                  <from>oraext:setFlowInstanceTitle(string($inputVariable.payload/ns1:BussinessUnit/text()))</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_title</to>
+               </copy>
+               <copy ignoreMissingFromData="yes">
+                  <from>$inputVariable.payload/ns1:ReceiptMethod/text()</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsConciliationTecGetConciliations_GetGetConciliationsRq.GetConciliationsRq/ns3:P_METODO_RECIBO</to>
+               </copy>
+               <copy ignoreMissingFromData="yes">
+                  <from>$inputVariable.payload/ns1:BussinessUnit/text()</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsConciliationTecGetConciliations_GetGetConciliationsRq.GetConciliationsRq/ns3:P_BUSINESSUNIT</to>
+               </copy>
+               <copy ignoreMissingFromData="yes">
+                  <from>$inputVariable.payload/ns1:FromDate/text()</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsConciliationTecGetConciliations_GetGetConciliationsRq.GetConciliationsRq/ns3:P_FROMDATE</to>
+               </copy>
+               <copy ignoreMissingFromData="yes">
+                  <from>$inputVariable.payload/ns1:PaymentReference/text()</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsConciliationTecGetConciliations_GetGetConciliationsRq.GetConciliationsRq/ns3:P_PAYMENTREFERENCE</to>
+               </copy>
+            </assign>
+            <assign name="Trs_conciliacion">
+               <bpelx:annotation>
+                  <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+               </bpelx:annotation>
+               <copy>
+                  <from>ora:doXSLTransformForDoc("../Transformations/Trs_GetConciliationRq.xsl", $inputVariable.payload)</from>
+                  <to variable="WsConciliationTecGetConciliations_GetGetConciliationsRq" part="GetConciliationsRq"/>
+               </copy>
+            </assign>
+            <invoke name="WsConciliationTecGetConciliations" partnerLink="ConciliationTec"
+                    portType="ns3:ConciliationTecPortType"
+                 inputVariable="WsConciliationTecGetConciliations_GetGetConciliationsRq"
+                 outputVariable="WsConciliationTecGetConciliations_GetGetConciliationsRs" operation="GetConciliations" xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                    bpelx:invokeAsDetail="no"/>
+            <if name="If_ErrorQuery">
+               <documentation>
+                  <![CDATA[ErrorQuery]]>
+               </documentation>
+               <condition>count($WsConciliationTecGetConciliations_GetGetConciliationsRs.GetConciliationsRs/ns2:Errors/ns2:Error)&gt;0</condition>
+               <sequence name="SeqErrorQuery">
+                  <throw name="Throw1" faultVariable="v_error" faultName="bpel:ambiguousReceive"/>
+               </sequence>
+            </if>
+            <if name="If_conciliations">
+               <documentation>
+                  <![CDATA[Conciliar]]>
+               </documentation>
+               <condition>count($WsConciliationTecGetConciliations_GetGetConciliationsRs.GetConciliationsRs/ns3:XXER_AR_GET_CASH_CONC)&gt;0</condition>
+               <sequence name="SeqConciliar">
+                  <scope name="ScopeGetPaymentsCash">
+                     <variables>
+                        <variable name="ConciliationBizConciliationCashTPRq" messageType="ns5:ConciliationCashTPRqM"/>
+                     </variables>
+                     <sequence name="SeqGetPaymentsCash">
+                        <assign name="TrsConciliation">
+                           <bpelx:annotation>
+                              <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+                           </bpelx:annotation>
+                           <copy>
+                              <from>ora:doXSLTransformForDoc("../Transformations/outputGetConciliations_to_inputConciliationCashTP.xsl", $WsConciliationTecGetConciliations_GetGetConciliationsRs.GetConciliationsRs)</from>
+                              <to variable="ConciliationBizConciliationCashTPRq"
+                                  part="ConciliationCashTPRqP"/>
+                           </copy>
+                        </assign>
+                        <invoke name="ConciliationBiz" partnerLink="ConciliationBiz"
+                                portType="ns5:ConciliationBizPortType" operation="ConciliationCashTP"
+                                inputVariable="ConciliationBizConciliationCashTPRq" bpelx:invokeAsDetail="no"/>
+                     </sequence>
+                  </scope>
+               </sequence>
+            </if>
+         </sequence>
+   </scope>
+      <reply name="Reply2" partnerLink="bpelgetconciliation_client" variable="outputVariable"
+             portType="client:BpelGetConciliation" operation="GetConciliation"/>
+      <!-- Generate reply to synchronous request -->
+   </sequence>
+</process>

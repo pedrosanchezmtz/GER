@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="PaymentComplementEnt" targetNamespace="http://soa.estrellaroja.com.mx/PaymentComplementEnt" xmlns:tns="http://soa.estrellaroja.com.mx/PaymentComplementEnt" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://soa.estrellaroja.com.mx/PaymentComplementEnt" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.estrellaroja.com.mx/PaymentComplementEnt/types" elementFormDefault="qualified">
+<xsd:import namespace="http://soa.estrellaroja.com.mx/PaymentComplementEnt" schemaLocation="PaymentComplementEnt.xsd"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="StampPaymentComplementRq">
+<wsdl:part name="StampPaymentComplementRq" element="ns0:StampPaymentComplementRq"/>
+</wsdl:message>
+<wsdl:message name="StampPaymentComplementRs">
+<wsdl:part name="StampPaymentComplementRs" element="ns0:StampPaymentComplementRs"/>
+</wsdl:message>
+<wsdl:portType name="PaymentComplementEntPortType">
+<wsdl:operation name="StampPaymentComplement">
+<wsdl:input message="tns:StampPaymentComplementRq"/>
+<wsdl:output message="tns:StampPaymentComplementRs"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="PaymentComplementEntBinding" type="tns:PaymentComplementEntPortType">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="StampPaymentComplement">
+<soap:operation soapAction="http://soa.estrellaroja.com.mx/PaymentComplementEnt/StampPaymentComplement"/>
+<wsdl:input>
+<soap:body use="literal" parts="StampPaymentComplementRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="StampPaymentComplementRs"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="PaymentComplementEnt">
+<wsdl:port name="PaymentComplementEntPort" binding="tns:PaymentComplementEntBinding">
+<soap:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/PROD/PaymentComplementEnt/PaymentComplementEnt"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

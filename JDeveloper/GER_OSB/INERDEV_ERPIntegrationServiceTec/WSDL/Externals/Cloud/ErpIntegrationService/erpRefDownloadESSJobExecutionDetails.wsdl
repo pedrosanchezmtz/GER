@@ -1,0 +1,114 @@
+<wsdl:definitions
+    
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefDownloadESSJobExecutionDetails"
+     xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/"
+     xmlns:orafault="http://xmlns.oracle.com/oracleas/schema/oracle-fault-11_0"
+     xmlns:tns="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:types="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/types/"
+     xmlns:ns0="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefDownloadESSJobExecutionDetails/types"
+     xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefDownloadESSJobExecutionDetails"
+    >
+    <plnk:partnerLinkType name="downloadESSJobExecutionDetails_plt">
+        <plnk:role name="downloadESSJobExecutionDetails_role">
+            <plnk:portType name="ns1:erpRefDownloadESSJobExecutionDetailsPortType"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <xs:schema xmlns="http://xmlns.oracle.com/adf/svc/types/" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://xmlns.oracle.com/adf/svc/types/" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoXML="commonj.sdo/xml" xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/"
+             xmlns:sdo="commonj.sdo" sdoJava:package="oracle.jbo.common.service.types">
+            <xsd:simpleType name="base64Binary-DataHandler" sdoJava:instanceClass="javax.activation.DataHandler">
+                <xsd:restriction base="xsd:base64Binary"/>
+            </xsd:simpleType>
+        </xs:schema>
+        <xs:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://xmlns.oracle.com/adf/svc/errors/" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:tns="http://xmlns.oracle.com/adf/svc/errors/" sdoJava:package="oracle.jbo.service.errors">
+            <xs:element name="ServiceErrorMessage" type="tns:ServiceErrorMessage"/>
+            <xs:complexType name="ServiceErrorMessage">
+                <xs:complexContent>
+                    <xs:extension base="tns:ServiceMessage">
+                        <xs:sequence>
+                            <xs:element maxOccurs="1" minOccurs="0" name="sdoObject" type="anyType"/>
+                            <xs:element maxOccurs="1" minOccurs="0" name="exceptionClassName" type="string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ServiceMessage">
+                <xs:sequence>
+                    <xs:element maxOccurs="1" minOccurs="0" name="code" type="string"/>
+                    <xs:element maxOccurs="1" minOccurs="0" name="message" type="string"/>
+                    <xs:element maxOccurs="1" minOccurs="0" name="severity" type="string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="detail" type="tns:ServiceMessage"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/"
+             xmlns:sdoJava="commonj.sdo/java" sdoJava:package="oracle.apps.financials.commonModules.shared.model.erpIntegrationService"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/">
+            <xs:import namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+            <xsd:complexType name="DocumentDetails">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>FileName</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="Content" nillable="true" type="ns0:base64Binary-DataHandler"/>
+                    <xsd:element name="FileName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ContentType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DocumentTitle" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DocumentAuthor" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DocumentSecurityGroup" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DocumentAccount" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DocumentName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DocumentId" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefDownloadESSJobExecutionDetails/types"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefDownloadESSJobExecutionDetails/types"
+             xmlns:tns0="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefDownloadESSJobExecutionDetails/types"
+             xmlns:ns2="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/">
+            <xs:import namespace="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/"/>
+            <xs:element name="downloadESSJobExecutionDetails" type="tns0:downloadESSJobExecutionDetailsType"/>
+            <xs:complexType name="downloadESSJobExecutionDetailsType">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="xs:string" name="requestId"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="xs:string" name="fileType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="downloadESSJobExecutionDetailsResponse" type="tns0:downloadESSJobExecutionDetailsResponseType"/>
+            <xs:complexType name="downloadESSJobExecutionDetailsResponseType">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="ns2:DocumentDetails" name="result"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="downloadESSJobExecutionDetailsRequestMessage">
+        <wsdl:part name="parameters" element="ns0:downloadESSJobExecutionDetails"/>
+    </wsdl:message>
+    <wsdl:message name="downloadESSJobExecutionDetailsResponseMessage">
+        <wsdl:part name="parameters" element="ns0:downloadESSJobExecutionDetailsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceException">
+        <wsdl:part name="parameters" element="errors:ServiceErrorMessage"/>
+    </wsdl:message>
+    <wsdl:portType name="erpRefDownloadESSJobExecutionDetailsPortType">
+        <wsdl:operation name="downloadESSJobExecutionDetails">
+            <cloud:CloudOperation xmlns:cloud="http://xml.oracle.com/types" targetOperation="downloadESSJobExecutionDetails"/>
+            <wsdl:input message="ns1:downloadESSJobExecutionDetailsRequestMessage"/>
+            <wsdl:output message="ns1:downloadESSJobExecutionDetailsResponseMessage"/>
+            <wsdl:fault name="ServiceException" message="ns1:ServiceException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

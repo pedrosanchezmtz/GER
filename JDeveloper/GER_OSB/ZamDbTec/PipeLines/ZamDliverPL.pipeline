@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="ZamDbTec/WSDLs/ZamDliverRest"/>
+            <con:binding>
+                <con:name>RestService_ptt-binding</con:name>
+                <con:namespace>http://xmlns.oracle.com/GER_OSB_OCI/ZamDbTec/RestService</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline type="request" name="request-N3f57fedb.6ccf5620.0.17b84087387.N7fc9">
+            <con:stage id="_StageId-N3f57fedb.6ccf5620.0.17b84087387.N7fc7" name="StageRequest">
+                <con:context/>
+                <con:actions>
+                    <con2:assign varName="varRequest" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                        <con1:id>_ActionId-N3f57fedb.6ccf5620.0.17b84087387.N7f92</con1:id>
+                        <con2:expr>
+                            <con1:xsltTransform>
+                                <con1:resource ref="ZamDbTec/Transformations/inputGetPlanEmbarquesRq_to_dbGetPlanEmbarquesRq"/>
+                                <con1:input>$body/*[1]</con1:input>
+                            </con1:xsltTransform>
+                        </con2:expr>
+                    </con2:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fedb.6ccf5620.0.17b84087387.N7fc8">
+            <con:stage id="_StageId-N3f57fedb.6ccf5620.0.17b84087387.N7fc6" name="StageResponse">
+                <con:context/>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                        <con1:id>_ActionId-N3f57fedb.6ccf5620.0.17b84087387.N7f5e</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText>$varResponse</con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fedb.N2374c147.0.17b84fb6359.N7f9e">
+            <con:stage id="_StageId-N3f57fedb.N2374c147.0.17b84fb6359.N7f34" name="StageError" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                <con:context>
+                    <con1:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/DigitalStampTec"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-N3f57fedb.N2374c147.0.17b84fb6359.N7f33</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText><![CDATA[<dig:GetPlanEmbarquesRs  xmlns:dig="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbZAMDLV">
+        <dig:Error>
+            <dig:status>Error</dig:status>
+            <dig:error>{$fault/ctx:errorCode/text()}</dig:error>
+            <dig:path>{"/Zam/Dliver/GetPlanEmbarques"}</dig:path>
+            <dig:message>{fn:concat("Error when invoking ", "GetPlanEmbarques",$fault/ctx:details," ErApi: ",$body/text() )}</dig:message>
+            <dig:timestamp>{fn:current-dateTime()}</dig:timestamp>
+        </dig:Error>
+</dig:GetPlanEmbarquesRs>]]></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                    <con1:reply>
+                        <con1:id>_ActionId-N3f57fedb.N2374c147.0.17b84fb6359.N7f32</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57fedb.6ccf5620.0.17b84087387.N7fcc" name="BranchNode1">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="GetPlanEmbarques">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair Node1">
+                                <con:request>request-N3f57fedb.6ccf5620.0.17b84087387.N7fc9</con:request>
+                                <con:response>response-N3f57fedb.6ccf5620.0.17b84087387.N7fc8</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteNode1" error-handler="error-N3f57fedb.N2374c147.0.17b84fb6359.N7f9e" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fedb.6ccf5620.0.17b84087387.N7fcd</con2:id>
+                                        <con1:service ref="ZamDbTec/Business/dbZamDliverPlanEmbarques" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con1:operation>dbZamDliverPlanEmbarquesSelect</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con2:replace varName="body" contents-only="true" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                                <con5:id xmlns:con5="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57fedb.6ccf5620.0.17b84087387.N7f2a</con5:id>
+                                                <con2:location>
+                                                    <con1:xpathText xmlns:con5="http://www.bea.com/wli/sb/stages/config">.</con1:xpathText>
+                                                </con2:location>
+                                                <con2:expr>
+                                                    <con1:xqueryText xmlns:con5="http://www.bea.com/wli/sb/stages/config">$varRequest</con1:xqueryText>
+                                                </con2:expr>
+                                            </con2:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform>
+                                            <con2:assign varName="varResponse" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                                                <con5:id xmlns:con5="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57fedb.6ccf5620.0.17b84087387.N7ef5</con5:id>
+                                                <con2:expr>
+                                                    <con5:xsltTransform xmlns:con5="http://www.bea.com/wli/sb/stages/config">
+                                                        <con5:resource ref="ZamDbTec/Transformations/outputdbGetPlanEmbarquesRs_to_GetPlanEmbarquesRs"/>
+                                                        <con5:input>$body/*[1]</con5:input>
+                                                    </con5:xsltTransform>
+                                                </con2:expr>
+                                            </con2:assign>
+                                        </con1:responseTransform>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

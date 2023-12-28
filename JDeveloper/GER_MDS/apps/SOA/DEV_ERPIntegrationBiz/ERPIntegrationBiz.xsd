@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/ERPIntegrationBiz" targetNamespace="http://soa.estrellaroja.com.mx/ERPIntegrationBiz" elementFormDefault="qualified" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+<xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+<xsd:element name="ImportToERPCloudRq" type="tns:ImportToERPCloudRqType"/>
+<xsd:element name="ImportToERPCloudRs" type="tns:ImportToERPCloudRsType"/>
+<xsd:element name="ImportToERPCloudCallbackRs" type="tns:ImportToERPCloudRsType"/>
+<xsd:element name="BRuleImportToERPCloudRq" type="tns:BRuleImportToERPCloudRqType"/>
+<xsd:element name="BRuleImportToERPCloudRs" type="tns:BRuleImportToERPCloudRsType"/>
+<xsd:element name="BRuleGenerateReportRq" type="tns:BRuleGenerateReportRqType"/>
+<xsd:element name="BRuleGenerateReportRs" type="tns:BRuleGenerateReportRsType"/>
+<xsd:element name="GenerateReportRq" type="tns:GenerateReportRqType"/>
+<xsd:element name="GenerateReportRs" type="tns:GenerateReportRsType"/>
+<xsd:element name="Processes" type="tns:ProcessesType"/>
+<xsd:element name="ParamDate" type="tns:ParamValueType"/>
+<xsd:element name="varInstanceId" type="xsd:integer"/>
+<xsd:element name="GetJobsStatusRq" type="tns:GetJobsStatusRqType"/>
+<xsd:element name="GetJobsStatusRs" type="tns:GetJobsStatusRsType"/>
+<xsd:complexType name="ImportToERPCloudRqType">
+<xsd:sequence>
+<xsd:element name="TargetInterface" type="xsd:string"/>
+<xsd:element name="File" type="tns:FileType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ImportToERPCloudRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:sequence>
+<xsd:element name="Return" type="tns:ImportToERPCloudReturnType" minOccurs="0"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="ImportToERPCloudReturnType">
+<xsd:sequence>
+<xsd:element name="Processes" type="tns:ProcessesType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ProcessesType">
+<xsd:sequence>
+<xsd:element name="Process" maxOccurs="unbounded" type="tns:ProcessType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ProcessType">
+<xsd:sequence>
+<xsd:element name="Id" type="xsd:long"/>
+<xsd:element name="ProcessName" type="xsd:string"/>
+<xsd:element name="Status" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="FileType">
+<xsd:sequence>
+<xsd:element name="Content" nillable="true" type="xsd:base64Binary"/>
+<xsd:element name="FileName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="ContentType" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="DocumentTitle" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="DocumentName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="DocumentId" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="BRuleImportToERPCloudRqType">
+<xsd:sequence>
+<xsd:element name="TargetInterface" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="BRuleImportToERPCloudRsType">
+<xsd:sequence>
+<xsd:element name="DocumentAuthor" type="xsd:string"/>
+<xsd:element name="DocumentSecurityGroup" type="xsd:string"/>
+<xsd:element name="DocumentAccount" type="xsd:string"/>
+<xsd:element name="JobPackageName" type="xsd:string"/>
+<xsd:element name="JobDefinitionName" type="xsd:string"/>
+<xsd:element name="paramListInterface" type="xsd:string"/>
+<xsd:element name="paramListStandar" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GenerateReportRqType">
+<xsd:sequence>
+<xsd:element name="TargetInterface" type="xsd:string"/>
+<xsd:element name="IntegrationName" type="xsd:string"/>
+<xsd:element name="ProcessName" type="xsd:string"/>
+<xsd:element name="StartDate" minOccurs="0" nillable="true" type="xsd:dateTime"/>
+<xsd:element name="EndDate" minOccurs="0" nillable="true" type="xsd:dateTime"/>
+<xsd:element name="ReportName" type="xsd:string"/>
+<xsd:element name="parameterNameValues" nillable="true" type="tns:ParamNameValueType" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="BRuleGenerateReportRqType">
+<xsd:sequence>
+<xsd:element name="TargetInterface" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="BRuleGenerateReportRsType">
+<xsd:sequence>
+<xsd:element name="PathName" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ParamNameValueType">
+<xsd:sequence>
+<xsd:element name="item" type="tns:ParamValueType" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ParamValueType">
+<xsd:sequence>
+<xsd:element name="name" nillable="true" type="xsd:string"/>
+<xsd:element name="values" nillable="true" type="tns:ArrayOfStringType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfStringType">
+<xsd:sequence>
+<xsd:element name="item" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GenerateReportRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:annotation>
+<xsd:documentation>Extends BaseRsType (Success and Errors nodes). Contains a node which should be used for the specific response of the corresponding service.</xsd:documentation>
+</xsd:annotation>
+<xsd:sequence>
+<xsd:element name="Return" minOccurs="0" type="tns:GenerateReportReturnType" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="GenerateReportReturnType">
+<xsd:sequence>
+<xsd:element name="xmlOut" type="tns:OutDataType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="OutDataType">
+<xsd:sequence>
+<xsd:element name="xml" type="xsd:anyType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetJobsStatusRqType">
+<xsd:sequence>
+<xsd:element name="GetJobStatusType" type="tns:JobType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetJobsStatusRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:annotation>
+<xsd:documentation>Extends BaseRsType (Success and Errors nodes). Contains a node which should be used for the specific response of the corresponding service.</xsd:documentation>
+</xsd:annotation>
+<xsd:sequence>
+<xsd:element name="Return" minOccurs="0" type="tns:GetJobsStatusReturnType" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="GetJobsStatusReturnType">
+<xsd:sequence>
+<xsd:element name="JobStatus" type="tns:ProcessesType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="JobType">
+<xsd:sequence>
+<xsd:element name="InterfaceId" type="xsd:integer"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

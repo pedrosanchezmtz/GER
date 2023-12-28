@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+            targetNamespace="http://soa.estrellaroja.com.mx/ReportAsset">
+  <xsd:element name="DATA_DS" >
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="P_ACTIVO" type="xsd:string"  minOccurs="0"/>
+ <xsd:element name="G_1" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ASSET_ID" type="xsd:string"  minOccurs="0"/>
+              <xsd:element name="ASSET_NUMBER" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="ITEM_ORGANIZATION_ID" type="xsd:string"  minOccurs="0"/>
+              <xsd:element name="UOM_CODE" type="xsd:string"  minOccurs="0"/>
+              <xsd:element name="CREATED_BY" type="xsd:string"  minOccurs="0"/>
+              <xsd:element name="CREATION_DATE" type="xsd:date"  minOccurs="0"/>
+              <xsd:element name="LAST_UPDATED_BY" type="xsd:string"  minOccurs="0"/>
+              <xsd:element name="LAST_UPDATE_DATE" type="xsd:string"  minOccurs="0"/>
+              <xsd:element name="DESCRIPTION" type="xsd:string"  minOccurs="0"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

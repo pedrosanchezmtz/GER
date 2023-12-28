@@ -1,0 +1,28 @@
+<wsdl:definitions name="dbIncPaymentComplements" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbIncPaymentComplements" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbIncPaymentComplements" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbIncPaymentComplements" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="dbIncPaymentComplements_plt">
+    <plt:role name="dbIncPaymentComplements_role">
+      <plt:portType name="tns:dbIncPaymentComplements_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbIncPaymentComplements" schemaLocation="../../Schemas/External/dbIncPaymentComplements_table.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="dbIncPaymentComplementsSelect_inputParameters">
+        <wsdl:part name="dbIncPaymentComplementsSelect_inputParameters" element="top:dbIncPaymentComplementsSelectInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="XxerIncPaymentComplementsCollection_msg">
+        <wsdl:part name="XxerIncPaymentComplementsCollection" element="top:XxerIncPaymentComplementsCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="dbIncPaymentComplements_ptt">
+        <wsdl:operation name="merge">
+            <wsdl:input message="tns:XxerIncPaymentComplementsCollection_msg"/>
+            <wsdl:output message="tns:XxerIncPaymentComplementsCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="dbIncPaymentComplementsSelect">
+            <wsdl:input message="tns:dbIncPaymentComplementsSelect_inputParameters"/>
+            <wsdl:output message="tns:XxerIncPaymentComplementsCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

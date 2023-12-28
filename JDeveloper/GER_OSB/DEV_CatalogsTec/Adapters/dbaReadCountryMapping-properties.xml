@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="root_descriptor_alias">XXER_COUNTRIES_MAPPING</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ATTTRIBUTE2:db_column_not_null">false</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.COUNTRY:db_column_size">250</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.UPDATED_DATE:db_column_type">DATE</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.COUNTRY_CODE:db_column_not_null">true</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ATTTRIBUTE1:db_column_not_null">false</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.COUNTRY:db_column_not_null">true</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.COUNTRY_NAME:db_column_not_null">true</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.COUNTRY_CODE:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ATTTRIBUTE5:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.CREATED_DATE:db_column_type">DATE</entry>
+   <entry key="XXER_COUNTRIES_MAPPING:db_column_11">ATTTRIBUTE5</entry>
+   <entry key="XXER_COUNTRIES_MAPPING:db_column_10">ATTTRIBUTE4</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ATTTRIBUTE4:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ATTTRIBUTE3:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ATTTRIBUTE2:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.COUNTRY_CODE:db_column_size">2</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ATTTRIBUTE1:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ATTTRIBUTE5:db_column_size">250</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.CREATED_DATE:db_column_not_null">true</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ATTTRIBUTE4:db_column_size">250</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.COUNTRY_NAME:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.CREATED_BY:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ATTTRIBUTE3:db_column_size">250</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ATTTRIBUTE2:db_column_size">250</entry>
+   <entry key="return_single_result_set">false</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ATTTRIBUTE1:db_column_size">250</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ATTTRIBUTE5:db_column_not_null">false</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.UPDATED_DATE:db_column_not_null">true</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.CREATED_BY:db_column_not_null">true</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.CREATED_BY:db_column_size">25</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.COUNTRY_NAME:db_column_size">250</entry>
+   <entry key="XXER_COUNTRIES_MAPPING:db_column_9">ATTTRIBUTE3</entry>
+   <entry key="XXER_COUNTRIES_MAPPING:db_column_8">ATTTRIBUTE2</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ISO_COUNTRY_CODE:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_COUNTRIES_MAPPING:db_column_7">ATTTRIBUTE1</entry>
+   <entry key="XXER_COUNTRIES_MAPPING:db_column_6">UPDATED_DATE</entry>
+   <entry key="XXER_COUNTRIES_MAPPING:db_column_5">CREATED_DATE</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ATTTRIBUTE4:db_column_not_null">false</entry>
+   <entry key="XXER_COUNTRIES_MAPPING:db_column_4">CREATED_BY</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ISO_COUNTRY_CODE:db_column_not_null">true</entry>
+   <entry key="XXER_COUNTRIES_MAPPING:db_column_3">ISO_COUNTRY_CODE</entry>
+   <entry key="XXER_COUNTRIES_MAPPING:db_column_2">COUNTRY_CODE</entry>
+   <entry key="XXER_COUNTRIES_MAPPING:db_column_1">COUNTRY_NAME</entry>
+   <entry key="XXER_COUNTRIES_MAPPING:db_table_type">TABLE</entry>
+   <entry key="XXER_COUNTRIES_MAPPING:db_column_0">COUNTRY</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ATTTRIBUTE3:db_column_not_null">false</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.COUNTRY:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_COUNTRIES_MAPPING.ISO_COUNTRY_CODE:db_column_size">3</entry>
+</properties>

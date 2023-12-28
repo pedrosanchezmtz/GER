@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/SFTPEstrellaRojaBiz" targetNamespace="http://soa.estrellaroja.com.mx/SFTPEstrellaRojaBiz" elementFormDefault="qualified" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+<xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+<xsd:element name="GetBankStatementsRq" type="tns:GetBankStatementsRqType">
+<xsd:annotation>
+<xsd:documentation>Element for Request.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="GetBankStatementsRs" type="tns:GetBankStatementsRsType">
+<xsd:annotation>
+<xsd:documentation>Element for Response.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="CompositeInstanceId" type="xsd:string"/>
+<xsd:complexType name="GetBankStatementsRqType">
+<xsd:sequence>
+<xsd:element name="BankName" type="xsd:string"/>
+<xsd:element name="Sufix" type="xsd:string"/>
+<xsd:element name="BankBranch" type="xsd:string"/>
+<xsd:element name="BanchId" type="xsd:string"/>
+<xsd:element name="Balances" type="tns:BalancesType"/>
+<xsd:element name="BankLinesDetails" type="tns:AccountStatements"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="BalancesType">
+<xsd:sequence>
+<xsd:element name="Balance" type="tns:BalanceType" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="BalanceType">
+<xsd:sequence>
+<xsd:element name="AccountNumber" type="xsd:string"/>
+<xsd:element name="StatementCode" type="xsd:string"/>
+<xsd:element name="Balance" type="xsd:string"/>
+<xsd:element name="CurrencyCode" type="xsd:string"/>
+<xsd:element name="Indicator" type="xsd:string"/>
+<xsd:element name="BalanceDate" type="xsd:string"/>
+<xsd:element name="OrigBalanceCode" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="AccountStatements">
+<xsd:sequence>
+<xsd:element name="AccountStatementsLists" maxOccurs="unbounded" minOccurs="0">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="AccountNumber" type="xsd:string"/>
+<xsd:element name="StatementDate" type="xsd:date"/>
+<xsd:element name="BankCode" type="xsd:string"/>
+<xsd:element name="TransactionType" type="xsd:string"/>
+<xsd:element name="TypeSign" type="xsd:string"/>
+<xsd:element name="Amount" type="xsd:string"/>
+<xsd:element name="Balance" type="xsd:string"/>
+<xsd:element name="References" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="GetBankStatementsRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType">
+<xsd:annotation>
+<xsd:documentation>Extends BaseRsType (Success and Errors nodes). Contains a node which should be used for the specific response of the corresponding service.</xsd:documentation>
+</xsd:annotation>
+<xsd:sequence>
+<xsd:element name="Return" minOccurs="0" type="tns:GetBankStatementsReturnType" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="GetBankStatementsReturnType">
+<xsd:sequence>
+<xsd:element name="Files" type="tns:BankStatementsFilesType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="BankStatementsFilesType">
+<xsd:sequence>
+<xsd:element name="FileCSV" type="xsd:base64Binary"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="Path">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="filtePath" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>

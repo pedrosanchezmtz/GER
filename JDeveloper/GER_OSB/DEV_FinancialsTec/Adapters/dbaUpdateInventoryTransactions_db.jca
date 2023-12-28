@@ -1,0 +1,11 @@
+<adapter-config name="dbaUpdateInventoryTransactions" adapter="db" wsdlLocation="../WSDLs/External/dbaUpdateInventoryTransactions.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="ERSEPDB1DS" location="eis/DB/DEV/ERSEPDB1"/>
+  <endpoint-interaction portType="dbaUpdateInventoryTransactions_ptt" operation="dbaUpdateInventoryTransactions">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="update XER_CONTROLNET_INTERFACE set process_flag = #pFlag , batch_id = to_char(sysdate,'YYYYmmddHH24MI')  where process_flag = 1"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

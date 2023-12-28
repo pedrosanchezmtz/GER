@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="JournalBiz" targetNamespace="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:tns="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.estrellaroja.com.mx/JournalBiz/types" elementFormDefault="qualified">
+<xsd:import namespace="http://soa.estrellaroja.com.mx/JournalBiz" schemaLocation="JournalBiz.xsd"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="GetJournalRq">
+<wsdl:part name="GetJournalRq" element="ns0:GetJournalRq"/>
+</wsdl:message>
+<wsdl:message name="GetJournalRs">
+<wsdl:part name="GetJournalRs" element="ns0:GetJournalRs"/>
+</wsdl:message>
+<wsdl:message name="GetJournalsRq">
+<wsdl:part name="GetJournalsRq" element="ns0:GetJournalRq"/>
+</wsdl:message>
+<wsdl:portType name="JournalBizPortType">
+<wsdl:operation name="GetJournal">
+<wsdl:input message="tns:GetJournalRq"/>
+<wsdl:output message="tns:GetJournalRs"/>
+</wsdl:operation>
+<wsdl:operation name="GetJournals">
+<wsdl:input message="tns:GetJournalsRq"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="JournalBizBinding" type="tns:JournalBizPortType">
+<soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="GetJournal">
+<soap12:operation soapAction="http://soa.estrellaroja.com.mx/JournalBiz/GetJournal"/>
+<wsdl:input>
+<soap12:body use="literal" parts="GetJournalRq"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal" parts="GetJournalRs"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetJournals">
+<soap12:operation soapAction="http://soa.estrellaroja.com.mx/JournalBiz/GetJournals"/>
+<wsdl:input>
+<soap12:body use="literal" parts="GetJournalsRq"/>
+</wsdl:input>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="JournalBiz">
+<wsdl:port name="JournalBizPort" binding="tns:JournalBizBinding">
+<soap12:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/DEV/JournalBiz/JournalBiz"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,117 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbInvoicesAP" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbInvoicesAP" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxerInvoicesApTblCollection" type="XxerInvoicesApTblCollection"/>
+   <xs:element name="XxerInvoicesApTbl" type="XxerInvoicesApTbl"/>
+   <xs:complexType name="XxerInvoicesApTblCollection">
+      <xs:sequence>
+         <xs:element name="XxerInvoicesApTbl" type="XxerInvoicesApTbl" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerInvoicesApTbl">
+      <xs:sequence>
+         <xs:element name="invoiceId" type="xs:decimal"/>
+         <xs:element name="emisorRfc" type="string13" minOccurs="0"/>
+         <xs:element name="receptorRfc" type="string13" minOccurs="0"/>
+         <xs:element name="amount" type="xs:decimal" minOccurs="0"/>
+         <xs:element name="uuid" type="string150" minOccurs="0"/>
+         <xs:element name="status" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="businessUnit" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="invoiceNumber" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="supplierNumber" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute1" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute2" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute3" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute4" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute5" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="createdBy" type="string150" minOccurs="0"/>
+         <xs:element name="creationDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="lastUpdatedBy" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="lastUpdateDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="objectVersionNumber" type="xs:int" minOccurs="0" nillable="true"/>
+         <xs:element name="numeroPago" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="documentoPago" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="estadoPago" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="tipoPago" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="conciliadas" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="beneficio" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="sitioBeneficio" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaPago" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="monedaPago" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="direccionPago" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="noCuentaPago" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="proveedorParte" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="sitioProveedor" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="unidadNegocio" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="nomBancoPagador" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="fecPagoBanco" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="importePagadoBanco" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="cuentaBancariaPago" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="importPagoBanco" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="nombreActual" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="detalles" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="tercerSegmCotable" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="conceptoCuenCotble3" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="quintoSegmContable" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="conceptoCuenContable5" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="tipoComprobante" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaTimbrado" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="tipoRelacion" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="uuidRelacion" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="nombreEmisor" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="usoCfdi" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="subtotal" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="descuento" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="totalIeps" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="iva16" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="retenidoIva" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="retenidoIsr" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="ish" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="total" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="moneda" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="tipoCambio" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="formaPago" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="metodoPago" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="conceptos" type="string300" minOccurs="0" nillable="true"/>
+         <xs:element name="combustible" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="iva8" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="estatusValidacion" type="string300" minOccurs="0" nillable="true"/>
+         <xs:element name="estatusValidacionDesc" type="string300" minOccurs="0" nillable="true"/>
+        <xs:element name="objetoImpXml" type="string2" minOccurs="0" nillable="true"/>
+		<xs:element name="receptorRegimenXml" type="string3" minOccurs="0" nillable="true"/>
+		<xs:element name="emisorRegimenXml" type="string3" minOccurs="0" nillable="true"/>
+		<xs:element name="receptorRegimen" type="string3" minOccurs="0" nillable="true"/>
+		<xs:element name="emisorRegimen" type="string3" minOccurs="0" nillable="true"/>
+		<xs:element name="versionXml" type="string3" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="string2">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="2"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string3">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="3"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string13">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="13"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string150">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="150"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string50">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="50"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string300">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="300"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

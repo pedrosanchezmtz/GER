@@ -1,0 +1,14 @@
+<adapter-config name="dbaGetCustomerRfc" adapter="db" wsdlLocation="../WSDLs/External/dbaGetCustomerRfc.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="ERSEPDB1DS" location="eis/DB/ERSEPDB1"/>
+  <endpoint-interaction portType="dbaGetCustomerRfc_ptt" operation="dbaGetCustomerRfcSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="dbaGetCustomerRfc.XxerArCustomerRfcV"/>
+      <property name="QueryName" value="dbaGetCustomerRfcSelect"/>
+      <property name="MappingsMetaDataURL" value="dbaGetCustomerRfc-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

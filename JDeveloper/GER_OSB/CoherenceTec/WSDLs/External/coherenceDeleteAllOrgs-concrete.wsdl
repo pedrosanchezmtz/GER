@@ -1,0 +1,12 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/coherence/CoherenceTec/CoherenceTec/coherenceDeleteAllOrgs" name="coherenceDeleteAllOrgs-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="coherenceDeleteAllOrgs.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/coherence/CoherenceTec/CoherenceTec/coherenceDeleteAllOrgs"/>
+    <wsdl:binding name="Remove_ptt-binding" type="coh:Remove_ptt" xmlns:coh="http://xmlns.oracle.com/pcbpel/adapter/coherence/CoherenceTec/CoherenceTec/coherenceDeleteAllOrgs">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="Remove">
+            <soap:operation soapAction="Remove"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

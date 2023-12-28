@@ -1,0 +1,24 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbXXER_Transactions" name="dbXXERTransactionsBs-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="dbXXER_Transactions.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbXXER_Transactions"/>
+    <wsdl:binding name="dbXXER_Transactions_ptt-binding" type="dbx:dbXXER_Transactions_ptt" xmlns:dbx="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbXXER_Transactions">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="merge">
+            <soap:operation soapAction="merge"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="dbXXER_TransactionsSelect">
+            <soap:operation soapAction="dbXXER_TransactionsSelect"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

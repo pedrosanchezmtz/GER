@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="BPELValidationInvoicesAPEnt" targetNamespace="http://soa.estrellaroja.com.mx/ValidationInvoicesAPEnt/BPELValidationInvoicesAPEnt" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/ValidationInvoicesAPEnt/BPELValidationInvoicesAPEnt" xmlns:ns1="http://soa.estrellaroja.com.mx/ValidationInvoicesAPEnt" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://soa.estrellaroja.com.mx/Reports/XXER_AP_INVOICE_VALIDATION_AUTOMATICA">
+   <plnk:partnerLinkType name="BPELValidationInvoicesAPEnt">
+      <plnk:role name="BPELValidationInvoicesAPEntProvider" portType="client:BPELValidationInvoicesAPEnt"/>
+   </plnk:partnerLinkType>
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://soa.estrellaroja.com.mx/ValidationInvoicesAPEnt" schemaLocation="oramds:/apps/SOA/ValidationInvoicesAPEnt/ValidationInvoicesAPEnt.xsd"/>
+      </schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+         <xsd:import namespace="http://soa.estrellaroja.com.mx/Reports/XXER_AP_INVOICE_VALIDATION_AUTOMATICA" schemaLocation="oramds:/apps/Common/Report/XXER_AP_INVOICE_VALIDATION_AUTOMATICA.xsd"/>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="BPELValidationInvoicesAPEntRequestMessage">
+      <wsdl:part name="payload" element="ns1:ValidationInvoicesAPRq"/>
+   </wsdl:message>
+   <wsdl:message name="BPELValidationInvoicesAPEntResponseMessage">
+      <wsdl:part name="payload" element="ns1:ValidationInvoicesAPRs"/>
+   </wsdl:message>
+   <wsdl:portType name="BPELValidationInvoicesAPEnt">
+      <wsdl:operation name="ValidationInvoicesAP">
+         <wsdl:input message="client:BPELValidationInvoicesAPEntRequestMessage"/>
+         <wsdl:output message="client:BPELValidationInvoicesAPEntResponseMessage"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/EAMMeterReadings" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/EAMMeterReadings" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxerEamMeterReadingsTblCollection" type="XxerEamMeterReadingsTblCollection"/>
+   <xs:complexType name="XxerEamMeterReadingsTblCollection">
+      <xs:sequence>
+         <xs:element name="XxerEamMeterReadingsTbl" type="XxerEamMeterReadingsTbl" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerEamMeterReadingsTbl">
+      <xs:sequence>
+         <xs:element name="sourceId" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="groupId" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="meterId" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="meterName" type="string80" minOccurs="0" nillable="true"/>
+         <xs:element name="readingValue" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="readingDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="resetFlag" type="string1" minOccurs="0" nillable="true"/>
+         <xs:element name="lifeToDateReading" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="organizationId" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="organizationCode" type="string40" minOccurs="0" nillable="true"/>
+         <xs:element name="wipEntityId" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="workOrderName" type="string80" minOccurs="0" nillable="true"/>
+         <xs:element name="description" type="string240" minOccurs="0" nillable="true"/>
+         <xs:element name="sourceCode" type="string40" minOccurs="0" nillable="true"/>
+         <xs:element name="sourceLineId" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="interfaceId" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute1" type="string255" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute2" type="string255" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute3" type="string255" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute4" type="string255" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute5" type="string255" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute6" type="string255" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute7" type="string255" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute8" type="string255" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute9" type="string255" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute10" type="string255" minOccurs="0" nillable="true"/>
+         <xs:element name="assetNumber" type="string40" nillable="true"/>
+         <xs:element name="lecturaMedidor" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="fechaLectura" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="interfaceStatus" type="string20" minOccurs="0" nillable="true"/>
+         <xs:element name="errorMessage" type="string4000" minOccurs="0" nillable="true"/>
+         <xs:element name="interfaceDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="creationDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="createdBy" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="lastUpdateDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="lastUpdatedBy" type="xs:decimal" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="EAMMeterReadingsSelect_assetNumber_readingValue_readingDateInputParameters" type="EAMMeterReadingsSelect_assetNumber_readingValue_readingDate"/>
+   <xs:complexType name="EAMMeterReadingsSelect_assetNumber_readingValue_readingDate">
+      <xs:sequence>
+         <xs:element name="assetNumber" type="xs:string" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="readingValue" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="readingDate" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="string80">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="80"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string1">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="1"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string40">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="40"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string240">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="240"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string255">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="255"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string20">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="20"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string4000">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="4000"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="DEV_APIUnitMetricsTec/WSDL/EXCEL/Mileage/GetMileageExcelConcreteWSDL"/>
+            <con:binding>
+                <con:name>GetMileageExcel_ptt-binding</con:name>
+                <con:namespace>http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_APIUnitMetricsTec/GetMileageExcel</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:flow>
+            <con:route-node name="RouteNode1" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                <con:context>
+                    <con2:varNsDecl prefix="get" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetMileageExcel"/>
+                </con:context>
+                <con:actions>
+                    <con1:route>
+                        <con2:id>_ActionId-N53effe40.N2e8e06b5.0.16f64cd48d8.N7eec</con2:id>
+                        <con1:service ref="DEV_APIUnitMetricsTec/BusinessService/EXCEL/Mileage/GetMileageExcelBS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:operation passThrough="true"/>
+                        <con1:outboundTransform/>
+                        <con1:responseTransform>
+                            <con3:foreach xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                <con2:id>_ActionId-N53ef9bf9.N2203576b.1.16f6dbace6e.N7ffe</con2:id>
+                                <con2:disabled>true</con2:disabled>
+                                <con3:variable>body</con3:variable>
+                                <con3:expression>
+                                    <con:xpathText xmlns:con="http://www.bea.com/wli/sb/stages/config">./get:GetMileageExcelOutputCollection/get:GetMileageExcelOutput</con:xpathText>
+                                </con3:expression>
+                                <con3:value-variable>Registro</con3:value-variable>
+                                <con3:index-variable>IndexRegistro</con3:index-variable>
+                                <con3:total-variable>TotalRegistro</con3:total-variable>
+                                <con3:actions>
+                                    <con3:replace varName="Registro" contents-only="true">
+                                        <con2:id>_ActionId-N53ef9bf9.N2203576b.3.16f6e9fd461.N7fff</con2:id>
+                                        <con2:disabled>true</con2:disabled>
+                                        <con3:location>
+                                            <con:xpathText xmlns:con="http://www.bea.com/wli/sb/stages/config">./get:READING_DATE</con:xpathText>
+                                        </con3:location>
+                                        <con3:expr>
+                                            <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">replace($body/get:GetMileageExcelOutputCollection/get:GetMileageExcelOutput[$IndexRegistro]/get:READING_DATE,' ','T')</con:xqueryText>
+                                        </con3:expr>
+                                    </con3:replace>
+                                </con3:actions>
+                            </con3:foreach>
+                        </con1:responseTransform>
+                    </con1:route>
+                </con:actions>
+            </con:route-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

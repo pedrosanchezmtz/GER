@@ -1,0 +1,1364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-persistence xmlns="http://www.eclipse.org/eclipselink/xsds/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eclipselink="http://www.eclipse.org/eclipselink/xsds/persistence" version="Eclipse Persistence Services - 2.6.7.v20190604-418f1a1c56">
+   <name>dbXXER_BANK_AMEX-OR</name>
+   <class-mapping-descriptors>
+      <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
+         <class>dbXXER_BANK_AMEX.XxerBancosAmexAdjustmentTbl</class>
+         <alias>XXER_BANCOS_AMEX_ADJUSTMENT_TBL</alias>
+         <primary-key>
+            <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+            <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="FECHA_PAGO" xsi:type="column"/>
+         </primary-key>
+         <events/>
+         <querying/>
+         <attribute-mappings>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>id</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="ID" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numEstablecimiento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="NUM_ESTABLECIMIENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoTipoCuenta</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="CODIGO_TIPO_CUENTA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numPagoAmex</attribute-name>
+               <read-only>true</read-only>
+               <properties>
+                  <property name="fkPlaceholder">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaPago</attribute-name>
+               <read-only>true</read-only>
+               <properties>
+                  <property name="fkPlaceholder">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="FECHA_PAGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>monedaPago</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="MONEDA_PAGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numEstablecimientoPresentacion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="NUM_ESTABLECIMIENTO_PRESENTACION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaEnvio</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="FECHA_ENVIO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>ubicacionEstablecimiento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="UBICACION_ESTABLECIMIENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numFacturaReferencia</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="NUM_FACTURA_REFERENCIA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>identificacionVendedor</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="IDENTIFICACION_VENDEDOR" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numTarjeta</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="NUM_TARJETA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numReferenciaIndustria</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="NUM_REFERENCIA_INDUSTRIA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaProcesamientoAmex</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="FECHA_PROCESAMIENTO_AMEX" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numFactura</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="NUM_FACTURA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>monedaPresentacion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="MONEDA_PRESENTACION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numAjuste</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="NUM_AJUSTE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoMotivoAjuste</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="CODIGO_MOTIVO_AJUSTE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>descripcionMotivoAjuste</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="DESCRIPCION_MOTIVO_AJUSTE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoBruto</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="MONTO_BRUTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoDescuento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="MONTO_DESCUENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoCargoServicio</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="MONTO_CARGO_SERVICIO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoImpuesto</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="MONTO_IMPUESTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoNeto</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="MONTO_NETO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>tasaDescuento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="TASA_DESCUENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>tasaCargoServicio</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="TASA_CARGO_SERVICIO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoLote</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="CODIGO_LOTE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoFactura</attribute-name>
+               <field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="CODIGO_FACTURA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+         </attribute-mappings>
+         <descriptor-type>independent</descriptor-type>
+         <caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+            <always-refresh>true</always-refresh>
+         </caching>
+         <remote-caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+         </remote-caching>
+         <instantiation/>
+         <copying xsi:type="instantiation-copy-policy"/>
+         <tables>
+            <table name="XXER_BANCOS_AMEX_ADJUSTMENT_TBL"/>
+         </tables>
+         <structure>structureName</structure>
+      </class-mapping-descriptor>
+      <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
+         <class>dbXXER_BANK_AMEX.XxerBancosAmexChargebackTbl</class>
+         <alias>XXER_BANCOS_AMEX_CHARGEBACK_TBL</alias>
+         <primary-key>
+            <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="FECHA_PAGO" xsi:type="column"/>
+            <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+         </primary-key>
+         <events/>
+         <querying>
+            <queries>
+               <query name="dbXXER_BANK_AMEXSelect" xsi:type="read-all-query">
+                  <reference-class>dbXXER_BANK_AMEX.XxerBancosAmexChargebackTbl</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>java.util.Vector</collection-type>
+                  </container>
+               </query>
+            </queries>
+         </querying>
+         <attribute-mappings>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>id</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="ID" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numEstablecimiento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="NUM_ESTABLECIMIENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoTipoCuenta</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="CODIGO_TIPO_CUENTA_" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numPagoAmex</attribute-name>
+               <read-only>true</read-only>
+               <properties>
+                  <property name="fkPlaceholder">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaPago</attribute-name>
+               <read-only>true</read-only>
+               <properties>
+                  <property name="fkPlaceholder">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="FECHA_PAGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>monedaPago</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="MONEDA_PAGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numEstablecimientoPresentacion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="NUM_ESTABLECIMIENTO_PRESENTACION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaPresentacion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="FECHA_PRESENTACION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>ubicacionEstablecimiento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="UBICACION_ESTABLECIMIENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numFacturaOReferencia</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="NUM_FACTURA_O_REFERENCIA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>identificacionVendedor</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="IDENTIFICACION_VENDEDOR" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numTarjeta</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="NUM_TARJETA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numReferenciaIndustria</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="NUM_REFERENCIA_INDUSTRIA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaProcesamientoAmex</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="FECHA_PROCESAMIENTO_AMEX" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numFactura</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="NUM_FACTURA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>monedaPresentacion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="MONEDA_PRESENTACION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numContracargo</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="NUM_CONTRACARGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoMotivoContracargo</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="CODIGO_MOTIVO_CONTRACARGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>descripcionMotivoContracargo</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="DESCRIPCION_MOTIVO_CONTRACARGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoBruto</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="MONTO_BRUTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoDescuento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="MONTO_DESCUENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoCargoServicio</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="MONTO_CARGO_SERVICIO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoImpuesto</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="MONTO_IMPUESTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoNeto</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="MONTO_NETO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>tasaDescuento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="TASA_DESCUENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>tasaCargoServicio</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="TASA_CARGO_SERVICIO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoLote</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="CODIGO_LOTE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoFactura</attribute-name>
+               <field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="CODIGO_FACTURA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+         </attribute-mappings>
+         <descriptor-type>independent</descriptor-type>
+         <caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+            <always-refresh>true</always-refresh>
+         </caching>
+         <remote-caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+         </remote-caching>
+         <instantiation/>
+         <copying xsi:type="instantiation-copy-policy"/>
+         <tables>
+            <table name="XXER_BANCOS_AMEX_CHARGEBACK_TBL"/>
+         </tables>
+         <structure>structureName</structure>
+      </class-mapping-descriptor>
+      <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
+         <class>dbXXER_BANK_AMEX.XxerBancosAmexHeaderTbl</class>
+         <alias>XXER_BANCOS_AMEX_HEADER_TBL</alias>
+         <primary-key>
+            <field table="XXER_BANCOS_AMEX_HEADER_TBL" name="ID" xsi:type="column"/>
+         </primary-key>
+         <events/>
+         <querying>
+            <queries>
+               <query name="dbXXER_BANK_AMEXSelect" xsi:type="read-all-query">
+                  <reference-class>dbXXER_BANK_AMEX.XxerBancosAmexHeaderTbl</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>java.util.Vector</collection-type>
+                  </container>
+               </query>
+            </queries>
+         </querying>
+         <attribute-mappings>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>id</attribute-name>
+               <field table="XXER_BANCOS_AMEX_HEADER_TBL" name="ID" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaCreacionArchivo</attribute-name>
+               <field table="XXER_BANCOS_AMEX_HEADER_TBL" name="FECHA_CREACION_ARCHIVO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>horaCreacionArchivo</attribute-name>
+               <field table="XXER_BANCOS_AMEX_HEADER_TBL" name="HORA_CREACION_ARCHIVO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numSecuencial</attribute-name>
+               <field table="XXER_BANCOS_AMEX_HEADER_TBL" name="NUM_SECUENCIAL" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>identidiacionArchivo</attribute-name>
+               <field table="XXER_BANCOS_AMEX_HEADER_TBL" name="IDENTIDIACION_ARCHIVO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>nombreArchivo</attribute-name>
+               <field table="XXER_BANCOS_AMEX_HEADER_TBL" name="NOMBRE_ARCHIVO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numVersionArchivo</attribute-name>
+               <field table="XXER_BANCOS_AMEX_HEADER_TBL" name="NUM_VERSION_ARCHIVO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sumaTotalRegistros</attribute-name>
+               <field table="XXER_BANCOS_AMEX_HEADER_TBL" name="SUMA_TOTAL_REGISTROS" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="one-to-many-mapping">
+               <attribute-name>xxerBancosAmexSummaryTblCollection</attribute-name>
+               <properties>
+                  <property name="enabled">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <reference-class>dbXXER_BANK_AMEX.XxerBancosAmexSummaryTbl</reference-class>
+               <private-owned>true</private-owned>
+               <target-foreign-key>
+                  <field-reference>
+                     <source-field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="ID_HEADER" xsi:type="column"/>
+                     <target-field table="XXER_BANCOS_AMEX_HEADER_TBL" name="ID" xsi:type="column"/>
+                  </field-reference>
+               </target-foreign-key>
+               <batch-reading>true</batch-reading>
+               <container xsi:type="list-container-policy">
+                  <collection-type>org.eclipse.persistence.indirection.IndirectList</collection-type>
+               </container>
+               <indirection xsi:type="value-holder-indirection-policy"/>
+               <selection-query xsi:type="read-all-query">
+                  <reference-class>dbXXER_BANK_AMEX.XxerBancosAmexSummaryTbl</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>org.eclipse.persistence.indirection.IndirectList</collection-type>
+                  </container>
+               </selection-query>
+            </attribute-mapping>
+         </attribute-mappings>
+         <descriptor-type>independent</descriptor-type>
+         <sequencing>
+            <sequence-name>XXER_BANCOS_AMEX_SEQ</sequence-name>
+            <sequence-field name="XXER_BANCOS_AMEX_HEADER_TBL.ID"/>
+         </sequencing>
+         <caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+            <always-refresh>true</always-refresh>
+         </caching>
+         <remote-caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+         </remote-caching>
+         <instantiation/>
+         <copying xsi:type="instantiation-copy-policy"/>
+         <tables>
+            <table name="XXER_BANCOS_AMEX_HEADER_TBL"/>
+         </tables>
+         <structure>structureName</structure>
+      </class-mapping-descriptor>
+      <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
+         <class>dbXXER_BANK_AMEX.XxerBancosAmexSubmissionTbl</class>
+         <alias>XXER_BANCOS_AMEX_SUBMISSION_TBL</alias>
+         <primary-key>
+            <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+            <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="FECHA_PAGO" xsi:type="column"/>
+         </primary-key>
+         <events/>
+         <querying/>
+         <attribute-mappings>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>id</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="ID" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numEstablecimiento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="NUM_ESTABLECIMIENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoTipoCuenta</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="CODIGO_TIPO_CUENTA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numPagoAmex</attribute-name>
+               <read-only>true</read-only>
+               <properties>
+                  <property name="fkPlaceholder">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaPago</attribute-name>
+               <read-only>true</read-only>
+               <properties>
+                  <property name="fkPlaceholder">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="FECHA_PAGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>monedaPago</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="MONEDA_PAGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numEstablecimientoPresention</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="NUM_ESTABLECIMIENTO_PRESENTION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaEnvioComercial</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="FECHA_ENVIO_COMERCIAL" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaProcesamientoAmex</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="FECHA_PROCESAMIENTO_AMEX" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numFactura</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="NUM_FACTURA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>moneda</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="MONEDA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>relleno</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="RELLENO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>tasaCambio</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="TASA_CAMBIO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoBrutoMonedaPresentacion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="MONTO_BRUTO_MONEDA_PRESENTACION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoBrutoMonedaPago</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="MONTO_BRUTO_MONEDA_PAGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoDescuentoRsentcion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="MONTO_DESCUENTO_RSENTCION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoCargoServicio</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="MONTO_CARGO_SERVICIO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoImpuesto</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="MONTO_IMPUESTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoNeto</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="MONTO_NETO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>tasaDescuento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="TASA_DESCUENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>tasaImpuesto</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="TASA_IMPUESTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sumaTransacciones</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="SUMA_TRANSACCIONES" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>identificacionSeguimiento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="IDENTIFICACION_SEGUIMIENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numCuota</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="NUM_CUOTA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numAceleracion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="NUM_ACELERACION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaLiquidacionOriginal</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="FECHA_LIQUIDACION_ORIGINAL" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaAceleracion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="FECHA_ACELERACION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>cantidadDiasAdelantados</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="CANTIDAD_DIAS_ADELANTADOS" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoCargoAceleracion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="MONTO_CARGO_ACELERACION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoNetoCargoAceleracion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="MONTO_NETO_CARGO_ACELERACION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoBrutoDebito</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="MONTO_BRUTO_DEBITO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoBrutoCredito</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="MONTO_BRUTO_CREDITO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="one-to-many-mapping">
+               <attribute-name>xxerBancosAmexTransactnTblCollection</attribute-name>
+               <properties>
+                  <property name="enabled">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <reference-class>dbXXER_BANK_AMEX.XxerBancosAmexTransactnTbl</reference-class>
+               <private-owned>true</private-owned>
+               <target-foreign-key>
+                  <field-reference>
+                     <source-field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+                     <target-field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+                  </field-reference>
+                  <field-reference>
+                     <source-field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="FECHA_PAGO_AMEX" xsi:type="column"/>
+                     <target-field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="FECHA_PAGO" xsi:type="column"/>
+                  </field-reference>
+               </target-foreign-key>
+               <batch-reading>true</batch-reading>
+               <container xsi:type="list-container-policy">
+                  <collection-type>org.eclipse.persistence.indirection.IndirectList</collection-type>
+               </container>
+               <indirection xsi:type="value-holder-indirection-policy"/>
+               <selection-query xsi:type="read-all-query">
+                  <reference-class>dbXXER_BANK_AMEX.XxerBancosAmexTransactnTbl</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>org.eclipse.persistence.indirection.IndirectList</collection-type>
+                  </container>
+               </selection-query>
+            </attribute-mapping>
+         </attribute-mappings>
+         <descriptor-type>independent</descriptor-type>
+         <caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+            <always-refresh>true</always-refresh>
+         </caching>
+         <remote-caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+         </remote-caching>
+         <instantiation/>
+         <copying xsi:type="instantiation-copy-policy"/>
+         <tables>
+            <table name="XXER_BANCOS_AMEX_SUBMISSION_TBL"/>
+         </tables>
+         <structure>structureName</structure>
+      </class-mapping-descriptor>
+      <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
+         <class>dbXXER_BANK_AMEX.XxerBancosAmexSummaryTbl</class>
+         <alias>XXER_BANCOS_AMEX_SUMMARY_TBL</alias>
+         <primary-key>
+            <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="FECHA_PAGO" xsi:type="column"/>
+            <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+         </primary-key>
+         <events/>
+         <querying/>
+         <attribute-mappings>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>id</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="ID" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>idHeader</attribute-name>
+               <read-only>true</read-only>
+               <properties>
+                  <property name="fkPlaceholder">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="ID_HEADER" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>identificacionEstablecimiento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="IDENTIFICACION_ESTABLECIMIENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoTipoCuenta</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="CODIGO_TIPO_CUENTA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numPagoAmex</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaPago</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="FECHA_PAGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>monedaPago</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="MONEDA_PAGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numUnicoReferenciaPago</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="NUM_UNICO_REFERENCIA_PAGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoNetoPago</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="MONTO_NETO_PAGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoBrutoPago</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="MONTO_BRUTO_PAGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoDescuento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="MONTO_DESCUENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoServicio</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="MONTO_SERVICIO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoAjuste</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="MONTO_AJUSTE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoImpuestos</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="MONTO_IMPUESTOS" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoSaldoDebitoInicial</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="MONTO_SALDO_DEBITO_INICIAL" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numDepositoDirecto</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="NUM_DEPOSITO_DIRECTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numCuentaBancaria</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="NUM_CUENTA_BANCARIA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numCuentaBancariaInternacional</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="NUM_CUENTA_BANCARIA_INTERNACIONAL" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoBanco</attribute-name>
+               <field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="CODIGO_BANCO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="one-to-many-mapping">
+               <attribute-name>xxerBancosAmexChargebackTblCollection</attribute-name>
+               <properties>
+                  <property name="enabled">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <reference-class>dbXXER_BANK_AMEX.XxerBancosAmexChargebackTbl</reference-class>
+               <private-owned>true</private-owned>
+               <target-foreign-key>
+                  <field-reference>
+                     <source-field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="FECHA_PAGO" xsi:type="column"/>
+                     <target-field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="FECHA_PAGO" xsi:type="column"/>
+                  </field-reference>
+                  <field-reference>
+                     <source-field table="XXER_BANCOS_AMEX_CHARGEBACK_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+                     <target-field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+                  </field-reference>
+               </target-foreign-key>
+               <batch-reading>true</batch-reading>
+               <container xsi:type="list-container-policy">
+                  <collection-type>org.eclipse.persistence.indirection.IndirectList</collection-type>
+               </container>
+               <indirection xsi:type="value-holder-indirection-policy"/>
+               <selection-query xsi:type="read-all-query">
+                  <reference-class>dbXXER_BANK_AMEX.XxerBancosAmexChargebackTbl</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>org.eclipse.persistence.indirection.IndirectList</collection-type>
+                  </container>
+               </selection-query>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="one-to-many-mapping">
+               <attribute-name>xxerBancosAmexAdjustmentTblCollection</attribute-name>
+               <properties>
+                  <property name="enabled">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <reference-class>dbXXER_BANK_AMEX.XxerBancosAmexAdjustmentTbl</reference-class>
+               <private-owned>true</private-owned>
+               <target-foreign-key>
+                  <field-reference>
+                     <source-field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="FECHA_PAGO" xsi:type="column"/>
+                     <target-field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="FECHA_PAGO" xsi:type="column"/>
+                  </field-reference>
+                  <field-reference>
+                     <source-field table="XXER_BANCOS_AMEX_ADJUSTMENT_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+                     <target-field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+                  </field-reference>
+               </target-foreign-key>
+               <batch-reading>true</batch-reading>
+               <container xsi:type="list-container-policy">
+                  <collection-type>org.eclipse.persistence.indirection.IndirectList</collection-type>
+               </container>
+               <indirection xsi:type="value-holder-indirection-policy"/>
+               <selection-query xsi:type="read-all-query">
+                  <reference-class>dbXXER_BANK_AMEX.XxerBancosAmexAdjustmentTbl</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>org.eclipse.persistence.indirection.IndirectList</collection-type>
+                  </container>
+               </selection-query>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="one-to-many-mapping">
+               <attribute-name>xxerBancosAmexSubmissionTblCollection</attribute-name>
+               <properties>
+                  <property name="enabled">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <reference-class>dbXXER_BANK_AMEX.XxerBancosAmexSubmissionTbl</reference-class>
+               <private-owned>true</private-owned>
+               <target-foreign-key>
+                  <field-reference>
+                     <source-field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="FECHA_PAGO" xsi:type="column"/>
+                     <target-field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="FECHA_PAGO" xsi:type="column"/>
+                  </field-reference>
+                  <field-reference>
+                     <source-field table="XXER_BANCOS_AMEX_SUBMISSION_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+                     <target-field table="XXER_BANCOS_AMEX_SUMMARY_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+                  </field-reference>
+               </target-foreign-key>
+               <batch-reading>true</batch-reading>
+               <container xsi:type="list-container-policy">
+                  <collection-type>org.eclipse.persistence.indirection.IndirectList</collection-type>
+               </container>
+               <indirection xsi:type="value-holder-indirection-policy"/>
+               <selection-query xsi:type="read-all-query">
+                  <reference-class>dbXXER_BANK_AMEX.XxerBancosAmexSubmissionTbl</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>org.eclipse.persistence.indirection.IndirectList</collection-type>
+                  </container>
+               </selection-query>
+            </attribute-mapping>
+         </attribute-mappings>
+         <descriptor-type>independent</descriptor-type>
+         <caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+            <always-refresh>true</always-refresh>
+         </caching>
+         <remote-caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+         </remote-caching>
+         <instantiation/>
+         <copying xsi:type="instantiation-copy-policy"/>
+         <tables>
+            <table name="XXER_BANCOS_AMEX_SUMMARY_TBL"/>
+         </tables>
+         <structure>structureName</structure>
+      </class-mapping-descriptor>
+      <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
+         <class>dbXXER_BANK_AMEX.XxerBancosAmexTransactnTbl</class>
+         <alias>XXER_BANCOS_AMEX_TRANSACTN_TBL</alias>
+         <primary-key>
+            <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="FECHA_PAGO_AMEX" xsi:type="column"/>
+            <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+            <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_FACTURA_REFERENCIA" xsi:type="column"/>
+         </primary-key>
+         <events/>
+         <querying>
+            <queries>
+               <query name="dbXXER_BANK_AMEXSelect" xsi:type="read-all-query">
+                  <reference-class>dbXXER_BANK_AMEX.XxerBancosAmexTransactnTbl</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>java.util.Vector</collection-type>
+                  </container>
+               </query>
+            </queries>
+         </querying>
+         <attribute-mappings>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>id</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="ID" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numEstablecimiento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_ESTABLECIMIENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoTipoCuenta</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="CODIGO_TIPO_CUENTA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numPagoAmex</attribute-name>
+               <read-only>true</read-only>
+               <properties>
+                  <property name="fkPlaceholder">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaPagoAmex</attribute-name>
+               <read-only>true</read-only>
+               <properties>
+                  <property name="fkPlaceholder">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="FECHA_PAGO_AMEX" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>monedaPago</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="MONEDA_PAGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numEstablecimiento2</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_ESTABLECIMIENTO2" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaPresentacion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="FECHA_PRESENTACION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaProcesamientoAmex</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="FECHA_PROCESAMIENTO_AMEX" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numFactura</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_FACTURA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>monedaPresentacion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="MONEDA_PRESENTACION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>identificacionUbicacionEstablecimiento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="IDENTIFICACION_UBICACION_ESTABLECIMIENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numFacturaReferencia</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_FACTURA_REFERENCIA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numVendedor</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_VENDEDOR" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numTarjeta</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_TARJETA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numReferenciaEspecificoIndustria</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_REFERENCIA_ESPECIFICO_INDUSTRIA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoBrutoPresentacion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="MONTO_BRUTO_PRESENTACION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoTransaccion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="MONTO_TRANSACCION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaTransaccion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="FECHA_TRANSACCION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>horaTransaccion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="HORA_TRANSACCION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numTransaccion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_TRANSACCION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoAprobacion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="CODIGO_APROBACION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numTerminal</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_TERMINAL" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoCategoriaEstablecimiento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="CODIGO_CATEGORIA_ESTABLECIMIENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numReferenciaSocio</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_REFERENCIA_SOCIO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numReferenciaAdquirente</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_REFERENCIA_ADQUIRENTE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoErrorIncumplimientoCalidadDatos</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="CODIGO_ERROR_INCUMPLIMIENTO_CALIDAD_DATOS" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoErrorIncumplimientoCalidadDatos1</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="CODIGO_ERROR_INCUMPLIMIENTO_CALIDAD_DATOS1" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoErrorIncumplimientoCalidadDatos2</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="CODIGO_ERROR_INCUMPLIMIENTO_CALIDAD_DATOS2" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoErrorIncumplimientoCalidadDatos3</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="CODIGO_ERROR_INCUMPLIMIENTO_CALIDAD_DATOS3" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoErrorIncumplimientoCalidadDatos4</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="CODIGO_ERROR_INCUMPLIMIENTO_CALIDAD_DATOS4" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>indicadorLecturaBanda</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="INDICADOR_LECTURA_BANDA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>indicadorTransaccionRechazada</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="INDICADOR_TRANSACCION_RECHAZADA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoPrimeraCuota</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="MONTO_PRIMERA_CUOTA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoCuotaSiguiente</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="MONTO_CUOTA_SIGUIENTE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>cantidadCuotas</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="CANTIDAD_CUOTAS" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numCuota</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_CUOTA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>relleno</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="RELLENO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoServicio</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="MONTO_SERVICIO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoAceleracion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="MONTO_ACELERACION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="one-to-many-mapping">
+               <attribute-name>xxerBancosAmexTxnpricingTblCollection</attribute-name>
+               <properties>
+                  <property name="enabled">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <reference-class>dbXXER_BANK_AMEX.XxerBancosAmexTxnpricingTbl</reference-class>
+               <private-owned>true</private-owned>
+               <target-foreign-key>
+                  <field-reference>
+                     <source-field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="FECHA_PAGO" xsi:type="column"/>
+                     <target-field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="FECHA_PAGO_AMEX" xsi:type="column"/>
+                  </field-reference>
+                  <field-reference>
+                     <source-field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+                     <target-field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+                  </field-reference>
+                  <field-reference>
+                     <source-field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="NUM_FACTURA_REFERENCIA" xsi:type="column"/>
+                     <target-field table="XXER_BANCOS_AMEX_TRANSACTN_TBL" name="NUM_FACTURA_REFERENCIA" xsi:type="column"/>
+                  </field-reference>
+               </target-foreign-key>
+               <batch-reading>true</batch-reading>
+               <container xsi:type="list-container-policy">
+                  <collection-type>org.eclipse.persistence.indirection.IndirectList</collection-type>
+               </container>
+               <indirection xsi:type="value-holder-indirection-policy"/>
+               <selection-query xsi:type="read-all-query">
+                  <reference-class>dbXXER_BANK_AMEX.XxerBancosAmexTxnpricingTbl</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>org.eclipse.persistence.indirection.IndirectList</collection-type>
+                  </container>
+               </selection-query>
+            </attribute-mapping>
+         </attribute-mappings>
+         <descriptor-type>independent</descriptor-type>
+         <caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+            <always-refresh>true</always-refresh>
+         </caching>
+         <remote-caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+         </remote-caching>
+         <instantiation/>
+         <copying xsi:type="instantiation-copy-policy"/>
+         <tables>
+            <table name="XXER_BANCOS_AMEX_TRANSACTN_TBL"/>
+         </tables>
+         <structure>structureName</structure>
+      </class-mapping-descriptor>
+      <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
+         <class>dbXXER_BANK_AMEX.XxerBancosAmexTxnpricingTbl</class>
+         <alias>XXER_BANCOS_AMEX_TXNPRICING_TBL</alias>
+         <primary-key>
+            <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="ID" xsi:type="column"/>
+         </primary-key>
+         <events/>
+         <querying/>
+         <attribute-mappings>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>id</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="ID" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numeroEstablcimiento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="NUMERO_ESTABLCIMIENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoCuenta</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="CODIGO_CUENTA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numPagoAmex</attribute-name>
+               <read-only>true</read-only>
+               <properties>
+                  <property name="fkPlaceholder">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="NUM_PAGO_AMEX" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaPago</attribute-name>
+               <read-only>true</read-only>
+               <properties>
+                  <property name="fkPlaceholder">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="FECHA_PAGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>monedaPago</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="MONEDA_PAGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numEstablecimentoPresentacion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="NUM_ESTABLECIMENTO_PRESENTACION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>ubicacionEstablecimiento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="UBICACION_ESTABLECIMIENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>relleno</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="RELLENO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numFacturaReferencia</attribute-name>
+               <read-only>true</read-only>
+               <properties>
+                  <property name="fkPlaceholder">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="NUM_FACTURA_REFERENCIA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numeroVendedor</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="NUMERO_VENDEDOR" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numTarjeta</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="NUM_TARJETA" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoTransaccion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="MONTO_TRANSACCION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fechaTransaccion</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="FECHA_TRANSACCION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>codigoCargo</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="CODIGO_CARGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>relleno2</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="RELLENO2" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoCargo</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="MONTO_CARGO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>tasaDescuento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="TASA_DESCUENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>montoDescuento</attribute-name>
+               <field table="XXER_BANCOS_AMEX_TXNPRICING_TBL" name="MONTO_DESCUENTO" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+         </attribute-mappings>
+         <descriptor-type>independent</descriptor-type>
+         <caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+            <always-refresh>true</always-refresh>
+         </caching>
+         <remote-caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+         </remote-caching>
+         <instantiation/>
+         <copying xsi:type="instantiation-copy-policy"/>
+         <tables>
+            <table name="XXER_BANCOS_AMEX_TXNPRICING_TBL"/>
+         </tables>
+         <structure>structureName</structure>
+      </class-mapping-descriptor>
+   </class-mapping-descriptors>
+   <login xsi:type="database-login">
+      <platform-class>org.eclipse.persistence.platform.database.oracle.Oracle9Platform</platform-class>
+      <connection-url></connection-url>
+   </login>
+</object-persistence>

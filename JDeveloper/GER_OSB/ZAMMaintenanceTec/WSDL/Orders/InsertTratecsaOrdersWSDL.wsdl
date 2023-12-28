@@ -1,0 +1,20 @@
+<wsdl:definitions name="InsertTratecsaOrders" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_ZAMMaintenanceTec/InsertTratecsaOrders" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_ZAMMaintenanceTec/InsertTratecsaOrders" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/InsertTratecsaOrders" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="InsertTratecsaOrders_plt">
+    <plt:role name="InsertTratecsaOrders_role">
+      <plt:portType name="tns:InsertTratecsaOrders_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/InsertTratecsaOrders" schemaLocation="../../XSD/Orders/InsertTratecsaOrdersXSD.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="InsertTratecsaOrdersInput_msg">
+        <wsdl:part name="InsertTratecsaOrdersInput_msg" element="db:InsertTratecsaOrdersInput"/>
+    </wsdl:message>
+    <wsdl:portType name="InsertTratecsaOrders_ptt">
+        <wsdl:operation name="InsertTratecsaOrders">
+            <wsdl:input message="tns:InsertTratecsaOrdersInput_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

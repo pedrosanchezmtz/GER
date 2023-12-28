@@ -1,0 +1,252 @@
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2023-11-28 15:43:06.710/3.215 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Loaded operational configuration from "jar:file:/C:/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence.xml"
+2023-11-28 15:43:06.775/3.280 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Loaded operational overrides from "jar:file:/C:/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence-override-dev.xml"
+2023-11-28 15:43:06.778/3.283 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "/tangosol-coherence-override.xml" is not specified
+2023-11-28 15:43:06.783/3.288 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "cache-factory-config.xml" is not specified
+2023-11-28 15:43:06.785/3.290 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "cache-factory-builder-config.xml" is not specified
+2023-11-28 15:43:06.787/3.292 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "/custom-mbeans.xml" is not specified
+
+Oracle Coherence Version 12.2.1.4.0 Build 74888
+ Grid Edition: Development mode
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+2023-11-28 15:43:07.972/4.477 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=main, member=n/a): The cluster name has not been configured, a value of "pedro's cluster" has been automatically generated
+2023-11-28 15:43:08.861/5.366 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.ExtensibleConfigurableCacheFactory
+nov 28, 2023 3:43:17 PM oracle.soa.scac.ValidateComposite loadWSDLs
+ADVERTENCIA: Validating WSDLs from WSDLManager....  with option UseSoaInfraMds:false
+nov 28, 2023 3:43:34 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+INFORMACIÓN: XMLSchema incremental build enabled.
+ADVERTENCIA: Schema load failed due to: Error loading schema from https://egte.fa.us2.oraclecloud.com/fscmService/InvoiceService?WSDL [Cause=Error al obtener el flujo de entrada XML: https://egte.fa.us2.oraclecloud.com:443/fscmService/InvoiceService?XSD=/oracle/apps/financials/payables/invoices/transactions/invoiceService/PaymentStatus.xsd: Read timed out]
+oracle.fabric.common.wsdl.XSDException: Error loading schema from https://egte.fa.us2.oraclecloud.com/fscmService/InvoiceService?WSDL [Cause=Error al obtener el flujo de entrada XML: https://egte.fa.us2.oraclecloud.com:443/fscmService/InvoiceService?XSD=/oracle/apps/financials/payables/invoices/transactions/invoiceService/PaymentStatus.xsd: Read timed out]
+	at oracle.fabric.common.wsdl.SchemaBuilder.loadEmbeddedSchemas(SchemaBuilder.java:590)
+	at oracle.fabric.common.wsdl.SchemaBuilder.loadSchemasFromWSDL(SchemaBuilder.java:452)
+	at oracle.fabric.common.wsdl.SchemaBuilder.loadAllSchemas(SchemaBuilder.java:249)
+	at oracle.fabric.common.wsdl.SchemaManager.loadAllXSD(SchemaManager.java:420)
+	at oracle.fabric.common.wsdl.SchemaManager.buildXDKSchema(SchemaManager.java:757)
+	at oracle.fabric.common.wsdl.SchemaManager.lookupSchema(SchemaManager.java:560)
+	at oracle.fabric.common.wsdl.SchemaManager.lookupXSDTypeDefinition(SchemaManager.java:953)
+	at oracle.bpel.lang.v20.resolver.ProcessImportHandler.lookupXSDType(ProcessImportHandler.java:272)
+	at oracle.bpel.common.validator.helpers.OracleModelQueryImpl.lookupXSDType(OracleModelQueryImpl.java:751)
+	at oracle.bpel.common.validator.helpers.OracleModelQueryImpl.lookupCanonicalType(OracleModelQueryImpl.java:1240)
+	at oracle.bpel.common.validator.helpers.OracleModelQueryImpl.lookupXPathChildNamedStep(OracleModelQueryImpl.java:875)
+	at oracle.bpel.common.validator.helpers.OracleModelQueryImpl.lookup(OracleModelQueryImpl.java:341)
+	at org.eclipse.bpel.validator.xpath.XPathVisitor.lookupByAxis(XPathVisitor.java:431)
+	at org.eclipse.bpel.validator.xpath.XPathVisitor.visit(XPathVisitor.java:340)
+	at org.eclipse.bpel.validator.xpath.XPathVisitor.visitExpr(XPathVisitor.java:586)
+	at org.eclipse.bpel.validator.xpath.XPathVisitor.visitList(XPathVisitor.java:537)
+	at org.eclipse.bpel.validator.xpath.XPathVisitor.visit000(XPathVisitor.java:173)
+	at org.eclipse.bpel.validator.xpath.XPathVisitor.visit(XPathVisitor.java:161)
+	at org.eclipse.bpel.validator.xpath.To.rule_CheckVariableReference_15(To.java:60)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.bpel.validator.model.Rules$Rule.invoke(Rules.java:346)
+	at org.eclipse.bpel.validator.model.RuleRunner.runRules(RuleRunner.java:99)
+	at org.eclipse.bpel.validator.model.Validator.validate(Validator.java:278)
+	at org.eclipse.bpel.validator.model.Runner.pass1(Runner.java:150)
+	at org.eclipse.bpel.validator.model.Runner.run(Runner.java:188)
+	at oracle.bpel.lang.v20.validator.helpers.OracleBpelREMValidator.validate(OracleBpelREMValidator.java:239)
+	at oracle.bpel.lang.v20.validator.helpers.OracleBpelREMValidator.validate(OracleBpelREMValidator.java:131)
+	at oracle.bpel.lang.v20.validator.BPEL20Validator.validate(BPEL20Validator.java:87)
+	at com.collaxa.cube.lang.compiler.BPEL2Processor.validate(BPEL2Processor.java:170)
+	at com.collaxa.cube.lang.compiler.BPEL2Processor.process(BPEL2Processor.java:124)
+	at com.collaxa.cube.lang.compiler.BPEL2Processor.process(BPEL2Processor.java:110)
+	at oracle.fabric.bpel.bpelc.BPELComponentValidator.validate(BPELComponentValidator.java:87)
+	at oracle.soa.scac.ValidateComposite.validateComponentTypeServicesReferences(ValidateComposite.java:1175)
+	at oracle.soa.scac.ValidateComposite.doValidation0(ValidateComposite.java:607)
+	at oracle.soa.scac.ValidateComposite.doValidation(ValidateComposite.java:586)
+	at oracle.soa.scac.ValidateComposite.run0(ValidateComposite.java:234)
+	at oracle.soa.scac.ValidateComposite.run(ValidateComposite.java:215)
+	at oracle.soa.scac.ValidateComposite.main(ValidateComposite.java:207)
+Caused by: oracle.fabric.common.FabricException: Error al obtener el flujo de entrada XML: https://egte.fa.us2.oraclecloud.com:443/fscmService/InvoiceService?XSD=/oracle/apps/financials/payables/invoices/transactions/invoiceService/PaymentStatus.xsd: Read timed out
+	at oracle.fabric.common.metadata.MetadataManagerImpl.getInputStreamFromAbsoluteURL(MetadataManagerImpl.java:374)
+	at oracle.integration.platform.common.MDSMetadataManagerImpl.getInputStreamFromAbsoluteURL(MDSMetadataManagerImpl.java:907)
+	at oracle.fabric.common.metadata.MetadataManagerImpl.getDocumentAsInputStreamUsingUrlResolver(MetadataManagerImpl.java:217)
+	at oracle.integration.platform.common.MDSMetadataManagerImpl.getDocumentAsInputStreamUsingCustomization(MDSMetadataManagerImpl.java:603)
+	at oracle.integration.platform.common.MDSMetadataManagerImpl.getDocumentAsInputStream(MDSMetadataManagerImpl.java:583)
+	at oracle.fabric.common.wsdl.SchemaBuilder.parseXMLSrc(SchemaBuilder.java:1123)
+	at oracle.fabric.common.wsdl.SchemaBuilder.parseXSDSrc(SchemaBuilder.java:1073)
+	at oracle.fabric.common.wsdl.SchemaBuilder.processSchemaImportsAndInclude(SchemaBuilder.java:925)
+	at oracle.fabric.common.wsdl.SchemaBuilder.processSchemaImportsAndInclude(SchemaBuilder.java:884)
+	at oracle.fabric.common.wsdl.SchemaBuilder.processSchemaImportsAndInclude(SchemaBuilder.java:884)
+	at oracle.fabric.common.wsdl.SchemaBuilder.loadEmbeddedSchemas(SchemaBuilder.java:586)
+	... 40 more
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:975)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:933)
+	at sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:286)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:735)
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:678)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1587)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:263)
+	at java.net.URL.openStream(URL.java:1045)
+	at oracle.fabric.common.metadata.MetadataManagerImpl.getInputStreamFromAbsoluteURL(MetadataManagerImpl.java:368)
+	... 50 more
+GRAVE: Failed to build the schema model for: http://soa.estrellaroja.com.mx/EstrellaRojaCommons due to XSDException: Error loading schema from https://egte.fa.us2.oraclecloud.com/fscmService/InvoiceService?WSDL [Cause=Error al obtener el flujo de entrada XML: https://egte.fa.us2.oraclecloud.com:443/fscmService/InvoiceService?XSD=/oracle/apps/financials/payables/invoices/transactions/invoiceService/PaymentStatus.xsd: Read timed out]
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/EstrellaRojaCommons
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/EstrellaRojaCommons
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/SOAUtilitiesTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/SOAUtilitiesTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/MessageTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/MessageTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/SOAUtilitiesTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/SOAUtilitiesTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/MessageTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/MessageTec
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+ADVERTENCIA: Cannot resolve entity model for: http://soa.estrellaroja.com.mx/InvoicesBiz
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option PermSize=32m; support was removed in 8.0
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0

@@ -1,0 +1,21 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpCreateApplyReceipt/types" name="erpCreateApplyReceiptPortType" adapter="erp" wsdlLocation="../../WSDL/Externals/Cloud/Receipt/erpCreateApplyReceipt.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="cloud/CloudAdapter">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.cloud.connector.fa.FAConnectionFactory">
+      <property name="targetWSDLURL" value="https://egte.fa.us2.oraclecloud.com:443/fndAppCoreServices/ServiceCatalogService?WSDL"/>
+      <property name="csfkey" value="erpKey"/>
+      <property name="csfMap" value="oracle.wsm.security"/>
+      <property name="eventCatalogURL" value=""/>
+      <property name="applicationVersion" value="1.0"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-interaction portType="erpCreateApplyReceiptPortType" operation="createApplyReceipt">
+    <interaction-spec className="oracle.tip.adapter.cloud.CloudInteractionSpec">
+      <property name="targetOperation" value="createApplyReceipt"/>
+      <property name="operationPath" value="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/createApplyReceipt"/>
+      <property name="outboundRequestOperation" value="{http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/}createApplyReceipt"/>
+      <property name="browseBySelection" value="browseByService"/>
+      <property name="serviceWSDLURL" value="https://egte.fa.us2.oraclecloud.com:443/fscmService/StandardReceiptService?WSDL"/>
+      <property name="outboundRequestObject" value="{http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/standardReceiptService/commonService/OSCAdapter}StandardReceiptService"/>
+    </interaction-spec>
+  </endpoint-interaction>
+</adapter-config>

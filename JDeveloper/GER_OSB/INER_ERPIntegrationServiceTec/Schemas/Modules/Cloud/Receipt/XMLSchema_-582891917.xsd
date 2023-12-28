@@ -1,0 +1,22 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/model/flex/StandardReceiptGdf/" xmlns="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/model/flex/StandardReceiptGdf/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:include schemaLocation="XMLSchema_1361782915.xsd"/>
+    <xsd:complexType name="Jaxtwreceiptinformation">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>CashReceiptId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="StandardReceiptGdf">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="invoiceFormat" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="wineAndCigarette" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="wineAndCigarette_Display" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="jaxtwreceiptinformation" type="Jaxtwreceiptinformation"/>
+</xsd:schema>

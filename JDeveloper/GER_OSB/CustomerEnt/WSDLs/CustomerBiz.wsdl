@@ -1,0 +1,55 @@
+<wsdl:definitions name="CustomerBiz" targetNamespace="http://soa.estrellaroja.com.mx/CustomerBiz" xmlns:tns="http://soa.estrellaroja.com.mx/CustomerBiz" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap/">
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	TYPE DEFINITION - List of services participating in this process.
+        You can define or import any XML Schema type and use them as part of the message types.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/CustomerBiz/types" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://soa.estrellaroja.com.mx/CustomerBiz" schemaLocation="../Schemas/CustomerBiz.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	MESSAGE TYPE DEFINITION - Definition of the message types used as 
+	part of the port type defintions
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!--********************************* BEGIN SyncCustomers *********************************-->
+  <wsdl:message name="SyncCustomersRq">
+    <wsdl:part name="SyncCustomersRq" element="tns:SyncCustomersRq"/>
+  </wsdl:message>
+  <wsdl:message name="SyncCustomersRs">
+    <wsdl:part name="SyncCustomersRs" element="tns:SyncCustomersRs"/>
+  </wsdl:message>
+  <wsdl:message name="GetCountryCode">
+    <wsdl:part name="GetCountryCodeRq" element="tns:GetCountryCodeRq"/>
+  </wsdl:message>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	PORT TYPE DEFINITION - A port type groups a set of operations into
+	a logical service unit.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <wsdl:portType name="CustomerBizPortType">
+    <!--********************************* BEGIN SyncCustomers *********************************-->
+    <wsdl:operation name="SyncCustomers">
+      <wsdl:input message="tns:SyncCustomersRq"/>
+      <wsdl:output message="tns:SyncCustomersRs"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <!--  *********************************** BINDING OPERATIONS DEFINITIONS ***********************************  -->
+  <wsdl:binding name="CustomerBizBinding" type="tns:CustomerBizPortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <!--********************************* BEGIN SyncCustomers *********************************-->
+    <wsdl:operation name="SyncCustomers">
+      <soap12:operation soapAction="http://soa.estrellaroja.com.mx/CustomerBiz/SyncCustomers"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="SyncCustomersRq"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="SyncCustomersRs"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerBiz">
+    <wsdl:port name="CustomerBizPort" binding="tns:CustomerBizBinding">
+      <soap12:address location="http://ersoacsprod-wls-1:9073/soa-infra/services/PROD/CustomerBiz/CustomerBiz"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

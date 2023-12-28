@@ -1,0 +1,13 @@
+<adapter-config name="dbaProcessedApplyReceipstBs" adapter="db" wsdlLocation="../WSDLs/External/dbaProcessedApplyReceipstBs.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="ERSEPDB1DS" location="eis/DB/DEV/ERSEPDB1"/>
+  <endpoint-interaction portType="dbaProcessedApplyReceipstBs_ptt" operation="dbaProcessedApplyReceipstBs">
+    <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
+      <property name="SchemaName" value="XERINTUSER"/>
+      <property name="PackageName" value="XXER_UTILITIES_PKG"/>
+      <property name="ProcedureName" value="PROCESSED_APPLY_RECEIPT"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

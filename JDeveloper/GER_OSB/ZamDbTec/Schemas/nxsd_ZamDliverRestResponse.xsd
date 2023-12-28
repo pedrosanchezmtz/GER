@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbZAMDLV" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbZAMDLV" elementFormDefault="qualified" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:encoding="US-ASCII">
+    <xsd:element name="GetPlanEmbarquesRs">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="Embarques" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="noViaje" minOccurs="0" type="xsd:string"/>
+                     <xsd:element name="fechaViaje" minOccurs="0" type="xsd:string"/>
+                     <xsd:element name="operadorNombre" minOccurs="0" type="xsd:string"/>
+                     <xsd:element name="operadorTelefono" minOccurs="0" type="xsd:string"/>
+                     <xsd:element name="tractorEco" minOccurs="0" type="xsd:string"/>
+                     <xsd:element name="origen" minOccurs="0" type="xsd:string"/>
+                     <xsd:element name="descRuta" minOccurs="0" type="xsd:string"/>
+                     <xsd:element name="destino" minOccurs="0" type="xsd:string"/>
+                     <xsd:element name="fechaCita" minOccurs="0" type="xsd:string"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+  <xsd:element name="Error" minOccurs="0">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="timestamp" minOccurs="0" type="xsd:string"/>
+            <xsd:element name="status" minOccurs="0" type="xsd:string"/>
+            <xsd:element name="error" minOccurs="0" type="xsd:string"/>
+            <xsd:element name="message" minOccurs="0" type="xsd:string"/>
+            <xsd:element name="path" minOccurs="0" type="xsd:string"/>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+<xsd:annotation xmlns="">
+      <xsd:appinfo>NXSDSAMPLE=/P:/Desarrollo/JDeveloper/GER/Documentación SOA/Tecnico Forte/New Folder/rquest.xml</xsd:appinfo>
+      <xsd:appinfo>USEHEADER=false</xsd:appinfo>
+   </xsd:annotation>
+</xsd:schema>

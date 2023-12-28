@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbaReadCountryMapping" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbaReadCountryMapping" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxerCountriesMappingCollection" type="XxerCountriesMappingCollection"/>
+   <xs:complexType name="XxerCountriesMappingCollection">
+      <xs:sequence>
+         <xs:element name="XxerCountriesMapping" type="XxerCountriesMapping" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerCountriesMapping">
+      <xs:sequence>
+         <xs:element name="country" type="string250"/>
+         <xs:element name="countryName" type="string250" minOccurs="0"/>
+         <xs:element name="countryCode" type="string2" minOccurs="0"/>
+         <xs:element name="isoCountryCode" type="string3" minOccurs="0"/>
+         <xs:element name="createdBy" type="string25" minOccurs="0"/>
+         <xs:element name="createdDate" type="xs:dateTime" minOccurs="0"/>
+         <xs:element name="updatedDate" type="xs:dateTime" minOccurs="0"/>
+         <xs:element name="atttribute1" type="string250" minOccurs="0" nillable="true"/>
+         <xs:element name="atttribute2" type="string250" minOccurs="0" nillable="true"/>
+         <xs:element name="atttribute3" type="string250" minOccurs="0" nillable="true"/>
+         <xs:element name="atttribute4" type="string250" minOccurs="0" nillable="true"/>
+         <xs:element name="atttribute5" type="string250" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="dbaReadCountryMappingSelect_pCountryNameInputParameters" type="dbaReadCountryMappingSelect_pCountryName"/>
+   <xs:complexType name="dbaReadCountryMappingSelect_pCountryName">
+      <xs:sequence>
+         <xs:element name="pCountryName" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="string250">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="250"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string2">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="2"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string3">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="3"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string25">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="25"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

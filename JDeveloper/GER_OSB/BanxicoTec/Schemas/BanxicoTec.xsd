@@ -1,0 +1,41 @@
+<xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/BanxicoTec" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/BanxicoTec" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+            <xsd:import schemaLocation="Commons/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+              
+              
+  <xsd:element name="GetExchangeRateRs" type="GetExchangeRateRsType"/>
+  <xsd:element name="GetExchangeRateRq">
+    <xsd:complexType>
+      <xsd:sequence>
+                <xsd:element name="idSerie" type="xsd:string"/>
+                <xsd:element name="fechaInicio" type="xsd:string"/>
+                <xsd:element name="fechaFin" type="xsd:string"/>        
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  
+  
+  
+    <xsd:complexType name="GetExchangeRateRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+             <xsd:element name="series">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="idSerie" type="xsd:string"/>
+                    <xsd:element name="titulo" type="xsd:string"/>
+                    <xsd:element name="datos" maxOccurs="unbounded">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="fecha" type="xsd:date"/>
+                          <xsd:element name="dato" type="xsd:float"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

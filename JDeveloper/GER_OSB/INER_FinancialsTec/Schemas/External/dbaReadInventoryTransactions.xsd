@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/dbaReadInventoryTransactions" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/dbaReadInventoryTransactions" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="dbaReadInventoryTransactionsInput" type="dbaReadInventoryTransactionsInput"/>
+   <xs:complexType name="dbaReadInventoryTransactionsInput">
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:element name="dbaReadInventoryTransactionsOutputCollection" type="dbaReadInventoryTransactionsOutputCollection"/>
+   <xs:complexType name="dbaReadInventoryTransactionsOutputCollection">
+      <xs:sequence>
+         <xs:element name="dbaReadInventoryTransactionsOutput" type="dbaReadInventoryTransactionsOutput" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dbaReadInventoryTransactionsOutput">
+      <xs:sequence>
+         <xs:element name="OrganizationName" type="xs:string" nillable="true"/>
+         <xs:element name="TransactionDate" type="xs:dateTime" nillable="true"/>
+         <xs:element name="TransactionTypeName" type="xs:string" nillable="true"/>
+         <xs:element name="SourceCode" type="xs:string" nillable="true"/>
+         <xs:element name="SourceHeaderId" type="xs:decimal" nillable="true"/>
+         <xs:element name="SourceLineId" type="xs:decimal" nillable="true"/>
+         <xs:element name="TransactionSourceName" type="xs:string" nillable="true"/>
+         <xs:element name="DspSegment1" type="xs:string" nillable="true"/>
+         <xs:element name="DspSegment2" type="xs:string" nillable="true"/>
+         <xs:element name="DspSegment3" type="xs:string" nillable="true"/>
+         <xs:element name="DspSegment4" type="xs:string" nillable="true"/>
+         <xs:element name="DspSegment5" type="xs:string" nillable="true"/>
+         <xs:element name="DspSegment6" type="xs:string" nillable="true"/>
+         <xs:element name="DspSegment7" type="xs:string" nillable="true"/>
+         <xs:element name="DspSegment8" type="xs:string" nillable="true"/>
+         <xs:element name="ProcessFlag" type="xs:decimal" nillable="true"/>
+         <xs:element name="ItemNumber" type="xs:string" nillable="true"/>
+         <xs:element name="SubinvetoryCode" type="xs:string" nillable="true"/>
+         <xs:element name="LocatorName" type="xs:string" nillable="true"/>
+         <xs:element name="TransactionQuantity" type="xs:decimal" nillable="true"/>
+         <xs:element name="TransactionUom" type="xs:string" nillable="true"/>
+         <xs:element name="TransactionUnitOfMeasure" type="xs:string" nillable="true"/>
+         <xs:element name="TransactionSourceTypeName" type="xs:string" nillable="true"/>
+         <xs:element name="TransactionMode" type="xs:decimal" nillable="true"/>
+         <xs:element name="Attribute1" type="xs:string" nillable="true"/>
+         <xs:element name="Attribute2" type="xs:string" nillable="true"/>
+         <xs:element name="Attribute3" type="xs:string" nillable="true"/>
+         <xs:element name="Attribute4" type="xs:string" nillable="true"/>
+         <xs:element name="Attribute5" type="xs:string" nillable="true"/>
+         <xs:element name="Attribute6" type="xs:string" nillable="true"/>
+         <xs:element name="Attribute7" type="xs:string" nillable="true"/>
+         <xs:element name="Attribute8" type="xs:string" nillable="true"/>
+         <xs:element name="Attribute9" type="xs:string" nillable="true"/>
+         <xs:element name="Attribute10" type="xs:string" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

@@ -1,0 +1,546 @@
+<wsdl:definitions
+    
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefMergeCustomerAccount"
+     xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/"
+     xmlns:orafault="http://xmlns.oracle.com/oracleas/schema/oracle-fault-11_0"
+     xmlns:tns="http://xmlns.oracle.com/apps/cdm/foundation/parties/customerAccountService/applicationModule/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:types="http://xmlns.oracle.com/apps/cdm/foundation/parties/customerAccountService/applicationModule/types/"
+     xmlns:ns0="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefMergeCustomerAccount/types"
+     xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefMergeCustomerAccount"
+    >
+    <plnk:partnerLinkType name="mergeCustomerAccount_plt">
+        <plnk:role name="mergeCustomerAccount_role">
+            <plnk:portType name="ns1:erpRefMergeCustomerAccountPortType"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <xs:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://xmlns.oracle.com/adf/svc/errors/" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:tns="http://xmlns.oracle.com/adf/svc/errors/" sdoJava:package="oracle.jbo.service.errors">
+            <xs:complexType name="ServiceMessage">
+                <xs:sequence>
+                    <xs:element maxOccurs="1" minOccurs="0" name="code" type="string"/>
+                    <xs:element maxOccurs="1" minOccurs="0" name="message" type="string"/>
+                    <xs:element maxOccurs="1" minOccurs="0" name="severity" type="string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="detail" type="tns:ServiceMessage"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="ServiceErrorMessage" type="tns:ServiceErrorMessage"/>
+            <xs:complexType name="ServiceErrorMessage">
+                <xs:complexContent>
+                    <xs:extension base="tns:ServiceMessage">
+                        <xs:sequence>
+                            <xs:element maxOccurs="1" minOccurs="0" name="sdoObject" type="anyType"/>
+                            <xs:element maxOccurs="1" minOccurs="0" name="exceptionClassName" type="string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/adf/svc/types/" elementFormDefault="qualified"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/adf/svc/types/"
+             xmlns:sdoJava="commonj.sdo/java" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:sdoXML="commonj.sdo/xml" xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/"
+             xmlns:sdo="commonj.sdo" sdoJava:package="oracle.jbo.common.service.types">
+            <xs:import namespace="http://xmlns.oracle.com/adf/svc/errors/"/>
+            <xsd:simpleType name="dateTime-Timestamp" sdoJava:instanceClass="java.sql.Timestamp">
+                <xsd:restriction base="xsd:dateTime"/>
+            </xsd:simpleType>
+            <xsd:simpleType name="date-Date" sdoJava:instanceClass="java.sql.Date">
+                <xsd:restriction base="xsd:date"/>
+            </xsd:simpleType>
+            <xsd:complexType name="MethodResult">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Message" type="errors:ServiceMessage"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountSite/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountSite/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:sdoXML="commonj.sdo/xml">
+            <xsd:complexType name="CustAcctSiteInformation">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustAcctSiteId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="CustAcctSiteId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountSiteUse/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountSiteUse/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:sdoXML="commonj.sdo/xml">
+            <xsd:complexType name="CustAcctSiteUseInformation">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>SiteUseId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="SiteUseId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountContact/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountContact/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:sdoXML="commonj.sdo/xml">
+            <xsd:complexType name="CustAcctContactInformation">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustAccountRoleId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="CustAccountRoleId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountContactRole/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountContactRole/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:sdoXML="commonj.sdo/xml">
+            <xsd:complexType name="CustAcctContactRoleInformation">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>ResponsibilityId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="ResponsibilityId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/sourceSystemRef/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/sourceSystemRef/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:sdoXML="commonj.sdo/xml">
+            <xsd:complexType name="SourceSystemRefInformation">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>OrigSystemRefId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="OrigSystemRefId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/" elementFormDefault="qualified"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:sdoXML="commonj.sdo/xml"
+             xmlns:ns1="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/sourceSystemRef/"
+             xmlns:sdo="commonj.sdo" sdoJava:package="oracle.apps.cdm.foundation.parties.partyService">
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/sourceSystemRef/"/>
+            <xs:import namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+            <xsd:complexType name="OriginalSystemReference">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>OrigSystemReferenceId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="OrigSystemReferenceId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="OrigSystem" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OwnerTableId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ReasonCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OldOrigSystemReference" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StartDateActive" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EndDateActive" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ObjectVersionNumber" type="xsd:int" sdoXML:dataType="sdoJava:IntObject"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PartyId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="SourceSystemRefInformation" type="ns1:SourceSystemRefInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccount/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccount/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:sdoXML="commonj.sdo/xml">
+            <xsd:complexType name="CustAcctInformation">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustAccountId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="CustAccountId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+<xsd:element minOccurs="0" name="regimenFiscal" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountRel/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountRel/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java"
+             xmlns:sdoXML="commonj.sdo/xml">
+            <xsd:complexType name="CustAcctRelationshpInformation">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustAcctRelateId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="CustAcctRelateId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="__FLEX_Context_DisplayValue" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="_FLEX_NumOfSegments" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/apps/cdm/foundation/parties/customerAccountService/"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/customerAccountService/"
+             xmlns:sdoJava="commonj.sdo/java" sdoJava:package="oracle.apps.cdm.foundation.parties.customerAccountService"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/"
+             xmlns:sdoXML="commonj.sdo/xml" xmlns:ns2="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccount/"
+             xmlns:ns1="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/"
+             xmlns:sdo="commonj.sdo" xmlns:ns3="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountContact/"
+             xmlns:ns4="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountContactRole/"
+             xmlns:ns5="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountRel/"
+             xmlns:ns6="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountSite/"
+             xmlns:ns7="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountSiteUse/">
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccount/"/>
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountSite/"/>
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountSiteUse/"/>
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountRel/"/>
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountContact/"/>
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/partyService/"/>
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/flex/custAccountContactRole/"/>
+            <xs:import namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+            <xsd:complexType name="CustomerAccount">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustomerAccountId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="CustomerAccountId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PartyId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="AccountNumber" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="OrigSystem" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CustomerType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CustomerClassCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="TaxCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="TaxHeaderLevelFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="TaxRoundingRule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CoterminateDayMonth" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="AccountEstablishedDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="AccountTerminationDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="HeldBillExpirationDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="HoldBillFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="AccountName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DepositRefundMethod" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="NpaNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SourceCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Comments" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="DateTypePreference" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ArrivalsetsIncludeLinesFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="StatusUpdateDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="AutopayFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="LastBatchId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SellingPartyId" nillable="true" type="xsd:long"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="CustomerAccountContact" type="CustomerAccountContact"
+                         sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="CustomerAccountRelationship"
+                         type="CustomerAccountRelationship"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="CustomerAccountSite" type="CustomerAccountSite"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns1:OriginalSystemReference"/>
+                    <xsd:element minOccurs="0" name="CustAcctInformation" type="ns2:CustAcctInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CustomerAccountContact">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustomerAccountRoleId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="CustomerAccountRoleId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="CustomerAccountId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="CustomerAccountSiteId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="PrimaryFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="RoleType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="SourceCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Status" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RelationshipId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="ContactPersonId" nillable="true" type="xsd:long"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="CustomerAccountContactRole"
+                         type="CustomerAccountContactRole" sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns1:OriginalSystemReference"/>
+                    <xsd:element minOccurs="0" name="CustAcctContactInformation" type="ns3:CustAcctContactInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CustomerAccountContactRole">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>ResponsibilityId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="ResponsibilityId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="CustomerAccountRoleId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="ResponsibilityType" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="StatusCode" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CustAcctContactRoleInformation" type="ns4:CustAcctContactRoleInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CustomerAccountRelationship">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustomerAccountRelateId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="CustomerAccountId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="RelatedCustomerAccountId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RelationshipType" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Comments" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="CustomerReciprocalFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="BillToFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="ShipToFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="StartDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EndDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CustomerAccountRelateId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="SetId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="SetCode" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CustAcctRelationshipInformation" type="ns5:CustAcctRelationshpInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CustomerAccountSite">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>CustomerAccountSiteId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="CustomerAccountSiteId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="CustomerAccountId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="PartySiteId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="BillToIndicator" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="MarketIndicator" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ShipToIndicator" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CustomerCategoryCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Language" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="KeyAccountFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="TpHeaderId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="EceTpLocationCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="TranslatedCustomerName" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SetId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="StartDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="EndDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="SetCode" type="xsd:string"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="CustomerAccountContact" type="CustomerAccountContact"
+                         sdoXML:dataType="sdo:DataObject"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="CustomerAccountSiteUse" type="CustomerAccountSiteUse"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns1:OriginalSystemReference"/>
+                    <xsd:element minOccurs="0" name="CustAcctSiteInformation" type="ns6:CustAcctSiteInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CustomerAccountSiteUse">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                            <xsd:attribute>SiteUseId</xsd:attribute>
+                        </key>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="SiteUseId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="CustomerAccountSiteId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="LastUpdateDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="LastUpdatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreationDate" type="ns0:dateTime-Timestamp"/>
+                    <xsd:element minOccurs="0" name="CreatedBy" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SiteUseCode" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PrimaryFlag" type="xsd:boolean" sdoXML:dataType="sdoJava:BooleanObject"/>
+                    <xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Location" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="LastUpdateLogin" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="BillToSiteUseId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="OrigSystemReference" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SICCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="PaymentTermId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="GSAIndicator" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="TerritoryId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="RequestId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="TaxReference" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SortPriority" nillable="true" type="xsd:int"/>
+                    <xsd:element minOccurs="0" name="TaxCode" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SecondLastAccrueChargeDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="LastAccrueChargeDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="LastUnaccrueChargeDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="SecondLastUnaccrueChrgDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="TaxHeaderLevelFlag" nillable="true" type="xsd:boolean"/>
+                    <xsd:element minOccurs="0" name="FinchrgReceivablesTrxId" nillable="true" type="xsd:long"/>
+                    <xsd:element minOccurs="0" name="TaxRoundingRule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="TaxClassification" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="CreatedByModule" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="SetId" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+                    <xsd:element minOccurs="0" name="EndDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="StartDate" type="ns0:date-Date"/>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="OriginalSystemReference"
+                         type="ns1:OriginalSystemReference"/>
+                    <xsd:element minOccurs="0" name="CustAcctSiteUseInformation" type="ns7:CustAcctSiteUseInformation"
+                         sdoXML:dataType="sdo:DataObject"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CustomerAccountResult">
+                <xsd:complexContent>
+                    <xsd:extension base="ns0:MethodResult">
+                        <xsd:sequence>
+                            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Value" type="CustomerAccount"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+        </xs:schema>
+        <xs:schema xmlns="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefMergeCustomerAccount/types"
+             elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefMergeCustomerAccount/types"
+             xmlns:ns2="http://xmlns.oracle.com/apps/cdm/foundation/parties/customerAccountService/"
+             xmlns:tns0="http://xmlns.oracle.com/pcbpel/adapter/erp/ErpIntegrationServiceTec/ERPIntegrationServiceTec/erpRefMergeCustomerAccount/types">
+            <xs:import namespace="http://xmlns.oracle.com/apps/cdm/foundation/parties/customerAccountService/"/>
+            <xs:element name="mergeCustomerAccount" type="tns0:mergeCustomerAccountType"/>
+            <xs:complexType name="mergeCustomerAccountType">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="ns2:CustomerAccount" name="customerAccount"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="mergeCustomerAccountResponse" type="tns0:mergeCustomerAccountResponseType"/>
+            <xs:complexType name="mergeCustomerAccountResponseType">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" type="ns2:CustomerAccountResult" name="result"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="mergeCustomerAccountRequestMessage">
+        <wsdl:part name="parameters" element="ns0:mergeCustomerAccount"/>
+    </wsdl:message>
+    <wsdl:message name="mergeCustomerAccountResponseMessage">
+        <wsdl:part name="parameters" element="ns0:mergeCustomerAccountResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceException">
+        <wsdl:part name="parameters" element="errors:ServiceErrorMessage"/>
+    </wsdl:message>
+    <wsdl:portType name="erpRefMergeCustomerAccountPortType">
+        <wsdl:operation name="mergeCustomerAccount">
+            <cloud:CloudOperation xmlns:cloud="http://xml.oracle.com/types" targetOperation="mergeCustomerAccount"/>
+            <wsdl:input message="ns1:mergeCustomerAccountRequestMessage"/>
+            <wsdl:output message="ns1:mergeCustomerAccountResponseMessage"/>
+            <wsdl:fault name="ServiceException" message="ns1:ServiceException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

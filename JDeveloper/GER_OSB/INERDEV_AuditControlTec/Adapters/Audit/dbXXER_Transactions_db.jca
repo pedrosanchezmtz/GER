@@ -1,0 +1,26 @@
+<adapter-config name="dbXXER_Transactions" adapter="db" wsdlLocation="../../WSDLs/External/Audit/dbXXER_Transactions.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="ERSEPDB1" location="eis/DB/DEV/ERSEPDB1"/>
+  <endpoint-interaction portType="dbXXER_Transactions_ptt" operation="dbXXER_TransactionsSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="dbXXER_Transactions.XxerIntegrationsTransactions"/>
+      <property name="QueryName" value="dbXXER_TransactionsSelect"/>
+      <property name="MappingsMetaDataURL" value="dbXXER_Transactions-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="dbXXER_Transactions_ptt" operation="merge">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="dbXXER_Transactions.XxerIntegrationsTransactions"/>
+      <property name="DmlType" value="merge"/>
+      <property name="OutputCompletedXml" value="true"/>
+      <property name="MappingsMetaDataURL" value="dbXXER_Transactions-or-mappings.xml"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

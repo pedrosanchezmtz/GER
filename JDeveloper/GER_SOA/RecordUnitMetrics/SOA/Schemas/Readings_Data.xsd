@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+            targetNamespace="http://soa.estrellaroja.com.mx/ReportReadings">
+  <xsd:element name="DATA_DS">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="P_ACTIVO" type="xsd:string"  minOccurs="0"/>
+                <xsd:element name="P_FECHA_INI" type="xsd:string"  minOccurs="0"/>
+        <xsd:element name="P_FECHA_FIN" type="xsd:string"  minOccurs="0"/>
+        <xsd:element name="P_ITEM" type="xsd:string"  minOccurs="0"/>
+       <xsd:element name="G_2" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="FECHA" type="xsd:date"  minOccurs="0"/>
+              <xsd:element name="VALOR_CARGA" type="xsd:decimal"  minOccurs="0"/>
+              <xsd:element name="VALOR_MOSTRADO" type="xsd:decimal"  minOccurs="0"/>
+              <xsd:element name="NUMERO_ITEM" type="xsd:string"  minOccurs="0"/>
+              <xsd:element name="FECHA_EJECUCION" type="xsd:string"  minOccurs="0"/>
+              <xsd:element name="CODIGO" type="xsd:date"  minOccurs="0"/>
+              <xsd:element name="NAME" type="xsd:string"  minOccurs="0"/>
+              <xsd:element name="ASSET_NUMBER" type="xsd:string"  minOccurs="0"/>
+              <xsd:element name="NAME_UM" type="xsd:string"  minOccurs="0"/>
+              <xsd:element name="ORGANIZATION_ID" type="xsd:string"  minOccurs="0"/>
+              <xsd:element name="NOMBRE_ORGANIZACION" type="xsd:string"  minOccurs="0"/>
+              <xsd:element name="ACTIVE_START_DATE" type="xsd:date"  minOccurs="0"/>
+              <xsd:element name="ACTIVE_END_DATE" type="xsd:date"  minOccurs="0"/>
+              <xsd:element name="DIF_DATES" type="xsd:date"  minOccurs="0"/>
+              <xsd:element name="METER_ID" type="xsd:string"  minOccurs="0"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="ReportsSOA/WSDLs/ReportsSOARestService"/>
+            <con:binding>
+                <con:name>ReportsSOARestService_ptt-binding</con:name>
+                <con:namespace>http://xmlns.oracle.com/GER_OSB_OLD/ReportsSOA/ReportsSOARestService</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline type="request" name="request-N3f57fcc9.N18690980.0.17910fba025.N7f65">
+            <con:stage id="_StageId-N3f57fcc9.N18690980.0.17910fba025.N7f63" name="StageRequest">
+                <con:context/>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57fcc9.N18690980.0.17910fba025.N7f5f</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xsltTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="ReportsSOA/XSLs/inputRest_to_reportsSOA"/>
+                                <con2:input>$body/*[1]</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fcc9.N18690980.0.17910fba025.N7f64">
+            <con:stage id="_StageId-N3f57fcc9.N18690980.0.17910fba025.N7f62" name="Stage1">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:pipeline-node name="Pipeline Pair Node1">
+                <con:request>request-N3f57fcc9.N18690980.0.17910fba025.N7f65</con:request>
+                <con:response>response-N3f57fcc9.N18690980.0.17910fba025.N7f64</con:response>
+            </con:pipeline-node>
+            <con:route-node name="RouteReportsSOA" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                <con:context/>
+                <con:actions>
+                    <con1:route>
+                        <con2:id>_ActionId-N3f57fcc9.N18690980.0.17910fba025.N7f66</con2:id>
+                        <con1:service ref="ReportsSOA/Bussines/ReportsSOA_BS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:operation passThrough="true"/>
+                        <con1:outboundTransform/>
+                        <con1:responseTransform/>
+                    </con1:route>
+                </con:actions>
+            </con:route-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

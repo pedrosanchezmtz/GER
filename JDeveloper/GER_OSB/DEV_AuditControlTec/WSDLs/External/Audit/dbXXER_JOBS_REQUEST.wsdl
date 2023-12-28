@@ -1,0 +1,27 @@
+<wsdl:definitions name="dbXXER_JOBS_REQUEST" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbXXER_JOBS_REQUEST" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/AuditControlTec/AuditControlTec/dbXXER_JOBS_REQUEST" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbXXER_JOBS_REQUEST" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="dbXXER_JOBS_REQUEST_plt">
+    <plt:role name="dbXXER_JOBS_REQUEST_role">
+      <plt:portType name="tns:dbXXER_JOBS_REQUEST_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbXXER_JOBS_REQUEST" schemaLocation="../../../Schemas/External/Audit/dbXXER_JOBS_REQUEST_table.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="dbXXER_JOBS_REQUESTSelect_inputParameters">
+        <wsdl:part name="dbXXER_JOBS_REQUESTSelect_inputParameters" element="top:dbXXER_JOBS_REQUESTSelect_pInstanceNumberInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="XxerJobsRequestCollection_msg">
+        <wsdl:part name="XxerJobsRequestCollection" element="top:XxerJobsRequestCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="dbXXER_JOBS_REQUEST_ptt">
+        <wsdl:operation name="insert">
+            <wsdl:input message="tns:XxerJobsRequestCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="dbXXER_JOBS_REQUESTSelect">
+            <wsdl:input message="tns:dbXXER_JOBS_REQUESTSelect_inputParameters"/>
+            <wsdl:output message="tns:XxerJobsRequestCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

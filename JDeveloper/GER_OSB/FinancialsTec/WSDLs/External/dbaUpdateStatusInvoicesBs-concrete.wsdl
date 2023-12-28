@@ -1,0 +1,15 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaUpdateStatusInvoicesBs" name="dbaUpdateStatusInvoicesBs-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="dbaUpdateStatusInvoicesBs.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaUpdateStatusInvoicesBs"/>
+    <wsdl:binding name="dbaUpdateStatusInvoicesBs_ptt-binding" type="dba:dbaUpdateStatusInvoicesBs_ptt" xmlns:dba="http://xmlns.oracle.com/pcbpel/adapter/db/FinancialsTec/FinancialsTec/dbaUpdateStatusInvoicesBs">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="dbaUpdateStatusInvoicesBs">
+            <soap:operation soapAction="dbaUpdateStatusInvoicesBs"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

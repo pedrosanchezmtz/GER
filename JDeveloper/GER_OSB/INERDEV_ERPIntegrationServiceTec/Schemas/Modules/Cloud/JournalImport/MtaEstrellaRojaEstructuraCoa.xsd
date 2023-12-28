@@ -1,0 +1,27 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/financials/generalLedger/accounts/codeCombinations/publicFlex/Account/" xmlns="http://xmlns.oracle.com/apps/financials/generalLedger/accounts/codeCombinations/publicFlex/Account/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:include schemaLocation="Account.xsd"/>
+    <xsd:complexType name="MtaEstrellaRojaEstructuraCoa">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>_CODE_COMBINATION_ID</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="Account">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="mtaCompania" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="mtaSitio" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="mtaCentroCostos" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="mtaCuenta" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="mtaDivision" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="mtaIntercompania" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="mtaProyecto" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="mtaFuturo" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="mtaEstrellaRojaEstructuraCoa" type="MtaEstrellaRojaEstructuraCoa"/>
+</xsd:schema>

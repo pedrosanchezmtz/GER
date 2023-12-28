@@ -1,0 +1,13 @@
+<adapter-config name="dbaGetReceiptOrInvoicesBs" adapter="db" wsdlLocation="../WSDLs/External/dbaGetReceiptOrInvoicesBs.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="ERSEPDB1DS" location="eis/DB/DEV/ERSEPDB1"/>
+  <endpoint-interaction portType="dbaGetReceiptOrInvoicesBs_ptt" operation="dbaGetReceiptOrInvoicesBs">
+    <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
+      <property name="SchemaName" value="XERINTUSER"/>
+      <property name="PackageName" value="XXER_UTILITIES_PKG"/>
+      <property name="ProcedureName" value="GET_INFORMATION_RECEIPT_INVOICE"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

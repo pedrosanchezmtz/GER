@@ -1,0 +1,48 @@
+<wsdl:definitions name="LetterPorteBiz" targetNamespace="http://soa.estrellaroja.com.mx/LetterPorteBiz" xmlns:tns="http://soa.estrellaroja.com.mx/LetterPorteBiz" xmlns:inp1="http://soa.estrellaroja.com.mx/LetterPorteBiz" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://soa.estrellaroja.com.mx/LetterPorteBiz" schemaLocation="../../Schemas/External/LetterPorteBiz.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="GenerateRelationCFDIsRqMessage">
+        <wsdl:part name="payload" element="inp1:GenerateRelationCFDIsRq"/>
+    </wsdl:message>
+    <wsdl:message name="GenerateRelationCFDIsRsMessage">
+        <wsdl:part name="payload" element="inp1:GenerateRelationCFDIsRs"/>
+    </wsdl:message>
+        <wsdl:message name="GenerateURLRelationCFDIsRqMessage">
+        <wsdl:part name="payload" element="inp1:GenerateURLRelationCFDIsRq"/>
+    </wsdl:message>
+    <wsdl:portType name="LetterPorteBizPort">
+        <wsdl:operation name="GenerateRelationCFDIs">
+            <wsdl:input message="tns:GenerateRelationCFDIsRqMessage"/>
+            <wsdl:output message="tns:GenerateRelationCFDIsRsMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GenerateURLRelationCFDIs">
+            <wsdl:input message="tns:GenerateURLRelationCFDIsRqMessage"/>
+            </wsdl:operation>
+    </wsdl:portType>
+        <wsdl:binding name="LetterPorteBizBinding" type="tns:LetterPorteBizPort">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="GenerateRelationCFDIs">
+            <soap:operation style="document" soapAction="GenerateRelationCFDIs"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GenerateURLRelationCFDIs">
+            <soap:operation style="document" soapAction="GenerateURLRelationCFDIs"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="LetterPorteBiz">
+        <wsdl:port name="LetterPorteBizPort" binding="tns:LetterPorteBizBinding">
+            <soap:address location="http://ersoaprd-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/DEV/LetterPorteBiz/LetterPorteBiz"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

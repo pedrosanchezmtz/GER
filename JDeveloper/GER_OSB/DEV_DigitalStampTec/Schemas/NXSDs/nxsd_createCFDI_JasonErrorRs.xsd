@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/DigitalStampTec" targetNamespace="http://soa.estrellaroja.com.mx/DigitalStampTec" elementFormDefault="qualified" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON" nxsd:encoding="UTF-8">
+   <xsd:element name="Error">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="ExceptionType" type="xsd:string"/>
+            <xsd:element name="ExceptionMessage" type="xsd:string"/>
+            <xsd:element name="Message" type="xsd:string"/>
+            <xsd:element name="StackTrace" type="xsd:string"/>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+<xsd:annotation xmlns="">
+      <xsd:appinfo>NXSDSAMPLE=C:\Users\Carlos\Carlos\Proyectos\EstrellaRoja\TimbradoDeAnticipos\CFDIRsJasonError.txt</xsd:appinfo>
+      <xsd:appinfo>USEHEADER=false</xsd:appinfo>
+   </xsd:annotation>
+</xsd:schema>

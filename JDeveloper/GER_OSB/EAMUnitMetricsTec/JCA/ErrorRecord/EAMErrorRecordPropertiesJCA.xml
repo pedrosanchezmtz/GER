@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="XXER_EAM_ERROR_LOG.ID_ERROR:db_column_not_null">false</entry>
+   <entry key="XXER_EAM_ERROR_LOG.ID_ERROR:db_column_type">NUMBER</entry>
+   <entry key="XXER_EAM_ERROR_LOG.ASSET_NUMBER:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_EAM_ERROR_LOG.ORIGIN:db_column_size">40</entry>
+   <entry key="XXER_EAM_ERROR_LOG.ERROR_MESSAGE:db_column_size">2000</entry>
+   <entry key="XXER_EAM_ERROR_LOG.READING_VALUE:db_column_type">NUMBER</entry>
+   <entry key="XXER_EAM_ERROR_LOG:db_column_5">ORIGIN</entry>
+   <entry key="XXER_EAM_ERROR_LOG:db_column_4">ERROR_MESSAGE</entry>
+   <entry key="XXER_EAM_ERROR_LOG:db_column_3">READING_VALUE</entry>
+   <entry key="XXER_EAM_ERROR_LOG.READING_VALUE:db_column_not_null">false</entry>
+   <entry key="XXER_EAM_ERROR_LOG:db_column_2">READING_DATE</entry>
+   <entry key="XXER_EAM_ERROR_LOG:db_column_1">ASSET_NUMBER</entry>
+   <entry key="XXER_EAM_ERROR_LOG.ORIGIN:db_column_not_null">false</entry>
+   <entry key="XXER_EAM_ERROR_LOG:db_column_0">ID_ERROR</entry>
+   <entry key="XXER_EAM_ERROR_LOG.ID_ERROR:db_column_scale">0</entry>
+   <entry key="XXER_EAM_ERROR_LOG.ASSET_NUMBER:db_column_size">60</entry>
+   <entry key="XXER_EAM_ERROR_LOG.ERROR_MESSAGE:db_column_not_null">false</entry>
+   <entry key="XXER_EAM_ERROR_LOG.READING_DATE:db_column_type">DATE</entry>
+   <entry key="root_descriptor_alias">XXER_EAM_ERROR_LOG</entry>
+   <entry key="XXER_EAM_ERROR_LOG.ASSET_NUMBER:db_column_not_null">false</entry>
+   <entry key="XXER_EAM_ERROR_LOG.ID_ERROR:db_column_precision">38</entry>
+   <entry key="XXER_EAM_ERROR_LOG.ORIGIN:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_EAM_ERROR_LOG.READING_VALUE:db_column_scale">0</entry>
+   <entry key="XXER_EAM_ERROR_LOG.READING_VALUE:db_column_precision">38</entry>
+   <entry key="XXER_EAM_ERROR_LOG.ERROR_MESSAGE:db_column_type">VARCHAR2</entry>
+   <entry key="XXER_EAM_ERROR_LOG.READING_DATE:db_column_not_null">false</entry>
+   <entry key="XXER_EAM_ERROR_LOG:db_table_type">TABLE</entry>
+</properties>

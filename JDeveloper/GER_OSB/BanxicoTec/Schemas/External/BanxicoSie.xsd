@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/BanxicoSie"
+            targetNamespace="http://soa.estrellaroja.com.mx/BanxicoSie" elementFormDefault="qualified">
+       <xsd:element name="series">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="serie">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Obs" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="dato" type="xsd:float"/>
+                    <xsd:element name="fecha" type="xsd:date"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="idSerie" type="xsd:string"/>
+            <xsd:attribute name="titulo" type="xsd:string"/>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+      <xsd:element name="GetSeries_params">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="idSeries" type="xsd:string"/>
+                        <xsd:element name="fechaInicial" type="xsd:string"/>
+                        <xsd:element name="fechaFinal" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+</xsd:schema>

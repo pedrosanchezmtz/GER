@@ -1,0 +1,44 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/flex/scm/commonWorkExecution/workOrders/" xmlns="http://xmlns.oracle.com/apps/flex/scm/commonWorkExecution/workOrders/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:include schemaLocation="WorkOrderDFF.xsd"/>
+    <xsd:complexType name="HEnvasado">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>WorkOrderId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="WorkOrderDFF">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="ttmTex02" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="tmpTex11" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="tmpTex12" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="tmpTex13" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="tmpTex14" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="tmpTex15" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="tmpTex16" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="tmpTex17" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="tmpTex18" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="tnpTex21" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="tnpTex22" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="tnpTex23" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="tnpTex24" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="tnpTex25" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="tnpTex26" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ptkTex31" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ptkTex32" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ptkTex33" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ptkTex34" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ptkTex35" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ptkTex36" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ptkTex37" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ptkTex38" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ptkTex39" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="ptkTex40" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="hEnvasado" type="HEnvasado"/>
+</xsd:schema>

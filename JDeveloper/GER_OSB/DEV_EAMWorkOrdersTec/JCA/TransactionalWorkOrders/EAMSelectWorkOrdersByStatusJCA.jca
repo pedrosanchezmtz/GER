@@ -1,0 +1,12 @@
+<adapter-config name="EAMSelectWorkOrdersByStatus" adapter="db" wsdlLocation="../../WSDL/TransactionalWorkOrders/EAMSelectWorkOrdersByStatusWSDL.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="DEV/ERSEPDB1" location="eis/DB/DEV/ERSEPDB1"/>
+  <endpoint-interaction portType="EAMSelectWorkOrdersByStatus_ptt" operation="EAMSelectWorkOrdersByStatus">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="select * from xxer_zam_wo_blks_tbl where ora_wo_number = #woNum and created_by = #status"/>
+      <property name="QueryTimeout" value="10"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

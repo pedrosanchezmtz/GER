@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="ERPManagementOfLoadImportBiz" targetNamespace="http://soa.estrellaroja.com.mx/ERPManagementOfLoadImportBiz" xmlns:tns="http://soa.estrellaroja.com.mx/ERPManagementOfLoadImportBiz" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://soa.estrellaroja.com.mx/ERPManagementOfLoadImportBiz" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.estrellaroja.com.mx/ERPManagementOfLoadImportBiz/types" elementFormDefault="qualified">
+<xsd:import namespace="http://soa.estrellaroja.com.mx/ERPManagementOfLoadImportBiz" schemaLocation="ERPManagementOfLoadImportBiz.xsd"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="SendReportInterfaceRq">
+<wsdl:part name="SendReportInterfaceRq" element="tns:SendReportInterfaceRq"/>
+</wsdl:message>
+<wsdl:portType name="ERPManagementOfLoadImportBizPortType">
+<wsdl:operation name="SendReportInterface">
+<wsdl:input message="tns:SendReportInterfaceRq"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="ERPManagementOfLoadImportBizBinding" type="tns:ERPManagementOfLoadImportBizPortType">
+<soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="SendReportInterface">
+<soap12:operation soapAction="http://soa.estrellaroja.com.mx/ERPManagementOfLoadImportBiz/SendReportInterface"/>
+<wsdl:input>
+<soap12:body use="literal" parts="SendReportInterfaceRq"/>
+</wsdl:input>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="ERPManagementOfLoadImportBiz">
+<wsdl:port name="ERPManagementOfLoadImportBizPortType" binding="tns:ERPManagementOfLoadImportBizBinding">
+<soap12:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/CommonsDEV/ERPManagementOfLoadImportBiz/ERPManagementOfLoadImportBiz"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

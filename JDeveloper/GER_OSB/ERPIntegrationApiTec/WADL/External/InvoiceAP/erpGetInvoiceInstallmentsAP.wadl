@@ -1,0 +1,25 @@
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns0="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="erpGetInvoiceInstallmentsAP">RestReference</doc>
+  <grammars>
+    <xsd:schema>
+      <xsd:import namespace="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP" schemaLocation="../../../Schemas/External/InvoiceAP/erpInvoiceInstallmentsAP.xsd"/>
+    </xsd:schema>
+  </grammars>
+  <resources>
+    <resource path="/fscmRestApi/resources/11.13.18.05/invoices/{invoice_id}/child/invoiceInstallments">
+      <method name="GET" soa:wsdlOperation="getInvoiceInstallmentsAP">
+        <request soa:paramElement="pns:getInvoiceInstallmentsAPRq" xmlns:pns="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">
+          <param name="invoice_id" style="template" soa:expression="$msg.request/ns0:invoice_id" type="xsd:string"/>
+          <param name="fields" style="query" soa:expression="$msg.request/ns0:fields" type="xsd:string"/>
+          <param name="links" style="query" soa:expression="$msg.request/ns0:links" type="xsd:string"/>
+          <param name="onlyData" style="query" soa:expression="$msg.request/ns0:onlyData" type="xsd:string"/>
+          <param name="expand" style="query" soa:expression="$msg.request/ns0:expand" type="xsd:string"/>
+          <param name="dependency" style="query" soa:expression="$msg.request/ns0:dependency" type="xsd:string"/>
+        </request>
+        <response status="200">
+          <representation mediaType="application/json" element="cns:getInvoiceInstallmentsAPRs" xmlns:cns="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP"/>
+        </response>
+      </method>
+    </resource>
+  </resources>
+</application>

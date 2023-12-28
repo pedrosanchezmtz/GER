@@ -1,0 +1,69 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbGetValPaymentComplementsResume" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbGetValPaymentComplementsResume" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XeerApValpmtComplementsVCollection" type="XeerApValpmtComplementsVCollection"/>
+   <xs:complexType name="XeerApValpmtComplementsVCollection">
+      <xs:sequence>
+         <xs:element name="XeerApValpmtComplementsV" type="XeerApValpmtComplementsV" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XeerApValpmtComplementsV">
+      <xs:sequence>
+         <xs:element name="incPaymentComplementId" type="xs:long"/>
+         <xs:element name="complementRfcIssuer" type="string150" minOccurs="0"/>
+         <xs:element name="complementRfcReceiver" type="string150" minOccurs="0"/>
+         <xs:element name="complementTotalAmount" type="xs:decimal" minOccurs="0"/>
+         <xs:element name="complementUuid" type="string150" minOccurs="0"/>
+         <xs:element name="uuidDate" type="xs:dateTime" minOccurs="0"/>
+         <xs:element name="status" type="string150" minOccurs="0"/>
+         <xs:element name="statusDesc" type="string500" minOccurs="0" nillable="true"/>
+         <xs:element name="attatchment" type="xs:string" minOccurs="0" nillable="true"/>
+         <xs:element name="validationResponse" type="xs:string" minOccurs="0" nillable="true"/>
+         <xs:element name="checkNumber" type="xs:long" minOccurs="0" nillable="true"/>
+         <xs:element name="incPaymentCmpInvoiceId" type="xs:long"/>
+         <xs:element name="invoiceUuid" type="string150" minOccurs="0"/>
+         <xs:element name="installmentNumber" type="string20" minOccurs="0"/>
+         <xs:element name="invoiceRfcIssuer" type="string13" minOccurs="0" nillable="true"/>
+         <xs:element name="invoiceRfcReceiver" type="string13" minOccurs="0" nillable="true"/>
+         <xs:element name="invoiceTotalAmount" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="businessUnit" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="invoiceNumber" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="supplierNumber" type="string50" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="dbGetValPaymentComplementsResumeSelect_pComplementUuid_pComplementRfcIssuer_pComplementRfcReceiver_pStatus_pStartDate_pEndDateInputParameters" type="dbGetValPaymentComplementsResumeSelect_pComplementUuid_pComplementRfcIssuer_pComplementRfcReceiver_pStatus_pStartDate_pEndDate"/>
+   <xs:complexType name="dbGetValPaymentComplementsResumeSelect_pComplementUuid_pComplementRfcIssuer_pComplementRfcReceiver_pStatus_pStartDate_pEndDate">
+      <xs:sequence>
+         <xs:element name="pComplementUuid" type="xs:string" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="pComplementRfcIssuer" type="xs:string" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="pComplementRfcReceiver" type="xs:string" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="pStatus" type="xs:string" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="pStartDate" type="xs:string" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="pEndDate" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="string150">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="150"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string500">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="500"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string20">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="20"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string13">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="13"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string50">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="50"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

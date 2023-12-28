@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbInvoicesAPBs" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbInvoicesAPBs" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxerInvoicesApTblCollection" type="XxerInvoicesApTblCollection"/>
+   <xs:element name="XxerInvoicesApTbl" type="XxerInvoicesApTbl"/>
+   <xs:complexType name="XxerInvoicesApTblCollection">
+      <xs:sequence>
+         <xs:element name="XxerInvoicesApTbl" type="XxerInvoicesApTbl" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxerInvoicesApTbl">
+      <xs:sequence>
+         <xs:element name="invoiceId" type="xs:decimal"/>
+         <xs:element name="emisorRfc" type="string13" minOccurs="0"/>
+         <xs:element name="receptorRfc" type="string13" minOccurs="0"/>
+         <xs:element name="amount" type="xs:decimal" minOccurs="0"/>
+         <xs:element name="uuid" type="string150" minOccurs="0"/>
+         <xs:element name="status" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="businessUnit" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="invoiceNumber" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="supplierNumber" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute1" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute2" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute3" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute4" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="attribute5" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="createdBy" type="string150" minOccurs="0"/>
+         <xs:element name="creationDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="lastUpdatedBy" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="lastUpdateDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="objectVersionNumber" type="xs:int" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="string13">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="13"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string150">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="150"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string50">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="50"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,32 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="BpelUpdateInvoicesInstallmentsAP"
+     targetNamespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/BpelUpdateInvoicesInstallmentsAP"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:client="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/BpelUpdateInvoicesInstallmentsAP"
+     xmlns:ns1="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+    >
+    <plnk:partnerLinkType name="BpelUpdateInvoicesInstallmentsAP">
+        <plnk:role name="BpelUpdateInvoicesInstallmentsAPProvider" portType="client:BpelUpdateInvoicesInstallmentsAP"/>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:client="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/BpelUpdateInvoicesInstallmentsAP"
+             xmlns:ns1="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+            <import namespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" schemaLocation="oramds:/apps/SOA/ValidationPaymentsAPBiz/ValidationPaymentsAPBiz.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="BpelUpdateInvoicesInstallmentsAPRequestMessage">
+        <wsdl:part name="payload" element="ns1:UpdateInvoicesInstallmentsAPRq"/>
+    </wsdl:message>
+    <wsdl:message name="BpelUpdateInvoicesInstallmentsAPResponseMessage">
+        <wsdl:part name="payload" element="ns1:UpdateInvoicesInstallmentsAPRs"/>
+    </wsdl:message>
+    <wsdl:portType name="BpelUpdateInvoicesInstallmentsAP">
+        <wsdl:operation name="BpelUpdateInvoicesInstallmentsAP">
+            <wsdl:input message="client:BpelUpdateInvoicesInstallmentsAPRequestMessage"/>
+            <wsdl:output message="client:BpelUpdateInvoicesInstallmentsAPResponseMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

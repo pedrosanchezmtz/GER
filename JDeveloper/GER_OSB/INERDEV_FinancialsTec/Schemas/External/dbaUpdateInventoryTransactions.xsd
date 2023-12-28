@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/dbaUpdateInventoryTransactions" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/dbaUpdateInventoryTransactions" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="dbaUpdateInventoryTransactionsInput" type="dbaUpdateInventoryTransactionsInput"/>
+   <xs:complexType name="dbaUpdateInventoryTransactionsInput">
+      <xs:sequence>
+         <xs:element name="pFlag" type="xs:decimal" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

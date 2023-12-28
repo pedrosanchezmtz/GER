@@ -1,0 +1,1978 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="DEV_AuditControlTec/WSDLs/AuditControlTec"/>
+            <con:binding>
+                <con:name>AuditControlTecBinding</con:name>
+                <con:namespace>http://soa.estrellaroja.com.mx/AuditControlTec</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router errorHandler="_onErrorHandler-N53ef9bf9.N44e6002a.2.1624456d444.N8000">
+        <con:pipeline type="response" name="response-N3f57fec2.7a516b09.0.1604d2f7d90.N7c53">
+            <con:stage id="_StageId-N3f57fec2.7a516b09.0.1604d2f7d90.N7c51" name="StageResponse">
+                <con:context/>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7b85</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>$varResponse</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fec2.N6c066df.0.160508ab4de.N7f03">
+            <con:stage id="_StageId-N3f57fec2.N6c066df.0.160508ab4de.N7f01" name="StageResponse">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fec2.N6c066df.0.160508ab4de.N7e36</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>&lt;aud:CreateJobsStatusRs>
+  &lt;cmn:Success />
+&lt;/aud:CreateJobsStatusRs></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fffb.644af808.0.16058d02cc7.N7fff">
+            <con:stage id="_StageId-N3f57fffb.644af808.0.16058d02cc7.N7ffd" name="Stage Response">
+                <con:context/>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fffb.644af808.0.16058d02cc7.N7ff6</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>$varResponse</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57ef58.N261d22d.0.17b412f1425.N7e20">
+            <con:stage id="_StageId-N3f57ef58.N261d22d.0.17b412f1425.N7e1f" name="StageCreateInvoicesAPRq">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57ef58.N261d22d.0.17b412f1425.N7e1e</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/GetComplementsAPRq_to_dbSelectComplementsAP"/>
+                                <con2:input>$body/*[1]</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fec2.7a516b09.0.1604d2f7d90.N7e95">
+            <con:stage id="_StageId-N3f57fec2.7a516b09.0.1604d2f7d90.N7e94" name="Stage Error Handler">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7e93</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<aud:CreateLogRs>
+	<cmn:Errors>
+		<cmn:Error>
+			<cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+			<cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+			<cmn:Description>{fn:concat("Error when invoking ", "CreateLog",$fault/ctx:details," ValidatePayment: ",$body/text() )}</cmn:Description>
+			<cmn:BusinessProcess>CreateLog</cmn:BusinessProcess>
+			<cmn:FailedService>AuditControlTec</cmn:FailedService>
+			<cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+		</cmn:Error>
+	</cmn:Errors>
+</aud:CreateLogRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply isError="false">
+                        <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7e92</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fec2.7a516b09.0.1604d2f7d90.N7aaa">
+            <con:stage id="_StageId-N3f57fec2.7a516b09.0.1604d2f7d90.N7aa9" name="Stage Error Handler">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7aa8</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<aud:GetCtrlTransRs>
+	<cmn:Errors>
+		<cmn:Error>
+			<cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+			<cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+			<cmn:Description>{fn:concat("Error when invoking ", "GetCtrlTrans",$fault/ctx:details )}</cmn:Description>
+			<cmn:BusinessProcess>GetCtrlTrans</cmn:BusinessProcess>
+			<cmn:FailedService>AuditControlTec</cmn:FailedService>
+			<cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+		</cmn:Error>
+	</cmn:Errors>
+</aud:GetCtrlTransRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply isError="false">
+                        <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7aa7</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fffe.45c73522.0.1605d7ae873.N7ec3">
+            <con:stage id="_StageId-N3f57fffe.45c73522.0.1605d7ae873.N7ec1" name="StageRequest">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57fffe.45c73522.0.1605d7ae873.N7deb</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/trGetCustomerSiteLogRq_To_DbaCustomerSiteLogSelectByPKRq"/>
+                                <con2:input>$body/aud:GetCustomerSiteLogRq</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fffe.N1ac3d06.0.16071379d88.N8000">
+            <con:stage id="_StageId-N3f57fffe.N1ac3d06.0.16071379d88.N7ffe" name="Stage Request">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57fffe.N1ac3d06.0.16071379d88.N7fe6</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/GetInvoicesAPByExampleRq_To_XxerInvoicesApTbl"/>
+                                <con2:input>$body/aud:GetInvoicesAPByExampleRq</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fec2.7a516b09.0.1604d2f7d90.N7f9a">
+            <con:stage id="_StageId-N3f57fec2.7a516b09.0.1604d2f7d90.N7f98" name="StageResponse">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7e5f</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>&lt;aud:CreateLogRs>
+  &lt;cmn:Success />
+&lt;/aud:CreateLogRs></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fec2.7a516b09.0.1604d2f7d90.N7c54">
+            <con:stage id="_StageId-N3f57fec2.7a516b09.0.1604d2f7d90.N7c52" name="StageRequest">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7c1e</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/Audit/trPipelineGetCtrlTransRq_To_DbXXERTransactionsSelectRq"/>
+                                <con2:input>$body/aud:GetCtrlTransRq</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fec2.N6c066df.0.160508ab4de.N7bf5">
+            <con:stage id="_StageId-N3f57fec2.N6c066df.0.160508ab4de.N7bf4" name="Stage Error Handler">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fec2.N6c066df.0.160508ab4de.N7bf3</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<aud:GetJobsStatusRs>
+	<cmn:Errors>
+		<cmn:Error>
+			<cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+			<cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+			<cmn:Description>{fn:concat("Error when invoking ", "GetJobsStatus",$fault/ctx:details )}</cmn:Description>
+			<cmn:BusinessProcess>GetJobsStatus</cmn:BusinessProcess>
+			<cmn:FailedService>AuditControlTec</cmn:FailedService>
+			<cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+		</cmn:Error>
+	</cmn:Errors>
+</aud:GetJobsStatusRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply isError="false">
+                        <con2:id>_ActionId-N3f57fec2.N6c066df.0.160508ab4de.N7bf2</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fffe.45c73522.0.1605d7ae873.N7f2c">
+            <con:stage id="_StageId-N3f57fffe.45c73522.0.1605d7ae873.N7f2b" name="Stage Exception Handler">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fffe.45c73522.0.1605d7ae873.N7f2a</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<aud:MergeCustomerSiteLogRs>
+	<cmn:Errors>
+		<cmn:Error>
+			<cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+			<cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+			<cmn:Description>{fn:concat("Error when invoking ", "MergeCustomerSiteLog",$fault/ctx:details )}</cmn:Description>
+			<cmn:BusinessProcess>MergeCustomerSiteLog</cmn:BusinessProcess>
+			<cmn:FailedService>AuditControlTec</cmn:FailedService>
+			<cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+		</cmn:Error>
+	</cmn:Errors>
+</aud:MergeCustomerSiteLogRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply>
+                        <con2:id>_ActionId-N3f57fffe.45c73522.0.1605d7ae873.N7f29</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57feb6.1e9f6513.0.160e24a85e7.N8000">
+            <con:stage id="_StageId-N3f57feb6.1e9f6513.0.160e24a85e7.N7ffe" name="Stage Request">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57feb6.1e9f6513.0.160e24a85e7.N7ffa</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/ValPaymentComplementsResume/GetValPaymentComplementsResumeRq_To_Params"/>
+                                <con2:input>$body/aud:GetValPaymentComplementsResumeRq</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fffe.45c73522.0.1605d7ae873.N7ec2">
+            <con:stage id="_StageId-N3f57fffe.45c73522.0.1605d7ae873.N7ec0" name="StageResponse">
+                <con:context/>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fffe.45c73522.0.1605d7ae873.N7db8</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>$varResponse</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fec2.7a516b09.0.1604d2f7d90.N7df9">
+            <con:stage id="_StageId-N3f57fec2.7a516b09.0.1604d2f7d90.N7df7" name="StageRequest">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7dc3</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/Audit/trPipelineMergeControlTransRq_To_DbXXERTransactionsMergeRq"/>
+                                <con2:input>$body/aud:MergeCtrlTransRq</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fec2.N6c066df.0.160508ab4de.N7d61">
+            <con:stage id="_StageId-N3f57fec2.N6c066df.0.160508ab4de.N7d5f" name="StageRequest">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57fec2.N6c066df.0.160508ab4de.N7d2b</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/Audit/trPipelineGetJobsStatusRq_To_DbaXxErJobsRequestSelectRq"/>
+                                <con2:input>$body/aud:GetJobsStatusRq</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fffe.N61f934ca.0.16036ef955a.N7f9c">
+            <con:stage id="_StageId-N3f57fffe.N61f934ca.0.16036ef955a.N7f9a" name="StageCreateInvoicesAPRq">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varCreateInvoicesAPRq">
+                        <con2:id>_ActionId-N3f57fffe.N61f934ca.0.16036ef955a.N7f35</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/MergeInvoicesAPRq_To_DbInvoicesMergeInvoicesAPRq"/>
+                                <con2:input>$body/aud:MergeInvoicesAPRq</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-a30a5df.6dcd639a.0.160479c370d.N7fce">
+            <con:stage id="_StageId-a30a5df.6dcd639a.0.160479c370d.N7fcc" name="StageInsertArElecInvoiceRs">
+                <con:context>
+                    <con2:varNsDecl prefix="est" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con2:varNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-a30a5df.6dcd639a.0.160479c370d.N7d39</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">$varInsertArElecInvoiceRs</con:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57feb6.1e9f6513.0.160e24a85e7.N7fba">
+            <con:stage id="_StageId-N3f57feb6.1e9f6513.0.160e24a85e7.N7fb9" name="Stage Error Handler">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57feb6.1e9f6513.0.160e24a85e7.N7fb6</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<aud:GetValPaymentComplementsResumeRs>
+	<cmn:Errors>
+		<cmn:Error>
+			<cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+			<cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+			<cmn:Description>{fn:concat("Error when invoking ", "AuditControlTec",$fault/ctx:details," GetAllValidIncPaymentComplements: ",$body/text() )}</cmn:Description>
+			<cmn:BusinessProcess>GetAllValidIncPaymentComplements</cmn:BusinessProcess>
+			<cmn:FailedService>AuditControlTec</cmn:FailedService>
+			<cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+		</cmn:Error>
+	</cmn:Errors>
+</aud:GetValPaymentComplementsResumeRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply>
+                        <con2:id>_ActionId-N3f57feb6.1e9f6513.0.160e24a85e7.N7fb3</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fec2.N6c066df.0.160508ab4de.N7d60">
+            <con:stage id="_StageId-N3f57fec2.N6c066df.0.160508ab4de.N7d5e" name="StageResponse">
+                <con:context/>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fec2.N6c066df.0.160508ab4de.N7cf8</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>$varResponse</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57ef58.N261d22d.0.17b412f1425.N7f83">
+            <con:stage id="_StageId-N3f57ef58.N261d22d.0.17b412f1425.N7f82" name="Stage Error Handler">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57ef58.N261d22d.0.17b412f1425.N7f81</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<aud:MergeComplementsAPRs xmlns:dig="http://soa.estrellaroja.com.mx/AuditControlTec">
+	<cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+		<cmn:Error>
+			<cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+			<cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+			<cmn:Description>{fn:concat("Error when invoking ", "AuditControlTec",$fault/ctx:details," MergeComplementsAP: ",$body/text() )}</cmn:Description>
+			<cmn:BusinessProcess>MergeComplementsAP</cmn:BusinessProcess>
+			<cmn:FailedService>AuditControlTec</cmn:FailedService>
+			<cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+		</cmn:Error>
+	</cmn:Errors>
+</aud:MergeComplementsAPRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply>
+                        <con2:id>_ActionId-N3f57ef58.N261d22d.0.17b412f1425.N7f80</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57feb4.6acba50b.0.1604b935549.N7fbc">
+            <con:stage id="_StageId-N3f57feb4.6acba50b.0.1604b935549.N7fbb" name="Stage Error Handler">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57feb4.6acba50b.0.1604b935549.N7fb8</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<aud:MergeIncPaymentComplementRs>
+	<cmn:Errors>
+		<cmn:Error>
+			<cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+			<cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+			<cmn:Description>{fn:concat("Error when invoking ", "AuditControlTec",$fault/ctx:details," MergeIncPaymentComplement: ",$body/text() )}</cmn:Description>
+			<cmn:BusinessProcess>MergeIncPaymentComplement</cmn:BusinessProcess>
+			<cmn:FailedService>AuditControlTec</cmn:FailedService>
+			<cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+		</cmn:Error>
+	</cmn:Errors>
+</aud:MergeIncPaymentComplementRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply isError="false">
+                        <con2:id>_ActionId-N3f57feb4.6acba50b.0.1604b935549.N7fb4</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-a30a5df.6dcd639a.0.160479c370d.N7d07">
+            <con:stage id="_StageId-a30a5df.6dcd639a.0.160479c370d.N7d06" name="StageErrorHandler">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varInsertArElecInvoiceRs">
+                        <con2:id>_ActionId-a30a5df.6dcd639a.0.160479c370d.N7cd2</con2:id>
+                        <con2:disabled>true</con2:disabled>
+                        <con1:expr>
+                            <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config"><![CDATA[<aud:InsertArElecInvoiceRs>
+     <cmn:Errors>
+          <cmn:Error>
+               <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+               <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+               <cmn:Description>{fn:concat("Error when invoking InsertArElecInvoiceRs",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+               <cmn:BusinessProcess>InsertArElecInvoiceRs</cmn:BusinessProcess>
+               <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+               <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+          </cmn:Error>
+     </cmn:Errors>
+</aud:InsertArElecInvoiceRs>]]></con:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N53ef96f1.5ddc026f.4.17ff6183409.N7fff</con2:id>
+                        <con1:location>
+                            <con:xpathText xmlns:con="http://www.bea.com/wli/sb/stages/config">.</con:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config"><![CDATA[<aud:InsertArElecInvoiceRs>
+     <cmn:Errors>
+          <cmn:Error>
+               <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+               <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+               <cmn:Description>{fn:concat("Error when invoking InsertArElecInvoiceRs",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+               <cmn:BusinessProcess>InsertArElecInvoiceRs</cmn:BusinessProcess>
+               <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+               <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+          </cmn:Error>
+     </cmn:Errors>
+</aud:InsertArElecInvoiceRs>]]></con:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply isError="false">
+                        <con2:id>_ActionId-N53ef96f1.5ddc026f.3.17ff5df8cfa.N8000</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fec2.N6c066df.0.160508ab4de.N7dca">
+            <con:stage id="_StageId-N3f57fec2.N6c066df.0.160508ab4de.N7dc9" name="Stage Error Handler">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fec2.N6c066df.0.160508ab4de.N7dc8</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<aud:CreateJobsStatusRs>
+	<cmn:Errors>
+		<cmn:Error>
+			<cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+			<cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+			<cmn:Description>{fn:concat("Error when invoking ", "CreateJobsStatus",$fault/ctx:details )}</cmn:Description>
+			<cmn:BusinessProcess>CreateJobsStatus</cmn:BusinessProcess>
+			<cmn:FailedService>AuditControlTec</cmn:FailedService>
+			<cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+		</cmn:Error>
+	</cmn:Errors>
+</aud:CreateJobsStatusRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply isError="false">
+                        <con2:id>_ActionId-N3f57fec2.N6c066df.0.160508ab4de.N7dc7</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fffe.45c73522.0.1605d7ae873.N7e87">
+            <con:stage id="_StageId-N3f57fffe.45c73522.0.1605d7ae873.N7e86" name="Stage Exception Handler">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fffe.45c73522.0.1605d7ae873.N7e85</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<aud:GetCustomerSiteLogRs>
+	<cmn:Errors>
+		<cmn:Error>
+			<cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+			<cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+			<cmn:Description>{fn:concat("Error when invoking ", "GetCustomerSiteLog",$fault/ctx:details )}</cmn:Description>
+			<cmn:BusinessProcess>GetCustomerSiteLog</cmn:BusinessProcess>
+			<cmn:FailedService>AuditControlTec</cmn:FailedService>
+			<cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+		</cmn:Error>
+	</cmn:Errors>
+</aud:GetCustomerSiteLogRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply>
+                        <con2:id>_ActionId-N3f57fffe.45c73522.0.1605d7ae873.N7e84</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fec2.7a516b09.0.1604d2f7d90.N7b19">
+            <con:stage id="_StageId-N3f57fec2.7a516b09.0.1604d2f7d90.N7b18" name="Stage Error Handler">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7b17</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<aud:MergeCtrlTransRs>
+	<cmn:Errors>
+		<cmn:Error>
+			<cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+			<cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+			<cmn:Description>{fn:concat("Error when invoking ", "MergeCtrlTrans",$fault/ctx:details )}</cmn:Description>
+			<cmn:BusinessProcess>MergeCtrlTrans</cmn:BusinessProcess>
+			<cmn:FailedService>AuditControlTec</cmn:FailedService>
+			<cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+		</cmn:Error>
+	</cmn:Errors>
+</aud:MergeCtrlTransRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply isError="false">
+                        <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7b16</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57feb6.1e9f6513.0.160e24a85e7.N7fff">
+            <con:stage id="_StageId-N3f57feb6.1e9f6513.0.160e24a85e7.N7ffd" name="Stage Response">
+                <con:context/>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57feb6.1e9f6513.0.160e24a85e7.N7ff6</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>$varResponse</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fffe.N61f934ca.0.16036ef955a.N7f9b">
+            <con:stage id="_StageId-N3f57fffe.N61f934ca.0.16036ef955a.N7f99" name="StageCreateInvoicesAPRs">
+                <con:context/>
+                <con:actions>
+                    <con1:replace contents-only="true" varName="body">
+                        <con2:id>_ActionId-N3f57fffe.N61f934ca.0.16036ef955a.N7f02</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>$varCreateInvoicesAPRs</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-a30a5df.6dcd639a.0.160479c370d.N7abc">
+            <con:stage id="_StageId-a30a5df.6dcd639a.0.160479c370d.N7abb" name="StageErrorHandler">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varInsertArElecInvoiceErrorsRs">
+                        <con2:id>_ActionId-a30a5df.6dcd639a.0.160479c370d.N7aba</con2:id>
+                        <con2:disabled>true</con2:disabled>
+                        <con1:expr>
+                            <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config"><![CDATA[<aud:InsertArElecInvoiceErrorsRs>
+     <cmn:Errors>
+          <cmn:Error>
+               <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+               <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+               <cmn:Description>{fn:concat("Error when invoking InsertArElecInvoiceErrorsRs",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+               <cmn:BusinessProcess>InsertArElecInvoiceErrorsRs</cmn:BusinessProcess>
+               <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+               <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+          </cmn:Error>
+     </cmn:Errors>
+</aud:InsertArElecInvoiceErrorsRs>]]></con:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N53ef96f1.5ddc026f.2.17ff5d8a937.N7fff</con2:id>
+                        <con1:location>
+                            <con:xpathText xmlns:con="http://www.bea.com/wli/sb/stages/config">.</con:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config"><![CDATA[<aud:InsertArElecInvoiceErrorsRs>
+     <cmn:Errors>
+          <cmn:Error>
+               <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+               <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+               <cmn:Description>{fn:concat("Error when invoking InsertArElecInvoiceErrorsRs",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+               <cmn:BusinessProcess>InsertArElecInvoiceErrorsRs</cmn:BusinessProcess>
+               <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+               <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+          </cmn:Error>
+     </cmn:Errors>
+</aud:InsertArElecInvoiceErrorsRs>]]></con:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply isError="false">
+                        <con2:id>_ActionId-N53ef96f1.5ddc026f.1.17ff5d1176e.N7ffe</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fffb.644af808.0.16058d02cc7.N8000">
+            <con:stage id="_StageId-N3f57fffb.644af808.0.16058d02cc7.N7ffe" name="Stage Request">
+                <con:context>
+                    <con2:userNsDecl prefix="dba" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbIncPaymentComplements"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57fffb.644af808.0.16058d02cc7.N7ffa</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>&lt;dba:dbIncPaymentComplementsSelectInputParameters/></con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57ef58.N261d22d.0.17b412f1425.N7f10">
+            <con:stage id="_StageId-N3f57ef58.N261d22d.0.17b412f1425.N7f0f" name="StageCreateInvoicesAPRs">
+                <con:context/>
+                <con:actions>
+                    <con1:replace contents-only="true" varName="body">
+                        <con2:id>_ActionId-N3f57ef58.N261d22d.0.17b412f1425.N7f0e</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>$varResponse</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-a30a5df.6dcd639a.0.160479c370d.N7c33">
+            <con:stage id="_StageId-a30a5df.6dcd639a.0.160479c370d.N7c32" name="StageInsertArElecInvoiceErrorsRq">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varInsertArElecInvoiceErrorsRq">
+                        <con2:id>_ActionId-a30a5df.6dcd639a.0.160479c370d.N7c31</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/InsertArElecInvoiceErrorsRq_To_dbaArElecInvoiceErrors"/>
+                                <con2:input>$body/aud:InsertArElecInvoiceErrorsRq</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57ef58.N261d22d.0.17b412f1425.N7e90">
+            <con:stage id="_StageId-N3f57ef58.N261d22d.0.17b412f1425.N7e8f" name="Stage Error Handler">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57ef58.N261d22d.0.17b412f1425.N7e8e</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<aud:GetComplementsAPRs xmlns:dig="http://soa.estrellaroja.com.mx/AuditControlTec">
+	<cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+		<cmn:Error>
+			<cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+			<cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+			<cmn:Description>{fn:concat("Error when invoking ", "AuditControlTec",$fault/ctx:details," GetComplementsAP: ",$body/text() )}</cmn:Description>
+			<cmn:BusinessProcess>GetComplementsAP</cmn:BusinessProcess>
+			<cmn:FailedService>AuditControlTec</cmn:FailedService>
+			<cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+		</cmn:Error>
+	</cmn:Errors>
+</aud:GetComplementsAPRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply>
+                        <con2:id>_ActionId-N3f57ef58.N261d22d.0.17b412f1425.N7e8d</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fec2.7a516b09.0.1604d2f7d90.N7df8">
+            <con:stage id="_StageId-N3f57fec2.7a516b09.0.1604d2f7d90.N7df6" name="StageResponse">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7a42</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>&lt;aud:MergeCtrlTransRs>
+  &lt;cmn:Success />
+&lt;/aud:MergeCtrlTransRs></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fffe.45c73522.0.1605d7ae873.N7f9a">
+            <con:stage id="_StageId-N3f57fffe.45c73522.0.1605d7ae873.N7f98" name="StageResponse">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fffe.45c73522.0.1605d7ae873.N7cbc</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>&lt;aud:MergeCustomerSiteLogRs>
+	&lt;cmn:Success />
+&lt;/aud:MergeCustomerSiteLogRs></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fffe.N1ac3d06.0.16071379d88.N7fff">
+            <con:stage id="_StageId-N3f57fffe.N1ac3d06.0.16071379d88.N7ffd" name="Stage Response">
+                <con:context/>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fffe.N1ac3d06.0.16071379d88.N7ff3</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>$varResponse</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline name="_onErrorHandler-N53ef9bf9.N44e6002a.2.1624456d444.N8000" type="error">
+            <con:stage name="stageGeneralError">
+                <con:context>
+                    <con2:varNsDecl prefix="est" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                    <con2:varNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N53ef9bf9.N44e6002a.2.1624456d444.N7fff</con2:id>
+                        <con1:location>
+                            <con:xpathText xmlns:con="http://www.bea.com/wli/sb/stages/config">.</con:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config"><![CDATA[<est:Errors>
+          <est:Error>
+               <est:ErrorCode>{$fault/ctx:errorCode/text()}</est:ErrorCode>
+               <est:ShortDescription>{$fault/ctx:reason/text()}</est:ShortDescription>
+               <est:Description>{fn:concat("Error when invoking :",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</est:Description>
+               <est:BusinessProcess>AuditControlTec</est:BusinessProcess>
+               <est:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</est:FailedService>
+               <est:TimeStamp>{fn:current-dateTime()}</est:TimeStamp>
+          </est:Error>
+ </est:Errors>]]></con:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fec2.N6c066df.0.160508ab4de.N7f04">
+            <con:stage id="_StageId-N3f57fec2.N6c066df.0.160508ab4de.N7f02" name="StageRequest">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57fec2.N6c066df.0.160508ab4de.N7ece</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/Audit/trPipelineCreateJobsStatusRq_To_DbaXxErJobsRequestInsertRq"/>
+                                <con2:input>$body/aud:CreateJobsStatusRq</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57ef58.N261d22d.0.17b412f1425.N7f13">
+            <con:stage id="_StageId-N3f57ef58.N261d22d.0.17b412f1425.N7f12" name="StageCreateInvoicesAPRq">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57ef58.N261d22d.0.17b412f1425.N7f11</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/MergeComplementsAPRq_to_dbMergeComplementsAPRq"/>
+                                <con2:input>$body/*[1]</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-a30a5df.6dcd639a.0.160479c370d.N7c30">
+            <con:stage id="_StageId-a30a5df.6dcd639a.0.160479c370d.N7c2f" name="StageInsertArElecInvoiceErrorsRs">
+                <con:context/>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-a30a5df.6dcd639a.0.160479c370d.N7c2e</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>$varInsertArElecInvoiceErrorsRs</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fffb.644af808.0.16058d02cc7.N7fbb">
+            <con:stage id="_StageId-N3f57fffb.644af808.0.16058d02cc7.N7fba" name="Stage Exception Handler">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57fffb.644af808.0.16058d02cc7.N7fb7</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<aud:GetAllValidIncPaymentComplementsRs>
+	<cmn:Errors>
+		<cmn:Error>
+			<cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+			<cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+			<cmn:Description>{fn:concat("Error when invoking ", "AuditControlTec",$fault/ctx:details," GetAllValidIncPaymentComplements: ",$body/text() )}</cmn:Description>
+			<cmn:BusinessProcess>GetAllValidIncPaymentComplements</cmn:BusinessProcess>
+			<cmn:FailedService>AuditControlTec</cmn:FailedService>
+			<cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+		</cmn:Error>
+	</cmn:Errors>
+</aud:GetAllValidIncPaymentComplementsRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply>
+                        <con2:id>_ActionId-N3f57fffb.644af808.0.16058d02cc7.N7fb4</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57feb4.6acba50b.0.1604b935549.N8000">
+            <con:stage id="_StageId-N3f57feb4.6acba50b.0.1604b935549.N7ffe" name="Request MergeIncPaymentComplement">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57feb4.6acba50b.0.1604b935549.N7ffa</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/PaymentComplements/MergeIncPaymentComplementRq_To_XxerIncPaymentComplementsCollection"/>
+                                <con2:input>$body/aud:MergeIncPaymentComplementRq</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-a30a5df.6dcd639a.0.160479c370d.N7fcf">
+            <con:stage id="_StageId-a30a5df.6dcd639a.0.160479c370d.N7fcd" name="StageInsertArElecInvoiceRq">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:varNsDecl prefix="est" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varInsertArElecInvoiceRq">
+                        <con2:id>_ActionId-a30a5df.6dcd639a.0.160479c370d.N7f99</con2:id>
+                        <con1:expr>
+                            <con:xsltTransform xmlns:con="http://www.bea.com/wli/sb/stages/config">
+                                <con:resource ref="DEV_AuditControlTec/Transformations/XSLs/InsertArElecInvoiceRq_To_dbaArElecInvoice"/>
+                                <con:input>$body/aud:InsertArElecInvoiceRq</con:input>
+                            </con:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57feb4.6acba50b.0.1604b935549.N7fff">
+            <con:stage id="_StageId-N3f57feb4.6acba50b.0.1604b935549.N7ffd" name="Response MergeIncPaymentComplement">
+                <con:context/>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57feb4.6acba50b.0.1604b935549.N7ff7</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>$varResponse</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fec2.7a516b09.0.1604d2f7d90.N7f9b">
+            <con:stage id="_StageId-N3f57fec2.7a516b09.0.1604d2f7d90.N7f99" name="StageRequest">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7f65</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/Audit/trPipelineCreateLog_To_dbXXERErrorsInsertRq"/>
+                                <con2:input>$body/aud:CreateLogRq</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57ef58.N261d22d.0.17b412f1425.N7e1d">
+            <con:stage id="_StageId-N3f57ef58.N261d22d.0.17b412f1425.N7e1c" name="StageCreateInvoicesAPRs">
+                <con:context/>
+                <con:actions>
+                    <con1:replace contents-only="true" varName="body">
+                        <con2:id>_ActionId-N3f57ef58.N261d22d.0.17b412f1425.N7e1b</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>$varResponse</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fffe.N1ac3d06.0.16071379d88.N7fb4">
+            <con:stage id="_StageId-N3f57fffe.N1ac3d06.0.16071379d88.N7fb3" name="Stage Error Handler">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body">
+                        <con2:id>_ActionId-N3f57fffe.N1ac3d06.0.16071379d88.N7fb0</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<aud:GetInvoicesAPByExampleRs>
+	<cmn:Errors>
+		<cmn:Error>
+			<cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+			<cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+			<cmn:Description>{fn:concat("Error when invoking ", "GetInvoicesAPByExample",$fault/ctx:details )}</cmn:Description>
+			<cmn:BusinessProcess>GetInvoicesAPByExample</cmn:BusinessProcess>
+			<cmn:FailedService>AuditControlTec</cmn:FailedService>
+			<cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+		</cmn:Error>
+	</cmn:Errors>
+</aud:GetInvoicesAPByExampleRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply>
+                        <con2:id>_ActionId-N3f57fffe.N1ac3d06.0.16071379d88.N7fad</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fffe.2747740a.0.160371c2426.N7f9e">
+            <con:stage id="_StageId-N3f57fffe.2747740a.0.160371c2426.N7f9d" name="StageEH">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57ef11.348ffa2e.0.183141897f8.N7fcd</con2:id>
+                        <con1:location>
+                            <con:xpathText xmlns:con="http://www.bea.com/wli/sb/stages/config">.</con:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<aud:MergeInvoicesAPRs>
+<cmn:Errors>
+ <cmn:Error>
+   <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+      <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+      <cmn:Description>{fn:concat("Error when invoking MergeInvoiceAP",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+      <cmn:BusinessProcess>MergeInvoicesAP</cmn:BusinessProcess>
+      <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+   <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+ </cmn:Error>
+</cmn:Errors>
+</aud:MergeInvoicesAPRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply isError="false">
+                        <con2:id>_ActionId-N3f57ef11.348ffa2e.0.183141897f8.N7f99</con2:id>
+                    </con2:reply>
+                    <con1:assign varName="varCreateInvoicesAPRs">
+                        <con2:id>_ActionId-N3f57fffe.2747740a.0.160371c2426.N7f9a</con2:id>
+                        <con2:disabled>true</con2:disabled>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<aud:MergeInvoicesAPRs>
+<cmn:Errors>
+ <cmn:Error>
+   <cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+      <cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+      <cmn:Description>{fn:concat("Error when invoking MergeInvoiceAP",$body/soap12-env:Fault/soap12-env:Reason/soap12-env:Text/text())}</cmn:Description>
+      <cmn:BusinessProcess>MergeInvoicesAP</cmn:BusinessProcess>
+      <cmn:FailedService>{fn:concat("Node: ",$fault/ctx:location/ctx:node/text()," Stage: ",$fault/ctx:location/ctx:stage/text()," Path: ",$fault/ctx:location/ctx:path/text()," Handler: ",$fault/ctx:location/ctx:error-handler/text())}</cmn:FailedService>
+   <cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+ </cmn:Error>
+</cmn:Errors>
+</aud:MergeInvoicesAPRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57fffe.45c73522.0.1605d7ae873.N7f9b">
+            <con:stage id="_StageId-N3f57fffe.45c73522.0.1605d7ae873.N7f99" name="StageRequest">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57fffe.45c73522.0.1605d7ae873.N7d85</con2:id>
+                        <con1:expr>
+                            <con2:xsltTransform>
+                                <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/trMergeCustomerSiteLogRq_To_DbaCustomerSiteLogMergeRq"/>
+                                <con2:input>$body/aud:MergeCustomerSiteLogRq</con2:input>
+                            </con2:xsltTransform>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57ef0c.48b5a4f7.0.183c300d116.N7de4">
+            <con:stage id="_StageId-N3f57ef0c.48b5a4f7.0.183c300d116.N7de3" name="Stage Error Handler">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                </con:context>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true">
+                        <con2:id>_ActionId-N3f57ef0c.48b5a4f7.0.183c300d116.N7de2</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText><![CDATA[<aud:GetConfValInvoicesAPRs xmlns:dig="http://soa.estrellaroja.com.mx/AuditControlTec">
+	<cmn:Errors xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+		<cmn:Error>
+			<cmn:ErrorCode>{$fault/ctx:errorCode/text()}</cmn:ErrorCode>
+			<cmn:ShortDescription>{$fault/ctx:reason/text()}</cmn:ShortDescription>
+			<cmn:Description>{fn:concat("Error when invoking ", "AuditControlTec",$fault/ctx:details," GetConfValInvoicesAP: ",$body/text() )}</cmn:Description>
+			<cmn:BusinessProcess>GetConfValInvoicesAP</cmn:BusinessProcess>
+			<cmn:FailedService>AuditControlTec</cmn:FailedService>
+			<cmn:TimeStamp>{fn:current-dateTime()}</cmn:TimeStamp>
+		</cmn:Error>
+	</cmn:Errors>
+</aud:GetConfValInvoicesAPRs>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                    <con2:reply>
+                        <con2:id>_ActionId-N3f57ef0c.48b5a4f7.0.183c300d116.N7de1</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57ef0c.48b5a4f7.0.183c300d116.N7d74">
+            <con:stage id="_StageId-N3f57ef0c.48b5a4f7.0.183c300d116.N7d73" name="StageSelectConfValInvoicesAPRq">
+                <con:context>
+                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="varRequest">
+                        <con2:id>_ActionId-N3f57ef0c.48b5a4f7.0.183c300d116.N7d72</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>&lt;dig:dbValInvoicesAPBsSelectInputParameters xmlns:dig="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbValInvoicesAPBs"/></con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57ef0c.48b5a4f7.0.183c300d116.N7d71">
+            <con:stage id="_StageId-N3f57ef0c.48b5a4f7.0.183c300d116.N7d70" name="StageSelectConfValInvoicesAPRs">
+                <con:context/>
+                <con:actions>
+                    <con1:replace contents-only="true" varName="body">
+                        <con2:id>_ActionId-N3f57ef0c.48b5a4f7.0.183c300d116.N7d6f</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>$varResponse</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57fffe.N61f934ca.0.16036ef955a.N7fce" name="OperationBranchAuditControlTec">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="MergeInvoicesAP">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="PipelinePairCreateInvoicesAP">
+                                <con:request>request-N3f57fffe.N61f934ca.0.16036ef955a.N7f9c</con:request>
+                                <con:response>response-N3f57fffe.N61f934ca.0.16036ef955a.N7f9b</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteDBInvoicesAP" error-handler="error-N3f57fffe.2747740a.0.160371c2426.N7f9e">
+                                <con:context>
+                                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                                    <con2:userNsDecl prefix="est" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57fffe.N61f934ca.0.16036ef955a.N7efe</con2:id>
+                                        <con3:service ref="DEV_AuditControlTec/Business/dbInvoicesAPBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>merge</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57fffe.N61f934ca.0.16036ef955a.N7efb</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varCreateInvoicesAPRq</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varCreateInvoicesAPRs">
+                                                <con2:id>_ActionId-N3f57fffe.N61f934ca.0.16036ef955a.N7ef8</con2:id>
+                                                <con1:expr>
+                                                    <con2:xqueryText>&lt;aud:MergeInvoicesAPRs>
+&lt;est:Success/>
+&lt;/aud:MergeInvoicesAPRs></con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="InsertArElecInvoice">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="PipelinePairInsertArElecInvoice">
+                                <con:request>request-a30a5df.6dcd639a.0.160479c370d.N7fcf</con:request>
+                                <con:response>response-a30a5df.6dcd639a.0.160479c370d.N7fce</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteNodeInsertArElecInvoice" error-handler="error-a30a5df.6dcd639a.0.160479c370d.N7d07">
+                                <con:context>
+                                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-a30a5df.6dcd639a.0.160479c370d.N7ea2</con2:id>
+                                        <con3:service ref="DEV_AuditControlTec/Business/dbaInsertArElecInvoiceBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>insert</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-a30a5df.6dcd639a.0.160479c370d.N7e6f</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">$varInsertArElecInvoiceRq</con:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varInsertArElecInvoiceRs">
+                                                <con2:id>_ActionId-a30a5df.6dcd639a.0.160479c370d.N7d9d</con2:id>
+                                                <con1:expr>
+                                                    <con:xqueryText xmlns:con="http://www.bea.com/wli/sb/stages/config">&lt;aud:InsertArElecInvoiceRs>
+  &lt;cmn:Success/>
+&lt;/aud:InsertArElecInvoiceRs></con:xqueryText>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="InsertArElecInvoiceErrors">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="PipelinePairInsertArElecInvoiceErrors">
+                                <con:request>request-a30a5df.6dcd639a.0.160479c370d.N7c33</con:request>
+                                <con:response>response-a30a5df.6dcd639a.0.160479c370d.N7c30</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteNodeInsertArtElecInvoiceErros" error-handler="error-a30a5df.6dcd639a.0.160479c370d.N7abc">
+                                <con:context>
+                                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                                    <con2:userNsDecl prefix="cmn" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-a30a5df.6dcd639a.0.160479c370d.N7abf</con2:id>
+                                        <con3:service ref="DEV_AuditControlTec/Business/dbaInsertArElecInvoiceErrorsBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>insert</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-a30a5df.6dcd639a.0.160479c370d.N7abe</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varInsertArElecInvoiceErrorsRq</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varInsertArElecInvoiceErrorsRs">
+                                                <con2:id>_ActionId-a30a5df.6dcd639a.0.160479c370d.N7abd</con2:id>
+                                                <con1:expr>
+                                                    <con2:xqueryText>&lt;aud:InsertArElecInvoiceErrorsRs>
+  &lt;cmn:Success/>
+&lt;/aud:InsertArElecInvoiceErrorsRs></con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="MergeIncPaymentComplement">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair MergeIncPaymentComplement">
+                                <con:request>request-N3f57feb4.6acba50b.0.1604b935549.N8000</con:request>
+                                <con:response>response-N3f57feb4.6acba50b.0.1604b935549.N7fff</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="Route MergeIncPaymentComplement" error-handler="error-N3f57feb4.6acba50b.0.1604b935549.N7fbc">
+                                <con:context>
+                                    <con2:userNsDecl prefix="db" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbIncPaymentComplements"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57feb4.6acba50b.0.1604b935549.N7ff4</con2:id>
+                                        <con3:service ref="DEV_AuditControlTec/Business/dbIncPaymentComplements" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>merge</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57feb4.6acba50b.0.1604b935549.N7ff1</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varResponse">
+                                                <con2:id>_ActionId-N3f57feb4.6acba50b.0.1604b935549.N7fee</con2:id>
+                                                <con1:expr>
+                                                    <con2:xsltTransform>
+                                                        <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/PaymentComplements/XxerIncPaymentComplementsCollection_To_MergeIncPaymentComplementRs"/>
+                                                        <con2:input>$body/db:XxerIncPaymentComplementsCollection</con2:input>
+                                                    </con2:xsltTransform>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="CreateLog">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="PipelineCreateLog">
+                                <con:request>request-N3f57fec2.7a516b09.0.1604d2f7d90.N7f9b</con:request>
+                                <con:response>response-N3f57fec2.7a516b09.0.1604d2f7d90.N7f9a</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="Route2DbErrorsInsert" error-handler="error-N3f57fec2.7a516b09.0.1604d2f7d90.N7e95">
+                                <con:context/>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7fcd</con2:id>
+                                        <con3:service ref="DEV_AuditControlTec/Business/Audit/dbXXERErrorsBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>insert</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7f32</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform/>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="MergeCtrlTrans">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="PipelineMergeCtrlTrans">
+                                <con:request>request-N3f57fec2.7a516b09.0.1604d2f7d90.N7df9</con:request>
+                                <con:response>response-N3f57fec2.7a516b09.0.1604d2f7d90.N7df8</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="Route2MergeCtrlTrans" error-handler="error-N3f57fec2.7a516b09.0.1604d2f7d90.N7b19">
+                                <con:context/>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7e2b</con2:id>
+                                        <con3:service ref="DEV_AuditControlTec/Business/Audit/dbXXERTransactionsBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>merge</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7d90</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform/>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="GetCtrlTrans">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="PipelineGetCtrlTrans">
+                                <con:request>request-N3f57fec2.7a516b09.0.1604d2f7d90.N7c54</con:request>
+                                <con:response>response-N3f57fec2.7a516b09.0.1604d2f7d90.N7c53</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="Route2GetCtrlTrans" error-handler="error-N3f57fec2.7a516b09.0.1604d2f7d90.N7aaa">
+                                <con:context>
+                                    <con2:userNsDecl prefix="ns0" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbXXER_Transactions"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7c86</con2:id>
+                                        <con3:service ref="DEV_AuditControlTec/Business/Audit/dbXXERTransactionsBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>dbXXER_TransactionsSelect</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7beb</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varResponse">
+                                                <con2:id>_ActionId-N3f57fec2.7a516b09.0.1604d2f7d90.N7bb8</con2:id>
+                                                <con1:expr>
+                                                    <con2:xsltTransform>
+                                                        <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/Audit/trDbXXERTransactionsSelectRs_To_pipelineGetCtrlTransRs"/>
+                                                        <con2:input>$body/ns0:XxerIntegrationsTransactionsCollection</con2:input>
+                                                    </con2:xsltTransform>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="CreateJobsStatus">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="PipelineCreateJobsStatus">
+                                <con:request>request-N3f57fec2.N6c066df.0.160508ab4de.N7f04</con:request>
+                                <con:response>response-N3f57fec2.N6c066df.0.160508ab4de.N7f03</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="Route2DbaJobRequests" error-handler="error-N3f57fec2.N6c066df.0.160508ab4de.N7dca">
+                                <con:context/>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57fec2.N6c066df.0.160508ab4de.N7f36</con2:id>
+                                        <con3:service ref="DEV_AuditControlTec/Business/Audit/dbXXERJobsRequestBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>insert</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57fec2.N6c066df.0.160508ab4de.N7e9b</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform/>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="GetJobsStatus">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="PipelineGetJobsStatus">
+                                <con:request>request-N3f57fec2.N6c066df.0.160508ab4de.N7d61</con:request>
+                                <con:response>response-N3f57fec2.N6c066df.0.160508ab4de.N7d60</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="Route2DbaJobsRequest" error-handler="error-N3f57fec2.N6c066df.0.160508ab4de.N7bf5">
+                                <con:context>
+                                    <con2:userNsDecl prefix="ns0" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbXXER_JOBS_REQUEST"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57fec2.N6c066df.0.160508ab4de.N7d93</con2:id>
+                                        <con3:service ref="DEV_AuditControlTec/Business/Audit/dbXXERJobsRequestBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>dbXXER_JOBS_REQUESTSelect</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57fec2.N6c066df.0.160508ab4de.N7c94</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varResponse">
+                                                <con2:id>_ActionId-N3f57fec2.N6c066df.0.160508ab4de.N7c61</con2:id>
+                                                <con1:expr>
+                                                    <con2:xsltTransform>
+                                                        <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/Audit/trDbaXxErJobsRequestSelectRs_To_pipelineGetJobsStatusRs"/>
+                                                        <con2:input>$body/ns0:XxerJobsRequestCollection</con2:input>
+                                                    </con2:xsltTransform>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="GetAllValidIncPaymentComplements">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair GetAllValidIncPaymentComplements">
+                                <con:request>request-N3f57fffb.644af808.0.16058d02cc7.N8000</con:request>
+                                <con:response>response-N3f57fffb.644af808.0.16058d02cc7.N7fff</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="Route GetAllValidIncPaymentComplements" error-handler="error-N3f57fffb.644af808.0.16058d02cc7.N7fbb">
+                                <con:context>
+                                    <con2:userNsDecl prefix="dba" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbIncPaymentComplements"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57fffb.644af808.0.16058d02cc7.N7ff3</con2:id>
+                                        <con3:service ref="DEV_AuditControlTec/Business/dbIncPaymentComplements" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>dbIncPaymentComplementsSelect</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57fffb.644af808.0.16058d02cc7.N7ff0</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varResponse">
+                                                <con2:id>_ActionId-N3f57fffb.644af808.0.16058d02cc7.N7fed</con2:id>
+                                                <con1:expr>
+                                                    <con2:xsltTransform>
+                                                        <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/PaymentComplements/XxerIncPaymentComplementsCollection_To_GetAllValidIncPaymentComplementsRs"/>
+                                                        <con2:input>$body/dba:XxerIncPaymentComplementsCollection</con2:input>
+                                                    </con2:xsltTransform>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="MergeCustomerSiteLog">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="PipelineMergeCustomerSiteLog">
+                                <con:request>request-N3f57fffe.45c73522.0.1605d7ae873.N7f9b</con:request>
+                                <con:response>response-N3f57fffe.45c73522.0.1605d7ae873.N7f9a</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="Route2DbaCustomerSiteLogMerge" error-handler="error-N3f57fffe.45c73522.0.1605d7ae873.N7f2c">
+                                <con:context/>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57fffe.45c73522.0.1605d7ae873.N7fcd</con2:id>
+                                        <con3:service ref="DEV_AuditControlTec/Business/dbaCustomerSiteLogBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>merge</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57fffe.45c73522.0.1605d7ae873.N7d52</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform/>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="GetCustomerSiteLog">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="PipelineGetCustomerSiteLog">
+                                <con:request>request-N3f57fffe.45c73522.0.1605d7ae873.N7ec3</con:request>
+                                <con:response>response-N3f57fffe.45c73522.0.1605d7ae873.N7ec2</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="Route2DbaCustomeSiteLog" error-handler="error-N3f57fffe.45c73522.0.1605d7ae873.N7e87">
+                                <con:context>
+                                    <con2:userNsDecl prefix="ns0" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbaCustomerSiteLogBs"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57fffe.45c73522.0.1605d7ae873.N7ef5</con2:id>
+                                        <con3:service ref="DEV_AuditControlTec/Business/dbaCustomerSiteLogBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>selectByPrimaryKey</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace contents-only="true" varName="body">
+                                                <con2:id>_ActionId-N3f57fffe.45c73522.0.1605d7ae873.N7e51</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varResponse">
+                                                <con2:id>_ActionId-N3f57fffe.45c73522.0.1605d7ae873.N7e1e</con2:id>
+                                                <con1:expr>
+                                                    <con2:xsltTransform>
+                                                        <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/trDbaCustomerSiteLogSelectByPkRs_To_GetCustomerSiteLogRs"/>
+                                                        <con2:input>$body/ns0:XxerArCustSiteLogCollection</con2:input>
+                                                    </con2:xsltTransform>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="GetInvoicesAPByExample">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair GetInvoicesAPByExample">
+                                <con:request>request-N3f57fffe.N1ac3d06.0.16071379d88.N8000</con:request>
+                                <con:response>response-N3f57fffe.N1ac3d06.0.16071379d88.N7fff</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="Routing To GetInvoicesAPByExample" error-handler="error-N3f57fffe.N1ac3d06.0.16071379d88.N7fb4">
+                                <con:context>
+                                    <con2:userNsDecl prefix="dba" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbInvoicesAPBs"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57fffe.N1ac3d06.0.16071379d88.N7fef</con2:id>
+                                        <con3:service ref="DEV_AuditControlTec/Business/dbInvoicesAPBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>queryByExample</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57fffe.N1ac3d06.0.16071379d88.N7fec</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varResponse">
+                                                <con2:id>_ActionId-N3f57fffe.N1ac3d06.0.16071379d88.N7fe9</con2:id>
+                                                <con1:expr>
+                                                    <con2:xsltTransform>
+                                                        <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/XxerInvoicesApTblCollection_To_GetInvoicesAPByExampleRs"/>
+                                                        <con2:input>$body/dba:XxerInvoicesApTblCollection</con2:input>
+                                                    </con2:xsltTransform>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="GetValPaymentComplementsResume">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair GetValPaymentComplementsResume">
+                                <con:request>request-N3f57feb6.1e9f6513.0.160e24a85e7.N8000</con:request>
+                                <con:response>response-N3f57feb6.1e9f6513.0.160e24a85e7.N7fff</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="Routing to GetValPaymentComplementsResume" error-handler="error-N3f57feb6.1e9f6513.0.160e24a85e7.N7fba">
+                                <con:context>
+                                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                                    <con2:userNsDecl prefix="tns" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbGetValPaymentComplementsResume"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57feb6.1e9f6513.0.160e24a85e7.N7ff2</con2:id>
+                                        <con3:service ref="DEV_AuditControlTec/Business/dbGetValPaymentComplementsResume" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>dbGetValPaymentComplementsResumeSelect</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57feb6.1e9f6513.0.160e24a85e7.N7fef</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varResponse">
+                                                <con2:id>_ActionId-N3f57feb6.7931d907.0.160e2906175.N7ffe</con2:id>
+                                                <con1:expr>
+                                                    <con2:xsltTransform>
+                                                        <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/ValPaymentComplementsResume/Result_To_GetValPaymentComplementsResumeRs"/>
+                                                        <con2:input>$body/tns:XeerApValpmtComplementsVCollection</con2:input>
+                                                    </con2:xsltTransform>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="MergeComplementsAP">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair Node1">
+                                <con:request>request-N3f57ef58.N261d22d.0.17b412f1425.N7f13</con:request>
+                                <con:response>response-N3f57ef58.N261d22d.0.17b412f1425.N7f10</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteNode1" error-handler="error-N3f57ef58.N261d22d.0.17b412f1425.N7f83">
+                                <con:context>
+                                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                                    <con2:userNsDecl prefix="tns" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbGetValPaymentComplementsResume"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57ef58.N261d22d.0.17b412f1425.N7f86</con2:id>
+                                        <con3:service ref="DEV_AuditControlTec/Business/dbComplementsAP" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>merge</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57ef58.N261d22d.0.17b412f1425.N7f85</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varResponse">
+                                                <con2:id>_ActionId-N3f57ef58.N261d22d.0.17b412f1425.N7f84</con2:id>
+                                                <con1:expr>
+                                                    <con2:xqueryText>&lt;dig:MergeComplementsAPRs xmlns:dig="http://soa.estrellaroja.com.mx/AuditControlTec">
+    &lt;cmn:Success xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+    &lt;/dig:MergeComplementsAPRs></con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="GetComplementsAP">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair Node2">
+                                <con:request>request-N3f57ef58.N261d22d.0.17b412f1425.N7e20</con:request>
+                                <con:response>response-N3f57ef58.N261d22d.0.17b412f1425.N7e1d</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteNode2" error-handler="error-N3f57ef58.N261d22d.0.17b412f1425.N7e90">
+                                <con:context>
+                                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                                    <con2:userNsDecl prefix="tns" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbGetValPaymentComplementsResume"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57ef58.N261d22d.0.17b412f1425.N7e93</con2:id>
+                                        <con3:service ref="DEV_AuditControlTec/Business/dbComplementsAP" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>queryByExample</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57ef58.N261d22d.0.17b412f1425.N7e92</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varResponse">
+                                                <con2:id>_ActionId-N3f57ef58.N261d22d.0.17b412f1425.N7e91</con2:id>
+                                                <con1:expr>
+                                                    <con2:xsltTransform>
+                                                        <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/DbSelectComplementsAPRs_to_GetComplementsAPRs"/>
+                                                        <con2:input>$body/*[1]</con2:input>
+                                                    </con2:xsltTransform>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="GetConfValInvoicesAP">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="Pipeline Pair Node3">
+                                <con:request>request-N3f57ef0c.48b5a4f7.0.183c300d116.N7d74</con:request>
+                                <con:response>response-N3f57ef0c.48b5a4f7.0.183c300d116.N7d71</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteNode3" error-handler="error-N3f57ef0c.48b5a4f7.0.183c300d116.N7de4">
+                                <con:context>
+                                    <con2:userNsDecl prefix="aud" namespace="http://soa.estrellaroja.com.mx/AuditControlTec"/>
+                                    <con2:userNsDecl prefix="tns" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbGetValPaymentComplementsResume"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f57ef0c.48b5a4f7.0.183c300d116.N7de7</con2:id>
+                                        <con3:service ref="DEV_AuditControlTec/Business/dbValInvoicesAPBs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>dbValInvoicesAPBsSelect</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body" contents-only="true">
+                                                <con2:id>_ActionId-N3f57ef0c.48b5a4f7.0.183c300d116.N7de6</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>.</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryText>$varRequest</con2:xqueryText>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:assign varName="varResponse">
+                                                <con2:id>_ActionId-N3f57ef0c.48b5a4f7.0.183c300d116.N7de5</con2:id>
+                                                <con1:expr>
+                                                    <con2:xsltTransform>
+                                                        <con2:resource ref="DEV_AuditControlTec/Transformations/XSLs/InvoicesAP/SelectConfValInvoicesAP_to_GetConfValIncoicesAPRs"/>
+                                                        <con2:input>$body/*[1]</con2:input>
+                                                    </con2:xsltTransform>
+                                                </con1:expr>
+                                            </con1:assign>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+        <con:partner-links>
+            <con:partner-link>
+                <con:service ref="AuditControlTec/dbIncPaymentComplements" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+            </con:partner-link>
+            <con:partner-link>
+                <con:service ref="AuditControlTec/dbGetValPaymentComplementsResume" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+            </con:partner-link>
+        </con:partner-links>
+    </con:router>
+    <aler:alertRules xsi:nil="true" xmlns:aler="http://xmlns.oracle.com/servicebus/monitoring/alert"/>
+</con:pipelineEntry>

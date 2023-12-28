@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="CFDITec" targetNamespace="http://soa.estrellaroja.com.mx/CFDITec" xmlns:tns="http://soa.estrellaroja.com.mx/CFDITec" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.estrellaroja.com.mx/CFDITec/types" elementFormDefault="qualified">
+<xsd:import namespace="http://soa.estrellaroja.com.mx/CFDITec" schemaLocation="CFDITec.xsd"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="GetCFDIFromFileRqMsg">
+<wsdl:part name="GetCFDIFromFileRqPart" element="tns:GetCFDIFromFileRq"/>
+</wsdl:message>
+<wsdl:message name="GetCFDIFromFileRsMsg">
+<wsdl:part name="GetCFDIFromFileRsPart" element="tns:GetCFDIFromFileRs"/>
+</wsdl:message>
+<wsdl:message name="GetInvoiceCFDIFromERPRqMsg">
+<wsdl:part name="GetInvoiceCFDIFromERPRqPart" element="tns:GetInvoiceCFDIFromERPRq"/>
+</wsdl:message>
+<wsdl:message name="GetInvoiceCFDIFromERPRsMsg">
+<wsdl:part name="GetInvoiceCFDIFromERPRsPart" element="tns:GetInvoiceCFDIFromERPRs"/>
+</wsdl:message>
+<wsdl:portType name="CFDITecPortType">
+<wsdl:operation name="GetCFDIFromFile">
+<wsdl:input message="tns:GetCFDIFromFileRqMsg"/>
+<wsdl:output message="tns:GetCFDIFromFileRsMsg"/>
+</wsdl:operation>
+<wsdl:operation name="GetInvoiceCFDIFromERP">
+<wsdl:input message="tns:GetInvoiceCFDIFromERPRqMsg"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:portType name="CFDITecPortTypeCallback">
+<wsdl:operation name="GetInvoiceCFDIFromERPResponse">
+<wsdl:input message="tns:GetInvoiceCFDIFromERPRsMsg"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="CFDITecBinding" type="tns:CFDITecPortType">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="GetCFDIFromFile">
+<soap:operation soapAction="http://soa.estrellaroja.com.mx/CFDITec/GetCFDIFromFile"/>
+<wsdl:input>
+<soap:body use="literal" parts="GetCFDIFromFileRqPart"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="GetCFDIFromFileRsPart"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetInvoiceCFDIFromERP">
+<soap:operation soapAction="http://soa.estrellaroja.com.mx/CFDITec/GetInvoiceCFDIFromERP"/>
+<wsdl:input>
+<soap:body use="literal" parts="GetInvoiceCFDIFromERPRqPart"/>
+</wsdl:input>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="CFDITecBindingCallback" type="tns:CFDITecPortTypeCallback">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="GetInvoiceCFDIFromERPResponse">
+<soap:operation style="document" soapAction="http://soa.estrellaroja.com.mx/CFDITec/GetInvoiceCFDIFromERPResponse"/>
+<wsdl:input>
+<soap:body use="literal" parts="GetInvoiceCFDIFromERPRsPart"/>
+</wsdl:input>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="CFDITecService">
+<wsdl:port name="CFDITecPortType" binding="tns:CFDITecBinding">
+<soap:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/DEV/CFDITec/CFDITec"/>
+</wsdl:port>
+</wsdl:service>
+<wsdl:service name="CFDITecCallbackService">
+<wsdl:port name="CFDITecCallbackPortType" binding="tns:CFDITecBindingCallback">
+<soap:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/DEV/CFDITec/CFDITec"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

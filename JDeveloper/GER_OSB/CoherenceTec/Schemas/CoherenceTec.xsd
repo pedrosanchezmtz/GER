@@ -1,0 +1,196 @@
+<xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/CoherenceTec" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/CoherenceTec" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+  <xsd:import schemaLocation="Commons/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+  <!--  ********************************************* ELEMENTS *********************************************  -->
+  <xsd:element name="CreateOrgsCacheRq" type="tns:CreateOrgsCacheRqType">
+    <xsd:annotation>
+      <xsd:documentation>Element for Request.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CreateOrgsCacheRs" type="tns:CreateOrgsCacheRsType">
+    <xsd:annotation>
+      <xsd:documentation>Element for Response.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="GetOrgsCacheRq" type="tns:GetOrgsCacheRqType">
+    <xsd:annotation>
+      <xsd:documentation>Element for Request.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="GetOrgsCacheRs" type="tns:GetOrgsCacheRsType">
+    <xsd:annotation>
+      <xsd:documentation>Element for Response.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="GetOrgListRq">
+    <xsd:annotation>
+      <xsd:documentation>Element for Request.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="GetOrgListRs" type="tns:GetOrgListRsType">
+    <xsd:annotation>
+      <xsd:documentation>Element for Response.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DeleteAllOrgsRq">
+    <xsd:annotation>
+      <xsd:documentation>Element for Request.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DeleteAllOrgsRs" type="tns:DeleteAllOrgsRsType">
+    <xsd:annotation>
+      <xsd:documentation>Element for Response.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CreateTerritoryCacheRq" type="tns:CreateTerritoryCacheRqType">
+    <xsd:annotation>
+      <xsd:documentation>Element for Request.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CreateTerritoryCacheRs" type="tns:CreateTerritoryCacheRsType">
+    <xsd:annotation>
+      <xsd:documentation>Element for Response.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="GetTerritoryCacheRq" type="tns:GetTerritoryCacheRqType">
+    <xsd:annotation>
+      <xsd:documentation>Element for Request.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="GetTerritoryCacheRs" type="tns:GetTerritoryCacheRsType">
+    <xsd:annotation>
+      <xsd:documentation>Element for Response.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <!--  ********************************************* TYPES *********************************************  -->
+  <xsd:complexType name="CreateOrgsCacheRqType">
+    <xsd:sequence>
+      <xsd:element name="DATA_DS" type="tns:DATA_DS_TYPE"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CreateTerritoryCacheRqType">
+    <xsd:sequence>
+      <xsd:element name="TERRITORY" type="tns:TerritoryType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CreateOrgsCacheRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CreateTerritoryCacheRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="DATA_DS" type="tns:DATA_DS_TYPE"/>
+  <xsd:complexType name="DATA_DS_TYPE">
+    <xsd:sequence>
+      <xsd:element name="G_ORGS" type="tns:G_ORGS_TYPE" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="G_ORGS_TYPE">
+    <xsd:sequence>
+      <xsd:element name="SET_ID" type="xsd:integer"/>
+      <xsd:element name="SET_CODE" type="xsd:string"/>
+      <xsd:element name="SET_NAME" type="xsd:string"/>
+      <xsd:element name="DESCRIPTION" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="G_ORGS" type="tns:G_ORGS_TYPE"/>
+  <xsd:complexType name="GetOrgsCacheRqType">
+    <xsd:sequence>
+      <xsd:element name="OrgCode" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetTerritoryCacheRqType">
+    <xsd:sequence>
+      <xsd:element name="TerritoryName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetOrgsCacheRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="Return" minOccurs="0" maxOccurs="1">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="G_ORGS" type="tns:G_ORGS_TYPE" minOccurs="1" maxOccurs="1"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GetOrgListRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="Return" minOccurs="0" maxOccurs="1">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="OrgCollection" minOccurs="0" maxOccurs="1" nillable="true">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="ORGS" type="tns:G_ORGS_TYPE" minOccurs="0" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+   <xsd:complexType name="DeleteAllOrgsRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="Return" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GetTerritoryCacheRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="Return" minOccurs="0" maxOccurs="1">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="Territory" type="tns:TerritoryType" minOccurs="1" maxOccurs="1"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TERRITORIES" type="tns:TerritoriesType"/>
+  <xsd:complexType name="TerritoriesType">
+    <xsd:sequence>
+      <xsd:element name="P_COUNTRYNAME" type="xsd:string"/>
+      <xsd:element name="TERRITORY" type="tns:TerritoryType" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="TERRITORY" type="tns:TerritoryType"/>
+  <xsd:complexType name="TerritoryType">
+    <xsd:sequence>
+      <xsd:element name="ROWID" type="xsd:string"/>
+      <xsd:element name="TERRITORYCODE" type="xsd:string"/>
+      <xsd:element name="NLSTERRITORY" type="xsd:string"/>
+      <xsd:element name="ISOTERRITORYCODE" type="xsd:string"/>
+      <xsd:element name="TERRITORYSHORTNAME" type="xsd:string"/>
+      <xsd:element name="DESCRIPTION" type="xsd:string"/>
+      <xsd:element name="ALTERNATETERRITORYCODE" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="OrgCollection">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ORGS" type="tns:G_ORGS_TYPE" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

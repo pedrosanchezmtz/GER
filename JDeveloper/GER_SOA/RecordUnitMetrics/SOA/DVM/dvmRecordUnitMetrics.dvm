@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dvm name="dvmRecordUnitMetrics" xmlns="http://xmlns.oracle.com/dvm">
+   <description/>
+   <columns>
+      <column name="Component" order="1" qualifier="true"/>
+      <column name="Code" order="2"/>
+      <column name="Value" order="1"/>
+   </columns>
+   <rows>
+      <row markdefault="false">
+         <cell>postMeterReadings</cell>
+         <cell>MeterCode</cell>
+         <cell>KMS_ASC_R</cell>
+      </row>
+      <row markdefault="false">
+         <cell>postMeterReadings</cell>
+         <cell>ReadingTypeCode</cell>
+         <cell>ORA_CHANGE</cell>
+      </row>
+      <row markdefault="false">
+         <cell>postMeterReadings</cell>
+         <cell>MeterUsageCode</cell>
+         <cell>ORA_ASSET</cell>
+      </row>
+      <row markdefault="false">
+         <cell>RecordUnitMetrics</cell>
+         <cell>Path</cell>
+         <cell>/Custom/ER_INTEGRATION/ER18_INV_Lectura_de_Kilometros/Data Models/</cell>
+      </row>
+      <row markdefault="false">
+         <cell>RecordUnitMetrics</cell>
+         <cell>TargetInterface</cell>
+         <cell>ComplementValidation</cell>
+      </row>
+      <row markdefault="false">
+         <cell>RecordUnitMetrics</cell>
+         <cell>MD_assets</cell>
+         <cell>ASSETS.xdm</cell>
+      </row>
+      <row markdefault="false">
+         <cell>RecordUnitMetrics</cell>
+         <cell>MD_medidores</cell>
+         <cell>MEDIDORES.xdm</cell>
+      </row>
+      <row markdefault="false">
+         <cell>RecordUnitMetrics</cell>
+         <cell>QueryDates</cell>
+         <cell>SELECT TO_CHAR(TO_DATE(&apos;@FECHA_INICIO@&apos;,&apos;YYYY-MM-DD&apos;) + ROWNUM -1,&apos;RRRR-MM-DD&apos;) FECHA FROM ALL_OBJECTS  WHERE ROWNUM &lt;= TO_DATE(&apos;@FECHA_FIN@&apos;,&apos;YYYY-MM-DD&apos;)-TO_DATE(&apos;@FECHA_INICIO@&apos;,&apos;YYYY-MM-DD&apos;)+1 order by fecha asc 
+</cell>
+      </row>
+   </rows>
+</dvm>

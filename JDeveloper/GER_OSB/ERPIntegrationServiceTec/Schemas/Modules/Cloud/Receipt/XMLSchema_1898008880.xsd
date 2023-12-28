@@ -1,0 +1,24 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/model/flex/StandardReceiptGdf/" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns="http://xmlns.oracle.com/apps/financials/receivables/receipts/shared/model/flex/StandardReceiptGdf/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="XMLSchema_469750432.xsd"/>
+    <xsd:include schemaLocation="XMLSchema_1361782915.xsd"/>
+    <xsd:complexType name="JLxARReceiptInformation">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>CashReceiptId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="StandardReceiptGdf">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="packageNumber" nillable="true" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="withholdingCertificateNumber" nillable="true" type="xsd:decimal"/>
+                    <xsd:element minOccurs="0" name="withholdingCertificateDate" nillable="true" type="ns0:date-Date"/>
+                    <xsd:element minOccurs="0" name="taxRegimeReportingCode" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="jLxARReceiptInformation" type="JLxARReceiptInformation"/>
+</xsd:schema>

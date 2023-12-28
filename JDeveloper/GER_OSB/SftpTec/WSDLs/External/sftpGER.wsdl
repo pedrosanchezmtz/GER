@@ -1,0 +1,82 @@
+<wsdl:definitions
+     name="sftpGER"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/ftp/GER_OSB_OCI/DEV_SftpTec/sftpGER"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/ftp/GER_OSB_OCI/DEV_SftpTec/sftpGER"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:opaque="http://xmlns.oracle.com/pcbpel/adapter/opaque/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:FTPAPP="http://xmlns.oracle.com/pcbpel/adapter/ftp/"
+    >
+  <plt:partnerLinkType name="sftp_ger_plt" >
+    <plt:role name="sftp_ger_role" >
+      <plt:portType name="tns:sftp_ger_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+    <schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/opaque/"
+            xmlns="http://www.w3.org/2001/XMLSchema" >
+      <element name="opaqueElement" type="base64Binary" />
+               <element name="filelist">
+        <complexType>
+          <sequence>
+            <element name="file" minOccurs="0" maxOccurs="unbounded">
+              <complexType>
+                <sequence>
+                  <element name="directory" type="string"/>
+                  <element name="filename" type="string"/>
+                  <element name="lastModifiedTime" type="string"/>
+                  <element name="creationTime" type="string"/>
+                  <element name="size" type="string"/>
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+          <attribute name="size" type="string"/>
+        </complexType>
+      </element>
+      <element name="empty">
+        <complexType/>
+      </element>
+    </schema>
+    <schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/ftp/" xmlns="http://www.w3.org/2001/XMLSchema"
+            attributeFormDefault="qualified" elementFormDefault="qualified">
+      <element name="OutboundFTPHeaderType">
+        <complexType>
+          <sequence>
+            <element name="fileName" type="string"/>
+            <element name="directory" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+    </wsdl:types>
+    <wsdl:message name="PutFile_msg">
+        <wsdl:part name="opaque" element="opaque:opaqueElement"/>
+    </wsdl:message>
+      <wsdl:message name="Output_msg">
+    <wsdl:part name="body" element="FTPAPP:OutboundFTPHeaderType"/>
+  </wsdl:message>
+  <wsdl:message name="Empty_msg">
+    <wsdl:part name="Empty" element="opaque:empty"/>
+  </wsdl:message>
+  <wsdl:message name="SynchRead_msg">
+    <wsdl:part name="opaque" element="opaque:opaqueElement"/>
+  </wsdl:message>
+  <wsdl:message name="FileListing_msg">
+    <wsdl:part name="filelist" element="opaque:filelist"/>
+  </wsdl:message>
+    <wsdl:portType name="sftp_ger_ptt">
+        <wsdl:operation name="PutFile">
+            <wsdl:input message="tns:PutFile_msg"/>
+        </wsdl:operation>
+     <wsdl:operation name="SynchRead">
+      <wsdl:input message="tns:Empty_msg"/>
+      <wsdl:output message="tns:SynchRead_msg"/>
+    </wsdl:operation>
+    <wsdl:operation name="FileListing">
+      <wsdl:input message="tns:Empty_msg"/>
+      <wsdl:output message="tns:FileListing_msg"/>
+    </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

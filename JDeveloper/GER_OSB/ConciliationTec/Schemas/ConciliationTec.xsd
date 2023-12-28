@@ -1,0 +1,363 @@
+<xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/ConciliationTec" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/ConciliationTec" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+  <xsd:import schemaLocation="Commons/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+  <xsd:element name="GetConciliationsRs" type="GetConciliationsRsType"/>
+  <xsd:element name="GetConciliationsRq" type="GetConciliationsRqType"/>
+  <xsd:element name="ConciliationCashRq" type="ConciliationCashRqType"/>
+  <xsd:element name="ConciliationCashRs" type="ConciliationCashRsType"/>
+  <xsd:element name="ConciliationTransactionsRq" type="ConciliationTransactionsRqType"/>
+  <xsd:element name="ConciliationTransactionsRs" type="ConciliationTransactionsRsType"/>
+  <xsd:element name="SendConciliationBankRs" type="SendConciliationBankRsType"/>
+  <xsd:element name="SendConciliationBankRq" type="SendConciliationBankRqType"/>
+  <xsd:element name="SendConciliationBankAMEXRq" type="SendConciliationBankAMEXRqType"/>
+  <xsd:element name="SendConciliationBankAMEXRs" type="SendConciliationBankAMEXRsType"/>
+  <xsd:complexType name="SendConciliationBankRqType">
+    <xsd:sequence>
+      <xsd:element name="SendConciliationsBank" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="NumOperacion" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Sucursal" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Referencia" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Usuario" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="UsrTrx" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="TipoPago" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Lote" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="NombreArchivo" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Tarjeta" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="NombreTH" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Autorizacion" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Afiliacion" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="NombreAfiliacion" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Importe" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Moneda" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="FechaOperacion" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="HoraOperacion" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="TipoTarjeta" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="MarcaTarjeta" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="BancoEmisor" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="TipoOperacion" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="FechaDeposito" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Buzon" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="ImporteTasa" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="IvaTasa" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="ImporteSobretasa" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="IvaSobretasa" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="ImporteNeto" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="TipoImporteNeto" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="PaymentNumber" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="ChbReference" type="xsd:string" minOccurs="0" nillable="true"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SendConciliationBankAMEXRqType">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="ADJUSTMENT">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="NUM_ESTABLECIMIENTO" type="xsd:string"/>
+            <xsd:element name="CODIGO_TIPO_CUENTA" type="xsd:string"/>
+            <xsd:element name="NUM_PAGO_AMEX" type="xsd:string"/>
+            <xsd:element name="FECHA_PAGO" type="xsd:int"/>
+            <xsd:element name="MONEDA_PAGO" type="xsd:string"/>
+            <xsd:element name="NUM_ESTABLECIMIENTO_PRESENTACION" type="xsd:string"/>
+            <xsd:element name="FECHA_ENVIO" type="xsd:int"/>
+            <xsd:element name="UBICACION_ESTABLECIMIENTO" type="xsd:string"/>
+            <xsd:element name="NUM_FACTURA_REFERENCIA" type="xsd:string"/>
+            <xsd:element name="IDENTIFICACION_VENDEDOR" type="xsd:string"/>
+            <xsd:element name="NUM_TARJETA" type="xsd:string"/>
+            <xsd:element name="NUM_REFERENCIA_INDUSTRIA" type="xsd:string"/>
+            <xsd:element name="FECHA_PROCESAMIENTO_AMEX" type="xsd:int"/>
+            <xsd:element name="NUM_FACTURA" type="xsd:string"/>
+            <xsd:element name="MONEDA_PRESENTACION" type="xsd:string"/>
+            <xsd:element name="NUM_AJUSTE" type="xsd:string"/>
+            <xsd:element name="CODIGO_MOTIVO_AJUSTE" type="xsd:string"/>
+            <xsd:element name="DESCRIPCION_MOTIVO_AJUSTE" type="xsd:string"/>
+            <xsd:element name="MONTO_BRUTO" type="xsd:string"/>
+            <xsd:element name="MONTO_DESCUENTO" type="xsd:string"/>
+            <xsd:element name="MONTO_CARGO_SERVICIO" type="xsd:string"/>
+            <xsd:element name="MONTO_IMPUESTO" type="xsd:string"/>
+            <xsd:element name="MONTO_NETO" type="xsd:int"/>
+            <xsd:element name="TASA_DESCUENTO" type="xsd:string"/>
+            <xsd:element name="TASA_CARGO_SERVICIO" type="xsd:string"/>
+            <xsd:element name="CODIGO_LOTE" type="xsd:string"/>
+            <xsd:element name="CODIGO_FACTURA" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="HEADER">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="FECHA_CREACION_ARCHIVO" type="xsd:int"/>
+            <xsd:element name="HORA_CREACION_ARCHIVO" type="xsd:string"/>
+            <xsd:element name="NUM_SECUENCIAL" type="xsd:string"/>
+            <xsd:element name="IDENTIDIACION_ARCHIVO" type="xsd:string"/>
+            <xsd:element name="NOMBRE_ARCHIVO" type="xsd:string"/>
+            <xsd:element name="NUM_VERSION_ARCHIVO" type="xsd:decimal"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CHARGEBACK">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="NUM_ESTABLECIMIENTO" type="xsd:string"/>
+            <xsd:element name="CODIGO_TIPO_CUENTA_" type="xsd:string"/>
+            <xsd:element name="NUM_PAGO_AMERICAN_EXPRESS" type="xsd:string"/>
+            <xsd:element name="FECHA_PAGO" type="xsd:string"/>
+            <xsd:element name="MONEDA_PAGO" type="xsd:string"/>
+            <xsd:element name="NUM_ESTABLECIMIENTO_PRESENTACION" type="xsd:string"/>
+            <xsd:element name="FECHA_PRESENTACION" type="xsd:string"/>
+            <xsd:element name="UBICACION_ESTABLECIMIENTO" type="xsd:string"/>
+            <xsd:element name="NUM_FACTURA_O_REFERENCIA" type="xsd:string"/>
+            <xsd:element name="IDENTIFICACION_VENDEDOR" type="xsd:string"/>
+            <xsd:element name="NUM_TARJETA" type="xsd:string"/>
+            <xsd:element name="NUM_REFERENCIA_INDUSTRIA" type="xsd:string"/>
+            <xsd:element name="FECHA_PROCESAMIENTO_AMERICAN_EXPRESS" type="xsd:string"/>
+            <xsd:element name="NUM_FACTURA" type="xsd:string"/>
+            <xsd:element name="MONEDA_PRESENTACION" type="xsd:string"/>
+            <xsd:element name="NUM_CONTRACARGO" type="xsd:string"/>
+            <xsd:element name="CODIGO_MOTIVO_CONTRACARGO" type="xsd:string"/>
+            <xsd:element name="DESCRIPCION_MOTIVO_CONTRACARGO" type="xsd:string"/>
+            <xsd:element name="MONTO_BRUTO" type="xsd:string"/>
+            <xsd:element name="MONTO_DESCUENTO" type="xsd:string"/>
+            <xsd:element name="MONTO_CARGO_SERVICIO" type="xsd:string"/>
+            <xsd:element name="MONTO_IMPUESTO" type="xsd:string"/>
+            <xsd:element name="MONTO_NETO" type="xsd:string"/>
+            <xsd:element name="TASA_DESCUENTO" type="xsd:string"/>
+            <xsd:element name="TASA_CARGO_SERVICIO" type="xsd:string"/>
+            <xsd:element name="CODIGO_LOTE" type="xsd:string"/>
+            <xsd:element name="CODIGO_FACTURA" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SUBMISSION">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="NUM_ESTABLECIMIENTO" type="xsd:string"/>
+            <xsd:element name="CODIGO_TIPO_CUENTA" type="xsd:string"/>
+            <xsd:element name="NUM_PAGO_AMEX" type="xsd:string"/>
+            <xsd:element name="FECHA_PAGO" type="xsd:int"/>
+            <xsd:element name="MONEDA_PAGO" type="xsd:string"/>
+            <xsd:element name="NUM_ESTABLECIMIENTO_PRESENTION" type="xsd:string"/>
+            <xsd:element name="FECHA_ENVIO_COMERCIAL" type="xsd:int"/>
+            <xsd:element name="FECHA_PROCESAMIENTO_AMEX" type="xsd:int"/>
+            <xsd:element name="NUM_FACTURA" type="xsd:string"/>
+            <xsd:element name="MONEDA" type="xsd:string"/>
+            <xsd:element name="RELLENO" type="xsd:string"/>
+            <xsd:element name="TASA_CAMBIO" type="xsd:string"/>
+            <xsd:element name="MONTO_BRUTO_MONEDA_PRESENTACION" type="xsd:string"/>
+            <xsd:element name="MONTO_BRUTO_MONEDA_PAGO" type="xsd:string"/>
+            <xsd:element name="MONTO_DESCUENTO_RSENTCION" type="xsd:string"/>
+            <xsd:element name="MONTO_CARGO_SERVICIO" type="xsd:string"/>
+            <xsd:element name="MONTO_IMPUESTO" type="xsd:string"/>
+            <xsd:element name="MONTO_NETO" type="xsd:string"/>
+            <xsd:element name="TASA_DESCUENTO" type="xsd:string"/>
+            <xsd:element name="TASA_IMPUESTO" type="xsd:string"/>
+            <xsd:element name="SUMA_TRANSACCIONES" type="xsd:string"/>
+            <xsd:element name="IDENTIFICACION_SEGUIMIENTO" type="xsd:string"/>
+            <xsd:element name="NUM_CUOTA" type="xsd:string"/>
+            <xsd:element name="NUM_ACELERACION" type="xsd:int"/>
+            <xsd:element name="FECHA_LIQUIDACION_ORIGINAL" type="xsd:int"/>
+            <xsd:element name="FECHA_ACELERACION" type="xsd:int"/>
+            <xsd:element name="CANTIDAD_DIAS_ADELANTADOS" type="xsd:int"/>
+            <xsd:element name="MONTO_CARGO_ACELERACION" type="xsd:string"/>
+            <xsd:element name="MONTO_NETO_CARGO_ACELERACION" type="xsd:string"/>
+            <xsd:element name="MONTO_BRUTO_DEBITO" type="xsd:string"/>
+            <xsd:element name="MONTO_BRUTO_CREDITO" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SUMMARY">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IDENTIFICACION_ESTABLECIMIENTO" type="xsd:string"/>
+            <xsd:element name="CODIGO_TIPO_CUENTA" type="xsd:string"/>
+            <xsd:element name="NUM_PAGO" type="xsd:string"/>
+            <xsd:element name="FECHA_PAGO" type="xsd:int"/>
+            <xsd:element name="MONEDA_PAGO" type="xsd:string"/>
+            <xsd:element name="NUM_UNICO_REFERENCIA_PAGO" type="xsd:string"/>
+            <xsd:element name="MONTO_NETO_PAGO" type="xsd:string"/>
+            <xsd:element name="MONTO_BRUTO_PAGO" type="xsd:string"/>
+            <xsd:element name="MONTO_DESCUENTO" type="xsd:string"/>
+            <xsd:element name="MONTO_SERVICIO" type="xsd:string"/>
+            <xsd:element name="MONTO_AJUSTE" type="xsd:int"/>
+            <xsd:element name="MONTO_IMPUESTOS" type="xsd:string"/>
+            <xsd:element name="MONTO_SALDO_DEBITO_INICIAL" type="xsd:string"/>
+            <xsd:element name="NUM_DEPOSITO_DIRECTO" type="xsd:string"/>
+            <xsd:element name="NUM_CUENTA_BANCARIA" type="xsd:string"/>
+            <xsd:element name="NUM_CUENTA_BANCARIA_INTERNACIONAL" type="xsd:string"/>
+            <xsd:element name="CODIGO_BANCO" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="TRAILER">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="NUM_SECUENCIAL" type="xsd:string"/>
+            <xsd:element name="SUMA_TOTAL_REGISTROS" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="TRANSACTN">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="NUM_ESTABLECIMIENTO" type="xsd:string"/>
+            <xsd:element name="CODIGO_TIPO_CUENTA" type="xsd:string"/>
+            <xsd:element name="NUM_PAGO_AMEX" type="xsd:string"/>
+            <xsd:element name="FECHA_PAGO" type="xsd:int"/>
+            <xsd:element name="MONEDA_PAGO" type="xsd:string"/>
+            <xsd:element name="NUM_ESTABLECIMIENTO2" type="xsd:string"/>
+            <xsd:element name="FECHA_PRESENTACION" type="xsd:int"/>
+            <xsd:element name="FECHA_PROCESAMIENTO_AMEX" type="xsd:int"/>
+            <xsd:element name="NUM_FACTURA" type="xsd:string"/>
+            <xsd:element name="MONEDA_PRESENTACION" type="xsd:string"/>
+            <xsd:element name="IDENTIFICACION_UBICACION_ESTABLECIMIENTO" type="xsd:string"/>
+            <xsd:element name="NUM_FACTURA_REFERENCIA" type="xsd:int"/>
+            <xsd:element name="NUM_VENDEDOR" type="xsd:string"/>
+            <xsd:element name="NUM_TARJETA" type="xsd:string"/>
+            <xsd:element name="NUM_REFERENCIA_ESPECIFICO_INDUSTRIA" type="xsd:string"/>
+            <xsd:element name="MONTO_BRUTO_PRESENTACION" type="xsd:string"/>
+            <xsd:element name="MONTO_TRANSACCION" type="xsd:string"/>
+            <xsd:element name="FECHA_TRANSACCION" type="xsd:int"/>
+            <xsd:element name="HORA_TRANSACCION" type="xsd:int"/>
+            <xsd:element name="NUM_TRANSACCION" type="xsd:string"/>
+            <xsd:element name="CODIGO_APROBACION" type="xsd:int"/>
+            <xsd:element name="NUM_TERMINAL" type="xsd:string"/>
+            <xsd:element name="CODIGO_CATEGORIA_ESTABLECIMIENTO" type="xsd:int"/>
+            <xsd:element name="NUM_REFERENCIA_SOCIO" type="xsd:string"/>
+            <xsd:element name="NUM_REFERENCIA_ADQUIRENTE" type="xsd:string"/>
+            <xsd:element name="CODIGO_ERROR_INCUMPLIMIENTO_CALIDAD_DATOS" type="xsd:string"/>
+            <xsd:element name="CODIGO_ERROR_INCUMPLIMIENTO_CALIDAD_DATOS1" type="xsd:string"/>
+            <xsd:element name="CODIGO_ERROR_INCUMPLIMIENTO_CALIDAD_DATOS2" type="xsd:string"/>
+            <xsd:element name="CODIGO_ERROR_INCUMPLIMIENTO_CALIDAD_DATOS3" type="xsd:string"/>
+            <xsd:element name="CODIGO_ERROR_INCUMPLIMIENTO_CALIDAD_DATOS4" type="xsd:string"/>
+            <xsd:element name="INDICADOR_LECTURA_BANDA" type="xsd:string"/>
+            <xsd:element name="INDICADOR_TRANSACCION_RECHAZADA" type="xsd:string"/>
+            <xsd:element name="MONTO_PRIMERA_CUOTA" type="xsd:string"/>
+            <xsd:element name="MONTO_CUOTA_SIGUIENTE" type="xsd:string"/>
+            <xsd:element name="CANTIDAD_CUOTAS" type="xsd:string"/>
+            <xsd:element name="NUM_CUOTA" type="xsd:string"/>
+            <xsd:element name="RELLENO" type="xsd:string"/>
+            <xsd:element name="MONTO_SERVICIO" type="xsd:string"/>
+            <xsd:element name="MONTO_ACELERACION" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="TXNPRICING">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="NUMERO_ESTABLCIMIENTO" type="xsd:string"/>
+            <xsd:element name="CODIGO_CUENTA" type="xsd:string"/>
+            <xsd:element name="NUM_PAGO_AMEX" type="xsd:string"/>
+            <xsd:element name="FECHA_PAGO" type="xsd:int"/>
+            <xsd:element name="MONEDA_PAGO" type="xsd:string"/>
+            <xsd:element name="NUM_ESTABLECIMENTO_PRESENTACION" type="xsd:string"/>
+            <xsd:element name="UBICACION_ESTABLECIMIENTO" type="xsd:string"/>
+            <xsd:element name="RELLENO" type="xsd:string"/>
+            <xsd:element name="NUM_FACTURA_REFERENCIA" type="xsd:int"/>
+            <xsd:element name="NUMERO_VENDEDOR" type="xsd:string"/>
+            <xsd:element name="NUM_TARJETA" type="xsd:string"/>
+            <xsd:element name="MONTO_TRANSACCION" type="xsd:string"/>
+            <xsd:element name="FECHA_TRANSACCION" type="xsd:int"/>
+            <xsd:element name="CODIGO_CARGO" type="xsd:string"/>
+            <xsd:element name="RELLENO2" type="xsd:string"/>
+            <xsd:element name="MONTO_CARGO" type="xsd:string"/>
+            <xsd:element name="TASA_DESCUENTO" type="xsd:string"/>
+            <xsd:element name="MONTO_DESCUENTO" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:choice>
+  </xsd:complexType>
+  <xsd:complexType name="SendConciliationBankRsType">
+    <xsd:sequence>
+      <xsd:element name="Return" type="cmn:BaseRsType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SendConciliationBankAMEXRsType">
+    <xsd:sequence>
+      <xsd:element name="Return" type="cmn:BaseRsType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetConciliationsRqType">
+    <xsd:sequence>
+      <xsd:element name="P_BUSINESSUNIT" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="P_FROMDATE" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="P_PAYMENTREFERENCE" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="P_METODO_RECIBO" type="xsd:string" minOccurs="0" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetConciliationsRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="XXER_AR_GET_CASH_CONC" minOccurs="0" maxOccurs="unbounded">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="REFERENCE_PAYMENT" type="xsd:string" minOccurs="0" nillable="true"/>
+                <xsd:element name="RECEIPT_METHOD" type="xsd:string" minOccurs="0" nillable="true"/>
+                <xsd:element name="PAYMENT_DATE" type="xsd:string" minOccurs="0" nillable="true"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ConciliationCashRqType">
+    <xsd:sequence>
+      <xsd:element name="ConciliationCash" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="REFERENCE_PAYMENT" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="PAYMENT_NUMBER" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="RECEIPT_METHOD" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="TOTAL" type="xsd:double" minOccurs="0" nillable="true"/>
+            <xsd:element name="PAYMENT_DATE" type="xsd:string" minOccurs="0" nillable="true"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConciliationCashRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="XXER_AR_GET_CASH_CONC" type="ConciliationResultType" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ConciliationResultType">
+    <xsd:sequence>
+      <xsd:element name="REFERENCE_PAYMENT" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="RECEIPT_METHOD" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="STATUS" type="xsd:string" minOccurs="0" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConciliationTransactionsRqType">
+    <xsd:sequence>
+      <xsd:element name="ConciliationTransaction" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="REFERENCE_PAYMENT" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="RECEIPT_METHOD" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="REFERENCE_TRANSACTIONS_ID" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="REFERENCE_TRANSACTIONS" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="TOTAL" type="xsd:double" minOccurs="0" nillable="true"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConciliationTransactionsRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="XXER_AR_GET_CASH_CONC" type="ConciliationResultType" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,37 @@
+<wsdl:definitions name="RestReference" targetNamespace="http://xmlns.oracle.com/TestJairo/SBProject/RestReference" xmlns:tns="http://xmlns.oracle.com/TestJairo/SBProject/RestReference" xmlns:inp1="http://TargetNamespace.com/RestReference_Operation1_request" xmlns:inp2="http://TargetNamespace.com/RestReference_Operation1_response" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <plnk:partnerLinkType name="RestReference">
+        <plnk:role name="RestReferenceProvider" portType="tns:RestReference_ptt"/>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://TargetNamespace.com/RestReference_Operation1_request" schemaLocation="nxsd_schema1.xsd"/>
+        </xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://TargetNamespace.com/RestReference_Operation1_response" schemaLocation="nxsd_schema2.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="consulta_inputMessage">
+        <wsdl:part name="request" element="inp1:Request"/>
+    </wsdl:message>
+    <wsdl:message name="consulta_outputMessage">
+        <wsdl:part name="reply" element="inp2:response"/>
+    </wsdl:message>
+    <wsdl:portType name="RestReference_ptt">
+        <wsdl:operation name="consulta">
+            <wsdl:input message="tns:consulta_inputMessage"/>
+            <wsdl:output message="tns:consulta_outputMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="RestReference_ptt-binding" type="tns:RestReference_ptt">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="consulta">
+            <soap:operation soapAction="consulta"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>
