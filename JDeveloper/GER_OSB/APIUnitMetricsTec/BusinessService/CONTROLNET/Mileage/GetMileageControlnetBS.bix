@@ -16,7 +16,7 @@
     <con:endpointConfig>
         <tran:provider-id>http</tran:provider-id>
         <tran:inbound>false</tran:inbound>
-        <tran:URI>
+        <tran:URI weight="0">
             <env:value>https://apicloud.estrellaroja.com.mx/controlnet/api/v1/kilometraje</env:value>
         </tran:URI>
         <tran:outbound-properties>

@@ -27,7 +27,7 @@
         <xsd:element type="xsd:long" name="WorkOrderId" minOccurs="0"/>
         <xsd:element type="xsd:string" name="centroDeCosto" minOccurs="0"/>
         <xsd:element type="xsd:string" name="comentarios" minOccurs="0"/>
-        <xsd:element type="xsd:byte" name="estatusZam" minOccurs="0"/>
+        <xsd:element type="xsd:string" name="estatusZam" minOccurs="0"/>
         <xsd:element type="xsd:dateTime" name="fechaCompromiso" minOccurs="0"/>
         <xsd:element name="ingreso" type="xsd:string" minOccurs="0"/>
         <xsd:element type="xsd:float" name="lectura" minOccurs="0"/>

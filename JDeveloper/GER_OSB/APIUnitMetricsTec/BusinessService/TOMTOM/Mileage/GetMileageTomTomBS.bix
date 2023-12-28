@@ -16,7 +16,7 @@
     <con:endpointConfig>
         <tran:provider-id>http</tran:provider-id>
         <tran:inbound>false</tran:inbound>
-        <tran:URI>
+        <tran:URI weight="0">
             <env:value>http://inrouteapi.adsum.com.mx/api/consultas/consumoCombustible</env:value>
         </tran:URI>
         <tran:outbound-properties>

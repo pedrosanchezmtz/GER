@@ -50,7 +50,6 @@
       <hash><url n="URL" path="DEV_ERPUnitMetricsTec/DEV_ERPUnitMetricsTec.jpr"/></hash>
       <hash><url n="URL" path="DEV_FinancialsTec/DEV_FinancialsTec.jpr"/></hash>
       <hash><url n="URL" path="DEV_LetterPorteTec/DEV_LetterPorteTec.jpr"/></hash>
-      <hash><url n="URL" path="DEV_ReportsSOA/DEV_ReportsSOA.jpr"/></hash>
       <hash><url n="URL" path="DEV_SCMWorkOrdersTec/DEV_SCMWorkOrdersTec.jpr"/></hash>
       <hash><url n="URL" path="DEV_SftpTec/DEV_SftpTec.jpr"/></hash>
       <hash><url n="URL" path="DEV_UtilityTec/DEV_UtilityTec.jpr"/></hash>
@@ -75,8 +74,6 @@
       <hash><url n="URL" path="INERDEV_ValidacionAutomaticTec/INERDEV_ValidacionAutomaticTec.jpr"/></hash>
       <hash><url n="URL" path="LetterPorteTec/LetterPorteTec.jpr"/></hash>
       <hash><url n="URL" path="PlanEmbarquesEnt/PlanEmbarquesEnt.jpr"/></hash>
-      <hash><url n="URL" path="ReportsSOA/ReportsSOA.jpr"/></hash>
-      <hash><url n="URL" path="SBProject/SBProject.jpr"/></hash>
       <hash><url n="URL" path="SCMWorkOrdersTec/SCMWorkOrdersTec.jpr"/></hash>
       <hash><url n="URL" path="SftpTec/SftpTec.jpr"/></hash>
       <hash><url n="URL" path="UtilityTec/UtilityTec.jpr"/></hash>
