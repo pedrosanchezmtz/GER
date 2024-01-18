@@ -48,7 +48,8 @@
          xmlns:ns22="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/BpelUpdateInvoicesInstallmentsAP"
          xmlns:ns24="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP"
          xmlns:strClass="http://www.oracle.com/XSL/Transform/java/java.lang.String"
-         xmlns:ns25="http://soa.estrellaroja.com.mx/XxerTblConfIntegration">
+         xmlns:ns25="http://soa.estrellaroja.com.mx/XxerTblConfIntegration"
+         xmlns:ns26="http://soa.estrellaroja.com.mx/GER_SOA/ValidationPaymentsAPBiz/BpelUpdateSupplierInvoicesInstallmentsAP">
   <!-- 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       PARTNERLINKS                                                      
@@ -90,9 +91,9 @@
                  partnerRole="AuditControlTecPortType"/>
     <partnerLink name="wsCFDITec" partnerLinkType="ns21:wsCFDITec" partnerRole="CFDITecPortType"
                  myRole="CFDITecPortTypeCallback"/>
-    <partnerLink name="BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client"
-                 partnerLinkType="ns22:BpelUpdateInvoicesInstallmentsAP"
-                 partnerRole="BpelUpdateInvoicesInstallmentsAPProvider"/>
+    <partnerLink name="BpelUpdateSupplierInvoicesInstallmentsAP.bpelupdatesupplierinvoicesinstallmentsap_client"
+                 partnerLinkType="ns26:BpelUpdateSupplierInvoicesInstallmentsAP"
+                 partnerRole="BpelUpdateSupplierInvoicesInstallmentsAPProvider"/>
   </partnerLinks>
 
   <!-- 
@@ -113,6 +114,10 @@
     <variable name="v_paymentXML40" element="ns15:Comprobante"/>
     <variable name="GetComplementCFDIRq" messageType="ns21:GetComplementCFDIRqMsg"/>
     <variable name="GetComplementCFDIRs" messageType="ns21:GetComplementCFDIRsMsg"/>
+    <variable name="UpdateSupplierInvoicesInstallmentsAPRq"
+              messageType="ns26:BpelUpdateSupplierInvoicesInstallmentsAPRequestMessage"/>
+    <variable name="UpdateSupplierInvoicesInstallmentsAPRs"
+              messageType="ns26:BpelUpdateSupplierInvoicesInstallmentsAPResponseMessage"/>
   </variables>
   <faultHandlers>
     <catchAll>
@@ -1169,6 +1174,22 @@ addAuditTrailEntry("Start Log QueryData");]]>
                                         <from>'0'</from>
                                         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsNotificationEmailRq.payload/ns7:NUMERO_NOTIFICACION</to>
                                       </copy>
+                                      <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                                        <from>true()</from>
+                                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns7:Supplier/ns7:validate</to>
+                                      </copy>
+                                      <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                                        <from>$v_payment/ns5:G_1/ns5:RFC_PROVEEDOR</from>
+                                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns7:Supplier/ns7:supplier_rfc</to>
+                                      </copy>
+                                      <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                                        <from>'true'</from>
+                                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns7:Supplier/ns24:HoldFlag</to>
+                                      </copy>
+                                      <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                                        <from>dvm:lookupValue("DVMs/dvmValidationPaymentsBiz.dvm","Code","E_V_APOLO","Value","","Component","MensajeSubjet")</from>
+                                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns7:Supplier/ns24:HoldReason</to>
+                                      </copy>
                                     </assign>
                                     <elseif>
                                       <documentation>
@@ -1203,6 +1224,18 @@ addAuditTrailEntry("Start Log QueryData");]]>
                                             <from>'4'</from>
                                             <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsNotificationEmailRq.payload/ns7:NUMERO_NOTIFICACION</to>
                                           </copy>
+                                          <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                                            <from>true()</from>
+                                            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns7:Supplier/ns7:validate</to>
+                                          </copy>
+                                          <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                                            <from>$v_payment/ns5:G_1/ns5:RFC_PROVEEDOR</from>
+                                            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns7:Supplier/ns7:supplier_rfc</to>
+                                          </copy>
+                                          <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                                            <from>'false'</from>
+                                            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns7:Supplier/ns24:HoldFlag</to>
+                                          </copy>
                                         </assign>
                                       </sequence>
                                     </elseif>
@@ -1233,6 +1266,22 @@ addAuditTrailEntry("Start Log QueryData");]]>
                                           <from>'0'</from>
                                           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsNotificationEmailRq.payload/ns7:NUMERO_NOTIFICACION</to>
                                         </copy>
+                                                                             <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                                        <from>true()</from>
+                                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns7:Supplier/ns7:validate</to>
+                                      </copy>
+                                      <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                                        <from>$v_payment/ns5:G_1/ns5:RFC_PROVEEDOR</from>
+                                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns7:Supplier/ns7:supplier_rfc</to>
+                                      </copy>
+                                      <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                                        <from>'true'</from>
+                                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns7:Supplier/ns24:HoldFlag</to>
+                                      </copy>
+                                      <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                                        <from>dvm:lookupValue("DVMs/dvmValidationPaymentsBiz.dvm","Code","E_V_APOLO","Value","","Component","MensajeSubjet")</from>
+                                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns7:Supplier/ns24:HoldReason</to>
+                                      </copy>
                                       </assign>
                                     </elseif>
                                     <else>
@@ -1261,9 +1310,31 @@ addAuditTrailEntry("Start Log QueryData");]]>
                                           <from>'0'</from>
                                           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsNotificationEmailRq.payload/ns7:NUMERO_NOTIFICACION</to>
                                         </copy>
+                                                                             <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                                        <from>true()</from>
+                                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns7:Supplier/ns7:validate</to>
+                                      </copy>
+                                      <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                                        <from>$v_payment/ns5:G_1/ns5:RFC_PROVEEDOR</from>
+                                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns7:Supplier/ns7:supplier_rfc</to>
+                                      </copy>
+                                      <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                                        <from>'true'</from>
+                                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns7:Supplier/ns24:HoldFlag</to>
+                                      </copy>
+                                      <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                                        <from>dvm:lookupValue("DVMs/dvmValidationPaymentsBiz.dvm","Code","E_V_APOLO","Value","","Component","MensajeSubjet")</from>
+                                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns7:Supplier/ns24:HoldReason</to>
+                                      </copy>
                                       </assign>
                                     </else>
                                   </if>
+                                  <invoke name="wsUpdateSupplierInvoicesInstallmentsAP" bpelx:invokeAsDetail="no"
+                                          partnerLink="BpelUpdateSupplierInvoicesInstallmentsAP.bpelupdatesupplierinvoicesinstallmentsap_client"
+                                          portType="ns26:BpelUpdateSupplierInvoicesInstallmentsAP"
+                                          operation="UpdateSupplierInvoicesInstallmentsAP"
+                                          inputVariable="UpdateSupplierInvoicesInstallmentsAPRq"
+                                          outputVariable="UpdateSupplierInvoicesInstallmentsAPRs"/>
                                 </sequence>
                                 <else>
                                   <documentation>
@@ -1394,73 +1465,6 @@ addAuditTrailEntry("Start Log QueryData");]]>
         </assign>
       </else>
     </if>
-    <scope name="ScopeUpdateInvoicesInstallmentsAP">
-      <variables>
-        <variable name="v_flag" type="xsd:string"/>
-        <variable name="UpdateInvoicesInstallmentsAPRs"
-                  messageType="ns22:BpelUpdateInvoicesInstallmentsAPResponseMessage"/>
-        <variable name="UpdateInvoicesInstallmentsAPRq"
-                  messageType="ns22:BpelUpdateInvoicesInstallmentsAPRequestMessage"/>
-      </variables>
-      <if name="If_StatusUpdate">
-        <documentation>
-          <![CDATA[Estatus Reneter o quitar retencion]]>
-        </documentation>
-        <condition> $WsNotificationEmailRq.payload/ns7:NUMERO_NOTIFICACION='0' or $WsNotificationEmailRq.payload/ns7:NUMERO_NOTIFICACION='1' or $WsNotificationEmailRq.payload/ns7:NUMERO_NOTIFICACION='2' or $WsNotificationEmailRq.payload/ns7:NUMERO_NOTIFICACION='3' or $WsNotificationEmailRq.payload/ns7:NUMERO_NOTIFICACION='4' or $WsNotificationEmailRq.payload/ns7:NUMERO_NOTIFICACION='5'  </condition>
-        <sequence name="SeqUpdateInvoicesInstallmentsAP">
-          <if name="IfRetener">
-            <documentation>
-              <![CDATA[Estatus Reneter]]>
-            </documentation>
-            <condition> $WsNotificationEmailRq.payload/ns7:NUMERO_NOTIFICACION='0' or $WsNotificationEmailRq.payload/ns7:NUMERO_NOTIFICACION='1' or $WsNotificationEmailRq.payload/ns7:NUMERO_NOTIFICACION='2' or $WsNotificationEmailRq.payload/ns7:NUMERO_NOTIFICACION='3'</condition>
-            <assign name="AssignFlag">
-              <copy>
-                <from>'true'</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_flag</to>
-              </copy>
-            </assign>
-            <else>
-              <documentation>
-                <![CDATA[Estatus Quitar Retencion]]>
-              </documentation><assign name="AssignFlag"
-                                      xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
-      
-   <copy>
-         <from>'false'</from>
-         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_flag</to>
-      </copy></assign></else>
-          </if>
-          <forEach parallel="no" counterName="countInvoice" name="For_Invoices">
-            <startCounterValue>1</startCounterValue>
-            <finalCounterValue>count($v_payment/ns5:G_1[1]/ns5:G_2)</finalCounterValue>
-            <scope name="ScopeInvoice">
-              <assign name="AssignUpdateInstallment">
-                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
-                  <from>$v_flag</from>
-                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateInvoicesInstallmentsAPRq.payload/ns7:invoice[$countInvoice]/ns24:HoldFlag</to>
-                </copy>
-                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
-                  <from>$WsNotificationEmailRq.payload/ns7:ESTATUS</from>
-                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateInvoicesInstallmentsAPRq.payload/ns7:invoice[$countInvoice]/ns24:HoldReason</to>
-                </copy>
-                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
-                  <from>$v_payment/ns5:G_1[1]/ns5:G_2[$countInvoice]/ns5:ID_FACTURA</from>
-                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateInvoicesInstallmentsAPRq.payload/ns7:invoice[$countInvoice]/ns7:invoice_id</to>
-                </copy>
-                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
-                  <from>$v_payment/ns5:G_1[1]/ns5:RFC_PROVEEDOR</from>
-                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateInvoicesInstallmentsAPRq.payload/ns7:invoice[$countInvoice]/ns7:rfc</to>
-                </copy>
-              </assign>
-            </scope>
-          </forEach>
-          <invoke name="UpdateInvoicesInstallmentsAP" bpelx:invokeAsDetail="no"
-                  partnerLink="BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client"
-                  portType="ns22:BpelUpdateInvoicesInstallmentsAP" operation="BpelUpdateInvoicesInstallmentsAP"
-                  inputVariable="UpdateInvoicesInstallmentsAPRq" outputVariable="UpdateInvoicesInstallmentsAPRs"/>
-        </sequence>
-      </if>
-    </scope>
     <invoke name="wsAuditControlTec" partnerLink="wsAuditControlTec"
             portType="ns12:AuditControlTecPortType" operation="MergeComplementsAP"
             inputVariable="wsAuditControlTecMergeComplementsAPRq"

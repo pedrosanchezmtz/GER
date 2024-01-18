@@ -36,6 +36,8 @@
   <import namespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz"
           location="oramds:/apps/SOA/ValidationPaymentsAPBiz/ValidationPaymentsAPBiz.xsd"
           importType="http://www.w3.org/2001/XMLSchema"/>
+  <import location="oracle.xml.parser.v2.XMLElement" importType="http://schemas.oracle.com/bpel/extension/java"/>
+
   <import ui:processWSDL="true" namespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/BpelUpdateInvoicesInstallmentsAP"
             location="../WSDLs/External/BpelUpdateInvoicesInstallmentsAP.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <!-- 

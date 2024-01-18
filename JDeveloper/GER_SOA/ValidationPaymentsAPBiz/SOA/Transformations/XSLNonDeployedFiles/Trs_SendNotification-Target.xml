@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<tns:MessageRq xmlns:strClass="http://www.oracle.com/XSL/Transform/java/java.lang.String" xmlns:ns2="http://soa.estrellaroja.com.mx/Reports/XXER_ValidationComplement" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns1="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:ns3="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/BpelSendNotifications" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.estrellaroja.com.mx/MessageTec">
+   <tns:Message>
+      <tns:Addresses>
+         <tns:AddressFrom>complemento.qa@estrellaroja.com.mx</tns:AddressFrom>
+         <tns:AddressTo>pedro.sanchez@forteinnovation.mx</tns:AddressTo>
+      </tns:Addresses>
+      <tns:Subject>ESTATUS10</tns:Subject>
+      <tns:Body>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+	&lt;head>
+		&lt;meta charset="UTF-8">
+			&lt;meta name="viewport" content="width=device-width,initial-scale=1">
+				&lt;meta name="x-apple-disable-message-reformatting">
+					&lt;title>Notificacion Complemento&lt;/title>
+					&lt;style>    table, td, div, h1, p {font-family: Arial, sans-serif;} &amp;!hash;customers {  font-family: Arial, Helvetica, sans-serif;  border-collapse: collapse;  width: 100%;}&amp;!hash;customers td, &amp;!hash;customers th {  border: 1px solid &amp;!hash;ddd;  padding: 8px;}&amp;!hash;customers tr:nth-child(even){background-color: &amp;!hash;f2f2f2;}&amp;!hash;customers tr:hover {background-color: &amp;!hash;ddd;}&amp;!hash;customers th {  padding-top: 12px;  padding-bottom: 12px;  text-align: left;  opacity: .9;  background-color: &amp;!hash;24272a;  color: white;}&lt;/style>
+				&lt;/head>
+				&lt;body style="margin:0;padding:0;">
+					&lt;table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background:&amp;!hash;ffffff;">
+						&lt;tr>
+							&lt;td align="center" style="padding:0;">
+								&lt;table role="presentation" style="width:602px;border-collapse:collapse;border:1px solid &amp;!hash;004185;border-spacing:0;text-align:left;background:&amp;!hash;004185;">
+									&lt;tr>
+										&lt;td align="center" style="padding:10 10 10 10;background:&amp;!hash;ffffff;">
+											&lt;img src="https://www.estrellaroja.com.mx/general/img/logo.png" width="498" height="168"/>
+										&lt;/td>
+									&lt;/tr>
+									&lt;tr>
+										&lt;td style="padding:30px 30px 30px 30px;">
+											&lt;table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
+												&lt;tr>
+													&lt;td style="padding:0 0 0 0;color:&amp;!hash;ffffff;">
+														&lt;h1 style="font-size:24px;margin:0 0 20px 0;font-family:Arial,sans-serif;text-align:center;">ESTATUS10&lt;/h1>
+														&lt;p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">ESTATUS_MSJ11&lt;/p>
+													&lt;/td>
+												&lt;/tr>
+											&lt;/table>
+										&lt;/td>
+									&lt;/tr>
+									&lt;tr>
+										&lt;td style="padding:30px;background:&amp;!hash;ffffff;">
+											&lt;table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
+												&lt;tr>
+													&lt;td style="width:260px;padding:0;vertical-align:top;color:&amp;!hash;153643;">
+														&lt;h4 style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">NOMBRE PROVEEDOR:&lt;strong style="color:&amp;!hash;005cb9">NOMBRE_PROVEEDOR6&lt;/strong>
+														&lt;/h4>
+														&lt;h4 style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">NUMERO ID PAGO ORACLE:&lt;strong style="color:&amp;!hash;005cb9">1&lt;/strong>
+														&lt;/h4>
+														&lt;h4 style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">NUMERO DE PAGO:&lt;strong style="color:&amp;!hash;005cb9">9&lt;/strong>
+														&lt;/h4>
+														&lt;h4 style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">MONTO PAGO:&lt;strong style="color:&amp;!hash;005cb9">30.73&lt;/strong>
+														&lt;/h4>
+														&lt;h4 style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">FECHA PAGO:&lt;strong style="color:&amp;!hash;005cb9">FECHA_PAGO4&lt;/strong>
+														&lt;/h4>
+                                                                                                                &lt;h4 style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">INSTANCIA:&lt;strong style="color:&amp;!hash;005cb9">231213&lt;/strong>
+														&lt;/h4>
+														&lt;h4 style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">NOTIFICACION:&lt;strong style="color:&amp;!hash;005cb9">NUMERO_NOTIFICACION5&lt;/strong>
+														&lt;/h4>
+													&lt;/td>
+												&lt;/tr>
+												&lt;tr>
+													&lt;td>
+														&lt;h3 style="font-size:18px;margin:0 0 20px 0;font-family:Arial,sans-serif;text-align:center;">DOCUMENTOS RELACIONADOS&lt;/h3>
+													&lt;/td>
+												&lt;/tr>
+												&lt;tr>
+													&lt;td>
+														&lt;table id="customers">
+															&lt;tr>
+																&lt;th>NO.FACTURA&lt;/th>
+																&lt;th>UUID FACTURA&lt;/th>
+																&lt;th>MONTO&lt;/th>
+															&lt;/tr>DETAIL_LINES12&lt;/table>
+													&lt;/td>
+												&lt;/tr>
+											&lt;/table>
+										&lt;/td>
+									&lt;/tr>
+									&lt;tr>
+										&lt;td style="padding:0 0 0 0;color:&amp;!hash;ffffff;">
+											&lt;h1 style="font-size:24px;margin:0 0 20px 0;font-family:Arial,sans-serif;text-align:center;">CONTACTO DUDAS&lt;/h1>
+											&lt;p style="font-size:18px;margin:0 0 20px 0;font-family:Arial,sans-serif;text-align:center;">
+												&lt;a>elena.castro@estrellaroja.com.mx&lt;br/>fresvinda.tirzo@estrellaroja.com.mx&lt;br/>fernanda.sanchez@estrellaroja.com.mx&lt;br/>daniel.hernandez@estrellaroja.com.mx&lt;/a>
+											&lt;/p>
+										&lt;/td>
+									&lt;/tr>
+									&lt;tr>
+										&lt;td style="padding:30px;background:&amp;!hash;fa3e55;">
+											&lt;table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;font-size:9px;font-family:Arial,sans-serif;">
+												&lt;tr>
+													&lt;td style="padding:0;width:50%;" align="left">
+														&lt;p style="margin:0;font-size:14px;line-height:16px;font-family:Arial,sans-serif;color:&amp;!hash;ffffff;">&amp;reg; Estrella Roja 2021&lt;br/>
+															&lt;a href="www.estrellaroja.com.mx" style="color:&amp;!hash;ffffff;text-decoration:underline;">www.estrellaroja.com.mx&lt;/a>
+														&lt;/p>
+													&lt;/td>
+												&lt;/tr>
+											&lt;/table>
+										&lt;/td>
+									&lt;/tr>
+								&lt;/table>
+							&lt;/td>
+						&lt;/tr>
+					&lt;/table>
+				&lt;/body>
+			&lt;/html>
+         </tns:Body>
+      <tns:Attachment>
+         <tns:FileName>COMPROBANTE_NAME13</tns:FileName>
+         <tns:TypeName>pdf</tns:TypeName>
+         <tns:AttachmentBase64>MTQ=</tns:AttachmentBase64>
+      </tns:Attachment>
+   </tns:Message>
+</tns:MessageRq>

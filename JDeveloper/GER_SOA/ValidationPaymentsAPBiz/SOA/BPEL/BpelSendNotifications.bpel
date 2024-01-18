@@ -72,6 +72,9 @@
     <variable name="varInstance" type="xsd:string">
       <from>ora:getFlowId()</from>
     </variable>
+    <variable name="varEnviroment" type="xsd:string">
+      <from>ora:getPreference("ENVIROMENT")</from>
+    </variable>
   </variables>
   <faultHandlers>
     <catchAll>
@@ -105,14 +108,13 @@
   -->
   <sequence name="main">
 
-    <!-- Receive input from requestor. (Note: This maps to operation defined in BpelSendNotifications.wsdl) -->
-    <receive name="receiveInput" partnerLink="bpelsendnotifications_client" portType="client:BpelSendNotifications" operation="SendNotifications" variable="inputVariable" createInstance="yes"/>
+    <!-- Receive input from requestor. (Note: This maps to operation defined in BpelSendNotifications.wsdl) --><receive name="receiveInput" partnerLink="bpelsendnotifications_client" portType="client:BpelSendNotifications" operation="SendNotifications" variable="inputVariable" createInstance="yes"/>
     <assign name="Trs_SendNotification">
       <bpelx:annotation>
         <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
       </bpelx:annotation>
       <copy>
-        <from>ora:doXSLTransformForDoc("../Transformations/Trs_SendNotification.xsl", $inputVariable.payload,"varInstance",$varInstance)</from>
+        <from>ora:doXSLTransformForDoc("../Transformations/Trs_SendNotification.xsl", $inputVariable.payload,"varInstance",$varInstance,"varEnviroment",$varEnviroment)</from>
         <to variable="SendEmailNotificationRq" part="MessageRq"/>
       </copy>
     </assign>

@@ -78,9 +78,6 @@
       <partnerLink name="wsCFDITec" partnerLinkType="ns14:wsCFDITec" partnerRole="CFDITecPortType"
                    myRole="CFDITecPortTypeCallback"/>
       <partnerLink name="wsSftpTec" partnerLinkType="ns17:wsSftpTec" partnerRole="SftpTec_ptt"/>
-      <partnerLink name="BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client"
-                   partnerLinkType="ns18:BpelUpdateInvoicesInstallmentsAP"
-                   partnerRole="BpelUpdateInvoicesInstallmentsAPProvider"/>
    </partnerLinks>
 
   <!-- 
@@ -1380,86 +1377,6 @@ Envio Comprobante]]>
          <from>dvm:lookupValue("DVMs/dvmValidationPaymentsBiz.dvm","Code","P_V","Value","","Component","MensajeDesc")</from>
          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$wsAuditTecMergeComplementsAPRq.MergeComplementsAPRq/ns11:Complements/ns11:Complement/ns11:statusDesc</to>
       </copy></assign>
-                     <assign name="AssignTEST">
-                        <bpelx:skipCondition>ora:getPreference("ENVIROMENT")='PROD' or true()</bpelx:skipCondition>
-                        <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
-                           <from>'pedro.sanchez@forteinnovation.mx'</from>
-                           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsSendNotificationsSendNotificationsRq.payload/ns2:EMAIL_NOTIFICACION</to>
-                        </copy>
-                     </assign>
-                     <scope name="ScopeUpdateInvoicesInstallmentsAP"
-                            xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
-      <variables>
-         <variable name="v_flag" type="xsd:string"/>
-         <variable name="UpdateInvoicesInstallmentsAPRs"
-                   messageType="ns18:BpelUpdateInvoicesInstallmentsAPResponseMessage"/>
-         <variable name="UpdateInvoicesInstallmentsAPRq"
-                   messageType="ns18:BpelUpdateInvoicesInstallmentsAPRequestMessage"/>
-      </variables>
-      <if name="If_StatusUpdate">
-         <documentation>
-            <![CDATA[Estatus Reneter o quitar retencion]]>
-         </documentation>
-         <condition>$WsSendNotificationsSendNotificationsRq.payload/ns2:NUMERO_NOTIFICACION='0' or $WsSendNotificationsSendNotificationsRq.payload/ns2:NUMERO_NOTIFICACION='1' or $WsSendNotificationsSendNotificationsRq.payload/ns2:NUMERO_NOTIFICACION='2' or $WsSendNotificationsSendNotificationsRq.payload/ns2:NUMERO_NOTIFICACION='3' or $WsSendNotificationsSendNotificationsRq.payload/ns2:NUMERO_NOTIFICACION='4' or $WsSendNotificationsSendNotificationsRq.payload/ns2:NUMERO_NOTIFICACION='5'</condition>
-         <sequence name="SeqUpdateInvoicesInstallmentsAP">
-            <if name="IfRetener">
-               <documentation>
-                  <![CDATA[Estatus Reneter]]>
-               </documentation>
-               <condition>$WsSendNotificationsSendNotificationsRq.payload/ns2:NUMERO_NOTIFICACION='0' or $WsSendNotificationsSendNotificationsRq.payload/ns2:NUMERO_NOTIFICACION='1' or $WsSendNotificationsSendNotificationsRq.payload/ns2:NUMERO_NOTIFICACION='2' or $WsSendNotificationsSendNotificationsRq.payload/ns2:NUMERO_NOTIFICACION='3'</condition>
-               <assign name="AssignFlag">
-                  <copy>
-                     <from>'true'</from>
-                     <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_flag</to>
-                  </copy>
-               </assign>
-               <else>
-                  <documentation>
-                     <![CDATA[Estatus Quitar Retencion]]>
-                  </documentation>
-                  <assign name="AssignFlag" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
-                     <copy>
-                        <from>'false'</from>
-                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_flag</to>
-                     </copy>
-                  </assign>
-               </else>
-            </if>
-            <forEach parallel="no" counterName="countInvoice" name="For_Invoices">
-               <startCounterValue>1</startCounterValue>
-               <finalCounterValue>count($inputVariable.payload/ns13:DATA_DS/ns13:G_1[$counterPayment]/ns13:G_2)</finalCounterValue>
-               <scope name="ScopeInvoice">
-                  <assign name="AssignUpdateInstallment">
-                                       <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
-                                             xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
-                                          <from>$v_flag</from>
-                                          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateInvoicesInstallmentsAPRq.payload/ns2:invoice[$countInvoice]/ns19:HoldFlag</to>
-                                       </copy>
-                                       <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
-                                             xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
-                                          <from>$WsSendNotificationsSendNotificationsRq.payload/ns2:ESTATUS</from>
-                                          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateInvoicesInstallmentsAPRq.payload/ns2:invoice[$countInvoice]/ns19:HoldReason</to>
-                                       </copy>
-                                       <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
-                                             xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
-                                          <from>$inputVariable.payload/ns13:DATA_DS/ns13:G_1[$counterPayment]/ns13:G_2[$countInvoice]/ns13:ID_FACTURA</from>
-                                          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateInvoicesInstallmentsAPRq.payload/ns2:invoice[$countInvoice]/ns2:invoice_id</to>
-                                       </copy>
-                                       <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
-                                          <from>$inputVariable.payload/ns13:DATA_DS/ns13:G_1[$counterPayment]/ns13:RFC_PROVEEDOR</from>
-                                          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateInvoicesInstallmentsAPRq.payload/ns2:invoice[$countInvoice]/ns2:rfc</to>
-                                       </copy>
-                                    </assign>
-               </scope>
-            </forEach>
-            <invoke name="UpdateInvoicesInstallmentsAP" bpelx:invokeAsDetail="no"
-                    partnerLink="BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client"
-                    portType="ns18:BpelUpdateInvoicesInstallmentsAP" operation="BpelUpdateInvoicesInstallmentsAP"
-                    inputVariable="UpdateInvoicesInstallmentsAPRq" outputVariable="UpdateInvoicesInstallmentsAPRs"
-                    xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
-         </sequence>
-      </if>
-   </scope>
                      <invoke name="wsAuditTec" bpelx:invokeAsDetail="no" partnerLink="wsAuditControlTec"
                              portType="ns11:AuditControlTecPortType" operation="MergeComplementsAP"
                              inputVariable="wsAuditTecMergeComplementsAPRq"

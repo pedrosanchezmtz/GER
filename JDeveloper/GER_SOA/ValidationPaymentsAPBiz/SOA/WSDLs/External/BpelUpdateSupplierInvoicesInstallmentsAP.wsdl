@@ -1,0 +1,36 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="BpelUpdateSupplierInvoicesInstallmentsAP"
+     targetNamespace="http://soa.estrellaroja.com.mx/GER_SOA/ValidationPaymentsAPBiz/BpelUpdateSupplierInvoicesInstallmentsAP"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:client="http://soa.estrellaroja.com.mx/GER_SOA/ValidationPaymentsAPBiz/BpelUpdateSupplierInvoicesInstallmentsAP"
+     xmlns:ns1="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:ns2="http://soa.estrellaroja.com.mx/ERPIntegrationBiz"
+    >
+    <plnk:partnerLinkType name="BpelUpdateSupplierInvoicesInstallmentsAP">
+        <plnk:role name="BpelUpdateSupplierInvoicesInstallmentsAPProvider" portType="client:BpelUpdateSupplierInvoicesInstallmentsAP"/>
+    </plnk:partnerLinkType>
+        <wsdl:import namespace="http://soa.estrellaroja.com.mx/ERPIntegrationBiz" location="oramds:/apps/SOA/ERPIntegrationBiz/ERPIntegrationBiz.wsdl"/>
+    <wsdl:import namespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" location="oramds:/apps/SOA/ValidationPaymentsAPBiz/ValidationPaymentsAPBiz.xsd"/>
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" schemaLocation="oramds:/apps/SOA/ValidationPaymentsAPBiz/ValidationPaymentsAPBiz.xsd"/>
+        </xsd:schema>
+             <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://soa.estrellaroja.com.mx/ERPIntegrationBiz" schemaLocation="oramds:/apps/SOA/ERPIntegrationBiz/ERPIntegrationBiz.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="BpelUpdateSupplierInvoicesInstallmentsAPRequestMessage">
+        <wsdl:part name="payload" element="ns1:UpdateSupplierInvoicesInstallmentsAPRq"/>
+    </wsdl:message>
+    <wsdl:message name="BpelUpdateSupplierInvoicesInstallmentsAPResponseMessage">
+        <wsdl:part name="payload" element="ns1:UpdateSupplierInvoicesInstallmentsAPRs"/>
+    </wsdl:message>
+    <wsdl:portType name="BpelUpdateSupplierInvoicesInstallmentsAP">
+        <wsdl:operation name="UpdateSupplierInvoicesInstallmentsAP">
+            <wsdl:input message="client:BpelUpdateSupplierInvoicesInstallmentsAPRequestMessage"/>
+            <wsdl:output message="client:BpelUpdateSupplierInvoicesInstallmentsAPResponseMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

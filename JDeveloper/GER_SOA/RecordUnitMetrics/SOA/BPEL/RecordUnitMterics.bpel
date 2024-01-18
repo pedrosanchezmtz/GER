@@ -155,12 +155,10 @@
     <variable name="In_EAMSelectErrorRecord" messageType="ns33:EAMSelectErrorRecordInput_msg"/>
     <variable name="Out_EAMSelectErrorRecord" messageType="ns33:EAMSelectErrorRecordOutputCollection_msg"/>
     <variable name="DateSelectErrorVar" type="xsd:date"/>
-    <variable name="In_GetHTML" messageType="ns35:GetHtmlControlRq"/>
     <variable name="StartDateVar" type="xsd:date"/>
     <variable name="EndDateVar" type="xsd:date"/>
     <variable name="OriginVar" type="xsd:string"/>
     <variable name="v_dates" element="ns12:DATES"/>
-    <variable name="Out_GetHTML" messageType="ns35:GetHtmlControlRs"/>
     <variable name="In_SendMail" messageType="ns36:MessageRq"/>
     <variable name="EAMSelectRecordRs" messageType="ns42:EAMSelectRecordBSOutputCollection_msg"/>
     <variable name="EAMSelectRecordRq" messageType="ns42:EAMSelectRecordBSInput_msg"/>
@@ -189,7 +187,7 @@
       <variables>
          <variable name="v_consultaString" type="xsd:string"/>
          <variable name="v_queryConsulta" type="xsd:string"/>
-      </variables>
+        </variables>
       <faultHandlers>
          <catchAll>
             <empty name="Empty1" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/>
@@ -281,6 +279,10 @@ addAuditTrailEntry("Base64encode ended");]]>
       <startCounterValue>1</startCounterValue>
       <finalCounterValue>count($v_dates/ns12:ROW)</finalCounterValue>
       <scope name="Scope5">
+        <variables>
+          <variable name="Out_GetHTML" messageType="ns35:GetHtmlControlRs"/>
+          <variable name="In_GetHTML" messageType="ns35:GetHtmlControlRq"/>
+        </variables>
         <sequence>
           <assign name="AssignDateParam">
             <copy bpelx:insertMissingToData="yes">

@@ -1,5 +1,5 @@
 <References xmlns="http://xmlns.oracle.com/adf/jndi">
-  <Reference name="MDS" className="oracle.tip.tools.ide.soamds.adapter.MDSProvider" xmlns="">
+  <Reference name="SOA_DesignTimeRepository" className="oracle.tip.tools.ide.soamds.adapter.MDSProvider" xmlns="">
     <Factory className="oracle.tip.tools.ide.soamds.adapter.MDSProviderFactory"/>
     <RefAddresses>
       <StringRefAddr addrType="ConnectionName">
@@ -9,7 +9,7 @@
         <Contents>oracle.mds.persistence.stores.file.FileMetadataStore</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="FILEMDS_ROOT">
-        <Contents>D:\Drive\Work_GER\04_Construccion\GER_MDS</Contents>
+        <Contents>D:\GER\JDeveloper\GER_MDS</Contents>
       </StringRefAddr>
     </RefAddresses>
   </Reference>

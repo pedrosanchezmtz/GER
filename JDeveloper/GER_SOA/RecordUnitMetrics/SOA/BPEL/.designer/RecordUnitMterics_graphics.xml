@@ -12,19 +12,19 @@
       <partnerlink name="wsSendEmailService" x="0" y="303" side="left"/>
       <partnerlink name="wsEAMSelectRecordService" x="0" y="375" side="left"/>
       <partnerlink name="wsERPIntegrationServiceTec" x="0" y="432" side="left"/>
-      <partnerlink name="wsMileageControlnetService" x="1107" y="18" side="right"/>
-      <partnerlink name="wsMileageSine" x="1107" y="75" side="right"/>
-      <partnerlink name="recordunitmterics_client_ep" x="1107" y="375" side="right"/>
-      <partnerlink name="wsTruncMileageExcelService" x="1107" y="1334" side="right"/>
-      <partnerlink name="wsEAMInsertErrorRecordService" x="1107" y="132" side="right"/>
-      <partnerlink name="wsSOAUtilitiesService" x="1107" y="189" side="right"/>
-      <partnerlink name="wsERPReadingMetricsService" x="1107" y="261" side="right"/>
-      <partnerlink name="wsEAMOriginPriorityService" x="1107" y="318" side="right"/>
+      <partnerlink name="wsMileageControlnetService" x="841" y="18" side="right"/>
+      <partnerlink name="wsMileageSine" x="841" y="75" side="right"/>
+      <partnerlink name="recordunitmterics_client_ep" x="841" y="375" side="right"/>
+      <partnerlink name="wsTruncMileageExcelService" x="841" y="1717" side="right"/>
+      <partnerlink name="wsEAMInsertErrorRecordService" x="841" y="132" side="right"/>
+      <partnerlink name="wsSOAUtilitiesService" x="841" y="189" side="right"/>
+      <partnerlink name="wsERPReadingMetricsService" x="841" y="261" side="right"/>
+      <partnerlink name="wsEAMOriginPriorityService" x="841" y="318" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,1300,774" show_swimlanes="true">
+   <graph_layout viewport="0,0,1034,504" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
-      <layout_item collapsed="true" xpath="/process/sequence/if/scope" type="scope" showhandlers="false"/>
+      <layout_item collapsed="false" xpath="/process/sequence/if/scope" type="scope" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence/if/scope/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/sequence/if/scope/sequence" type="sequence"/>
       <layout_item collapsed="true" xpath="/process/sequence/if/else/sequence" type="sequence"/>

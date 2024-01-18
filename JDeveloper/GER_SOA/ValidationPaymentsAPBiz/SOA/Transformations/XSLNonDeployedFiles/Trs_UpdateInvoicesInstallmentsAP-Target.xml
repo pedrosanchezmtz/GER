@@ -1,0 +1,476 @@
+<val:UpdateInvoicesInstallmentsAPRq xmlns:val="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz">
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092744834</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092744845</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092934185</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092586363</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092654991</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092858231</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092591635</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092858207</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092655066</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092934175</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092858215</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092934227</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092858198</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092876145</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092858221</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092876111</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092934193</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092934163</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092934217</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092876129</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092876158</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092934128</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092909699</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092501671</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092397100</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092501587</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092501827</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092397642</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092397647</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092397670</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092246158</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092246167</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092246273</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092397632</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092397637</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092261269</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092261296</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092397657</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092717209</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092744909</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092774968</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092397652</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092501619</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000091966485</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092397664</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092531251</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092531264</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092501484</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092501884</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092655056</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092531238</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092531269</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092586357</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092655037</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092161442</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092397094</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092717231</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092261221</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092744802</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092717197</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092397675</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092501832</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092744856</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092774949</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092774959</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092531258</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092586385</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092501683</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092531243</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092531191</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092531233</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000091762236</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000091895655</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092261231</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092261240</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092261277</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092397625</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092246120</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+  <val:invoice>
+    <erp:HoldFlag xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</erp:HoldFlag>
+    <erp:HoldReason xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</erp:HoldReason>
+    <val:invoice_id>300000092246148</val:invoice_id>
+    <val:rfc>GCM011227V7A</val:rfc>
+  </val:invoice>
+</val:UpdateInvoicesInstallmentsAPRq>

@@ -175,6 +175,12 @@ from XXER_TBL_REPORT_REPSE</cell>
          <cell>XXER_ValidationComplement_Inputs.xdm</cell>
          <cell>reporte de consulta de valores de pago a Validar</cell>
       </row>
+	  <row markdefault="false">
+         <cell>GetPaymentsInvoices</cell>
+         <cell>ReportName</cell>
+         <cell>XXER_Payments_Invoices.xdm</cell>
+         <cell>reporte de consulta de valores de pago a Validar</cell>
+      </row>
       <row markdefault="false">
          <cell>GetNotificationsPayments</cell>
          <cell>ReportName</cell>
@@ -208,7 +214,7 @@ from XXER_TBL_REPORT_REPSE</cell>
       <row>
          <cell>NotificacionAP</cell>
          <cell>EmailEmisorPruebas</cell>
-         <cell>ger.notificaciones@forteinnovation.mx</cell>
+         <cell>complemento.qa@estrellaroja.com.mx</cell>
          <cell>Email Emisor de correos para pruebas</cell>
       </row>
       <row>

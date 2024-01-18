@@ -5,9 +5,9 @@
    <iconize/>
    <partnerlink_locations>
       <partnerlink name="bpelupdateinvoicesinstallmentsap_client" x="0" y="665" side="left"/>
-      <partnerlink name="WsERPIntegrationApiTec" x="1241" y="18" side="right"/>
+      <partnerlink name="WsERPIntegrationApiTec" x="854" y="18" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,1398,374" show_swimlanes="true">
+   <graph_layout viewport="0,0,1011,524" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="false"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>

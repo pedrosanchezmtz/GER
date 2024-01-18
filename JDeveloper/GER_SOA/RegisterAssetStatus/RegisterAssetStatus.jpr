@@ -135,10 +135,6 @@
                            <url n="location" path="SOA/"/>
                            <value n="type" v="1"/>
                         </hash>
-                        <hash>
-                           <url n="location" path="../src/"/>
-                           <value n="type" v="1"/>
-                        </hash>
                      </list>
                      <value n="displayName" v="SOA Files"/>
                      <hash n="filters">
@@ -211,8 +207,12 @@
                </list>
             </hash>
             <url n="jarURL" path="deploy/sca_RegisterAssetStatus.jar"/>
+            <value n="patching_profile" v="false"/>
             <value n="profileClass" v="oracle.tip.tools.ide.fabric.deploy.sar.SarProfile"/>
             <value n="profileName" v="RegisterAssetStatus"/>
+            <hash n="sca-options">
+               <value n="revision-id" v="1.0"/>
+            </hash>
          </hash>
       </hash>
       <list n="profileList">
@@ -227,17 +227,23 @@
       <hash n="javaContentSet">
          <list n="constituent-sets">
             <hash>
+               <list n="pattern-filters">
+                  <string v="+**"/>
+               </list>
+               <list n="url-path">
+                  <url path="src/"/>
+               </list>
+            </hash>
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+**"/>
+               </list>
                <list n="url-path">
                   <url path="SOA/SCA-INF/src/"/>
                </list>
             </hash>
          </list>
-         <list n="pattern-filters">
-            <string v="+**"/>
-         </list>
-         <list n="url-path">
-            <url path="src/"/>
-         </list>
+         <list n="url-path"/>
       </hash>
    </hash>
    <hash n="oracle.jdeveloper.runner.RunConfigurations">

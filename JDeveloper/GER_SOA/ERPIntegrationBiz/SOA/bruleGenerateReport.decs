@@ -19,7 +19,7 @@
         </pattern>
     </decisionService>
     <schemaInformation>
-        <dictionary fqnPackage="erpintegrationbiz" fqnName="bruleGenerateReport" updateNumber="325">
+        <dictionary fqnPackage="erpintegrationbiz" fqnName="bruleGenerateReport" updateNumber="329">
             <schemaBrowser>
                 <package>mx.com.estrellaroja.soa.erpintegrationbiz</package>
                 <namespace>http://soa.estrellaroja.com.mx/ERPIntegrationBiz</namespace>

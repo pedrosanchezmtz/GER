@@ -1,4 +1,4 @@
-<?xml version = '1.0'?>
+<?xml version="1.0"?>
 <RuleDictionary id="G}-7b89213e:15d98fdb3cf:-7bed" xmlns="http://xmlns.oracle.com/rules/dictionary">
   <Name>bruleGenerateReport</Name>
   <Alias>bruleGenerateReport</Alias>
@@ -301,7 +301,7 @@
       <EnumBucketSetID>B}nil</EnumBucketSetID>
       <Timestamp>0</Timestamp>
       <ENUM>false</ENUM>
-      <XmlName>//xs:complexType[@name='BRuleGenerateReportRqType']</XmlName>
+      <XmlName>//xs:complexType[@name=&apos;BRuleGenerateReportRqType&apos;]</XmlName>
       <JAXB2.0>true</JAXB2.0>
       <NodeName>BRuleGenerateReportRqType</NodeName>
       <Namespace>http://soa.estrellaroja.com.mx/ERPIntegrationBiz</Namespace>
@@ -1013,7 +1013,7 @@
       <EnumBucketSetID>B}nil</EnumBucketSetID>
       <Timestamp>0</Timestamp>
       <ENUM>false</ENUM>
-      <XmlName>//xs:complexType[@name='BRuleGenerateReportRsType']</XmlName>
+      <XmlName>//xs:complexType[@name=&apos;BRuleGenerateReportRsType&apos;]</XmlName>
       <JAXB2.0>true</JAXB2.0>
       <NodeName>BRuleGenerateReportRsType</NodeName>
       <Namespace>http://soa.estrellaroja.com.mx/ERPIntegrationBiz</Namespace>
@@ -1056,20 +1056,20 @@
       <RuleFiringLimitError>true</RuleFiringLimitError>
       <UniqueRulesets>false</UniqueRulesets>
     </DecisionFunction>
-    <UpdateNumber>232</UpdateNumber>
-    <ValidationUpdateNumber>232</ValidationUpdateNumber>
+    <UpdateNumber>328</UpdateNumber>
+    <ValidationUpdateNumber>328</ValidationUpdateNumber>
     <UpdateTime>0</UpdateTime>
   </DataModel>
   <RuleSet id="G}-7b89213e:15d98fdb3cf:-7bdb">
     <Name>rsGenerateReport</Name>
     <Alias>rsGenerateReport</Alias>
-    <ValidationUpdateNumber>324</ValidationUpdateNumber>
+    <ValidationUpdateNumber>330</ValidationUpdateNumber>
     <Active>true</Active>
     <CalendarForm>DateTime</CalendarForm>
     <RuleSheet id="G}-7b89213e:15d98fdb3cf:-7bd6">
       <Name>dtGenerateReport</Name>
       <Alias>dtGenerateReport</Alias>
-      <ValidationUpdateNumber>324</ValidationUpdateNumber>
+      <ValidationUpdateNumber>330</ValidationUpdateNumber>
       <Priority>medium</Priority>
       <Active>true</Active>
       <CalendarForm>DateTime</CalendarForm>
@@ -1092,99 +1092,99 @@
         <IDofSharedBucketSet>B}nil</IDofSharedBucketSet>
         <DimensionNode id="L}577">
           <BucketIDTable>G}-6cd92451:1602241a80c:-7bed</BucketIDTable>
-          <Values>"PaymentComplements"</Values>
+          <Values>&quot;PaymentComplements&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
-          <ChildDimensionNodes/>
+          <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <DimensionNode id="L}593">
           <BucketIDTable>G}28385f16:1604b3a8b1c:-7acf</BucketIDTable>
-          <Values>"ElecInvoice"</Values>
+          <Values>&quot;ElecInvoice&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
-          <ChildDimensionNodes/>
+          <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <DimensionNode id="L}616">
           <BucketIDTable>G}28385f16:1604b3a8b1c:-7ace</BucketIDTable>
-          <Values>"InvoiceValidation"</Values>
+          <Values>&quot;InvoiceValidation&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
-          <ChildDimensionNodes/>
+          <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <DimensionNode id="L}657">
           <BucketIDTable>G}-1972b2cc:1604d313a64:-7b7a</BucketIDTable>
-          <Values>"PrePayments"</Values>
+          <Values>&quot;PrePayments&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
-          <ChildDimensionNodes/>
+          <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <DimensionNode id="L}696">
           <BucketIDTable>G}-3a0fed36:160753afa8b:-7bf0</BucketIDTable>
-          <Values>"CatalogsERP"</Values>
+          <Values>&quot;CatalogsERP&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
-          <ChildDimensionNodes/>
+          <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <DimensionNode id="L}716">
           <BucketIDTable>G}-610c4638:16075f1e096:-7bf0</BucketIDTable>
-          <Values>"ValidatePaymentComplements"</Values>
+          <Values>&quot;ValidatePaymentComplements&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
-          <ChildDimensionNodes/>
+          <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <DimensionNode id="L}746">
           <BucketIDTable>G}7cf38596:16075e7b08b:-7be6</BucketIDTable>
-          <Values>"TrxInterface"</Values>
+          <Values>&quot;TrxInterface&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
-          <ChildDimensionNodes/>
+          <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <DimensionNode id="L}760">
           <BucketIDTable>G}7cf38596:16075e7b08b:-7be5</BucketIDTable>
-          <Values>"CashInterface"</Values>
+          <Values>&quot;CashInterface&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
-          <ChildDimensionNodes/>
+          <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <DimensionNode id="L}780">
           <BucketIDTable>G}7ea49ac3:1609a071f2f:-7bee</BucketIDTable>
-          <Values>"TrxType"</Values>
+          <Values>&quot;TrxType&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
-          <ChildDimensionNodes/>
+          <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <DimensionNode id="L}802">
           <BucketIDTable>G}474ad775:161338e5a39:-7bea</BucketIDTable>
-          <Values>"InterfaceControl"</Values>
+          <Values>&quot;InterfaceControl&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
-          <ChildDimensionNodes/>
+          <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <DimensionNode id="L}187">
           <BucketIDTable>G}-7b89213e:15d98fdb3cf:-7bd1</BucketIDTable>
           <Values>otherwise</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
-          <ChildDimensionNodes/>
+          <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <DimensionNode id="L}821">
           <BucketIDTable>G}-2b3aaae8:178d530fc89:70e9</BucketIDTable>
-          <Values>"InvoiceValidationAutomatica"</Values>
+          <Values>&quot;InvoiceValidationAutomatica&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
-          <ChildDimensionNodes/>
+          <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <DimensionNode id="L}848">
           <BucketIDTable>G}74133dd0:179007f1d19:-7293</BucketIDTable>
-          <Values>"ReValidateAP"</Values>
+          <Values>&quot;ReValidateAP&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
-          <ChildDimensionNodes/>
+          <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <DimensionNode id="L}874">
           <BucketIDTable>G}30899ee8:17c612e30bb:-30af</BucketIDTable>
-          <Values>"RegisterAssetStatus"</Values>
+          <Values>&quot;RegisterAssetStatus&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
-          <ChildDimensionNodes/>
+          <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <DimensionNode id="L}928">
           <BucketIDTable>G}30899ee8:17c612e30bb:-302b</BucketIDTable>
-          <Values>"Conciliation"</Values>
+          <Values>&quot;Conciliation&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
-          <ChildDimensionNodes/>
+          <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <DimensionNode id="L}971">
           <BucketIDTable>G}30899ee8:17c612e30bb:-2f97</BucketIDTable>
-          <Values>"ComplementValidation"</Values>
+          <Values>&quot;ComplementValidation&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
-          <ChildDimensionNodes/>
+          <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <PrivateBucketSet id="G}-7b89213e:15d98fdb3cf:-7bd2">
           <Visible>true</Visible>
@@ -1207,278 +1207,293 @@
             </Expression>
           </Bucket>
           <Bucket id="G}30d56462:1600ab1c488:-7bf0">
-            <Name>"OrgSetCodes"</Name>
-            <Alias>"OrgSetCodes"</Alias>
+            <Name>&quot;OrgSetCodes&quot;</Name>
+            <Alias>&quot;OrgSetCodes&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>142</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}557">
-              <Value>"OrgSetCodes"</Value>
-              <ResolvedValue>"OrgSetCodes"</ResolvedValue>
+              <Value>&quot;OrgSetCodes&quot;</Value>
+              <ResolvedValue>&quot;OrgSetCodes&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <Bucket id="G}-6cd92451:1602241a80c:-7bed">
-            <Name>"PaymentComplements"</Name>
-            <Alias>"PaymentComplements"</Alias>
+            <Name>&quot;PaymentComplements&quot;</Name>
+            <Alias>&quot;PaymentComplements&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>149</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}585">
-              <Value>"PaymentComplements"</Value>
-              <ResolvedValue>"PaymentComplements"</ResolvedValue>
+              <Value>&quot;PaymentComplements&quot;</Value>
+              <ResolvedValue>&quot;PaymentComplements&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <Bucket id="G}28385f16:1604b3a8b1c:-7acf">
-            <Name>"ElecInvoice"</Name>
-            <Alias>"ElecInvoice"</Alias>
+            <Name>&quot;ElecInvoice&quot;</Name>
+            <Alias>&quot;ElecInvoice&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>157</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}601">
-              <Value>"ElecInvoice"</Value>
-              <ResolvedValue>"ElecInvoice"</ResolvedValue>
+              <Value>&quot;ElecInvoice&quot;</Value>
+              <ResolvedValue>&quot;ElecInvoice&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <Bucket id="G}28385f16:1604b3a8b1c:-7ace">
-            <Name>"InvoiceValidation"</Name>
-            <Alias>"InvoiceValidation"</Alias>
+            <Name>&quot;InvoiceValidation&quot;</Name>
+            <Alias>&quot;InvoiceValidation&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>163</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}624">
-              <Value>"InvoiceValidation"</Value>
-              <ResolvedValue>"InvoiceValidation"</ResolvedValue>
+              <Value>&quot;InvoiceValidation&quot;</Value>
+              <ResolvedValue>&quot;InvoiceValidation&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <Bucket id="G}-1972b2cc:1604d313a64:-7b7e">
-            <Name>"PaymentIncome"</Name>
-            <Alias>"PaymentIncome"</Alias>
+            <Name>&quot;PaymentIncome&quot;</Name>
+            <Alias>&quot;PaymentIncome&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>169</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}662">
-              <Value>"PaymentIncome"</Value>
-              <ResolvedValue>"PaymentIncome"</ResolvedValue>
+              <Value>&quot;PaymentIncome&quot;</Value>
+              <ResolvedValue>&quot;PaymentIncome&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <Bucket id="G}-1972b2cc:1604d313a64:-7b7d">
-            <Name>"PaymentOutcome"</Name>
-            <Alias>"PaymentOutcome"</Alias>
+            <Name>&quot;PaymentOutcome&quot;</Name>
+            <Alias>&quot;PaymentOutcome&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>172</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}680">
-              <Value>"PaymentOutcome"</Value>
-              <ResolvedValue>"PaymentOutcome"</ResolvedValue>
+              <Value>&quot;PaymentOutcome&quot;</Value>
+              <ResolvedValue>&quot;PaymentOutcome&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <Bucket id="G}-1972b2cc:1604d313a64:-7b7a">
-            <Name>"PrePayments"</Name>
-            <Alias>"PrePayments"</Alias>
+            <Name>&quot;PrePayments&quot;</Name>
+            <Alias>&quot;PrePayments&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>177</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}685">
-              <Value>"PrePayments"</Value>
-              <ResolvedValue>"PrePayments"</ResolvedValue>
+              <Value>&quot;PrePayments&quot;</Value>
+              <ResolvedValue>&quot;PrePayments&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <Bucket id="G}-3a0fed36:160753afa8b:-7bf0">
-            <Name>"CatalogsERP"</Name>
-            <Alias>"CatalogsERP"</Alias>
+            <Name>&quot;CatalogsERP&quot;</Name>
+            <Alias>&quot;CatalogsERP&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>187</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}704">
-              <Value>"CatalogsERP"</Value>
-              <ResolvedValue>"CatalogsERP"</ResolvedValue>
+              <Value>&quot;CatalogsERP&quot;</Value>
+              <ResolvedValue>&quot;CatalogsERP&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <Bucket id="G}-610c4638:16075f1e096:-7bf0">
-            <Name>"ValidatePaymentComplements"</Name>
-            <Alias>"ValidatePaymentComplements"</Alias>
+            <Name>&quot;ValidatePaymentComplements&quot;</Name>
+            <Alias>&quot;ValidatePaymentComplements&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>201</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}724">
-              <Value>"ValidatePaymentComplements"</Value>
-              <ResolvedValue>"ValidatePaymentComplements"</ResolvedValue>
+              <Value>&quot;ValidatePaymentComplements&quot;</Value>
+              <ResolvedValue>&quot;ValidatePaymentComplements&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <Bucket id="G}7cf38596:16075e7b08b:-7be6">
-            <Name>"TrxInterface"</Name>
-            <Alias>"TrxInterface"</Alias>
+            <Name>&quot;TrxInterface&quot;</Name>
+            <Alias>&quot;TrxInterface&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>204</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}728">
-              <Value>"TrxInterface"</Value>
-              <ResolvedValue>"TrxInterface"</ResolvedValue>
+              <Value>&quot;TrxInterface&quot;</Value>
+              <ResolvedValue>&quot;TrxInterface&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <Bucket id="G}7cf38596:16075e7b08b:-7be5">
-            <Name>"CashInterface"</Name>
-            <Alias>"CashInterface"</Alias>
+            <Name>&quot;CashInterface&quot;</Name>
+            <Alias>&quot;CashInterface&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>205</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}731">
-              <Value>"CashInterface"</Value>
-              <ResolvedValue>"CashInterface"</ResolvedValue>
+              <Value>&quot;CashInterface&quot;</Value>
+              <ResolvedValue>&quot;CashInterface&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <Bucket id="G}7ea49ac3:1609a071f2f:-7bee">
-            <Name>"TrxType"</Name>
-            <Alias>"TrxType"</Alias>
+            <Name>&quot;TrxType&quot;</Name>
+            <Alias>&quot;TrxType&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>219</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}785">
-              <Value>"TrxType"</Value>
-              <ResolvedValue>"TrxType"</ResolvedValue>
+              <Value>&quot;TrxType&quot;</Value>
+              <ResolvedValue>&quot;TrxType&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <Bucket id="G}474ad775:161338e5a39:-7bea">
-            <Name>"InterfaceControl"</Name>
-            <Alias>"InterfaceControl"</Alias>
+            <Name>&quot;InterfaceControl&quot;</Name>
+            <Alias>&quot;InterfaceControl&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>227</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}810">
-              <Value>"InterfaceControl"</Value>
-              <ResolvedValue>"InterfaceControl"</ResolvedValue>
+              <Value>&quot;InterfaceControl&quot;</Value>
+              <ResolvedValue>&quot;InterfaceControl&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <Bucket id="G}-2b3aaae8:178d530fc89:70e9">
-            <Name>"InvoiceValidationAutomatica"</Name>
-            <Alias>"InvoiceValidationAutomatica"</Alias>
+            <Name>&quot;InvoiceValidationAutomatica&quot;</Name>
+            <Alias>&quot;InvoiceValidationAutomatica&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>241</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}837">
-              <Value>"InvoiceValidationAutomatica"</Value>
-              <ResolvedValue>"InvoiceValidationAutomatica"</ResolvedValue>
+              <Value>&quot;InvoiceValidationAutomatica&quot;</Value>
+              <ResolvedValue>&quot;InvoiceValidationAutomatica&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <Bucket id="G}74133dd0:179007f1d19:-7293">
-            <Name>"ReValidateAP"</Name>
-            <Alias>"ReValidateAP"</Alias>
+            <Name>&quot;ReValidateAP&quot;</Name>
+            <Alias>&quot;ReValidateAP&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>258</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}863">
-              <Value>"ReValidateAP"</Value>
-              <ResolvedValue>"ReValidateAP"</ResolvedValue>
+              <Value>&quot;ReValidateAP&quot;</Value>
+              <ResolvedValue>&quot;ReValidateAP&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <Bucket id="G}30899ee8:17c612e30bb:-30af">
-            <Name>"RegisterAssetStatus"</Name>
-            <Alias>"RegisterAssetStatus"</Alias>
+            <Name>&quot;RegisterAssetStatus&quot;</Name>
+            <Alias>&quot;RegisterAssetStatus&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>275</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}887">
-              <Value>"RegisterAssetStatus"</Value>
-              <ResolvedValue>"RegisterAssetStatus"</ResolvedValue>
+              <Value>&quot;RegisterAssetStatus&quot;</Value>
+              <ResolvedValue>&quot;RegisterAssetStatus&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <Bucket id="G}30899ee8:17c612e30bb:-302b">
-            <Name>"Conciliation"</Name>
-            <Alias>"Conciliation"</Alias>
+            <Name>&quot;Conciliation&quot;</Name>
+            <Alias>&quot;Conciliation&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>287</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}941">
-              <Value>"Conciliation"</Value>
-              <ResolvedValue>"Conciliation"</ResolvedValue>
+              <Value>&quot;Conciliation&quot;</Value>
+              <ResolvedValue>&quot;Conciliation&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <Bucket id="G}30899ee8:17c612e30bb:-2f97">
-            <Name>"ComplementValidation"</Name>
-            <Alias>"ComplementValidation"</Alias>
+            <Name>&quot;ComplementValidation&quot;</Name>
+            <Alias>&quot;ComplementValidation&quot;</Alias>
             <Visible>true</Visible>
             <CreationUpdateNumber>297</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
             <Expression id="L}984">
-              <Value>"ComplementValidation"</Value>
-              <ResolvedValue>"ComplementValidation"</ResolvedValue>
+              <Value>&quot;ComplementValidation&quot;</Value>
+              <ResolvedValue>&quot;ComplementValidation&quot;</ResolvedValue>
+              <IsConstant>true</IsConstant>
+              <ParameterID>B}nil</ParameterID>
+            </Expression>
+          </Bucket>
+          <Bucket id="G}6d685393:18d0e7bc219:-7bee">
+            <Name>&quot;PaymentsInvoices&quot;</Name>
+            <Alias>&quot;PaymentsInvoices&quot;</Alias>
+            <Visible>true</Visible>
+            <CreationUpdateNumber>329</CreationUpdateNumber>
+            <Inclusive>false</Inclusive>
+            <Otherwise>false</Otherwise>
+            <Excluded>false</Excluded>
+            <Expression id="L}1014">
+              <Value>&quot;PaymentsInvoices&quot;</Value>
+              <ResolvedValue>&quot;PaymentsInvoices&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <CalendarForm>Date</CalendarForm>
           <Excluded>false</Excluded>
-          <ValidationUpdateNumber>297</ValidationUpdateNumber>
+          <ValidationUpdateNumber>329</ValidationUpdateNumber>
         </PrivateBucketSet>
         <Expression id="L}154">
           <Value>BRuleGenerateReportRqType.targetInterface</Value>
@@ -1502,8 +1517,8 @@
         <DTActionNode id="L}579">
           <Selected>false</Selected>
           <Expression id="L}582">
-            <Value>"/Custom/ER_INTEGRATION/ER03_AR_Timbrado_de_Complementos_de_Pago/Data Models/"</Value>
-            <ResolvedValue>"/Custom/ER_INTEGRATION/ER03_AR_Timbrado_de_Complementos_de_Pago/Data Models/"</ResolvedValue>
+            <Value>&quot;/Custom/ER_INTEGRATION/ER03_AR_Timbrado_de_Complementos_de_Pago/Data Models/&quot;</Value>
+            <ResolvedValue>&quot;/Custom/ER_INTEGRATION/ER03_AR_Timbrado_de_Complementos_de_Pago/Data Models/&quot;</ResolvedValue>
             <IsConstant>false</IsConstant>
             <ParameterAlias>pathName</ParameterAlias>
             <ParameterID>J}mx.com.estrellaroja.soa.erpintegrationbiz.BRuleGenerateReportRsType.{pathName}</ParameterID>
@@ -1513,8 +1528,8 @@
         <DTActionNode id="L}595">
           <Selected>false</Selected>
           <Expression id="L}598">
-            <Value>"/Custom/ER_INTEGRATION/ER04_AR_Timbrado_de_Transacciones/Data Models/"</Value>
-            <ResolvedValue>"/Custom/ER_INTEGRATION/ER04_AR_Timbrado_de_Transacciones/Data Models/"</ResolvedValue>
+            <Value>&quot;/Custom/ER_INTEGRATION/ER04_AR_Timbrado_de_Transacciones/Data Models/&quot;</Value>
+            <ResolvedValue>&quot;/Custom/ER_INTEGRATION/ER04_AR_Timbrado_de_Transacciones/Data Models/&quot;</ResolvedValue>
             <IsConstant>false</IsConstant>
             <ParameterAlias>pathName</ParameterAlias>
             <ParameterID>J}mx.com.estrellaroja.soa.erpintegrationbiz.BRuleGenerateReportRsType.{pathName}</ParameterID>
@@ -1524,8 +1539,8 @@
         <DTActionNode id="L}618">
           <Selected>false</Selected>
           <Expression id="L}621">
-            <Value>"/Custom/ER_INTEGRATION/ER11_AP_Validacion_de_Facturas/Data Models/"</Value>
-            <ResolvedValue>"/Custom/ER_INTEGRATION/ER11_AP_Validacion_de_Facturas/Data Models/"</ResolvedValue>
+            <Value>&quot;/Custom/ER_INTEGRATION/ER11_AP_Validacion_de_Facturas/Data Models/&quot;</Value>
+            <ResolvedValue>&quot;/Custom/ER_INTEGRATION/ER11_AP_Validacion_de_Facturas/Data Models/&quot;</ResolvedValue>
             <IsConstant>false</IsConstant>
             <ParameterAlias>pathName</ParameterAlias>
             <ParameterID>J}mx.com.estrellaroja.soa.erpintegrationbiz.BRuleGenerateReportRsType.{pathName}</ParameterID>
@@ -1535,8 +1550,8 @@
         <DTActionNode id="L}659">
           <Selected>false</Selected>
           <Expression id="L}663">
-            <Value>"/Custom/ER_INTEGRATION/ER02_AR_Timbrado_de_Anticipos/Data Models/"</Value>
-            <ResolvedValue>"/Custom/ER_INTEGRATION/ER02_AR_Timbrado_de_Anticipos/Data Models/"</ResolvedValue>
+            <Value>&quot;/Custom/ER_INTEGRATION/ER02_AR_Timbrado_de_Anticipos/Data Models/&quot;</Value>
+            <ResolvedValue>&quot;/Custom/ER_INTEGRATION/ER02_AR_Timbrado_de_Anticipos/Data Models/&quot;</ResolvedValue>
             <IsConstant>false</IsConstant>
             <ParameterAlias>pathName</ParameterAlias>
             <ParameterID>J}mx.com.estrellaroja.soa.erpintegrationbiz.BRuleGenerateReportRsType.{pathName}</ParameterID>
@@ -1546,8 +1561,8 @@
         <DTActionNode id="L}698">
           <Selected>false</Selected>
           <Expression id="L}701">
-            <Value>"/Custom/ER_OUTBOUND/Data Models/"</Value>
-            <ResolvedValue>"/Custom/ER_OUTBOUND/Data Models/"</ResolvedValue>
+            <Value>&quot;/Custom/ER_OUTBOUND/Data Models/&quot;</Value>
+            <ResolvedValue>&quot;/Custom/ER_OUTBOUND/Data Models/&quot;</ResolvedValue>
             <IsConstant>false</IsConstant>
             <ParameterAlias>pathName</ParameterAlias>
             <ParameterID>J}mx.com.estrellaroja.soa.erpintegrationbiz.BRuleGenerateReportRsType.{pathName}</ParameterID>
@@ -1557,8 +1572,8 @@
         <DTActionNode id="L}718">
           <Selected>false</Selected>
           <Expression id="L}721">
-            <Value>"/Custom/ER_INTEGRATION/ER10_AP_Validacion_de_Complementos_de_pago/Data Models/"</Value>
-            <ResolvedValue>"/Custom/ER_INTEGRATION/ER10_AP_Validacion_de_Complementos_de_pago/Data Models/"</ResolvedValue>
+            <Value>&quot;/Custom/ER_INTEGRATION/ER10_AP_Validacion_de_Complementos_de_pago/Data Models/&quot;</Value>
+            <ResolvedValue>&quot;/Custom/ER_INTEGRATION/ER10_AP_Validacion_de_Complementos_de_pago/Data Models/&quot;</ResolvedValue>
             <IsConstant>false</IsConstant>
             <ParameterAlias>pathName</ParameterAlias>
             <ParameterID>J}mx.com.estrellaroja.soa.erpintegrationbiz.BRuleGenerateReportRsType.{pathName}</ParameterID>
@@ -1568,8 +1583,8 @@
         <DTActionNode id="L}748">
           <Selected>false</Selected>
           <Expression id="L}763">
-            <Value>"/Custom/ER_INTEGRATION/ER01_AR_Creacion_de_transacciones/Data Models/"</Value>
-            <ResolvedValue>"/Custom/ER_INTEGRATION/ER01_AR_Creacion_de_transacciones/Data Models/"</ResolvedValue>
+            <Value>&quot;/Custom/ER_INTEGRATION/ER01_AR_Creacion_de_transacciones/Data Models/&quot;</Value>
+            <ResolvedValue>&quot;/Custom/ER_INTEGRATION/ER01_AR_Creacion_de_transacciones/Data Models/&quot;</ResolvedValue>
             <IsConstant>false</IsConstant>
             <ParameterAlias>pathName</ParameterAlias>
             <ParameterID>J}mx.com.estrellaroja.soa.erpintegrationbiz.BRuleGenerateReportRsType.{pathName}</ParameterID>
@@ -1579,8 +1594,8 @@
         <DTActionNode id="L}762">
           <Selected>false</Selected>
           <Expression id="L}766">
-            <Value>"/Custom/ER_INTEGRATION/ER05_AR_Creacion_de_recibos/Data Models/"</Value>
-            <ResolvedValue>"/Custom/ER_INTEGRATION/ER05_AR_Creacion_de_recibos/Data Models/"</ResolvedValue>
+            <Value>&quot;/Custom/ER_INTEGRATION/ER05_AR_Creacion_de_recibos/Data Models/&quot;</Value>
+            <ResolvedValue>&quot;/Custom/ER_INTEGRATION/ER05_AR_Creacion_de_recibos/Data Models/&quot;</ResolvedValue>
             <IsConstant>false</IsConstant>
             <ParameterAlias>pathName</ParameterAlias>
             <ParameterID>J}mx.com.estrellaroja.soa.erpintegrationbiz.BRuleGenerateReportRsType.{pathName}</ParameterID>
@@ -1590,8 +1605,8 @@
         <DTActionNode id="L}782">
           <Selected>false</Selected>
           <Expression id="L}786">
-            <Value>"/Custom/ER_INTEGRATION/ER07_CE_Importacion estados de cuenta/Data Models/"</Value>
-            <ResolvedValue>"/Custom/ER_INTEGRATION/ER07_CE_Importacion estados de cuenta/Data Models/"</ResolvedValue>
+            <Value>&quot;/Custom/ER_INTEGRATION/ER07_CE_Importacion estados de cuenta/Data Models/&quot;</Value>
+            <ResolvedValue>&quot;/Custom/ER_INTEGRATION/ER07_CE_Importacion estados de cuenta/Data Models/&quot;</ResolvedValue>
             <IsConstant>false</IsConstant>
             <ParameterAlias>pathName</ParameterAlias>
             <ParameterID>J}mx.com.estrellaroja.soa.erpintegrationbiz.BRuleGenerateReportRsType.{pathName}</ParameterID>
@@ -1601,8 +1616,8 @@
         <DTActionNode id="L}804">
           <Selected>false</Selected>
           <Expression id="L}807">
-            <Value>"/Custom/ER_INTEGRATION/Commons/Data Models/"</Value>
-            <ResolvedValue>"/Custom/ER_INTEGRATION/Commons/Data Models/"</ResolvedValue>
+            <Value>&quot;/Custom/ER_INTEGRATION/Commons/Data Models/&quot;</Value>
+            <ResolvedValue>&quot;/Custom/ER_INTEGRATION/Commons/Data Models/&quot;</ResolvedValue>
             <IsConstant>false</IsConstant>
             <ParameterAlias>pathName</ParameterAlias>
             <ParameterID>J}mx.com.estrellaroja.soa.erpintegrationbiz.BRuleGenerateReportRsType.{pathName}</ParameterID>
@@ -1612,8 +1627,8 @@
         <DTActionNode id="L}189">
           <Selected>false</Selected>
           <Expression id="L}192">
-            <Value>"NA"</Value>
-            <ResolvedValue>"NA"</ResolvedValue>
+            <Value>&quot;NA&quot;</Value>
+            <ResolvedValue>&quot;NA&quot;</ResolvedValue>
             <IsConstant>false</IsConstant>
             <ParameterAlias>pathName</ParameterAlias>
             <ParameterID>J}mx.com.estrellaroja.soa.erpintegrationbiz.BRuleGenerateReportRsType.{pathName}</ParameterID>
@@ -1623,8 +1638,8 @@
         <DTActionNode id="L}823">
           <Selected>false</Selected>
           <Expression id="L}827">
-            <Value>"/Custom/ER_INTEGRATION/ER13_AP_Validacion_automatica/Data Models/"</Value>
-            <ResolvedValue>"/Custom/ER_INTEGRATION/ER13_AP_Validacion_automatica/Data Models/"</ResolvedValue>
+            <Value>&quot;/Custom/ER_INTEGRATION/ER13_AP_Validacion_automatica/Data Models/&quot;</Value>
+            <ResolvedValue>&quot;/Custom/ER_INTEGRATION/ER13_AP_Validacion_automatica/Data Models/&quot;</ResolvedValue>
             <IsConstant>false</IsConstant>
             <ParameterAlias>pathName</ParameterAlias>
             <ParameterID>J}mx.com.estrellaroja.soa.erpintegrationbiz.BRuleGenerateReportRsType.{pathName}</ParameterID>
@@ -1634,8 +1649,8 @@
         <DTActionNode id="L}850">
           <Selected>false</Selected>
           <Expression id="L}854">
-            <Value>"/Custom/ER_INTEGRATION/ER24_Reportes_SOA/Data Models/"</Value>
-            <ResolvedValue>"/Custom/ER_INTEGRATION/ER24_Reportes_SOA/Data Models/"</ResolvedValue>
+            <Value>&quot;/Custom/ER_INTEGRATION/ER24_Reportes_SOA/Data Models/&quot;</Value>
+            <ResolvedValue>&quot;/Custom/ER_INTEGRATION/ER24_Reportes_SOA/Data Models/&quot;</ResolvedValue>
             <IsConstant>false</IsConstant>
             <ParameterAlias>pathName</ParameterAlias>
             <ParameterID>J}mx.com.estrellaroja.soa.erpintegrationbiz.BRuleGenerateReportRsType.{pathName}</ParameterID>
@@ -1645,8 +1660,8 @@
         <DTActionNode id="L}876">
           <Selected>false</Selected>
           <Expression id="L}880">
-            <Value>"/Custom/ER_INTEGRATION/ER06_SC_Ordenes_De_Trabajo/Data Models/"</Value>
-            <ResolvedValue>"/Custom/ER_INTEGRATION/ER06_SC_Ordenes_De_Trabajo/Data Models/"</ResolvedValue>
+            <Value>&quot;/Custom/ER_INTEGRATION/ER06_SC_Ordenes_De_Trabajo/Data Models/&quot;</Value>
+            <ResolvedValue>&quot;/Custom/ER_INTEGRATION/ER06_SC_Ordenes_De_Trabajo/Data Models/&quot;</ResolvedValue>
             <IsConstant>false</IsConstant>
             <ParameterAlias>pathName</ParameterAlias>
             <ParameterID>J}mx.com.estrellaroja.soa.erpintegrationbiz.BRuleGenerateReportRsType.{pathName}</ParameterID>
@@ -1656,8 +1671,8 @@
         <DTActionNode id="L}930">
           <Selected>false</Selected>
           <Expression id="L}934">
-            <Value>"/Custom/ER_INTEGRATION/ER25_AR_Concilation_Cash_TP/Data Models/"</Value>
-            <ResolvedValue>"/Custom/ER_INTEGRATION/ER25_AR_Concilation_Cash_TP/Data Models/"</ResolvedValue>
+            <Value>&quot;/Custom/ER_INTEGRATION/ER25_AR_Concilation_Cash_TP/Data Models/&quot;</Value>
+            <ResolvedValue>&quot;/Custom/ER_INTEGRATION/ER25_AR_Concilation_Cash_TP/Data Models/&quot;</ResolvedValue>
             <IsConstant>false</IsConstant>
             <ParameterAlias>pathName</ParameterAlias>
             <ParameterID>J}mx.com.estrellaroja.soa.erpintegrationbiz.BRuleGenerateReportRsType.{pathName}</ParameterID>
@@ -1667,8 +1682,8 @@
         <DTActionNode id="L}973">
           <Selected>false</Selected>
           <Expression id="L}977">
-            <Value>"/Custom/ER_INTEGRATION/ER23_AP_ValidacionComplementos/Data Models/"</Value>
-            <ResolvedValue>"/Custom/ER_INTEGRATION/ER23_AP_ValidacionComplementos/Data Models/"</ResolvedValue>
+            <Value>&quot;/Custom/ER_INTEGRATION/ER23_AP_ValidacionComplementos/Data Models/&quot;</Value>
+            <ResolvedValue>&quot;/Custom/ER_INTEGRATION/ER23_AP_ValidacionComplementos/Data Models/&quot;</ResolvedValue>
             <IsConstant>false</IsConstant>
             <ParameterAlias>pathName</ParameterAlias>
             <ParameterID>J}mx.com.estrellaroja.soa.erpintegrationbiz.BRuleGenerateReportRsType.{pathName}</ParameterID>
@@ -1677,131 +1692,131 @@
         </DTActionNode>
       </DTAction>
       <DTRule id="L}578">
-        <Override/>
-        <RunBefore/>
-        <NoConflict/>
-        <OverriddenBy/>
-        <RunAfter/>
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
         <CreationUpdateNumber>147</CreationUpdateNumber>
       </DTRule>
       <DTRule id="L}594">
-        <Override/>
-        <RunBefore/>
-        <NoConflict/>
-        <OverriddenBy/>
-        <RunAfter/>
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
         <CreationUpdateNumber>155</CreationUpdateNumber>
       </DTRule>
       <DTRule id="L}617">
-        <Override/>
-        <RunBefore/>
-        <NoConflict/>
-        <OverriddenBy/>
-        <RunAfter/>
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
         <CreationUpdateNumber>161</CreationUpdateNumber>
       </DTRule>
       <DTRule id="L}658">
-        <Override/>
-        <RunBefore/>
-        <NoConflict/>
-        <OverriddenBy/>
-        <RunAfter/>
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
         <CreationUpdateNumber>168</CreationUpdateNumber>
       </DTRule>
       <DTRule id="L}697">
-        <Override/>
-        <RunBefore/>
-        <NoConflict/>
-        <OverriddenBy/>
-        <RunAfter/>
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
         <CreationUpdateNumber>185</CreationUpdateNumber>
       </DTRule>
       <DTRule id="L}717">
-        <Override/>
-        <RunBefore/>
-        <NoConflict/>
-        <OverriddenBy/>
-        <RunAfter/>
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
         <CreationUpdateNumber>199</CreationUpdateNumber>
       </DTRule>
       <DTRule id="L}747">
-        <Override/>
-        <RunBefore/>
-        <NoConflict/>
-        <OverriddenBy/>
-        <RunAfter/>
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
         <CreationUpdateNumber>208</CreationUpdateNumber>
       </DTRule>
       <DTRule id="L}761">
-        <Override/>
-        <RunBefore/>
-        <NoConflict/>
-        <OverriddenBy/>
-        <RunAfter/>
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
         <CreationUpdateNumber>209</CreationUpdateNumber>
       </DTRule>
       <DTRule id="L}781">
-        <Override/>
-        <RunBefore/>
-        <NoConflict/>
-        <OverriddenBy/>
-        <RunAfter/>
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
         <CreationUpdateNumber>218</CreationUpdateNumber>
       </DTRule>
       <DTRule id="L}803">
-        <Override/>
-        <RunBefore/>
-        <NoConflict/>
-        <OverriddenBy/>
-        <RunAfter/>
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
         <CreationUpdateNumber>225</CreationUpdateNumber>
       </DTRule>
       <DTRule id="L}188">
-        <Override/>
-        <RunBefore/>
-        <NoConflict/>
-        <OverriddenBy/>
-        <RunAfter/>
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
         <CreationUpdateNumber>22</CreationUpdateNumber>
       </DTRule>
       <DTRule id="L}822">
-        <Override/>
-        <RunBefore/>
-        <NoConflict/>
-        <OverriddenBy/>
-        <RunAfter/>
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
         <CreationUpdateNumber>238</CreationUpdateNumber>
       </DTRule>
       <DTRule id="L}849">
-        <Override/>
-        <RunBefore/>
-        <NoConflict/>
-        <OverriddenBy/>
-        <RunAfter/>
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
         <CreationUpdateNumber>255</CreationUpdateNumber>
       </DTRule>
       <DTRule id="L}875">
-        <Override/>
-        <RunBefore/>
-        <NoConflict/>
-        <OverriddenBy/>
-        <RunAfter/>
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
         <CreationUpdateNumber>272</CreationUpdateNumber>
       </DTRule>
       <DTRule id="L}929">
-        <Override/>
-        <RunBefore/>
-        <NoConflict/>
-        <OverriddenBy/>
-        <RunAfter/>
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
         <CreationUpdateNumber>284</CreationUpdateNumber>
       </DTRule>
       <DTRule id="L}972">
-        <Override/>
-        <RunBefore/>
-        <NoConflict/>
-        <OverriddenBy/>
-        <RunAfter/>
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
         <CreationUpdateNumber>294</CreationUpdateNumber>
       </DTRule>
       <AllowGaps>true</AllowGaps>
@@ -1812,9 +1827,9 @@
     <VisibilityFilterEnabled>false</VisibilityFilterEnabled>
     <CreationUpdateNumber>3</CreationUpdateNumber>
   </RuleSet>
-  <ValidationUpdateNumber>324</ValidationUpdateNumber>
-  <UpdateNumber>325</UpdateNumber>
-  <ResourceBundle>bruleGenerateReport</ResourceBundle>
+  <ValidationUpdateNumber>330</ValidationUpdateNumber>
+  <UpdateNumber>330</UpdateNumber>
+  <ResourceBundle>bruleGenerateReportTranslations</ResourceBundle>
   <TestModel id="L}3">
     <ValidationUpdateNumber>1</ValidationUpdateNumber>
     <UpdateNumber>1</UpdateNumber>

@@ -30,13 +30,13 @@
          <cell>TMS2</cell>
          <cell>JournalTMS</cell>
       </row>
-       <row markdefault="false">
+      <row markdefault="false">
          <cell>AgroupDateGroup</cell>
          <cell>false</cell>
       </row>
-      <row markdefault="false">
+      <row>
          <cell>DelayJournals</cell>
-         <cell>10000</cell>
+         <cell>70000</cell>
       </row>
    </rows>
 </dvm>

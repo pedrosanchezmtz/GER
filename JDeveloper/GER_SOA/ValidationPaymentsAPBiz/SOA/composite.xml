@@ -31,6 +31,10 @@
            location="WSDLs/External/BpelUpdateInvoicesInstallmentsAP.wsdl" importType="wsdl"/>
    <import namespace="http://soa.estrellaroja.com.mx/ERPIntegrationApiTec"
            location="WSDLs/External/ERPIntegrationApiTecWrapper.wsdl" importType="wsdl"/>
+   <import namespace="http://soa.estrellaroja.com.mx/GER_SOA/ValidationPaymentsAPBiz/BpelUpdateSupplierInvoicesInstallmentsAP"
+           location="WSDLs/External/BpelUpdateSupplierInvoicesInstallmentsAP.wsdl" importType="wsdl"/>
+   <import namespace="http://soa.estrellaroja.com.mx/ERPIntegrationBiz"
+           location="WSDLs/External/ERPIntegrationBizWrapper1.wsdl" importType="wsdl"/>
    <service name="ValidationPaymentsBiz" ui:wsdlLocation="oramds:/apps/SOA/ValidationPaymentsAPBiz/ValidationPaymentsAPBiz.wsdl">
       <interface.wsdl interface="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz#wsdl.interface(ValidationPaymentsAPBizPortType)"/>
       <binding.ws port="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz#wsdl.endpoint(ValidationPaymentsBiz/ValidationPaymentsAPBizPort)">
@@ -45,7 +49,6 @@
    </service>
    <property name="compositeID" type="xs:string" many="false">82472c9d-2d16-4496-83f1-bcc5aa74069b</property>
    <property name="originalProductVersion" type="xs:string" many="false">12.2.1.4.0.190828</property>
-   <property name="bpel.preference.ENVIROMENT" type="xs:string" many="false" override="may">PROD</property>
    <property name="productVersion" type="xs:string" many="false">12.2.1.4.0.190828</property>
    <component name="MediatorValidationPaymentsBiz">
       <implementation.mediator src="Mediators/MediatorValidationPaymentsBiz.mplan"/>
@@ -65,6 +68,10 @@
          <reference name="BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client"
                     ui:wsdlLocation="WSDLs/External/BpelUpdateInvoicesInstallmentsAP.wsdl">
             <interface.wsdl interface="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/BpelUpdateInvoicesInstallmentsAP#wsdl.interface(BpelUpdateInvoicesInstallmentsAP)"/>
+         </reference>
+         <reference name="BpelUpdateSupplierInvoicesInstallmentsAP.bpelupdatesupplierinvoicesinstallmentsap_client"
+                    ui:wsdlLocation="WSDLs/External/BpelUpdateSupplierInvoicesInstallmentsAP.wsdl">
+            <interface.wsdl interface="http://soa.estrellaroja.com.mx/GER_SOA/ValidationPaymentsAPBiz/BpelUpdateSupplierInvoicesInstallmentsAP#wsdl.interface(BpelUpdateSupplierInvoicesInstallmentsAP)"/>
          </reference>
       </componentType>
    </component>
@@ -107,9 +114,9 @@
          <reference name="wsCFDITec" ui:wsdlLocation="WSDLs/CFDITecWrapper2.wsdl">
             <interface.wsdl interface="http://soa.estrellaroja.com.mx/CFDITec#wsdl.interface(CFDITecPortType)" callbackInterface="http://soa.estrellaroja.com.mx/CFDITec#wsdl.interface(CFDITecPortTypeCallback)"/>
          </reference>
-         <reference name="BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client"
-                    ui:wsdlLocation="WSDLs/External/BpelUpdateInvoicesInstallmentsAP.wsdl">
-            <interface.wsdl interface="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/BpelUpdateInvoicesInstallmentsAP#wsdl.interface(BpelUpdateInvoicesInstallmentsAP)"/>
+         <reference name="BpelUpdateSupplierInvoicesInstallmentsAP.bpelupdatesupplierinvoicesinstallmentsap_client"
+                    ui:wsdlLocation="WSDLs/External/BpelUpdateSupplierInvoicesInstallmentsAP.wsdl">
+            <interface.wsdl interface="http://soa.estrellaroja.com.mx/GER_SOA/ValidationPaymentsAPBiz/BpelUpdateSupplierInvoicesInstallmentsAP#wsdl.interface(BpelUpdateSupplierInvoicesInstallmentsAP)"/>
          </reference>
          <sca-ext:callReference name="SBpelValidateHeader"/>
          <sca-ext:callReference name="SBpelValidateLines"/>
@@ -130,6 +137,7 @@
             <interface.wsdl interface="http://soa.estrellaroja.com.mx/MessageTec#wsdl.interface(MessageTecPortType)" callbackInterface="http://soa.estrellaroja.com.mx/MessageTec#wsdl.interface(MessageTecCallbackPortType)"/>
          </reference>
       </componentType>
+      <property name="bpel.preference.ENVIROMENT" type="xs:string" many="false" override="may">PROD</property>
       <property name="bpel.config.transaction" type="xs:string" many="false">notSupported</property>
       <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string" many="false">async.persist</property>
    </component>
@@ -159,10 +167,6 @@
          </reference>
          <reference name="wsSftpTec" ui:wsdlLocation="WSDLs/SftpTecWrapper1.wsdl">
             <interface.wsdl interface="http://soa.estrellaroja.com.mx/SftpTec#wsdl.interface(SftpTec_ptt)"/>
-         </reference>
-         <reference name="BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client"
-                    ui:wsdlLocation="WSDLs/External/BpelUpdateInvoicesInstallmentsAP.wsdl">
-            <interface.wsdl interface="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/BpelUpdateInvoicesInstallmentsAP#wsdl.interface(BpelUpdateInvoicesInstallmentsAP)"/>
          </reference>
          <sca-ext:callReference name="SubSendInvoiceToReport"/>
       </componentType>
@@ -213,6 +217,24 @@
          </service>
          <reference name="WsERPIntegrationApiTec" ui:wsdlLocation="WSDLs/External/ERPIntegrationApiTecWrapper.wsdl">
             <interface.wsdl interface="http://soa.estrellaroja.com.mx/ERPIntegrationApiTec#wsdl.interface(ERPIntegrationApiTecPortType)"/>
+         </reference>
+      </componentType>
+      <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
+   </component>
+   <component name="BpelUpdateSupplierInvoicesInstallmentsAP" version="2.0">
+      <implementation.bpel src="BPEL/BpelUpdateSupplierInvoicesInstallmentsAP.bpel"/>
+      <componentType>
+         <service name="bpelupdatesupplierinvoicesinstallmentsap_client"
+                  ui:wsdlLocation="WSDLs/External/BpelUpdateSupplierInvoicesInstallmentsAP.wsdl">
+            <interface.wsdl interface="http://soa.estrellaroja.com.mx/GER_SOA/ValidationPaymentsAPBiz/BpelUpdateSupplierInvoicesInstallmentsAP#wsdl.interface(BpelUpdateSupplierInvoicesInstallmentsAP)"/>
+         </service>
+         <reference name="WsERPIntegrationBiz" ui:wsdlLocation="WSDLs/External/ERPIntegrationBizWrapper1.wsdl">
+            <interface.wsdl interface="http://soa.estrellaroja.com.mx/ERPIntegrationBiz#wsdl.interface(ERPIntegrationBizPortType)"
+                            callbackInterface="http://soa.estrellaroja.com.mx/ERPIntegrationBiz#wsdl.interface(ERPIntegrationBizCallbackPortType)"/>
+         </reference>
+         <reference name="BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client"
+                    ui:wsdlLocation="WSDLs/External/BpelUpdateInvoicesInstallmentsAP.wsdl">
+            <interface.wsdl interface="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/BpelUpdateInvoicesInstallmentsAP#wsdl.interface(BpelUpdateInvoicesInstallmentsAP)"/>
          </reference>
       </componentType>
       <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
@@ -398,12 +420,20 @@
       <target.uri>WsERPIntegrationApiTec</target.uri>
    </wire>
    <wire>
-      <source.uri>BpelValidateAttachmentsAP/BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client</source.uri>
+      <source.uri>MediatorValidationPaymentsBiz/BpelUpdateSupplierInvoicesInstallmentsAP.bpelupdatesupplierinvoicesinstallmentsap_client</source.uri>
+      <target.uri>BpelUpdateSupplierInvoicesInstallmentsAP/bpelupdatesupplierinvoicesinstallmentsap_client</target.uri>
+   </wire>
+   <wire>
+      <source.uri>BpelUpdateSupplierInvoicesInstallmentsAP/WsERPIntegrationBiz</source.uri>
+      <target.uri>WsERPIntegrationBiz</target.uri>
+   </wire>
+   <wire>
+      <source.uri>BpelUpdateSupplierInvoicesInstallmentsAP/BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client</source.uri>
       <target.uri>BpelUpdateInvoicesInstallmentsAP/bpelupdateinvoicesinstallmentsap_client</target.uri>
    </wire>
    <wire>
-      <source.uri>BpelSendPaymentsAP/BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client</source.uri>
-      <target.uri>BpelUpdateInvoicesInstallmentsAP/bpelupdateinvoicesinstallmentsap_client</target.uri>
+      <source.uri>BpelValidateAttachmentsAP/BpelUpdateSupplierInvoicesInstallmentsAP.bpelupdatesupplierinvoicesinstallmentsap_client</source.uri>
+      <target.uri>BpelUpdateSupplierInvoicesInstallmentsAP/bpelupdatesupplierinvoicesinstallmentsap_client</target.uri>
    </wire>
    <sca-ext:callWire>
       <sca-ext:source>BpelSendPaymentsAP/SubSendInvoiceToReport</sca-ext:source>

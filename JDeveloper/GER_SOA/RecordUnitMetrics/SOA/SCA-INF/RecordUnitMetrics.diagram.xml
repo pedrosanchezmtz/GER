@@ -15,11 +15,11 @@
         </dgm:operations>
     </dgm:gService>
     <dgm:gReference name="wsMileageControlnetService">
-        <dgm:body borderWidth="2" arcRad="20" X="896" Y="144" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="768" Y="144" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="886" Y="137" width="156" height="98">
+        <dgm:shadow arcRad="20" X="758" Y="137" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsMileageControlnetService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/OSB_EstrellaRoja/DEV_APIUnitMetricsTec/GetMileageControlnet#wsdl.interface(GetMileageControlnet_ptt)"/>
@@ -29,11 +29,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsMileageOmnitracsService">
-        <dgm:body borderWidth="2" arcRad="20" X="896" Y="262" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="768" Y="262" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="886" Y="255" width="156" height="98">
+        <dgm:shadow arcRad="20" X="758" Y="255" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsMileageOmnitracsService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/OSB_EstrellaRoja/DEV_APIUnitMetricsTec/GetMileageOmnitracs#wsdl.interface(GetMileageOmnitracs_ptt)"/>
@@ -43,11 +43,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsMileageSine">
-        <dgm:body borderWidth="2" arcRad="20" X="896" Y="380" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="768" Y="380" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="886" Y="373" width="156" height="98">
+        <dgm:shadow arcRad="20" X="758" Y="373" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsMileageSine" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/OSB_EstrellaRoja/DEV_APIUnitMetricsTec/GetMileageSine#wsdl.interface(GetMileageSine_ptt)"/>
@@ -57,11 +57,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsMileageTomTomService">
-        <dgm:body borderWidth="2" arcRad="20" X="896" Y="498" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="768" Y="498" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="886" Y="491" width="156" height="98">
+        <dgm:shadow arcRad="20" X="758" Y="491" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsMileageTomTomService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/OSB_EstrellaRoja/DEV_APIUnitMetricsTec/GetMileageTomTom#wsdl.interface(GetMileageTomTom_ptt)"/>
@@ -71,11 +71,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsDateService">
-        <dgm:body borderWidth="2" arcRad="20" X="896" Y="26" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="768" Y="26" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="886" Y="19" width="156" height="98">
+        <dgm:shadow arcRad="20" X="758" Y="19" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsDateService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_UtilityTec/GetSysDate#wsdl.interface(GetSysDate_ptt)"/>
@@ -85,11 +85,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsERPReadingMetricsService">
-        <dgm:body borderWidth="2" arcRad="20" X="896" Y="616" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="768" Y="616" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="886" Y="609" width="156" height="98">
+        <dgm:shadow arcRad="20" X="758" Y="609" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsERPReadingMetricsService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/OSB_EstrellaRoja/DEV_ERPUnitMetricsTec/ERPMeterReadings#wsdl.interface(ERPMeterReadings_ptt)"/>
@@ -99,11 +99,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsGetMileageExcelService">
-        <dgm:body borderWidth="2" arcRad="20" X="896" Y="734" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="768" Y="734" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="886" Y="727" width="156" height="98">
+        <dgm:shadow arcRad="20" X="758" Y="727" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsGetMileageExcelService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_APIUnitMetricsTec/GetMileageExcel#wsdl.interface(GetMileageExcel_ptt)"/>
@@ -113,11 +113,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsTruncMileageExcelService">
-        <dgm:body borderWidth="2" arcRad="20" X="896" Y="852" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="768" Y="852" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="886" Y="845" width="156" height="98">
+        <dgm:shadow arcRad="20" X="758" Y="845" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsTruncMileageExcelService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_EstrellaRoja/DEV_APIUnitMetricsTec/TruncMileageExcel#wsdl.interface(TruncMileageExcel_ptt)"/>
@@ -127,11 +127,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsEAMOriginPriorityService">
-        <dgm:body borderWidth="2" arcRad="20" X="896" Y="970" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="768" Y="970" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="886" Y="963" width="156" height="98">
+        <dgm:shadow arcRad="20" X="758" Y="963" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsEAMOriginPriorityService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_ESTRELLA_ROJA/DEV_EAMUnitMetricsTec/EAMOriginPriority#wsdl.interface(EAMOriginPriority_ptt)"/>
@@ -141,11 +141,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsEAMInsertErrorRecordService">
-        <dgm:body borderWidth="2" arcRad="20" X="896" Y="1088" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="768" Y="1088" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="886" Y="1081" width="156" height="98">
+        <dgm:shadow arcRad="20" X="758" Y="1081" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsEAMInsertErrorRecordService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_ESTRELLA_ROJA/DEV_EAMUnitMetricsTec/EAMInsertErrorRecord#wsdl.interface(EAMInsertErrorRecord_ptt)"/>
@@ -155,11 +155,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsEAMSelectErrorRecordService">
-        <dgm:body borderWidth="2" arcRad="20" X="896" Y="1206" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="768" Y="1206" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="886" Y="1199" width="156" height="98">
+        <dgm:shadow arcRad="20" X="758" Y="1199" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsEAMSelectErrorRecordService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/OSB_ESTRELLA_ROJA/DEV_EAMUnitMetricsTec/EAMSelectErrorRecord#wsdl.interface(EAMSelectErrorRecord_ptt)"/>
@@ -169,11 +169,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsSOAUtilitiesService">
-        <dgm:body borderWidth="2" arcRad="20" X="896" Y="1324" width="136" height="156">
+        <dgm:body borderWidth="2" arcRad="20" X="768" Y="1324" width="136" height="156">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="886" Y="1317" width="156" height="170">
+        <dgm:shadow arcRad="20" X="758" Y="1317" width="156" height="170">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsSOAUtilitiesService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/SOAUtilitiesTec#wsdl.interface(SOAUtilitiesTecPortType)"/>
@@ -189,11 +189,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsSendEmailService">
-        <dgm:body borderWidth="2" arcRad="20" X="896" Y="1514" width="136" height="96">
+        <dgm:body borderWidth="2" arcRad="20" X="768" Y="1514" width="136" height="96">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="886" Y="1507" width="156" height="110">
+        <dgm:shadow arcRad="20" X="758" Y="1507" width="156" height="110">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsSendEmailService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/MessageTec#wsdl.interface(MessageTecPortType)" callbackInterface="http://soa.estrellaroja.com.mx/MessageTec#wsdl.interface(MessageTecCallbackPortType)"/>
@@ -204,11 +204,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsERPIntegrationServiceTec">
-        <dgm:body borderWidth="2" arcRad="20" X="896" Y="1644" width="136" height="168">
+        <dgm:body borderWidth="2" arcRad="20" X="768" Y="1644" width="136" height="168">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="886" Y="1637" width="156" height="182">
+        <dgm:shadow arcRad="20" X="758" Y="1637" width="156" height="182">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsERPIntegrationServiceTec" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec#wsdl.interface(ERPIntegrationTecPortType)"/>
@@ -246,11 +246,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsEAMSelectRecordService">
-        <dgm:body borderWidth="2" arcRad="20" X="896" Y="1846" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="768" Y="1846" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="886" Y="1839" width="156" height="98">
+        <dgm:shadow arcRad="20" X="758" Y="1839" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsEAMSelectRecordService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/GER_OSB/DEV_EAMUnitMetricsTec/EAMSelectRecordBS#wsdl.interface(EAMSelectRecordBS_ptt)"/>
@@ -260,12 +260,12 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gComponent name="RecordUnitMterics">
-        <dgm:body borderWidth="2" arcRad="20" X="462" Y="715" width="130" height="411">
+        <dgm:body borderWidth="2" arcRad="20" X="398" Y="715" width="130" height="411">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="452" Y="708" width="150" height="427">
+        <dgm:shadow arcRad="20" X="388" Y="708" width="150" height="427">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="recordunitmterics_client_ep" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/RecordUnitMterics#wsdl.interface(RecordUnitMterics)"/>
@@ -287,112 +287,112 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gWireLink source="RecordUnitMterics/wsDateService" target="wsDateService" width="2">
-        <dgm:gSegment X1="602" Y1="740" X2="626" Y2="740"/>
-        <dgm:gSegment X1="626" Y1="740" X2="626" Y2="36"/>
-        <dgm:gSegment X1="626" Y1="36" X2="886" Y2="36"/>
+        <dgm:gSegment X1="538" Y1="740" X2="562" Y2="740"/>
+        <dgm:gSegment X1="562" Y1="740" X2="562" Y2="36"/>
+        <dgm:gSegment X1="562" Y1="36" X2="758" Y2="36"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="RecordUnitMterics/wsMileageControlnetService" target="wsMileageControlnetService" width="2">
-        <dgm:gSegment X1="602" Y1="765" X2="641" Y2="765"/>
-        <dgm:gSegment X1="641" Y1="765" X2="641" Y2="154"/>
-        <dgm:gSegment X1="641" Y1="154" X2="886" Y2="154"/>
+        <dgm:gSegment X1="538" Y1="765" X2="577" Y2="765"/>
+        <dgm:gSegment X1="577" Y1="765" X2="577" Y2="154"/>
+        <dgm:gSegment X1="577" Y1="154" X2="758" Y2="154"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="RecordUnitMterics/wsMileageOmnitracsService" target="wsMileageOmnitracsService" width="2">
-        <dgm:gSegment X1="602" Y1="790" X2="656" Y2="790"/>
-        <dgm:gSegment X1="656" Y1="790" X2="656" Y2="272"/>
-        <dgm:gSegment X1="656" Y1="272" X2="886" Y2="272"/>
+        <dgm:gSegment X1="538" Y1="790" X2="592" Y2="790"/>
+        <dgm:gSegment X1="592" Y1="790" X2="592" Y2="272"/>
+        <dgm:gSegment X1="592" Y1="272" X2="758" Y2="272"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="RecordUnitMterics/wsMileageSine" target="wsMileageSine" width="2">
-        <dgm:gSegment X1="602" Y1="815" X2="671" Y2="815"/>
-        <dgm:gSegment X1="671" Y1="815" X2="671" Y2="390"/>
-        <dgm:gSegment X1="671" Y1="390" X2="886" Y2="390"/>
+        <dgm:gSegment X1="538" Y1="815" X2="607" Y2="815"/>
+        <dgm:gSegment X1="607" Y1="815" X2="607" Y2="390"/>
+        <dgm:gSegment X1="607" Y1="390" X2="758" Y2="390"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="RecordUnitMterics/wsMileageTomTomService" target="wsMileageTomTomService" width="2">
-        <dgm:gSegment X1="602" Y1="840" X2="686" Y2="840"/>
-        <dgm:gSegment X1="686" Y1="840" X2="686" Y2="508"/>
-        <dgm:gSegment X1="686" Y1="508" X2="886" Y2="508"/>
+        <dgm:gSegment X1="538" Y1="840" X2="622" Y2="840"/>
+        <dgm:gSegment X1="622" Y1="840" X2="622" Y2="508"/>
+        <dgm:gSegment X1="622" Y1="508" X2="758" Y2="508"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="recordunitmterics_client_ep" target="RecordUnitMterics/recordunitmterics_client_ep" width="2">
-        <dgm:gSegment X1="168" Y1="740" X2="452" Y2="740"/>
+        <dgm:gSegment X1="168" Y1="740" X2="388" Y2="740"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="RecordUnitMterics/wsERPReadingMetricsService" target="wsERPReadingMetricsService" width="2">
-        <dgm:gSegment X1="602" Y1="865" X2="701" Y2="865"/>
-        <dgm:gSegment X1="701" Y1="865" X2="701" Y2="626"/>
-        <dgm:gSegment X1="701" Y1="626" X2="886" Y2="626"/>
+        <dgm:gSegment X1="538" Y1="865" X2="637" Y2="865"/>
+        <dgm:gSegment X1="637" Y1="865" X2="637" Y2="626"/>
+        <dgm:gSegment X1="637" Y1="626" X2="758" Y2="626"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="RecordUnitMterics/wsGetMileageExcelService" target="wsGetMileageExcelService" width="2">
-        <dgm:gSegment X1="602" Y1="890" X2="716" Y2="890"/>
-        <dgm:gSegment X1="716" Y1="890" X2="716" Y2="744"/>
-        <dgm:gSegment X1="716" Y1="744" X2="886" Y2="744"/>
+        <dgm:gSegment X1="538" Y1="890" X2="652" Y2="890"/>
+        <dgm:gSegment X1="652" Y1="890" X2="652" Y2="744"/>
+        <dgm:gSegment X1="652" Y1="744" X2="758" Y2="744"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="RecordUnitMterics/wsTruncMileageExcelService" target="wsTruncMileageExcelService" width="2">
-        <dgm:gSegment X1="602" Y1="915" X2="731" Y2="915"/>
-        <dgm:gSegment X1="731" Y1="915" X2="731" Y2="862"/>
-        <dgm:gSegment X1="731" Y1="862" X2="886" Y2="862"/>
+        <dgm:gSegment X1="538" Y1="915" X2="667" Y2="915"/>
+        <dgm:gSegment X1="667" Y1="915" X2="667" Y2="862"/>
+        <dgm:gSegment X1="667" Y1="862" X2="758" Y2="862"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="RecordUnitMterics/wsEAMOriginPriorityService" target="wsEAMOriginPriorityService" width="2">
-        <dgm:gSegment X1="602" Y1="940" X2="716" Y2="940"/>
-        <dgm:gSegment X1="716" Y1="940" X2="716" Y2="980"/>
-        <dgm:gSegment X1="716" Y1="980" X2="886" Y2="980"/>
+        <dgm:gSegment X1="538" Y1="940" X2="652" Y2="940"/>
+        <dgm:gSegment X1="652" Y1="940" X2="652" Y2="980"/>
+        <dgm:gSegment X1="652" Y1="980" X2="758" Y2="980"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="RecordUnitMterics/wsEAMInsertErrorRecordService" target="wsEAMInsertErrorRecordService" width="2">
-        <dgm:gSegment X1="602" Y1="965" X2="701" Y2="965"/>
-        <dgm:gSegment X1="701" Y1="965" X2="701" Y2="1098"/>
-        <dgm:gSegment X1="701" Y1="1098" X2="886" Y2="1098"/>
+        <dgm:gSegment X1="538" Y1="965" X2="637" Y2="965"/>
+        <dgm:gSegment X1="637" Y1="965" X2="637" Y2="1098"/>
+        <dgm:gSegment X1="637" Y1="1098" X2="758" Y2="1098"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="RecordUnitMterics/wsEAMSelectErrorRecordService" target="wsEAMSelectErrorRecordService" width="2">
-        <dgm:gSegment X1="602" Y1="990" X2="686" Y2="990"/>
-        <dgm:gSegment X1="686" Y1="990" X2="686" Y2="1216"/>
-        <dgm:gSegment X1="686" Y1="1216" X2="886" Y2="1216"/>
+        <dgm:gSegment X1="538" Y1="990" X2="622" Y2="990"/>
+        <dgm:gSegment X1="622" Y1="990" X2="622" Y2="1216"/>
+        <dgm:gSegment X1="622" Y1="1216" X2="758" Y2="1216"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="RecordUnitMterics/wsSOAUtilitiesService" target="wsSOAUtilitiesService" width="2">
-        <dgm:gSegment X1="602" Y1="1015" X2="671" Y2="1015"/>
-        <dgm:gSegment X1="671" Y1="1015" X2="671" Y2="1334"/>
-        <dgm:gSegment X1="671" Y1="1334" X2="886" Y2="1334"/>
+        <dgm:gSegment X1="538" Y1="1015" X2="607" Y2="1015"/>
+        <dgm:gSegment X1="607" Y1="1015" X2="607" Y2="1334"/>
+        <dgm:gSegment X1="607" Y1="1334" X2="758" Y2="1334"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="RecordUnitMterics/wsSendEmailService" target="wsSendEmailService" width="2">
-        <dgm:gSegment X1="602" Y1="1040" X2="656" Y2="1040"/>
-        <dgm:gSegment X1="656" Y1="1040" X2="656" Y2="1524"/>
-        <dgm:gSegment X1="656" Y1="1524" X2="886" Y2="1524"/>
+        <dgm:gSegment X1="538" Y1="1040" X2="592" Y2="1040"/>
+        <dgm:gSegment X1="592" Y1="1040" X2="592" Y2="1524"/>
+        <dgm:gSegment X1="592" Y1="1524" X2="758" Y2="1524"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="RecordUnitMterics/wsERPIntegrationServiceTec" target="wsERPIntegrationServiceTec" width="2">
-        <dgm:gSegment X1="602" Y1="1065" X2="641" Y2="1065"/>
-        <dgm:gSegment X1="641" Y1="1065" X2="641" Y2="1654"/>
-        <dgm:gSegment X1="641" Y1="1654" X2="886" Y2="1654"/>
+        <dgm:gSegment X1="538" Y1="1065" X2="577" Y2="1065"/>
+        <dgm:gSegment X1="577" Y1="1065" X2="577" Y2="1654"/>
+        <dgm:gSegment X1="577" Y1="1654" X2="758" Y2="1654"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="RecordUnitMterics/wsEAMSelectRecordService" target="wsEAMSelectRecordService" width="2">
-        <dgm:gSegment X1="602" Y1="1090" X2="626" Y2="1090"/>
-        <dgm:gSegment X1="626" Y1="1090" X2="626" Y2="1856"/>
-        <dgm:gSegment X1="626" Y1="1856" X2="886" Y2="1856"/>
+        <dgm:gSegment X1="538" Y1="1090" X2="562" Y2="1090"/>
+        <dgm:gSegment X1="562" Y1="1090" X2="562" Y2="1856"/>
+        <dgm:gSegment X1="562" Y1="1856" X2="758" Y2="1856"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<UpdateSupplierInvoicesInstallmentsAPRq xmlns="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz">
+   <Supplier>
+<HoldFlag xmlns="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">true</HoldFlag>
+<HoldReason xmlns="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">COMPLEMENTO DE PAGO NO VALIDO</HoldReason>
+<supplier_number/>
+<supplier_rfc>GCM011227V7A</supplier_rfc>
+<validate>true</validate>
+   </Supplier>
+</UpdateSupplierInvoicesInstallmentsAPRq>

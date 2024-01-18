@@ -24,7 +24,18 @@
 <wsdl:message name="UpdateInvoicesInstallmentsAPRs">
 <wsdl:part name="UpdateInvoicesInstallmentsAPRsPart" element="tns:UpdateInvoicesInstallmentsAPRs"/>
 </wsdl:message>
-
+<wsdl:message name="UpdateInvoicesInstallmentsAPRq">
+<wsdl:part name="UpdateInvoicesInstallmentsAPRqPart" element="tns:UpdateInvoicesInstallmentsAPRq"/>
+</wsdl:message>
+<wsdl:message name="UpdateInvoicesInstallmentsAPRs">
+<wsdl:part name="UpdateInvoicesInstallmentsAPRsPart" element="tns:UpdateInvoicesInstallmentsAPRs"/>
+</wsdl:message>
+<wsdl:message name="UpdateSupplierInvoicesInstallmentsAPRq">
+<wsdl:part name="UpdateSupplierInvoicesInstallmentsAPRqPart" element="tns:UpdateSupplierInvoicesInstallmentsAPRq"/>
+</wsdl:message>
+<wsdl:message name="UpdateSupplierInvoicesInstallmentsAPRs">
+<wsdl:part name="UpdateSupplierInvoicesInstallmentsAPRsPart" element="tns:UpdateSupplierInvoicesInstallmentsAPRs"/>
+</wsdl:message>
 <wsdl:portType name="ValidationPaymentsAPBizPortType">
 <wsdl:operation name="SendPaymentsAP">
 <wsdl:input message="tns:SendPaymentsAPRq"/>
@@ -39,6 +50,10 @@
 <wsdl:operation name="UpdateInvoicesInstallmentsAP">
 <wsdl:input message="tns:UpdateInvoicesInstallmentsAPRq"/>
 <wsdl:output message="tns:UpdateInvoicesInstallmentsAPRs"/>
+</wsdl:operation>
+<wsdl:operation name="UpdateSupplierInvoicesInstallmentsAP">
+<wsdl:input message="tns:UpdateSupplierInvoicesInstallmentsAPRq"/>
+<wsdl:output message="tns:UpdateSupplierInvoicesInstallmentsAPRs"/>
 </wsdl:operation>
 </wsdl:portType>
 <wsdl:binding name="ValidationPaymentsAPBizBinding" type="tns:ValidationPaymentsAPBizPortType">
@@ -71,6 +86,15 @@
 </wsdl:input>
 <wsdl:output>
 <soap:body use="literal" parts="UpdateInvoicesInstallmentsAPRsPart"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="UpdateSupplierInvoicesInstallmentsAP">
+<soap:operation soapAction="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/UpdateSupplierInvoicesInstallmentsAP"/>
+<wsdl:input>
+<soap:body use="literal" parts="UpdateSupplierInvoicesInstallmentsAPRqPart"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="UpdateSupplierInvoicesInstallmentsAPRsPart"/>
 </wsdl:output>
 </wsdl:operation>
 </wsdl:binding>

@@ -28,13 +28,17 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/ResourceBundlesContentSet"/>
    </list>
    <list n="listOfChildren">
+      <hash><url n="URL" path="CFDITec/CFDITec.jpr"/></hash>
       <hash><url n="URL" path="ConciliationEnt/ConciliationEnt.jpr"/></hash>
       <hash><url n="URL" path="ERPIntegrationBiz/ERPIntegrationBiz.jpr"/></hash>
       <hash><url n="URL" path="InerInvoicesBiz/InerInvoicesBiz.jpr"/></hash>
       <hash><url n="URL" path="InerReceiptEnt/InerReceiptEnt.jpr"/></hash>
       <hash><url n="URL" path="InvoicesEnt/InvoicesEnt.jpr"/></hash>
+      <hash><url n="URL" path="JournalBiz/JournalBiz.jpr"/></hash>
       <hash><url n="URL" path="RecordUnitMetrics/RecordUnitMetrics.jpr"/></hash>
       <hash><url n="URL" path="RegisterAssetStatus/RegisterAssetStatus.jpr"/></hash>
+      <hash><url n="URL" path="SFTPEstrellaRojaBiz/SFTPEstrellaRojaBiz.jpr"/></hash>
+      <hash><url n="URL" path="SFTPEstrellaRojaEnt/SFTPEstrellaRojaEnt.jpr"/></hash>
       <hash><url n="URL" path="ValidationInvoicesAPBiz/ValidationInvoicesAPBiz.jpr"/></hash>
       <hash><url n="URL" path="ValidationInvoicesAPEnt/ValidationInvoicesAPEnt.jpr"/></hash>
       <hash><url n="URL" path="ValidationPaymentsAPBiz/ValidationPaymentsAPBiz.jpr"/></hash>

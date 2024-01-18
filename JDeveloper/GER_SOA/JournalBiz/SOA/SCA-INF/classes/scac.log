@@ -1,0 +1,408 @@
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2024-01-10 15:20:04.713/2.776 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Loaded operational configuration from "jar:file:/C:/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence.xml"
+2024-01-10 15:20:04.748/2.811 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Loaded operational overrides from "jar:file:/C:/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence-override-dev.xml"
+2024-01-10 15:20:04.750/2.813 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "/tangosol-coherence-override.xml" is not specified
+2024-01-10 15:20:04.753/2.816 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "cache-factory-config.xml" is not specified
+2024-01-10 15:20:04.754/2.817 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "cache-factory-builder-config.xml" is not specified
+2024-01-10 15:20:04.755/2.818 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "/custom-mbeans.xml" is not specified
+
+Oracle Coherence Version 12.2.1.4.0 Build 74888
+ Grid Edition: Development mode
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+2024-01-10 15:20:05.875/3.939 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=main, member=n/a): The cluster name has not been configured, a value of "pedro's cluster" has been automatically generated
+2024-01-10 15:20:06.650/4.713 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.ExtensibleConfigurableCacheFactory
+ene 10, 2024 3:20:07 PM oracle.fabric.common.wsdl.WSDLManager loadWSDL
+ADVERTENCIA: Failed to load WSDL from WSDLs/bpelGetJournal.wsdl due to: WSDLException: faultCode=INVALID_WSDL: Error reading import of file:/D:/GER/JDeveloper/GER_SOA/JournalBiz/SOA/WSDLs/bpelGetJournal.wsdl: oracle.j2ee.ws.wsdl.LocalizedWSDLException: WSDLException: faultCode=PARSER_ERROR: Fallo al leer el archivo wsdl en: "oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl", causado por: java.io.IOException.: java.io.IOException: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+ene 10, 2024 3:20:07 PM oracle.fabric.common.wsdl.WSDLManager loadWSDL
+GRAVE:  failed to parse wsdl from WSDLs/bpelGetJournal.wsdl : 
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="bpelGetJournal" targetNamespace="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName" xmlns:ns4="http://soa.estrellaroja.com.mx/FinancialsTec">
+   <plnk:partnerLinkType name="bpelGetJournal">
+      <plnk:role name="bpelGetJournalProvider" portType="client:bpelGetJournal"/>
+   </plnk:partnerLinkType>
+   <wsdl:import namespace="http://soa.estrellaroja.com.mx/SOAUtilitiesTec" location="oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl"/>
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <import namespace="http://soa.estrellaroja.com.mx/JournalBiz" schemaLocation="oramds:/apps/SOA/JournalBiz/JournalBiz.xsd"/>
+      </schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <xsd:import namespace="http://TargetNamespace.com/ServiceName" schemaLocation="../Schemas/nxsdFileJournal.xsd"/>
+      </xsd:schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+         <xsd:import namespace="http://soa.estrellaroja.com.mx/FinancialsTec" schemaLocation="oramds:/apps/OSB/FinancialsTec/FinancialsTec.xsd"/>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="GetJournalRq">
+      <wsdl:part name="GetJournalRq" element="ns1:GetJournalRq"/>
+   </wsdl:message>
+   <wsdl:message name="GetJournalRs">
+      <wsdl:part name="GetJournalRs" element="ns1:GetJournalRs"/>
+   </wsdl:message>
+   <wsdl:portType name="bpelGetJournal">
+      <wsdl:operation name="GetJournal">
+         <wsdl:input message="client:GetJournalRq"/>
+         <wsdl:output message="client:GetJournalRs"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>
+ene 10, 2024 3:20:07 PM oracle.fabric.common.wsdl.WSDLManager loadWSDL
+ADVERTENCIA: Failed to load WSDL from WSDLs/FinancialsTecWrapper.wsdl due to: WSDLException: faultCode=INVALID_WSDL: Error reading import of file:/D:/GER/JDeveloper/GER_SOA/JournalBiz/SOA/WSDLs/FinancialsTecWrapper.wsdl: oracle.j2ee.ws.wsdl.LocalizedWSDLException: WSDLException: faultCode=PARSER_ERROR: Fallo al leer el archivo wsdl en: "oramds:/apps/OSB/FinancialsTec/FinancialsTec.wsdl", causado por: java.io.IOException.: java.io.IOException: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/OSB/FinancialsTec/FinancialsTec.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+ene 10, 2024 3:20:07 PM oracle.fabric.common.wsdl.WSDLManager loadWSDL
+GRAVE:  failed to parse wsdl from WSDLs/FinancialsTecWrapper.wsdl : 
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="FinancialsTec" targetNamespace="http://soa.estrellaroja.com.mx/FinancialsTec" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:tns="http://soa.estrellaroja.com.mx/FinancialsTec" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+   <plnk:partnerLinkType name="wsFinancialsTec">
+      <plnk:role name="FinancialsTecPortType" portType="tns:FinancialsTecPortType"/>
+   </plnk:partnerLinkType>
+   <wsdl:import namespace="http://soa.estrellaroja.com.mx/FinancialsTec" location="oramds:/apps/OSB/FinancialsTec/FinancialsTec.wsdl"/>
+</wsdl:definitions>
+ADVERTENCIA: Failed to load WSDL from oramds:/apps/OSB/FinancialsTec/FinancialsTec.wsdl due to: Error al obtener el flujo de entrada XML: oramds:/apps/OSB/FinancialsTec/FinancialsTec.wsdl: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/OSB/FinancialsTec/FinancialsTec.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+GRAVE:  failed to parse wsdl from oramds:/apps/OSB/FinancialsTec/FinancialsTec.wsdl : 
+
+ADVERTENCIA: Failed to load WSDL from oramds:/apps/SOA/JournalBiz/JournalBiz.wsdl due to: Error al obtener el flujo de entrada XML: oramds:/apps/SOA/JournalBiz/JournalBiz.wsdl: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/SOA/JournalBiz/JournalBiz.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+GRAVE:  failed to parse wsdl from oramds:/apps/SOA/JournalBiz/JournalBiz.wsdl : 
+
+ADVERTENCIA: Failed to load WSDL from oramds:/apps/SOA/ERPIntegrationBiz/ERPIntegrationBiz.wsdl due to: Error al obtener el flujo de entrada XML: oramds:/apps/SOA/ERPIntegrationBiz/ERPIntegrationBiz.wsdl: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/SOA/ERPIntegrationBiz/ERPIntegrationBiz.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+GRAVE:  failed to parse wsdl from oramds:/apps/SOA/ERPIntegrationBiz/ERPIntegrationBiz.wsdl : 
+
+ADVERTENCIA: Failed to load WSDL from WSDLs/ERPIntegrationBizWrapper.wsdl due to: WSDLException: faultCode=INVALID_WSDL: Error reading import of file:/D:/GER/JDeveloper/GER_SOA/JournalBiz/SOA/WSDLs/ERPIntegrationBizWrapper.wsdl: oracle.j2ee.ws.wsdl.LocalizedWSDLException: WSDLException: faultCode=PARSER_ERROR: Fallo al leer el archivo wsdl en: "oramds:/apps/SOA/ERPIntegrationBiz/ERPIntegrationBiz.wsdl", causado por: java.io.IOException.: java.io.IOException: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/SOA/ERPIntegrationBiz/ERPIntegrationBiz.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+GRAVE:  failed to parse wsdl from WSDLs/ERPIntegrationBizWrapper.wsdl : 
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="ERPIntegrationBiz" targetNamespace="http://soa.estrellaroja.com.mx/ERPIntegrationBiz" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:tns="http://soa.estrellaroja.com.mx/ERPIntegrationBiz" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+   <plnk:partnerLinkType name="wsERPIntegrationBiz">
+      <plnk:role name="ERPIntegrationBizPortType" portType="tns:ERPIntegrationBizPortType"/>
+      <plnk:role name="ERPIntegrationBizCallbackPortType" portType="tns:ERPIntegrationBizCallbackPortType"/>
+   </plnk:partnerLinkType>
+   <wsdl:import namespace="http://soa.estrellaroja.com.mx/ERPIntegrationBiz" location="oramds:/apps/SOA/ERPIntegrationBiz/ERPIntegrationBiz.wsdl"/>
+</wsdl:definitions>
+ADVERTENCIA: Failed to load WSDL from WSDLs/bpelGetJournals.wsdl due to: WSDLException: faultCode=INVALID_WSDL: Error reading import of file:/D:/GER/JDeveloper/GER_SOA/JournalBiz/SOA/WSDLs/bpelGetJournals.wsdl: oracle.j2ee.ws.wsdl.LocalizedWSDLException: WSDLException: faultCode=PARSER_ERROR: Fallo al leer el archivo wsdl en: "oramds:/apps/SOA/JournalBiz/JournalBiz.wsdl", causado por: java.io.IOException.: java.io.IOException: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/SOA/JournalBiz/JournalBiz.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+GRAVE:  failed to parse wsdl from WSDLs/bpelGetJournals.wsdl : 
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="bpelGetJournals" targetNamespace="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournals" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournals" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://soa.estrellaroja.com.mx/JournalBiz/GroupsDates">
+   <plnk:partnerLinkType name="bpelGetJournals">
+      <plnk:role name="bpelGetJournalsProvider" portType="client:bpelGetJournals"/>
+   </plnk:partnerLinkType>
+   <wsdl:import namespace="http://soa.estrellaroja.com.mx/JournalBiz" location="oramds:/apps/SOA/JournalBiz/JournalBiz.wsdl"/>
+   <wsdl:types>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournals" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://soa.estrellaroja.com.mx/JournalBiz/GroupsDates">
+         <xsd:import namespace="http://soa.estrellaroja.com.mx/JournalBiz/GroupsDates" schemaLocation="../Schemas/groupsDates.xsd"/>
+      </xsd:schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournals" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://soa.estrellaroja.com.mx/JournalBiz/GroupsDates">
+         <xsd:import namespace="http://TargetNamespace.com/ServiceName" schemaLocation="../Schemas/nxsdFileJournal.xsd"/>
+      </xsd:schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournals" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://soa.estrellaroja.com.mx/JournalBiz/GroupsDates">
+         <xsd:import namespace="http://soa.estrellaroja.com.mx/JournalBiz" schemaLocation="oramds:/apps/SOA/JournalBiz/JournalBiz.xsd"/>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="bpelGetJournalsRequestMessage">
+      <wsdl:part name="payload" element="ns1:GetJournalRq"/>
+   </wsdl:message>
+   <wsdl:portType name="bpelGetJournals">
+      <wsdl:operation name="GetJournals">
+         <wsdl:input message="client:bpelGetJournalsRequestMessage"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>
+ADVERTENCIA: Failed to load WSDL from WSDLs/FinancialsTecWrapper1.wsdl due to: WSDLException: faultCode=INVALID_WSDL: Error reading import of file:/D:/GER/JDeveloper/GER_SOA/JournalBiz/SOA/WSDLs/FinancialsTecWrapper1.wsdl: oracle.j2ee.ws.wsdl.LocalizedWSDLException: WSDLException: faultCode=PARSER_ERROR: Fallo al leer el archivo wsdl en: "oramds:/apps/OSB/FinancialsTec/FinancialsTec.wsdl", causado por: java.io.IOException.: java.io.IOException: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/OSB/FinancialsTec/FinancialsTec.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+GRAVE:  failed to parse wsdl from WSDLs/FinancialsTecWrapper1.wsdl : 
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="FinancialsTec" targetNamespace="http://soa.estrellaroja.com.mx/FinancialsTec" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:tns="http://soa.estrellaroja.com.mx/FinancialsTec" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+   <plnk:partnerLinkType name="wsFinancialsTec">
+      <plnk:role name="FinancialsTecPortType" portType="tns:FinancialsTecPortType"/>
+   </plnk:partnerLinkType>
+   <wsdl:import namespace="http://soa.estrellaroja.com.mx/FinancialsTec" location="oramds:/apps/OSB/FinancialsTec/FinancialsTec.wsdl"/>
+</wsdl:definitions>
+ADVERTENCIA: Failed to load WSDL from WSDLs/ERPIntegrationBizWrapper1.wsdl due to: WSDLException: faultCode=INVALID_WSDL: Error reading import of file:/D:/GER/JDeveloper/GER_SOA/JournalBiz/SOA/WSDLs/ERPIntegrationBizWrapper1.wsdl: oracle.j2ee.ws.wsdl.LocalizedWSDLException: WSDLException: faultCode=PARSER_ERROR: Fallo al leer el archivo wsdl en: "oramds:/apps/SOA/ERPIntegrationBiz/ERPIntegrationBiz.wsdl", causado por: java.io.IOException.: java.io.IOException: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/SOA/ERPIntegrationBiz/ERPIntegrationBiz.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+GRAVE:  failed to parse wsdl from WSDLs/ERPIntegrationBizWrapper1.wsdl : 
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="ERPIntegrationBiz" targetNamespace="http://soa.estrellaroja.com.mx/ERPIntegrationBiz" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:tns="http://soa.estrellaroja.com.mx/ERPIntegrationBiz" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+   <plnk:partnerLinkType name="wsERPIntegrationBiz">
+      <plnk:role name="ERPIntegrationBizPortType" portType="tns:ERPIntegrationBizPortType"/>
+      <plnk:role name="ERPIntegrationBizCallbackPortType" portType="tns:ERPIntegrationBizCallbackPortType"/>
+   </plnk:partnerLinkType>
+   <wsdl:import namespace="http://soa.estrellaroja.com.mx/ERPIntegrationBiz" location="oramds:/apps/SOA/ERPIntegrationBiz/ERPIntegrationBiz.wsdl"/>
+</wsdl:definitions>
+ADVERTENCIA: Validating WSDLs from WSDLManager....  with option UseSoaInfraMds:false
+INFORMACIÓN: XMLSchema incremental build enabled.
+ADVERTENCIA: Failed to load WSDL from oramds:/apps/SOA/ERPIntegrationBiz/ERPIntegrationBiz.wsdl due to: Error al obtener el flujo de entrada XML: oramds:/apps/SOA/ERPIntegrationBiz/ERPIntegrationBiz.wsdl: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/SOA/ERPIntegrationBiz/ERPIntegrationBiz.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+GRAVE:  failed to parse wsdl from oramds:/apps/SOA/ERPIntegrationBiz/ERPIntegrationBiz.wsdl : 
+
+ADVERTENCIA: Failed to load WSDL from WSDLs/bpelGetJournal.wsdl due to: WSDLException: faultCode=INVALID_WSDL: Error reading import of file:/D:/GER/JDeveloper/GER_SOA/JournalBiz/SOA/WSDLs/bpelGetJournal.wsdl: oracle.j2ee.ws.wsdl.LocalizedWSDLException: WSDLException: faultCode=PARSER_ERROR: Fallo al leer el archivo wsdl en: "oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl", causado por: java.io.IOException.: java.io.IOException: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+GRAVE:  failed to parse wsdl from WSDLs/bpelGetJournal.wsdl : 
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="bpelGetJournal" targetNamespace="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName" xmlns:ns4="http://soa.estrellaroja.com.mx/FinancialsTec">
+   <plnk:partnerLinkType name="bpelGetJournal">
+      <plnk:role name="bpelGetJournalProvider" portType="client:bpelGetJournal"/>
+   </plnk:partnerLinkType>
+   <wsdl:import namespace="http://soa.estrellaroja.com.mx/SOAUtilitiesTec" location="oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl"/>
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <import namespace="http://soa.estrellaroja.com.mx/JournalBiz" schemaLocation="oramds:/apps/SOA/JournalBiz/JournalBiz.xsd"/>
+      </schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <xsd:import namespace="http://TargetNamespace.com/ServiceName" schemaLocation="../Schemas/nxsdFileJournal.xsd"/>
+      </xsd:schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+         <xsd:import namespace="http://soa.estrellaroja.com.mx/FinancialsTec" schemaLocation="oramds:/apps/OSB/FinancialsTec/FinancialsTec.xsd"/>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="GetJournalRq">
+      <wsdl:part name="GetJournalRq" element="ns1:GetJournalRq"/>
+   </wsdl:message>
+   <wsdl:message name="GetJournalRs">
+      <wsdl:part name="GetJournalRs" element="ns1:GetJournalRs"/>
+   </wsdl:message>
+   <wsdl:portType name="bpelGetJournal">
+      <wsdl:operation name="GetJournal">
+         <wsdl:input message="client:GetJournalRq"/>
+         <wsdl:output message="client:GetJournalRs"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>
+ADVERTENCIA: Failed to load WSDL from WSDLs/bpelGetJournal.wsdl due to: WSDLException: faultCode=INVALID_WSDL: Error reading import of file:/D:/GER/JDeveloper/GER_SOA/JournalBiz/SOA/WSDLs/bpelGetJournal.wsdl: oracle.j2ee.ws.wsdl.LocalizedWSDLException: WSDLException: faultCode=PARSER_ERROR: Fallo al leer el archivo wsdl en: "oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl", causado por: java.io.IOException.: java.io.IOException: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+GRAVE:  failed to parse wsdl from WSDLs/bpelGetJournal.wsdl : 
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="bpelGetJournal" targetNamespace="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName" xmlns:ns4="http://soa.estrellaroja.com.mx/FinancialsTec">
+   <plnk:partnerLinkType name="bpelGetJournal">
+      <plnk:role name="bpelGetJournalProvider" portType="client:bpelGetJournal"/>
+   </plnk:partnerLinkType>
+   <wsdl:import namespace="http://soa.estrellaroja.com.mx/SOAUtilitiesTec" location="oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl"/>
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <import namespace="http://soa.estrellaroja.com.mx/JournalBiz" schemaLocation="oramds:/apps/SOA/JournalBiz/JournalBiz.xsd"/>
+      </schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <xsd:import namespace="http://TargetNamespace.com/ServiceName" schemaLocation="../Schemas/nxsdFileJournal.xsd"/>
+      </xsd:schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+         <xsd:import namespace="http://soa.estrellaroja.com.mx/FinancialsTec" schemaLocation="oramds:/apps/OSB/FinancialsTec/FinancialsTec.xsd"/>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="GetJournalRq">
+      <wsdl:part name="GetJournalRq" element="ns1:GetJournalRq"/>
+   </wsdl:message>
+   <wsdl:message name="GetJournalRs">
+      <wsdl:part name="GetJournalRs" element="ns1:GetJournalRs"/>
+   </wsdl:message>
+   <wsdl:portType name="bpelGetJournal">
+      <wsdl:operation name="GetJournal">
+         <wsdl:input message="client:GetJournalRq"/>
+         <wsdl:output message="client:GetJournalRs"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>
+ADVERTENCIA: Failed to load WSDL from WSDLs/bpelGetJournal.wsdl due to: WSDLException: faultCode=INVALID_WSDL: Error reading import of file:/D:/GER/JDeveloper/GER_SOA/JournalBiz/SOA/WSDLs/bpelGetJournal.wsdl: oracle.j2ee.ws.wsdl.LocalizedWSDLException: WSDLException: faultCode=PARSER_ERROR: Fallo al leer el archivo wsdl en: "oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl", causado por: java.io.IOException.: java.io.IOException: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+GRAVE:  failed to parse wsdl from WSDLs/bpelGetJournal.wsdl : 
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="bpelGetJournal" targetNamespace="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName" xmlns:ns4="http://soa.estrellaroja.com.mx/FinancialsTec">
+   <plnk:partnerLinkType name="bpelGetJournal">
+      <plnk:role name="bpelGetJournalProvider" portType="client:bpelGetJournal"/>
+   </plnk:partnerLinkType>
+   <wsdl:import namespace="http://soa.estrellaroja.com.mx/SOAUtilitiesTec" location="oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl"/>
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <import namespace="http://soa.estrellaroja.com.mx/JournalBiz" schemaLocation="oramds:/apps/SOA/JournalBiz/JournalBiz.xsd"/>
+      </schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <xsd:import namespace="http://TargetNamespace.com/ServiceName" schemaLocation="../Schemas/nxsdFileJournal.xsd"/>
+      </xsd:schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+         <xsd:import namespace="http://soa.estrellaroja.com.mx/FinancialsTec" schemaLocation="oramds:/apps/OSB/FinancialsTec/FinancialsTec.xsd"/>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="GetJournalRq">
+      <wsdl:part name="GetJournalRq" element="ns1:GetJournalRq"/>
+   </wsdl:message>
+   <wsdl:message name="GetJournalRs">
+      <wsdl:part name="GetJournalRs" element="ns1:GetJournalRs"/>
+   </wsdl:message>
+   <wsdl:portType name="bpelGetJournal">
+      <wsdl:operation name="GetJournal">
+         <wsdl:input message="client:GetJournalRq"/>
+         <wsdl:output message="client:GetJournalRs"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>
+ADVERTENCIA: Failed to load WSDL from WSDLs/bpelGetJournal.wsdl due to: WSDLException: faultCode=INVALID_WSDL: Error reading import of file:/D:/GER/JDeveloper/GER_SOA/JournalBiz/SOA/WSDLs/bpelGetJournal.wsdl: oracle.j2ee.ws.wsdl.LocalizedWSDLException: WSDLException: faultCode=PARSER_ERROR: Fallo al leer el archivo wsdl en: "oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl", causado por: java.io.IOException.: java.io.IOException: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+GRAVE:  failed to parse wsdl from WSDLs/bpelGetJournal.wsdl : 
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="bpelGetJournal" targetNamespace="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName" xmlns:ns4="http://soa.estrellaroja.com.mx/FinancialsTec">
+   <plnk:partnerLinkType name="bpelGetJournal">
+      <plnk:role name="bpelGetJournalProvider" portType="client:bpelGetJournal"/>
+   </plnk:partnerLinkType>
+   <wsdl:import namespace="http://soa.estrellaroja.com.mx/SOAUtilitiesTec" location="oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl"/>
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <import namespace="http://soa.estrellaroja.com.mx/JournalBiz" schemaLocation="oramds:/apps/SOA/JournalBiz/JournalBiz.xsd"/>
+      </schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <xsd:import namespace="http://TargetNamespace.com/ServiceName" schemaLocation="../Schemas/nxsdFileJournal.xsd"/>
+      </xsd:schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+         <xsd:import namespace="http://soa.estrellaroja.com.mx/FinancialsTec" schemaLocation="oramds:/apps/OSB/FinancialsTec/FinancialsTec.xsd"/>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="GetJournalRq">
+      <wsdl:part name="GetJournalRq" element="ns1:GetJournalRq"/>
+   </wsdl:message>
+   <wsdl:message name="GetJournalRs">
+      <wsdl:part name="GetJournalRs" element="ns1:GetJournalRs"/>
+   </wsdl:message>
+   <wsdl:portType name="bpelGetJournal">
+      <wsdl:operation name="GetJournal">
+         <wsdl:input message="client:GetJournalRq"/>
+         <wsdl:output message="client:GetJournalRs"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>
+ADVERTENCIA: Failed to load WSDL from WSDLs/bpelGetJournal.wsdl due to: WSDLException: faultCode=INVALID_WSDL: Error reading import of file:/D:/GER/JDeveloper/GER_SOA/JournalBiz/SOA/WSDLs/bpelGetJournal.wsdl: oracle.j2ee.ws.wsdl.LocalizedWSDLException: WSDLException: faultCode=PARSER_ERROR: Fallo al leer el archivo wsdl en: "oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl", causado por: java.io.IOException.: java.io.IOException: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+GRAVE:  failed to parse wsdl from WSDLs/bpelGetJournal.wsdl : 
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="bpelGetJournal" targetNamespace="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName" xmlns:ns4="http://soa.estrellaroja.com.mx/FinancialsTec">
+   <plnk:partnerLinkType name="bpelGetJournal">
+      <plnk:role name="bpelGetJournalProvider" portType="client:bpelGetJournal"/>
+   </plnk:partnerLinkType>
+   <wsdl:import namespace="http://soa.estrellaroja.com.mx/SOAUtilitiesTec" location="oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl"/>
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <import namespace="http://soa.estrellaroja.com.mx/JournalBiz" schemaLocation="oramds:/apps/SOA/JournalBiz/JournalBiz.xsd"/>
+      </schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <xsd:import namespace="http://TargetNamespace.com/ServiceName" schemaLocation="../Schemas/nxsdFileJournal.xsd"/>
+      </xsd:schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+         <xsd:import namespace="http://soa.estrellaroja.com.mx/FinancialsTec" schemaLocation="oramds:/apps/OSB/FinancialsTec/FinancialsTec.xsd"/>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="GetJournalRq">
+      <wsdl:part name="GetJournalRq" element="ns1:GetJournalRq"/>
+   </wsdl:message>
+   <wsdl:message name="GetJournalRs">
+      <wsdl:part name="GetJournalRs" element="ns1:GetJournalRs"/>
+   </wsdl:message>
+   <wsdl:portType name="bpelGetJournal">
+      <wsdl:operation name="GetJournal">
+         <wsdl:input message="client:GetJournalRq"/>
+         <wsdl:output message="client:GetJournalRs"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>
+ADVERTENCIA: Failed to load WSDL from WSDLs/bpelGetJournal.wsdl due to: WSDLException: faultCode=INVALID_WSDL: Error reading import of file:/D:/GER/JDeveloper/GER_SOA/JournalBiz/SOA/WSDLs/bpelGetJournal.wsdl: oracle.j2ee.ws.wsdl.LocalizedWSDLException: WSDLException: faultCode=PARSER_ERROR: Fallo al leer el archivo wsdl en: "oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl", causado por: java.io.IOException.: java.io.IOException: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+GRAVE:  failed to parse wsdl from WSDLs/bpelGetJournal.wsdl : 
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="bpelGetJournal" targetNamespace="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName" xmlns:ns4="http://soa.estrellaroja.com.mx/FinancialsTec">
+   <plnk:partnerLinkType name="bpelGetJournal">
+      <plnk:role name="bpelGetJournalProvider" portType="client:bpelGetJournal"/>
+   </plnk:partnerLinkType>
+   <wsdl:import namespace="http://soa.estrellaroja.com.mx/SOAUtilitiesTec" location="oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl"/>
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <import namespace="http://soa.estrellaroja.com.mx/JournalBiz" schemaLocation="oramds:/apps/SOA/JournalBiz/JournalBiz.xsd"/>
+      </schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <xsd:import namespace="http://TargetNamespace.com/ServiceName" schemaLocation="../Schemas/nxsdFileJournal.xsd"/>
+      </xsd:schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+         <xsd:import namespace="http://soa.estrellaroja.com.mx/FinancialsTec" schemaLocation="oramds:/apps/OSB/FinancialsTec/FinancialsTec.xsd"/>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="GetJournalRq">
+      <wsdl:part name="GetJournalRq" element="ns1:GetJournalRq"/>
+   </wsdl:message>
+   <wsdl:message name="GetJournalRs">
+      <wsdl:part name="GetJournalRs" element="ns1:GetJournalRs"/>
+   </wsdl:message>
+   <wsdl:portType name="bpelGetJournal">
+      <wsdl:operation name="GetJournal">
+         <wsdl:input message="client:GetJournalRq"/>
+         <wsdl:output message="client:GetJournalRs"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>
+ADVERTENCIA: Failed to load WSDL from WSDLs/bpelGetJournal.wsdl due to: WSDLException: faultCode=INVALID_WSDL: Error reading import of file:/D:/GER/JDeveloper/GER_SOA/JournalBiz/SOA/WSDLs/bpelGetJournal.wsdl: oracle.j2ee.ws.wsdl.LocalizedWSDLException: WSDLException: faultCode=PARSER_ERROR: Fallo al leer el archivo wsdl en: "oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl", causado por: java.io.IOException.: java.io.IOException: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+GRAVE:  failed to parse wsdl from WSDLs/bpelGetJournal.wsdl : 
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="bpelGetJournal" targetNamespace="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName" xmlns:ns4="http://soa.estrellaroja.com.mx/FinancialsTec">
+   <plnk:partnerLinkType name="bpelGetJournal">
+      <plnk:role name="bpelGetJournalProvider" portType="client:bpelGetJournal"/>
+   </plnk:partnerLinkType>
+   <wsdl:import namespace="http://soa.estrellaroja.com.mx/SOAUtilitiesTec" location="oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl"/>
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <import namespace="http://soa.estrellaroja.com.mx/JournalBiz" schemaLocation="oramds:/apps/SOA/JournalBiz/JournalBiz.xsd"/>
+      </schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <xsd:import namespace="http://TargetNamespace.com/ServiceName" schemaLocation="../Schemas/nxsdFileJournal.xsd"/>
+      </xsd:schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+         <xsd:import namespace="http://soa.estrellaroja.com.mx/FinancialsTec" schemaLocation="oramds:/apps/OSB/FinancialsTec/FinancialsTec.xsd"/>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="GetJournalRq">
+      <wsdl:part name="GetJournalRq" element="ns1:GetJournalRq"/>
+   </wsdl:message>
+   <wsdl:message name="GetJournalRs">
+      <wsdl:part name="GetJournalRs" element="ns1:GetJournalRs"/>
+   </wsdl:message>
+   <wsdl:portType name="bpelGetJournal">
+      <wsdl:operation name="GetJournal">
+         <wsdl:input message="client:GetJournalRq"/>
+         <wsdl:output message="client:GetJournalRs"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>
+ADVERTENCIA: Failed to load WSDL from WSDLs/bpelGetJournal.wsdl due to: WSDLException: faultCode=INVALID_WSDL: Error reading import of file:/D:/GER/JDeveloper/GER_SOA/JournalBiz/SOA/WSDLs/bpelGetJournal.wsdl: oracle.j2ee.ws.wsdl.LocalizedWSDLException: WSDLException: faultCode=PARSER_ERROR: Fallo al leer el archivo wsdl en: "oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl", causado por: java.io.IOException.: java.io.IOException: oracle.mds.core.MetadataNotFoundException: MDS-00013: no se han encontrado los metadatos para el objeto de metadatos "/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl" 
+MDS-00201: No se ha encontrado el PDocument en MetadataStore: [store-type=FileMetadataStore] Will retry to load
+GRAVE:  failed to parse wsdl from WSDLs/bpelGetJournal.wsdl : 
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="bpelGetJournal" targetNamespace="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName" xmlns:ns4="http://soa.estrellaroja.com.mx/FinancialsTec">
+   <plnk:partnerLinkType name="bpelGetJournal">
+      <plnk:role name="bpelGetJournalProvider" portType="client:bpelGetJournal"/>
+   </plnk:partnerLinkType>
+   <wsdl:import namespace="http://soa.estrellaroja.com.mx/SOAUtilitiesTec" location="oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl"/>
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <import namespace="http://soa.estrellaroja.com.mx/JournalBiz" schemaLocation="oramds:/apps/SOA/JournalBiz/JournalBiz.xsd"/>
+      </schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://soa.estrellaroja.com.mx/JournalBiz/bpelGetJournal" xmlns:ns1="http://soa.estrellaroja.com.mx/JournalBiz" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns3="http://TargetNamespace.com/ServiceName">
+         <xsd:import namespace="http://TargetNamespace.com/ServiceName" schemaLocation="../Schemas/nxsdFileJournal.xsd"/>
+      </xsd:schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+         <xsd:import namespace="http://soa.estrellaroja.com.mx/FinancialsTec" schemaLocation="oramds:/apps/OSB/FinancialsTec/FinancialsTec.xsd"/>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="GetJournalRq">
+      <wsdl:part name="GetJournalRq" element="ns1:GetJournalRq"/>
+   </wsdl:message>
+   <wsdl:message name="GetJournalRs">
+      <wsdl:part name="GetJournalRs" element="ns1:GetJournalRs"/>
+   </wsdl:message>
+   <wsdl:portType name="bpelGetJournal">
+      <wsdl:operation name="GetJournal">
+         <wsdl:input message="client:GetJournalRq"/>
+         <wsdl:output message="client:GetJournalRs"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option PermSize=32m; support was removed in 8.0
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0

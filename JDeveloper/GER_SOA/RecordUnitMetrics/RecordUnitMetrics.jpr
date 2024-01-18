@@ -205,7 +205,7 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="../../../01_Elaboracion/ER18_INV_Lectura de Kilometros/02 Mantenimientos/MA176 Modificación interfaz carga de kilometrajes/sca_RecordUnitMetrics_1.1.jar"/>
+            <url n="jarURL" path="deploy/sca_RecordUnitMetrics_1.1.jar"/>
             <value n="patching_profile" v="false"/>
             <value n="profileClass" v="oracle.tip.tools.ide.fabric.deploy.sar.SarProfile"/>
             <value n="profileName" v="RecordUnitMetrics"/>

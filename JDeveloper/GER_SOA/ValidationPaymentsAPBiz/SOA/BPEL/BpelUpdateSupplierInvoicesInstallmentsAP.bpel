@@ -1,0 +1,215 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Fri Jan 12 10:32:11 CST 2024
+  Author:  pedro
+  Type: BPEL 2.0 Process
+  Purpose: Synchronous BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="BpelUpdateSupplierInvoicesInstallmentsAP"
+               targetNamespace="http://soa.estrellaroja.com.mx/GER_SOA/ValidationPaymentsAPBiz/BpelUpdateSupplierInvoicesInstallmentsAP"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://soa.estrellaroja.com.mx/GER_SOA/ValidationPaymentsAPBiz/BpelUpdateSupplierInvoicesInstallmentsAP"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:ui="http://xmlns.oracle.com/soa/designer"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+         xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec"
+         xmlns:ns2="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/BpelUpdateInvoicesInstallmentsAP"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+         xmlns:ns4="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz"
+         xmlns:ns5="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"
+         xmlns:ns6="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP"
+         xmlns:ns3="http://soa.estrellaroja.com.mx/ERPIntegrationBiz"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <import namespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz"
+          location="oramds:/apps/SOA/ValidationPaymentsAPBiz/ValidationPaymentsAPBiz.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+
+    <import location="oracle.xml.parser.v2.XMLElement" importType="http://schemas.oracle.com/bpel/extension/java"/>
+
+  <import ui:processWSDL="true" namespace="http://soa.estrellaroja.com.mx/GER_SOA/ValidationPaymentsAPBiz/BpelUpdateSupplierInvoicesInstallmentsAP"
+  location="../WSDLs/External/BpelUpdateSupplierInvoicesInstallmentsAP.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+   
+   
+    <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        PARTNERLINKS                                                      
+        List of services participating in this BPEL process               
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    --> 
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="bpelupdatesupplierinvoicesinstallmentsap_client" partnerLinkType="client:BpelUpdateSupplierInvoicesInstallmentsAP" myRole="BpelUpdateSupplierInvoicesInstallmentsAPProvider"/>
+    <partnerLink name="WsERPIntegrationBiz" partnerLinkType="ns3:WsERPIntegrationBiz"
+                 partnerRole="ERPIntegrationBizPortType" myRole="ERPIntegrationBizCallbackPortType"/>
+    <partnerLink name="BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client"
+                 partnerLinkType="ns2:BpelUpdateInvoicesInstallmentsAP"
+                 partnerRole="BpelUpdateInvoicesInstallmentsAPProvider"/>
+  </partnerLinks>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="client:BpelUpdateSupplierInvoicesInstallmentsAPRequestMessage"/>
+
+    <!-- Reference to the message that will be returned to the requester-->
+    <variable name="outputVariable" messageType="client:BpelUpdateSupplierInvoicesInstallmentsAPResponseMessage"/>
+  </variables>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in BpelUpdateSupplierInvoicesInstallmentsAP.wsdl) --><receive name="receiveInput" partnerLink="bpelupdatesupplierinvoicesinstallmentsap_client" portType="client:BpelUpdateSupplierInvoicesInstallmentsAP" operation="UpdateSupplierInvoicesInstallmentsAP" variable="inputVariable" createInstance="yes"/>
+    <forEach parallel="no" counterName="countSuppliers" name="ForEach_Suppliers">
+      <startCounterValue>1</startCounterValue>
+      <finalCounterValue>count($inputVariable.payload/ns4:Supplier)</finalCounterValue>
+      <scope name="ScopeSupplier">
+        <variables>
+          <variable name="v_paymentsInvoices" element="ns4:PaymentsInvoices"/>
+          <variable name="BpelUpdateInvoicesInstallmentsAPRq"
+                    messageType="ns2:BpelUpdateInvoicesInstallmentsAPRequestMessage"/>
+          <variable name="BpelUpdateInvoicesInstallmentsAPRs"
+                    messageType="ns2:BpelUpdateInvoicesInstallmentsAPResponseMessage"/>
+        </variables>
+        <sequence name="SeqSupplier">
+          <scope name="ScopeGetPaymentAPOLO" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+            <variables>
+              <variable name="v_stringXML" type="xsd:string"/>
+              <variable name="WsErpIntegrationBizGenerateReportRq" messageType="ns3:GenerateReportRq"/>
+              <variable name="WsErpIntegrationBizGenerateReportRs" messageType="ns3:GenerateReportRs"/>
+            </variables>
+            <sequence name="SeqGetPaymentAPOLO">
+              <assign name="assignParams" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                      xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <from>dvm:lookupValue("DVMs/dvmValidationPaymentsBizConfigs.dvm","Code","TargetInterface","Value","","Component","ValidationPaymentsBiz")</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsErpIntegrationBizGenerateReportRq.GenerateReportRq/ns3:TargetInterface</to>
+                </copy>
+                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                      xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <from>ora:getCompositeName()</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsErpIntegrationBizGenerateReportRq.GenerateReportRq/ns3:IntegrationName</to>
+                </copy>
+                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                      xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <from>ora:getComponentName()</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsErpIntegrationBizGenerateReportRq.GenerateReportRq/ns3:ProcessName</to>
+                </copy>
+                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                      xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                  <from>dvm:lookupValue("DVMs/dvmValidationPaymentsBizConfigs.dvm","Code","ReportName","Value","","Component","GetPaymentsInvoices")</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsErpIntegrationBizGenerateReportRq.GenerateReportRq/ns3:ReportName</to>
+                </copy>
+                <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                      ignoreMissingFromData="yes">
+                  <from>'p_rfc_proveedor'</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsErpIntegrationBizGenerateReportRq.GenerateReportRq/ns3:parameterNameValues/ns3:item[1]/ns3:name</to>
+                </copy>
+                <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                      ignoreMissingFromData="yes">
+                  <from>$inputVariable.payload/ns4:Supplier[$countSuppliers]/ns4:supplier_rfc</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsErpIntegrationBizGenerateReportRq.GenerateReportRq/ns3:parameterNameValues/ns3:item[1]/ns3:values/ns3:item[1]</to>
+                </copy>
+                <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                      ignoreMissingFromData="yes">
+                  <from>'p_num_proveedor'</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsErpIntegrationBizGenerateReportRq.GenerateReportRq/ns3:parameterNameValues/ns3:item[2]/ns3:name</to>
+                </copy>
+                <copy bpelx:insertMissingToData="yes" xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                      ignoreMissingFromData="yes">
+                  <from>$inputVariable.payload/ns4:Supplier[$countSuppliers]/ns4:supplier_number</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$WsErpIntegrationBizGenerateReportRq.GenerateReportRq/ns3:parameterNameValues/ns3:item[2]/ns3:values/ns3:item[1]</to>
+                </copy>
+              </assign>
+              <invoke name="WsErpIntegrationBiz" partnerLink="WsERPIntegrationBiz"
+                      portType="ns3:ERPIntegrationBizPortType" operation="GenerateReport"
+                      inputVariable="WsErpIntegrationBizGenerateReportRq"
+                      outputVariable="WsErpIntegrationBizGenerateReportRs"
+                      xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                      xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable" bpelx:invokeAsDetail="no"/>
+              <assign name="AssignParseStringXML" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                <copy ignoreMissingFromData="yes">
+                  <from>concat('&lt;DATA_DS xmlns="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz"&gt;',substring-after($WsErpIntegrationBizGenerateReportRs.GenerateReportRs/ns3:Return/ns3:xmlOut,'&lt;DATA_DS&gt;'))</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_stringXML</to>
+                </copy>
+                <copy ignoreMissingFromData="yes">
+                  <from>oraext:parseXML($v_stringXML)</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_paymentsInvoices/ns4:DATA_DS</to>
+                </copy>
+              </assign>
+            </sequence>
+          </scope>
+          <if name="If_Valida">
+            <documentation>
+              <![CDATA[SegirRetener]]>
+            </documentation>
+            <condition>$inputVariable.payload/ns4:Supplier/ns4:validate=true( ) and count($v_paymentsInvoices/ns4:DATA_DS/ns4:SUPPLIER/ns4:PAYMENT)&gt;0 and $inputVariable.payload/ns4:Supplier/ns6:HoldFlag='true'</condition>
+            <assign name="AssignSeguirReteniendo">
+              <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                <from>'true'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputVariable.payload/ns4:Supplier/ns6:HoldFlag</to>
+              </copy>
+              <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                <from>'Pago no valido'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputVariable.payload/ns4:Supplier/ns6:HoldReason</to>
+              </copy>
+            </assign>
+          </if>
+          <assign name="XQTrs_UpdateInvoicesInstallmentsAPRq">
+            <bpelx:annotation>
+              <bpelx:pattern patternName="bpelx:xquery"></bpelx:pattern>
+            </bpelx:annotation>
+            <copy>
+              <from>ora:processXQuery10('../Transformations/XQTrs_UpdateInvoicesInstallmentsAPRq.xqy', 'inputVariable.payload', $inputVariable.payload, 'v_paymentsInvoices', $v_paymentsInvoices)</from>
+              <to variable="BpelUpdateInvoicesInstallmentsAPRq" part="payload"/>
+            </copy>
+          </assign>
+          <invoke name="WsBpelUpdateInvoicesInstallmentsAP" bpelx:invokeAsDetail="no"
+                  partnerLink="BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client"
+                  portType="ns2:BpelUpdateInvoicesInstallmentsAP" operation="BpelUpdateInvoicesInstallmentsAP"
+                  inputVariable="BpelUpdateInvoicesInstallmentsAPRq"
+                  outputVariable="BpelUpdateInvoicesInstallmentsAPRs"/>
+          <assign name="Transformation2">
+            <bpelx:annotation>
+              <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+            </bpelx:annotation>
+            <copy>
+              <from>ora:doXSLTransformForDoc("../Transformations/Trs_BpelUpdateSuppliersInvoicesAPRs.xsl", $outputVariable.payload, "BpelUpdateInvoicesInstallmentsAPRs.payload", $BpelUpdateInvoicesInstallmentsAPRs.payload)</from>
+              <to variable="outputVariable" part="payload"/>
+            </copy>
+          </assign>
+        </sequence>
+      </scope>
+    </forEach>
+    <!-- Generate reply to synchronous request -->
+    <reply name="replyOutput" partnerLink="bpelupdatesupplierinvoicesinstallmentsap_client" portType="client:BpelUpdateSupplierInvoicesInstallmentsAP" operation="UpdateSupplierInvoicesInstallmentsAP" variable="outputVariable"/>
+  </sequence>
+</process>

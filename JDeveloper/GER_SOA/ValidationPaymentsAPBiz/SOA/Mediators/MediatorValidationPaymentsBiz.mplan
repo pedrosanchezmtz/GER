@@ -68,4 +68,30 @@
          </case>
       </switch>
    </operation>
+   <operation name="UpdateSupplierInvoicesInstallmentsAP" deliveryPolicy="AllOrNothing" priority="4"
+              validateSchema="false">
+      <switch>
+         <case executionType="sequential"
+               name="BpelUpdateSupplierInvoicesInstallmentsAP.bpelupdatesupplierinvoicesinstallmentsap_client.UpdateSupplierInvoicesInstallmentsAP">
+            <action>
+               <assign>
+                  <copy expression="$in.UpdateSupplierInvoicesInstallmentsAPRqPart/tns:UpdateSupplierInvoicesInstallmentsAPRq"
+                        target="$out.payload/tns:UpdateSupplierInvoicesInstallmentsAPRq"
+                        xmlns:tns="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz"/>
+               </assign>
+               <invoke reference="BpelUpdateSupplierInvoicesInstallmentsAP.bpelupdatesupplierinvoicesinstallmentsap_client"
+                       operation="UpdateSupplierInvoicesInstallmentsAP">
+                  <onReply>
+                     <assign>
+                        <copy expression="$in.payload/tns:UpdateSupplierInvoicesInstallmentsAPRs"
+                              target="$out.UpdateSupplierInvoicesInstallmentsAPRsPart/tns:UpdateSupplierInvoicesInstallmentsAPRs"
+                              xmlns:tns="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz"/>
+                     </assign>
+                     <reply/>
+                  </onReply>
+               </invoke>
+            </action>
+         </case>
+      </switch>
+   </operation>
 </Mediator>
