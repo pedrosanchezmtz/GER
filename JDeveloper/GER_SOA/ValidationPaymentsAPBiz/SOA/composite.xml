@@ -168,6 +168,10 @@
          <reference name="wsSftpTec" ui:wsdlLocation="WSDLs/SftpTecWrapper1.wsdl">
             <interface.wsdl interface="http://soa.estrellaroja.com.mx/SftpTec#wsdl.interface(SftpTec_ptt)"/>
          </reference>
+         <reference name="BpelUpdateSupplierInvoicesInstallmentsAP.bpelupdatesupplierinvoicesinstallmentsap_client"
+                    ui:wsdlLocation="WSDLs/External/BpelUpdateSupplierInvoicesInstallmentsAP.wsdl">
+            <interface.wsdl interface="http://soa.estrellaroja.com.mx/GER_SOA/ValidationPaymentsAPBiz/BpelUpdateSupplierInvoicesInstallmentsAP#wsdl.interface(BpelUpdateSupplierInvoicesInstallmentsAP)"/>
+         </reference>
          <sca-ext:callReference name="SubSendInvoiceToReport"/>
       </componentType>
       <property name="bpel.config.transaction" type="xs:string" many="false">notSupported</property>
@@ -433,6 +437,10 @@
    </wire>
    <wire>
       <source.uri>BpelValidateAttachmentsAP/BpelUpdateSupplierInvoicesInstallmentsAP.bpelupdatesupplierinvoicesinstallmentsap_client</source.uri>
+      <target.uri>BpelUpdateSupplierInvoicesInstallmentsAP/bpelupdatesupplierinvoicesinstallmentsap_client</target.uri>
+   </wire>
+   <wire>
+      <source.uri>BpelSendPaymentsAP/BpelUpdateSupplierInvoicesInstallmentsAP.bpelupdatesupplierinvoicesinstallmentsap_client</source.uri>
       <target.uri>BpelUpdateSupplierInvoicesInstallmentsAP/bpelupdatesupplierinvoicesinstallmentsap_client</target.uri>
    </wire>
    <sca-ext:callWire>

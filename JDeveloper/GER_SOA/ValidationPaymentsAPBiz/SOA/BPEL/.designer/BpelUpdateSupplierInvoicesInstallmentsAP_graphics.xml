@@ -8,7 +8,7 @@
       <partnerlink name="BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client" x="0" y="766" side="left"/>
       <partnerlink name="WsERPIntegrationBiz" x="0" y="18" side="left"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,240,1126,619" show_swimlanes="true">
+   <graph_layout viewport="0,225,1217,677" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/forEach" type="foreach"/>

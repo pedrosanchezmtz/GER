@@ -9,7 +9,7 @@
       <partnerlink name="WsMessageTec" x="1447" y="30" side="right"/>
       <partnerlink name="WsValidationPaymentsAPBiz" x="1447" y="942" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,1113,427" show_swimlanes="true">
+   <graph_layout viewport="0,206,1245,499" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>

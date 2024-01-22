@@ -171,7 +171,7 @@
             <documentation>
               <![CDATA[SegirRetener]]>
             </documentation>
-            <condition>$inputVariable.payload/ns4:Supplier/ns4:validate=true( ) and count($v_paymentsInvoices/ns4:DATA_DS/ns4:SUPPLIER/ns4:PAYMENT)&gt;0 and $inputVariable.payload/ns4:Supplier/ns6:HoldFlag='true'</condition>
+            <condition>$inputVariable.payload/ns4:Supplier/ns4:validate=true( ) and count($v_paymentsInvoices/ns4:DATA_DS/ns4:SUPPLIER/ns4:PAYMENT)&gt;0 and $inputVariable.payload/ns4:Supplier/ns6:HoldFlag='false'</condition>
             <assign name="AssignSeguirReteniendo">
               <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
                 <from>'true'</from>

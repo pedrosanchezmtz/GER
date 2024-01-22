@@ -45,7 +45,8 @@
          xmlns:ns16="http://xmlns.oracle.com/pcbpel/adapter/ftp/GER_SOA_DEV_OCI/ValidationPaymentsAPBiz/FTP_ER_SOA"
          xmlns:ns17="http://soa.estrellaroja.com.mx/SftpTec"
          xmlns:ns18="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/BpelUpdateInvoicesInstallmentsAP"
-         xmlns:ns19="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">
+         xmlns:ns19="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP"
+         xmlns:ns20="http://soa.estrellaroja.com.mx/GER_SOA/ValidationPaymentsAPBiz/BpelUpdateSupplierInvoicesInstallmentsAP">
    <import namespace="http://soa.estrellaroja.com.mx/SftpTec" location="oramds:/apps/OSB/SftpTec/SftpTec.wsdl"
            importType="http://schemas.xmlsoap.org/wsdl/"/>
    <import namespace="http://soa.estrellaroja.com.mx/Reports/XXER_ValidationComplement"
@@ -78,6 +79,9 @@
       <partnerLink name="wsCFDITec" partnerLinkType="ns14:wsCFDITec" partnerRole="CFDITecPortType"
                    myRole="CFDITecPortTypeCallback"/>
       <partnerLink name="wsSftpTec" partnerLinkType="ns17:wsSftpTec" partnerRole="SftpTec_ptt"/>
+      <partnerLink name="BpelUpdateSupplierInvoicesInstallmentsAP.bpelupdatesupplierinvoicesinstallmentsap_client"
+                   partnerLinkType="ns20:BpelUpdateSupplierInvoicesInstallmentsAP"
+                   partnerRole="BpelUpdateSupplierInvoicesInstallmentsAPProvider"/>
    </partnerLinks>
 
   <!-- 
@@ -1385,6 +1389,79 @@ Envio Comprobante]]>
                              portType="ns1:BpelSendNotifications" operation="SendNotifications"
                              inputVariable="WsSendNotificationsSendNotificationsRq" bpelx:invokeAsDetail="no"
                              xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                     <if name="If_EstatusUpdate" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <documentation>
+         
+      <![CDATA[UpdateSupplier]]></documentation>
+      <condition>$WsSendNotificationsSendNotificationsRq.payload/ns2:NUMERO_NOTIFICACION='5' or $WsSendNotificationsSendNotificationsRq.payload/ns2:NUMERO_NOTIFICACION='4' or $WsSendNotificationsSendNotificationsRq.payload/ns2:NUMERO_NOTIFICACION='3' or$WsSendNotificationsSendNotificationsRq.payload/ns2:NUMERO_NOTIFICACION='0'</condition>
+      <scope name="ScopeEstatusUpdate">
+         
+         <variables>
+                              <variable name="UpdateSupplierInvoicesInstallmentsAPRq"
+                                        messageType="ns20:BpelUpdateSupplierInvoicesInstallmentsAPRequestMessage"/>
+                              <variable name="UpdateSupplierInvoicesInstallmentsAPRs"
+                                        messageType="ns20:BpelUpdateSupplierInvoicesInstallmentsAPResponseMessage"/>
+                           </variables><sequence name="SeqEstatusUpdate">
+            <if name="If_HoldRelease">
+               <documentation>
+                  
+               <![CDATA[hold]]></documentation>
+               <condition>$WsSendNotificationsSendNotificationsRq.payload/ns2:NUMERO_NOTIFICACION='3' or$WsSendNotificationsSendNotificationsRq.payload/ns2:NUMERO_NOTIFICACION='0'</condition>
+               <assign name="AssignHold" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                  
+                  
+                  
+                  
+               <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                     xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                     <from>true()</from>
+                     <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns2:Supplier/ns2:validate</to>
+                  </copy><copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                               xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                     <from>$inputVariable.payload/ns13:DATA_DS/ns13:G_1[$counterPayment]/ns13:RFC_PROVEEDOR</from>
+                     <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns2:Supplier/ns2:supplier_rfc</to>
+                  </copy><copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                               xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                     <from>'true'</from>
+                     <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns2:Supplier/ns19:HoldFlag</to>
+                  </copy><copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                               xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                     <from>$WsSendNotificationsSendNotificationsRq.payload/ns2:ESTATUS</from>
+                     <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns2:Supplier/ns19:HoldReason</to>
+                  </copy></assign>
+               <else>
+                  <documentation>
+                     <![CDATA[release]]>
+                  </documentation>
+                  <assign name="AssignRelease" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                     
+                     
+                     
+                  <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                        xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                        <from>true()</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns2:Supplier/ns2:validate</to>
+                     </copy><copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                                  xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                        <from>$inputVariable.payload/ns13:DATA_DS/ns13:G_1[$counterPayment]/ns13:RFC_PROVEEDOR</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns2:Supplier/ns2:supplier_rfc</to>
+                     </copy><copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                                  xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                        <from>'false'</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$UpdateSupplierInvoicesInstallmentsAPRq.payload/ns2:Supplier/ns19:HoldFlag</to>
+                     </copy></assign>
+               </else>
+            </if>
+            <invoke name="wsUpdateSupplierInvoicesInstallmentsAP"
+                    partnerLink="BpelUpdateSupplierInvoicesInstallmentsAP.bpelupdatesupplierinvoicesinstallmentsap_client"
+                    portType="ns20:BpelUpdateSupplierInvoicesInstallmentsAP"
+                    operation="UpdateSupplierInvoicesInstallmentsAP"
+                    inputVariable="UpdateSupplierInvoicesInstallmentsAPRq"
+                    outputVariable="UpdateSupplierInvoicesInstallmentsAPRs"
+                    xmlns:bpelx="http://schemas.oracle.com/bpel/extension" bpelx:invokeAsDetail="no"/>
+         </sequence>
+      </scope>
+   </if>
                   </sequence>
                </scope>
         </forEach>

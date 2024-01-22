@@ -4,16 +4,16 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="ReceiveEmail" x="0" y="217" side="left"/>
+      <partnerlink name="ReceiveEmail" x="0" y="132" side="left"/>
       <partnerlink name="BpelSendNotifications" x="0" y="584" side="left"/>
       <partnerlink name="WsERPIntegrationServiceTec" x="0" y="18" side="left"/>
       <partnerlink name="wsCFDITec" x="0" y="75" side="left"/>
-      <partnerlink name="BpelUpdateSupplierInvoicesInstallmentsAP.bpelupdatesupplierinvoicesinstallmentsap_client" x="0" y="132" side="left"/>
-      <partnerlink name="WsERPIntegrationBiz" x="1125" y="18" side="right"/>
-      <partnerlink name="WsSOAUtilitiesTec" x="1125" y="75" side="right"/>
-      <partnerlink name="wsAuditControlTec" x="1125" y="488" side="right"/>
+      <partnerlink name="BpelUpdateSupplierInvoicesInstallmentsAP.bpelupdatesupplierinvoicesinstallmentsap_client" x="0" y="1147" side="left"/>
+      <partnerlink name="WsERPIntegrationBiz" x="1122" y="18" side="right"/>
+      <partnerlink name="WsSOAUtilitiesTec" x="1122" y="75" side="right"/>
+      <partnerlink name="wsAuditControlTec" x="1122" y="488" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,114,1263,619" show_swimlanes="true">
+   <graph_layout viewport="0,52,1260,514" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
@@ -23,8 +23,8 @@
       <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/if[2]/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/if[2]/sequence/forEach" type="foreach"/>
-      <layout_item collapsed="false" xpath="/process/sequence/if[2]/sequence/forEach/scope" type="scope" showhandlers="true"/>
-      <layout_item collapsed="false" xpath="/process/sequence/if[2]/sequence/if/else/if/else/scope" type="scope" showhandlers="true"/>
+      <layout_item collapsed="true" xpath="/process/sequence/if[2]/sequence/forEach/scope" type="scope" showhandlers="true"/>
+      <layout_item collapsed="true" xpath="/process/sequence/if[2]/sequence/if/else/if/else/scope" type="scope" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence/if[2]/sequence/if/else/if/else/scope/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/if[2]/sequence/if/else/if/else/scope/sequence/forEach" type="foreach"/>
       <layout_item collapsed="true" xpath="/process/sequence/if[2]/sequence/if/else/if/else/scope/sequence/forEach/scope" type="scope" showhandlers="true"/>
@@ -49,6 +49,8 @@
       <layout_item collapsed="false" xpath="/process/sequence/if[2]/sequence/if/else/if/else/scope/sequence/if/sequence/if/scope/sequence/if/sequence/scope/sequence/if/sequence/scope/faultHandlers/catchAll/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/if[2]/sequence/if/else/if/else/scope/sequence/if/sequence/if/scope/sequence/if/sequence/scope/sequence/if/sequence/scope/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/if[2]/sequence/if/else/if/else/scope/sequence/if/sequence/if/scope/sequence/if/sequence/if[2]/elseif/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/if[3]/scope" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/if[3]/scope/sequence" type="sequence"/>
    </graph_layout>
    <bookmarks/>
 </graphics>
