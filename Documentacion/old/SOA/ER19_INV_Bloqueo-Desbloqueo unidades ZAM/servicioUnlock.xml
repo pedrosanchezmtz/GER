@@ -1,0 +1,21 @@
+<zam:InputParameters xmlns:zam="http://xmlns.oracle.com/pcbpel/adapter/db/sp/ZAMUnblockAsset">
+    <zam:P_ZAM_WO_NUM>18329</zam:P_ZAM_WO_NUM>
+    <zam:P_ASSET_NUMBER>8237</zam:P_ASSET_NUMBER>
+    <zam:P_TRX_DATE>2023-05-09T09:31:26.000+00:00</zam:P_TRX_DATE>
+</zam:InputParameters>
+
+<zam:InputParameters xmlns:zam="http://xmlns.oracle.com/pcbpel/adapter/db/sp/ZAMUnblockAsset">
+    <zam:P_ZAM_WO_NUM>18329</zam:P_ZAM_WO_NUM>
+    <zam:P_ASSET_NUMBER>8237</zam:P_ASSET_NUMBER>
+    <zam:P_TRX_DATE>2023-05-09T09:31:26.000+00:00</zam:P_TRX_DATE>
+</zam:InputParameters>
+
+<zam:InputParameters xmlns:zam="http://xmlns.oracle.com/pcbpel/adapter/db/sp/ZAMUnblockAsset">
+    <zam:P_ZAM_WO_NUM>17915</zam:P_ZAM_WO_NUM>
+    <zam:P_ASSET_NUMBER>2131R</zam:P_ASSET_NUMBER>
+    <zam:P_TRX_DATE>2023-05-09T09:37:26.000+00:00</zam:P_TRX_DATE>
+</zam:InputParameters>
+
+ select  "fecha_liberacion","fecha_cierre","estado" ,"id_orden"  from  mtto_orden@HSMSSQLDLV.ESTRELLAROJA.COM.MX
+                WHERE   1=1
+                AND  "id_unidad" ='1812' AND       "id_orden" = 17915

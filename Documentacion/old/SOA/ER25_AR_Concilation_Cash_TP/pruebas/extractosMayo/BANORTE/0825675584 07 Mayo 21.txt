@@ -1,0 +1,2 @@
+Cuenta|Fecha De Operación|Fecha|Referencia|Descripción|Cod. Transac|Sucursal|Depósitos|Retiros|Saldo|Movimiento|Descripción Detallada|Cheque
+0825675584|07/may./2021|07/may./2021||SIN MOVIMIENTOS|||$0.00|$0.00|||

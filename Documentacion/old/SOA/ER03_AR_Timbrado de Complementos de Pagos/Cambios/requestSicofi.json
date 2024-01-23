@@ -1,0 +1,59 @@
+{
+"invoice" : {
+"issuer_rfc" : "AMP521016875",
+"issuer_name" : "AUTOBUSES MEXICO PUEBLA ESTRELLA ROJA SA DE CV",
+"issuer_zip_code" : "72050",
+"invoice_date" : "2021-04-06T09:50:38",
+"document_type" : "P",
+"invoice_items" : [ {
+"description" : "Pago",
+"prod_serv_key" : "84111506",
+"quantity" : 1,
+"vat_percentage" : 0,
+"unit" : null,
+"unit_key" : "ACT",
+"amount" : 0,
+"subtotal" : 0,
+"vat" : 0,
+"total" : 0
+} ],
+"local_retention_name" : null,
+"local_retention_amount" : null,
+"total_vat" : 0,
+"subtotal" : 0,
+"total" : 0,
+"serie" : "AMP",
+"branch_name" : "MATRIZ",
+"branch_zip_code" : "72050",
+"receiver_name" : "AUTOBUSES ESTRELLA BLANCA SA DE CV",
+"receiver_rfc" : "AEB611030SN7",
+"receiver_street" : "AV PONIENTE 140,",
+"receiver_colony" : "INDUSTRIAL VALLEJO 02300",
+"receiver_zip_code" : null,
+"receiver_cfdi_use" : "P01",
+"currency" : "XXX",
+"issuer_tax_regime" : "624",
+"service" : "PAQUER",
+"payment_complements" : [ {
+"payment_date" : "2021-03-06T00:00:00",
+"payment_way" : "01",
+"currency" : "MXN",
+"currency_exchange" : 0,
+"amount" : 2715.36,
+"operation_number" : 1,
+"version" : 1,
+"related_documents" : [ {
+"document_id" : "E392DA24-7E1F-11EB-9547-00155D014300",
+"serie" : "AMP",
+"folio" : 100865,
+"currency" : "MXN",
+"currency_exchange" : 0,
+"payment_method" : "PPD",
+"partiality_number" : 1,
+"previous_balance" : 2715.36,
+"paid_amount" : 2715.36,
+"outstanding_balance" : 0
+} ]
+} ]
+}
+}

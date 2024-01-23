@@ -1,0 +1,7 @@
+0035/MDAZ
+
+type='';type=new Array();type['A']='Abono';type['C']='Cargo';
+EOC
+codecat='';codecat=new Array();codecat['3']='type';
+05/05/2021|8:14|90764660|AUTOBUSES MEXICO PUEBLA ESTRELLA ROJ|10|MIRIAN,LAVIN/APARICIO|04/05/21|7005|3351857|TERMINAL LAS TORRES PUEBLA|+|31,682.44|+|35,931.82|0|1|0.00|4,249.38|Pesos
+1|04/05/21|A|11|02|826|||4,249.38|00334044

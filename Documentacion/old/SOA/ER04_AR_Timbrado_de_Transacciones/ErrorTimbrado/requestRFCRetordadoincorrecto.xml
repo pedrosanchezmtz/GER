@@ -1,0 +1,191 @@
+
+<createTrxCFDIRq xmlns="http://soa.estrellaroja.com.mx/DigitalStampTec" xmlns:client="http://soa.estrellaroja.com.mx/InvoicesBiz/bpelDigitalStamp" xmlns:ns1="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:ns2="http://soa.estrellaroja.com.mx/SOAUtilitiesTec" xmlns:ns3="http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec" xmlns:ns4="http://soa.estrellaroja.com.mx/cfd/3" xmlns:ns5="http://soa.estrellaroja.com.mx/DigitalStampTec/types" xmlns:ns6="http://soa.estrellaroja.com.mx/sitio_internet/cfd/tipoDatos/tdCFDI" xmlns:ns7="http://soa.estrellaroja.com.mx/TimbreFiscalDigital" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://soa.estrellaroja.com.mx/DigitalStampTec" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+   <tns:invoice>
+      <tns:issuer_rfc>AMP521016875</tns:issuer_rfc>
+      <tns:issuer_name>AUTOBUSES MEXICO PUEBLA ESTRELLA ROJA SA DE CV</tns:issuer_name>
+      <tns:issuer_street>BOULEVARD NORTE 4222</tns:issuer_street>
+      <tns:issuer_zip_code>72050</tns:issuer_zip_code>
+      <tns:issuer_municipality>PUEBLA</tns:issuer_municipality>
+      <tns:issuer_state>PUEBLA</tns:issuer_state>
+      <tns:issuer_country>MEX</tns:issuer_country>
+      <tns:invoice_date>2022-03-15T14:05:06</tns:invoice_date>
+      <tns:document_type>I</tns:document_type>
+      <tns:total_words>**OCHENTA Y TRES MIL CUATROCIENTOS VEINTIOCHO 86/100</tns:total_words>
+      <tns:total_items>1</tns:total_items>
+      <tns:local_retention_amount />
+      <tns:total_vat>11507.43</tns:total_vat>
+      <tns:retention_vat>0</tns:retention_vat>
+      <tns:retention_rt>0</tns:retention_rt>
+      <tns:subtotal>71921.43</tns:subtotal>
+      <tns:total>83428.86</tns:total>
+      <tns:serie>AMP</tns:serie>
+      <tns:branch_name>MATRIZ</tns:branch_name>
+      <tns:branch_street>CARRETERA FEDERAL MEXICO HUIXQUILUCAN 180 SAN BARTOLOME COATEPEC HUIXQUILUCAN</tns:branch_street>
+      <tns:branch_int_number>HUIXQUILUCAN</tns:branch_int_number>
+      <tns:branch_colony>158</tns:branch_colony>
+      <tns:branch_zip_code>52770</tns:branch_zip_code>
+      <tns:branch_municipality>MEXICO</tns:branch_municipality>
+      <tns:branch_state>MEX</tns:branch_state>
+      <tns:branch_country>MEX</tns:branch_country>
+      <tns:receiver_name>BOSQUE REAL RESIDENCE F/1044</tns:receiver_name>
+      <tns:receiver_email>analistacxc@estrellaroja.com.mx</tns:receiver_email>
+      <tns:receiver_rfc>BRR141029FM2</tns:receiver_rfc>
+      <tns:receiver_street>CARRETERA FEDERAL MEXICO HUIXQUILUCAN 180 SAN BARTOLOME COATEPEC HUIXQUILUCAN</tns:receiver_street>
+      <tns:receiver_int_number>HUIXQUILUCAN</tns:receiver_int_number>
+      <tns:receiver_colony>158</tns:receiver_colony>
+      <tns:receiver_zip_code>52770</tns:receiver_zip_code>
+      <tns:receiver_municipality>MEXICO</tns:receiver_municipality>
+      <tns:receiver_state>MEX</tns:receiver_state>
+      <tns:receiver_country>MEX</tns:receiver_country>
+      <tns:receiver_cfdi_use>G03</tns:receiver_cfdi_use>
+      <tns:payment_method>PPD</tns:payment_method>
+      <tns:currency>MXN</tns:currency>
+      <tns:issuer_tax_regime>624</tns:issuer_tax_regime>
+      <tns:payment_method_select>99</tns:payment_method_select>
+      <tns:payment_form>99</tns:payment_form>
+      <tns:invoice_items>
+         <tns:Item>
+            <tns:description>Bosque Real Residence (BRR) -1 Unidad del 1 al 31 de Enero 2022</tns:description>
+            <tns:prod_serv_key>78111803</tns:prod_serv_key>
+            <tns:quantity>1</tns:quantity>
+            <tns:discount>0</tns:discount>
+            <tns:vat_percentage>16</tns:vat_percentage>
+            <tns:unit_key>E48</tns:unit_key>
+            <tns:unit_price>71921.43</tns:unit_price>
+            <tns:tax_base>71921.43</tns:tax_base>
+            <tns:tax>002</tns:tax>
+            <tns:factor_type>Tasa</tns:factor_type>
+            <tns:rate_fee>0.16</tns:rate_fee>
+            <tns:stps_percentage>0</tns:stps_percentage>
+            <tns:imp_percentage>0</tns:imp_percentage>
+            <tns:retention_vat_percentage>0</tns:retention_vat_percentage>
+            <tns:retention_rt_percentage>0</tns:retention_rt_percentage>
+            <tns:amount>71921.43</tns:amount>
+            <tns:subtotal>71921.43</tns:subtotal>
+            <tns:vat>11507.43</tns:vat>
+            <tns:stps>0</tns:stps>
+            <tns:imp>0</tns:imp>
+            <tns:retention_vat>0</tns:retention_vat>
+            <tns:retention_rt>0</tns:retention_rt>
+            <tns:total>83428.86</tns:total>
+            <tns:st>0</tns:st>
+         </tns:Item>
+      </tns:invoice_items>
+   </tns:invoice>
+</createTrxCFDIRq>
+
+
+
+<dig:createTrxCFDIRs xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:ns0="http://soa.estrellaroja.com.mx/cfd/3" xmlns:ns2="http://www.sat.gob.mx/sitio_internet/cfd/tipoDatos/tdCFDI" xmlns:ns1="http://www.sat.gob.mx/TimbreFiscalDigital" xmlns:ns4="http://soa.estrellaroja.com.mx/sitio_internet/cfd/tipoDatos/tdCFDI" xmlns:ns3="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:ns5="http://soa.estrellaroja.com.mx/TimbreFiscalDigital" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" xmlns:dig="http://soa.estrellaroja.com.mx/DigitalStampTec">
+	<ns3:Success/>
+	<dig:Return>
+		<dig:invoiceRs>
+			<dig:id>228517</dig:id>
+			<dig:id_rfc>228581</dig:id_rfc>
+			<dig:serie>PQD</dig:serie>
+			<dig:certificate_number/>
+			<dig:invoice_date>2022-03-15T14:05:09</dig:invoice_date>
+			<dig:invoice_seal>cyxsRagIef4VeMnJEHY90rOP9+QzZ4lDdJraoELjo8q8+ctH5kIe1hYXhZYHvqQJyQR6bl2X6wIks87M4la6JQqQVjkPoqZS5vbIaUktX0XhUbZneVpgDWeoXln0ZU7lI1L6j6NE4Q70BIZa5ymmBnPXVYs0/q8WcJq5Mx1Cnm5Y4xIt9ycyG46lwOOG2RWCmGPYw9dq1sUesbj38v1QgLRBu955HL6NeZN8VbZ99w374ruHkZyOY/3YAnz5aBYp2tXUiGk7LoMkppoX2P76+UMttn2Vq4zU+FeideML1J7H5D5//WPkB1Jrv98X2Te3LEA+pmskRVNm2FGq4tLMcQ==</dig:invoice_seal>
+			<dig:receiver_rfc>XAXX010101000</dig:receiver_rfc>
+			<dig:receiver_name>PUBLICO EN GENERAL</dig:receiver_name>
+			<dig:receiver_street>BLVD NORTE</dig:receiver_street>
+			<dig:receiver_ext_number>4222</dig:receiver_ext_number>
+			<dig:receiver_int_number/>
+			<dig:receiver_colony>LAS CUARTILLAS</dig:receiver_colony>
+			<dig:receiver_zip_code>72050</dig:receiver_zip_code>
+			<dig:receiver_municipality>PUEBLA</dig:receiver_municipality>
+			<dig:receiver_state>PUE</dig:receiver_state>
+			<dig:receiver_phone/>
+			<dig:receiver_country>MEX</dig:receiver_country>
+			<dig:receiver_passport/>
+			<dig:receiver_cfdi_use>G03</dig:receiver_cfdi_use>
+			<dig:issuer_rfc>AMP521016875</dig:issuer_rfc>
+			<dig:issuer_name>AUTOBUSES MEXICO PUEBLA ESTRELLA ROJA SA DE CV</dig:issuer_name>
+			<dig:issuer_street/>
+			<dig:issuer_ext_number/>
+			<dig:issuer_int_number/>
+			<dig:issuer_colony/>
+			<dig:issuer_zip_code>72050</dig:issuer_zip_code>
+			<dig:issuer_municipality/>
+			<dig:issuer_state>PUE</dig:issuer_state>
+			<dig:issuer_phone/>
+			<dig:issuer_country/>
+			<dig:branch_name>PAQUER</dig:branch_name>
+			<dig:branch_street/>
+			<dig:branch_ext_number/>
+			<dig:branch_int_number/>
+			<dig:branch_colony/>
+			<dig:branch_zip_code>72050</dig:branch_zip_code>
+			<dig:branch_municipality/>
+			<dig:branch_state>PUE</dig:branch_state>
+			<dig:branch_reference/>
+			<dig:branch_phone/>
+			<dig:branch_country/>
+			<dig:payment_form>28</dig:payment_form>
+			<dig:payment_condition/>
+			<dig:payment_method>PUE</dig:payment_method>
+			<dig:payment_account_number/>
+			<dig:payment_status/>
+			<dig:retention_vat>0</dig:retention_vat>
+			<dig:retention_rt>0</dig:retention_rt>
+			<dig:discount>0</dig:discount>
+			<dig:total_items>2</dig:total_items>
+			<dig:total_vat>61.65</dig:total_vat>
+			<dig:total_stps>0</dig:total_stps>
+			<dig:total_st>0</dig:total_st>
+			<dig:total_tip>0</dig:total_tip>
+			<dig:subtotal>385.33</dig:subtotal>
+			<dig:total>446.98</dig:total>
+			<dig:additional_information/>
+			<dig:comments/>
+			<dig:currency>MXN</dig:currency>
+			<dig:currency_exchange_rate>0</dig:currency_exchange_rate>
+			<dig:cancellation_reason/>
+			<dig:cancellation_date/>
+			<dig:approval_number/>
+			<dig:approval_year/>
+			<dig:stamping_uuid>374530C6-A49B-11EC-846E-00155D014009</dig:stamping_uuid>
+			<dig:stamping_date>2022-03-15T14:05:09</dig:stamping_date>
+			<dig:stamping_certificate_number>00001000000504587508</dig:stamping_certificate_number>
+			<dig:stamping_seal>mztpFuAY1P8sat9Uc5tML/RtFrZEum8sWwh+HQ4SsXNRlVNqeaiHoQG48uruNaTtLXKSd/0VOy663BIZWLgkWUJfRrYgyXvt4a65ah3Y1ebjZGmGzQKu0twq7Wziz1NBIqFHFTQUb5LmCSsKIYE0psvtc2ETMX0lNuPmt1BgcxK3esNDPY4IruakL1b4mlNjoMJq4G4kvfhDMdn/g28aVxvFqNobW/CtUNjpS3ciHJvigFfOGymm9QY/ou185Q+wkr1uowXJ46Q+EANTI1npG3rsPXEIo0RKtENR55SCFk7NEVOWK70YBbDBZrDIj2ZGS6hvCBo070atXC1s8EaqLg==</dig:stamping_seal>
+			<dig:document_number>270123</dig:document_number>
+			<dig:discount_reason/>
+			<dig:document_type>I</dig:document_type>
+			<dig:issuer_locality/>
+			<dig:issuer_reference/>
+			<dig:branch_locality/>
+			<dig:issuer_tax_regime>624</dig:issuer_tax_regime>
+			<dig:receiver_reference/>
+			<dig:stamping_code>100</dig:stamping_code>
+			<dig:stamping_message>Comprobante timbrado satisfactoriamente.</dig:stamping_message>
+			<dig:relationship_type/>
+			<dig:related_cfdi/>
+			<dig:invoice_items>
+				<dig:id>385488</dig:id>
+				<dig:position>0</dig:position>
+				<dig:prod_serv_key>78102200</dig:prod_serv_key>
+				<dig:description>223011050018</dig:description>
+				<dig:quantity>1</dig:quantity>
+				<dig:unit/>
+				<dig:unit_key>E48</dig:unit_key>
+				<dig:unit_price>385.33</dig:unit_price>
+				<dig:tax>002</dig:tax>
+				<dig:factor_type>Tasa</dig:factor_type>
+				<dig:rate_fee>.16</dig:rate_fee>
+				<dig:discount>0</dig:discount>
+				<dig:vat>61.65</dig:vat>
+				<dig:vat_percentage>16</dig:vat_percentage>
+				<dig:stps>0</dig:stps>
+				<dig:stps_percentage>0</dig:stps_percentage>
+				<dig:st>0</dig:st>
+				<dig:st_percentage/>
+				<dig:total>446.98</dig:total>
+				<dig:customs_name/>
+				<dig:customs_number/>
+				<dig:customs_date/>
+				<dig:id_invoice>228517</dig:id_invoice>
+			</dig:invoice_items>
+			<dig:service>PAQUER</dig:service>
+		</dig:invoiceRs>
+	</dig:Return>
+</dig:createTrxCFDIRs>

@@ -1,0 +1,74 @@
+<createTrxCFDIRq xmlns:ns2="http://soa.estrellaroja.com.mx/SOAUtilitiesTec" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns1="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:ns4="http://soa.estrellaroja.com.mx/cfd/3" xmlns:ns3="http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec" xmlns:ns6="http://soa.estrellaroja.com.mx/sitio_internet/cfd/tipoDatos/tdCFDI" xmlns:ns5="http://soa.estrellaroja.com.mx/DigitalStampTec/types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns7="http://soa.estrellaroja.com.mx/TimbreFiscalDigital" xmlns:client="http://soa.estrellaroja.com.mx/InvoicesBiz/bpelDigitalStamp" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://soa.estrellaroja.com.mx/DigitalStampTec" xmlns="http://soa.estrellaroja.com.mx/DigitalStampTec">
+	<tns:invoice>
+		<tns:issuer_rfc>AMP521016875</tns:issuer_rfc>
+		<tns:issuer_name>AUTOBUSES MEXICO PUEBLA ESTRELLA ROJA SA DE CV</tns:issuer_name>
+		<tns:issuer_street>BOULEVARD NORTE 4222</tns:issuer_street>
+		<tns:issuer_zip_code>72050</tns:issuer_zip_code>
+		<tns:issuer_municipality>PUEBLA</tns:issuer_municipality>
+		<tns:issuer_state>PUEBLA</tns:issuer_state>
+		<tns:issuer_country>MEX</tns:issuer_country>
+		<tns:invoice_date>2021-04-06T10:35:45</tns:invoice_date>
+		<tns:document_type>I</tns:document_type>
+		<tns:total_words>**DOS MIL SETECIENTOS QUINCE 36/100</tns:total_words>
+		<tns:total_items>1</tns:total_items>
+		<tns:local_retention_amount/>
+		<tns:total_vat>374.53</tns:total_vat>
+		<tns:retention_vat>0</tns:retention_vat>
+		<tns:retention_rt>0</tns:retention_rt>
+		<tns:subtotal>2340.83</tns:subtotal>
+		<tns:total>2715.36</tns:total>
+		<tns:serie>AMP</tns:serie>
+		<tns:branch_name>MATRIZ</tns:branch_name>
+		<tns:branch_street>AV PONIENTE 140,</tns:branch_street>
+		<tns:branch_int_number>AZCAPOTZALCO</tns:branch_int_number>
+		<tns:branch_colony>159</tns:branch_colony>
+		<tns:branch_zip_code>02300</tns:branch_zip_code>
+		<tns:branch_municipality>MEXICO</tns:branch_municipality>
+		<tns:branch_state>CDMX</tns:branch_state>
+		<tns:branch_country>MEX</tns:branch_country>
+		<tns:receiver_name>AUTOBUSES ESTRELLA BLANCA SA DE CV</tns:receiver_name>
+		<tns:receiver_email>mari.benito@estrellaroja.com.mx</tns:receiver_email>
+		<tns:receiver_rfc>AEB611030SN7</tns:receiver_rfc>
+		<tns:receiver_street>AV PONIENTE 140,</tns:receiver_street>
+		<tns:receiver_int_number>AZCAPOTZALCO</tns:receiver_int_number>
+		<tns:receiver_colony>159</tns:receiver_colony>
+		<tns:receiver_zip_code>02300</tns:receiver_zip_code>
+		<tns:receiver_municipality>MEXICO</tns:receiver_municipality>
+		<tns:receiver_state>CDMX</tns:receiver_state>
+		<tns:receiver_country>MEX</tns:receiver_country>
+		<tns:receiver_cfdi_use>G03</tns:receiver_cfdi_use>
+		<tns:payment_method>PPD</tns:payment_method>
+		<tns:currency>MXN</tns:currency>
+		<tns:issuer_tax_regime>624</tns:issuer_tax_regime>
+		<tns:payment_method_select>99</tns:payment_method_select>
+		<tns:payment_form>99</tns:payment_form>
+		<tns:invoice_items>
+			<tns:Item>
+				<tns:description>RECUPERACION DE ENLACE CAMARAS G AEROBUS</tns:description>
+				<tns:prod_serv_key>01010101</tns:prod_serv_key>
+				<tns:quantity>1</tns:quantity>
+				<tns:discount>0</tns:discount>
+				<tns:vat_percentage>16</tns:vat_percentage>
+				<tns:unit_key>E48</tns:unit_key>
+				<tns:unit_price>2340.83</tns:unit_price>
+				<tns:tax_base>2340.83</tns:tax_base>
+				<tns:tax>002</tns:tax>
+				<tns:factor_type>Tasa</tns:factor_type>
+				<tns:rate_fee>.16</tns:rate_fee>
+				<tns:stps_percentage>0</tns:stps_percentage>
+				<tns:imp_percentage>0</tns:imp_percentage>
+				<tns:retention_vat_percentage>0</tns:retention_vat_percentage>
+				<tns:retention_rt_percentage>0</tns:retention_rt_percentage>
+				<tns:amount>2340.83</tns:amount>
+				<tns:subtotal>2340.83</tns:subtotal>
+				<tns:vat>374.53</tns:vat>
+				<tns:stps>0</tns:stps>
+				<tns:imp>0</tns:imp>
+				<tns:retention_vat>0</tns:retention_vat>
+				<tns:retention_rt>0</tns:retention_rt>
+				<tns:total>2715.36</tns:total>
+				<tns:st>0</tns:st>
+			</tns:Item>
+		</tns:invoice_items>
+	</tns:invoice>
+</createTrxCFDIRq>

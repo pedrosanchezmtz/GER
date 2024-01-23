@@ -1,0 +1,62 @@
+<createTrxCFDIRq xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns1="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:ns4="http://soa.estrellaroja.com.mx/DigitalStampTec/types" xmlns:ns3="http://www.sat.gob.mx/TimbreFiscalDigital" xmlns:ns6="http://www.sat.gob.mx/sitio_internet/cfd/tipoDatos/tdCFDI" xmlns:ns5="http://www.sat.gob.mx/cfd/3" xmlns:ns8="http://soa.estrellaroja.com.mx/sitio_internet/cfd/tipoDatos/tdCFDI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns7="http://soa.estrellaroja.com.mx/cfd/3" xmlns:ns9="http://soa.estrellaroja.com.mx/TimbreFiscalDigital" xmlns:ns11="http://soa.estrellaroja.com.mx/SOAUtilitiesTec" xmlns:ns10="http://soa.estrellaroja.com.mx/AuditControlTec" xmlns:client="http://soa.estrellaroja.com.mx/PaymentComplementBiz/bpelHandleMergedStamping" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://soa.estrellaroja.com.mx/DigitalStampTec" xmlns="http://soa.estrellaroja.com.mx/DigitalStampTec">
+	<tns:invoice>
+		<tns:issuer_rfc>AMP521016875</tns:issuer_rfc>
+		<tns:issuer_name>AUTOBUSES MEXICO PUEBLA ESTRELLA ROJA SA DE CV</tns:issuer_name>
+		<tns:issuer_zip_code>72050</tns:issuer_zip_code>
+		<tns:invoice_date>2021-04-06T09:50:38</tns:invoice_date>
+		<tns:document_type>P</tns:document_type>
+		<tns:total_vat>0</tns:total_vat>
+		<tns:subtotal>0</tns:subtotal>
+		<tns:total>0</tns:total>
+		<tns:serie>AMP</tns:serie>
+		<tns:branch_name>MATRIZ</tns:branch_name>
+		<tns:branch_zip_code>72050</tns:branch_zip_code>
+		<tns:receiver_name>AUTOBUSES ESTRELLA BLANCA SA DE CV</tns:receiver_name>
+		<tns:receiver_rfc>AEB611030SN7</tns:receiver_rfc>
+		<tns:receiver_street>AV PONIENTE 140,</tns:receiver_street>
+		<tns:receiver_colony>INDUSTRIAL VALLEJO 02300</tns:receiver_colony>
+		<tns:receiver_cfdi_use>P01</tns:receiver_cfdi_use>
+		<tns:currency>XXX</tns:currency>
+		<tns:issuer_tax_regime>624</tns:issuer_tax_regime>
+		<tns:service>PAQUER</tns:service>
+		<tns:invoice_items>
+			<tns:Item>
+				<tns:prod_serv_key>84111506</tns:prod_serv_key>
+				<tns:description>Pago</tns:description>
+				<tns:quantity>1</tns:quantity>
+				<tns:vat_percentage>0</tns:vat_percentage>
+				<tns:unit/>
+				<tns:unit_key>ACT</tns:unit_key>
+				<tns:amount>0</tns:amount>
+				<tns:subtotal>0</tns:subtotal>
+				<tns:vat>0</tns:vat>
+				<tns:total>0</tns:total>
+			</tns:Item>
+		</tns:invoice_items>
+		<tns:payment_complements>
+			<tns:complement>
+				<tns:payment_date>2021-03-06T00:00:00</tns:payment_date>
+				<tns:payment_way>01</tns:payment_way>
+				<tns:currency>MXN</tns:currency>
+				<tns:currency_exchange>0</tns:currency_exchange>
+				<tns:amount>2715.36</tns:amount>
+				<tns:operation_number>1</tns:operation_number>
+				<tns:version>1</tns:version>
+				<tns:related_documents>
+					<tns:Doc>
+						<tns:document_id>E392DA24-7E1F-11EB-9547-00155D014300</tns:document_id>
+						<tns:serie>AMP</tns:serie>
+						<tns:folio>100865</tns:folio>
+						<tns:currency>MXN</tns:currency>
+						<tns:currency_exchange>0</tns:currency_exchange>
+						<tns:payment_method>PPD</tns:payment_method>
+						<tns:partiality_number>1</tns:partiality_number>
+						<tns:previous_balance>2715.36</tns:previous_balance>
+						<tns:paid_amount>2715.36</tns:paid_amount>
+						<tns:outstanding_balance>0</tns:outstanding_balance>
+					</tns:Doc>
+				</tns:related_documents>
+			</tns:complement>
+		</tns:payment_complements>
+	</tns:invoice>
+</createTrxCFDIRq>
