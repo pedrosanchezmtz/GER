@@ -21,6 +21,18 @@
   <xsd:element name="UpdateInvoicesInstallmentsAPRs" type="tns:UpdateInvoicesInstallmentsAPRsType"/>
   <xsd:element name="UpdateSupplierInvoicesInstallmentsAPRq" type="tns:UpdateSupplierInvoicesInstallmentsAPRqType"/>
   <xsd:element name="UpdateSupplierInvoicesInstallmentsAPRs" type="tns:UpdateSupplierInvoicesInstallmentsAPRsType"/>
+  <xsd:element name="ValidationAPRq" type="tns:ValidationAPRqType"/>
+  <xsd:element name="ValidationAPRs" type="tns:ValidationAPRsType"/>
+    <xsd:complexType name="ValidationAPRqType">
+    <xsd:sequence>
+      <xsd:element name="validation" minOccurs="0" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ValidationAPRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:element name="RepseTbl">
     <xsd:complexType>
       <xsd:complexContent>

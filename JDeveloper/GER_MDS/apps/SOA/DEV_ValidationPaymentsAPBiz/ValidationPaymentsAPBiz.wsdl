@@ -36,6 +36,12 @@
 <wsdl:message name="UpdateSupplierInvoicesInstallmentsAPRs">
 <wsdl:part name="UpdateSupplierInvoicesInstallmentsAPRsPart" element="tns:UpdateSupplierInvoicesInstallmentsAPRs"/>
 </wsdl:message>
+<wsdl:message name="ValidationAPRq">
+<wsdl:part name="ValidationAPRqPart" element="tns:ValidationAPRq"/>
+</wsdl:message>
+<wsdl:message name="ValidationAPRs">
+<wsdl:part name="ValidationAPRsPart" element="tns:ValidationAPRs"/>
+</wsdl:message>
 <wsdl:portType name="ValidationPaymentsAPBizPortType">
 <wsdl:operation name="SendPaymentsAP">
 <wsdl:input message="tns:SendPaymentsAPRq"/>
@@ -54,6 +60,10 @@
 <wsdl:operation name="UpdateSupplierInvoicesInstallmentsAP">
 <wsdl:input message="tns:UpdateSupplierInvoicesInstallmentsAPRq"/>
 <wsdl:output message="tns:UpdateSupplierInvoicesInstallmentsAPRs"/>
+</wsdl:operation>
+<wsdl:operation name="ValidationAP">
+<wsdl:input message="tns:ValidationAPRq"/>
+<wsdl:output message="tns:ValidationAPRs"/>
 </wsdl:operation>
 </wsdl:portType>
 <wsdl:binding name="ValidationPaymentsAPBizBinding" type="tns:ValidationPaymentsAPBizPortType">
@@ -95,6 +105,15 @@
 </wsdl:input>
 <wsdl:output>
 <soap:body use="literal" parts="UpdateSupplierInvoicesInstallmentsAPRsPart"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ValidationAP">
+<soap:operation soapAction="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/ValidationAP"/>
+<wsdl:input>
+<soap:body use="literal" parts="ValidationAPRqPart"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" parts="ValidationAPRsPart"/>
 </wsdl:output>
 </wsdl:operation>
 </wsdl:binding>
