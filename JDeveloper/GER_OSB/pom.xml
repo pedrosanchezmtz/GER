@@ -34,7 +34,6 @@
         <module>DEV_ConciliationTec</module>
         <module>ERPUnitMetricsTec</module>
         <module>INERDEV_AuditControlTec</module>
-        <module>SBProject</module>
         <module>DEV_EAMWorkOrdersTec</module>
         <module>FinancialsTec</module>
         <module>APIUnitMetricsTec</module>
@@ -66,6 +65,7 @@
         <module>CatalogsTec</module>
         <module>ERPIntegrationApiTec</module>
         <module>DEV_ERPIntegrationApiTec</module>
+        <module>qwadsfv</module>
     </modules>
 
 </project>

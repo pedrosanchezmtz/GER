@@ -15,11 +15,11 @@
         </dgm:operations>
     </dgm:gService>
     <dgm:gReference name="WsMessageTec">
-        <dgm:body borderWidth="2" arcRad="20" X="638" Y="26" width="136" height="96">
+        <dgm:body borderWidth="2" arcRad="20" X="1030" Y="26" width="136" height="96">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="628" Y="19" width="156" height="110">
+        <dgm:shadow arcRad="20" X="1020" Y="19" width="156" height="110">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="WsMessageTec" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/MessageTec#wsdl.interface(MessageTecPortType)" callbackInterface="http://soa.estrellaroja.com.mx/MessageTec#wsdl.interface(MessageTecCallbackPortType)"/>
@@ -30,11 +30,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsErpIntegrationTec">
-        <dgm:body borderWidth="2" arcRad="20" X="638" Y="156" width="136" height="168">
+        <dgm:body borderWidth="2" arcRad="20" X="1030" Y="156" width="136" height="168">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="628" Y="149" width="156" height="182">
+        <dgm:shadow arcRad="20" X="1020" Y="149" width="156" height="182">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsErpIntegrationTec" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec#wsdl.interface(ERPIntegrationTecPortType)"/>
@@ -72,11 +72,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="WsValidationPaymentsAPBiz">
-        <dgm:body borderWidth="2" arcRad="20" X="638" Y="358" width="136" height="132">
+        <dgm:body borderWidth="2" arcRad="20" X="1030" Y="358" width="136" height="132">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="628" Y="351" width="156" height="146">
+        <dgm:shadow arcRad="20" X="1020" Y="351" width="156" height="146">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="WsValidationPaymentsAPBiz" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz#wsdl.interface(ValidationPaymentsAPBizPortType)"/>
@@ -90,12 +90,12 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gComponent name="MediatorValidationPaymentsAPBiz">
-        <dgm:body borderWidth="2" arcRad="20" X="226" Y="190" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="362" Y="190" width="130" height="61">
             <dgm:borderColor r="128" g="92" b="148"/>
             <dgm:lightBgColor r="208" g="169" b="227"/>
             <dgm:darkBgColor r="183" g="132" b="212"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="216" Y="183" width="150" height="77">
+        <dgm:shadow arcRad="20" X="352" Y="183" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="MediatorValidationPaymentsAPBiz" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/ValidationPaymentsAPEnt#wsdl.interface(ValidationPaymentsAPEntPortType)"/>
@@ -103,12 +103,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="BpelSendPaymentsAP">
-        <dgm:body borderWidth="2" arcRad="20" X="424" Y="190" width="130" height="111">
+        <dgm:body borderWidth="2" arcRad="20" X="696" Y="190" width="130" height="111">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="414" Y="183" width="150" height="127">
+        <dgm:shadow arcRad="20" X="686" Y="183" width="150" height="127">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="bpelSendPaymentsAP_client" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/GER_SOA_DEV_OCI/ValidationPaymentsAPEnt/BpelSendPaymentsAP#wsdl.interface(BpelSendPaymentsAP)"/>
@@ -118,33 +118,33 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gWireLink source="SendPaymentsAP" target="MediatorValidationPaymentsAPBiz/MediatorValidationPaymentsAPBiz" width="2">
-        <dgm:gSegment X1="168" Y1="215" X2="216" Y2="215"/>
+        <dgm:gSegment X1="168" Y1="215" X2="352" Y2="215"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="MediatorValidationPaymentsAPBiz/BpelSendPaymentsAP.bpelSendPaymentsAP_client" target="BpelSendPaymentsAP/bpelSendPaymentsAP_client" width="2">
-        <dgm:gSegment X1="366" Y1="215" X2="414" Y2="215"/>
+        <dgm:gSegment X1="502" Y1="215" X2="686" Y2="215"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="BpelSendPaymentsAP/WsMessageTec" target="WsMessageTec" width="2">
-        <dgm:gSegment X1="564" Y1="215" X2="589" Y2="215"/>
-        <dgm:gSegment X1="589" Y1="215" X2="589" Y2="36"/>
-        <dgm:gSegment X1="589" Y1="36" X2="628" Y2="36"/>
+        <dgm:gSegment X1="836" Y1="215" X2="860" Y2="215"/>
+        <dgm:gSegment X1="860" Y1="215" X2="860" Y2="36"/>
+        <dgm:gSegment X1="860" Y1="36" X2="1020" Y2="36"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="BpelSendPaymentsAP/wsErpIntegrationTec" target="wsErpIntegrationTec" width="2">
-        <dgm:gSegment X1="564" Y1="240" X2="604" Y2="240"/>
-        <dgm:gSegment X1="604" Y1="240" X2="604" Y2="166"/>
-        <dgm:gSegment X1="604" Y1="166" X2="628" Y2="166"/>
+        <dgm:gSegment X1="836" Y1="240" X2="875" Y2="240"/>
+        <dgm:gSegment X1="875" Y1="240" X2="875" Y2="166"/>
+        <dgm:gSegment X1="875" Y1="166" X2="1020" Y2="166"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="BpelSendPaymentsAP/WsValidationPaymentsAPBiz" target="WsValidationPaymentsAPBiz" width="2">
-        <dgm:gSegment X1="564" Y1="265" X2="589" Y2="265"/>
-        <dgm:gSegment X1="589" Y1="265" X2="589" Y2="368"/>
-        <dgm:gSegment X1="589" Y1="368" X2="628" Y2="368"/>
+        <dgm:gSegment X1="836" Y1="265" X2="860" Y2="265"/>
+        <dgm:gSegment X1="860" Y1="265" X2="860" Y2="368"/>
+        <dgm:gSegment X1="860" Y1="368" X2="1020" Y2="368"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
