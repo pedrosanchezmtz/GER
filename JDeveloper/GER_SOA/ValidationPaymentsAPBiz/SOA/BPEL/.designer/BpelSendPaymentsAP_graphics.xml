@@ -14,7 +14,7 @@
       <partnerlink name="wsAuditControlTec" x="4128" y="4157" side="right"/>
       <partnerlink name="wsSftpTec" x="4128" y="1490" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="1030,5677,1292,499" show_swimlanes="true">
+   <graph_layout viewport="0,0,1260,483" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="true" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>

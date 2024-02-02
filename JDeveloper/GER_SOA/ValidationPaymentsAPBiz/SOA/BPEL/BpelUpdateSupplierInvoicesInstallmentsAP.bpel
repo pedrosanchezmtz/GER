@@ -33,7 +33,9 @@
          xmlns:ns5="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"
          xmlns:ns6="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP"
          xmlns:ns3="http://soa.estrellaroja.com.mx/ERPIntegrationBiz"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:strClass="http://www.oracle.com/XSL/Transform/java/java.lang.String"
+         xmlns:ns7="http://soa.estrellaroja.com.mx/XxerTblConfIntegration">
   <import namespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz"
           location="oramds:/apps/SOA/ValidationPaymentsAPBiz/ValidationPaymentsAPBiz.xsd"
           importType="http://www.w3.org/2001/XMLSchema"/>
@@ -99,8 +101,244 @@
           <variable name="BpelUpdateInvoicesInstallmentsAPRs"
                     messageType="ns2:BpelUpdateInvoicesInstallmentsAPResponseMessage"/>
         </variables>
-        <sequence name="SeqSupplier">
-          <scope name="ScopeGetPaymentAPOLO" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+        <sequence name="SeqSupplier"><scope name="ScopeValidacionREPSE"
+                                            xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      
+      <bpelx:skipCondition>true()</bpelx:skipCondition>
+            <variables>
+              <variable name="v_repseTbl" element="ns4:RepseTbl"/>
+              <variable name="v_xxerTblConfIntegration" element="ns7:XxerTblConfIntegration"/>
+            </variables>
+            <sequence name="SeqValidacionREPSE">
+         <scope name="ScopeQueryDataConf" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+            <variables>
+               <variable name="v_consultaString" type="xsd:string"/>
+               <variable name="v_queryConsulta" type="xsd:string"/>
+            </variables>
+            <faultHandlers>
+               <catchAll>
+                  <sequence name="SeqErrorQueryData">
+                     
+                     <extensionActivity xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                        <bpelx:exec name="Log" xmlns:bpelx="http://schemas.oracle.com/bpel/extension"><![CDATA[addAuditTrailEntry("Start Log QueryData");        
+try {        
+addAuditTrailEntry("-----------------------Mostrando variables-----------------");          
+java.lang.String VarString = (java.lang.String)getVariableData("v_queryConsulta");       
+addAuditTrailEntry("v_queryConsulta=");      
+addAuditTrailEntry(VarString);      
+VarString = (java.lang.String)getVariableData("v_consultaString");      
+addAuditTrailEntry("-----------------------Mostrando variables Encoded-----------------");          
+oracle.soa.common.util.Base64Encoder Encoder = new oracle.soa.common.util.Base64Encoder();      
+java.lang.String encoded = Encoder.encode(VarString);       
+addAuditTrailEntry("Base64encode encoded=");   
+addAuditTrailEntry(encoded);   
+ } catch (Exception e) {        
+  addAuditTrailEntry("Base64encode Exception: "+e.getMessage());        
+}        
+addAuditTrailEntry("Start Log QueryData");]]>
+                           
+                        <![CDATA[addAuditTrailEntry("Start Log QueryData");         
+try {         
+addAuditTrailEntry("-----------------------Mostrando variables-----------------");           
+java.lang.String VarString = (java.lang.String)getVariableData("v_queryConsulta");        
+addAuditTrailEntry("v_queryConsulta=");       
+addAuditTrailEntry(VarString);       
+VarString = (java.lang.String)getVariableData("v_consultaString");       
+addAuditTrailEntry("-----------------------Mostrando variables Encoded-----------------");           
+oracle.soa.common.util.Base64Encoder Encoder = new oracle.soa.common.util.Base64Encoder();       
+java.lang.String encoded = Encoder.encode(VarString);        
+addAuditTrailEntry("Base64encode encoded=");    
+addAuditTrailEntry(encoded);    
+ } catch (Exception e) {         
+  addAuditTrailEntry("Base64encode Exception: "+e.getMessage());         
+}         
+addAuditTrailEntry("Start Log QueryData");]]></bpelx:exec>
+                     </extensionActivity>
+                  </sequence>
+               </catchAll>
+            </faultHandlers>
+            <sequence name="SeqQueryData">
+               <assign name="AssignQueryConsulta">
+                  <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                        xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                     <from>dvm:lookupValue("DVMs/dvmValidationPaymentsBizConfigs.dvm","Code","QueryConfs","Value","","Component","ValidationPaymentsBiz")</from>
+                     <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_queryConsulta</to>
+                  </copy>
+               </assign>
+               <assign name="AssignExeQuery">
+                  <copy>
+                     <from>strClass:replaceAll(oraext:get-content-as-string(oraext:query-database(bpws:getVariableData('v_queryConsulta'),true(),true(),'jdbc/ERSEPDB1DS')),'&lt;ROWSET&gt;','&lt;ROWSET xmlns="http://soa.estrellaroja.com.mx/XxerTblConfIntegration"&gt;')</from>
+                     <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_consultaString</to>
+                  </copy>
+               </assign>
+               <assign name="AssignResultQuery" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                  <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                        xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                     <from>oraext:parseXML($v_consultaString)</from>
+                     <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_xxerTblConfIntegration</to>
+                  </copy>
+                  <copy>
+                     <from>ora:getContentAsString($v_xxerTblConfIntegration)</from>
+                     <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_consultaString</to>
+                  </copy>
+               </assign>
+               <extensionActivity>
+                  <bpelx:exec name="Log" xmlns:bpelx="http://schemas.oracle.com/bpel/extension"><![CDATA[addAuditTrailEntry("Start Log QueryData");        
+try {        
+addAuditTrailEntry("-----------------------Mostrando variables-----------------");          
+java.lang.String VarString = (java.lang.String)getVariableData("v_queryConsulta");       
+addAuditTrailEntry("v_queryConsulta=");      
+addAuditTrailEntry(VarString);      
+VarString = (java.lang.String)getVariableData("v_consultaString");      
+addAuditTrailEntry("-----------------------Mostrando variables Encoded-----------------");          
+oracle.soa.common.util.Base64Encoder Encoder = new oracle.soa.common.util.Base64Encoder();      
+java.lang.String encoded = Encoder.encode(VarString);       
+addAuditTrailEntry("Base64encode encoded=");   
+addAuditTrailEntry(encoded);   
+ } catch (Exception e) {        
+  addAuditTrailEntry("Base64encode Exception: "+e.getMessage());        
+}        
+addAuditTrailEntry("Start Log QueryData");]]>
+                     
+                  <![CDATA[addAuditTrailEntry("Start Log QueryData");         
+try {         
+addAuditTrailEntry("-----------------------Mostrando variables-----------------");           
+java.lang.String VarString = (java.lang.String)getVariableData("v_queryConsulta");        
+addAuditTrailEntry("v_queryConsulta=");       
+addAuditTrailEntry(VarString);       
+VarString = (java.lang.String)getVariableData("v_consultaString");       
+addAuditTrailEntry("-----------------------Mostrando variables Encoded-----------------");           
+oracle.soa.common.util.Base64Encoder Encoder = new oracle.soa.common.util.Base64Encoder();       
+java.lang.String encoded = Encoder.encode(VarString);        
+addAuditTrailEntry("Base64encode encoded=");    
+addAuditTrailEntry(encoded);    
+ } catch (Exception e) {         
+  addAuditTrailEntry("Base64encode Exception: "+e.getMessage());         
+}         
+addAuditTrailEntry("Start Log QueryData");]]></bpelx:exec>
+               </extensionActivity>
+            </sequence>
+         </scope>
+         <if name="If_V_REPSE_COMPLETE">
+            <documentation>
+                  <![CDATA[V_REPSE_COMPLETE]]>
+                </documentation>
+            <condition>$v_xxerTblConfIntegration/ns7:ROW[ns7:CODE='V_REPSE_COMPLETE' and ns7:PROCCESS='VALIDATION' ]/ns7:CODE='V_REPSE_COMPLETE'</condition>
+            <sequence name="Sequence2">
+               <scope name="ScopeQueryData" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                  <variables>
+                     <variable name="v_consultaString" type="xsd:string"/>
+                     <variable name="v_queryConsulta" type="xsd:string"/>
+                  </variables>
+                  <faultHandlers>
+                     <catchAll>
+                        <sequence name="SeqErrorQueryData">
+                           
+                           <extensionActivity xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                              <bpelx:exec name="Log" xmlns:bpelx="http://schemas.oracle.com/bpel/extension"><![CDATA[addAuditTrailEntry("Start Log QueryData");        
+try {        
+addAuditTrailEntry("-----------------------Mostrando variables-----------------");          
+java.lang.String VarString = (java.lang.String)getVariableData("v_queryConsulta");       
+addAuditTrailEntry("v_queryConsulta=");      
+addAuditTrailEntry(VarString);      
+VarString = (java.lang.String)getVariableData("v_consultaString");      
+addAuditTrailEntry("-----------------------Mostrando variables Encoded-----------------");          
+oracle.soa.common.util.Base64Encoder Encoder = new oracle.soa.common.util.Base64Encoder();      
+java.lang.String encoded = Encoder.encode(VarString);       
+addAuditTrailEntry("Base64encode encoded=");   
+addAuditTrailEntry(encoded);   
+ } catch (Exception e) {        
+  addAuditTrailEntry("Base64encode Exception: "+e.getMessage());        
+}        
+addAuditTrailEntry("Start Log QueryData");]]>
+                                 
+                              <![CDATA[addAuditTrailEntry("Start Log QueryData");         
+try {         
+addAuditTrailEntry("-----------------------Mostrando variables-----------------");           
+java.lang.String VarString = (java.lang.String)getVariableData("v_queryConsulta");        
+addAuditTrailEntry("v_queryConsulta=");       
+addAuditTrailEntry(VarString);       
+VarString = (java.lang.String)getVariableData("v_consultaString");       
+addAuditTrailEntry("-----------------------Mostrando variables Encoded-----------------");           
+oracle.soa.common.util.Base64Encoder Encoder = new oracle.soa.common.util.Base64Encoder();       
+java.lang.String encoded = Encoder.encode(VarString);        
+addAuditTrailEntry("Base64encode encoded=");    
+addAuditTrailEntry(encoded);    
+ } catch (Exception e) {         
+  addAuditTrailEntry("Base64encode Exception: "+e.getMessage());         
+}         
+addAuditTrailEntry("Start Log QueryData");]]></bpelx:exec>
+                           </extensionActivity>
+                        </sequence>
+                     </catchAll>
+                  </faultHandlers>
+                  <sequence name="SeqQueryData">
+                     <assign name="AssignQueryConsulta">
+                        
+                     <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                           xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                           <from>dvm:lookupValue("DVMs/dvmValidationPaymentsBizConfigs.dvm","Code","QueryRepse","Value","","Component","ValidationPaymentsBiz")</from>
+                           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_queryConsulta</to>
+                        </copy></assign>
+                     <assign name="AssignExeQuery">
+                        <copy>
+                           <from>strClass:replaceAll(oraext:get-content-as-string(oraext:query-database(bpws:getVariableData('v_queryConsulta'),true(),true(),'jdbc/ERSEPDB1DS')),'&lt;ROWSET&gt;','&lt;ROWSET xmlns="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz"&gt;')</from>
+                           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_consultaString</to>
+                        </copy>
+                     </assign>
+                     <assign name="AssignResultQuery" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                        <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes"
+                              xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                           <from>oraext:parseXML($v_consultaString)</from>
+                           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_repseTbl</to>
+                        </copy>
+                        <copy>
+                           <from>ora:getContentAsString($v_repseTbl)</from>
+                           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_consultaString</to>
+                        </copy>
+                     </assign>
+                     <extensionActivity>
+                        <bpelx:exec name="Log" xmlns:bpelx="http://schemas.oracle.com/bpel/extension"><![CDATA[addAuditTrailEntry("Start Log QueryData");        
+try {        
+addAuditTrailEntry("-----------------------Mostrando variables-----------------");          
+java.lang.String VarString = (java.lang.String)getVariableData("v_queryConsulta");       
+addAuditTrailEntry("v_queryConsulta=");      
+addAuditTrailEntry(VarString);      
+VarString = (java.lang.String)getVariableData("v_consultaString");      
+addAuditTrailEntry("-----------------------Mostrando variables Encoded-----------------");          
+oracle.soa.common.util.Base64Encoder Encoder = new oracle.soa.common.util.Base64Encoder();      
+java.lang.String encoded = Encoder.encode(VarString);       
+addAuditTrailEntry("Base64encode encoded=");   
+addAuditTrailEntry(encoded);   
+ } catch (Exception e) {        
+  addAuditTrailEntry("Base64encode Exception: "+e.getMessage());        
+}        
+addAuditTrailEntry("Start Log QueryData");]]>
+                           
+                        <![CDATA[addAuditTrailEntry("Start Log QueryData");         
+try {         
+addAuditTrailEntry("-----------------------Mostrando variables-----------------");           
+java.lang.String VarString = (java.lang.String)getVariableData("v_queryConsulta");        
+addAuditTrailEntry("v_queryConsulta=");       
+addAuditTrailEntry(VarString);       
+VarString = (java.lang.String)getVariableData("v_consultaString");       
+addAuditTrailEntry("-----------------------Mostrando variables Encoded-----------------");           
+oracle.soa.common.util.Base64Encoder Encoder = new oracle.soa.common.util.Base64Encoder();       
+java.lang.String encoded = Encoder.encode(VarString);        
+addAuditTrailEntry("Base64encode encoded=");    
+addAuditTrailEntry(encoded);    
+ } catch (Exception e) {         
+  addAuditTrailEntry("Base64encode Exception: "+e.getMessage());         
+}         
+addAuditTrailEntry("Start Log QueryData");]]></bpelx:exec>
+                     </extensionActivity>
+                  </sequence>
+               </scope>
+               
+            </sequence>
+         </if>
+      </sequence>
+   </scope><scope name="ScopeGetPaymentAPOLO" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
             <variables>
               <variable name="v_stringXML" type="xsd:string"/>
               <variable name="WsErpIntegrationBizGenerateReportRq" messageType="ns3:GenerateReportRq"/>
