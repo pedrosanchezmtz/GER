@@ -21,18 +21,6 @@
   <xsd:element name="UpdateInvoicesInstallmentsAPRs" type="tns:UpdateInvoicesInstallmentsAPRsType"/>
   <xsd:element name="UpdateSupplierInvoicesInstallmentsAPRq" type="tns:UpdateSupplierInvoicesInstallmentsAPRqType"/>
   <xsd:element name="UpdateSupplierInvoicesInstallmentsAPRs" type="tns:UpdateSupplierInvoicesInstallmentsAPRsType"/>
-  <xsd:element name="ValidationAPRq" type="tns:ValidationAPRqType"/>
-  <xsd:element name="ValidationAPRs" type="tns:ValidationAPRsType"/>
-    <xsd:complexType name="ValidationAPRqType">
-    <xsd:sequence>
-      <xsd:element name="validation" minOccurs="0" type="xsd:string"/>
-    </xsd:sequence>
-  </xsd:complexType>
-  <xsd:complexType name="ValidationAPRsType">
-    <xsd:complexContent>
-      <xsd:extension base="cmn:BaseRsType"/>
-    </xsd:complexContent>
-  </xsd:complexType>
   <xsd:element name="RepseTbl">
     <xsd:complexType>
       <xsd:complexContent>
@@ -55,8 +43,7 @@
       </xsd:complexContent>
     </xsd:complexType>
   </xsd:element>
- 
-    <xsd:element name="PaymentsInvoices">
+  <xsd:element name="PaymentsInvoices">
     <xsd:complexType>
       <xsd:complexContent>
         <xsd:extension base="cmn:BaseRsType">
@@ -67,7 +54,7 @@
       </xsd:complexContent>
     </xsd:complexType>
   </xsd:element>
-   <xsd:complexType name="RepseTblType">
+  <xsd:complexType name="RepseTblType">
     <xsd:sequence>
       <xsd:element name="RFC" nillable="true" type="xsd:string" minOccurs="0"/>
       <xsd:element name="PROVEEDOR" nillable="true" type="xsd:string" minOccurs="0"/>
@@ -135,18 +122,26 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
-    <xsd:complexType name="UpdateSupplierInvoicesInstallmentsAPRqType">
+  <xsd:complexType name="UpdateSupplierInvoicesInstallmentsAPRqType">
     <xsd:sequence>
       <xsd:element name="Supplier" maxOccurs="unbounded" minOccurs="1">
         <xsd:complexType>
-                  <xsd:complexContent>
+          <xsd:complexContent>
             <xsd:extension base="inv:InvoiceInstallmentsType">
               <xsd:sequence>
                 <xsd:element name="supplier_number" type="xsd:string"/>
                 <xsd:element name="supplier_rfc" type="xsd:string"/>
+                <xsd:element name="supplier_list">
+                  <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                      <xsd:enumeration value="REPSE"/>
+                      <xsd:enumeration value="EXCLUSION"/>
+                    </xsd:restriction>
+                  </xsd:simpleType>
+                </xsd:element>
                 <xsd:element name="validate" type="xsd:boolean"/>
               </xsd:sequence>
-                          </xsd:extension>
+            </xsd:extension>
           </xsd:complexContent>
         </xsd:complexType>
       </xsd:element>
@@ -160,9 +155,8 @@
             <xsd:complexType>
               <xsd:sequence>
                 <xsd:element name="supplier_number" type="xsd:string"/>
-                 <xsd:element name="supplier_rfc" type="xsd:string"/>
+                <xsd:element name="supplier_rfc" type="xsd:string"/>
                 <xsd:element type="tns:UpdateInvoicesInstallmentsAPRsType" name="invoices" minOccurs="0"/>
-
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
@@ -213,52 +207,52 @@
       <xsd:extension base="cmn:BaseRsType"/>
     </xsd:complexContent>
   </xsd:complexType>
-    <xsd:complexType name="PaymentsInvoicesType" >
-      <xsd:sequence>
-        <xsd:element name="P_RFC_PROVEEDOR" type="xsd:string"/>
-        <xsd:element name="P_NUM_PROVEEDOR"/>
-        <xsd:element name="SUPPLIER">
-          <xsd:complexType>
-            <xsd:sequence>
-              <xsd:element name="SUPPLIER_NUMBER" type="xsd:integer"/>
-              <xsd:element name="SUPPLIER_RFC" type="xsd:string"/>
-              <xsd:element name="VENDOR_ID" type="xsd:integer"/>
-              <xsd:element name="PAYMENT" maxOccurs="unbounded" minOccurs="0">
-                <xsd:complexType>
-                  <xsd:sequence>
-                    <xsd:element name="ID_PAGO" type="xsd:integer"/>
-                    <xsd:element name="ID_CHECK" type="xsd:integer"/>
-                    <xsd:element name="NUMERO_PAGO" type="xsd:integer"/>
-                    <xsd:element name="REFERENCE_NUMBER" type="xsd:integer"/>
-                    <xsd:element name="FECHA_PAGO" type="xsd:dateTime"/>
-                    <xsd:element name="CODIGO_TIPO_PAGO" type="xsd:string"/>
-                    <xsd:element name="MONTO_PAGO" type="xsd:float"/>
-                    <xsd:element name="MONEDA_PAGO" type="xsd:string"/>
-                    <xsd:element name="NOMBRE_PROVEEDOR" type="xsd:string"/>
-                    <xsd:element name="RFC_PROVEEDOR" type="xsd:string"/>
-                    <xsd:element name="MENSAJE" type="xsd:integer"/>
-                    <xsd:element name="FECHA_MENSAJE" type="xsd:dateTime"/>
-                    <xsd:element name="STATUS" type="xsd:string"/>
-                    <xsd:element name="PAYMENT_STATUS" type="xsd:string"/>
-                  </xsd:sequence>
-                </xsd:complexType>
-              </xsd:element>
-              <xsd:element name="INVOICE" maxOccurs="unbounded" minOccurs="0">
-                <xsd:complexType>
-                  <xsd:sequence>
-                    <xsd:element name="INVOICE_NUM" type="xsd:string"/>
-                    <xsd:element name="INVOICE_ID" type="xsd:integer"/>
-                    <xsd:element name="INVOICE_DATE" type="xsd:dateTime"/>
-                    <xsd:element name="SUPPLIER_NUMBER" type="xsd:integer"/>
-                    <xsd:element name="STATUS" type="xsd:string"/>
-                    <xsd:element name="PAYMENT_STATUS_FLAG" type="xsd:string"/>
-                    <xsd:element name="SUPPLIER_RFC" type="xsd:string"/>
-                  </xsd:sequence>
-                </xsd:complexType>
-              </xsd:element>
-            </xsd:sequence>
-          </xsd:complexType>
-        </xsd:element>
-      </xsd:sequence>
-    </xsd:complexType>
+  <xsd:complexType name="PaymentsInvoicesType">
+    <xsd:sequence>
+      <xsd:element name="P_RFC_PROVEEDOR" type="xsd:string"/>
+      <xsd:element name="P_NUM_PROVEEDOR"/>
+      <xsd:element name="SUPPLIER">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="SUPPLIER_NUMBER" type="xsd:integer"/>
+            <xsd:element name="SUPPLIER_RFC" type="xsd:string"/>
+            <xsd:element name="VENDOR_ID" type="xsd:integer"/>
+            <xsd:element name="PAYMENT" maxOccurs="unbounded" minOccurs="0">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="ID_PAGO" type="xsd:integer"/>
+                  <xsd:element name="ID_CHECK" type="xsd:integer"/>
+                  <xsd:element name="NUMERO_PAGO" type="xsd:integer"/>
+                  <xsd:element name="REFERENCE_NUMBER" type="xsd:integer"/>
+                  <xsd:element name="FECHA_PAGO" type="xsd:dateTime"/>
+                  <xsd:element name="CODIGO_TIPO_PAGO" type="xsd:string"/>
+                  <xsd:element name="MONTO_PAGO" type="xsd:float"/>
+                  <xsd:element name="MONEDA_PAGO" type="xsd:string"/>
+                  <xsd:element name="NOMBRE_PROVEEDOR" type="xsd:string"/>
+                  <xsd:element name="RFC_PROVEEDOR" type="xsd:string"/>
+                  <xsd:element name="MENSAJE" type="xsd:integer"/>
+                  <xsd:element name="FECHA_MENSAJE" type="xsd:dateTime"/>
+                  <xsd:element name="STATUS" type="xsd:string"/>
+                  <xsd:element name="PAYMENT_STATUS" type="xsd:string"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="INVOICE" maxOccurs="unbounded" minOccurs="0">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="INVOICE_NUM" type="xsd:string"/>
+                  <xsd:element name="INVOICE_ID" type="xsd:integer"/>
+                  <xsd:element name="INVOICE_DATE" type="xsd:dateTime"/>
+                  <xsd:element name="SUPPLIER_NUMBER" type="xsd:integer"/>
+                  <xsd:element name="STATUS" type="xsd:string"/>
+                  <xsd:element name="PAYMENT_STATUS_FLAG" type="xsd:string"/>
+                  <xsd:element name="SUPPLIER_RFC" type="xsd:string"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
 </xsd:schema>

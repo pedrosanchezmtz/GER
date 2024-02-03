@@ -4,33 +4,26 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="bpelupdatesupplierinvoicesinstallmentsap_client" x="0" y="1269" side="left"/>
-      <partnerlink name="BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client" x="0" y="2200" side="left"/>
-      <partnerlink name="WsERPIntegrationBiz" x="0" y="1801" side="left"/>
+      <partnerlink name="bpelupdatesupplierinvoicesinstallmentsap_client" x="0" y="1560" side="left"/>
+      <partnerlink name="BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client" x="0" y="2783" side="left"/>
+      <partnerlink name="WsERPIntegrationBiz" x="0" y="1755" side="left"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,1260,483" show_swimlanes="true">
+   <graph_layout viewport="0,702,1195,483" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[1]" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[1]/faultHandlers/catchAll" type="catchall"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[1]/faultHandlers/catchAll/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[1]/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/faultHandlers/catchAll" type="catchall"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/faultHandlers/catchAll/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/forEach" type="foreach"/>
       <layout_item collapsed="false" xpath="/process/sequence/forEach/scope" type="scope" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence" type="sequence"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[1]" type="scope" showhandlers="true"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[1]/faultHandlers/catchAll" type="catchall"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[1]/faultHandlers/catchAll/sequence" type="sequence"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[1]/sequence" type="sequence"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[2]" type="scope" showhandlers="true"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[2]/sequence" type="sequence"/>
-      <layout_item collapsed="true" xpath="/process/sequence/forEach/scope/sequence/scope[2]/sequence/scope" type="scope" showhandlers="true"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[2]/sequence/scope/faultHandlers/catchAll" type="catchall"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[2]/sequence/scope/faultHandlers/catchAll/sequence" type="sequence"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[2]/sequence/scope/sequence" type="sequence"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[2]/sequence/if/sequence" type="sequence"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[2]/sequence/if/sequence/scope" type="scope" showhandlers="true"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[2]/sequence/if/sequence/scope/faultHandlers/catchAll" type="catchall"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[2]/sequence/if/sequence/scope/faultHandlers/catchAll/sequence" type="sequence"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[2]/sequence/if/sequence/scope/sequence" type="sequence"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[3]" type="scope" showhandlers="true"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[3]/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope/sequence" type="sequence"/>
    </graph_layout>
    <bookmarks/>
 </graphics>
