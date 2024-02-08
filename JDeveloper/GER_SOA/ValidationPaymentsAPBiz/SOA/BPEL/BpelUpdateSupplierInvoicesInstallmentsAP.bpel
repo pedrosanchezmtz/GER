@@ -387,7 +387,7 @@ addAuditTrailEntry("Start Log QueryData");]]>
       <documentation>
         <![CDATA[AssingList]]>
       </documentation>
-      <condition>string-length($inputVariable.payload/ns4:Supplier/ns4:supplier_list) &gt; 0</condition>
+      <condition>string-length($inputVariable.payload/ns4:Supplier[1]/ns4:supplier_list) &gt; 0</condition>
       <assign name="XQTs_ListSuppliers">
         <bpelx:annotation>
           <bpelx:pattern patternName="bpelx:xquery"></bpelx:pattern>
@@ -490,9 +490,13 @@ addAuditTrailEntry("Start Log QueryData");]]>
          <documentation>
                   <![CDATA[Se asigna la información correspondiente a la excepción CatchAll en el nodo de errores.]]>
                 </documentation>
-                <copy>
+                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
                   <from>'false'</from>
-                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputVariable.payload/ns4:Supplier/ns6:HoldFlag</to>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputVariable.payload/ns4:Supplier[$countSuppliers]/ns6:HoldFlag</to>
+                </copy>
+                <copy ignoreMissingFromData="yes" keepSrcElementName="no" bpelx:insertMissingToData="yes">
+                  <from>''</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputVariable.payload/ns4:Supplier[$countSuppliers]/ns6:HoldReason</to>
                 </copy>
               </assign>
       <else>
@@ -503,18 +507,18 @@ addAuditTrailEntry("Start Log QueryData");]]>
                   <documentation>
                     <![CDATA[REPSE_RETAIN]]>
                   </documentation>
-                  <condition>count($v_paymentsInvoices/ns4:DATA_DS/ns4:SUPPLIER/ns4:PAYMENT)&gt;0 and $inputVariable.payload/ns4:Supplier/ns6:HoldFlag='false'</condition><assign name="assignNoRetener"
+                  <condition>$v_repseTbl/ns4:ROW[ns4:RFC=$inputVariable.payload/ns4:Supplier[$countSuppliers]/ns4:supplier_rfc]/ns4:CUMPLIMIENTO&lt;100 and $inputVariable.payload/ns4:Supplier/ns6:HoldFlag='false'</condition><assign name="assignNoRetener"
                                                                                                                                                                                   xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
       <documentation>
                       <![CDATA[Se asigna la información correspondiente a la excepción CatchAll en el nodo de errores.]]>
                     </documentation>
-                    <copy>
+                    <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
                       <from>'true'</from>
-                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputVariable.payload/ns4:Supplier/ns6:HoldFlag</to>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputVariable.payload/ns4:Supplier[$countSuppliers]/ns6:HoldFlag</to>
                     </copy>
-                    <copy>
+                    <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
                       <from>'Cumplimiento REPSE menor al 100% '</from>
-                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputVariable.payload/ns4:Supplier/ns6:HoldReason</to>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputVariable.payload/ns4:Supplier[$countSuppliers]/ns6:HoldReason</to>
                     </copy>
                   </assign>
                   <elseif>
@@ -525,16 +529,17 @@ addAuditTrailEntry("Start Log QueryData");]]>
                     <assign name="assignNoRetener"
                                             xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
       <documentation>
-         
-      <![CDATA[Se asigna la información correspondiente a la excepción CatchAll en el nodo de errores.]]></documentation>
-      
-   <copy>
-         <from>'true'</from>
-         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputVariable.payload/ns4:Supplier/ns6:HoldFlag</to>
-      </copy><copy>
+                        <![CDATA[Se asigna la información correspondiente a la excepción CatchAll en el nodo de errores.]]>
+                      </documentation>
+                      <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                        <from>'true'</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputVariable.payload/ns4:Supplier[$countSuppliers]/ns6:HoldFlag</to>
+                      </copy>
+                      <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
                         <from>'Pagos pendientes'</from>
-                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputVariable.payload/ns4:Supplier/ns6:HoldReason</to>
-                      </copy></assign></elseif>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputVariable.payload/ns4:Supplier[$countSuppliers]/ns6:HoldReason</to>
+                      </copy>
+                    </assign></elseif>
                 </if></else>
    </if>
           </if>

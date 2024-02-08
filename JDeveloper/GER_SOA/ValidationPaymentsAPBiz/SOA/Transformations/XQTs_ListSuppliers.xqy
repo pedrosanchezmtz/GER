@@ -25,26 +25,14 @@ declare function local:funcXqts_listsuppliers($inputVariable.payload as element(
                <erp:HoldFlag>false</erp:HoldFlag>
                <val:supplier_rfc>{fn:data($ROW/val:RFC)}</val:supplier_rfc>
                <val:validate>true</val:validate>
-
                 </val:Supplier>
         else(     
                 for $ROW1 in $v_repseTbl/val:ROW
                 return 
                 <val:Supplier>
-                    {
-                        if (number($ROW1/val:PARAMETER1)=100)
-                        then <erp:HoldFlag>false</erp:HoldFlag>
-                        else (<erp:HoldFlag>true</erp:HoldFlag>)
-                    }
-                    {
-                        if (number($ROW1/val:PARAMETER1) < 100)
-                        then <erp:HoldReason>Cumplimiento REPSE menor al 100%</erp:HoldReason>
-                        else ()
-                    }
-                    
+                   <erp:HoldFlag>false</erp:HoldFlag>                       
                     <val:supplier_rfc>{fn:data($ROW1/val:RFC)}</val:supplier_rfc>
                     <val:validate>true</val:validate>
-
                 </val:Supplier>
         )
         }

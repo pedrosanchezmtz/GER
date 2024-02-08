@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="6335f080-a26c-43a6-82ba-ef57ec04dd0a" activeEnvironment="Default" name="ValidationPaymentsBiz" resourceRoot="" soapui-version="5.7.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="d6aa94a1-177d-48d6-bbcd-210fd68d532f" wsaVersion="NONE" name="ValidationPaymentsAPBizBinding" type="wsdl" bindingName="{http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz}ValidationPaymentsAPBizBinding" soapVersion="1_1" anonymous="optional" definition="https://141.148.3.46/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://141.148.3.46/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz?WSDL"><con:part><con:url>https://141.148.3.46/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz?WSDL</con:url><con:content><![CDATA[<wsdl:definitions name="ValidationPaymentsAPBiz" targetNamespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:tns="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation>
+    <abstractWSDL>https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz!2.4/apps/SOA/DEV_ValidationPaymentsAPBiz/ValidationPaymentsAPBiz.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/types" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" schemaLocation="https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz?XSD=ValidationPaymentsAPBiz.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SendPaymentsAPRq">
+    <wsdl:part name="SendPaymentsAPRqPart" element="tns:SendPaymentsAPRq"/>
+  </wsdl:message>
+  <wsdl:message name="SendNotificationsRq">
+    <wsdl:part name="SendNotificationsRqPart" element="tns:SendNotificationsRq"/>
+  </wsdl:message>
+  <wsdl:message name="GenerateFoldersRq">
+    <wsdl:part name="GenerateFoldersRqPart" element="tns:GenerateFoldersRq"/>
+  </wsdl:message>
+  <wsdl:message name="GenerateFoldersRs">
+    <wsdl:part name="GenerateFoldersRsPart" element="tns:GenerateFoldersRs"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateInvoicesInstallmentsAPRq">
+    <wsdl:part name="UpdateInvoicesInstallmentsAPRqPart" element="tns:UpdateInvoicesInstallmentsAPRq"/>
+    <wsdl:part name="UpdateInvoicesInstallmentsAPRqPart" element="tns:UpdateInvoicesInstallmentsAPRq"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateInvoicesInstallmentsAPRs">
+    <wsdl:part name="UpdateInvoicesInstallmentsAPRsPart" element="tns:UpdateInvoicesInstallmentsAPRs"/>
+    <wsdl:part name="UpdateInvoicesInstallmentsAPRsPart" element="tns:UpdateInvoicesInstallmentsAPRs"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateSupplierInvoicesInstallmentsAPRq">
+    <wsdl:part name="UpdateSupplierInvoicesInstallmentsAPRqPart" element="tns:UpdateSupplierInvoicesInstallmentsAPRq"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateSupplierInvoicesInstallmentsAPRs">
+    <wsdl:part name="UpdateSupplierInvoicesInstallmentsAPRsPart" element="tns:UpdateSupplierInvoicesInstallmentsAPRs"/>
+  </wsdl:message>
+  <wsdl:portType name="ValidationPaymentsAPBizPortType">
+    <wsdl:operation name="SendPaymentsAP">
+      <wsdl:input message="tns:SendPaymentsAPRq"/>
+    </wsdl:operation>
+    <wsdl:operation name="SendNotifications">
+      <wsdl:input message="tns:SendNotificationsRq"/>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateFolders">
+      <wsdl:input message="tns:GenerateFoldersRq"/>
+      <wsdl:output message="tns:GenerateFoldersRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoicesInstallmentsAP">
+      <wsdl:input message="tns:UpdateInvoicesInstallmentsAPRq"/>
+      <wsdl:output message="tns:UpdateInvoicesInstallmentsAPRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSupplierInvoicesInstallmentsAP">
+      <wsdl:input message="tns:UpdateSupplierInvoicesInstallmentsAPRq"/>
+      <wsdl:output message="tns:UpdateSupplierInvoicesInstallmentsAPRs"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ValidationPaymentsAPBizBinding" type="tns:ValidationPaymentsAPBizPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="SendPaymentsAP">
+      <soap:operation soapAction="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/SendPaymentsAP"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="SendPaymentsAPRqPart"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SendNotifications">
+      <soap:operation soapAction="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/SendNotifications"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="SendNotificationsRqPart"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateFolders">
+      <soap:operation soapAction="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/GenerateFolders"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="GenerateFoldersRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="GenerateFoldersRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoicesInstallmentsAP">
+      <soap:operation soapAction="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/UpdateInvoicesInstallmentsAP"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="UpdateInvoicesInstallmentsAPRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="UpdateInvoicesInstallmentsAPRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSupplierInvoicesInstallmentsAP">
+      <soap:operation soapAction="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/UpdateSupplierInvoicesInstallmentsAP"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="UpdateSupplierInvoicesInstallmentsAPRqPart"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="UpdateSupplierInvoicesInstallmentsAPRsPart"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ValidationPaymentsBiz">
+    <wsdl:port name="ValidationPaymentsAPBizPort" binding="tns:ValidationPaymentsAPBizBinding">
+      <soap:address location="https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz?XSD=ValidationPaymentsAPBiz.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:cp="http://soa.estrellaroja.com.mx/Reports/XXER_ValidationComplement" xmlns:inv="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">
+  <xsd:import schemaLocation="https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz?XSD=../../Common/Report/XXER_ValidationComplement.xsd" namespace="http://soa.estrellaroja.com.mx/Reports/XXER_ValidationComplement"/>
+  <xsd:import schemaLocation="https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz?XSD=../../Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+  <xsd:import schemaLocation="https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz?XSD=../../Common/XSD/InvoiceAP/erpInvoiceInstallmentsAP.xsd" namespace="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP"/>
+  <xsd:element name="SendPaymentsAPRq" type="tns:SendPaymentsAPRqType"/>
+  <xsd:element name="SendPaymentsAPRs" type="tns:SendPaymentsAPRsType"/>
+  <xsd:element name="SendNotificationsRq" type="tns:SendNotificationsRqType"/>
+  <xsd:element name="SendNotificationsRs" type="tns:SendNotificationsRsType"/>
+  <xsd:element name="GenerateFoldersRq" type="tns:GenerateFoldersRqType"/>
+  <xsd:element name="GenerateFoldersRs" type="tns:GenerateFoldersRsType"/>
+  <xsd:element name="UpdateInvoicesInstallmentsAPRq" type="tns:UpdateInvoicesInstallmentsAPRqType"/>
+  <xsd:element name="UpdateInvoicesInstallmentsAPRs" type="tns:UpdateInvoicesInstallmentsAPRsType"/>
+  <xsd:element name="UpdateSupplierInvoicesInstallmentsAPRq" type="tns:UpdateSupplierInvoicesInstallmentsAPRqType"/>
+  <xsd:element name="UpdateSupplierInvoicesInstallmentsAPRs" type="tns:UpdateSupplierInvoicesInstallmentsAPRsType"/>
+  <xsd:element name="RepseTbl">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="cmn:BaseRsType">
+          <xsd:sequence>
+            <xsd:element name="ROW" type="tns:RepseTblType" maxOccurs="unbounded" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ExclusionTbl">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="cmn:BaseRsType">
+          <xsd:sequence>
+            <xsd:element name="ROW" type="tns:ExclusionTblType" maxOccurs="unbounded" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="PaymentsInvoices">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="cmn:BaseRsType">
+          <xsd:sequence>
+            <xsd:element name="DATA_DS" type="tns:PaymentsInvoicesType" maxOccurs="1" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="RepseTblType">
+    <xsd:sequence>
+      <xsd:element name="RFC" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PROVEEDOR" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER1" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER2" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER3" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER4" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER5" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER6" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER7" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER8" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER9" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER10" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER11" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER12" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PARAMETER13" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="CUMPLIMIENTO" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ExclusionTblType">
+    <xsd:sequence>
+      <xsd:element name="RFC" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PROVEEDOR" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="UpdateInvoicesInstallmentsAPRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="invoice" maxOccurs="unbounded" minOccurs="1">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="invoice_id" type="xsd:string"/>
+                <xsd:element name="InvoiceInstallment" maxOccurs="unbounded" minOccurs="1">
+                  <xsd:complexType>
+                    <xsd:complexContent>
+                      <xsd:extension base="cmn:BaseRsType">
+                        <xsd:sequence>
+                          <xsd:element type="inv:InvoiceInstallmentsType" name="Result"/>
+                        </xsd:sequence>
+                      </xsd:extension>
+                    </xsd:complexContent>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="UpdateInvoicesInstallmentsAPRqType">
+    <xsd:sequence>
+      <xsd:element name="invoice" maxOccurs="unbounded" minOccurs="1">
+        <xsd:complexType>
+          <xsd:complexContent>
+            <xsd:extension base="inv:InvoiceInstallmentsType">
+              <xsd:sequence>
+                <xsd:element name="invoice_id" type="xsd:string"/>
+                <xsd:element name="rfc" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:extension>
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="UpdateSupplierInvoicesInstallmentsAPRqType">
+    <xsd:sequence>
+      <xsd:element name="Supplier" maxOccurs="unbounded" minOccurs="1">
+        <xsd:complexType>
+          <xsd:complexContent>
+            <xsd:extension base="inv:InvoiceInstallmentsType">
+              <xsd:sequence>
+                <xsd:element name="supplier_number" type="xsd:string"/>
+                <xsd:element name="supplier_rfc" type="xsd:string"/>
+                <xsd:element name="supplier_list">
+                  <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                      <xsd:enumeration value="REPSE"/>
+                      <xsd:enumeration value="EXCLUSION"/>
+                    </xsd:restriction>
+                  </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="validate" type="xsd:boolean"/>
+              </xsd:sequence>
+            </xsd:extension>
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="UpdateSupplierInvoicesInstallmentsAPRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="Supplier" maxOccurs="unbounded" minOccurs="1">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="supplier_number" type="xsd:string"/>
+                <xsd:element name="supplier_rfc" type="xsd:string"/>
+                <xsd:element type="tns:UpdateInvoicesInstallmentsAPRsType" name="invoices" minOccurs="0"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SendPaymentsAPRqType">
+    <xsd:sequence>
+      <xsd:element ref="cp:DATA_DS"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SendPaymentsAPRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SendNotificationsRqType">
+    <xsd:sequence>
+      <xsd:element name="ID_PAGO" type="xsd:integer"/>
+      <xsd:element name="ID_CHECK" type="xsd:integer"/>
+      <xsd:element name="MONTO_PAGO" type="xsd:float"/>
+      <xsd:element name="FECHA_PAGO" type="xsd:string"/>
+      <xsd:element name="NUMERO_NOTIFICACION" type="xsd:string"/>
+      <xsd:element name="NOMBRE_PROVEEDOR" type="xsd:string"/>
+      <xsd:element name="EMAIL_NOTIFICACION" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="REFERENCE_NUMBER" minOccurs="0" type="xsd:integer"/>
+      <xsd:element name="NUMERO_PAGO" minOccurs="0" type="xsd:integer"/>
+      <xsd:element name="ESTATUS" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="ESTATUS_MSJ" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="DETAIL_LINES" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="COMPROBANTE_NAME" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="COMPROBANTE" minOccurs="0" type="xsd:base64Binary"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SendNotificationsRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GenerateFoldersRqType">
+    <xsd:sequence>
+      <xsd:element name="FECHA" minOccurs="0" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GenerateFoldersRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PaymentsInvoicesType">
+    <xsd:sequence>
+      <xsd:element name="P_RFC_PROVEEDOR" type="xsd:string"/>
+      <xsd:element name="P_NUM_PROVEEDOR"/>
+      <xsd:element name="SUPPLIER">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="SUPPLIER_NUMBER" type="xsd:integer"/>
+            <xsd:element name="SUPPLIER_RFC" type="xsd:string"/>
+            <xsd:element name="VENDOR_ID" type="xsd:integer"/>
+            <xsd:element name="PAYMENT" maxOccurs="unbounded" minOccurs="0">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="ID_PAGO" type="xsd:integer"/>
+                  <xsd:element name="ID_CHECK" type="xsd:integer"/>
+                  <xsd:element name="NUMERO_PAGO" type="xsd:integer"/>
+                  <xsd:element name="REFERENCE_NUMBER" type="xsd:integer"/>
+                  <xsd:element name="FECHA_PAGO" type="xsd:dateTime"/>
+                  <xsd:element name="CODIGO_TIPO_PAGO" type="xsd:string"/>
+                  <xsd:element name="MONTO_PAGO" type="xsd:float"/>
+                  <xsd:element name="MONEDA_PAGO" type="xsd:string"/>
+                  <xsd:element name="NOMBRE_PROVEEDOR" type="xsd:string"/>
+                  <xsd:element name="RFC_PROVEEDOR" type="xsd:string"/>
+                  <xsd:element name="MENSAJE" type="xsd:integer"/>
+                  <xsd:element name="FECHA_MENSAJE" type="xsd:dateTime"/>
+                  <xsd:element name="STATUS" type="xsd:string"/>
+                  <xsd:element name="PAYMENT_STATUS" type="xsd:string"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="INVOICE" maxOccurs="unbounded" minOccurs="0">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="INVOICE_NUM" type="xsd:string"/>
+                  <xsd:element name="INVOICE_ID" type="xsd:integer"/>
+                  <xsd:element name="INVOICE_DATE" type="xsd:dateTime"/>
+                  <xsd:element name="SUPPLIER_NUMBER" type="xsd:integer"/>
+                  <xsd:element name="STATUS" type="xsd:string"/>
+                  <xsd:element name="PAYMENT_STATUS_FLAG" type="xsd:string"/>
+                  <xsd:element name="SUPPLIER_RFC" type="xsd:string"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz?XSD=../../Common/Report/XXER_ValidationComplement.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/Reports/XXER_ValidationComplement" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/Reports/XXER_ValidationComplement">
+  <xsd:element name="DATA_DS">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="G_1" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ID_PAGO" type="xsd:integer"/>
+              <xsd:element name="ID_CHECK" type="xsd:integer"/>
+              <xsd:element name="CODIGO_TIPO_PAGO" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="FECHA_PAGO" minOccurs="0" type="xsd:dateTime"/>
+              <xsd:element name="MONTO_PAGO" minOccurs="0" type="xsd:float"/>
+              <xsd:element name="MONEDA_PAGO" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="NOMBRE_EMPRESA" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="NOMBRE_EMPRESA_COMPLETO" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="CODIGO_POSTAL_EMPRESA" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="RFC_EMPRESA" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="BANCO_EMPRESA" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="NO_CTA_EMPRESA" minOccurs="0" type="xsd:integer"/>
+              <xsd:element name="NOMBRE_PROVEEDOR" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="CODIGO_POSTAL_PROVEEDOR" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="DIRECCION_FISCAL_PROVEEDOR" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="CODIGO_CIUDAD_PROVEEDOR" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="CIUDAD_PROVEEDOR" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="RFC_PROVEEDOR" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="BANCO_PROVEEDOR" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="NO_CTA_PROVEEDOR" minOccurs="0" type="xsd:integer"/>
+              <xsd:element name="EMAIL_NOTIFICACION" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="MENSAJE" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="NOMBRE_CARPETA" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="REFERENCE_NUMBER" minOccurs="0" type="xsd:integer"/>
+              <xsd:element name="NUMERO_PAGO" minOccurs="0" type="xsd:integer"/>
+              <xsd:element name="ORGANIZATION_TYPE" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="VALIDACION_MANUAL" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="REGIMEN_EMPRESA" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="ENTIDAD_LEGAL" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="STATUS" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="PAYMENT_STATUS" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="G_2" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="ID_PAGO" minOccurs="0" type="xsd:integer"/>
+                    <xsd:element name="ID_FACTURA" minOccurs="0" type="xsd:integer"/>
+                    <xsd:element name="NUMERO_PROVEEDOR" minOccurs="0" type="xsd:integer"/>
+                    <xsd:element name="NUMERO_DOCUMENTO" minOccurs="0" type="xsd:string"/>
+                    <xsd:element name="MONTO_DOCUMENTO" minOccurs="0" type="xsd:float"/>
+                    <xsd:element name="RET_IVA" minOccurs="0" type="xsd:integer"/>
+                    <xsd:element name="RET_ISR" minOccurs="0" type="xsd:integer"/>
+                    <xsd:element name="TIPO_PAGO" minOccurs="0" type="xsd:string"/>
+                    <xsd:element name="UNIDAD_NEGOCIO" minOccurs="0" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz?XSD=../../Common/XSD/EstrellaRojaCommons.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+  <xsd:element name="Error" type="ErrorType"/>
+  <xsd:complexType name="MetadataType">
+    <xsd:sequence>
+      <xsd:element name="CallerSystem" type="CallerSystemType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Identifying values for the caller system. The ID may be used to reference a primary-key value within a database or in a particular implementation.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Environment" type="EnvironmentType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Elements for identifying environment of the service operation.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="UserInformation" minOccurs="0" type="UserInformationType">
+        <xsd:annotation>
+          <xsd:documentation>User information to help recognize who call or execute the service.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AdditionalInformation" type="AdditionalInformationType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="UserInformationType">
+    <xsd:sequence>
+      <xsd:element name="UserId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Used to identify the source of the caller user by ID or code.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="UserName" minOccurs="0" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Used to identify the source of the caller user by name.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="EmptyType">
+    <xsd:annotation>
+      <xsd:documentation>Setting an empty element of this type indicates no values or elements are needed.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  <xsd:complexType name="SuccessType">
+    <xsd:annotation>
+      <xsd:documentation>Returning an empty element of this type indicates the
+                         successful processing of a message</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  <xsd:complexType name="ErrorsType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">A collection of errors that occurred
+                                       during the processing of a message.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="Error" type="ErrorType" maxOccurs="99" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">An error that occurred during the
+                                           processing of a message.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ErrorType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">Standard way to indicate that an error
+                                       occurred during the Web Service
+                                       processing. If the message successfully
+                                       processes, but there are business errors,
+                                       those errors should be passed in the
+                                       warning element.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ErrorCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The Error element MUST contain the Type
+                             that uses a recommended set of values to indicate
+                             the error type. The validating XSD can expect to
+                             accept values that it has NOT been explicitly coded
+                             for and process them by using Type ="Unknown".</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ShortDescription" type="xsd:string"/>
+      <xsd:element name="Description" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Details of the error.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BusinessProcess" type="xsd:string"/>
+      <xsd:element name="FailedService" type="xsd:string"/>
+      <xsd:element name="TimeStamp" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CallerSystemType">
+    <xsd:sequence>
+      <xsd:element name="SystemId" minOccurs="1" maxOccurs="1" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Used to identify the source of the caller System by ID or code.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SystemName" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Used to identify the source of the caller System by name.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="EnvironmentType">
+    <xsd:sequence>
+      <xsd:element name="Context" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="ProccesName" type="xsd:string" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Generally the operation name or business name.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AdditionalInformationType">
+    <xsd:sequence>
+      <xsd:element name="CompanyName" type="xsd:string" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Identifies a company by code or name.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TransactionId" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>A unique identifying value assigned by the creating system. The ID may be used to reference a primary-key value within a database or in a particular implementation.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TimeStamp" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 01 December 2016, 1:59:38 pm UTC becomes 2016-12-01T13:59:38Z).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BaseRsType">
+    <xsd:sequence>
+      <xsd:element name="Success" minOccurs="0" maxOccurs="1" type="SuccessType"/>
+      <xsd:element name="Errors" maxOccurs="1" minOccurs="0" type="ErrorsType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz?XSD=../../Common/XSD/InvoiceAP/erpInvoiceInstallmentsAP.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">
+  <xsd:element name="getInvoiceInstallmentsAPRq">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="QueryParametersType">
+          <xsd:sequence>
+            <xsd:element name="invoice_id" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="getInvoiceInstallmentsAPRs">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="ResponseAPIType">
+          <xsd:sequence>
+            <xsd:element name="items" type="InvoiceInstallmentsType" maxOccurs="unbounded" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="updateInvoiceInstallmentsAPRq">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="InvoiceInstallmentsType"/>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="updateInvoiceInstallmentsAPRs" type="InvoiceInstallmentsType"/>
+  <xsd:complexType name="LinksType">
+    <xsd:sequence>
+      <xsd:element name="href" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="kind" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="name" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="properties" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="changeIndicator" type="xsd:string" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rel" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="QueryParametersType">
+    <xsd:sequence>
+      <xsd:element name="finder" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="fields" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="expand" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="dependency" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="onlyData" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="limit" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="offset" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="orderBy" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="q" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="totalResults" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="links" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InvoiceInstallmentsType">
+    <xsd:sequence>
+      <xsd:element name="BankAccount" type="xsd:integer" minOccurs="0"/>
+      <xsd:element name="CreatedBy" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="CreationDate" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="DueDate" type="xsd:date" minOccurs="0"/>
+      <xsd:element name="ExternalBankAccountId" type="xsd:integer" minOccurs="0"/>
+      <xsd:element name="FirstDiscountAmount" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="FirstDiscountDate" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="GrossAmount" type="xsd:integer" minOccurs="0"/>
+      <xsd:element name="HeldBy" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="HoldDate" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="HoldFlag" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="HoldReason" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="HoldType" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="InstallmentNumber" type="xsd:integer" minOccurs="0"/>
+      <xsd:element name="LastUpdateDate" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="LastUpdateLogin" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="LastUpdatedBy" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="NetAmountOne" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="NetAmountThree" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="NetAmountTwo" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PaymentMethod" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PaymentMethodCode" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PaymentPriority" type="xsd:integer" minOccurs="0"/>
+      <xsd:element name="RemitToAddressName" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="RemitToSupplier" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="RemittanceMessageOne" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="RemittanceMessageThree" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="RemittanceMessageTwo" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="SecondDiscountAmount" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="SecondDiscountDate" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ThirdDiscountAmount" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ThirdDiscountDate" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="UnpaidAmount" type="xsd:integer" minOccurs="0"/>
+      <xsd:element name="links" type="LinksType" maxOccurs="unbounded" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseAPIType">
+    <xsd:sequence>
+      <xsd:element name="count" type="xsd:integer" minOccurs="0"/>
+      <xsd:element name="hasMore" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="limit" type="xsd:integer" minOccurs="0"/>
+      <xsd:element name="links" type="LinksType" maxOccurs="unbounded" minOccurs="0"/>
+      <xsd:element name="offset" type="xsd:integer" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz</con:endpoint></con:endpoints><con:operation id="2401f4db-2db9-4b45-8d8e-fe5dd6cd7b32" isOneWay="false" action="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/GenerateFolders" name="GenerateFolders" bindingOperationName="GenerateFolders" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="afe45364-ae54-4547-bea4-c9a21c8b9db4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:val="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <val:GenerateFoldersRq>\r
+         <!--Optional:-->\r
+         <val:FECHA>?</val:FECHA>\r
+      </val:GenerateFoldersRq>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/GenerateFolders"/></con:call></con:operation><con:operation id="56322071-281c-4e19-ad3f-11f489ddd0b1" isOneWay="false" action="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/SendNotifications" name="SendNotifications" bindingOperationName="SendNotifications" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f167dce4-26d7-4734-8ed4-38b05654fc34" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:val="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <val:SendNotificationsRq>\r
+         <val:ID_PAGO>?</val:ID_PAGO>\r
+         <val:ID_CHECK>?</val:ID_CHECK>\r
+         <val:MONTO_PAGO>?</val:MONTO_PAGO>\r
+         <val:FECHA_PAGO>?</val:FECHA_PAGO>\r
+         <val:NUMERO_NOTIFICACION>?</val:NUMERO_NOTIFICACION>\r
+         <val:NOMBRE_PROVEEDOR>?</val:NOMBRE_PROVEEDOR>\r
+         <!--Optional:-->\r
+         <val:EMAIL_NOTIFICACION>?</val:EMAIL_NOTIFICACION>\r
+         <!--Optional:-->\r
+         <val:REFERENCE_NUMBER>?</val:REFERENCE_NUMBER>\r
+         <!--Optional:-->\r
+         <val:NUMERO_PAGO>?</val:NUMERO_PAGO>\r
+         <!--Optional:-->\r
+         <val:ESTATUS>?</val:ESTATUS>\r
+         <!--Optional:-->\r
+         <val:ESTATUS_MSJ>?</val:ESTATUS_MSJ>\r
+         <!--Optional:-->\r
+         <val:DETAIL_LINES>?</val:DETAIL_LINES>\r
+         <!--Optional:-->\r
+         <val:COMPROBANTE_NAME>?</val:COMPROBANTE_NAME>\r
+         <!--Optional:-->\r
+         <val:COMPROBANTE>cid:87791435381</val:COMPROBANTE>\r
+      </val:SendNotificationsRq>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/SendNotifications"/></con:call></con:operation><con:operation id="7e1803ac-4038-4a7b-b1f0-41ed39875d36" isOneWay="false" action="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/SendPaymentsAP" name="SendPaymentsAP" bindingOperationName="SendPaymentsAP" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c3ec71ac-af47-41a1-ab43-cab4bd873cbc" name="Request Notifiacion(2)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<SendPaymentsAPRq xmlns="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:client="http://xmlns.oracle.com/GER_SOA_DEV_OCI/ValidationPaymentsAPEnt/BpelSendPaymentsAP" xmlns:ns1="http://soa.estrellaroja.com.mx/ValidationPaymentsAPEnt" xmlns:ns2="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:ns3="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/types" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+			<ns0:DATA_DS xmlns:ns0="http://soa.estrellaroja.com.mx/Reports/XXER_ValidationComplement">
+				<ns0:G_1>
+					<ns0:ID_PAGO>7005423</ns0:ID_PAGO>
+					<ns0:ID_CHECK>300000087344009</ns0:ID_CHECK>
+					<ns0:CODIGO_TIPO_PAGO>EFT</ns0:CODIGO_TIPO_PAGO>
+					<ns0:FECHA_PAGO>2023-09-01T00:00:00.000+00:00</ns0:FECHA_PAGO>
+					<ns0:MONTO_PAGO>1158.05</ns0:MONTO_PAGO>
+					<ns0:MONEDA_PAGO>MXN</ns0:MONEDA_PAGO>
+					<ns0:NOMBRE_EMPRESA>TRATECSA_BU</ns0:NOMBRE_EMPRESA>
+					<ns0:RFC_EMPRESA>TTE020806LF4</ns0:RFC_EMPRESA>
+					<ns0:BANCO_EMPRESA>BANAMEX_7439</ns0:BANCO_EMPRESA>
+					<ns0:NO_CTA_EMPRESA>0000000003747439</ns0:NO_CTA_EMPRESA>
+					<ns0:NOMBRE_PROVEEDOR>GRUPO COMERCIAL DE MEXICO SA DE CV</ns0:NOMBRE_PROVEEDOR>
+					<ns0:RFC_PROVEEDOR>GCM011227V7A</ns0:RFC_PROVEEDOR>
+					<ns0:BANCO_PROVEEDOR>BANA1071</ns0:BANCO_PROVEEDOR>
+					<ns0:NO_CTA_PROVEEDOR>002311001282381071</ns0:NO_CTA_PROVEEDOR>
+					<ns0:EMAIL_NOTIFICACION>ana.alcantar@energeticosnieto.com,ana.romero@energeticosnieto.com,antonio.guzman@energeticosnieto.com,axel.olan@energeticosnieto.com,claudia.espinosa@energeticosnieto.com,diana.martinez@energeticosnieto.com,francisca.sanchez@energeticosnieto.com,jenny.romero@energeticosnieto.com,jesarely.medina@energeticosnieto.com,juan.torres@energeticosnieto.com,julian.rios@energeticosnieto.com,kimberly.perez@energeticosnieto.com,mariana.chavez@estrellaroja.com.mx,maru.rojas@energeticosnieto.com,ramon.ramirez@energeticosnieto.com,raul.garcia@energeticosnieto.com,yadira.woo@energeticosnieto.com</ns0:EMAIL_NOTIFICACION>
+					<ns0:MENSAJE>1</ns0:MENSAJE>
+					<ns0:NOMBRE_CARPETA>TRATECSA_BU_BANAMEX_7439</ns0:NOMBRE_CARPETA>
+					<ns0:REFERENCE_NUMBER>104091</ns0:REFERENCE_NUMBER>
+					<ns0:NUMERO_PAGO>911</ns0:NUMERO_PAGO>
+					<ns0:ORGANIZATION_TYPE>CORPORATION</ns0:ORGANIZATION_TYPE>
+					<ns0:PAYMENT_STATUS>CLEARED</ns0:PAYMENT_STATUS>
+					<ns0:G_2>
+						<ns0:ID_PAGO>7005423</ns0:ID_PAGO>
+						<ns0:ID_FACTURA>300000086835947</ns0:ID_FACTURA>
+						<ns0:NUMERO_PROVEEDOR>10247</ns0:NUMERO_PROVEEDOR>
+						<ns0:NUMERO_DOCUMENTO>FEAT92208</ns0:NUMERO_DOCUMENTO>
+						<ns0:MONTO_DOCUMENTO>1158.05</ns0:MONTO_DOCUMENTO>
+						<ns0:RET_IVA>0</ns0:RET_IVA>
+						<ns0:RET_ISR>0</ns0:RET_ISR>
+						<ns0:TIPO_PAGO>STANDARD</ns0:TIPO_PAGO>
+						<ns0:UNIDAD_NEGOCIO>TRATECSA_BU</ns0:UNIDAD_NEGOCIO>
+					</ns0:G_2>
+				</ns0:G_1>
+			</ns0:DATA_DS>
+		</SendPaymentsAPRq>
+	</soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/SendPaymentsAP"/><con:wsrmConfig version="1.2"/></con:call><con:call id="cd9c17a6-da7a-4dc9-8beb-d6a51359a060" name="Request Notifiacion(3)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<SendPaymentsAPRq xmlns="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:client="http://xmlns.oracle.com/GER_SOA_DEV_OCI/ValidationPaymentsAPEnt/BpelSendPaymentsAP" xmlns:ns1="http://soa.estrellaroja.com.mx/ValidationPaymentsAPEnt" xmlns:ns2="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:ns3="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/types" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+			<ns0:DATA_DS xmlns:ns0="http://soa.estrellaroja.com.mx/Reports/XXER_ValidationComplement">
+				<ns0:G_1>
+					<ns0:ID_PAGO>7005423</ns0:ID_PAGO>
+					<ns0:ID_CHECK>300000087344009</ns0:ID_CHECK>
+					<ns0:CODIGO_TIPO_PAGO>EFT</ns0:CODIGO_TIPO_PAGO>
+					<ns0:FECHA_PAGO>2023-09-01T00:00:00.000+00:00</ns0:FECHA_PAGO>
+					<ns0:MONTO_PAGO>1158.05</ns0:MONTO_PAGO>
+					<ns0:MONEDA_PAGO>MXN</ns0:MONEDA_PAGO>
+					<ns0:NOMBRE_EMPRESA>TRATECSA_BU</ns0:NOMBRE_EMPRESA>
+					<ns0:RFC_EMPRESA>TTE020806LF4</ns0:RFC_EMPRESA>
+					<ns0:BANCO_EMPRESA>BANAMEX_7439</ns0:BANCO_EMPRESA>
+					<ns0:NO_CTA_EMPRESA>0000000003747439</ns0:NO_CTA_EMPRESA>
+					<ns0:NOMBRE_PROVEEDOR>GRUPO COMERCIAL DE MEXICO SA DE CV</ns0:NOMBRE_PROVEEDOR>
+					<ns0:RFC_PROVEEDOR>GCM011227V7A</ns0:RFC_PROVEEDOR>
+					<ns0:BANCO_PROVEEDOR>BANA1071</ns0:BANCO_PROVEEDOR>
+					<ns0:NO_CTA_PROVEEDOR>002311001282381071</ns0:NO_CTA_PROVEEDOR>
+					<ns0:EMAIL_NOTIFICACION>ana.alcantar@energeticosnieto.com,ana.romero@energeticosnieto.com,antonio.guzman@energeticosnieto.com,axel.olan@energeticosnieto.com,claudia.espinosa@energeticosnieto.com,diana.martinez@energeticosnieto.com,francisca.sanchez@energeticosnieto.com,jenny.romero@energeticosnieto.com,jesarely.medina@energeticosnieto.com,juan.torres@energeticosnieto.com,julian.rios@energeticosnieto.com,kimberly.perez@energeticosnieto.com,mariana.chavez@estrellaroja.com.mx,maru.rojas@energeticosnieto.com,ramon.ramirez@energeticosnieto.com,raul.garcia@energeticosnieto.com,yadira.woo@energeticosnieto.com</ns0:EMAIL_NOTIFICACION>
+					<ns0:MENSAJE>2</ns0:MENSAJE>
+					<ns0:NOMBRE_CARPETA>TRATECSA_BU_BANAMEX_7439</ns0:NOMBRE_CARPETA>
+					<ns0:REFERENCE_NUMBER>104091</ns0:REFERENCE_NUMBER>
+					<ns0:NUMERO_PAGO>911</ns0:NUMERO_PAGO>
+					<ns0:ORGANIZATION_TYPE>CORPORATION</ns0:ORGANIZATION_TYPE>
+					<ns0:PAYMENT_STATUS>CLEARED</ns0:PAYMENT_STATUS>
+					<ns0:G_2>
+						<ns0:ID_PAGO>7005423</ns0:ID_PAGO>
+						<ns0:ID_FACTURA>300000086835947</ns0:ID_FACTURA>
+						<ns0:NUMERO_PROVEEDOR>10247</ns0:NUMERO_PROVEEDOR>
+						<ns0:NUMERO_DOCUMENTO>FEAT92208</ns0:NUMERO_DOCUMENTO>
+						<ns0:MONTO_DOCUMENTO>1158.05</ns0:MONTO_DOCUMENTO>
+						<ns0:RET_IVA>0</ns0:RET_IVA>
+						<ns0:RET_ISR>0</ns0:RET_ISR>
+						<ns0:TIPO_PAGO>STANDARD</ns0:TIPO_PAGO>
+						<ns0:UNIDAD_NEGOCIO>TRATECSA_BU</ns0:UNIDAD_NEGOCIO>
+					</ns0:G_2>
+				</ns0:G_1>
+			</ns0:DATA_DS>
+		</SendPaymentsAPRq>
+	</soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/SendPaymentsAP"/><con:wsrmConfig version="1.2"/></con:call><con:call id="aef620bb-f1cc-4756-bb12-578b2021fb41" name="Request Notifiacion(5)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <SendPaymentsAPRq xmlns="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:client="http://xmlns.oracle.com/GER_SOA_DEV_OCI/ValidationPaymentsAPEnt/BpelSendPaymentsAP" xmlns:ns1="http://soa.estrellaroja.com.mx/ValidationPaymentsAPEnt" xmlns:ns2="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" xmlns:ns3="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/types" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            <ns0:DATA_DS xmlns:ns0="http://soa.estrellaroja.com.mx/Reports/XXER_ValidationComplement">
+                <ns0:G_1>
+                    <ns0:ID_PAGO>7005423</ns0:ID_PAGO>
+                    <ns0:ID_CHECK>300000087344009</ns0:ID_CHECK>
+                    <ns0:CODIGO_TIPO_PAGO>EFT</ns0:CODIGO_TIPO_PAGO>
+                    <ns0:FECHA_PAGO>2023-09-01T00:00:00.000+00:00</ns0:FECHA_PAGO>
+                    <ns0:MONTO_PAGO>1158.05</ns0:MONTO_PAGO>
+                    <ns0:MONEDA_PAGO>MXN</ns0:MONEDA_PAGO>
+                    <ns0:NOMBRE_EMPRESA>TRATECSA_BU</ns0:NOMBRE_EMPRESA>
+                    <ns0:RFC_EMPRESA>TTE020806LF4</ns0:RFC_EMPRESA>
+                    <ns0:BANCO_EMPRESA>BANAMEX_7439</ns0:BANCO_EMPRESA>
+                    <ns0:NO_CTA_EMPRESA>0000000003747439</ns0:NO_CTA_EMPRESA>
+                    <ns0:NOMBRE_PROVEEDOR>GRUPO COMERCIAL DE MEXICO SA DE CV</ns0:NOMBRE_PROVEEDOR>
+                    <ns0:RFC_PROVEEDOR>GCM011227V7A</ns0:RFC_PROVEEDOR>
+                    <ns0:BANCO_PROVEEDOR>BANA1071</ns0:BANCO_PROVEEDOR>
+                    <ns0:NO_CTA_PROVEEDOR>002311001282381071</ns0:NO_CTA_PROVEEDOR>
+                    <ns0:EMAIL_NOTIFICACION>ana.alcantar@energeticosnieto.com,ana.romero@energeticosnieto.com,antonio.guzman@energeticosnieto.com,axel.olan@energeticosnieto.com,claudia.espinosa@energeticosnieto.com,diana.martinez@energeticosnieto.com,francisca.sanchez@energeticosnieto.com,jenny.romero@energeticosnieto.com,jesarely.medina@energeticosnieto.com,juan.torres@energeticosnieto.com,julian.rios@energeticosnieto.com,kimberly.perez@energeticosnieto.com,mariana.chavez@estrellaroja.com.mx,maru.rojas@energeticosnieto.com,ramon.ramirez@energeticosnieto.com,raul.garcia@energeticosnieto.com,yadira.woo@energeticosnieto.com</ns0:EMAIL_NOTIFICACION>
+                    <ns0:MENSAJE>0</ns0:MENSAJE>
+                    <ns0:VALIDACION_MANUAL>Validacion Manual</ns0:VALIDACION_MANUAL>
+                    <ns0:NOMBRE_CARPETA>TRATECSA_BU_BANAMEX_7439</ns0:NOMBRE_CARPETA>
+                    <ns0:REFERENCE_NUMBER>104091</ns0:REFERENCE_NUMBER>
+                    <ns0:NUMERO_PAGO>911</ns0:NUMERO_PAGO>
+                    <ns0:ORGANIZATION_TYPE>CORPORATION</ns0:ORGANIZATION_TYPE>
+                    <ns0:PAYMENT_STATUS>CLEARED</ns0:PAYMENT_STATUS>
+                    <ns0:G_2>
+                        <ns0:ID_PAGO>7005423</ns0:ID_PAGO>
+                        <ns0:ID_FACTURA>300000086835947</ns0:ID_FACTURA>
+                        <ns0:NUMERO_PROVEEDOR>10247</ns0:NUMERO_PROVEEDOR>
+                        <ns0:NUMERO_DOCUMENTO>FEAT92208</ns0:NUMERO_DOCUMENTO>
+                        <ns0:MONTO_DOCUMENTO>1158.05</ns0:MONTO_DOCUMENTO>
+                        <ns0:RET_IVA>0</ns0:RET_IVA>
+                        <ns0:RET_ISR>0</ns0:RET_ISR>
+                        <ns0:TIPO_PAGO>STANDARD</ns0:TIPO_PAGO>
+                        <ns0:UNIDAD_NEGOCIO>TRATECSA_BU</ns0:UNIDAD_NEGOCIO>
+                    </ns0:G_2>
+                </ns0:G_1>
+            </ns0:DATA_DS>
+        </SendPaymentsAPRq>
+    </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/SendPaymentsAP"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7c781eb9-858b-4219-8882-5e6978e91bf3" isOneWay="false" action="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/UpdateInvoicesInstallmentsAP" name="UpdateInvoicesInstallmentsAP" bindingOperationName="UpdateInvoicesInstallmentsAP" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ae40feb3-c6ca-4d85-8cdb-a383f043c5c0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:val="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <val:UpdateInvoicesInstallmentsAPRq>\r
+         <!--1 or more repetitions:-->\r
+         <val:invoice>\r
+            <!--Optional:-->\r
+            <erp:BankAccount>?</erp:BankAccount>\r
+            <!--Optional:-->\r
+            <erp:CreatedBy>?</erp:CreatedBy>\r
+            <!--Optional:-->\r
+            <erp:CreationDate>?</erp:CreationDate>\r
+            <!--Optional:-->\r
+            <erp:DueDate>?</erp:DueDate>\r
+            <!--Optional:-->\r
+            <erp:ExternalBankAccountId>?</erp:ExternalBankAccountId>\r
+            <!--Optional:-->\r
+            <erp:FirstDiscountAmount>?</erp:FirstDiscountAmount>\r
+            <!--Optional:-->\r
+            <erp:FirstDiscountDate>?</erp:FirstDiscountDate>\r
+            <!--Optional:-->\r
+            <erp:GrossAmount>?</erp:GrossAmount>\r
+            <!--Optional:-->\r
+            <erp:HeldBy>?</erp:HeldBy>\r
+            <!--Optional:-->\r
+            <erp:HoldDate>?</erp:HoldDate>\r
+            <!--Optional:-->\r
+            <erp:HoldFlag>?</erp:HoldFlag>\r
+            <!--Optional:-->\r
+            <erp:HoldReason>?</erp:HoldReason>\r
+            <!--Optional:-->\r
+            <erp:HoldType>?</erp:HoldType>\r
+            <!--Optional:-->\r
+            <erp:InstallmentNumber>?</erp:InstallmentNumber>\r
+            <!--Optional:-->\r
+            <erp:LastUpdateDate>?</erp:LastUpdateDate>\r
+            <!--Optional:-->\r
+            <erp:LastUpdateLogin>?</erp:LastUpdateLogin>\r
+            <!--Optional:-->\r
+            <erp:LastUpdatedBy>?</erp:LastUpdatedBy>\r
+            <!--Optional:-->\r
+            <erp:NetAmountOne>?</erp:NetAmountOne>\r
+            <!--Optional:-->\r
+            <erp:NetAmountThree>?</erp:NetAmountThree>\r
+            <!--Optional:-->\r
+            <erp:NetAmountTwo>?</erp:NetAmountTwo>\r
+            <!--Optional:-->\r
+            <erp:PaymentMethod>?</erp:PaymentMethod>\r
+            <!--Optional:-->\r
+            <erp:PaymentMethodCode>?</erp:PaymentMethodCode>\r
+            <!--Optional:-->\r
+            <erp:PaymentPriority>?</erp:PaymentPriority>\r
+            <!--Optional:-->\r
+            <erp:RemitToAddressName>?</erp:RemitToAddressName>\r
+            <!--Optional:-->\r
+            <erp:RemitToSupplier>?</erp:RemitToSupplier>\r
+            <!--Optional:-->\r
+            <erp:RemittanceMessageOne>?</erp:RemittanceMessageOne>\r
+            <!--Optional:-->\r
+            <erp:RemittanceMessageThree>?</erp:RemittanceMessageThree>\r
+            <!--Optional:-->\r
+            <erp:RemittanceMessageTwo>?</erp:RemittanceMessageTwo>\r
+            <!--Optional:-->\r
+            <erp:SecondDiscountAmount>?</erp:SecondDiscountAmount>\r
+            <!--Optional:-->\r
+            <erp:SecondDiscountDate>?</erp:SecondDiscountDate>\r
+            <!--Optional:-->\r
+            <erp:ThirdDiscountAmount>?</erp:ThirdDiscountAmount>\r
+            <!--Optional:-->\r
+            <erp:ThirdDiscountDate>?</erp:ThirdDiscountDate>\r
+            <!--Optional:-->\r
+            <erp:UnpaidAmount>?</erp:UnpaidAmount>\r
+            <!--Zero or more repetitions:-->\r
+            <erp:links>\r
+               <!--Optional:-->\r
+               <erp:href>?</erp:href>\r
+               <!--Optional:-->\r
+               <erp:kind>?</erp:kind>\r
+               <!--Optional:-->\r
+               <erp:name>?</erp:name>\r
+               <!--Optional:-->\r
+               <erp:properties>\r
+                  <!--Optional:-->\r
+                  <erp:changeIndicator>?</erp:changeIndicator>\r
+               </erp:properties>\r
+               <!--Optional:-->\r
+               <erp:rel>?</erp:rel>\r
+            </erp:links>\r
+            <val:invoice_id>?</val:invoice_id>\r
+            <val:rfc>?</val:rfc>\r
+         </val:invoice>\r
+      </val:UpdateInvoicesInstallmentsAPRq>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/UpdateInvoicesInstallmentsAP"/></con:call></con:operation><con:operation id="d0b8f296-002a-4eb0-9ca7-1117400e4b7f" isOneWay="false" action="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/UpdateSupplierInvoicesInstallmentsAP" name="UpdateSupplierInvoicesInstallmentsAP" bindingOperationName="UpdateSupplierInvoicesInstallmentsAP" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0698a38e-ce79-4bf9-b4de-042e61bc3fd7" name="Validacion REPSE"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:val="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <val:UpdateSupplierInvoicesInstallmentsAPRq>\r
+         <val:Supplier>\r
+            <val:supplier_list>REPSE</val:supplier_list>\r
+         </val:Supplier>\r
+      </val:UpdateSupplierInvoicesInstallmentsAPRq>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/UpdateSupplierInvoicesInstallmentsAP"/><con:wsrmConfig version="1.2"/></con:call><con:call id="90c3bc20-6703-4f48-8e55-ce6923381b6d" name="Validacion Exclusion"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:val="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <val:UpdateSupplierInvoicesInstallmentsAPRq>\r
+         <val:Supplier>\r
+            <val:supplier_list>EXCLUSION</val:supplier_list>\r
+         </val:Supplier>\r
+      </val:UpdateSupplierInvoicesInstallmentsAPRq>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/UpdateSupplierInvoicesInstallmentsAP"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
