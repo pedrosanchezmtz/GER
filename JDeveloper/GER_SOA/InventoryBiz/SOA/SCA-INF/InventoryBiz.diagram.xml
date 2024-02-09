@@ -16,11 +16,11 @@
         </dgm:operations>
     </dgm:gService>
     <dgm:gReference name="wsFinancialsTec">
-        <dgm:body borderWidth="2" arcRad="20" X="895" Y="26" width="136" height="168">
+        <dgm:body borderWidth="2" arcRad="20" X="1022" Y="26" width="136" height="168">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="885" Y="19" width="156" height="182">
+        <dgm:shadow arcRad="20" X="1012" Y="19" width="156" height="182">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsFinancialsTec" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/FinancialsTec#wsdl.interface(FinancialsTecPortType)"/>
@@ -47,11 +47,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsSOAUtilitiesTec">
-        <dgm:body borderWidth="2" arcRad="20" X="895" Y="365" width="136" height="156">
+        <dgm:body borderWidth="2" arcRad="20" X="1022" Y="365" width="136" height="156">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="885" Y="358" width="156" height="170">
+        <dgm:shadow arcRad="20" X="1012" Y="358" width="156" height="170">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsSOAUtilitiesTec" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/SOAUtilitiesTec#wsdl.interface(SOAUtilitiesTecPortType)"/>
@@ -67,11 +67,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsMessageTec">
-        <dgm:body borderWidth="2" arcRad="20" X="895" Y="226" width="136" height="96">
+        <dgm:body borderWidth="2" arcRad="20" X="1022" Y="226" width="136" height="96">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="885" Y="219" width="156" height="110">
+        <dgm:shadow arcRad="20" X="1012" Y="219" width="156" height="110">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsMessageTec" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/MessageTec#wsdl.interface(MessageTecPortType)" callbackInterface="http://soa.estrellaroja.com.mx/MessageTec#wsdl.interface(MessageTecCallbackPortType)"/>
@@ -82,27 +82,27 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gComponent name="bpelInventoryBiz">
-        <dgm:body borderWidth="2" arcRad="20" X="637" Y="201" width="130" height="111">
+        <dgm:body borderWidth="2" arcRad="20" X="736" Y="201" width="130" height="111">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="627" Y="194" width="150" height="127">
+        <dgm:shadow arcRad="20" X="726" Y="194" width="150" height="127">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="bpelInventoryBiz" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/InventoryBiz/bpelInventoryBiz#wsdl.interface(bpelInventoryBiz)"/>
         <dgm:outputPort name="wsFinancialsTec" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/FinancialsTec#wsdl.interface(FinancialsTecPortType)"/>
         <dgm:outputPort name="wsSOAUtilitiesTec" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/SOAUtilitiesTec#wsdl.interface(SOAUtilitiesTecPortType)"/>
         <dgm:outputPort name="wsMessageTec" X="120" Y="65" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/MessageTec#wsdl.interface(MessageTecPortType)" callbackInterface="http://soa.estrellaroja.com.mx/MessageTec#wsdl.interface(MessageTecCallbackPortType)"/>
-        <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="3" width="20" height="20"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="mediatorInventoryBiz">
-        <dgm:body borderWidth="2" arcRad="20" X="384" Y="279" width="130" height="86">
+        <dgm:body borderWidth="2" arcRad="20" X="450" Y="279" width="130" height="86">
             <dgm:borderColor r="128" g="92" b="148"/>
             <dgm:lightBgColor r="208" g="169" b="227"/>
             <dgm:darkBgColor r="183" g="132" b="212"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="374" Y="272" width="150" height="102">
+        <dgm:shadow arcRad="20" X="440" Y="272" width="150" height="102">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="mediatorInventoryBiz" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/InventoryBiz#wsdl.interface(InventoryBizPortType)"/>
@@ -111,12 +111,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="bpelInventoryTransactionResult">
-        <dgm:body borderWidth="2" arcRad="20" X="637" Y="346" width="130" height="86">
+        <dgm:body borderWidth="2" arcRad="20" X="736" Y="346" width="130" height="86">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="627" Y="339" width="150" height="102">
+        <dgm:shadow arcRad="20" X="726" Y="339" width="150" height="102">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="bpelinventorytransactionresult_client" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/InventoryBiz/InventoryBiz/bpelInventoryTransactionResult#wsdl.interface(bpelInventoryTransactionResult)"/>
@@ -125,56 +125,56 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gWireLink source="InventoryBiz" target="mediatorInventoryBiz/mediatorInventoryBiz" width="2">
-        <dgm:gSegment X1="168" Y1="304" X2="374" Y2="304"/>
+        <dgm:gSegment X1="168" Y1="304" X2="440" Y2="304"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelInventoryBiz/wsFinancialsTec" target="wsFinancialsTec" width="2">
-        <dgm:gSegment X1="777" Y1="226" X2="801" Y2="226"/>
-        <dgm:gSegment X1="801" Y1="226" X2="801" Y2="36"/>
-        <dgm:gSegment X1="801" Y1="36" X2="885" Y2="36"/>
+        <dgm:gSegment X1="876" Y1="226" X2="900" Y2="226"/>
+        <dgm:gSegment X1="900" Y1="226" X2="900" Y2="36"/>
+        <dgm:gSegment X1="900" Y1="36" X2="1012" Y2="36"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelInventoryBiz/wsSOAUtilitiesTec" target="wsSOAUtilitiesTec" width="2">
-        <dgm:gSegment X1="777" Y1="251" X2="861" Y2="251"/>
-        <dgm:gSegment X1="861" Y1="251" X2="861" Y2="375"/>
-        <dgm:gSegment X1="861" Y1="375" X2="885" Y2="375"/>
+        <dgm:gSegment X1="876" Y1="251" X2="960" Y2="251"/>
+        <dgm:gSegment X1="960" Y1="251" X2="960" Y2="375"/>
+        <dgm:gSegment X1="960" Y1="375" X2="1012" Y2="375"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="mediatorInventoryBiz/bpelInventoryBiz.bpelInventoryBiz" target="bpelInventoryBiz/bpelInventoryBiz" width="2">
-        <dgm:gSegment X1="524" Y1="304" X2="548" Y2="304"/>
-        <dgm:gSegment X1="548" Y1="304" X2="548" Y2="226"/>
-        <dgm:gSegment X1="548" Y1="226" X2="627" Y2="226"/>
+        <dgm:gSegment X1="590" Y1="304" X2="614" Y2="304"/>
+        <dgm:gSegment X1="614" Y1="304" X2="614" Y2="226"/>
+        <dgm:gSegment X1="614" Y1="226" X2="726" Y2="226"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelInventoryBiz/wsMessageTec" target="wsMessageTec" width="2">
-        <dgm:gSegment X1="777" Y1="276" X2="816" Y2="276"/>
-        <dgm:gSegment X1="816" Y1="276" X2="816" Y2="236"/>
-        <dgm:gSegment X1="816" Y1="236" X2="885" Y2="236"/>
+        <dgm:gSegment X1="876" Y1="276" X2="915" Y2="276"/>
+        <dgm:gSegment X1="915" Y1="276" X2="915" Y2="236"/>
+        <dgm:gSegment X1="915" Y1="236" X2="1012" Y2="236"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="mediatorInventoryBiz/bpelInventoryTransactionResult.bpelinventorytransactionresult_client" target="bpelInventoryTransactionResult/bpelinventorytransactionresult_client" width="2">
-        <dgm:gSegment X1="524" Y1="329" X2="548" Y2="329"/>
-        <dgm:gSegment X1="548" Y1="329" X2="548" Y2="371"/>
-        <dgm:gSegment X1="548" Y1="371" X2="627" Y2="371"/>
+        <dgm:gSegment X1="590" Y1="329" X2="614" Y2="329"/>
+        <dgm:gSegment X1="614" Y1="329" X2="614" Y2="371"/>
+        <dgm:gSegment X1="614" Y1="371" X2="726" Y2="371"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelInventoryTransactionResult/wsMessageTec" target="wsMessageTec" width="2">
-        <dgm:gSegment X1="777" Y1="371" X2="831" Y2="371"/>
-        <dgm:gSegment X1="831" Y1="371" X2="831" Y2="236"/>
-        <dgm:gSegment X1="831" Y1="236" X2="885" Y2="236"/>
+        <dgm:gSegment X1="876" Y1="371" X2="930" Y2="371"/>
+        <dgm:gSegment X1="930" Y1="371" X2="930" Y2="236"/>
+        <dgm:gSegment X1="930" Y1="236" X2="1012" Y2="236"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelInventoryTransactionResult/wsSOAUtilitiesTec" target="wsSOAUtilitiesTec" width="2">
-        <dgm:gSegment X1="777" Y1="396" X2="846" Y2="396"/>
-        <dgm:gSegment X1="846" Y1="396" X2="846" Y2="375"/>
-        <dgm:gSegment X1="846" Y1="375" X2="885" Y2="375"/>
+        <dgm:gSegment X1="876" Y1="396" X2="945" Y2="396"/>
+        <dgm:gSegment X1="945" Y1="396" X2="945" Y2="375"/>
+        <dgm:gSegment X1="945" Y1="375" X2="1012" Y2="375"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>

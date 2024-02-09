@@ -29,16 +29,38 @@
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="CFDITec/CFDITec.jpr"/></hash>
+      <hash><url n="URL" path="CommonPaymentsTec/CommonPaymentsTec.jpr"/></hash>
+      <hash><url n="URL" path="ConciliationBiz/ConciliationBiz.jpr"/></hash>
       <hash><url n="URL" path="ConciliationEnt/ConciliationEnt.jpr"/></hash>
+      <hash><url n="URL" path="CustomerBiz/CustomerBiz.jpr"/></hash>
+      <hash><url n="URL" path="DailyRatesBiz/DailyRatesBiz.jpr"/></hash>
       <hash><url n="URL" path="ERPIntegrationBiz/ERPIntegrationBiz.jpr"/></hash>
+      <hash><url n="URL" path="ERPManagementOfLoadImportBiz/ERPManagementOfLoadImportBiz.jpr"/></hash>
+      <hash><url n="URL" path="FinancialsBiz/FinancialsBiz.jpr"/></hash>
+      <hash><url n="URL" path="InerCreditMemoApplyEnt/InerCreditMemoApplyEnt.jpr"/></hash>
+      <hash><url n="URL" path="InerFinancialsBiz/InerFinancialsBiz.jpr"/></hash>
       <hash><url n="URL" path="InerInvoicesBiz/InerInvoicesBiz.jpr"/></hash>
+      <hash><url n="URL" path="InerInvoicesEnt/InerInvoicesEnt.jpr"/></hash>
+      <hash><url n="URL" path="InerLiquidacionEnt/InerLiquidacionEnt.jpr"/></hash>
+      <hash><url n="URL" path="InerReceiptBiz/InerReceiptBiz.jpr"/></hash>
       <hash><url n="URL" path="InerReceiptEnt/InerReceiptEnt.jpr"/></hash>
+      <hash><url n="URL" path="InventoryBiz/InventoryBiz.jpr"/></hash>
+      <hash><url n="URL" path="InventoryEnt/InventoryEnt.jpr"/></hash>
+      <hash><url n="URL" path="InvoicesBiz/InvoicesBiz.jpr"/></hash>
       <hash><url n="URL" path="InvoicesEnt/InvoicesEnt.jpr"/></hash>
       <hash><url n="URL" path="JournalBiz/JournalBiz.jpr"/></hash>
+      <hash><url n="URL" path="JournalEnt/JournalEnt.jpr"/></hash>
+      <hash><url n="URL" path="LetterPorteBiz/LetterPorteBiz.jpr"/></hash>
+      <hash><url n="URL" path="MessageBiz/MessageBiz.jpr"/></hash>
+      <hash><url n="URL" path="MessageTec/MessageTec.jpr"/></hash>
+      <hash><url n="URL" path="PaymentComplementBiz/PaymentComplementBiz.jpr"/></hash>
+      <hash><url n="URL" path="PaymentComplementEnt/PaymentComplementEnt.jpr"/></hash>
       <hash><url n="URL" path="RecordUnitMetrics/RecordUnitMetrics.jpr"/></hash>
       <hash><url n="URL" path="RegisterAssetStatus/RegisterAssetStatus.jpr"/></hash>
       <hash><url n="URL" path="SFTPEstrellaRojaBiz/SFTPEstrellaRojaBiz.jpr"/></hash>
       <hash><url n="URL" path="SFTPEstrellaRojaEnt/SFTPEstrellaRojaEnt.jpr"/></hash>
+      <hash><url n="URL" path="SFTPEstrellaRojaTec/SFTPEstrellaRojaTec.jpr"/></hash>
+      <hash><url n="URL" path="SOAUtilitiesTec/SOAUtilitiesTec.jpr"/></hash>
       <hash><url n="URL" path="ValidationInvoicesAPBiz/ValidationInvoicesAPBiz.jpr"/></hash>
       <hash><url n="URL" path="ValidationInvoicesAPEnt/ValidationInvoicesAPEnt.jpr"/></hash>
       <hash><url n="URL" path="ValidationPaymentsAPBiz/ValidationPaymentsAPBiz.jpr"/></hash>

@@ -16,11 +16,11 @@
         </dgm:operations>
     </dgm:gService>
     <dgm:gReference name="umsSendEmail">
-        <dgm:body borderWidth="2" arcRad="20" X="1147" Y="26" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="1102" Y="26" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1137" Y="19" width="156" height="98">
+        <dgm:shadow arcRad="20" X="1092" Y="19" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="umsSendEmail" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/ums/MessageTec/MessageTec/umsSendEmail#wsdl.interface(SendNotification_ptt)"/>
@@ -30,11 +30,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="fileWrite">
-        <dgm:body borderWidth="2" arcRad="20" X="1147" Y="144" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="1102" Y="144" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1137" Y="137" width="156" height="98">
+        <dgm:shadow arcRad="20" X="1092" Y="137" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="fileWrite" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/file/GER_SOA_OCI/MessageTec/fileWrite#wsdl.interface(WriteFile_ptt)"/>
@@ -44,12 +44,12 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gComponent name="mediatorMessageTec">
-        <dgm:body borderWidth="2" arcRad="20" X="401" Y="84" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="386" Y="84" width="130" height="61">
             <dgm:borderColor r="128" g="92" b="148"/>
             <dgm:lightBgColor r="208" g="169" b="227"/>
             <dgm:darkBgColor r="183" g="132" b="212"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="391" Y="77" width="150" height="77">
+        <dgm:shadow arcRad="20" X="376" Y="77" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="mediatorMessageTec" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/MessageTec#wsdl.interface(MessageTecPortType)" callbackInterface="http://soa.estrellaroja.com.mx/MessageTec#wsdl.interface(MessageTecCallbackPortType)"/>
@@ -57,12 +57,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="bpelSendEmail">
-        <dgm:body borderWidth="2" arcRad="20" X="774" Y="84" width="130" height="86">
+        <dgm:body borderWidth="2" arcRad="20" X="744" Y="84" width="130" height="86">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="764" Y="77" width="150" height="102">
+        <dgm:shadow arcRad="20" X="734" Y="77" width="150" height="102">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="bpelSendemail" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/MessageTec/bpelSendEmail#wsdl.interface(bpelSendEmailPortType)" callbackInterface="http://soa.estrellaroja.com.mx/MessageTec/bpelSendEmail#wsdl.interface(bpelSendEmailCallbackPortType)"/>
@@ -71,26 +71,26 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gWireLink source="MessageTec" target="mediatorMessageTec/mediatorMessageTec" width="2">
-        <dgm:gSegment X1="168" Y1="109" X2="391" Y2="109"/>
+        <dgm:gSegment X1="168" Y1="109" X2="376" Y2="109"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelSendEmail/umsSendEmail" target="umsSendEmail" width="2">
-        <dgm:gSegment X1="914" Y1="109" X2="938" Y2="109"/>
-        <dgm:gSegment X1="938" Y1="109" X2="938" Y2="36"/>
-        <dgm:gSegment X1="938" Y1="36" X2="1137" Y2="36"/>
+        <dgm:gSegment X1="884" Y1="109" X2="908" Y2="109"/>
+        <dgm:gSegment X1="908" Y1="109" X2="908" Y2="36"/>
+        <dgm:gSegment X1="908" Y1="36" X2="1092" Y2="36"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelSendEmail/fileWrite" target="fileWrite" width="2">
-        <dgm:gSegment X1="914" Y1="134" X2="938" Y2="134"/>
-        <dgm:gSegment X1="938" Y1="134" X2="938" Y2="154"/>
-        <dgm:gSegment X1="938" Y1="154" X2="1137" Y2="154"/>
+        <dgm:gSegment X1="884" Y1="134" X2="908" Y2="134"/>
+        <dgm:gSegment X1="908" Y1="134" X2="908" Y2="154"/>
+        <dgm:gSegment X1="908" Y1="154" X2="1092" Y2="154"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="mediatorMessageTec/bpelSendEmail.bpelSendemail" target="bpelSendEmail/bpelSendemail" width="2">
-        <dgm:gSegment X1="541" Y1="109" X2="764" Y2="109"/>
+        <dgm:gSegment X1="526" Y1="109" X2="734" Y2="109"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
