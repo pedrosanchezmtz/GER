@@ -27,7 +27,7 @@ prompt APPLICATION 130 - Administrador de Contabilidad Estrella Roja
 -- Application Export:
 --   Application:     130
 --   Name:            Administrador de Contabilidad Estrella Roja
---   Date and Time:   17:20 Tuesday January 23, 2024
+--   Date and Time:   15:20 Tuesday February 13, 2024
 --   Exported By:     ADMIN
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -36,16 +36,16 @@ prompt APPLICATION 130 - Administrador de Contabilidad Estrella Roja
 --
 
 -- Application Statistics:
---   Pages:                     82
---     Items:                  373
+--   Pages:                     81
+--     Items:                  375
 --     Validations:              8
---     Processes:               86
---     Regions:                182
---     Buttons:                135
+--     Processes:               88
+--     Regions:                181
+--     Buttons:                137
 --     Dynamic Actions:         37
 --   Shared Components:
 --     Logic:
---       Web Services:          12
+--       Web Services:          13
 --       Data Loading:           4
 --     Navigation:
 --       Lists:                  9
@@ -118,7 +118,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'Administrador de Contabilidad Estrella Roja'
 ,p_last_updated_by=>'ADMIN'
-,p_last_upd_yyyymmddhh24miss=>'20240115092459'
+,p_last_upd_yyyymmddhh24miss=>'20240209155109'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>5
 ,p_ui_type_name => null
@@ -271,20 +271,6 @@ wwv_flow_api.create_list(
  p_id=>wwv_flow_api.id(12344367793543727)
 ,p_name=>'Conciliacion AR'
 ,p_list_status=>'PUBLIC'
-);
-wwv_flow_api.create_list_item(
- p_id=>wwv_flow_api.id(12344620896543729)
-,p_list_item_display_sequence=>10
-,p_list_item_link_text=>'Template Creacion Lote'
-,p_list_item_link_target=>'f?p=&APP_ID.:26:&SESSION.::&DEBUG.::::'
-,p_list_item_icon=>'fa-database-search'
-,p_list_item_disp_cond_type=>'EXISTS'
-,p_list_item_disp_condition=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'SELECT * FROM wwv_flow_group_users wf',
-' where USER_ID =APEX_UTIL.GET_CURRENT_USER_ID ',
-'and GROUP_NAME in (''AR_ER_CON'',''ADMIN'')',
-''))
-,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_api.create_list_item(
  p_id=>wwv_flow_api.id(12344995488543730)
@@ -846,15 +832,6 @@ wwv_flow_api.create_list_item(
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_api.create_list_item(
- p_id=>wwv_flow_api.id(12367959002885989)
-,p_list_item_display_sequence=>440
-,p_list_item_link_text=>'Template creación lote'
-,p_list_item_link_target=>'f?p=&APP_ID.:26:&SESSION.::&DEBUG.'
-,p_parent_list_item_id=>wwv_flow_api.id(12350629317775008)
-,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
-,p_list_item_current_for_pages=>'26'
-);
-wwv_flow_api.create_list_item(
  p_id=>wwv_flow_api.id(12543820652900900)
 ,p_list_item_display_sequence=>450
 ,p_list_item_link_text=>'Recibos Conciliados'
@@ -925,9 +902,6 @@ wwv_flow_api.create_list_item(
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 ,p_list_item_current_for_pages=>'46'
 );
-end;
-/
-begin
 wwv_flow_api.create_list_item(
  p_id=>wwv_flow_api.id(16113761955889034)
 ,p_list_item_display_sequence=>510
@@ -942,6 +916,9 @@ wwv_flow_api.create_list_item(
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 ,p_list_item_current_for_pages=>'66'
 );
+end;
+/
+begin
 wwv_flow_api.create_list(
  p_id=>wwv_flow_api.id(34651738127792544)
 ,p_name=>'Desktop Navigation Bar'
@@ -27826,7 +27803,7 @@ wwv_flow_api.create_page(
 ,p_page_is_public_y_n=>'N'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'ADMIN'
-,p_last_upd_yyyymmddhh24miss=>'20231003104113'
+,p_last_upd_yyyymmddhh24miss=>'20240130102206'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(13623907142574546)
@@ -27929,11 +27906,15 @@ wwv_flow_api.create_page_plug(
 ,p_include_in_reg_disp_sel_yn=>'N'
 ,p_plug_display_point=>'BODY'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'SELECT TIPO,TO_CHAR(JSON_ENVIADO),TO_CHAR(JSON_RESPUESTA),FECHA_CREACION  ',
+'SELECT ',
+'TIPO,',
+'TO_CHAR(JSON_ENVIADO),',
+'TO_CHAR(JSON_RESPUESTA),',
+'FECHA_CREACION  ',
 'FROM PREPCONTROL.ER_FACTURAS_LOG_TBL@REPCONTROL.ESTRELLAROJA.COM.MX --,pap',
 'WHERE 1=1',
-'AND TRUNC(FECHA_CREACION) = TRUNC(SYSDATE)',
-'AND JSON_ENVIADO LIKE  ''%APOLOP''||:P24_ID_RECIBO||''%'''))
+'AND FECHA_CREACION >= TRUNC(SYSDATE)',
+'AND JSON_ENVIADO LIKE  ''%''||:P24_ID_RECIBO||''%'''))
 ,p_plug_source_type=>'NATIVE_IR'
 ,p_ajax_items_to_submit=>'P24_ID_RECIBO'
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
@@ -28225,424 +28206,6 @@ wwv_flow_api.create_page_button(
 ,p_button_execute_validations=>'N'
 ,p_button_cattributes=>'disabled'
 ,p_grid_new_grid=>false
-);
-end;
-/
-prompt --application/pages/page_00026
-begin
-wwv_flow_api.create_page(
- p_id=>26
-,p_user_interface_id=>wwv_flow_api.id(34651805806792545)
-,p_name=>'Template creación lote'
-,p_page_mode=>'NORMAL'
-,p_step_title=>'Template creación lote'
-,p_step_sub_title=>'Template creación lote'
-,p_step_sub_title_type=>'TEXT_WITH_SUBSTITUTIONS'
-,p_first_item=>'NO_FIRST_ITEM'
-,p_autocomplete_on_off=>'OFF'
-,p_page_template_options=>'#DEFAULT#'
-,p_dialog_chained=>'Y'
-,p_overwrite_navigation_list=>'N'
-,p_page_is_public_y_n=>'N'
-,p_cache_mode=>'NOCACHE'
-,p_last_updated_by=>'ADMIN'
-,p_last_upd_yyyymmddhh24miss=>'20230714102028'
-);
-wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(30503936394149901)
-,p_plug_name=>'Template creación lote'
-,p_region_template_options=>'#DEFAULT#'
-,p_plug_template=>wwv_flow_api.id(34617701449792516)
-,p_plug_display_sequence=>10
-,p_include_in_reg_disp_sel_yn=>'N'
-,p_plug_display_point=>'BODY'
-,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'WITH',
-'CNC AS (SELECT PAYMENT_NUMBER, AMOUNT_PAYMENT, REFERENCE_TRANSACTIONS , REGEXP_COUNT(REFERENCE_TRANSACTIONS, ''_'', 1) REGISTROS ,STATUS',
-'    --, LENGTH(REFERENCE_TRANSACTIONS) - LENGTH(REGEXP_REPLACE(REFERENCE_TRANSACTIONS, '','', ''''))+1 REGISTROS',
-'        ,CONCILIACION_ID, ROWNUM RN ,FECHA_PAGO ,METODO_RECIBO FROM XXER_AR_CONCILIACION_TBL --WHERE CONCILIACION_ID IN (40714) --AND STATUS = ''C''',
-'            WHERE STATUS IN (''C'',''NCL'',''NCM'') ',
-'			AND fecha_pago BETWEEN TO_DATE(:P26_FECHA_INICIOT,''DD/MM/RRRR'') and TO_DATE(:P26_FECHA_FINT,''DD/MM/RRRR'') -->= sysdate -31 --TO_DATE(''01/01/2022'',''DD/MM/RRRR'')',
-'            --WHERE STATUS IN (''NC'') --AND TO_DATE(fecha_pago) >= ''01/01/2022''',
-'            --WHERE STATUS = ''C'' ',
-'            --WHERE TO_DATE(fecha_pago) >= ''01/01/2022'' ',
-'            ) --52379,52378,52380 --996282,996282,996436',
-',RES AS (SELECT CONCILIACION_ID ,SUBSTR(PAYMENT_NUMBER,1,4) AFIL_AMEX ',
-'            ,TO_CHAR(REGEXP_SUBSTR(REGEXP_SUBSTR(reference_transactions, ''[^,]+'', 1, LEVEL, ''i''), ''[^_]+'', 1, 1, ''i'')) AS TRANSACCION',
-'            ,SUM(TO_NUMBER(REGEXP_SUBSTR(REGEXP_SUBSTR(reference_transactions, ''[^,]+'', 1, LEVEL, ''i''), ''[^_]+'', 1, 2, ''i''))) AS IMPORTE_CONC',
-'            ,AMOUNT_PAYMENT',
-'        FROM CNC CONNECT BY LEVEL <= REGISTROS AND PRIOR CONCILIACION_ID = CONCILIACION_ID AND PRIOR DBMS_RANDOM.VALUE != 1',
-'        GROUP BY CONCILIACION_ID ,SUBSTR(PAYMENT_NUMBER,1,4) ,AMOUNT_PAYMENT',
-'            ,TO_CHAR(REGEXP_SUBSTR(REGEXP_SUBSTR(reference_transactions, ''[^,]+'', 1, LEVEL, ''i''), ''[^_]+'', 1, 1, ''i''))',
-'        )',
-',FNC AS (SELECT NUMERO_DOCUMENTO, TOTAL ,ESTATUS ,(CASE WHEN TOTAL < 0 THEN ''NOTA DE CREDITO'' ELSE TIPO_DOCUMENTO END) TIPO_DOCUMENTO FROM (',
-'        SELECT H.NUMERO_DOCUMENTO, SUM(L.TOTAL) TOTAL ,H.ESTATUS ,H.TIPO_DOCUMENTO FROM XXER_TBL_PUENTE_HEADER H ,XXER_TBL_PUENTE_LINES L',
-'        WHERE H.TABLA_PUENTE_ID = L.TABLA_PUENTE_ID',
-'    --AND EXISTS (SELECT 1 FROM XXER_TBL_PUENTE_LINES RL WHERE H.TABLA_PUENTE_ID = RL.TABLA_PUENTE_ID)',
-'        GROUP BY H.NUMERO_DOCUMENTO ,H.ESTATUS ,H.TIPO_DOCUMENTO) R )',
-'---------CONSULTA DE REPORTE----------------------',
-'--/*',
-'SELECT --R2.* /*',
-'    R2.CONCILIACION_ID "ID conciliación"',
-'    ,R2.FILA "ID fila"',
-'    ,CNC.STATUS "Estatus"',
-'    ,R2.NC "Nota de credito"',
-'    ,SUM(R2.IMPORTE_APLICAR) OVER (PARTITION BY R2.CONCILIACION_ID,R2.TIPO_DOCUMENTO)-R2.IMPORTE_COBRO  "Variación Cobro Transacciones"',
-'    ,CNC.METODO_RECIBO "Metodo cobro"',
-'    ,R2.TIPO_DOCUMENTO "Tipo documento"',
-'    ,CNC.RN "Secuencia"',
-'    --,NULL "Secuencia"',
-'    ,(CASE WHEN R2.AFIL_AMEX IN (''AFIL'',''AMEX'') THEN SUBSTR(CNC.PAYMENT_NUMBER,1,LENGTH(CNC.PAYMENT_NUMBER)-9) ELSE CNC.PAYMENT_NUMBER END) "Num cobro"',
-'    ,R2.IMPORTE_COBRO "Imp cobro"',
-'    ,CNC.FECHA_PAGO "Fecha cobro"',
-'    ,CNC.FECHA_PAGO "Fecha contable"',
-'    ,NULL "Fecha cambio"',
-'    ,''MXN'' "Moneda"',
-'    ,NULL "Clase cambio"',
-'    ,NULL "Tipo cambio"',
-'    ,NULL "Num Documento"',
-'    ,''PUBLICO EN GENERAL'' "Nombre cliente"',
-'    ,5002 "Cuenta cliente"',
-'    ,305005 "Sitio cliente"',
-'    ,NULL "Cta bancaria"',
-'    ,R2.TRANSACCION "Valor referencia"',
-'    ,''Número de transacción'' "Tipo referemcia"',
-'    ,R2.IMPORTE_APLICAR - ',
-'    (CASE WHEN (SUM(R2.IMPORTE_APLICAR) OVER (PARTITION BY R2.CONCILIACION_ID,R2.TIPO_DOCUMENTO)-R2.IMPORTE_COBRO)>0 AND FILA = 1',
-'        THEN SUM(R2.IMPORTE_APLICAR) OVER (PARTITION BY R2.CONCILIACION_ID,R2.TIPO_DOCUMENTO)-R2.IMPORTE_COBRO ELSE 0 END )"Imp referencia"',
-'    /*,R2.TOTAL_TRANSACCION IMP_TXN_TP',
-'    ,SUM(IMPORTE) OVER (PARTITION BY CONCILIACION_ID) IMP_TOT_REF',
-'    ,SUM(IMPORTE) OVER (PARTITION BY CONCILIACION_ID) - R2.AMOUNT_TRANSACTIONS DESV_REC_VS__TXNS',
-'    ,NULL "Desviación"',
-'    ,(CASE WHEN TIPO_DOCUMENTO = ''NOTA DE CREDITO'' THEN',
-'        LAG (TRANSACCION, FILA - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE DESC) ELSE NULL END) APLICAR_A',
-'    ,(CASE WHEN FILA = 1 AND (LEAD (TIPO_DOCUMENTO, FILAS - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE DESC)) = ''NOTA DE CREDITO''',
-'        THEN LEAD (IMPORTE, FILAS - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE DESC) ELSE 0 END) NC*/',
-'    FROM (',
-'--*/',
-'SELECT',
-'    --(CASE WHEN SUBSTR(PAYMENT_NUMBER,1,4) IN (''AFIL'',''AMEX'') THEN SUBSTR(PAYMENT_NUMBER,1,LENGTH(PAYMENT_NUMBER)-9) ELSE PAYMENT_NUMBER END) PAYMENT_NUMBER',
-'    --,PAYMENT_NUMBER',
-'    --, AMOUNT_TRANSACTIONS',
-'    --,TRANSACCION',
-'    --,FECHA_PAGO',
-'    --,IMPORTE IMPORTE',
-'    R1.FILA, R1.FILAS, R1.CONCILIACION_ID, R1.AFIL_AMEX, R1.TRANSACCION',
-'    --, R1.IMPORTE_CONC ,FNC.TOTAL IMPORTE_TP',
-'    ,(CASE WHEN FNC.TOTAL < R1.IMPORTE_CONC THEN FNC.TOTAL ELSE R1.IMPORTE_CONC END) ',
-'    + (CASE WHEN FILA = 1 AND (LEAD (TIPO_DOCUMENTO, FILAS - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE_CONC DESC)) = ''NOTA DE CREDITO''',
-'        THEN LEAD (IMPORTE_CONC, FILAS - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE_CONC DESC) ELSE 0 END) IMPORTE_APLICAR',
-'    ,FNC.TIPO_DOCUMENTO',
-'    ,FNC.ESTATUS',
-'    , R1.AMOUNT_PAYMENT IMPORTE_COBRO',
-'    --,SUM(IMPORTE_CONC) OVER (PARTITION BY CONCILIACION_ID) IMPORTE_REV',
-'    /*,SUM(IMPORTE_CONC) OVER (PARTITION BY CONCILIACION_ID) - AMOUNT_PAYMENT VARIACION1',
-'    ,SUM(CASE WHEN FNC.TOTAL < R1.IMPORTE_CONC THEN FNC.TOTAL ELSE R1.IMPORTE_CONC END) OVER (PARTITION BY CONCILIACION_ID) - AMOUNT_PAYMENT VARIACION2',
-'    ,(CASE WHEN FNC.TOTAL < R1.IMPORTE_CONC THEN FNC.TOTAL ELSE R1.IMPORTE_CONC END) +',
-'    (CASE WHEN FILA = 1 AND (LEAD (TIPO_DOCUMENTO, FILAS - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE_CONC DESC)) = ''NOTA DE CREDITO''',
-'        THEN LEAD (IMPORTE_CONC, FILAS - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE_CONC DESC) ELSE 0 END) - AMOUNT_PAYMENT VARIACION*/',
-'    ,(CASE WHEN FILA = 1 AND (LEAD (TIPO_DOCUMENTO, FILAS - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE_CONC DESC)) = ''NOTA DE CREDITO''',
-'        THEN LEAD (IMPORTE_CONC, FILAS - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE_CONC DESC) ELSE 0 END) NC',
-'FROM ( SELECT ROW_NUMBER() OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE_CONC DESC) FILA ,COUNT(1) OVER (PARTITION BY CONCILIACION_ID) FILAS ',
-'        ,RES.*',
-'        FROM RES ) R1',
-'    LEFT JOIN FNC ON R1.TRANSACCION = FNC.NUMERO_DOCUMENTO ',
-'--/*',
-') R2',
-'    LEFT JOIN CNC ON R2.CONCILIACION_ID = CNC.CONCILIACION_ID',
-'ORDER BY 5,4;'))
-,p_plug_source_type=>'NATIVE_IR'
-,p_ajax_items_to_submit=>'P26_FECHA_INICIOT,P26_FECHA_FINT'
-,p_plug_query_row_template=>1
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_prn_content_disposition=>'ATTACHMENT'
-,p_prn_document_header=>'APEX'
-,p_prn_units=>'MILLIMETERS'
-,p_prn_paper_size=>'A4'
-,p_prn_width=>210
-,p_prn_height=>297
-,p_prn_orientation=>'HORIZONTAL'
-,p_prn_page_header_font_color=>'#000000'
-,p_prn_page_header_font_family=>'Helvetica'
-,p_prn_page_header_font_weight=>'normal'
-,p_prn_page_header_font_size=>'12'
-,p_prn_page_footer_font_color=>'#000000'
-,p_prn_page_footer_font_family=>'Helvetica'
-,p_prn_page_footer_font_weight=>'normal'
-,p_prn_page_footer_font_size=>'12'
-,p_prn_header_bg_color=>'#9bafde'
-,p_prn_header_font_color=>'#000000'
-,p_prn_header_font_family=>'Helvetica'
-,p_prn_header_font_weight=>'normal'
-,p_prn_header_font_size=>'10'
-,p_prn_body_bg_color=>'#efefef'
-,p_prn_body_font_color=>'#000000'
-,p_prn_body_font_family=>'Helvetica'
-,p_prn_body_font_weight=>'normal'
-,p_prn_body_font_size=>'10'
-,p_prn_border_width=>.5
-,p_prn_page_header_alignment=>'CENTER'
-,p_prn_page_footer_alignment=>'CENTER'
-);
-wwv_flow_api.create_worksheet(
- p_id=>wwv_flow_api.id(30520183756183093)
-,p_max_row_count=>'1000000'
-,p_show_nulls_as=>'-'
-,p_pagination_type=>'ROWS_X_TO_Y'
-,p_pagination_display_pos=>'BOTTOM_RIGHT'
-,p_report_list_mode=>'TABS'
-,p_show_detail_link=>'N'
-,p_show_notify=>'Y'
-,p_download_formats=>'CSV:HTML:EMAIL:XLS:PDF:RTF'
-,p_owner=>'ADMIN'
-,p_internal_uid=>37591238064812671
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12455630531886106)
-,p_db_column_name=>'ID conciliación'
-,p_display_order=>10
-,p_column_identifier=>'A'
-,p_column_label=>'Id conciliación'
-,p_column_type=>'NUMBER'
-,p_column_alignment=>'RIGHT'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12455979461886107)
-,p_db_column_name=>'ID fila'
-,p_display_order=>20
-,p_column_identifier=>'B'
-,p_column_label=>'Id fila'
-,p_column_type=>'NUMBER'
-,p_column_alignment=>'RIGHT'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12456426891886107)
-,p_db_column_name=>'Estatus'
-,p_display_order=>30
-,p_column_identifier=>'C'
-,p_column_label=>'Estatus'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12456763590886108)
-,p_db_column_name=>'Nota de credito'
-,p_display_order=>40
-,p_column_identifier=>'D'
-,p_column_label=>'Nota de credito'
-,p_column_type=>'NUMBER'
-,p_column_alignment=>'RIGHT'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12457178443886108)
-,p_db_column_name=>'Variación Cobro Transacciones'
-,p_display_order=>50
-,p_column_identifier=>'E'
-,p_column_label=>'Variación cobro transacciones'
-,p_column_type=>'NUMBER'
-,p_column_alignment=>'RIGHT'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12457589213886109)
-,p_db_column_name=>'Metodo cobro'
-,p_display_order=>60
-,p_column_identifier=>'F'
-,p_column_label=>'Metodo cobro'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12457962415886109)
-,p_db_column_name=>'Tipo documento'
-,p_display_order=>70
-,p_column_identifier=>'G'
-,p_column_label=>'Tipo documento'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12458373056886110)
-,p_db_column_name=>'Secuencia'
-,p_display_order=>80
-,p_column_identifier=>'H'
-,p_column_label=>'Secuencia'
-,p_column_type=>'NUMBER'
-,p_column_alignment=>'RIGHT'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12458831599886110)
-,p_db_column_name=>'Num cobro'
-,p_display_order=>90
-,p_column_identifier=>'I'
-,p_column_label=>'Num cobro'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12459197171886111)
-,p_db_column_name=>'Imp cobro'
-,p_display_order=>100
-,p_column_identifier=>'J'
-,p_column_label=>'Imp cobro'
-,p_column_type=>'NUMBER'
-,p_column_alignment=>'RIGHT'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12459629401886111)
-,p_db_column_name=>'Fecha cobro'
-,p_display_order=>110
-,p_column_identifier=>'K'
-,p_column_label=>'Fecha cobro'
-,p_column_type=>'DATE'
-,p_column_alignment=>'CENTER'
-,p_tz_dependent=>'N'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12460034124886112)
-,p_db_column_name=>'Fecha contable'
-,p_display_order=>120
-,p_column_identifier=>'L'
-,p_column_label=>'Fecha contable'
-,p_column_type=>'DATE'
-,p_column_alignment=>'CENTER'
-,p_tz_dependent=>'N'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12460371524886112)
-,p_db_column_name=>'Fecha cambio'
-,p_display_order=>130
-,p_column_identifier=>'M'
-,p_column_label=>'Fecha cambio'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12460830743886113)
-,p_db_column_name=>'Moneda'
-,p_display_order=>140
-,p_column_identifier=>'N'
-,p_column_label=>'Moneda'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12461158458886113)
-,p_db_column_name=>'Clase cambio'
-,p_display_order=>150
-,p_column_identifier=>'O'
-,p_column_label=>'Clase cambio'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12461567876886113)
-,p_db_column_name=>'Tipo cambio'
-,p_display_order=>160
-,p_column_identifier=>'P'
-,p_column_label=>'Tipo cambio'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12461999171886114)
-,p_db_column_name=>'Num Documento'
-,p_display_order=>170
-,p_column_identifier=>'Q'
-,p_column_label=>'Num documento'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12462418466886114)
-,p_db_column_name=>'Nombre cliente'
-,p_display_order=>180
-,p_column_identifier=>'R'
-,p_column_label=>'Nombre cliente'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12462802686886115)
-,p_db_column_name=>'Cuenta cliente'
-,p_display_order=>190
-,p_column_identifier=>'S'
-,p_column_label=>'Cuenta cliente'
-,p_column_type=>'NUMBER'
-,p_column_alignment=>'RIGHT'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12463204873886115)
-,p_db_column_name=>'Sitio cliente'
-,p_display_order=>200
-,p_column_identifier=>'T'
-,p_column_label=>'Sitio cliente'
-,p_column_type=>'NUMBER'
-,p_column_alignment=>'RIGHT'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12463566677886116)
-,p_db_column_name=>'Cta bancaria'
-,p_display_order=>210
-,p_column_identifier=>'U'
-,p_column_label=>'Cta bancaria'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12464045527886117)
-,p_db_column_name=>'Valor referencia'
-,p_display_order=>220
-,p_column_identifier=>'V'
-,p_column_label=>'Valor referencia'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12464370701886117)
-,p_db_column_name=>'Tipo referemcia'
-,p_display_order=>230
-,p_column_identifier=>'W'
-,p_column_label=>'Tipo referemcia'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(12464783891886118)
-,p_db_column_name=>'Imp referencia'
-,p_display_order=>240
-,p_column_identifier=>'X'
-,p_column_label=>'Imp referencia'
-,p_column_type=>'NUMBER'
-,p_column_alignment=>'RIGHT'
-);
-wwv_flow_api.create_worksheet_rpt(
- p_id=>wwv_flow_api.id(30543561644183735)
-,p_application_user=>'APXWS_DEFAULT'
-,p_report_seq=>10
-,p_report_alias=>'195362'
-,p_status=>'PUBLIC'
-,p_is_default=>'Y'
-,p_display_rows=>50
-,p_report_columns=>'ID conciliación:ID fila:Estatus:Nota de credito:Variación Cobro Transacciones:Metodo cobro:Tipo documento:Secuencia:Num cobro:Imp cobro:Fecha cobro:Fecha contable:Fecha cambio:Moneda:Clase cambio:Tipo cambio:Num Documento:Nombre cliente:Cuenta client'
-||'e:Sitio cliente:Cta bancaria:Valor referencia:Tipo referemcia:Imp referencia'
-,p_flashback_enabled=>'N'
-);
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(12465597146886119)
-,p_name=>'P26_FECHA_INICIOT'
-,p_item_sequence=>10
-,p_item_plug_id=>wwv_flow_api.id(30503936394149901)
-,p_prompt=>'Fecha inicio'
-,p_format_mask=>'DD/MM/RRRR'
-,p_display_as=>'NATIVE_DATE_PICKER'
-,p_cSize=>30
-,p_field_template=>wwv_flow_api.id(34640562757792530)
-,p_item_template_options=>'#DEFAULT#'
-,p_attribute_04=>'button'
-,p_attribute_05=>'N'
-,p_attribute_07=>'NONE'
-);
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(12465990331886119)
-,p_name=>'P26_FECHA_FINT'
-,p_item_sequence=>20
-,p_item_plug_id=>wwv_flow_api.id(30503936394149901)
-,p_prompt=>'Fecha Fin'
-,p_format_mask=>'DD/MM/RRRR'
-,p_display_as=>'NATIVE_DATE_PICKER'
-,p_cSize=>30
-,p_field_template=>wwv_flow_api.id(34640562757792530)
-,p_item_template_options=>'#DEFAULT#'
-,p_attribute_04=>'button'
-,p_attribute_05=>'N'
-,p_attribute_07=>'NONE'
 );
 end;
 /
@@ -45649,6 +45212,7 @@ wwv_flow_api.create_page(
 ,p_name=>'Reporte recibos a procesar'
 ,p_page_mode=>'NORMAL'
 ,p_step_title=>'Reporte recibos a procesar'
+,p_allow_duplicate_submissions=>'N'
 ,p_step_sub_title=>'Recibos a Procesar'
 ,p_step_sub_title_type=>'TEXT_WITH_SUBSTITUTIONS'
 ,p_first_item=>'NO_FIRST_ITEM'
@@ -45658,7 +45222,7 @@ wwv_flow_api.create_page(
 ,p_page_is_public_y_n=>'N'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'ADMIN'
-,p_last_upd_yyyymmddhh24miss=>'20231221132637'
+,p_last_upd_yyyymmddhh24miss=>'20240207092606'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(38937374461877691)
@@ -49652,16 +49216,16 @@ wwv_flow_api.create_page(
 ,p_name=>'Web Nota de Credito ZAM'
 ,p_page_mode=>'NORMAL'
 ,p_step_title=>'Web Nota de Credito ZAM'
+,p_allow_duplicate_submissions=>'N'
 ,p_step_sub_title_type=>'TEXT_WITH_SUBSTITUTIONS'
 ,p_first_item=>'NO_FIRST_ITEM'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
-,p_dialog_chained=>'Y'
 ,p_overwrite_navigation_list=>'N'
 ,p_page_is_public_y_n=>'N'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'ADMIN'
-,p_last_upd_yyyymmddhh24miss=>'20210629000042'
+,p_last_upd_yyyymmddhh24miss=>'20240207092637'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(271973459027821)
@@ -50318,16 +49882,16 @@ wwv_flow_api.create_page(
 ,p_name=>'Web Recibo ZAM'
 ,p_page_mode=>'NORMAL'
 ,p_step_title=>'Web Recibo ZAM'
+,p_allow_duplicate_submissions=>'N'
 ,p_step_sub_title_type=>'TEXT_WITH_SUBSTITUTIONS'
 ,p_first_item=>'NO_FIRST_ITEM'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
-,p_dialog_chained=>'Y'
 ,p_overwrite_navigation_list=>'N'
 ,p_page_is_public_y_n=>'N'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'ADMIN'
-,p_last_upd_yyyymmddhh24miss=>'20230628010818'
+,p_last_upd_yyyymmddhh24miss=>'20240207092520'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(293930958086925)
@@ -50587,16 +50151,16 @@ wwv_flow_api.create_page(
 ,p_name=>'Web Factura ER'
 ,p_page_mode=>'NORMAL'
 ,p_step_title=>'Web Factura ER'
+,p_allow_duplicate_submissions=>'N'
 ,p_step_sub_title_type=>'TEXT_WITH_SUBSTITUTIONS'
 ,p_first_item=>'NO_FIRST_ITEM'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
-,p_dialog_chained=>'Y'
 ,p_overwrite_navigation_list=>'N'
 ,p_page_is_public_y_n=>'N'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'ADMIN'
-,p_last_upd_yyyymmddhh24miss=>'20230720105204'
+,p_last_upd_yyyymmddhh24miss=>'20240207092533'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(250961409020319)
@@ -51699,16 +51263,16 @@ wwv_flow_api.create_page(
 ,p_name=>'Web Nota de Credito ER'
 ,p_page_mode=>'NORMAL'
 ,p_step_title=>'Web Nota de Credito ER'
+,p_allow_duplicate_submissions=>'N'
 ,p_step_sub_title_type=>'TEXT_WITH_SUBSTITUTIONS'
 ,p_first_item=>'NO_FIRST_ITEM'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
-,p_dialog_chained=>'Y'
 ,p_overwrite_navigation_list=>'N'
 ,p_page_is_public_y_n=>'N'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'ADMIN'
-,p_last_upd_yyyymmddhh24miss=>'20200429132517'
+,p_last_upd_yyyymmddhh24miss=>'20240207092648'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(36365048908188852)
@@ -57661,17 +57225,17 @@ wwv_flow_api.create_page(
 ,p_name=>'Reporte REPSE'
 ,p_page_mode=>'NORMAL'
 ,p_step_title=>'Reporte REPSE'
+,p_allow_duplicate_submissions=>'N'
 ,p_step_sub_title=>'Reporte REPSE'
 ,p_step_sub_title_type=>'TEXT_WITH_SUBSTITUTIONS'
 ,p_first_item=>'NO_FIRST_ITEM'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
-,p_dialog_chained=>'Y'
 ,p_overwrite_navigation_list=>'N'
 ,p_page_is_public_y_n=>'N'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'ADMIN'
-,p_last_upd_yyyymmddhh24miss=>'20231222080900'
+,p_last_upd_yyyymmddhh24miss=>'20240207092306'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(16461191169386250)
@@ -58373,8 +57937,20 @@ wwv_flow_api.create_ig_report_column(
 ,p_is_frozen=>false
 );
 wwv_flow_api.create_page_button(
- p_id=>wwv_flow_api.id(16352333037252730)
+ p_id=>wwv_flow_api.id(30835828082837128)
 ,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(16461191169386250)
+,p_button_name=>'BtnValidacionREPSE'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#:t-Button--iconRight'
+,p_button_template_id=>wwv_flow_api.id(34641152849792531)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Ejecutar Validacion REPSE'
+,p_button_position=>'REGION_TEMPLATE_NEXT'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(16352333037252730)
+,p_button_sequence=>20
 ,p_button_plug_id=>wwv_flow_api.id(16461191169386250)
 ,p_button_name=>'Btn_Importar_reporte_REPSE'
 ,p_button_action=>'REDIRECT_PAGE'
@@ -58398,6 +57974,19 @@ wwv_flow_api.create_page_process(
 ,p_attribute_08=>'Y'
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 );
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(30884682816257909)
+,p_process_sequence=>20
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_WEB_SERVICE_LEGACY'
+,p_process_name=>'Web Service Request REPSE'
+,p_attribute_01=>wwv_flow_api.id(15890301022238728)
+,p_attribute_02=>'ITEMS'
+,p_process_error_message=>'Revisar ejecucion de integracion'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when_button_id=>wwv_flow_api.id(30835828082837128)
+,p_process_success_message=>'Integracion en ejecucion por favor espere su proceso'
+);
 end;
 /
 prompt --application/pages/page_00084
@@ -58408,17 +57997,17 @@ wwv_flow_api.create_page(
 ,p_name=>'Reporte exclusion'
 ,p_page_mode=>'NORMAL'
 ,p_step_title=>'Reporte exclusion'
+,p_allow_duplicate_submissions=>'N'
 ,p_step_sub_title=>'Reporte exclusion'
 ,p_step_sub_title_type=>'TEXT_WITH_SUBSTITUTIONS'
 ,p_first_item=>'NO_FIRST_ITEM'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
-,p_dialog_chained=>'Y'
 ,p_overwrite_navigation_list=>'N'
 ,p_page_is_public_y_n=>'N'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'ADMIN'
-,p_last_upd_yyyymmddhh24miss=>'20231221224821'
+,p_last_upd_yyyymmddhh24miss=>'20240207092506'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(16531652793766841)
@@ -58700,6 +58289,18 @@ wwv_flow_api.create_ig_report_column(
 ,p_is_visible=>true
 ,p_is_frozen=>false
 );
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(30836483289837135)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(16531652793766841)
+,p_button_name=>'BtnValidacionExclusion'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#:t-Button--iconRight'
+,p_button_template_id=>wwv_flow_api.id(34641152849792531)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Ejecutar Validacion Exclusion'
+,p_button_position=>'REGION_TEMPLATE_NEXT'
+);
 wwv_flow_api.create_page_process(
  p_id=>wwv_flow_api.id(16537564811766846)
 ,p_process_sequence=>10
@@ -58712,6 +58313,17 @@ wwv_flow_api.create_page_process(
 ,p_attribute_06=>'Y'
 ,p_attribute_08=>'Y'
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(31000694616579919)
+,p_process_sequence=>20
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_WEB_SERVICE_LEGACY'
+,p_process_name=>'Web Service Request Exclusion'
+,p_attribute_01=>wwv_flow_api.id(30969867486555187)
+,p_attribute_02=>'ITEMS'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when_button_id=>wwv_flow_api.id(30836483289837135)
 );
 end;
 /
@@ -58732,7 +58344,7 @@ wwv_flow_api.create_page(
 ,p_page_is_public_y_n=>'N'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'ADMIN'
-,p_last_upd_yyyymmddhh24miss=>'20240115092459'
+,p_last_upd_yyyymmddhh24miss=>'20240209154902'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(16356431294252771)
@@ -59833,8 +59445,8 @@ wwv_flow_api.create_worksheet_rpt(
 ,p_flashback_enabled=>'N'
 );
 wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(45566233922711103)
-,p_plug_name=>'TRANSACCIONES TMS'
+ p_id=>wwv_flow_api.id(68793333498982770)
+,p_plug_name=>'Template creación lote'
 ,p_parent_plug_id=>wwv_flow_api.id(16356431294252771)
 ,p_region_template_options=>'#DEFAULT#'
 ,p_plug_template=>wwv_flow_api.id(34617701449792516)
@@ -59842,15 +59454,102 @@ wwv_flow_api.create_page_plug(
 ,p_include_in_reg_disp_sel_yn=>'N'
 ,p_plug_display_point=>'BODY'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'SELECT * FROM PCENTRAL.EXTRACCION_VENTA_TP_VIEW@PCENTRAL_LINK.ESTRELLAROJA.COM.MX',
-'					WHERE CORTE_FECHA_CREACION  BETWEEN TO_DATE(:P85_FECHA_INICIAL||'' 00:00:00'',''DD/MM/YY HH24:mi:ss'')   AND  TO_DATE(:P85_FECHA_FINAL||'' 23:59:59'', ''DD/MM/YY HH24:mi:ss'') ',
-'                    AND TIPO_PAGO != ''EFE''',
-'					AND TIPO_OPERACION NOT IN (''HO'',''FO'') --AND NVL (TO_NUMBER(ADICIONAL17),0) = 0',
-'                    --AND NUMERO_DOCUMENTO=NVL(:P85_NUMERO_DOCUMENTO,NUMERO_DOCUMENTO)',
-'                    --AND REFERENCIA_AMX	=NVL(:P85_REFERENCIA_BANCO_AMEX,REFERENCIA_AMX)',
-'                    --AND REFERENCIA=NVL(:P85_REFERENCIA_BANCO,REFERENCIA)'))
+'WITH',
+'CNC AS (SELECT PAYMENT_NUMBER, AMOUNT_PAYMENT, REFERENCE_TRANSACTIONS , REGEXP_COUNT(REFERENCE_TRANSACTIONS, ''_'', 1) REGISTROS ,STATUS',
+'    --, LENGTH(REFERENCE_TRANSACTIONS) - LENGTH(REGEXP_REPLACE(REFERENCE_TRANSACTIONS, '','', ''''))+1 REGISTROS',
+'        ,CONCILIACION_ID, ROWNUM RN ,FECHA_PAGO ,METODO_RECIBO FROM XXER_AR_CONCILIACION_TBL --WHERE CONCILIACION_ID IN (40714) --AND STATUS = ''C''',
+'            WHERE 1=1 --STATUS IN (''C'',''NCL'',''NCM'') ',
+'			AND fecha_pago BETWEEN TO_DATE(:P85_FECHA_INICIOT,''DD/MM/RRRR'') and TO_DATE(:P85_FECHA_FINT,''DD/MM/RR'') -->= sysdate -31 --TO_DATE(''01/01/2022'',''DD/MM/RR'')',
+'            --WHERE STATUS IN (''NC'') --AND TO_DATE(fecha_pago) >= ''01/01/2022''',
+'            --WHERE STATUS = ''C'' ',
+'            --WHERE TO_DATE(fecha_pago) >= ''01/01/2022'' ',
+'            ) --52379,52378,52380 --996282,996282,996436',
+',RES AS (SELECT CONCILIACION_ID ,SUBSTR(PAYMENT_NUMBER,1,4) AFIL_AMEX ',
+'            ,TO_CHAR(REGEXP_SUBSTR(REGEXP_SUBSTR(reference_transactions, ''[^,]+'', 1, LEVEL, ''i''), ''[^_]+'', 1, 1, ''i'')) AS TRANSACCION',
+'            ,SUM(TO_NUMBER(REGEXP_SUBSTR(REGEXP_SUBSTR(reference_transactions, ''[^,]+'', 1, LEVEL, ''i''), ''[^_]+'', 1, 2, ''i''))) AS IMPORTE_CONC',
+'            ,AMOUNT_PAYMENT',
+'        FROM CNC CONNECT BY LEVEL <= REGISTROS AND PRIOR CONCILIACION_ID = CONCILIACION_ID AND PRIOR DBMS_RANDOM.VALUE != 1',
+'        GROUP BY CONCILIACION_ID ,SUBSTR(PAYMENT_NUMBER,1,4) ,AMOUNT_PAYMENT',
+'            ,TO_CHAR(REGEXP_SUBSTR(REGEXP_SUBSTR(reference_transactions, ''[^,]+'', 1, LEVEL, ''i''), ''[^_]+'', 1, 1, ''i''))',
+'        )',
+',FNC AS (SELECT NUMERO_DOCUMENTO, TOTAL ,ESTATUS ,(CASE WHEN TOTAL < 0 THEN ''NOTA DE CREDITO'' ELSE TIPO_DOCUMENTO END) TIPO_DOCUMENTO FROM (',
+'        SELECT H.NUMERO_DOCUMENTO, SUM(L.TOTAL) TOTAL ,H.ESTATUS ,H.TIPO_DOCUMENTO FROM XXER_TBL_PUENTE_HEADER H ,XXER_TBL_PUENTE_LINES L',
+'        WHERE H.TABLA_PUENTE_ID = L.TABLA_PUENTE_ID',
+'    --AND EXISTS (SELECT 1 FROM XXER_TBL_PUENTE_LINES RL WHERE H.TABLA_PUENTE_ID = RL.TABLA_PUENTE_ID)',
+'        GROUP BY H.NUMERO_DOCUMENTO ,H.ESTATUS ,H.TIPO_DOCUMENTO) R )',
+'---------CONSULTA DE REPORTE----------------------',
+'--/*',
+'SELECT --R2.* /*',
+'    R2.CONCILIACION_ID "ID conciliación"',
+'    ,R2.FILA "ID fila"',
+'    ,CNC.STATUS "Estatus"',
+'    ,R2.NC "Nota de credito"',
+'    ,SUM(R2.IMPORTE_APLICAR) OVER (PARTITION BY R2.CONCILIACION_ID,R2.TIPO_DOCUMENTO)-R2.IMPORTE_COBRO  "Variación Cobro Transacciones"',
+'    ,CNC.METODO_RECIBO "Metodo cobro"',
+'    ,R2.TIPO_DOCUMENTO "Tipo documento"',
+'    ,CNC.RN "Secuencia"',
+'    --,NULL "Secuencia"',
+'    ,(CASE WHEN R2.AFIL_AMEX IN (''AFIL'',''AMEX'') THEN SUBSTR(CNC.PAYMENT_NUMBER,1,LENGTH(CNC.PAYMENT_NUMBER)-9) ELSE CNC.PAYMENT_NUMBER END) "Num cobro"',
+'    ,R2.IMPORTE_COBRO "Imp cobro"',
+'    ,CNC.FECHA_PAGO "Fecha cobro"',
+'    ,CNC.FECHA_PAGO "Fecha contable"',
+'    ,NULL "Fecha cambio"',
+'    ,''MXN'' "Moneda"',
+'    ,NULL "Clase cambio"',
+'    ,NULL "Tipo cambio"',
+'    ,NULL "Num Documento"',
+'    ,''PUBLICO EN GENERAL'' "Nombre cliente"',
+'    ,5002 "Cuenta cliente"',
+'    ,305005 "Sitio cliente"',
+'    ,NULL "Cta bancaria"',
+'    ,R2.TRANSACCION "Valor referencia"',
+'    ,''Número de transacción'' "Tipo referemcia"',
+'    ,R2.IMPORTE_APLICAR - ',
+'    (CASE WHEN (SUM(R2.IMPORTE_APLICAR) OVER (PARTITION BY R2.CONCILIACION_ID,R2.TIPO_DOCUMENTO)-R2.IMPORTE_COBRO)>0 AND FILA = 1',
+'        THEN SUM(R2.IMPORTE_APLICAR) OVER (PARTITION BY R2.CONCILIACION_ID,R2.TIPO_DOCUMENTO)-R2.IMPORTE_COBRO ELSE 0 END )"Imp referencia"',
+'    /*,R2.TOTAL_TRANSACCION IMP_TXN_TP',
+'    ,SUM(IMPORTE) OVER (PARTITION BY CONCILIACION_ID) IMP_TOT_REF',
+'    ,SUM(IMPORTE) OVER (PARTITION BY CONCILIACION_ID) - R2.AMOUNT_TRANSACTIONS DESV_REC_VS__TXNS',
+'    ,NULL "Desviación"',
+'    ,(CASE WHEN TIPO_DOCUMENTO = ''NOTA DE CREDITO'' THEN',
+'        LAG (TRANSACCION, FILA - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE DESC) ELSE NULL END) APLICAR_A',
+'    ,(CASE WHEN FILA = 1 AND (LEAD (TIPO_DOCUMENTO, FILAS - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE DESC)) = ''NOTA DE CREDITO''',
+'        THEN LEAD (IMPORTE, FILAS - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE DESC) ELSE 0 END) NC*/',
+'    FROM (',
+'--*/',
+'SELECT',
+'    --(CASE WHEN SUBSTR(PAYMENT_NUMBER,1,4) IN (''AFIL'',''AMEX'') THEN SUBSTR(PAYMENT_NUMBER,1,LENGTH(PAYMENT_NUMBER)-9) ELSE PAYMENT_NUMBER END) PAYMENT_NUMBER',
+'    --,PAYMENT_NUMBER',
+'    --, AMOUNT_TRANSACTIONS',
+'    --,TRANSACCION',
+'    --,FECHA_PAGO',
+'    --,IMPORTE IMPORTE',
+'    R1.FILA, R1.FILAS, R1.CONCILIACION_ID, R1.AFIL_AMEX, R1.TRANSACCION',
+'    --, R1.IMPORTE_CONC ,FNC.TOTAL IMPORTE_TP',
+'    ,(CASE WHEN FNC.TOTAL < R1.IMPORTE_CONC THEN FNC.TOTAL ELSE R1.IMPORTE_CONC END) ',
+'    + (CASE WHEN FILA = 1 AND (LEAD (TIPO_DOCUMENTO, FILAS - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE_CONC DESC)) = ''NOTA DE CREDITO''',
+'        THEN LEAD (IMPORTE_CONC, FILAS - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE_CONC DESC) ELSE 0 END) IMPORTE_APLICAR',
+'    ,FNC.TIPO_DOCUMENTO',
+'    ,FNC.ESTATUS',
+'    , R1.AMOUNT_PAYMENT IMPORTE_COBRO',
+'    --,SUM(IMPORTE_CONC) OVER (PARTITION BY CONCILIACION_ID) IMPORTE_REV',
+'    /*,SUM(IMPORTE_CONC) OVER (PARTITION BY CONCILIACION_ID) - AMOUNT_PAYMENT VARIACION1',
+'    ,SUM(CASE WHEN FNC.TOTAL < R1.IMPORTE_CONC THEN FNC.TOTAL ELSE R1.IMPORTE_CONC END) OVER (PARTITION BY CONCILIACION_ID) - AMOUNT_PAYMENT VARIACION2',
+'    ,(CASE WHEN FNC.TOTAL < R1.IMPORTE_CONC THEN FNC.TOTAL ELSE R1.IMPORTE_CONC END) +',
+'    (CASE WHEN FILA = 1 AND (LEAD (TIPO_DOCUMENTO, FILAS - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE_CONC DESC)) = ''NOTA DE CREDITO''',
+'        THEN LEAD (IMPORTE_CONC, FILAS - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE_CONC DESC) ELSE 0 END) - AMOUNT_PAYMENT VARIACION*/',
+'    ,(CASE WHEN FILA = 1 AND (LEAD (TIPO_DOCUMENTO, FILAS - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE_CONC DESC)) = ''NOTA DE CREDITO''',
+'        THEN LEAD (IMPORTE_CONC, FILAS - 1 ) OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE_CONC DESC) ELSE 0 END) NC',
+'FROM ( SELECT ROW_NUMBER() OVER (PARTITION BY CONCILIACION_ID ORDER BY IMPORTE_CONC DESC) FILA ,COUNT(1) OVER (PARTITION BY CONCILIACION_ID) FILAS ',
+'        ,RES.*',
+'        FROM RES ) R1',
+'    LEFT JOIN FNC ON R1.TRANSACCION = FNC.NUMERO_DOCUMENTO ',
+'--/*',
+') R2',
+'    LEFT JOIN CNC ON R2.CONCILIACION_ID = CNC.CONCILIACION_ID',
+'ORDER BY 5,4;'))
 ,p_plug_source_type=>'NATIVE_IR'
-,p_ajax_items_to_submit=>'P85_FECHA_INICIAL,P85_NUMERO_DOCUMENTO,P85_REFERENCIA_BANCO,P85_REFERENCIA_BANCO_AMEX,P85_FECHA_FINAL'
+,p_ajax_items_to_submit=>'P85_FECHA_INICIOT,P85_FECHA_FINT'
 ,p_plug_query_row_template=>1
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_prn_content_disposition=>'ATTACHMENT'
@@ -59881,12 +59580,9 @@ wwv_flow_api.create_page_plug(
 ,p_prn_border_width=>.5
 ,p_prn_page_header_alignment=>'CENTER'
 ,p_prn_page_footer_alignment=>'CENTER'
-,p_plug_caching=>'CACHE'
-,p_plug_caching_max_age_in_sec=>21600
-,p_plug_cache_depends_on_items=>'APP_REQUEST_DATA_HASH'
 );
 wwv_flow_api.create_worksheet(
- p_id=>wwv_flow_api.id(45597647388851986)
+ p_id=>wwv_flow_api.id(68809580861015962)
 ,p_max_row_count=>'1000000'
 ,p_show_nulls_as=>'-'
 ,p_pagination_type=>'ROWS_X_TO_Y'
@@ -59896,225 +59592,228 @@ wwv_flow_api.create_worksheet(
 ,p_show_notify=>'Y'
 ,p_download_formats=>'CSV:HTML:EMAIL:XLS:PDF:RTF'
 ,p_owner=>'ADMIN'
-,p_internal_uid=>52668701697481564
+,p_internal_uid=>75880635169645540
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16605435798490597)
-,p_db_column_name=>'NUMERO_DOCUMENTO'
+ p_id=>wwv_flow_api.id(31218603054203292)
+,p_db_column_name=>'ID conciliación'
 ,p_display_order=>10
-,p_column_identifier=>'A'
-,p_column_label=>'Numero documento'
-,p_column_type=>'STRING'
+,p_column_identifier=>'CN'
+,p_column_label=>'Id conciliación'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16605763090490598)
-,p_db_column_name=>'PORCENTAJE_IVA'
+ p_id=>wwv_flow_api.id(31219041099203293)
+,p_db_column_name=>'ID fila'
 ,p_display_order=>20
-,p_column_identifier=>'B'
-,p_column_label=>'Porcentaje iva'
+,p_column_identifier=>'CO'
+,p_column_label=>'Id fila'
 ,p_column_type=>'NUMBER'
 ,p_column_alignment=>'RIGHT'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16606183097490598)
-,p_db_column_name=>'IMPORTE_BOLETO'
+ p_id=>wwv_flow_api.id(31219441601203293)
+,p_db_column_name=>'Estatus'
 ,p_display_order=>30
-,p_column_identifier=>'C'
-,p_column_label=>'Importe boleto'
-,p_column_type=>'NUMBER'
-,p_column_alignment=>'RIGHT'
+,p_column_identifier=>'CP'
+,p_column_label=>'Estatus'
+,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16606614597490599)
-,p_db_column_name=>'FECHA_VENTA_CREACION'
+ p_id=>wwv_flow_api.id(31219838174203294)
+,p_db_column_name=>'Nota de credito'
 ,p_display_order=>40
-,p_column_identifier=>'D'
-,p_column_label=>'Fecha venta creacion'
-,p_column_type=>'DATE'
-,p_column_alignment=>'CENTER'
-,p_tz_dependent=>'N'
+,p_column_identifier=>'CQ'
+,p_column_label=>'Nota de credito'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16606984715490599)
-,p_db_column_name=>'TIPO_OPERACION'
+ p_id=>wwv_flow_api.id(31220147939203294)
+,p_db_column_name=>'Variación Cobro Transacciones'
 ,p_display_order=>50
-,p_column_identifier=>'E'
-,p_column_label=>'Tipo operacion'
+,p_column_identifier=>'CR'
+,p_column_label=>'Variación cobro transacciones'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(31220619919203295)
+,p_db_column_name=>'Metodo cobro'
+,p_display_order=>60
+,p_column_identifier=>'CS'
+,p_column_label=>'Metodo cobro'
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16607382004490599)
-,p_db_column_name=>'CORTE_FECHA_CREACION'
-,p_display_order=>60
-,p_column_identifier=>'F'
-,p_column_label=>'Corte fecha creacion'
+ p_id=>wwv_flow_api.id(31220959974203296)
+,p_db_column_name=>'Tipo documento'
+,p_display_order=>70
+,p_column_identifier=>'CT'
+,p_column_label=>'Tipo documento'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(31221367902203296)
+,p_db_column_name=>'Secuencia'
+,p_display_order=>80
+,p_column_identifier=>'CU'
+,p_column_label=>'Secuencia'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(31221822926203297)
+,p_db_column_name=>'Num cobro'
+,p_display_order=>90
+,p_column_identifier=>'CV'
+,p_column_label=>'Num cobro'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(31222165921203297)
+,p_db_column_name=>'Imp cobro'
+,p_display_order=>100
+,p_column_identifier=>'CW'
+,p_column_label=>'Imp cobro'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(31222644638203298)
+,p_db_column_name=>'Fecha cobro'
+,p_display_order=>110
+,p_column_identifier=>'CX'
+,p_column_label=>'Fecha cobro'
 ,p_column_type=>'DATE'
 ,p_column_alignment=>'CENTER'
 ,p_tz_dependent=>'N'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16607788799490600)
-,p_db_column_name=>'SERVICIO_ID'
-,p_display_order=>70
-,p_column_identifier=>'G'
-,p_column_label=>'Servicio id'
-,p_column_type=>'NUMBER'
-,p_column_alignment=>'RIGHT'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16608232749490600)
-,p_db_column_name=>'FOLIO_PREIMPRESO_SOLO'
-,p_display_order=>80
-,p_column_identifier=>'H'
-,p_column_label=>'Folio preimpreso solo'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16608586092490600)
-,p_db_column_name=>'FOLIO_PREIMPRESO'
-,p_display_order=>90
-,p_column_identifier=>'I'
-,p_column_label=>'Folio preimpreso'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16608970549490601)
-,p_db_column_name=>'TIPO_MOVIMIENTO'
-,p_display_order=>100
-,p_column_identifier=>'J'
-,p_column_label=>'Tipo movimiento'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16609433739490601)
-,p_db_column_name=>'SERVICIO_NOMBRE'
-,p_display_order=>110
-,p_column_identifier=>'K'
-,p_column_label=>'Servicio nombre'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16609816388490602)
-,p_db_column_name=>'TIPO_PAGO'
+ p_id=>wwv_flow_api.id(31222950888203299)
+,p_db_column_name=>'Fecha contable'
 ,p_display_order=>120
-,p_column_identifier=>'L'
-,p_column_label=>'Tipo pago'
-,p_column_type=>'STRING'
+,p_column_identifier=>'CY'
+,p_column_label=>'Fecha contable'
+,p_column_type=>'DATE'
+,p_column_alignment=>'CENTER'
+,p_tz_dependent=>'N'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16610146303490602)
-,p_db_column_name=>'EMPRESA'
+ p_id=>wwv_flow_api.id(31223387778203299)
+,p_db_column_name=>'Fecha cambio'
 ,p_display_order=>130
-,p_column_identifier=>'M'
-,p_column_label=>'Empresa'
+,p_column_identifier=>'CZ'
+,p_column_label=>'Fecha cambio'
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16610600028490602)
-,p_db_column_name=>'CORTE_ID'
+ p_id=>wwv_flow_api.id(31223801338203300)
+,p_db_column_name=>'Moneda'
 ,p_display_order=>140
-,p_column_identifier=>'N'
-,p_column_label=>'Corte id'
-,p_column_type=>'NUMBER'
-,p_column_alignment=>'RIGHT'
+,p_column_identifier=>'DA'
+,p_column_label=>'Moneda'
+,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16611004392490603)
-,p_db_column_name=>'CLAVE_CORRIDA'
+ p_id=>wwv_flow_api.id(31224171651203300)
+,p_db_column_name=>'Clase cambio'
 ,p_display_order=>150
-,p_column_identifier=>'O'
-,p_column_label=>'Clave corrida'
+,p_column_identifier=>'DB'
+,p_column_label=>'Clase cambio'
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16611401921490603)
-,p_db_column_name=>'SUBTOTAL_BOLETO'
+ p_id=>wwv_flow_api.id(31224609437203300)
+,p_db_column_name=>'Tipo cambio'
 ,p_display_order=>160
-,p_column_identifier=>'P'
-,p_column_label=>'Subtotal boleto'
-,p_column_type=>'NUMBER'
-,p_column_alignment=>'RIGHT'
+,p_column_identifier=>'DC'
+,p_column_label=>'Tipo cambio'
+,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16611832022490603)
-,p_db_column_name=>'IMPORTE_IVA_BOLETO'
+ p_id=>wwv_flow_api.id(31224965943203301)
+,p_db_column_name=>'Num Documento'
 ,p_display_order=>170
-,p_column_identifier=>'Q'
-,p_column_label=>'Importe iva boleto'
+,p_column_identifier=>'DD'
+,p_column_label=>'Num documento'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(31225391342203301)
+,p_db_column_name=>'Nombre cliente'
+,p_display_order=>180
+,p_column_identifier=>'DE'
+,p_column_label=>'Nombre cliente'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(31225770368203302)
+,p_db_column_name=>'Cuenta cliente'
+,p_display_order=>190
+,p_column_identifier=>'DF'
+,p_column_label=>'Cuenta cliente'
 ,p_column_type=>'NUMBER'
 ,p_column_alignment=>'RIGHT'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16612155771490604)
-,p_db_column_name=>'ORIGEN_BOLETO'
-,p_display_order=>180
-,p_column_identifier=>'R'
-,p_column_label=>'Origen boleto'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16612601076490604)
-,p_db_column_name=>'ORIGEN'
-,p_display_order=>190
-,p_column_identifier=>'S'
-,p_column_label=>'Origen'
-,p_column_type=>'STRING'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16612974483490604)
-,p_db_column_name=>'DESTINO'
+ p_id=>wwv_flow_api.id(31226182912203302)
+,p_db_column_name=>'Sitio cliente'
 ,p_display_order=>200
-,p_column_identifier=>'T'
-,p_column_label=>'Destino'
-,p_column_type=>'STRING'
+,p_column_identifier=>'DG'
+,p_column_label=>'Sitio cliente'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16613441411490605)
-,p_db_column_name=>'REFERENCIA'
+ p_id=>wwv_flow_api.id(31226584249203303)
+,p_db_column_name=>'Cta bancaria'
 ,p_display_order=>210
-,p_column_identifier=>'U'
-,p_column_label=>'Referencia'
+,p_column_identifier=>'DH'
+,p_column_label=>'Cta bancaria'
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16613784899490605)
-,p_db_column_name=>'REFERENCIA_PAGO'
+ p_id=>wwv_flow_api.id(31227029960203303)
+,p_db_column_name=>'Valor referencia'
 ,p_display_order=>220
-,p_column_identifier=>'V'
-,p_column_label=>'Referencia pago'
+,p_column_identifier=>'DI'
+,p_column_label=>'Valor referencia'
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16614183672490605)
-,p_db_column_name=>'ADICIONAL17'
+ p_id=>wwv_flow_api.id(31227364426203304)
+,p_db_column_name=>'Tipo referemcia'
 ,p_display_order=>230
-,p_column_identifier=>'W'
-,p_column_label=>'Adicional17'
+,p_column_identifier=>'DJ'
+,p_column_label=>'Tipo referemcia'
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16614623861490606)
-,p_db_column_name=>'REFERENCIA_AMX'
+ p_id=>wwv_flow_api.id(31227762172203304)
+,p_db_column_name=>'Imp referencia'
 ,p_display_order=>240
-,p_column_identifier=>'X'
-,p_column_label=>'Referencia amx'
-,p_column_type=>'STRING'
+,p_column_identifier=>'DK'
+,p_column_label=>'Imp referencia'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
 );
 wwv_flow_api.create_worksheet_rpt(
- p_id=>wwv_flow_api.id(45628064283893085)
+ p_id=>wwv_flow_api.id(68832958749016604)
 ,p_application_user=>'APXWS_DEFAULT'
 ,p_report_seq=>10
-,p_report_alias=>'236860'
+,p_report_alias=>'382992'
 ,p_status=>'PUBLIC'
 ,p_is_default=>'Y'
 ,p_display_rows=>50
-,p_report_columns=>'NUMERO_DOCUMENTO:PORCENTAJE_IVA:IMPORTE_BOLETO:FECHA_VENTA_CREACION:TIPO_OPERACION:CORTE_FECHA_CREACION:SERVICIO_ID:FOLIO_PREIMPRESO_SOLO:FOLIO_PREIMPRESO:TIPO_MOVIMIENTO:SERVICIO_NOMBRE:TIPO_PAGO:EMPRESA:CORTE_ID:CLAVE_CORRIDA:SUBTOTAL_BOLETO:IMPORT'
-||'E_IVA_BOLETO:ORIGEN_BOLETO:ORIGEN:DESTINO:REFERENCIA:REFERENCIA_PAGO:ADICIONAL17:REFERENCIA_AMX'
+,p_report_columns=>'ORIGEN_DESTINO_SERVICIO:ID conciliación:ID fila:Estatus:Nota de credito:Variación Cobro Transacciones:Metodo cobro:Tipo documento:Secuencia:Num cobro:Imp cobro:Fecha cobro:Fecha contable:Fecha cambio:Moneda:Clase cambio:Tipo cambio:Num Documento:Nomb'
+||'re cliente:Cuenta cliente:Sitio cliente:Cta bancaria:Valor referencia:Tipo referemcia:Imp referencia'
 ,p_flashback_enabled=>'N'
 );
 wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(46101358691156696)
-,p_plug_name=>'REPORTE CONCILIACION  DETALLE'
+ p_id=>wwv_flow_api.id(69387334002972067)
+,p_plug_name=>'Reporte Conciliacion Detalle'
 ,p_parent_plug_id=>wwv_flow_api.id(16356431294252771)
 ,p_region_template_options=>'#DEFAULT#'
 ,p_component_template_options=>'#DEFAULT#'
@@ -60129,7 +59828,7 @@ wwv_flow_api.create_page_plug(
 '		 , H.ADICIONAL7 , H.ADICIONAL8 , H.ADICIONAL9 , H.ADICIONAL10 ,H.TABLA_PUENTE_ID ,L.TABLA_PUENTE_LINEA_ID ,L.TOTAL',
 '		FROM XXER_TBL_PUENTE_HEADER H, XXER_TBL_PUENTE_LINES L WHERE H.TABLA_PUENTE_ID = L.TABLA_PUENTE_ID AND H.SISTEMA_ORIGEN NOT IN (''EAM'', ''INV'', ''PORTAL'')',
 '        AND H.TIPO_DOCUMENTO NOT IN (''RECIBO'', ''REVERSO RECIBO'')',
-'		AND TRUNC(H.FECHA_MOVIMIENTO) BETWEEN  TO_DATE(:P25_FECHA_INICIO,''DD/MM/RRRR'') and TO_DATE(NVL(:P85_FECHA_FIN,:P25_FECHA_INICIO),''DD/MM/RRRR'')',
+'        AND H.FECHA_MOVIMIENTO BETWEEN TO_DATE(:P85_FECHA_INICIO,''DD/MM/RR'') and TO_DATE(:P85_FECHA_FIN,''DD/MM/RR'')',
 '		)',
 ',CNF as (',
 'select NVL(REGEXP_SUBSTR(cf3.METODO_RECIBO,''[^,]+''),cf3.METODO_RECIBO) METODO_RECIBO_M,',
@@ -60199,7 +59898,7 @@ wwv_flow_api.create_page_plug(
 '    ,CNF.MEMO_LINE',
 '    ,NVL(CNF.CONCILIACION_M,''NO'') CONCILIACION',
 '	,CNF.METODO_RECIBO_M ',
-'    ,CNF.FRECUENCIA_CONC_M AS "FRECUENCIA CONCILIACION"',
+'    ,NVL(CNF.FRECUENCIA_CONC_M,''SIN CONFIGURAR'') AS "FRECUENCIA CONCILIACION"',
 '    ,DECODE(CNF.CONCILIACION_M,''SI'',NVL(CNF.TOLERANCIA_CONC_M,10),NULL) AS "TOLERANCIA CONCILIACION"',
 '    ,(CASE',
 '        WHEN SUBSTR(CNF.PREFIJO_CONC_M,1,4) = ''AFIL'' THEN ',
@@ -60227,7 +59926,7 @@ wwv_flow_api.create_page_plug(
 '        WHEN CNF.FRECUENCIA_CONC_M = ''D'' THEN CNF.PREFIJO_CONC_M||TO_CHAR(TXN.FECHA_MOVIMIENTO,CNF.MASCARA_CONC_M)||CNF.SUBFIJO_CONC_M',
 '        WHEN CNF.FRECUENCIA_CONC_M = ''S'' THEN CNF.PREFIJO_CONC_M||TO_CHAR(TXN.FECHA_MOVIMIENTO+(6-MOD(TO_CHAR(TXN.FECHA_MOVIMIENTO,''J''),7)),CNF.MASCARA_CONC_M)||CNF.SUBFIJO_CONC_M',
 '        ELSE NULL END)',
-'        end) as REFERENCE_PAYMENT 		',
+'        end) as REFERENCE_PAYMENT 	',
 'FROM TXN',
 '    LEFT JOIN CNF ON NVL (TXN.SISTEMA_ORIGEN, 1) = NVL (CNF.SISTEMA_ORIGEN, 1)',
 '         AND NVL (TXN.TIPO_DOCUMENTO, 1) = NVL (CNF.TIPO_DOCUMENTO, 1)',
@@ -60249,12 +59948,14 @@ wwv_flow_api.create_page_plug(
 '         AND NVL (TXN.ADICIONAL9, 1) = NVL (CNF.ADICIONAL9, 1)',
 '         AND NVL (TXN.ADICIONAL10, 1) = NVL (CNF.ADICIONAL10, 1)',
 'WHERE 1=1',
-'AND CNF.CONCILIACION_M = ''SI''',
+'--AND CNF.CONCILIACION_M = ''SI''',
 ') RPC',
 '    LEFT JOIN XXER_AR_CONCILIACION_TBL TCO ON RPC.REFERENCE_PAYMENT = TCO.REFERENCE_PAYMENT ',
-'	AND RPC.METODO_RECIBO_M = TCO.METODO_RECIBO;'))
+'	AND RPC.METODO_RECIBO_M = TCO.METODO_RECIBO',
+'WHERE 1=1 --NVL(trim(TCO.STATUS),''NC'') != ''C''',
+';'))
 ,p_plug_source_type=>'NATIVE_IR'
-,p_ajax_items_to_submit=>'P25_FECHA_INICIO,P85_FECHA_FIN'
+,p_ajax_items_to_submit=>'P85_FECHA_INICIO,P85_FECHA_FIN'
 ,p_plug_query_row_template=>1
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_prn_content_disposition=>'ATTACHMENT'
@@ -60287,7 +59988,7 @@ wwv_flow_api.create_page_plug(
 ,p_prn_page_footer_alignment=>'CENTER'
 );
 wwv_flow_api.create_worksheet(
- p_id=>wwv_flow_api.id(46101495262156697)
+ p_id=>wwv_flow_api.id(69387437451972068)
 ,p_max_row_count=>'1000000'
 ,p_show_nulls_as=>'-'
 ,p_pagination_type=>'ROWS_X_TO_Y'
@@ -60297,10 +59998,10 @@ wwv_flow_api.create_worksheet(
 ,p_show_notify=>'Y'
 ,p_download_formats=>'CSV:HTML:EMAIL:XLS:PDF:RTF'
 ,p_owner=>'ADMIN'
-,p_internal_uid=>53172549570786275
+,p_internal_uid=>76458491760601646
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16573664321487885)
+ p_id=>wwv_flow_api.id(31205925252201747)
 ,p_db_column_name=>'ID_INTERFAZ'
 ,p_display_order=>10
 ,p_column_identifier=>'A'
@@ -60309,7 +60010,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_alignment=>'RIGHT'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16574048172487886)
+ p_id=>wwv_flow_api.id(31206270992201748)
 ,p_db_column_name=>'NUMERO_DOCUMENTO'
 ,p_display_order=>20
 ,p_column_identifier=>'B'
@@ -60317,7 +60018,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16574476619487886)
+ p_id=>wwv_flow_api.id(31206718157201748)
 ,p_db_column_name=>'FECHA_MOVIMIENTO'
 ,p_display_order=>30
 ,p_column_identifier=>'C'
@@ -60327,7 +60028,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_tz_dependent=>'N'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16574912204487887)
+ p_id=>wwv_flow_api.id(31207089365201749)
 ,p_db_column_name=>'NOMBRE_FISCAL_ORIGEN'
 ,p_display_order=>40
 ,p_column_identifier=>'D'
@@ -60335,7 +60036,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16575312772487887)
+ p_id=>wwv_flow_api.id(31207487662201749)
 ,p_db_column_name=>'TOTAL'
 ,p_display_order=>50
 ,p_column_identifier=>'E'
@@ -60344,7 +60045,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_alignment=>'RIGHT'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16575652697487888)
+ p_id=>wwv_flow_api.id(31207913742201750)
 ,p_db_column_name=>'SISTEMA_ORIGEN'
 ,p_display_order=>60
 ,p_column_identifier=>'F'
@@ -60352,7 +60053,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16576135344487888)
+ p_id=>wwv_flow_api.id(31208342233201750)
 ,p_db_column_name=>'TIPO_DOCUMENTO'
 ,p_display_order=>70
 ,p_column_identifier=>'G'
@@ -60360,7 +60061,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16576530503487889)
+ p_id=>wwv_flow_api.id(31208734285201751)
 ,p_db_column_name=>'TIPO_MOVIMIENTO'
 ,p_display_order=>80
 ,p_column_identifier=>'H'
@@ -60368,7 +60069,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16576941353487889)
+ p_id=>wwv_flow_api.id(31209063898201751)
 ,p_db_column_name=>'SUCURSAL_VENTA'
 ,p_display_order=>90
 ,p_column_identifier=>'I'
@@ -60376,7 +60077,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16577251593487890)
+ p_id=>wwv_flow_api.id(31209475083201752)
 ,p_db_column_name=>'ORIGEN_SERVICIO'
 ,p_display_order=>100
 ,p_column_identifier=>'J'
@@ -60384,7 +60085,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16577739932487890)
+ p_id=>wwv_flow_api.id(31209902173201752)
 ,p_db_column_name=>'DESTINO_SERVICIO'
 ,p_display_order=>110
 ,p_column_identifier=>'K'
@@ -60392,7 +60093,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16578092987487891)
+ p_id=>wwv_flow_api.id(31210262231201753)
 ,p_db_column_name=>'SERVICIO'
 ,p_display_order=>120
 ,p_column_identifier=>'L'
@@ -60400,7 +60101,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16578458602487891)
+ p_id=>wwv_flow_api.id(31210693548201753)
 ,p_db_column_name=>'CONCEPTO_MODALIDAD'
 ,p_display_order=>130
 ,p_column_identifier=>'M'
@@ -60408,7 +60109,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16578881276487891)
+ p_id=>wwv_flow_api.id(31211101830201754)
 ,p_db_column_name=>'FORMA_PAGO'
 ,p_display_order=>140
 ,p_column_identifier=>'N'
@@ -60416,7 +60117,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16579291960487892)
+ p_id=>wwv_flow_api.id(31211537604201754)
 ,p_db_column_name=>'REGISTROS'
 ,p_display_order=>150
 ,p_column_identifier=>'O'
@@ -60425,7 +60126,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_alignment=>'RIGHT'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16579728221487892)
+ p_id=>wwv_flow_api.id(31211852959201754)
 ,p_db_column_name=>'TABLA_PUENTE_ID'
 ,p_display_order=>160
 ,p_column_identifier=>'P'
@@ -60434,7 +60135,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_alignment=>'RIGHT'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16580076661487893)
+ p_id=>wwv_flow_api.id(31212290709201755)
 ,p_db_column_name=>'TABLA_PUENTE_LINEA_ID'
 ,p_display_order=>170
 ,p_column_identifier=>'Q'
@@ -60443,7 +60144,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_alignment=>'RIGHT'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16580528158487893)
+ p_id=>wwv_flow_api.id(31212665239201755)
 ,p_db_column_name=>'TIPO_TRANSACCION_AR'
 ,p_display_order=>180
 ,p_column_identifier=>'R'
@@ -60451,7 +60152,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16580936214487894)
+ p_id=>wwv_flow_api.id(31213118880201756)
 ,p_db_column_name=>'MEMO_LINE'
 ,p_display_order=>190
 ,p_column_identifier=>'S'
@@ -60459,7 +60160,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16581246169487894)
+ p_id=>wwv_flow_api.id(31213454970201756)
 ,p_db_column_name=>'CONCILIACION'
 ,p_display_order=>200
 ,p_column_identifier=>'T'
@@ -60467,7 +60168,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16581698820487895)
+ p_id=>wwv_flow_api.id(31213928994201757)
 ,p_db_column_name=>'FECHA_PAGO'
 ,p_display_order=>210
 ,p_column_identifier=>'U'
@@ -60477,7 +60178,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_tz_dependent=>'N'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16582078163487895)
+ p_id=>wwv_flow_api.id(31214267835201757)
 ,p_db_column_name=>'METODO RECIBO'
 ,p_display_order=>220
 ,p_column_identifier=>'V'
@@ -60485,7 +60186,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16582476631487896)
+ p_id=>wwv_flow_api.id(31214660399201758)
 ,p_db_column_name=>'REFERENCIA CONFIGURADA'
 ,p_display_order=>230
 ,p_column_identifier=>'W'
@@ -60493,7 +60194,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16582942608487896)
+ p_id=>wwv_flow_api.id(31215055805201758)
 ,p_db_column_name=>'FRECUENCIA CONCILIACION'
 ,p_display_order=>240
 ,p_column_identifier=>'X'
@@ -60501,7 +60202,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16583248780487897)
+ p_id=>wwv_flow_api.id(31215484833201758)
 ,p_db_column_name=>'TOTAL TRANSACCIONES TP'
 ,p_display_order=>250
 ,p_column_identifier=>'Y'
@@ -60510,7 +60211,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_alignment=>'RIGHT'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16583699386487897)
+ p_id=>wwv_flow_api.id(31215918531201759)
 ,p_db_column_name=>'MONTO PAGO CASH'
 ,p_display_order=>260
 ,p_column_identifier=>'Z'
@@ -60519,7 +60220,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_alignment=>'RIGHT'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16584070212487897)
+ p_id=>wwv_flow_api.id(31216342098201759)
 ,p_db_column_name=>'DIFERENCIA CONCILIACION'
 ,p_display_order=>270
 ,p_column_identifier=>'AA'
@@ -60528,7 +60229,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_alignment=>'RIGHT'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16584464478487898)
+ p_id=>wwv_flow_api.id(31216716636201760)
 ,p_db_column_name=>'ESTATUS CONCILIACION'
 ,p_display_order=>280
 ,p_column_identifier=>'AB'
@@ -60536,15 +60237,18 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16584915771487898)
+ p_id=>wwv_flow_api.id(31217143120201760)
 ,p_db_column_name=>'DESCRIPCION ESTATUS CONCILIACION'
 ,p_display_order=>290
 ,p_column_identifier=>'AC'
 ,p_column_label=>'Descripcion estatus conciliacion'
 ,p_column_type=>'STRING'
 );
+end;
+/
+begin
 wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(16585295826487899)
+ p_id=>wwv_flow_api.id(31217543728201761)
 ,p_db_column_name=>'REFERENCIA PAGO CASH'
 ,p_display_order=>300
 ,p_column_identifier=>'AD'
@@ -60552,10 +60256,10 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_rpt(
- p_id=>wwv_flow_api.id(46198830396720154)
+ p_id=>wwv_flow_api.id(69461853356000640)
 ,p_application_user=>'APXWS_DEFAULT'
 ,p_report_seq=>10
-,p_report_alias=>'236567'
+,p_report_alias=>'382889'
 ,p_status=>'PUBLIC'
 ,p_is_default=>'Y'
 ,p_display_rows=>50
@@ -60563,6 +60267,62 @@ wwv_flow_api.create_worksheet_rpt(
 ||'_ID:TIPO_TRANSACCION_AR:MEMO_LINE:CONCILIACION:FECHA_PAGO:METODO RECIBO:REFERENCIA CONFIGURADA:FRECUENCIA CONCILIACION:TOTAL TRANSACCIONES TP:MONTO PAGO CASH:DIFERENCIA CONCILIACION:ESTATUS CONCILIACION:DESCRIPCION ESTATUS CONCILIACION:REFERENCIA PAG'
 ||'O CASH'
 ,p_flashback_enabled=>'N'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(31140442562166651)
+,p_name=>'P85_FECHA_INICIO'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_api.id(69387334002972067)
+,p_prompt=>'Fecha inicio'
+,p_display_as=>'NATIVE_DATE_PICKER'
+,p_cSize=>30
+,p_field_template=>wwv_flow_api.id(34640562757792530)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_04=>'button'
+,p_attribute_05=>'N'
+,p_attribute_07=>'NONE'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(31140542248166652)
+,p_name=>'P85_FECHA_FIN'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_api.id(69387334002972067)
+,p_prompt=>'Fecha Fin'
+,p_display_as=>'NATIVE_DATE_PICKER'
+,p_cSize=>30
+,p_field_template=>wwv_flow_api.id(34640562757792530)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_04=>'button'
+,p_attribute_05=>'N'
+,p_attribute_07=>'NONE'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(31140643059166653)
+,p_name=>'P85_FECHA_INICIOT'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_api.id(68793333498982770)
+,p_prompt=>'Fecha Inicio'
+,p_display_as=>'NATIVE_DATE_PICKER'
+,p_cSize=>30
+,p_field_template=>wwv_flow_api.id(34640562757792530)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_04=>'button'
+,p_attribute_05=>'N'
+,p_attribute_07=>'NONE'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(31140657511166654)
+,p_name=>'P85_FECHA_FINT'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_api.id(68793333498982770)
+,p_prompt=>'Fecha Fin'
+,p_display_as=>'NATIVE_DATE_PICKER'
+,p_cSize=>30
+,p_field_template=>wwv_flow_api.id(34640562757792530)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_04=>'button'
+,p_attribute_05=>'N'
+,p_attribute_07=>'NONE'
 );
 wwv_flow_api.create_page_process(
  p_id=>wwv_flow_api.id(26273559496548725)
@@ -61034,26 +60794,43 @@ wwv_flow_api.create_web_service(
 );
 end;
 /
-prompt --application/shared_components/logic/webservices/validationpaymentsbiz
+prompt --application/shared_components/logic/webservices/validationrepse
 begin
 wwv_flow_api.create_web_service(
  p_id=>wwv_flow_api.id(15890301022238728)
-,p_name=>'ValidationPaymentsBiz'
-,p_url=>'https://141.148.3.46:443/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz'
-,p_action=>'http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/UpdateInvoicesInstallmentsAP'
+,p_name=>'ValidationREPSE'
+,p_url=>'http://141.148.3.46/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz'
+,p_action=>'http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/UpdateSupplierInvoicesInstallmentsAP'
 ,p_soap_envelope=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" ',
-'xmlns:xxer="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP"',
-'xmlns:val="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz">',
+'<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:val="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">',
 '   <soapenv:Header/>',
 '   <soapenv:Body>',
-'      <val:UpdateInvoicesInstallmentsAPRq>',
-'         <val:invoice>',
-'               <xxer:invoice_id>300000089498083</xxer:invoice_id>',
-'               <xxer:HoldFlag>true</xxer:HoldFlag>',
-'               <xxer:HoldReason>prueba</xxer:HoldReason>',
-'               </val:invoice>',
-'      </val:UpdateInvoicesInstallmentsAPRq>',
+'      <val:UpdateSupplierInvoicesInstallmentsAPRq>',
+'         <val:Supplier>',
+'            <val:supplier_list>REPSE</val:supplier_list>',
+'         </val:Supplier>',
+'      </val:UpdateSupplierInvoicesInstallmentsAPRq>',
+'   </soapenv:Body>',
+'</soapenv:Envelope>'))
+);
+end;
+/
+prompt --application/shared_components/logic/webservices/validationexclusion
+begin
+wwv_flow_api.create_web_service(
+ p_id=>wwv_flow_api.id(30969867486555187)
+,p_name=>'ValidationExclusion'
+,p_url=>'http://141.148.3.46/soa-infra/services/DEV/ValidationPaymentsAPBiz/ValidationPaymentsBiz'
+,p_action=>'http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz/UpdateSupplierInvoicesInstallmentsAP'
+,p_soap_envelope=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:val="http://soa.estrellaroja.com.mx/ValidationPaymentsAPBiz" xmlns:erp="http://soa.estrellaroja.com.mx/erpInvoiceInstallmentsAP">',
+'   <soapenv:Header/>',
+'   <soapenv:Body>',
+'      <val:UpdateSupplierInvoicesInstallmentsAPRq>',
+'         <val:Supplier>',
+'            <val:supplier_list>EXCLUSION</val:supplier_list>',
+'         </val:Supplier>',
+'      </val:UpdateSupplierInvoicesInstallmentsAPRq>',
 '   </soapenv:Body>',
 '</soapenv:Envelope>'))
 );
