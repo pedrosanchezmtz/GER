@@ -27,8 +27,8 @@
                     <tns:assetNumber>
                   <xsl:value-of select="ns0:assetNumber"/>
                </tns:assetNumber>
-                    <xsl:for-each select="key (&quot;assetNumber&quot;, ns0:assetNumber )">
-                        <xsl:sort order="ascending" select="ns0:readingDate"/>    
+                    <xsl:for-each select="key (&quot;assetNumber&quot;, ns0:assetNumber )[last()]">
+                        <xsl:sort order="descending" select="ns0:readingDate"/>    
                         <tns:Records>
                             <tns:readingDate>
                         <xsl:value-of select="ns0:readingDate"/>

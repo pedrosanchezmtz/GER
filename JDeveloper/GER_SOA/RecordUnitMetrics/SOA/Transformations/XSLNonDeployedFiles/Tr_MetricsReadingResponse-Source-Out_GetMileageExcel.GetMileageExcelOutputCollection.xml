@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GetMileageExcelOutputCollection xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/GetMileageExcel">
+   <GetMileageExcelOutput>
+      <ASSET_NUMBER>ASSET_NUMBER148</ASSET_NUMBER>
+      <ORIGIN>ORIGIN149</ORIGIN>
+      <READING_DATE>2024-02-15</READING_DATE>
+      <READING_VALUE>150</READING_VALUE>
+      <STATUS>STATUS151</STATUS>
+      <ERROR_MESSAGE>ERROR_MESSAGE152</ERROR_MESSAGE>
+   </GetMileageExcelOutput>
+   <GetMileageExcelOutput>
+      <ASSET_NUMBER>ASSET_NUMBER153</ASSET_NUMBER>
+      <ORIGIN>ORIGIN154</ORIGIN>
+      <READING_DATE>2024-02-15</READING_DATE>
+      <READING_VALUE>155</READING_VALUE>
+      <STATUS>STATUS156</STATUS>
+      <ERROR_MESSAGE>ERROR_MESSAGE157</ERROR_MESSAGE>
+   </GetMileageExcelOutput>
+   <GetMileageExcelOutput>
+      <ASSET_NUMBER>ASSET_NUMBER158</ASSET_NUMBER>
+      <ORIGIN>ORIGIN159</ORIGIN>
+      <READING_DATE>2024-02-15</READING_DATE>
+      <READING_VALUE>160</READING_VALUE>
+      <STATUS>STATUS161</STATUS>
+      <ERROR_MESSAGE>ERROR_MESSAGE162</ERROR_MESSAGE>
+   </GetMileageExcelOutput>
+</GetMileageExcelOutputCollection>

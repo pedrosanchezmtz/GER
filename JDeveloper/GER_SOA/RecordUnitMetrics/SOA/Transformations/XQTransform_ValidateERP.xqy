@@ -34,8 +34,7 @@ declare function local:funcXqtransform_validateerp($AssetMetricReadingsVar as el
             return 
             if(count($Asset_DATAVar/rep:G_1[$Reading/ass:assetNumber= rep:ASSET_NUMBER]/rep:ASSET_NUMBER)=0)
             then
-                <eam:XxerEamErrorLog>
-                
+                <eam:XxerEamErrorLog>                
                 <eam:assetNumber>{fn:data($Reading/ass:assetNumber)}</eam:assetNumber>
                 <eam:readingDate>{fn:data($Reading/ass:Records[1]/ass:readingDate)}</eam:readingDate>
                 <eam:readingValue>{fn:data($Reading/ass:Records[1]/ass:readingValue)}</eam:readingValue>
@@ -251,16 +250,13 @@ declare function local:funcXqtransform_validateerp($AssetMetricReadingsVar as el
                 )
                 )
                 )
-                    
       (:-------FIN Bloque para validar prioridad -----:) 
                     else (
       (:------- Bloque para validar sin prioridad -----:)          
-          for $Record in $Reading/ass:Records
+          for $Record in $Reading/ass:Records[last()]
             return 
              if(
-             $Record/ass:readingDate               
-                 <
-              $Readings_DATAVar/rep1:G_2[rep1:ASSET_NUMBER =$Reading/ass:assetNumber and rep1:NAME = $v_name_medidor][1]/rep1:FECHA
+             $Record/ass:readingDate < $Readings_DATAVar/rep1:G_2[rep1:ASSET_NUMBER =$Reading/ass:assetNumber and rep1:NAME = $v_name_medidor][1]/rep1:FECHA
              )
             then
             
@@ -326,9 +322,7 @@ declare function local:funcXqtransform_validateerp($AssetMetricReadingsVar as el
                 <eam:errorMessage>Success</eam:errorMessage>
                 <eam:origin>{fn:data($Record/ass:origin)}</eam:origin>
                 </eam:XxerEamErrorLog>
-                
                 (:-------FIN Bloque para definir escenario 2-----:) 
-                
                 else(
                                 (:------- Bloque para definir escenario 3-----:) 
                 if (count($EAMSelectRecordRs/esr:EAMSelectRecordBSOutput[esr:ASSET_NUMBER=$Reading/ass:assetNumber])=0)
@@ -400,8 +394,6 @@ declare function local:funcXqtransform_validateerp($AssetMetricReadingsVar as el
                 )
                 )
                 )
-            
-            
             )
       (:------- FIN Bloque para validar sin prioridad -----:) 
              )

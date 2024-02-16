@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<t0:GetMileageTomTomResponse xmlns:t0="http://soa.estrellaroja.com.mx/MileageTomTom">
+   <t0:topLevelArray>
+            <t0:nombreViaje>MIYANA-PASDEST
+CLAVE CORRIDA: MIYAG0700N9035033</t0:nombreViaje>
+            <t0:folioViaje>1205333</t0:folioViaje>
+            <t0:origen>MIYANA</t0:origen>
+            <t0:destino>PASDEST</t0:destino>
+            <t0:conductor>Lorenzo Vazquez Cano</t0:conductor>
+            <t0:estatusViaje>6</t0:estatusViaje>
+            <t0:fechaInicio>2024-02-12T06:57:00</t0:fechaInicio>
+            <t0:fechaFin>2024-02-12T09:35:00</t0:fechaFin>
+            <t0:grupo>E-BUS</t0:grupo>
+            <t0:vehiculo>9001</t0:vehiculo>
+            <t0:duracion>158</t0:duracion>
+            <t0:parado>17</t0:parado>
+            <t0:cuentaKmInicio>1102096</t0:cuentaKmInicio>
+            <t0:cuentaKmFin>1102242</t0:cuentaKmFin>
+            <t0:recorrido>146</t0:recorrido>
+            <t0:consumo>27.751</t0:consumo>
+            <t0:rendimiento>5.26</t0:rendimiento>
+         </t0:topLevelArray>
+         <t0:topLevelArray>
+            <t0:nombreViaje>DIRECTO TTP CAPU-SMA
+CLAVE CORRIDA: CAPUB0845N9072382</t0:nombreViaje>
+            <t0:folioViaje>1205443</t0:folioViaje>
+            <t0:origen>Capu</t0:origen>
+            <t0:destino>Terminal SMA</t0:destino>
+            <t0:conductor>Oscar Sahid Aguirre Velasco</t0:conductor>
+            <t0:estatusViaje>6</t0:estatusViaje>
+            <t0:fechaInicio>2024-02-12T08:42:00</t0:fechaInicio>
+            <t0:fechaFin>2024-02-12T09:19:00</t0:fechaFin>
+            <t0:grupo>DIRECTO TTP</t0:grupo>
+            <t0:vehiculo>962</t0:vehiculo>
+            <t0:duracion>37</t0:duracion>
+            <t0:parado>5</t0:parado>
+            <t0:cuentaKmInicio>474405</t0:cuentaKmInicio>
+            <t0:cuentaKmFin>474439</t0:cuentaKmFin>
+            <t0:recorrido>34</t0:recorrido>
+            <t0:consumo>8.5</t0:consumo>
+            <t0:rendimiento>4</t0:rendimiento>
+         </t0:topLevelArray>
+         <t0:topLevelArray>
+            <t0:nombreViaje>PASDEST-ANGEL-MIYANA
+CLAVE CORRIDA: PASDG1045N9035045</t0:nombreViaje>
+            <t0:folioViaje>1205508</t0:folioViaje>
+            <t0:origen>Plaza Paseo Destino</t0:origen>
+            <t0:destino>MIYANA</t0:destino>
+            <t0:conductor>Lorenzo Vazquez Cano</t0:conductor>
+            <t0:estatusViaje>6</t0:estatusViaje>
+            <t0:fechaInicio>2024-02-12T10:41:00</t0:fechaInicio>
+            <t0:fechaFin>2024-02-12T13:34:00</t0:fechaFin>
+            <t0:grupo>E-BUS</t0:grupo>
+            <t0:vehiculo>9001</t0:vehiculo>
+            <t0:duracion>173</t0:duracion>
+            <t0:parado>17</t0:parado>
+            <t0:cuentaKmInicio>1102243</t0:cuentaKmInicio>
+            <t0:cuentaKmFin>1102397</t0:cuentaKmFin>
+            <t0:recorrido>154</t0:recorrido>
+            <t0:consumo>31.48</t0:consumo>
+            <t0:rendimiento>4.89</t0:rendimiento>
+         </t0:topLevelArray>
+         <t0:topLevelArray>
+            <t0:nombreViaje>MIYANA-PASDEST
+CLAVE CORRIDA: MIYAG1500N9035059</t0:nombreViaje>
+            <t0:folioViaje>1205600</t0:folioViaje>
+            <t0:origen>MIYANA</t0:origen>
+            <t0:destino>PASDEST</t0:destino>
+            <t0:conductor>Lorenzo Vazquez Cano</t0:conductor>
+            <t0:estatusViaje>6</t0:estatusViaje>
+            <t0:fechaInicio>2024-02-12T14:56:00</t0:fechaInicio>
+            <t0:fechaFin>2024-02-12T18:52:00</t0:fechaFin>
+            <t0:grupo>E-BUS</t0:grupo>
+            <t0:vehiculo>9001</t0:vehiculo>
+            <t0:duracion>236</t0:duracion>
+            <t0:parado>39</t0:parado>
+            <t0:cuentaKmInicio>1102398</t0:cuentaKmInicio>
+            <t0:cuentaKmFin>1102544</t0:cuentaKmFin>
+            <t0:recorrido>146</t0:recorrido>
+            <t0:consumo>32.488</t0:consumo>
+            <t0:rendimiento>4.49</t0:rendimiento>
+         </t0:topLevelArray>
+         <t0:topLevelArray>
+            <t0:nombreViaje>PULLMAN CAPU-CNORTE
+CLAVE CORRIDA: CAPUP1430N9039720</t0:nombreViaje>
+            <t0:folioViaje>1205728</t0:folioViaje>
+            <t0:origen>Capu</t0:origen>
+            <t0:destino>Central del Norte</t0:destino>
+            <t0:conductor>Rolando Martinez Garcia</t0:conductor>
+            <t0:estatusViaje>6</t0:estatusViaje>
+            <t0:fechaInicio>2024-02-12T14:25:00</t0:fechaInicio>
+            <t0:fechaFin>2024-02-12T16:49:00</t0:fechaFin>
+            <t0:grupo>Primera Clase</t0:grupo>
+            <t0:vehiculo>7010</t0:vehiculo>
+            <t0:duracion>144</t0:duracion>
+            <t0:parado>7</t0:parado>
+            <t0:cuentaKmInicio>1224488</t0:cuentaKmInicio>
+            <t0:cuentaKmFin>1224622</t0:cuentaKmFin>
+            <t0:recorrido>134</t0:recorrido>
+            <t0:consumo>36.364</t0:consumo>
+            <t0:rendimiento>3.69</t0:rendimiento>
+         </t0:topLevelArray>
+</t0:GetMileageTomTomResponse>
