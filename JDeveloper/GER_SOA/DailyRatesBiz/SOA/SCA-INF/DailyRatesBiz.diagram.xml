@@ -15,11 +15,11 @@
         </dgm:operations>
     </dgm:gService>
     <dgm:gReference name="BanxicoTec">
-        <dgm:body borderWidth="2" arcRad="20" X="988" Y="26" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="1102" Y="26" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="978" Y="19" width="156" height="98">
+        <dgm:shadow arcRad="20" X="1092" Y="19" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="BanxicoTec" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/BanxicoTec#wsdl.interface(BanxicoTecPortType)"/>
@@ -29,11 +29,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="SOAUtilitiesTec">
-        <dgm:body borderWidth="2" arcRad="20" X="988" Y="144" width="136" height="156">
+        <dgm:body borderWidth="2" arcRad="20" X="1102" Y="144" width="136" height="156">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="978" Y="137" width="156" height="170">
+        <dgm:shadow arcRad="20" X="1092" Y="137" width="156" height="170">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="SOAUtilitiesTec" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/SOAUtilitiesTec#wsdl.interface(SOAUtilitiesTecPortType)"/>
@@ -49,11 +49,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="ERPIntegrationBiz">
-        <dgm:body borderWidth="2" arcRad="20" X="988" Y="334" width="136" height="120">
+        <dgm:body borderWidth="2" arcRad="20" X="1102" Y="334" width="136" height="120">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="978" Y="327" width="156" height="134">
+        <dgm:shadow arcRad="20" X="1092" Y="327" width="156" height="134">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="ERPIntegrationBiz" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/ERPIntegrationBiz#wsdl.interface(ERPIntegrationBizPortType)" callbackInterface="http://soa.estrellaroja.com.mx/ERPIntegrationBiz#wsdl.interface(ERPIntegrationBizCallbackPortType)"/>
@@ -66,11 +66,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="MessageTec">
-        <dgm:body borderWidth="2" arcRad="20" X="988" Y="488" width="136" height="96">
+        <dgm:body borderWidth="2" arcRad="20" X="1102" Y="488" width="136" height="96">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="978" Y="481" width="156" height="110">
+        <dgm:shadow arcRad="20" X="1092" Y="481" width="156" height="110">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="MessageTec" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/MessageTec#wsdl.interface(MessageTecPortType)" callbackInterface="http://soa.estrellaroja.com.mx/MessageTec#wsdl.interface(MessageTecCallbackPortType)"/>
@@ -81,12 +81,12 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gComponent name="mediadorDailyRatesBiz">
-        <dgm:body borderWidth="2" arcRad="20" X="348" Y="237" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="386" Y="237" width="130" height="61">
             <dgm:borderColor r="128" g="92" b="148"/>
             <dgm:lightBgColor r="208" g="169" b="227"/>
             <dgm:darkBgColor r="183" g="132" b="212"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="338" Y="230" width="150" height="77">
+        <dgm:shadow arcRad="20" X="376" Y="230" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="mediadorDailyRatesBiz" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/DailyRatesBiz#wsdl.interface(DailyRatesBizPortType)"/>
@@ -94,12 +94,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="bpelCreateDailyRates">
-        <dgm:body borderWidth="2" arcRad="20" X="668" Y="237" width="130" height="136">
+        <dgm:body borderWidth="2" arcRad="20" X="744" Y="237" width="130" height="136">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="658" Y="230" width="150" height="152">
+        <dgm:shadow arcRad="20" X="734" Y="230" width="150" height="152">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="bpelCreateDailyRates" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/DailyRatesBiz/bpelCreateDailyRates#wsdl.interface(bpelCreateDailyRates)"/>
@@ -110,40 +110,40 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gWireLink source="DailyRatesBiz" target="mediadorDailyRatesBiz/mediadorDailyRatesBiz" width="2">
-        <dgm:gSegment X1="168" Y1="262" X2="338" Y2="262"/>
+        <dgm:gSegment X1="168" Y1="262" X2="376" Y2="262"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="mediadorDailyRatesBiz/bpelCreateDailyRates.bpelCreateDailyRates" target="bpelCreateDailyRates/bpelCreateDailyRates" width="2">
-        <dgm:gSegment X1="488" Y1="262" X2="658" Y2="262"/>
+        <dgm:gSegment X1="526" Y1="262" X2="734" Y2="262"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelCreateDailyRates/BanxicoTec" target="BanxicoTec" width="2">
-        <dgm:gSegment X1="808" Y1="262" X2="832" Y2="262"/>
-        <dgm:gSegment X1="832" Y1="262" X2="832" Y2="36"/>
-        <dgm:gSegment X1="832" Y1="36" X2="978" Y2="36"/>
+        <dgm:gSegment X1="884" Y1="262" X2="908" Y2="262"/>
+        <dgm:gSegment X1="908" Y1="262" X2="908" Y2="36"/>
+        <dgm:gSegment X1="908" Y1="36" X2="1092" Y2="36"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelCreateDailyRates/SOAUtilitiesTec1" target="SOAUtilitiesTec" width="2">
-        <dgm:gSegment X1="808" Y1="287" X2="847" Y2="287"/>
-        <dgm:gSegment X1="847" Y1="287" X2="847" Y2="154"/>
-        <dgm:gSegment X1="847" Y1="154" X2="978" Y2="154"/>
+        <dgm:gSegment X1="884" Y1="287" X2="923" Y2="287"/>
+        <dgm:gSegment X1="923" Y1="287" X2="923" Y2="154"/>
+        <dgm:gSegment X1="923" Y1="154" X2="1092" Y2="154"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelCreateDailyRates/ERPIntegrationBiz" target="ERPIntegrationBiz" width="2">
-        <dgm:gSegment X1="808" Y1="312" X2="847" Y2="312"/>
-        <dgm:gSegment X1="847" Y1="312" X2="847" Y2="344"/>
-        <dgm:gSegment X1="847" Y1="344" X2="978" Y2="344"/>
+        <dgm:gSegment X1="884" Y1="312" X2="923" Y2="312"/>
+        <dgm:gSegment X1="923" Y1="312" X2="923" Y2="344"/>
+        <dgm:gSegment X1="923" Y1="344" X2="1092" Y2="344"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelCreateDailyRates/MessageTec" target="MessageTec" width="2">
-        <dgm:gSegment X1="808" Y1="337" X2="832" Y2="337"/>
-        <dgm:gSegment X1="832" Y1="337" X2="832" Y2="498"/>
-        <dgm:gSegment X1="832" Y1="498" X2="978" Y2="498"/>
+        <dgm:gSegment X1="884" Y1="337" X2="908" Y2="337"/>
+        <dgm:gSegment X1="908" Y1="337" X2="908" Y2="498"/>
+        <dgm:gSegment X1="908" Y1="498" X2="1092" Y2="498"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>

@@ -4,29 +4,26 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="bpelupdatesupplierinvoicesinstallmentsap_client" x="0" y="596" side="left"/>
-      <partnerlink name="BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client" x="0" y="855" side="left"/>
-      <partnerlink name="WsERPIntegrationBiz" x="0" y="18" side="left"/>
+      <partnerlink name="bpelupdatesupplierinvoicesinstallmentsap_client" x="0" y="1132" side="left"/>
+      <partnerlink name="BpelUpdateInvoicesInstallmentsAP.bpelupdateinvoicesinstallmentsap_client" x="0" y="1927" side="left"/>
+      <partnerlink name="WsERPIntegrationBiz" x="0" y="899" side="left"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,120,1260,498" show_swimlanes="true">
+   <graph_layout viewport="0,0,1341,488" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[1]" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[1]/faultHandlers/catchAll" type="catchall"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[1]/faultHandlers/catchAll/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[1]/sequence" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[2]" type="scope" showhandlers="false"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/faultHandlers/catchAll" type="catchall"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/faultHandlers/catchAll/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/forEach" type="foreach"/>
       <layout_item collapsed="false" xpath="/process/sequence/forEach/scope" type="scope" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence" type="sequence"/>
-      <layout_item collapsed="true" xpath="/process/sequence/forEach/scope/sequence/scope[1]" type="scope" showhandlers="true"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[1]/sequence" type="sequence"/>
-      <layout_item collapsed="true" xpath="/process/sequence/forEach/scope/sequence/scope[1]/sequence/scope" type="scope" showhandlers="false"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[1]/sequence/scope/faultHandlers/catchAll" type="catchall"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[1]/sequence/scope/faultHandlers/catchAll/sequence" type="sequence"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[1]/sequence/scope/sequence" type="sequence"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[1]/sequence/if/sequence" type="sequence"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[1]/sequence/if/sequence/scope" type="scope" showhandlers="true"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[1]/sequence/if/sequence/scope/faultHandlers/catchAll" type="catchall"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[1]/sequence/if/sequence/scope/faultHandlers/catchAll/sequence" type="sequence"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[1]/sequence/if/sequence/scope/sequence" type="sequence"/>
-      <layout_item collapsed="true" xpath="/process/sequence/forEach/scope/sequence/scope[2]" type="scope" showhandlers="true"/>
-      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope[2]/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/forEach/scope/sequence/scope/sequence" type="sequence"/>
    </graph_layout>
    <bookmarks/>
 </graphics>

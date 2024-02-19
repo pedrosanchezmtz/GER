@@ -1,0 +1,6 @@
+<view_states>
+   <function arity="3" name="funcXqts_listsuppliers">
+      <source_tree_view last.visible.row="27" last.visible.path="/sourceRoot[[0]]/RepseTbl[[2]]/ROW[[2]]/CUMPLIMIENTO[[15]]" first.visible.path="/sourceRoot[[0]]/UpdateSupplierInvoicesInstallmentsAPRq[[0]]" expanded.paths="/sourceRoot[[0]]/UpdateSupplierInvoicesInstallmentsAPRq[[0]]&#xA;/sourceRoot[[0]]/ExclusionTbl[[1]]&#xA;/sourceRoot[[0]]/ExclusionTbl[[1]]/ROW[[2]]&#xA;/sourceRoot[[0]]/RepseTbl[[2]]&#xA;/sourceRoot[[0]]/RepseTbl[[2]]/ROW[[2]]" first.visible.row="0" selected.paths=""/>
+      <target_tree_view last.visible.row="35" last.visible.path="/TargetRoot[[0]]/UpdateSupplierInvoicesInstallmentsAPRq[[0]]/Conditional[[0]]/Supplier[[1]]/ThirdDiscountDate[[31]]" first.visible.path="/TargetRoot[[0]]/UpdateSupplierInvoicesInstallmentsAPRq[[0]]/Conditional[[0]]/Supplier[[1]]/CreationDate[[2]]" expanded.paths="/TargetRoot[[0]]/UpdateSupplierInvoicesInstallmentsAPRq[[0]]&#xA;/TargetRoot[[0]]/UpdateSupplierInvoicesInstallmentsAPRq[[0]]/Conditional[[0]]&#xA;/TargetRoot[[0]]/UpdateSupplierInvoicesInstallmentsAPRq[[0]]/Conditional[[0]]/Supplier[[1]]" first.visible.row="6" selected.paths=""/>
+   </function>
+</view_states>

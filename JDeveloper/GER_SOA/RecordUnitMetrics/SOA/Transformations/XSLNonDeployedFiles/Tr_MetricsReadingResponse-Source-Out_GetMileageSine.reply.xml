@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GetMileageSineResponse xmlns="http://soa.estrellaroja.com.mx/MileageSine">
+   <topLevelArray>
+      <unidad>85</unidad>
+      <fecha>2024-02-15</fecha>
+      <lecturaAcomulada>86</lecturaAcomulada>
+   </topLevelArray>
+   <topLevelArray>
+      <unidad>87</unidad>
+      <fecha>2024-02-15</fecha>
+      <lecturaAcomulada>88</lecturaAcomulada>
+   </topLevelArray>
+   <topLevelArray>
+      <unidad>89</unidad>
+      <fecha>2024-02-15</fecha>
+      <lecturaAcomulada>90</lecturaAcomulada>
+   </topLevelArray>
+</GetMileageSineResponse>

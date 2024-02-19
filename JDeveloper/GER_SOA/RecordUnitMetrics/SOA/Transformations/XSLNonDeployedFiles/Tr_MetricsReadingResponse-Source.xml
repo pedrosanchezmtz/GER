@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GetMileageControlnetResponse xmlns="http://soa.estrellaroja.com.mx/MileageControlnet">
+   <topLevelArray>
+      <unidad>1</unidad>
+      <fecha>2024-02-15</fecha>
+      <lecturaAcomulada>2</lecturaAcomulada>
+   </topLevelArray>
+   <topLevelArray>
+      <unidad>3</unidad>
+      <fecha>2024-02-15</fecha>
+      <lecturaAcomulada>4</lecturaAcomulada>
+   </topLevelArray>
+   <topLevelArray>
+      <unidad>5</unidad>
+      <fecha>2024-02-15</fecha>
+      <lecturaAcomulada>6</lecturaAcomulada>
+   </topLevelArray>
+</GetMileageControlnetResponse>

@@ -1,22 +1,22 @@
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-2024-01-31 15:18:15.000/2.649 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Loaded operational configuration from "jar:file:/C:/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence.xml"
-2024-01-31 15:18:15.047/2.696 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Loaded operational overrides from "jar:file:/C:/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence-override-dev.xml"
-2024-01-31 15:18:15.049/2.698 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "/tangosol-coherence-override.xml" is not specified
-2024-01-31 15:18:15.052/2.701 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "cache-factory-config.xml" is not specified
-2024-01-31 15:18:15.053/2.702 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "cache-factory-builder-config.xml" is not specified
-2024-01-31 15:18:15.055/2.704 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "/custom-mbeans.xml" is not specified
+2024-02-07 11:02:26.614/2.981 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Loaded operational configuration from "jar:file:/C:/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence.xml"
+2024-02-07 11:02:26.659/3.026 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Loaded operational overrides from "jar:file:/C:/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence-override-dev.xml"
+2024-02-07 11:02:26.661/3.028 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "/tangosol-coherence-override.xml" is not specified
+2024-02-07 11:02:26.665/3.032 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "cache-factory-config.xml" is not specified
+2024-02-07 11:02:26.666/3.034 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "cache-factory-builder-config.xml" is not specified
+2024-02-07 11:02:26.668/3.036 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "/custom-mbeans.xml" is not specified
 
 Oracle Coherence Version 12.2.1.4.0 Build 74888
  Grid Edition: Development mode
 Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
 
-2024-01-31 15:18:16.138/3.787 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=main, member=n/a): The cluster name has not been configured, a value of "pedro's cluster" has been automatically generated
-2024-01-31 15:18:16.890/4.539 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.ExtensibleConfigurableCacheFactory
-ene 31, 2024 3:18:17 PM oracle.soa.scac.ValidateComposite loadWSDLs
+2024-02-07 11:02:27.802/4.169 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=main, member=n/a): The cluster name has not been configured, a value of "pedro's cluster" has been automatically generated
+2024-02-07 11:02:28.630/4.998 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.ExtensibleConfigurableCacheFactory
+feb 07, 2024 11:02:29 AM oracle.soa.scac.ValidateComposite loadWSDLs
 ADVERTENCIA: Validating WSDLs from WSDLManager....  with option UseSoaInfraMds:false
-ene 31, 2024 3:18:19 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+feb 07, 2024 11:02:31 AM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
 INFORMACIÓN: XMLSchema incremental build enabled.
 Java HotSpot(TM) 64-Bit Server VM warning: ignoring option PermSize=32m; support was removed in 8.0
 Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0

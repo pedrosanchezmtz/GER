@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GetMileageOmnitracsResponse xmlns="http://soa.estrellaroja.com.mx/MileageOmnitracs">
+   <topLevelArray>
+      <unidad>91</unidad>
+      <fecha>2024-02-15</fecha>
+      <lecturaAcomulada>92</lecturaAcomulada>
+   </topLevelArray>
+   <topLevelArray>
+      <unidad>93</unidad>
+      <fecha>2024-02-15</fecha>
+      <lecturaAcomulada>94</lecturaAcomulada>
+   </topLevelArray>
+   <topLevelArray>
+      <unidad>95</unidad>
+      <fecha>2024-02-15</fecha>
+      <lecturaAcomulada>96</lecturaAcomulada>
+   </topLevelArray>
+</GetMileageOmnitracsResponse>
