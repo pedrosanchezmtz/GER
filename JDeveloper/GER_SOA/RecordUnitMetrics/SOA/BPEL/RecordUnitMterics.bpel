@@ -164,6 +164,7 @@
     <variable name="EAMSelectRecordRq" messageType="ns42:EAMSelectRecordBSInput_msg"/>
     <variable name="Out_ERPReadingMetrics" messageType="ns16:postMeterReadings_outputMessage"/>
     <variable name="In_ERPReadingMetrics" messageType="ns16:postMeterReadings_inputMessage"/>
+    <variable name="v_name_medidor" type="xsd:string"/>
   </variables>
   <!-- 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -440,6 +441,20 @@ addAuditTrailEntry("Base64encode ended");]]>
                   <to variable="AssetMetricReadingsVar"/>
                 </copy>
               </assign>
+              <assign name="AssignParameters">
+                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes" keepSrcElementName="yes">
+                  <from>oraext:create-delimited-string($AssetMetricReadingsVar/ns23:Reading/ns23:assetNumber,',')</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$EAMSelectRecordRq.EAMSelectRecordBSInput_msg/ns43:assets</to>
+                </copy>
+                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                  <from>oraext:create-delimited-string($AssetMetricReadingsVar/ns23:Reading/ns23:assetNumber,',')</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_OriginPriority.EAMOriginPriorityInput_msg/ns28:assetNumber</to>
+                </copy>
+                <copy>
+                  <from>dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","MeterCode","Value","","Component","postMeterReadings")</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_name_medidor</to>
+                </copy>
+              </assign>
             </sequence>
           </scope>
           <scope name="ScopeGetDataERP">
@@ -576,43 +591,43 @@ catch(Exception e)
                       outputVariable="RunDataModelRs" bpelx:invokeAsDetail="no"/>
               <extensionActivity xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
                 <bpelx:exec name="Decoded" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
-                  <![CDATA[addAuditTrailEntry("decoding started");      
-try           
-{      
-XMLElement input = (XMLElement) getVariableData("RunDataModelRs","RunDataModelRsPart","ns0:Return/ns0:reportBytes");         
-String encodedString = input.getTextContent();           
-oracle.soa.common.util.Base64Decoder Decoder = new oracle.soa.common.util.Base64Decoder();           
-addAuditTrailEntry("encoded String = "+encodedString);           
-         
-String decoded = Decoder.decode(encodedString);    
- 
-decoded = "<DATA_DS xmlns=\"http://soa.estrellaroja.com.mx/ReportReadings\">"+ decoded.substring(decoded.indexOf("<P_ITEM/>"), decoded.length());                                       
- 
-addAuditTrailEntry("decoded string = "+decoded);            
-setVariableData("decodedValue",decoded);           
-}           
-catch(Exception e)           
-{           
-  addAuditTrailEntry("Exception: "+e.getMessage());           
+                  <![CDATA[addAuditTrailEntry("decoding started");       
+try            
+{       
+XMLElement input = (XMLElement) getVariableData("RunDataModelRs","RunDataModelRsPart","ns0:Return/ns0:reportBytes");          
+String encodedString = input.getTextContent();            
+oracle.soa.common.util.Base64Decoder Decoder = new oracle.soa.common.util.Base64Decoder();            
+addAuditTrailEntry("encoded String = "+encodedString);            
+          
+String decoded = Decoder.decode(encodedString);     
+  
+decoded = "<DATA_DS xmlns=\"http://soa.estrellaroja.com.mx/ReportReadings\">"+ decoded.substring(decoded.indexOf("<P_ITEM/>"), decoded.length());                                        
+  
+addAuditTrailEntry("decoded string = "+decoded);             
+setVariableData("decodedValue",decoded);            
+}            
+catch(Exception e)            
+{            
+  addAuditTrailEntry("Exception: "+e.getMessage());            
 }]]>
-                  <![CDATA[addAuditTrailEntry("decoding started");      
-try           
-{      
-XMLElement input = (XMLElement) getVariableData("RunDataModelRs","RunDataModelRsPart","ns0:Return/ns0:reportBytes");         
-String encodedString = input.getTextContent();           
-oracle.soa.common.util.Base64Decoder Decoder = new oracle.soa.common.util.Base64Decoder();           
-addAuditTrailEntry("encoded String = "+encodedString);           
-         
-String decoded = Decoder.decode(encodedString);    
- 
-decoded = "<DATA_DS xmlns=\"http://soa.estrellaroja.com.mx/ReportReadings\">"+ decoded.substring(decoded.indexOf("<P_ACTIVO>"), decoded.length());                                       
- 
-addAuditTrailEntry("decoded string = "+decoded);            
-setVariableData("decodedValue",decoded);           
-}           
-catch(Exception e)           
-{           
-  addAuditTrailEntry("Exception: "+e.getMessage());           
+                  <![CDATA[addAuditTrailEntry("decoding started");       
+try            
+{       
+XMLElement input = (XMLElement) getVariableData("RunDataModelRs","RunDataModelRsPart","ns0:Return/ns0:reportBytes");          
+String encodedString = input.getTextContent();            
+oracle.soa.common.util.Base64Decoder Decoder = new oracle.soa.common.util.Base64Decoder();            
+addAuditTrailEntry("encoded String = "+encodedString);            
+          
+String decoded = Decoder.decode(encodedString);     
+  
+decoded = "<DATA_DS xmlns=\"http://soa.estrellaroja.com.mx/ReportReadings\">"+ decoded.substring(decoded.indexOf("<P_ACTIVO>"), decoded.length());                                        
+  
+addAuditTrailEntry("decoded string = "+decoded);             
+setVariableData("decodedValue",decoded);            
+}            
+catch(Exception e)            
+{            
+  addAuditTrailEntry("Exception: "+e.getMessage());            
 }]]>
                 </bpelx:exec>
               </extensionActivity>
@@ -673,20 +688,6 @@ catch(Exception e)
               </catchAll>
             </faultHandlers>
             <sequence name="SeqDatosCloud">
-              <assign name="AssignParameters">
-                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes" keepSrcElementName="yes">
-                  <from>oraext:create-delimited-string($AssetMetricReadingsVar/ns23:Reading/ns23:assetNumber,',')</from>
-                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$EAMSelectRecordRq.EAMSelectRecordBSInput_msg/ns43:assets</to>
-                </copy>
-                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
-                  <from>oraext:create-delimited-string($AssetMetricReadingsVar/ns23:Reading/ns23:assetNumber,',')</from>
-                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_OriginPriority.EAMOriginPriorityInput_msg/ns28:assetNumber</to>
-                </copy>
-                <copy>
-                  <from>dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","MeterCode","Value","","Component","postMeterReadings")</from>
-                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$v_name_medidor</to>
-                </copy>
-              </assign>
               <invoke name="Invoke_OriginPriority" partnerLink="wsEAMOriginPriorityService"
                       portType="ns24:EAMOriginPriority_ptt" operation="EAMOriginPriority"
                       inputVariable="In_OriginPriority" outputVariable="Out_OriginPriority" bpelx:invokeAsDetail="no"/>
