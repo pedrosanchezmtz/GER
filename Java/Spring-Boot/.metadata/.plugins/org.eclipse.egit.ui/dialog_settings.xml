@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<item key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel" value="2"/>
 	<list key="RepositorySelectionPage.UsedUris">
+		<item value="http://gitlab.estrellaroja.com.mx/java/facturacion-api"/>
 		<item value="http://gitlab.estrellaroja.com.mx/java/facturacion-api.git"/>
 	</list>
 	<list key="EGit.KnownHosts">
-		<item value="bitbucket.org"/>
-		<item value="github.com"/>
 		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+		<item value="bitbucket.org"/>
 		<item value="gitlab.estrellaroja.com.mx"/>
 	</list>
 	<section name="GitImportWizard">
