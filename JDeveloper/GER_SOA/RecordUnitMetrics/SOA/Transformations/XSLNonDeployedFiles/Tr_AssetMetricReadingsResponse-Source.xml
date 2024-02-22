@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MetricsReading xmlns="http://soa.estrellaroja.com.mx/ReadingsCommon">
+   <Reading>
+      <assetNumber>assetNumber1</assetNumber>
+      <readingDate>2024-02-19</readingDate>
+      <readingValue></readingValue>
+      <origin>origin3</origin>
+      <assetProcessed>assetProcessed4</assetProcessed>
+   </Reading>
+   <Reading>
+      <assetNumber>assetNumber5</assetNumber>
+      <readingDate>2024-02-19</readingDate>
+      <readingValue>readingValue6</readingValue>
+      <origin>origin7</origin>
+      <assetProcessed>assetProcessed8</assetProcessed>
+   </Reading>
+   <Reading>
+      <assetNumber>assetNumber9</assetNumber>
+      <readingDate>2024-02-19</readingDate>
+      <readingValue>readingValue10</readingValue>
+      <origin>origin11</origin>
+      <assetProcessed>assetProcessed12</assetProcessed>
+   </Reading>
+</MetricsReading>

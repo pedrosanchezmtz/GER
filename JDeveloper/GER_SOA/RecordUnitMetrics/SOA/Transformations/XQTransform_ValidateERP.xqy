@@ -253,7 +253,7 @@ declare function local:funcXqtransform_validateerp($AssetMetricReadingsVar as el
       (:-------FIN Bloque para validar prioridad -----:) 
                     else (
       (:------- Bloque para validar sin prioridad -----:)          
-          for $Record in $Reading/ass:Records[last()]
+          for $Record in $Reading/ass:Records
             return 
              if(
              $Record/ass:readingDate < $Readings_DATAVar/rep1:G_2[rep1:ASSET_NUMBER =$Reading/ass:assetNumber and rep1:NAME = $v_name_medidor][1]/rep1:FECHA

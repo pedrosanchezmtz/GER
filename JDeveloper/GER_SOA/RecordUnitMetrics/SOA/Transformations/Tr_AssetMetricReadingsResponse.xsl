@@ -33,10 +33,17 @@
                             <tns:readingDate>
                         <xsl:value-of select="ns0:readingDate"/>
                      </tns:readingDate>
-                            <tns:readingValue>
-                        <xsl:value-of select="ns0:readingValue"/>
-                     </tns:readingValue>
-                            <tns:origin>
+                     <xsl:choose>
+                        <xsl:when test="string-length (ns0:readingValue) = 0 ">
+                           <tns:readingValue>0</tns:readingValue>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <tns:readingValue>
+                              <xsl:value-of select="ns0:readingValue"/>
+                           </tns:readingValue>
+                        </xsl:otherwise>
+                     </xsl:choose>
+                     <tns:origin>
                         <xsl:value-of select="ns0:origin"/>
                      </tns:origin>
                         </tns:Records>

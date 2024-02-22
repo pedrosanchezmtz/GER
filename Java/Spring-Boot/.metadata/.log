@@ -8340,3 +8340,15 @@ Caused in C:/Users/pedro/.m2/repository/org/glassfish/hk2/external/asm-all-repac
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2024-02-19 14:31:27.783
 !MESSAGE Parameter tasks is deprecated, use target instead
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-02-20 17:17:52.569
+!MESSAGE The POM for com.oracle:ojdbc:jar:14.0 is missing, no dependency information available
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-20 17:18:02.844
+!MESSAGE Classpath changed for project: facturacion-api
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-02-20 17:18:05.955
+!MESSAGE Parameter 'tasks' is deprecated: Use target instead
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-02-20 17:18:05.957
+!MESSAGE Parameter tasks is deprecated, use target instead

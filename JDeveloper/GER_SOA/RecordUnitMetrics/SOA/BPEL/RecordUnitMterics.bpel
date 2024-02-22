@@ -640,9 +640,6 @@ catch(Exception e)
             </sequence>
           </scope>
           <scope name="ScopeDatosCloud">
-            <variables>
-              <variable name="v_name_medidor" type="xsd:string"/>
-            </variables>
             <faultHandlers>
               <catchAll>
                 <sequence name="SeqError" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
@@ -728,26 +725,29 @@ catch(Exception e)
                   </assign>
                   <extensionActivity>
                     <bpelx:exec name="Java_LogsVars">
-                      <![CDATA[addAuditTrailEntry("Base64encode started");    
-try {    
-addAuditTrailEntry("-----------------------Mostrando variables Validadas-----------------");      
-java.lang.String VarString =null;       
-VarString = (java.lang.String)getVariableData("v_lecturas");	   
-VarString = VarString+(java.lang.String)getVariableData("v_assets");	  
-VarString = VarString+(java.lang.String)getVariableData("v_meters");	   
-VarString = VarString+(java.lang.String)getVariableData("v_prioritys");	  
-VarString = VarString+(java.lang.String)getVariableData("v_cloud");	   
-  
-  
-oracle.soa.common.util.Base64Encoder encoder = new oracle.soa.common.util.Base64Encoder();  
-java.lang.String encoded = null;       
-encoded = encoder.encode(VarString);    
-addAuditTrailEntry("Base64encode encoded="+encoded);  
-  
-addAuditTrailEntry("---------------fin------------------");  
- } catch (Exception e) {    
-  addAuditTrailEntry("Base64encode Exception: "+e.getMessage());    
-}    
+                      <![CDATA[addAuditTrailEntry("Base64encode started");     
+try {     
+addAuditTrailEntry("-----------------------Mostrando variables Validadas-----------------");       
+java.lang.String VarString =null;   
+	  
+VarString = (java.lang.String)getVariableData("v_lecturas");	 
+VarString = VarString+" medidor: "+(java.lang.String)getVariableData("v_name_medidor"); 
+VarString = VarString+(java.lang.String)getVariableData("v_assets");	   
+VarString = VarString+(java.lang.String)getVariableData("v_meters");	    
+VarString = VarString+(java.lang.String)getVariableData("v_prioritys");	   
+VarString = VarString+(java.lang.String)getVariableData("v_cloud");	 
+ 
+   
+   
+oracle.soa.common.util.Base64Encoder encoder = new oracle.soa.common.util.Base64Encoder();   
+java.lang.String encoded = null;        
+encoded = encoder.encode(VarString);     
+addAuditTrailEntry("Base64encode encoded="+encoded);   
+   
+addAuditTrailEntry("---------------fin------------------");   
+ } catch (Exception e) {     
+  addAuditTrailEntry("Base64encode Exception: "+e.getMessage());     
+}     
 addAuditTrailEntry("Base64encode ended");]]>
                     </bpelx:exec>
                   </extensionActivity>
@@ -775,57 +775,61 @@ addAuditTrailEntry("Base64encode ended");]]>
                   </documentation>
                   <condition>$In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:errorMessage='Success'</condition>
                   <sequence name="SeqSucess">
-                    <assign name="AssignReadingMeterExcel">
-                      <copy>
-                        <from>$Readings_DATAVar/ns15:G_2[ns15:ASSET_NUMBER=$In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:assetNumber and ns15:NAME=dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","MeterCode","Value","","Component","postMeterReadings") ]/ns15:METER_ID</from>
-                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:MeterId</to>
-                      </copy>
-                      <copy>
-                        <from>dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","MeterCode","Value","","Component","postMeterReadings")</from>
-                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:MeterCode</to>
-                      </copy>
-                      <copy>
-                        <from>concat(substring-before($In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:readingDateCal,'.'),'-06:00')</from>
-                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:ReadingDate</to>
-                      </copy>
-                      <copy>
-                        <from>dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","ReadingTypeCode","Value","","Component","postMeterReadings")</from>
-                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:ReadingTypeCode</to>
-                      </copy>
-                      <copy>
-                        <from>dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","MeterUsageCode","Value","","Component","postMeterReadings")</from>
-                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:MeterUsageCode</to>
-                      </copy>
-                      <copy ignoreMissingFromData="yes">
-                        <from>$In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:origin</from>
-                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:Comments</to>
-                      </copy>
-                      <copy ignoreMissingFromData="yes">
-                        <from>$In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:readingValueCal</from>
-                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:ReadingValue</to>
-                      </copy>
-                    </assign>
-                    <scope name="Scope4">
+                    <forEach parallel="no" counterName="counter_unitsI" name="ForEach_unitsIguales">
+                      <startCounterValue>1</startCounterValue>
+                      <finalCounterValue>count($Readings_DATAVar/ns15:G_2[ns15:ASSET_NUMBER=$In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:assetNumber and ns15:NAME=dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","MeterCode","Value","","Component","postMeterReadings") ])</finalCounterValue>
+                      <scope name="ScopeUnidadesRep">
                       <faultHandlers>
                         <catch faultName="ns16:fault" faultVariable="FaultSvc" faultMessageType="ns16:faultMessage">
-                          <sequence>
-                            <assign name="AssignError">
-                              <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
-                                <from>$FaultSvc.fault/ns19:Description</from>
-                                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:errorMessage</to>
-                              </copy>
-                            </assign>
-                            <compensate name="Compensate1"/>
-                          </sequence>
+                            <sequence>
+                              <assign name="AssignError">
+                                <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+                                  <from>$FaultSvc.fault/ns19:Description</from>
+                                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:errorMessage</to>
+                                </copy>
+                              </assign>
+                              <compensate name="Compensate1"/>
+                            </sequence>
                         </catch>
                       </faultHandlers>
-                      <sequence name="Sequence10">
-                        <invoke name="Invoke_ERPReadingMetrics" partnerLink="wsERPReadingMetricsService"
-                                portType="ns16:ERPMeterReadings_ptt" operation="postMeterReadings"
-                                inputVariable="In_ERPReadingMetrics" outputVariable="Out_ERPReadingMetrics"
-                                bpelx:invokeAsDetail="no"/>
-                      </sequence>
-                    </scope>
+                        <sequence name="SeqUnidadesRep">
+                          <assign name="AssignReadingMeterExcel">
+                            <copy>
+                              <from>$Readings_DATAVar/ns15:G_2[ns15:ASSET_NUMBER=$In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:assetNumber and ns15:NAME=dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","MeterCode","Value","","Component","postMeterReadings") ][$counter_unitsI]/ns15:METER_ID</from>
+                              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:MeterId</to>
+                            </copy>
+                            <copy>
+                              <from>dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","MeterCode","Value","","Component","postMeterReadings")</from>
+                              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:MeterCode</to>
+                            </copy>
+                            <copy>
+                              <from>concat(substring-before($In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:readingDateCal,'.'),'-06:00')</from>
+                              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:ReadingDate</to>
+                            </copy>
+                            <copy>
+                              <from>dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","ReadingTypeCode","Value","","Component","postMeterReadings")</from>
+                              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:ReadingTypeCode</to>
+                            </copy>
+                            <copy>
+                              <from>dvm:lookupValue("DVM/dvmRecordUnitMetrics.dvm","Code","MeterUsageCode","Value","","Component","postMeterReadings")</from>
+                              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:MeterUsageCode</to>
+                            </copy>
+                            <copy ignoreMissingFromData="yes">
+                              <from>$In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:origin</from>
+                              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:Comments</to>
+                            </copy>
+                            <copy ignoreMissingFromData="yes">
+                              <from>$In_EAMInsertError.XxerEamErrorLogCollection/ns32:XxerEamErrorLog[$countRecords]/ns32:readingValueCal</from>
+                              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$In_ERPReadingMetrics.request/ns19:ReadingValue</to>
+                            </copy>
+                          </assign>
+                          <invoke name="Invoke_ERPReadingMetrics" partnerLink="wsERPReadingMetricsService"
+                                  portType="ns16:ERPMeterReadings_ptt" operation="postMeterReadings"
+                                  inputVariable="In_ERPReadingMetrics" outputVariable="Out_ERPReadingMetrics"
+                                  bpelx:invokeAsDetail="no"/>
+                        </sequence>
+                      </scope>
+                    </forEach>
                   </sequence>
                 </if>
               </sequence>
