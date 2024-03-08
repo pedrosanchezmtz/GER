@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Facturacion QA">
+        <intProp name="ThreadGroup.num_threads">3</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="facturacion QA">
+          <stringProp name="HTTPSampler.domain">apier.estrellaroja.com.mx</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/facturacionqa/api/v3/invoice</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;invoice&quot;: {&#xd;
+        &quot;issuerRfc&quot;: &quot;AMP521016875&quot;,&#xd;
+        &quot;issuerName&quot;: &quot;AUTOBUSES MEXICO PUEBLA ESTRELLA ROJA&quot;,&#xd;
+        &quot;issuerStreet&quot;: &quot;BOULEVARD NORTE 4222&quot;,&#xd;
+        &quot;issuerColony&quot;: &quot;LAS CUARTILLAS&quot;,&#xd;
+        &quot;issuerZipCode&quot;: &quot;72050&quot;,&#xd;
+        &quot;issuerMunicipality&quot;: &quot;PUEBLA&quot;,&#xd;
+        &quot;issuerState&quot;: &quot;PUEBLA&quot;,&#xd;
+        &quot;issuerCountry&quot;: &quot;MEX&quot;,&#xd;
+        &quot;issuerTaxRegime&quot;: &quot;624&quot;,&#xd;
+        &quot;invoiceDate&quot;: &quot;2024-03-05T10:41:39&quot;,&#xd;
+        &quot;documentType&quot;: &quot;I&quot;,&#xd;
+        &quot;totalWords&quot;: &quot;**UN MIL SETECIENTOS CATORCE 91/100 &quot;,&#xd;
+        &quot;totalItems&quot;: 1,&#xd;
+        &quot;totalVat&quot;: 236.54,&#xd;
+        &quot;retentionVat&quot;: 0.0,&#xd;
+        &quot;retentionRate&quot;: 0.0,&#xd;
+        &quot;subtotal&quot;: 1478.37,&#xd;
+        &quot;total&quot;: 1714.91,&#xd;
+        &quot;serie&quot;: &quot;AMP&quot;,&#xd;
+        &quot;branchName&quot;: &quot;MATRIZ&quot;,&#xd;
+        &quot;branchStreet&quot;: &quot;AV PONIENTE 140, &quot;,&#xd;
+        &quot;branchIntNumber&quot;: &quot;AZCAPOTZALCO&quot;,&#xd;
+        &quot;branchColony&quot;: &quot;159&quot;,&#xd;
+        &quot;branchZipCode&quot;: &quot;02300&quot;,&#xd;
+        &quot;branchMunicipality&quot;: &quot;MEXICO&quot;,&#xd;
+        &quot;branchState&quot;: &quot;CDMX&quot;,&#xd;
+        &quot;branchCountry&quot;: &quot;MEX&quot;,&#xd;
+        &quot;receiverName&quot;: &quot;AUTOBUSES ESTRELLA BLANCA&quot;,&#xd;
+        &quot;receiverEmail&quot;: &quot;pedro.sanchez@forteinnovation.mx&quot;,&#xd;
+        &quot;receiverRfc&quot;: &quot;AEB611030SN7&quot;,&#xd;
+        &quot;receiverStreet&quot;: &quot;AV PONIENTE 140, &quot;,&#xd;
+        &quot;receiverColony&quot;: &quot;159&quot;,&#xd;
+        &quot;receiverZipCode&quot;: &quot;02300&quot;,&#xd;
+        &quot;receiverMunicipality&quot;: &quot;MEXICO&quot;,&#xd;
+        &quot;receiverState&quot;: &quot;CDMX&quot;,&#xd;
+        &quot;receiverCountry&quot;: &quot;MEX&quot;,&#xd;
+        &quot;receiverCfdiUse&quot;: &quot;G03&quot;,&#xd;
+        &quot;receiverTaxRegime&quot;: &quot;624&quot;,&#xd;
+        &quot;paymentMethod&quot;: &quot;PPD&quot;,&#xd;
+        &quot;currency&quot;: &quot;MXN&quot;,&#xd;
+        &quot;paymentMethodSelect&quot;: &quot;99&quot;,&#xd;
+        &quot;paymentForm&quot;: &quot;99&quot;,&#xd;
+        &quot;export&quot;: &quot;01&quot;,&#xd;
+        &quot;originSystem&quot;: &quot;APOLO&quot;,&#xd;
+        &quot;documentTypeDescription&quot;: &quot;FACTURA-DIRECTA&quot;,&#xd;
+        &quot;typeInvoice&quot;: &quot;INVOICE&quot;,&#xd;
+        &quot;invoiceType&quot;: &quot;INVOICE&quot;,&#xd;
+        &quot;invoiceItems&quot;: [&#xd;
+            {&#xd;
+                &quot;description&quot;: &quot;RECUPERACION DE ENLACE DE CAMARAS T1 ENERO 2023&quot;,&#xd;
+                &quot;productServiceKey&quot;: &quot;41112800&quot;,&#xd;
+                &quot;quantity&quot;: 1,&#xd;
+                &quot;discount&quot;: 0.0,&#xd;
+                &quot;vatPercentage&quot;: 16.0,&#xd;
+                &quot;unitKey&quot;: &quot;E48&quot;,&#xd;
+                &quot;unitPrice&quot;: 1478.37,&#xd;
+                &quot;taxBase&quot;: 1478.37,&#xd;
+                &quot;tax&quot;: &quot;002&quot;,&#xd;
+                &quot;factorType&quot;: &quot;Tasa&quot;,&#xd;
+                &quot;rateFee&quot;: 0.16,&#xd;
+                &quot;stpsPercentage&quot;: 0.0,&#xd;
+                &quot;impPercentage&quot;: 0.0,&#xd;
+                &quot;retentionVatPercentage&quot;: 0.0,&#xd;
+                &quot;retentionRatePercentage&quot;: 0.0,&#xd;
+                &quot;amount&quot;: 1478.37,&#xd;
+                &quot;subtotal&quot;: 1478.37,&#xd;
+                &quot;vat&quot;: 236.54,&#xd;
+                &quot;stps&quot;: 0.0,&#xd;
+                &quot;imp&quot;: 0.0,&#xd;
+                &quot;retentionVat&quot;: 0.0,&#xd;
+                &quot;retentionRate&quot;: 0.0,&#xd;
+                &quot;total&quot;: 1714.9099999999999,&#xd;
+                &quot;st&quot;: 0.0,&#xd;
+                &quot;taxObject&quot;: &quot;02&quot;&#xd;
+            }&#xd;
+        ],&#xd;
+        &quot;localRetentionPercentage&quot;: 0.0,&#xd;
+        &quot;localRetentionAmount&quot;: 0.0,&#xd;
+        &quot;transactionNumber&quot;: &quot;APOLOI30000009252348359&quot;,&#xd;
+        &quot;totalTaxBase&quot;: 1478.37&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.implementation">Java</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+            <collectionProp name="AuthManager.auth_list">
+              <elementProp name="" elementType="Authorization">
+                <stringProp name="Authorization.url">https://apier.estrellaroja.com.mx/facturacionqa/api/v3/invoice</stringProp>
+                <stringProp name="Authorization.username">facturacion</stringProp>
+                <stringProp name="Authorization.password">f4ctur4c10n</stringProp>
+                <stringProp name="Authorization.domain"></stringProp>
+                <stringProp name="Authorization.realm"></stringProp>
+              </elementProp>
+            </collectionProp>
+            <boolProp name="AuthManager.controlledByThreadGroup">false</boolProp>
+          </AuthManager>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
