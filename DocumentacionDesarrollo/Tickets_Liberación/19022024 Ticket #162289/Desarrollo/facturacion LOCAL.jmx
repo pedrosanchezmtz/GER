@@ -5,10 +5,12 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Facturacion QA">
-        <intProp name="ThreadGroup.num_threads">3</intProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Facturacion LOCAL">
+        <intProp name="ThreadGroup.num_threads">5</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
@@ -18,10 +20,11 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="facturacion QA" enabled="true">
-          <stringProp name="HTTPSampler.domain">apier.estrellaroja.com.mx</stringProp>
-          <stringProp name="HTTPSampler.protocol">https</stringProp>
-          <stringProp name="HTTPSampler.path">/facturacionqa/api/v3/invoice</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="facturacion Local">
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">8064</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/facturacion/api/v3/invoice</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -41,7 +44,7 @@
         &quot;issuerState&quot;: &quot;PUEBLA&quot;,&#xd;
         &quot;issuerCountry&quot;: &quot;MEX&quot;,&#xd;
         &quot;issuerTaxRegime&quot;: &quot;624&quot;,&#xd;
-        &quot;invoiceDate&quot;: &quot;2024-03-05T10:41:39&quot;,&#xd;
+        &quot;invoiceDate&quot;: &quot;2024-03-12T10:41:39&quot;,&#xd;
         &quot;documentType&quot;: &quot;I&quot;,&#xd;
         &quot;totalWords&quot;: &quot;**UN MIL SETECIENTOS CATORCE 91/100 &quot;,&#xd;
         &quot;totalItems&quot;: 1,&#xd;
@@ -110,7 +113,7 @@
         ],&#xd;
         &quot;localRetentionPercentage&quot;: 0.0,&#xd;
         &quot;localRetentionAmount&quot;: 0.0,&#xd;
-        &quot;transactionNumber&quot;: &quot;APOLOI30000009252348359&quot;,&#xd;
+        &quot;transactionNumber&quot;: &quot;APOLOI30000009252348368&quot;,&#xd;
         &quot;totalTaxBase&quot;: 1478.37&#xd;
     }&#xd;
 }</stringProp>
@@ -124,7 +127,7 @@
           <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
             <collectionProp name="AuthManager.auth_list">
               <elementProp name="" elementType="Authorization">
-                <stringProp name="Authorization.url">https://apier.estrellaroja.com.mx/facturacionqa/api/v3/invoice</stringProp>
+                <stringProp name="Authorization.url">http://localhost:8064/facturacion/api/v3/invoice</stringProp>
                 <stringProp name="Authorization.username">facturacion</stringProp>
                 <stringProp name="Authorization.password">f4ctur4c10n</stringProp>
                 <stringProp name="Authorization.domain"></stringProp>
@@ -134,7 +137,7 @@
             <boolProp name="AuthManager.controlledByThreadGroup">false</boolProp>
           </AuthManager>
           <hashTree/>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Accept</stringProp>
@@ -148,7 +151,7 @@
           </HeaderManager>
           <hashTree/>
         </hashTree>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
