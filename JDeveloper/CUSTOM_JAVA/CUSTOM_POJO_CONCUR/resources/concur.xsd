@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <element name="AbstractConcur">
+        <complexType>
+            <sequence>
+                <element name="AbstractConcurHeader">        
+                         <complexType>
+                                                <attribute name="Constant" type="string"/>
+                                                <attribute name="Batch_Date" type="string"/>
+                                                <attribute name="Record_Count" type="string"/>
+                                                <attribute name="Journal_Amount_Hash_Total" type="string"/>
+                                            </complexType>
+                    
+                </element>
+                <element name="Lines">
+                    <complexType>
+                        <sequence>
+                            <element name="Line" maxOccurs="unbounded">
+                                <complexType>
+                                    <sequence>
+                                        <element name="BatchData">
+                                            <complexType>
+                                                <attribute name="Constant" type="string"/>
+                                                <attribute name="BatchID" type="string"/>
+                                                <attribute name="BatchDate" type="string"/>
+                                                <attribute name="SequenceNumber" type="string"/>
+                                            </complexType>
+                                        </element>
+                                        <element name="EmployeeData">
+                                            <complexType>
+                                                <attribute name="EMPID" type="string"/>
+                                                <attribute name="LastName" type="string"/>
+                                                <attribute name="FirstName" type="string"/>
+                                                <attribute name="MI" type="string"/>
+                                                <attribute name="GroupID" type="string"/>
+                                                <attribute name="EmployeeOrgUnit1-Tipo" type="string"/>
+                                                <attribute name="EmployeeOrgUnit2-Depto" type="string"/>
+                                                <attribute name="EmployeeOrgUnit3" type="string"/>
+                                                <attribute name="EmployeeOrgUnit4" type="string"/>
+                                                <attribute name="EmployeeOrgUnit5" type="string"/>
+                                                <attribute name="EmployeeOrgUnit6" type="string"/>
+                                                <attribute name="ACHBankAccountNumber" type="string"/>
+                                                <attribute name="ACHBankRoutingNumber" type="string"/>
+                                                <attribute name="FutureUse" type="string"/>
+
+                                              
+                                              
+                                              
+                                              
+                                              
+                                                <attribute name="EmployeeLoginID" type="string"/>
+                                                <attribute name="EmployeeEmailAddress" type="string"/>
+                                                <attribute name="EmployeeCustom1" type="string"/>
+                                                <attribute name="EmployeeCustom2" type="string"/>
+                                                <attribute name="EmployeeCustom3" type="string"/>
+                                                <attribute name="EmployeeCustom4" type="string"/>
+                                                <attribute name="EmployeeCustom5" type="string"/>
+                                                <attribute name="EmployeeCustom6" type="string"/>
+                                                <attribute name="EmployeeCustom7" type="string"/>
+                                                <attribute name="EmployeeCustom8" type="string"/>
+                                                <attribute name="EmployeeCustom9" type="string"/>
+                                                <attribute name="EmployeeCustom10" type="string"/>
+                                                <attribute name="EmployeeCustom11" type="string"/>
+                                                <attribute name="EmployeeCustom12" type="string"/>
+                                                <attribute name="EmployeeCustom13" type="string"/>
+                                                <attribute name="EmployeeCustom14" type="string"/>
+                                                <attribute name="EmployeeCustom15" type="string"/>
+                                                <attribute name="EmployeeCustom16" type="string"/>
+                                                <attribute name="EmployeeCustom17" type="string"/>
+                                                <attribute name="EmployeeCustom18" type="string"/>
+                                                <attribute name="EmployeeCustom19" type="string"/>
+                                                <attribute name="EmployeeCustom20" type="string"/>
+                                                <attribute name="FutureUse1" type="string"/>
+                                                <attribute name="FutureUse2" type="string"/>
+                                                <attribute name="FutureUse3" type="string"/>
+                                                <attribute name="FutureUse4" type="string"/>
+                                                <attribute name="FutureUse5" type="string"/>
+                                            </complexType>
+                                        </element>
+                                        <element name="ReportData">
+                                            <complexType>
+                                            
+                                            
+                                            
+                                            
+                                                <attribute name="ReportID" type="string"/>
+                                                <attribute name="ReportKey" type="string"/>
+                                                <attribute name="Ledger" type="string"/>
+                                                <attribute name="ReimbursementCurrencyAlphaISE" type="string"/>
+                                                <attribute name="HomeCountry" type="string"/>
+                                                <attribute name="ReportSubmitDate" type="string"/>
+                                                <attribute name="ReportUserDefinedDate" type="string"/>
+                                                <attribute name="ReportPaymentProcessingDate" type="string"/>
+                                                <attribute name="ReportName" type="string"/>
+                                                <attribute name="ReportImageRequired" type="string"/>
+                                                <attribute name="ReportHasVATEntry" type="string"/>
+                                                <attribute name="ReportHasTAEntry" type="string"/>
+                                                <attribute name="ReportTotalPostAmount" type="string"/>
+                                                <attribute name="ReportTotalApprovedAmount" type="string"/>
+                                                <attribute name="ReportPolicyName" type="string"/>
+                                                <attribute name="FutureUse" type="string"/>
+                                                <attribute name="ReportOrgUnit1-Tipo" type="string"/>
+                                                <attribute name="ReportOrgUnit2-Depto" type="string"/>
+                                                <attribute name="ReportOrgUnit3" type="string"/>
+                                                <attribute name="ReportOrgUnit4" type="string"/>
+                                                <attribute name="ReportOrgUnit5" type="string"/>
+                                                <attribute name="ReportOrgUnit6" type="string"/>
+                                                <attribute name="ReportCustom1-SGAGrouping" type="string"/>
+                                                <attribute name="ReportCustom2" type="string"/>
+                                                <attribute name="ReportCustom3" type="string"/>
+                                                <attribute name="ReportCustom4" type="string"/>
+                                                <attribute name="ReportCustom5" type="string"/>
+                                                <attribute name="ReportCustom6" type="string"/>
+                                                <attribute name="ReportCustom7" type="string"/>
+                                                <attribute name="ReportCustom8" type="string"/>
+                                                <attribute name="ReportCustom9" type="string"/>
+                                                <attribute name="ReportCustom10" type="string"/>
+                                                <attribute name="ReportCustom11" type="string"/>
+                                                <attribute name="ReportCustom12" type="string"/>
+                                                <attribute name="ReportCustom13" type="string"/>
+                                                <attribute name="ReportCustom14" type="string"/>
+                                                <attribute name="ReportCustom15" type="string"/>
+                                                <attribute name="ReportCustom16" type="string"/>
+                                                <attribute name="ReportCustom17" type="string"/>
+                                                <attribute name="ReportCustom18" type="string"/>
+                                                <attribute name="ReportCustom19" type="string"/>
+                                                <attribute name="ReportCustom20" type="string"/>
+                                                
+                                                <attribute name="PersonalExpenses" type="string"/>
+                                                <attribute name="TotalAmountClaimed" type="string"/>
+                                                <attribute name="AmountDueEmployee" type="string"/>
+                                                <attribute name="AmountDueCompanyCard" type="string"/>
+                                                <attribute name="AmountNotApproved" type="string"/>
+                                                <attribute name="AmountCompanyPaid" type="string"/>
+                                                <attribute name="AmountDueCompany" type="string"/>
+                                                <attribute name="PaymentConfirmedAmount" type="string"/>
+                                                <attribute name="AmountDueEmployee2" type="string"/>
+                                                <attribute name="AmountDueCompanyCard2" type="string"/>
+                                                <attribute name="ReportType" type="string"/>
+                                                <attribute name="TotalTaxAdjustedAmount" type="string"/>
+                                                <attribute name="NetAdjustedTaxAmount" type="string"/>
+                                                 <attribute name="FutureUse1" type="string"/>
+                                                <attribute name="FutureUse2" type="string"/>
+                                                <attribute name="FutureUse3" type="string"/>
+                                            </complexType>
+                                        </element>               
+                                        <element name="EntryData">
+                                            <complexType>
+                                        
+                                                <attribute name="EntryId" type="string"/>
+                                                <attribute name="EntryTransactionType" type="string"/>
+                                                <attribute name="ExpenseType" type="string"/>
+                                                <attribute name="EntryTransactionDate" type="string"/>
+                                                <attribute name="SpendCurrencyAlphaISO" type="string"/>
+                                                <attribute name="CurrencyExchangeRate" type="string"/>
+                                                <attribute name="ExchangeRateDirection" type="string"/>
+                                                <attribute name="IsPersonal" type="string"/>
+                                                <attribute name="EntryDescription" type="string"/>
+                                                <attribute name="VendorName" type="string"/>
+                                                <attribute name="VendorDescription" type="string"/>
+                                                <attribute name="ReceiptReceived" type="string"/>
+                                                <attribute name="ReceiptType" type="string"/>
+                                                <attribute name="TotalEmployeeAttendee" type="string"/>
+                                                <attribute name="AttendeeCountSpouse" type="string"/>
+                                                <attribute name="AttendeeCountBusiness" type="string"/>
+                                                <attribute name="ReportEntryOrgUnit1-Tipo" type="string"/>
+                                                <attribute name="ReportEntryOrgUnit2-Depto" type="string"/>
+                                                <attribute name="ReportEntryOrgUnit3" type="string"/>
+                                                <attribute name="ReportEntryOrgUnit4" type="string"/>
+                                                <attribute name="ReportEntryOrgUnit5" type="string"/>
+                                                <attribute name="ReportEntryOrgUnit6" type="string"/>
+                                                <attribute name="ReportEntryCustom1-SGAGrouping" type="string"/>
+                                                <attribute name="ReportEntryCustom2-LG_Transaction_Type" type="string"/>
+                                                <attribute name="ReportEntryCustom3-Location" type="string"/>
+                                                <attribute name="ReportEntryCustom4-ProyectoSN" type="string"/>
+                                                <attribute name="ReportEntryCustom5-Proyecto" type="string"/>
+                                                <attribute name="ReportEntryCustom6-Subcategoría" type="string"/>
+                                                <attribute name="ReportEntryCustom7-RFC-TaxID" type="string"/>
+                                                <attribute name="ReportEntryCustom8-Num.Factura" type="string"/>
+                                                <attribute name="ReportEntryCustom9" type="string"/>
+                                                <attribute name="ReportEntryCustom10" type="string"/>
+                                                <attribute name="ReportEntryCustom11" type="string"/>
+                                                <attribute name="ReportEntryCustom12" type="string"/>
+                                                <attribute name="ReportEntryCustom13" type="string"/>
+                                                <attribute name="ReportEntryCustom14" type="string"/>
+                                                <attribute name="ReportEntryCustom15" type="string"/>
+                                                <attribute name="ReportEntryCustom16" type="string"/>
+                                                <attribute name="ReportEntryCustom17" type="string"/>
+                                                <attribute name="ReportEntryCustom18" type="string"/>
+                                                <attribute name="ReportEntryCustom19" type="string"/>
+                                                <attribute name="ReportEntryCustom20" type="string"/>
+                                               <attribute name="ReportEntryCustom21" type="string"/>
+                                                <attribute name="ReportEntryCustom22" type="string"/>
+                                                <attribute name="ReportEntryCustom23" type="string"/>
+                                                 <attribute name="ReportEntryCustom24" type="string"/>
+                                                <attribute name="ReportEntryCustom25" type="string"/>
+                                                <attribute name="ReportEntryCustom26" type="string"/>
+                                               <attribute name="ReportEntryCustom27" type="string"/>
+                                                <attribute name="ReportEntryCustom28" type="string"/>
+                                                <attribute name="ReportEntryCustom29" type="string"/>
+                                                 <attribute name="ReportEntryCustom30" type="string"/>
+                                                <attribute name="ReportEntryCustom31" type="string"/>
+                                                <attribute name="ReportEntryCustom32" type="string"/>
+                                                <attribute name="ReportEntryCustom33" type="string"/>
+                                               <attribute name="ReportEntryCustom34" type="string"/>
+                                                <attribute name="ReportEntryCustom35" type="string"/>
+                                                <attribute name="ReportEntryCustom36" type="string"/>
+                                                <attribute name="ReportEntryCustom37" type="string"/>
+                                               <attribute name="ReportEntryCustom38" type="string"/>
+                                                <attribute name="ReportEntryCustom39" type="string"/>
+                                                <attribute name="ReportEntryCustom40" type="string"/>
+                                                <attribute name="EntryTransactionAmount" type="string"/>
+                                                <attribute name="EntryPostedAmount" type="string"/>
+                                               <attribute name="EntryApprovedAmount" type="string"/>
+                                                <attribute name="EntryPaymentCode" type="string"/>
+                                                <attribute name="EntryPaymentCodeName" type="string"/>
+                                                <attribute name="ReportPaymentReimbursementType" type="string"/>
+                                               <attribute name="BillDate" type="string"/>
+                                               
+                                               <attribute name="ReportEntryPaymentTypeName" type="string"/>
+                                            </complexType>
+                                        </element>
+                                         <element name="CreditCardData">
+                                            <complexType>
+                                            
+                                                <attribute name="BilledCreditCardAccountNumber" type="string"/>
+                                                <attribute name="BilledCreditCardDescription" type="string"/>
+                                                <attribute name="TransactionJRKey" type="string"/>
+                                                <attribute name="REFNO" type="string"/>
+                                                <attribute name="CCTKey" type="string"/>
+                                                <attribute name="CCTType" type="string"/>
+                                                <attribute name="TransactionID" type="string"/>
+                                                <attribute name="TransactionAmount" type="string"/>
+                                                <attribute name="TransactionTaxAmount" type="string"/>
+                                                <attribute name="TransactionCurrency" type="string"/>
+                                                <attribute name="TransactionPostedAmount" type="string"/>
+                                                <attribute name="TransactionPostedCurrency" type="string"/>
+                                                <attribute name="TransactionDate" type="string"/>
+                                                <attribute name="TransactionPostedDate" type="string"/>
+                                                <attribute name="TransactionDescription" type="string"/>
+                                                <attribute name="MCCODE" type="string"/>
+                                                <attribute name="TransactionMerchantName" type="string"/>
+                                                <attribute name="TransactionMerchantCity" type="string"/>
+                                                <attribute name="TransactionMerchantState" type="string"/>
+                                                <attribute name="TransactionMerchantCountry" type="string"/>
+                                                <attribute name="TransactionMerchantREFNUM" type="string"/>
+                                                <attribute name="TransactionBillingType" type="string"/>
+                                                <attribute name="BillToEmployeeExchangeRate" type="string"/>
+                                                <attribute name="BillingAmount" type="string"/>
+                                                <attribute name="IndividualCreditCardAccountNumber" type="string"/>
+                                                <attribute name="IndividualCreditCardDescription" type="string"/>
+                                                <attribute name="MerchantDoingBusinessAs" type="string"/>
+                                                <attribute name="AcquirerReferenceNumber" type="string"/>
+                                            </complexType>
+                                        </element>
+                                         <element name="EntryLocationData">
+                                            <complexType>
+                                                <attribute name="EntryCountry" type="string"/>
+                                                <attribute name="EntryCountrySub" type="string"/>
+                                                <attribute name="DomesticForeign" type="string"/>
+                                                <attribute name="MarketCode" type="string"/>
+                                                <attribute name="ProcessorReferenceNumber" type="string"/>                                  
+                                            </complexType>
+                                        </element>
+                            <element name="JournalEntryData">
+                                            <complexType>
+                                                <attribute name="PayerPayType" type="string"/>
+                                                <attribute name="PayerPayCode" type="string"/>
+                                                <attribute name="PayeePayType" type="string"/>
+                                                <attribute name="PayeePayCode" type="string"/>
+                                                <attribute name="AccountCode" type="string"/> 
+                                                <attribute name="DRCR" type="string"/>
+                                                <attribute name="JournalAmt" type="string"/>  
+                                                <attribute name="JournalKey" type="string"/>  
+                                            </complexType>
+                                        </element>
+                                          <element name="CarMileageData">
+                                            <complexType>
+                                                <attribute name="CarBusinessDistance" type="string"/>
+                                                <attribute name="CarPersonalDistance" type="string"/>
+                                                <attribute name="CarPassengerCount" type="string"/>
+                                                <attribute name="VehicleID" type="string"/>
+                                                <attribute name="FutureUse" type="string"/> 
+                                                <attribute name="FutureUse1" type="string"/>
+                                            </complexType>
+                                        </element>
+                                           <element name="CashAdvanceData">
+                                            <complexType>
+                                                <attribute name="CashAdvanceAmount" type="string"/>
+                                                <attribute name="CARequestCurrencyAlphaISO" type="string"/>
+                                                <attribute name="CARequestCurrencyNumISO" type="string"/>
+                                                <attribute name="CashAdvanceExchangeRate" type="string"/>
+                                                <attribute name="CACurrencyAlphaISO" type="string"/>
+                                                <attribute name="CACurrencyNumISO" type="string"/>
+                                                <attribute name="CashAdvanceIssueDate" type="string"/>
+                                                <attribute name="CashAdvancePaymentCode" type="string"/>
+                                                <attribute name="CashAdvanceTransactionType" type="string"/>
+                                                <attribute name="CashAdvanceRequestDate" type="string"/>
+                                                <attribute name="CAKey" type="string"/>
+                                                <attribute name="FutureUse" type="string"/>
+                                                
+                                                
+                                                <attribute name="CashAdvanceReturnsAmount" type="string"/>
+                                                <attribute name="CashAdvanceReturnReceived" type="string"/>
+                                                <attribute name="CashAdvanceUtilizedAmount" type="string"/>
+                                                <attribute name="FutureUse1" type="string"/>
+                                                <attribute name="FutureUse2" type="string"/>
+                                                <attribute name="FutureUse3" type="string"/>
+                                               <attribute name="FutureUse4" type="string"/>
+                                            </complexType>
+                                        </element>
+                                        <element name="AllocationData">
+                                            <complexType>
+                                              
+                                              
+                                                <attribute name="AllocationAllocKey" type="string"/>
+                                                <attribute name="AllocationPercentage" type="string"/>
+                                                <attribute name="AllocationCustom1-Tipo" type="string"/>
+                                                <attribute name="AllocationCustom2-Depto" type="string"/>
+                                                <attribute name="AllocationCustom3" type="string"/>
+                                                <attribute name="AllocationCustom4" type="string"/>
+                                                <attribute name="AllocationCustom5" type="string"/>
+                                                <attribute name="AllocationCustom6" type="string"/>
+                                                <attribute name="AllocationCustom7" type="string"/>
+                                                <attribute name="AllocationCustom8" type="string"/>
+                                                <attribute name="AllocationCustom9" type="string"/>
+                                                <attribute name="AllocationCustom10" type="string"/>
+                                                <attribute name="AllocationCustom11" type="string"/>
+                                                <attribute name="AllocationCustom12" type="string"/>
+                                                <attribute name="AllocationCustom13" type="string"/>
+                                                <attribute name="AllocationCustom14" type="string"/>
+                                                <attribute name="AllocationCustom15" type="string"/>
+                                                <attribute name="AllocationCustom16" type="string"/>
+                                                <attribute name="AllocationCustom17" type="string"/>
+                                                <attribute name="AllocationCustom18" type="string"/>
+                                                <attribute name="AllocationCustom19" type="string"/>
+                                                <attribute name="AllocationCustom20" type="string"/>
+                                                <attribute name="FutureUse" type="string"/>
+                                   
+                                            </complexType>
+                                        </element>
+                                        <element name="TravelAllowanceData">
+                                            <complexType>
+                                            
+                                            
+                                                <attribute name="TAReimbursementtype" type="string"/>
+                                                <attribute name="TADisplaylimit" type="string"/>
+                                                <attribute name="TAAllowanceLimit" type="string"/>
+                                                <attribute name="AllowableThreshold" type="string"/>
+                                                <attribute name="TAFixedMealLodgingType" type="string"/>
+                                                <attribute name="BaseAmount" type="string"/>
+                                                <attribute name="AllowanceAmount" type="string"/>
+                                                <attribute name="TAFixedOvernight" type="string"/>
+                                                <attribute name="TAFixedBreakfastProvidedFlag" type="string"/>
+                                                <attribute name="TAFixedLunchProvidedFlag" type="string"/>
+                                                <attribute name="TAFixedDinnerProvidedFlag" type="string"/>
+                                                <attribute name="FutureUse-RESforBankAccount" type="string"/>
+                                                <attribute name="FutureUse-RESforRoutingNumber" type="string"/>
+                                       </complexType>
+                                        </element>
+                                <element name="VATTaxData">
+                                            <complexType>
+                                          
+                                          
+                                          
+                                                <attribute name="Taxauthorityname" type="string"/>
+                                                <attribute name="Taxlabel" type="string"/>
+                                                <attribute name="Taxtransactionamount" type="string"/>
+                                                <attribute name="Taxpostedamount" type="string"/>
+                                                <attribute name="Taxsource" type="string"/>
+                                                <attribute name="Taxreclaimtransactionamount" type="string"/>
+                                                <attribute name="Taxreclaimpostedamount" type="string"/>
+                                                <attribute name="Taxcode" type="string"/>
+                                                <attribute name="ReclaimDomestic" type="string"/>
+                                                <attribute name="Taxadjustedamount" type="string"/>
+                                                <attribute name="Taxreclaimadjustedamount" type="string"/>
+                                                <attribute name="Taxreclaimcode" type="string"/>
+                                                <attribute name="Taxreclaimtransactionadjustedamount" type="string"/>
+                                               <attribute name="ReportEntryTaxAllocationReclaimCode" type="string"/>
+                                                <attribute name="AuthRequestID" type="string"/>
+                                                
+                                                 <attribute name="ReportEntryTotalTaxPostedAmount" type="string"/>
+                                                <attribute name="NetTaxAmount" type="string"/>
+                                                <attribute name="ReportEntryTotal" type="string"/>
+                                                <attribute name="NetAdjusted" type="string"/>
+                                               
+                                               <attribute name="AllocationTotalTaxTransactionAmount" type="string"/>
+                                                <attribute name="AllocationTotalTaxPostedAmount" type="string"/>
+                                                <attribute name="AllocationTotalTaxReclaimTransactionAmount" type="string"/>
+                                                <attribute name="AllocationTotalTaxReclaimPostedAmount" type="string"/>
+                                                <attribute name="AllocationTotalTaxReclaimTransactionAdjust" type="string"/>
+                                                <attribute name="FutureUse" type="string"/>
+                                                <attribute name="FutureUse1" type="string"/>
+                                                <attribute name="FutureUse2" type="string"/>
+                                                <attribute name="FutureUse3" type="string"/>
+                                                <attribute name="FutureUse4" type="string"/>
+                                       </complexType>
+                                        </element>
+                                        <element name="AssignedTravelRequestData">
+                                            <complexType>
+                                                <attribute name="TravelRequestName" type="string"/>
+                                                <attribute name="AuthRequestTotalPostedAmount" type="string"/>
+                                                <attribute name="TravelRequestTotalApprovedAmount" type="string"/>
+                                                <attribute name="TravelRequestStartDate" type="string"/>
+                                                <attribute name="TravelRequestEndDate" type="string"/>
+                                                <attribute name="TravelRequestAuthorizedDate" type="string"/>
+                                               
+                                       </complexType>
+                                        </element>
+                            <element name="FutureUseSection">
+                                            <complexType>
+                                                <attribute name="FutureUse" type="string"/>
+                                                <attribute name="FutureUse1" type="string"/>
+                                                <attribute name="FutureUse2" type="string"/>
+                                              
+                                       </complexType>
+                                        </element>
+                                         <element name="ExpensePayData">
+                                            <complexType>
+                                                <attribute name="CashAccountCode" type="string"/>
+                                                <attribute name="LiabilityAccountCode" type="string"/>
+                                                <attribute name="EstimatedPaymentDate" type="string"/>
+                                                <attribute name="FundingTrace" type="string"/>
+                                                <attribute name="RequestedDisbursementDate" type="string"/>
+                                                <attribute name="FutureUse" type="string"/>
+                                                <attribute name="FutureUse1" type="string"/>
+                                                <attribute name="FutureUse2" type="string"/>
+                                                <attribute name="FutureUse3" type="string"/>
+                                                <attribute name="FutureUse4" type="string"/>
+                                                </complexType>
+                                        </element>
+                                        <element name="EmployeeBankingData">
+                                            <complexType>                                       
+                                                <attribute name="EmployeeBankingAccountisActive" type="string"/>
+                                                <attribute name="EmployeeBankingBankAccountType" type="string"/>
+                                                <attribute name="EmployeeBankingNameOnAccount" type="string"/>
+                                                <attribute name="EmployeeBankingBankName" type="string"/>
+                                                <attribute name="EmployeeBankingBankBranchLocation" type="string"/>
+                                                <attribute name="EmployeeBankingBankAddressLine1" type="string"/>
+                                                <attribute name="EmployeeBankingBankAddressLine2" type="string"/>
+                                                <attribute name="EmployeeBankingBankCity" type="string"/>
+                                                <attribute name="EmployeeBankingBankRegion" type="string"/>
+                                                <attribute name="EmployeeBankingBankPostalCode" type="string"/>
+                                                <attribute name="EmployeeBankingBankCountryCode" type="string"/>
+                                                <attribute name="EmployeeBankingTaxID" type="string"/>
+                                                <attribute name="EmployeeBankingIsResident" type="string"/>
+                                                <attribute name="EmployeeBankingAccountStatus" type="string"/>
+                                                <attribute name="EmployeeBankingAccountCurrency" type="string"/>
+                                               <attribute name="FutureUse" type="string"/>
+                                                <attribute name="FutureUse1" type="string"/>
+                                                <attribute name="FutureUse2" type="string"/>
+                                                <attribute name="FutureUse3" type="string"/>
+                                                <attribute name="FutureUse4" type="string"/>
+                                            </complexType>
+                                        </element>
+
+                                         <element name="ReportEntryData">
+                                            <complexType>
+                                                <attribute name="ReportEntryLocationCityName" type="string"/>
+                                                <attribute name="IsBillable" type="string"/>
+                                                <attribute name="ReportEntryFromLocation" type="string"/>
+                                                <attribute name="ReportEntryToLocation" type="string"/>
+                                                <attribute name="ReportEntryLocationName" type="string"/>
+                                                <attribute name="Country" type="string"/>
+                                               <attribute name="StateProvince" type="string"/>
+                                               <attribute name="UUID" type="string"/>
+                                               <attribute name="FutureUse" type="string"/>
+                                                <attribute name="FutureUse1" type="string"/>
+                                                <attribute name="FutureUse2" type="string"/>
+                                                <attribute name="FutureUse3" type="string"/>
+                                                <attribute name="FutureUse4" type="string"/>
+                                       </complexType>
+                                        </element>
+                                         <element name="RequestData">
+                                            <complexType>
+                                                <attribute name="RequestName" type="string"/>
+                                                <attribute name="TotalPostedAmount" type="string"/>
+                                                <attribute name="TotalApprovedAmount" type="string"/>
+                                                <attribute name="StartDate" type="string"/>
+                                                <attribute name="EndDate" type="string"/>
+                                                <attribute name="AuthorizedDate" type="string"/>
+                                               <attribute name="AuthorizationRequestID" type="string"/>
+                                            
+                                               <attribute name="FutureUse" type="string"/>
+                                                <attribute name="FutureUse1" type="string"/>
+                                                <attribute name="FutureUse2" type="string"/>
+                                                <attribute name="FutureUse3" type="string"/>
+                                                <attribute name="FutureUse4" type="string"/>
+                                                <attribute name="FutureUse5" type="string"/>
+                                                <attribute name="FutureUse6" type="string"/>
+                                                <attribute name="FutureUse7" type="string"/>
+                                                <attribute name="FutureUse8" type="string"/>
+                                                <attribute name="FutureUse9" type="string"/>
+                                                <attribute name="FutureUse10" type="string"/>
+                                                <attribute name="FutureUse11" type="string"/>
+                                                <attribute name="FutureUse12" type="string"/>
+                                                <attribute name="FutureUse13" type="string"/>
+                                                <attribute name="FutureUse14" type="string"/>
+                                                <attribute name="FutureUse15" type="string"/>
+                                                <attribute name="FutureUse16" type="string"/>
+                                                <attribute name="FutureUse17" type="string"/>
+                                                <attribute name="FutureUse18" type="string"/>
+                                                <attribute name="FutureUse19" type="string"/>
+                                                <attribute name="FutureUse20" type="string"/>
+                                                <attribute name="FutureUse21" type="string"/>
+                                                <attribute name="FutureUse22" type="string"/>
+                                                <attribute name="FutureUse23" type="string"/>
+                                                <attribute name="FutureUse24" type="string"/>
+                                                <attribute name="FutureUse25" type="string"/>
+                                                <attribute name="FutureUse26" type="string"/>
+                                                <attribute name="FutureUse27" type="string"/>
+                                                <attribute name="FutureUse28" type="string"/>
+                                                <attribute name="FutureUse29" type="string"/>
+                                                <attribute name="FutureUse30" type="string"/>
+                                                <attribute name="FutureUse31" type="string"/>
+                                                <attribute name="FutureUse32" type="string"/>
+                                                <attribute name="FutureUse33" type="string"/>
+                                                <attribute name="FutureUse34" type="string"/>
+                                                <attribute name="FutureUse35" type="string"/>
+                                                <attribute name="FutureUse36" type="string"/>
+                                               
+                                       </complexType>
+                                        </element>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

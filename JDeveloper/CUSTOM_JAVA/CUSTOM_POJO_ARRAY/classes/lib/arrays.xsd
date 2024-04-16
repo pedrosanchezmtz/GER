@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+        targetNamespace="http://xmlns.oracle.java.erpsol.com/esb/pojo/arrays/">
+    <element name="Arrays">
+        <complexType>
+            <sequence>
+             <element name="Array" maxOccurs="unbounded">
+                                <complexType>
+                                    <sequence>
+<element name="Nombre" type="string"/>
+                            <element name="Atributos" maxOccurs="unbounded">
+                                <complexType>
+                                    <sequence>
+                                        <element name="Nombre" type="string"/>
+                                        <element name="Dato" type="string"/>
+                                    </sequence>
+                                </complexType>
+                            </element></sequence>
+                    </complexType>
+                </element>
+                        </sequence>
+                    </complexType>
+                </element>
+
+</schema>

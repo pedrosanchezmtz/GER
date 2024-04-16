@@ -17,6 +17,7 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
@@ -27,6 +28,9 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 import mx.com.estrellaroja.cloud.utilities.SOAUtilities;
+import mx.com.estrellaroja.cloud.utilities.impl.types.AttachmentType;
+import mx.com.estrellaroja.cloud.utilities.impl.types.DecompressFileRqType;
+import mx.com.estrellaroja.cloud.utilities.impl.types.DecompressFileRsType;
 import mx.com.estrellaroja.cloud.utilities.types.CreateZipFileReturnType;
 import mx.com.estrellaroja.cloud.utilities.types.CreateZipFileRqType;
 import mx.com.estrellaroja.cloud.utilities.types.CreateZipFileRsType;
@@ -42,21 +46,12 @@ import mx.com.estrellaroja.cloud.utilities.types.HtmlControlRsType;
 import mx.com.estrellaroja.cloud.utilities.util.SOAUtilConstants;
 import mx.com.estrellaroja.cloud.utilities.util.SOAUtils;
 
+import mx.com.estrellaroja.cloud.utilities.util.ZipManager;
+
 import oracle.soa.common.util.Base64Decoder;
 
-/**************************************************************************************************
-<hr>
-<b>File: </b>Interface<b> <code>SOAUtilitiesImpl</code></b><br/>
-<b>Version: </b>1.0<br/>
-<b>Date: </b>Sep 19, 2017<br/>
-<b>Authores: </b>Francisco Camacho, JGN
 
 
-<p align="justify">
-Esta interfaz permite exponer los m&eacute;todos necesarios para cubrir las necesidades del servicio
-<code>SOAUtilitiesImpl</code> mediante Java exponiendo la funcionalidad con Sring Context.</p><hr>
-
- **************************************************************************************************/
 public class SOAUtilitiesImpl implements SOAUtilities {
 
     /**
@@ -484,5 +479,48 @@ public class SOAUtilitiesImpl implements SOAUtilities {
         }
 
         return htmlControlRs;
+    }
+    @Override
+    public DecompressFileRsType DecompressFile(DecompressFileRqType decompressFileRq) {
+        // TODO Implement this method
+        DecompressFileRsType decompressFileRs = new DecompressFileRsType();
+         mx.com.estrellaroja.cloud.utilities.impl.types.ErrorType error=null;
+        decompressFileRs.setSuccess(true);
+        ZipManager zipManager =new ZipManager();
+
+        try {
+            
+            //clasificamos los que son rar, zip y todos los demas
+            for (AttachmentType attachment : decompressFileRq.getAttachments()) {
+                String name = attachment.getFileName();
+                if (name.toUpperCase().endsWith("ZIP")) {
+                     zipManager.UnZip(attachment, decompressFileRs);
+                } else if (name.toUpperCase().endsWith("RAR")) {
+                     zipManager.UnRar(attachment, decompressFileRs);
+                }
+                //archivos que no se cdescomprimen
+                else {
+                    decompressFileRs.getReturn().add(attachment);
+                }
+            }
+
+
+        } catch (Exception  e) {
+            decompressFileRs.setSuccess(false);
+            error = new mx.com.estrellaroja.cloud.utilities.impl.types.ErrorType();
+            error.setErrorCode("SPRING-0004");
+            error.setFailedService("DecompressFile");
+            error.setBusinessProcess("SOAUtilitiesTec");
+            error.setShortDescription("Error java class"+e.toString());
+            error.setDescription("Error :"+e.getMessage());
+            decompressFileRs.setErrors(new mx.com.estrellaroja.cloud.utilities.impl.types.ErrorsType());
+            decompressFileRs.getErrors().getError().add(error); 
+
+            return decompressFileRs;
+        } //objetos de entrada
+        
+        
+        
+        return decompressFileRs;
     }
 }

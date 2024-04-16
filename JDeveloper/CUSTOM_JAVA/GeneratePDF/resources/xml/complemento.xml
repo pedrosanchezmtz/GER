@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<cfdi:Comprobante xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd http://www.sat.gob.mx/Pagos http://www.sat.gob.mx/sitio_internet/cfd/Pagos/Pagos10.xsd"
+                  xmlns:pago10="http://www.sat.gob.mx/Pagos" Version="3.3" Folio="ENE2089" Fecha="2019-10-10T00:00:00"
+                  SubTotal="0" Moneda="XXX" Total="0.0" TipoDeComprobante="P" LugarExpedicion="44660"
+                  xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  NoCertificado="30001000000400002464"
+                  Certificado="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"
+                  Sello="JFyTj4Yehl49X/TI+glNOKDZxZl4pjDRjsUB+swQYGreau2WEIX2F2WFGgG9ZoQ68FsIU82V3SIYYNuYMMAiWTvfb2bHUd1/r0dsuk6JtLYJa1cCNusqgqYJqj3Tc1A84LaN1Vt+Ig24aFb0omwhwZ7kqMX6Ih491vf3Kq2AQUiySu8cdHBukrcnvko/rZc8m/69wDiET+JdHvClBRL/Sf4wTYt/iDv5DD82+pjrRpyPeZEyWlNfR2feQWuTe0ZovdLJjS4nAUkcW8OkHffJWGM7QhooY08cQSk5zN06AK1W1YoWayz+M8JxttnN51hcIhRdsOhs3KjbpuBlsMDbSw==">
+    <cfdi:Emisor Rfc="OÑO120726RX3" Nombre="ENERSI SA DE CV" RegimenFiscal="601"/>
+    <cfdi:Receptor Rfc="GGA030723741" Nombre="GG GAS SA DE CV" UsoCFDI="P01"/>
+    <cfdi:Conceptos>
+        <cfdi:Concepto ClaveProdServ="84111506" Cantidad="1" ClaveUnidad="ACT" Descripcion="Pago" ValorUnitario="0.0"
+                       Importe="0.0"/>
+    </cfdi:Conceptos>
+    <cfdi:Complemento>
+        <pago10:Pagos xsi:schemaLocation="http://www.sat.gob.mx/Pagos http://www.sat.gob.mx/sitio_internet/cfd/Pagos/Pagos10.xsd"
+                      Version="1.0" xmlns:pago10="http://www.sat.gob.mx/Pagos"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <pago10:Pago FechaPago="2019-10-10T00:00:00" FormaDePagoP="03" MonedaP="MXN" Monto="135584.44"
+                         RfcEmisorCtaBen="BNM840515VB1">
+                <pago10:DoctoRelacionado IdDocumento="e78aa080-b890-47dc-a444-c7ca22ccfd98" Folio="60008" MonedaDR="MXN"
+                                         MetodoDePagoDR="PPD" NumParcialidad="1" ImpSaldoAnt="25729.61"
+                                         ImpPagado="25729.61" ImpSaldoInsoluto="0"/>
+                <pago10:DoctoRelacionado IdDocumento="7c65e055-7234-4d94-96f4-b179fd60646d" Folio="61020" MonedaDR="MXN"
+                                         MetodoDePagoDR="PPD" NumParcialidad="1" ImpSaldoAnt="66946.41"
+                                         ImpPagado="66946.41" ImpSaldoInsoluto="0"/>
+            </pago10:Pago>
+        </pago10:Pagos>
+        <tfd:TimbreFiscalDigital xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd"
+                                 Version="1.1" UUID="2c0f1a63-311e-427e-8f0f-420dc6e657d1"
+                                 FechaTimbrado="2019-10-10T12:39:13" RfcProvCertif="AAA010101AAA"
+                                 SelloCFD="JFyTj4Yehl49X/TI+glNOKDZxZl4pjDRjsUB+swQYGreau2WEIX2F2WFGgG9ZoQ68FsIU82V3SIYYNuYMMAiWTvfb2bHUd1/r0dsuk6JtLYJa1cCNusqgqYJqj3Tc1A84LaN1Vt+Ig24aFb0omwhwZ7kqMX6Ih491vf3Kq2AQUiySu8cdHBukrcnvko/rZc8m/69wDiET+JdHvClBRL/Sf4wTYt/iDv5DD82+pjrRpyPeZEyWlNfR2feQWuTe0ZovdLJjS4nAUkcW8OkHffJWGM7QhooY08cQSk5zN06AK1W1YoWayz+M8JxttnN51hcIhRdsOhs3KjbpuBlsMDbSw=="
+                                 NoCertificadoSAT="20001000000300022323"
+                                 SelloSAT="ZzTq7u+roXv5MHxpxZQQxMpsQ4Od3vi7dD3TRd0bFkT5Iar89fFQNbZgMiZrcwnYPq5bylq6/6CynGL2ypYSJwqM9LRFlcGGTtY3exvlpGCK71xliPbNeXBO6YOQpqoz4JH8O/e7wK24huS1HQtA0VZjvDgqpfHD1iMRpnWW+kZkEOyYr8lAgOtL9QJ7PUhR1/rFcKp0hHtTyDii56zWq5yQhMaOdOvMFj+oTtEetSkJ74pWbwB2dpiaHeA4YvOU7Btqhx7QOqTwR4l1hBuXee6hjZJe0wAxWS6k2nvu6D+6jqqHgjJAe7GY5hkDestU250I6U6AarWCCDehbZIwEw=="
+                                 xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital"
+                                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </cfdi:Complemento>
+</cfdi:Comprobante>

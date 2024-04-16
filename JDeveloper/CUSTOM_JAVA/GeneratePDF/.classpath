@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_261"/>
+	<classpathentry kind="lib" path="P:/Desarrollo/JDeveloper/ALMEX/ALMEX_JAVA/GeneratePDF/lib/commons-beanutils-1.9.4.jar"/>
+	<classpathentry kind="lib" path="P:/Desarrollo/JDeveloper/ALMEX/ALMEX_JAVA/GeneratePDF/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="P:/Desarrollo/JDeveloper/ALMEX/ALMEX_JAVA/GeneratePDF/lib/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="P:/Desarrollo/JDeveloper/ALMEX/ALMEX_JAVA/GeneratePDF/lib/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="P:/Desarrollo/JDeveloper/ALMEX/ALMEX_JAVA/GeneratePDF/lib/commons-digester3-3.2.jar"/>
+	<classpathentry kind="lib" path="P:/Desarrollo/JDeveloper/ALMEX/ALMEX_JAVA/GeneratePDF/lib/commons-lang3-3.9.jar"/>
+	<classpathentry kind="lib" path="P:/Desarrollo/JDeveloper/ALMEX/ALMEX_JAVA/GeneratePDF/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="P:/Desarrollo/JDeveloper/ALMEX/ALMEX_JAVA/GeneratePDF/lib/core-3.4.0.jar"/>
+	<classpathentry kind="lib" path="P:/Desarrollo/JDeveloper/ALMEX/ALMEX_JAVA/GeneratePDF/lib/itext-2.1.7.js6.jar"/>
+	<classpathentry kind="lib" path="P:/Desarrollo/JDeveloper/ALMEX/ALMEX_JAVA/GeneratePDF/lib/jasperreports-6.11.0.jar"/>
+	<classpathentry kind="lib" path="P:/Desarrollo/JDeveloper/ALMEX/ALMEX_JAVA/GeneratePDF/lib/javase-3.4.0.jar"/>
+	<classpathentry kind="lib" path="P:/Desarrollo/JDeveloper/ALMEX/ALMEX_JAVA/GeneratePDF/lib/opencsv-4.0.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="P:/soa/sts-4.8.0.RELEASE/lib/client-combined-3.141.59.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<element name="generatePDFQAResponse">
+		<complexType>
+			<sequence>
+				<element name="pdfBase64" type="base64Binary"/>
+				<element name="details">
+					<complexType>
+						<sequence>
+							<element name="status" type="string"/>
+							<element name="message" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="generatePDFQARequest" >
+		<complexType>
+			<sequence>
+				<element name="nameFormat" type="string" maxOccurs="unbounded"/>
+				<element name="logo" type="base64Binary" />
+				<element name="certificado" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="caracteristicasSensoriales" maxOccurs="unbounded">
+								<complexType>
+									<attribute name="parametro" type="string"/>
+									<attribute name="metodo" type="string"/>
+									<attribute name="resultado" type="string"/>
+									<attribute name="especificacionMin" type="string"/>
+									<attribute name="especificacionMax" type="string"/>
+								</complexType>
+							</element>
+							<element name="especificacionesAnaliticas" maxOccurs="unbounded">
+								<complexType>
+									<attribute name="parametro" type="string"/>
+									<attribute name="metodo" type="string"/>
+									<attribute name="resultado" type="string"/>
+									<attribute name="especificacionMin" type="string"/>
+									<attribute name="especificacionMax" type="string"/>
+								</complexType>
+							</element>
+							<element name="metalesPesados" maxOccurs="unbounded">
+								<complexType>
+									<attribute name="parametro" type="string"/>
+									<attribute name="metodo" type="string"/>
+									<attribute name="resultado" type="string"/>
+									<attribute name="especificacionMin" type="string"/>
+									<attribute name="especificacionMax" type="string"/>
+								</complexType>
+							</element>
+							<element name="micotoxinas" maxOccurs="unbounded">
+								<complexType>
+									<attribute name="parametro" type="string"/>
+									<attribute name="metodo" type="string"/>
+									<attribute name="resultado" type="string"/>
+									<attribute name="especificacionMin" type="string"/>
+									<attribute name="especificacionMax" type="string"/>
+								</complexType>
+							</element>
+							<element name="microbiologico" maxOccurs="unbounded">
+								<complexType>
+									<attribute name="parametro" type="string"/>
+									<attribute name="metodo" type="string"/>
+									<attribute name="resultado" type="string"/>
+									<attribute name="especificacionMin" type="string"/>
+									<attribute name="especificacionMax" type="string"/>
+								</complexType>
+							</element>
+
+							<element name="analisisProducto" maxOccurs="unbounded">
+								<complexType>
+									<attribute name="parametroEvaluado" type="string"/>
+									<attribute name="metodo" type="string"/>
+									<attribute name="resultado" type="string"/>
+									<attribute name="unidades" type="string"/>
+									<attribute name="especificacion" type="string"/>
+								</complexType>
+							</element>
+							<element name="defectosMayores" maxOccurs="unbounded">
+								<complexType>
+									<attribute name="defectosMayores" type="string"/>
+									<attribute name="num" type="integer"/>
+								</complexType>
+							</element>
+							<element name="defectosMenores" maxOccurs="unbounded">
+								<complexType>
+									<attribute name="defectosMenores" type="string"/>
+									<attribute name="num" type="integer"/>
+								</complexType>
+							</element>
+							<element name="defectosCriticos" maxOccurs="unbounded">
+								<complexType>
+									<attribute name="defectosCriticos" type="string"/>
+									<attribute name="num" type="integer"/>
+								</complexType>
+							</element>
+						</sequence>
+						<attribute name="folioCertificado" type="string"/>
+						<attribute name="presentacion" type="string"/>
+						<attribute name="cliente" type="string"/>
+						<attribute name="producto" type="string"/>
+						<attribute name="sucursal" type="string"/>
+						<attribute name="numParteMars" type="string"/>
+						<attribute name="fechaCertificado" type="string"/>
+						<attribute name="ordenEmbarque" type="string"/>
+						<attribute name="equipo" type="string"/>
+						<attribute name="transportista" type="string"/>
+						<attribute name="tanqueCarga" type="string"/>
+						<attribute name="plantaProductora" type="string"/>
+						<attribute name="inspector" type="string"/>
+						<attribute name="descripcion" type="string"/>
+						<attribute name="observaciones" type="string"/>
+						<attribute name="fechaExpiracion" type="string"/>
+						<attribute name="lote" type="string"/>
+						<attribute name="fechaElaboracion" type="string"/>
+						<attribute name="unidades" type="string"/>
+						<attribute name="codigoSAP" type="string"/>
+						<attribute name="material" type="string"/>
+						<attribute name="folioProvedor" type="string"/>
+						<attribute name="tamLote" type="string"/>
+						<attribute name="numLoteProveedor" type="string"/>
+						<attribute name="estado" type="string"/>
+						<attribute name="telefono" type="string"/>
+						<attribute name="codigoPostal" type="string"/>
+						<attribute name="direccion" type="string"/>
+						<attribute name="nombreCompany" type="string"/>
+						<attribute name="defMenAQL" type="string"/>
+						<attribute name="defMayAQL" type="string"/>
+						<attribute name="defCritAQL" type="string"/>
+						<attribute name="normAplicProdut" type="string"/>
+						<attribute name="msgInicio" type="string"/>
+						<attribute name="numEspecificacion" type="string"/>
+						<attribute name="numFacturaR" type="string"/>
+						<attribute name="codigoProveedor" type="string"/>
+						<attribute name="selloSeguridad" type="string"/>
+						<attribute name="firma" type="base64Binary"/>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

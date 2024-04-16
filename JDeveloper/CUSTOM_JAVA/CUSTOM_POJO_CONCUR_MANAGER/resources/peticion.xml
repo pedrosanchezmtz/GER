@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AbstractConcur>
+    <AbstractConcurHeader Constant="EXTRACT" Batch_Date="43922" Record_Count="43922" Journal_Amount_Hash_Total="10662.47"/>
+    <Lines>
+        <Line>
+            <BatchData Constant="DETAIL" BatchID="1696" BatchDate="28/11/2019"/>
+            <EmployeeData EMPID="21267" LastName="NAVARRO HERNANDEZ" EmployeeOrgUnit1-Tipo="101" EmployeeOrgUnit2-Depto="0" EmployeeOrgUnit3="0" EmployeeOrgUnit4="303" EmployeeOrgUnit5="0" EmployeeOrgUnit6="0"/>
+            <ReportData/>
+            <EntryData/>
+            <CreditCardData/>
+            <EntryLocationData/>
+            <JournalEntryData PayerPayType="Company" PayeePayType="Employee" AccountCode="0101050301" DRCR="DR" JournalAmt="2000"/>
+            <CarMileageData/>
+            <CashAdvanceData CACurrencyAlphaISO="MXN" CAKey="3167"/>
+            <AllocationData/>
+            <TravelAllowanceData/>
+            <VATTaxData/>
+            <AssignedTravelRequestData/>
+            <FutureUseSection/>
+            <ExpensePayData FutureUse="Viaje a Hermosillo"/>
+            <EmployeeBankingData/>
+            <ReportEntryData/>
+            <RequestData/>
+        </Line>
+        <Line>
+            <BatchData Constant="DETAIL" BatchID="1696" BatchDate="28/11/2019"/>
+            <EmployeeData EMPID="70181" LastName="GARCIA CONTRERAS" EmployeeOrgUnit1-Tipo="101" EmployeeOrgUnit2-Depto="0" EmployeeOrgUnit3="0" EmployeeOrgUnit4="113" EmployeeOrgUnit5="0" EmployeeOrgUnit6="0"/>
+            <ReportData/>
+            <EntryData/>
+            <CreditCardData/>
+            <EntryLocationData/>
+            <JournalEntryData PayerPayType="Company" PayeePayType="Employee" AccountCode="0101050301" DRCR="DR" JournalAmt="2000"/>
+            <CarMileageData/>
+            <CashAdvanceData CACurrencyAlphaISO="MXN" CAKey="3169"/>
+            <AllocationData/>
+            <TravelAllowanceData/>
+            <VATTaxData/>
+            <AssignedTravelRequestData/>
+            <FutureUseSection/>
+            <ExpensePayData FutureUse="37561"/>
+            <EmployeeBankingData/>
+            <ReportEntryData/>
+            <RequestData/>
+        </Line>
+    </Lines>
+</AbstractConcur>

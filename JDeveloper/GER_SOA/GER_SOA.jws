@@ -36,6 +36,8 @@
       <hash><url n="URL" path="DailyRatesBiz/DailyRatesBiz.jpr"/></hash>
       <hash><url n="URL" path="ERPIntegrationBiz/ERPIntegrationBiz.jpr"/></hash>
       <hash><url n="URL" path="ERPManagementOfLoadImportBiz/ERPManagementOfLoadImportBiz.jpr"/></hash>
+      <hash><url n="URL" path="filesSOA/filesSOA.jpr"/></hash>
+      <hash><url n="URL" path="fileswindows/fileswindows.jpr"/></hash>
       <hash><url n="URL" path="FinancialsBiz/FinancialsBiz.jpr"/></hash>
       <hash><url n="URL" path="InerCreditMemoApplyEnt/InerCreditMemoApplyEnt.jpr"/></hash>
       <hash><url n="URL" path="InerFinancialsBiz/InerFinancialsBiz.jpr"/></hash>

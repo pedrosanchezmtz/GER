@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='utf-8'?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="http://xmlns.erpsol.com/core/esb/bss/custom/concurManager/v1/">
+	<element name="AbstractConcurManager">
+		<complexType>
+			<sequence>
+				<element name="Receipts">
+					<complexType>
+						<sequence>
+							<element name="Receipt" maxOccurs="unbounded">
+								<complexType>
+									<sequence>
+										<element name="BatchId" type="string"/>
+										<element name="EmpID" type="string"/>
+										<element name="LastName" type="string"/>
+										<element name="FirstName" type="string"/>
+										<element name="BusinessUnit" type="string"/>
+										<element name="ReceiptNumber" type="string"/>
+										<element name="ReportId" type="string"/>
+										<element name="AccountCode" type="string"/>
+										<element name="ReceiptType" type="string"/>
+										<element name="ReceivablesActivity" type="string"/>
+										<element name="ReceiptDate" type="string"/>
+										<element name="AccountingDate" type="string"/>
+										<element name="Currency" type="string"/>
+										<element name="EnteredAmount" type="string"/>
+										<element name="Amounts">
+											<complexType>
+												<sequence>
+													<element name="JournalAmt" type="string" maxOccurs="unbounded"/>
+												</sequence>
+											</complexType>
+										</element>
+										<element name="ErrorsReceipt">
+											<complexType>
+												<sequence>
+													<element name="Error" type="string" maxOccurs="unbounded"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Prepayments">
+					<complexType>
+						<sequence>
+							<element name="Prepayment" maxOccurs="unbounded">
+								<complexType>
+									<sequence>
+										<element name="BatchId" type="string"/>
+										<element name="EmpID" type="string"/>
+										<element name="LastName" type="string"/>
+										<element name="FirstName" type="string"/>
+										<element name="BusinessUnit" type="string"/>
+										<element name="AccountCode" type="string"/>
+										<element name="PrePaymentType" type="string"/>
+										<element name="PrePaymentActivity" type="string"/>
+										<element name="Date" type="string"/>
+										<element name="TermsDate" type="string"/>
+										<element name="Amount" type="string"/>
+										<element name="ReportKey" type="string"/>
+										<element name="Number" type="string"/>
+										<element name="SupplierSite" type="string"/>
+										<element name="ErrorsPrepayment">
+											<complexType>
+												<sequence>
+													<element name="Error" type="string" maxOccurs="unbounded"/>
+												</sequence>
+											</complexType>
+										</element>
+										<element name="PrepaymentLines">
+											<complexType>
+												<sequence>
+													<element name="PrepaymentLine" maxOccurs="unbounded">
+														<complexType>
+															<sequence>
+																<element name="Amount" type="string"/>
+																<element name="CurrencyExchangeRate" type="string"/>
+																<element name="JournalKey" type="string"/>
+																<element name="Currency" type="string"/>
+																<element name="Description" type="string"/>
+																<element name="Distribution1" type="string"/>
+																<element name="Distribution2" type="string"/>
+																<element name="Distribution3" type="string"/>
+																<element name="Distribution4" type="string"/>
+																<element name="Distribution5" type="string"/>
+																<element name="Distribution6" type="string"/>
+																<element name="Distribution7" type="string"/>
+															</sequence>
+														</complexType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Invoices">
+					<complexType>
+						<sequence>
+							<element name="Invoice" maxOccurs="unbounded">
+								<complexType>
+									<sequence>
+										<element name="BatchId" type="string"/>
+										<element name="EmpID" type="string"/>
+										<element name="LastName" type="string"/>
+										<element name="FirstName" type="string"/>
+										<element name="BusinessUnit" type="string"/>
+										<element name="Date" type="string"/>
+										<element name="TermsDate" type="string"/>
+										<element name="Amount" type="string"/>
+										<element name="Currency" type="string"/>
+										<element name="CurrencyExchangeRate" type="string"/>
+										<element name="Number" type="string"/>
+										<element name="SupplierSite" type="string"/>
+										<element name="ErrorsInvoice">
+											<complexType>
+												<sequence>
+													<element name="Error" type="string" maxOccurs="unbounded"/>
+												</sequence>
+											</complexType>
+										</element>
+										<element name="InvoiceLines">
+											<complexType>
+												<sequence>
+													<element name="InvoiceLine" maxOccurs="unbounded">
+														<complexType>
+															<sequence>
+																<element name="Amount" type="string"/>
+																<element name="TaxClassification" type="string"/>
+																<element name="TaxAmount" type="string"/>
+																<element name="JournalKey" type="string"/>
+																<element name="Distribution1" type="string"/>
+																<element name="Distribution2" type="string"/>
+																<element name="Distribution3" type="string"/>
+																<element name="Distribution4" type="string"/>
+																<element name="Distribution5" type="string"/>
+																<element name="Distribution6" type="string"/>
+																<element name="Distribution7" type="string"/>
+																<element name="Details1" type="string"/>
+																<element name="Details2" type="string"/>
+																<element name="Details3" type="string"/>
+																<element name="Details4" type="string"/>
+																<element name="Details5" type="string"/>
+																<element name="Details6" type="string"/>
+																<element name="Description1" type="string"/>
+																<element name="Description2" type="string"/>
+																<element name="Description3" type="string"/>
+																<element name="Description4" type="string"/>
+																<element name="Description5" type="string"/>
+																<element name="TransactionDate" type="string"/>
+																<element name="TransactionDescription" type="string"/>
+															</sequence>
+														</complexType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="LinesUnidentified">
+					<complexType>
+						<sequence>
+							<element name="LineUnidentified" maxOccurs="unbounded">
+								<complexType>
+									<sequence>
+										<element name="BatchId" type="string"/>
+										<element name="ExpenseType" type="string"/>
+										<element name="AccountCode" type="string"/>
+										<element name="ReportKey" type="string"/>
+										<element name="ReportId" type="string"/>
+										<element name="JournalAmt" type="string"/>
+										<element name="AmountReceipt" type="string"/>
+										<element name="SpendCurrencyAlphaISO" type="string"/>
+										<element name="TransactionDate" type="string"/>
+										<element name="CAKey" type="string"/>
+										<element name="JournalKey" type="string"/>
+										<element name="BatchDate" type="string"/>
+										<element name="EMPID" type="string"/>
+										<element name="CurrencyExchangeRate" type="string"/>
+										<element name="FirstName" type="string"/>
+										<element name="LastName" type="string"/>
+										<element name="UUID" type="string"/>
+										<element name="AmountDueEmployee2" type="string"/>
+										<element name="PayerPayType" type="string"/>
+										<element name="PayeePayType" type="string"/>
+										<element name="CashAdvanceUtilizedAmount" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Details">
+					<complexType>
+						<sequence>
+							<element name="Status" type="string"/>
+							<element name="Description" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

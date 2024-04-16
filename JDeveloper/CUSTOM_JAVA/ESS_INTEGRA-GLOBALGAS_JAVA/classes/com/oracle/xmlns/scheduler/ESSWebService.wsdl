@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions name="ESSWebService" targetNamespace="http://xmlns.oracle.com/scheduler" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.oracle.com/scheduler" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="wsaddr_policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+    <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+  </wsp:Policy>
+  <import namespace="http://xmlns.oracle.com/scheduler" location="esswebserviceESSWebServiceAbstract.wsdl"/>
+  <binding name="ESSWebServiceCallbackSoapHttp" type="tns:ESSWebServiceCallback" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsaw:UsingAddressing wsdl:required="true"/>
+    <operation name="onJobCompletion">
+      <soap:operation soapAction="onJobCompletion"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+    </operation>
+  </binding>
+  <binding name="ESSWebServiceSoapHttp" type="tns:ESSWebService" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsaw:UsingAddressing wsdl:required="true"/>
+    <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#wsaddr_policy" wsdl:required="false"/>
+    <operation name="submitRequest">
+      <soap:operation soapAction="submitRequest"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RuntimeServiceException">
+        <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="ValidationException">
+        <soap:fault name="ValidationException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      </fault>
+    </operation>
+    <operation name="submitRecurringRequest">
+      <soap:operation soapAction="submitRecurringRequest"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RuntimeServiceException">
+        <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="ValidationException">
+        <soap:fault name="ValidationException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      </fault>
+    </operation>
+    <operation name="getCompletionStatus">
+      <soap:operation soapAction="getCompletionStatus"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+    </operation>
+    <operation name="getRequestState">
+      <soap:operation soapAction="getRequestState"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RuntimeServiceException">
+        <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      </fault>
+    </operation>
+    <operation name="checkInCancelling">
+      <soap:operation soapAction="checkInCancelling"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RuntimeServiceException">
+        <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      </fault>
+    </operation>
+    <operation name="getRequestDetail">
+      <soap:operation soapAction="getRequestDetail"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RuntimeServiceException">
+        <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      </fault>
+    </operation>
+    <operation name="getRequestExecutionContext">
+      <soap:operation soapAction="getRequestExecutionContext"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RuntimeServiceException">
+        <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      </fault>
+    </operation>
+    <operation name="holdRequest">
+      <soap:operation soapAction="holdRequest"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RuntimeServiceException">
+        <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="IllegalStateException">
+        <soap:fault name="IllegalStateException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="NotAllowedException">
+        <soap:fault name="NotAllowedException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      </fault>
+    </operation>
+    <operation name="releaseRequest">
+      <soap:operation soapAction="releaseRequest"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RuntimeServiceException">
+        <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="IllegalStateException">
+        <soap:fault name="IllegalStateException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      </fault>
+    </operation>
+    <operation name="setAsyncRequestStatus">
+      <soap:operation soapAction="setAsyncRequestStatus"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RuntimeServiceException">
+        <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="RequestNotFoundException">
+        <soap:fault name="RequestNotFoundException" use="literal" encodingStyle=""/>
+      </fault>
+    </operation>
+    <operation name="cancelRequest">
+      <soap:operation soapAction="cancelRequest"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RuntimeServiceException">
+        <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="IllegalStateException">
+        <soap:fault name="IllegalStateException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      </fault>
+    </operation>
+    <operation name="deleteRequest">
+      <soap:operation soapAction="deleteRequest"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RuntimeServiceException">
+        <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="IllegalStateException">
+        <soap:fault name="IllegalStateException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="NotAllowedException">
+        <soap:fault name="NotAllowedException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      </fault>
+    </operation>
+    <operation name="purgeRequest">
+      <soap:operation soapAction="purgeRequest"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RuntimeServiceException">
+        <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="IllegalStateException">
+        <soap:fault name="IllegalStateException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="NotAllowedException">
+        <soap:fault name="NotAllowedException" use="literal" encodingStyle=""/>
+      </fault>
+      <fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      </fault>
+    </operation>
+    <operation name="setSubmitArgs">
+      <soap:operation soapAction="setSubmitArgs"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentException">
+        <soap:fault name="IllegalArgumentException" use="literal" encodingStyle=""/>
+      </fault>
+    </operation>
+    <operation name="setStepsArgs">
+      <soap:operation soapAction="setStepsArgs"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentException">
+        <soap:fault name="IllegalArgumentException" use="literal" encodingStyle=""/>
+      </fault>
+    </operation>
+    <operation name="addPPActions">
+      <soap:operation soapAction="addPPActions"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentException">
+        <soap:fault name="IllegalArgumentException" use="literal" encodingStyle=""/>
+      </fault>
+    </operation>
+    <operation name="setNLSOptions">
+      <soap:operation soapAction="setNLSOptions"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentException">
+        <soap:fault name="IllegalArgumentException" use="literal" encodingStyle=""/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="ESSWebService">
+    <port name="SchedulerServiceImplPort" binding="tns:ESSWebServiceSoapHttp">
+      <soap:address location="https://129.213.117.97:443/ess/esswebservice"/>
+    </port>
+  </service>
+  <service name="ESSWebServiceCallback">
+    <port name="callbackPort" binding="tns:ESSWebServiceCallbackSoapHttp">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

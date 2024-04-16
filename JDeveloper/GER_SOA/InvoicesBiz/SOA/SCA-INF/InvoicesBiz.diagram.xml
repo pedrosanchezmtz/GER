@@ -27,11 +27,11 @@
         </dgm:operations>
     </dgm:gService>
     <dgm:gReference name="wsFinancialsTec">
-        <dgm:body borderWidth="2" arcRad="20" X="1559" Y="889" width="136" height="168">
+        <dgm:body borderWidth="2" arcRad="20" X="1458" Y="889" width="136" height="168">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1549" Y="882" width="156" height="182">
+        <dgm:shadow arcRad="20" X="1448" Y="882" width="156" height="182">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsFinancialsTec" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/FinancialsTec#wsdl.interface(FinancialsTecPortType)"/>
@@ -58,11 +58,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsDigitalStampTec">
-        <dgm:body borderWidth="2" arcRad="20" X="1559" Y="1168" width="136" height="96">
+        <dgm:body borderWidth="2" arcRad="20" X="1458" Y="1168" width="136" height="96">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1549" Y="1161" width="156" height="110">
+        <dgm:shadow arcRad="20" X="1448" Y="1161" width="156" height="110">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsDigitalStampTec" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/DigitalStampTec#wsdl.interface(DigitalStampTePortType)"/>
@@ -73,11 +73,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsAuditControlTecPs">
-        <dgm:body borderWidth="2" arcRad="20" X="1559" Y="1298" width="136" height="168">
+        <dgm:body borderWidth="2" arcRad="20" X="1458" Y="1298" width="136" height="168">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1549" Y="1291" width="156" height="182">
+        <dgm:shadow arcRad="20" X="1448" Y="1291" width="156" height="182">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsAuditControlTecPs" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/AuditControlTec#wsdl.interface(AuditControlTecPortType)"/>
@@ -103,11 +103,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsERPIntegrationServiceTec">
-        <dgm:body borderWidth="2" arcRad="20" X="1559" Y="193" width="136" height="168">
+        <dgm:body borderWidth="2" arcRad="20" X="1458" Y="193" width="136" height="168">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1549" Y="186" width="156" height="182">
+        <dgm:shadow arcRad="20" X="1448" Y="186" width="156" height="182">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsERPIntegrationServiceTec" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/ERPIntegrationServiceTec#wsdl.interface(ERPIntegrationTecPortType)"/>
@@ -145,11 +145,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsSOAUtilitiesTec">
-        <dgm:body borderWidth="2" arcRad="20" X="1559" Y="581" width="136" height="156">
+        <dgm:body borderWidth="2" arcRad="20" X="1458" Y="581" width="136" height="156">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1549" Y="574" width="156" height="170">
+        <dgm:shadow arcRad="20" X="1448" Y="574" width="156" height="170">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsSOAUtilitiesTec" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/SOAUtilitiesTec#wsdl.interface(SOAUtilitiesTecPortType)"/>
@@ -165,11 +165,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsMessageTec">
-        <dgm:body borderWidth="2" arcRad="20" X="1559" Y="771" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="1458" Y="771" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1549" Y="764" width="156" height="98">
+        <dgm:shadow arcRad="20" X="1448" Y="764" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsMessageTec" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/MessageTec#wsdl.interface(MessageTecPortType)"/>
@@ -179,11 +179,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="dbStatusLoadInvoices">
-        <dgm:body borderWidth="2" arcRad="20" X="1559" Y="1642" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="1458" Y="1642" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1549" Y="1635" width="156" height="98">
+        <dgm:shadow arcRad="20" X="1448" Y="1635" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="dbStatusLoadInvoices" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/InvoicesBiz/InvoicesBiz/dbStatusLoadInvoices#wsdl.interface(dbStatusLoadInvoices_ptt)"/>
@@ -193,11 +193,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="wsDigitalStmapGERTec">
-        <dgm:body borderWidth="2" arcRad="20" X="1559" Y="1502" width="136" height="108">
+        <dgm:body borderWidth="2" arcRad="20" X="1458" Y="1502" width="136" height="108">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1549" Y="1495" width="156" height="122">
+        <dgm:shadow arcRad="20" X="1448" Y="1495" width="156" height="122">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="wsDigitalStmapGERTec" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/DigitalStampGERTec#wsdl.interface(DigitalStampGERTecPortType)"/>
@@ -209,12 +209,12 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gComponent name="mediatorInvoicesBiz">
-        <dgm:body borderWidth="2" arcRad="20" X="363" Y="845" width="130" height="286">
+        <dgm:body borderWidth="2" arcRad="20" X="263" Y="845" width="130" height="286">
             <dgm:borderColor r="128" g="92" b="148"/>
             <dgm:lightBgColor r="208" g="169" b="227"/>
             <dgm:darkBgColor r="183" g="132" b="212"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="353" Y="838" width="150" height="302">
+        <dgm:shadow arcRad="20" X="253" Y="838" width="150" height="302">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="mediatorInvoicesBiz" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/InvoicesBiz#wsdl.interface(InvoicesBizPortType)" callbackInterface="http://soa.estrellaroja.com.mx/InvoicesBiz#wsdl.interface(InvoicesBizCallbackPortType)"/>
@@ -231,12 +231,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="bpelBuildInvoicesZip">
-        <dgm:body borderWidth="2" arcRad="20" X="698" Y="696" width="130" height="111">
+        <dgm:body borderWidth="2" arcRad="20" X="596" Y="696" width="130" height="111">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="688" Y="689" width="150" height="127">
+        <dgm:shadow arcRad="20" X="586" Y="689" width="150" height="127">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="bpelBuildInvoicesZip" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/InvoicesBiz/bpelBuildInvoicesZip#wsdl.interface(bpelBuildInvoicesZip)"/>
@@ -246,12 +246,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="bpelValidateInvoicesAP">
-        <dgm:body borderWidth="2" arcRad="20" X="698" Y="208" width="130" height="261">
+        <dgm:body borderWidth="2" arcRad="20" X="596" Y="208" width="130" height="261">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="688" Y="201" width="150" height="277">
+        <dgm:shadow arcRad="20" X="586" Y="201" width="150" height="277">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="bpelvalidateinvoicesap" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/InvoicesBiz/bpelValidateInvoicesAP#wsdl.interface(bpelValidateInvoicesAP)" callbackInterface="http://soa.estrellaroja.com.mx/InvoicesBiz/bpelValidateInvoicesAP#wsdl.interface(bpelValidateInvoicesAPCallback)"/>
@@ -267,12 +267,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="bpelDigitalStamp">
-        <dgm:body borderWidth="2" arcRad="20" X="698" Y="1061" width="130" height="236">
+        <dgm:body borderWidth="2" arcRad="20" X="596" Y="1061" width="130" height="236">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="688" Y="1054" width="150" height="252">
+        <dgm:shadow arcRad="20" X="586" Y="1054" width="150" height="252">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="bpelDigitalStamp" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/InvoicesBiz/bpelDigitalStamp#wsdl.interface(bpelDigitalStamp)"/>
@@ -287,12 +287,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="bpelValidatePaymentComplements">
-        <dgm:body borderWidth="2" arcRad="20" X="698" Y="1451" width="130" height="86">
+        <dgm:body borderWidth="2" arcRad="20" X="596" Y="1451" width="130" height="86">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="688" Y="1444" width="150" height="102">
+        <dgm:shadow arcRad="20" X="586" Y="1444" width="150" height="102">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="bpelvalidatepaymentcomplements_client" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/InvoicesBiz/bpelValidatePaymentComplements#wsdl.interface(bpelValidatePaymentComplements)" callbackInterface="http://soa.estrellaroja.com.mx/InvoicesBiz/bpelValidatePaymentComplements#wsdl.interface(bpelValidatePaymentComplementsCallback)"/>
@@ -301,12 +301,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="sbpelHoldInvoicesAP">
-        <dgm:body borderWidth="2" arcRad="20" X="1181" Y="48" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="1079" Y="48" width="130" height="61">
             <dgm:borderColor r="141" g="141" b="141"/>
             <dgm:lightBgColor r="255" g="255" b="255"/>
             <dgm:darkBgColor r="202" g="202" b="202"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1171" Y="41" width="150" height="77">
+        <dgm:shadow arcRad="20" X="1069" Y="41" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="sbpelHoldInvoicesAP" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png"/>
@@ -314,12 +314,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/v2/plugins/resources/images/application/scaconfig/subprocess_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="sbpelValidateInvoicesAP">
-        <dgm:body borderWidth="2" arcRad="20" X="1181" Y="1274" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="1079" Y="1274" width="130" height="61">
             <dgm:borderColor r="141" g="141" b="141"/>
             <dgm:lightBgColor r="255" g="255" b="255"/>
             <dgm:darkBgColor r="202" g="202" b="202"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1171" Y="1267" width="150" height="77">
+        <dgm:shadow arcRad="20" X="1069" Y="1267" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="sbpelValidateInvoicesAP" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png"/>
@@ -327,12 +327,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/v2/plugins/resources/images/application/scaconfig/subprocess_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="sbpelReleaseInvoicesAP">
-        <dgm:body borderWidth="2" arcRad="20" X="1181" Y="143" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="1079" Y="143" width="130" height="61">
             <dgm:borderColor r="141" g="141" b="141"/>
             <dgm:lightBgColor r="255" g="255" b="255"/>
             <dgm:darkBgColor r="202" g="202" b="202"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1171" Y="136" width="150" height="77">
+        <dgm:shadow arcRad="20" X="1069" Y="136" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="sbpelReleaseInvoicesAP" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png"/>
@@ -340,12 +340,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/v2/plugins/resources/images/application/scaconfig/subprocess_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="sbpelCancelInvoicesAP">
-        <dgm:body borderWidth="2" arcRad="20" X="1181" Y="238" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="1079" Y="238" width="130" height="61">
             <dgm:borderColor r="141" g="141" b="141"/>
             <dgm:lightBgColor r="255" g="255" b="255"/>
             <dgm:darkBgColor r="202" g="202" b="202"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1171" Y="231" width="150" height="77">
+        <dgm:shadow arcRad="20" X="1069" Y="231" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="sbpelCancelInvoicesAP" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png"/>
@@ -353,12 +353,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/v2/plugins/resources/images/application/scaconfig/subprocess_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="sbpelUploadAttachments">
-        <dgm:body borderWidth="2" arcRad="20" X="1181" Y="331" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="1079" Y="331" width="130" height="61">
             <dgm:borderColor r="141" g="141" b="141"/>
             <dgm:lightBgColor r="255" g="255" b="255"/>
             <dgm:darkBgColor r="202" g="202" b="202"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1171" Y="324" width="150" height="77">
+        <dgm:shadow arcRad="20" X="1069" Y="324" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="sbpelUploadAttachments" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png"/>
@@ -366,12 +366,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/v2/plugins/resources/images/application/scaconfig/subprocess_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="sbpelLogPaymentComplement">
-        <dgm:body borderWidth="2" arcRad="20" X="1181" Y="1391" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="1079" Y="1391" width="130" height="61">
             <dgm:borderColor r="141" g="141" b="141"/>
             <dgm:lightBgColor r="255" g="255" b="255"/>
             <dgm:darkBgColor r="202" g="202" b="202"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1171" Y="1384" width="150" height="77">
+        <dgm:shadow arcRad="20" X="1069" Y="1384" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="sbpelLogPaymentComplement" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png"/>
@@ -379,12 +379,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/v2/plugins/resources/images/application/scaconfig/subprocess_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="bpelUploadPaymentComplements">
-        <dgm:body borderWidth="2" arcRad="20" X="698" Y="1331" width="130" height="86">
+        <dgm:body borderWidth="2" arcRad="20" X="596" Y="1331" width="130" height="86">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="688" Y="1324" width="150" height="102">
+        <dgm:shadow arcRad="20" X="586" Y="1324" width="150" height="102">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="bpeluploadpaymentcomplements_client" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/InvoicesBiz/bpelUploadPaymentComplements#wsdl.interface(bpelUploadPaymentComplements)" callbackInterface="http://soa.estrellaroja.com.mx/InvoicesBiz/bpelUploadPaymentComplements#wsdl.interface(bpelUploadPaymentComplementsCallback)"/>
@@ -393,12 +393,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="sbpelNotifyHtmlControl">
-        <dgm:body borderWidth="2" arcRad="20" X="1181" Y="1096" width="130" height="86">
+        <dgm:body borderWidth="2" arcRad="20" X="1079" Y="1096" width="130" height="86">
             <dgm:borderColor r="141" g="141" b="141"/>
             <dgm:lightBgColor r="255" g="255" b="255"/>
             <dgm:darkBgColor r="202" g="202" b="202"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1171" Y="1089" width="150" height="102">
+        <dgm:shadow arcRad="20" X="1069" Y="1089" width="150" height="102">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="sbpelNotifyHtmlControl" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png"/>
@@ -407,12 +407,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/v2/plugins/resources/images/application/scaconfig/subprocess_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="bpelNotifyLoadInvoices">
-        <dgm:body borderWidth="2" arcRad="20" X="1181" Y="461" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="1079" Y="461" width="130" height="61">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1171" Y="454" width="150" height="77">
+        <dgm:shadow arcRad="20" X="1069" Y="454" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="bpelNotifyLoadInvoices" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/InvoicesBiz/bpelNotifyLoadInvoices#wsdl.interface(bpelNotifyLoadInvoices)"/>
@@ -420,12 +420,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="bpelStatusLoadInvoices">
-        <dgm:body borderWidth="2" arcRad="20" X="1181" Y="1627" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="1079" Y="1627" width="130" height="61">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1171" Y="1620" width="150" height="77">
+        <dgm:shadow arcRad="20" X="1069" Y="1620" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="bpelStatusLoadInvoices" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/InvoicesBiz/bpelStatusLoadInvoices#wsdl.interface(bpelStatusLoadInvoices)"/>
@@ -433,12 +433,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="bpelUpdateUuid">
-        <dgm:body borderWidth="2" arcRad="20" X="1181" Y="554" width="130" height="111">
+        <dgm:body borderWidth="2" arcRad="20" X="1079" Y="554" width="130" height="111">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1171" Y="547" width="150" height="127">
+        <dgm:shadow arcRad="20" X="1069" Y="547" width="150" height="127">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="bpelUpdateUuid" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/InvoicesBiz/bpelUpdateUuid#wsdl.interface(bpelUpdateUuid)"/>
@@ -448,12 +448,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="bpelGetComplementToUpdInvoices">
-        <dgm:body borderWidth="2" arcRad="20" X="1181" Y="910" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="1079" Y="910" width="130" height="61">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1171" Y="903" width="150" height="77">
+        <dgm:shadow arcRad="20" X="1069" Y="903" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="bpelGetComplementToUpdInvoices" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/InvoicesBiz/bpelGetComplementToUpdInvoices#wsdl.interface(bpelGetComplementToUpdInvoices)"/>
@@ -461,12 +461,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="bpelUpdateStatusInvoices">
-        <dgm:body borderWidth="2" arcRad="20" X="1181" Y="1003" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="1079" Y="1003" width="130" height="61">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1171" Y="996" width="150" height="77">
+        <dgm:shadow arcRad="20" X="1069" Y="996" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="bpelUpdateStatusInvoices" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/InvoicesBiz/bpelUpdateStatusInvoices#wsdl.interface(bpelUpdateStatusInvoices)"/>
@@ -474,12 +474,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="sbpelValidateConfigLines">
-        <dgm:body borderWidth="2" arcRad="20" X="1181" Y="763" width="130" height="111">
+        <dgm:body borderWidth="2" arcRad="20" X="1079" Y="763" width="130" height="111">
             <dgm:borderColor r="141" g="141" b="141"/>
             <dgm:lightBgColor r="255" g="255" b="255"/>
             <dgm:darkBgColor r="202" g="202" b="202"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1171" Y="756" width="150" height="127">
+        <dgm:shadow arcRad="20" X="1069" Y="756" width="150" height="127">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="sbpelValidateConfigLines" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png"/>
@@ -489,397 +489,397 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/v2/plugins/resources/images/application/scaconfig/subprocess_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gWireLink source="mediatorInvoicesBiz/bpelBuildInvoicesZip.bpelBuildInvoicesZip" target="bpelBuildInvoicesZip/bpelBuildInvoicesZip" width="2">
-        <dgm:gSegment X1="503" Y1="870" X2="527" Y2="870"/>
-        <dgm:gSegment X1="527" Y1="870" X2="527" Y2="721"/>
-        <dgm:gSegment X1="527" Y1="721" X2="688" Y2="721"/>
+        <dgm:gSegment X1="403" Y1="870" X2="427" Y2="870"/>
+        <dgm:gSegment X1="427" Y1="870" X2="427" Y2="721"/>
+        <dgm:gSegment X1="427" Y1="721" X2="586" Y2="721"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelBuildInvoicesZip/wsFinancialsTec" target="wsFinancialsTec" width="2">
-        <dgm:gSegment X1="838" Y1="721" X2="1510" Y2="721"/>
-        <dgm:gSegment X1="1510" Y1="721" X2="1510" Y2="899"/>
-        <dgm:gSegment X1="1510" Y1="899" X2="1549" Y2="899"/>
+        <dgm:gSegment X1="736" Y1="721" X2="1409" Y2="721"/>
+        <dgm:gSegment X1="1409" Y1="721" X2="1409" Y2="899"/>
+        <dgm:gSegment X1="1409" Y1="899" X2="1448" Y2="899"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="InvoicesBiz" target="mediatorInvoicesBiz/mediatorInvoicesBiz" width="2">
-        <dgm:gSegment X1="168" Y1="870" X2="353" Y2="870"/>
+        <dgm:gSegment X1="168" Y1="870" X2="253" Y2="870"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="mediatorInvoicesBiz/bpelValidateInvoicesAP.bpelvalidateinvoicesap" target="bpelValidateInvoicesAP/bpelvalidateinvoicesap" width="2">
-        <dgm:gSegment X1="503" Y1="895" X2="542" Y2="895"/>
-        <dgm:gSegment X1="542" Y1="895" X2="542" Y2="233"/>
-        <dgm:gSegment X1="542" Y1="233" X2="688" Y2="233"/>
+        <dgm:gSegment X1="403" Y1="895" X2="442" Y2="895"/>
+        <dgm:gSegment X1="442" Y1="895" X2="442" Y2="233"/>
+        <dgm:gSegment X1="442" Y1="233" X2="586" Y2="233"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelValidateInvoicesAP/wsSOAUtilitiesTec" target="wsSOAUtilitiesTec" width="2">
-        <dgm:gSegment X1="838" Y1="233" X2="1147" Y2="233"/>
-        <dgm:gSegment X1="1147" Y1="233" X2="1147" Y2="435"/>
-        <dgm:gSegment X1="1147" Y1="435" X2="1495" Y2="435"/>
-        <dgm:gSegment X1="1495" Y1="435" X2="1495" Y2="591"/>
-        <dgm:gSegment X1="1495" Y1="591" X2="1549" Y2="591"/>
+        <dgm:gSegment X1="736" Y1="233" X2="1045" Y2="233"/>
+        <dgm:gSegment X1="1045" Y1="233" X2="1045" Y2="435"/>
+        <dgm:gSegment X1="1045" Y1="435" X2="1394" Y2="435"/>
+        <dgm:gSegment X1="1394" Y1="435" X2="1394" Y2="591"/>
+        <dgm:gSegment X1="1394" Y1="591" X2="1448" Y2="591"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelDigitalStamp/wsDigitalStampTec" target="wsDigitalStampTec" width="2">
-        <dgm:gSegment X1="838" Y1="1086" X2="1087" Y2="1086"/>
-        <dgm:gSegment X1="1087" Y1="1086" X2="1087" Y2="1212"/>
-        <dgm:gSegment X1="1087" Y1="1212" X2="1345" Y2="1212"/>
-        <dgm:gSegment X1="1345" Y1="1212" X2="1345" Y2="1178"/>
-        <dgm:gSegment X1="1345" Y1="1178" X2="1549" Y2="1178"/>
+        <dgm:gSegment X1="736" Y1="1086" X2="985" Y2="1086"/>
+        <dgm:gSegment X1="985" Y1="1086" X2="985" Y2="1212"/>
+        <dgm:gSegment X1="985" Y1="1212" X2="1244" Y2="1212"/>
+        <dgm:gSegment X1="1244" Y1="1212" X2="1244" Y2="1178"/>
+        <dgm:gSegment X1="1244" Y1="1178" X2="1448" Y2="1178"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="mediatorInvoicesBiz/bpelDigitalStamp.bpelDigitalStamp" target="bpelDigitalStamp/bpelDigitalStamp" width="2">
-        <dgm:gSegment X1="503" Y1="920" X2="662" Y2="920"/>
-        <dgm:gSegment X1="662" Y1="920" X2="662" Y2="1086"/>
-        <dgm:gSegment X1="662" Y1="1086" X2="688" Y2="1086"/>
+        <dgm:gSegment X1="403" Y1="920" X2="562" Y2="920"/>
+        <dgm:gSegment X1="562" Y1="920" X2="562" Y2="1086"/>
+        <dgm:gSegment X1="562" Y1="1086" X2="586" Y2="1086"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelDigitalStamp/wsSOAUtilitiesTec" target="wsSOAUtilitiesTec" width="2">
-        <dgm:gSegment X1="838" Y1="1111" X2="877" Y2="1111"/>
-        <dgm:gSegment X1="877" Y1="1111" X2="877" Y2="706"/>
-        <dgm:gSegment X1="877" Y1="706" X2="1435" Y2="706"/>
-        <dgm:gSegment X1="1435" Y1="706" X2="1435" Y2="591"/>
-        <dgm:gSegment X1="1435" Y1="591" X2="1549" Y2="591"/>
+        <dgm:gSegment X1="736" Y1="1111" X2="775" Y2="1111"/>
+        <dgm:gSegment X1="775" Y1="1111" X2="775" Y2="706"/>
+        <dgm:gSegment X1="775" Y1="706" X2="1334" Y2="706"/>
+        <dgm:gSegment X1="1334" Y1="706" X2="1334" Y2="591"/>
+        <dgm:gSegment X1="1334" Y1="591" X2="1448" Y2="591"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelValidateInvoicesAP/wsERPIntegrationServiceTec" target="wsERPIntegrationServiceTec" width="2">
-        <dgm:gSegment X1="838" Y1="258" X2="862" Y2="258"/>
-        <dgm:gSegment X1="862" Y1="258" X2="862" Y2="20"/>
-        <dgm:gSegment X1="862" Y1="20" X2="1435" Y2="20"/>
-        <dgm:gSegment X1="1435" Y1="20" X2="1435" Y2="203"/>
-        <dgm:gSegment X1="1435" Y1="203" X2="1549" Y2="203"/>
+        <dgm:gSegment X1="736" Y1="258" X2="760" Y2="258"/>
+        <dgm:gSegment X1="760" Y1="258" X2="760" Y2="20"/>
+        <dgm:gSegment X1="760" Y1="20" X2="1334" Y2="20"/>
+        <dgm:gSegment X1="1334" Y1="20" X2="1334" Y2="203"/>
+        <dgm:gSegment X1="1334" Y1="203" X2="1448" Y2="203"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="sbpelHoldInvoicesAP/wsERPIntegrationServiceTec" target="wsERPIntegrationServiceTec" width="2">
-        <dgm:gSegment X1="1321" Y1="73" X2="1420" Y2="73"/>
-        <dgm:gSegment X1="1420" Y1="73" X2="1420" Y2="203"/>
-        <dgm:gSegment X1="1420" Y1="203" X2="1549" Y2="203"/>
+        <dgm:gSegment X1="1219" Y1="73" X2="1319" Y2="73"/>
+        <dgm:gSegment X1="1319" Y1="73" X2="1319" Y2="203"/>
+        <dgm:gSegment X1="1319" Y1="203" X2="1448" Y2="203"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="sbpelValidateInvoicesAP/wsDigitalStampTec" target="wsDigitalStampTec" width="2">
-        <dgm:gSegment X1="1321" Y1="1299" X2="1375" Y2="1299"/>
-        <dgm:gSegment X1="1375" Y1="1299" X2="1375" Y2="1178"/>
-        <dgm:gSegment X1="1375" Y1="1178" X2="1549" Y2="1178"/>
+        <dgm:gSegment X1="1219" Y1="1299" X2="1274" Y2="1299"/>
+        <dgm:gSegment X1="1274" Y1="1299" X2="1274" Y2="1178"/>
+        <dgm:gSegment X1="1274" Y1="1178" X2="1448" Y2="1178"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="sbpelReleaseInvoicesAP/wsERPIntegrationServiceTec" target="wsERPIntegrationServiceTec" width="2">
-        <dgm:gSegment X1="1321" Y1="168" X2="1405" Y2="168"/>
-        <dgm:gSegment X1="1405" Y1="168" X2="1405" Y2="203"/>
-        <dgm:gSegment X1="1405" Y1="203" X2="1549" Y2="203"/>
+        <dgm:gSegment X1="1219" Y1="168" X2="1304" Y2="168"/>
+        <dgm:gSegment X1="1304" Y1="168" X2="1304" Y2="203"/>
+        <dgm:gSegment X1="1304" Y1="203" X2="1448" Y2="203"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="sbpelCancelInvoicesAP/wsERPIntegrationServiceTec" target="wsERPIntegrationServiceTec" width="2">
-        <dgm:gSegment X1="1321" Y1="263" X2="1345" Y2="263"/>
-        <dgm:gSegment X1="1345" Y1="263" X2="1345" Y2="203"/>
-        <dgm:gSegment X1="1345" Y1="203" X2="1549" Y2="203"/>
+        <dgm:gSegment X1="1219" Y1="263" X2="1244" Y2="263"/>
+        <dgm:gSegment X1="1244" Y1="263" X2="1244" Y2="203"/>
+        <dgm:gSegment X1="1244" Y1="203" X2="1448" Y2="203"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="sbpelUploadAttachments/wsERPIntegrationServiceTec" target="wsERPIntegrationServiceTec" width="2">
-        <dgm:gSegment X1="1321" Y1="356" X2="1360" Y2="356"/>
-        <dgm:gSegment X1="1360" Y1="356" X2="1360" Y2="203"/>
-        <dgm:gSegment X1="1360" Y1="203" X2="1549" Y2="203"/>
+        <dgm:gSegment X1="1219" Y1="356" X2="1259" Y2="356"/>
+        <dgm:gSegment X1="1259" Y1="356" X2="1259" Y2="203"/>
+        <dgm:gSegment X1="1259" Y1="203" X2="1448" Y2="203"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelValidatePaymentComplements/wsAuditControlTecPs" target="wsAuditControlTecPs" width="2">
-        <dgm:gSegment X1="838" Y1="1476" X2="1012" Y2="1476"/>
-        <dgm:gSegment X1="1012" Y1="1476" X2="1012" Y2="1497"/>
-        <dgm:gSegment X1="1012" Y1="1497" X2="1435" Y2="1497"/>
-        <dgm:gSegment X1="1435" Y1="1497" X2="1435" Y2="1308"/>
-        <dgm:gSegment X1="1435" Y1="1308" X2="1549" Y2="1308"/>
+        <dgm:gSegment X1="736" Y1="1476" X2="910" Y2="1476"/>
+        <dgm:gSegment X1="910" Y1="1476" X2="910" Y2="1497"/>
+        <dgm:gSegment X1="910" Y1="1497" X2="1334" Y2="1497"/>
+        <dgm:gSegment X1="1334" Y1="1497" X2="1334" Y2="1308"/>
+        <dgm:gSegment X1="1334" Y1="1308" X2="1448" Y2="1308"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelDigitalStamp/wsAuditControlTecPs" target="wsAuditControlTecPs" width="2">
-        <dgm:gSegment X1="838" Y1="1136" X2="1072" Y2="1136"/>
-        <dgm:gSegment X1="1072" Y1="1136" X2="1072" Y2="1363"/>
-        <dgm:gSegment X1="1072" Y1="1363" X2="1390" Y2="1363"/>
-        <dgm:gSegment X1="1390" Y1="1363" X2="1390" Y2="1308"/>
-        <dgm:gSegment X1="1390" Y1="1308" X2="1549" Y2="1308"/>
+        <dgm:gSegment X1="736" Y1="1136" X2="970" Y2="1136"/>
+        <dgm:gSegment X1="970" Y1="1136" X2="970" Y2="1363"/>
+        <dgm:gSegment X1="970" Y1="1363" X2="1289" Y2="1363"/>
+        <dgm:gSegment X1="1289" Y1="1363" X2="1289" Y2="1308"/>
+        <dgm:gSegment X1="1289" Y1="1308" X2="1448" Y2="1308"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelDigitalStamp/wsERPIntegrationServiceTec" target="wsERPIntegrationServiceTec" width="2">
-        <dgm:gSegment X1="838" Y1="1161" X2="937" Y2="1161"/>
-        <dgm:gSegment X1="937" Y1="1161" X2="937" Y2="418"/>
-        <dgm:gSegment X1="937" Y1="418" X2="1375" Y2="418"/>
-        <dgm:gSegment X1="1375" Y1="418" X2="1375" Y2="203"/>
-        <dgm:gSegment X1="1375" Y1="203" X2="1549" Y2="203"/>
+        <dgm:gSegment X1="736" Y1="1161" X2="835" Y2="1161"/>
+        <dgm:gSegment X1="835" Y1="1161" X2="835" Y2="418"/>
+        <dgm:gSegment X1="835" Y1="418" X2="1274" Y2="418"/>
+        <dgm:gSegment X1="1274" Y1="418" X2="1274" Y2="203"/>
+        <dgm:gSegment X1="1274" Y1="203" X2="1448" Y2="203"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="sbpelLogPaymentComplement/wsAuditControlTecPs" target="wsAuditControlTecPs" width="2">
-        <dgm:gSegment X1="1321" Y1="1416" X2="1405" Y2="1416"/>
-        <dgm:gSegment X1="1405" Y1="1416" X2="1405" Y2="1308"/>
-        <dgm:gSegment X1="1405" Y1="1308" X2="1549" Y2="1308"/>
+        <dgm:gSegment X1="1219" Y1="1416" X2="1304" Y2="1416"/>
+        <dgm:gSegment X1="1304" Y1="1416" X2="1304" Y2="1308"/>
+        <dgm:gSegment X1="1304" Y1="1308" X2="1448" Y2="1308"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelUploadPaymentComplements/wsAuditControlTecPs" target="wsAuditControlTecPs" width="2">
-        <dgm:gSegment X1="838" Y1="1356" X2="1027" Y2="1356"/>
-        <dgm:gSegment X1="1027" Y1="1356" X2="1027" Y2="1480"/>
-        <dgm:gSegment X1="1027" Y1="1480" X2="1420" Y2="1480"/>
-        <dgm:gSegment X1="1420" Y1="1480" X2="1420" Y2="1308"/>
-        <dgm:gSegment X1="1420" Y1="1308" X2="1549" Y2="1308"/>
+        <dgm:gSegment X1="736" Y1="1356" X2="925" Y2="1356"/>
+        <dgm:gSegment X1="925" Y1="1356" X2="925" Y2="1480"/>
+        <dgm:gSegment X1="925" Y1="1480" X2="1319" Y2="1480"/>
+        <dgm:gSegment X1="1319" Y1="1480" X2="1319" Y2="1308"/>
+        <dgm:gSegment X1="1319" Y1="1308" X2="1448" Y2="1308"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="mediatorInvoicesBiz/bpelUploadPaymentComplements.bpeluploadpaymentcomplements_client" target="bpelUploadPaymentComplements/bpeluploadpaymentcomplements_client" width="2">
-        <dgm:gSegment X1="503" Y1="945" X2="647" Y2="945"/>
-        <dgm:gSegment X1="647" Y1="945" X2="647" Y2="1356"/>
-        <dgm:gSegment X1="647" Y1="1356" X2="688" Y2="1356"/>
+        <dgm:gSegment X1="403" Y1="945" X2="547" Y2="945"/>
+        <dgm:gSegment X1="547" Y1="945" X2="547" Y2="1356"/>
+        <dgm:gSegment X1="547" Y1="1356" X2="586" Y2="1356"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="sbpelNotifyHtmlControl/wsSOAUtilitiesTec" target="wsSOAUtilitiesTec" width="2">
-        <dgm:gSegment X1="1321" Y1="1121" X2="1465" Y2="1121"/>
-        <dgm:gSegment X1="1465" Y1="1121" X2="1465" Y2="591"/>
-        <dgm:gSegment X1="1465" Y1="591" X2="1549" Y2="591"/>
+        <dgm:gSegment X1="1219" Y1="1121" X2="1364" Y2="1121"/>
+        <dgm:gSegment X1="1364" Y1="1121" X2="1364" Y2="591"/>
+        <dgm:gSegment X1="1364" Y1="591" X2="1448" Y2="591"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="sbpelNotifyHtmlControl/wsMessageTec" target="wsMessageTec" width="2">
-        <dgm:gSegment X1="1321" Y1="1146" X2="1480" Y2="1146"/>
-        <dgm:gSegment X1="1480" Y1="1146" X2="1480" Y2="781"/>
-        <dgm:gSegment X1="1480" Y1="781" X2="1549" Y2="781"/>
+        <dgm:gSegment X1="1219" Y1="1146" X2="1379" Y2="1146"/>
+        <dgm:gSegment X1="1379" Y1="1146" X2="1379" Y2="781"/>
+        <dgm:gSegment X1="1379" Y1="781" X2="1448" Y2="781"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelBuildInvoicesZip/wsSOAUtilitiesTec" target="wsSOAUtilitiesTec" width="2">
-        <dgm:gSegment X1="838" Y1="746" X2="862" Y2="746"/>
-        <dgm:gSegment X1="862" Y1="746" X2="862" Y2="691"/>
-        <dgm:gSegment X1="862" Y1="691" X2="1420" Y2="691"/>
-        <dgm:gSegment X1="1420" Y1="691" X2="1420" Y2="591"/>
-        <dgm:gSegment X1="1420" Y1="591" X2="1549" Y2="591"/>
+        <dgm:gSegment X1="736" Y1="746" X2="760" Y2="746"/>
+        <dgm:gSegment X1="760" Y1="746" X2="760" Y2="691"/>
+        <dgm:gSegment X1="760" Y1="691" X2="1319" Y2="691"/>
+        <dgm:gSegment X1="1319" Y1="691" X2="1319" Y2="591"/>
+        <dgm:gSegment X1="1319" Y1="591" X2="1448" Y2="591"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="mediatorInvoicesBiz/bpelNotifyLoadInvoices.bpelNotifyLoadInvoices" target="bpelNotifyLoadInvoices/bpelNotifyLoadInvoices" width="2">
-        <dgm:gSegment X1="503" Y1="970" X2="557" Y2="970"/>
-        <dgm:gSegment X1="557" Y1="970" X2="557" Y2="497"/>
-        <dgm:gSegment X1="557" Y1="497" X2="862" Y2="497"/>
-        <dgm:gSegment X1="862" Y1="497" X2="862" Y2="486"/>
-        <dgm:gSegment X1="862" Y1="486" X2="1171" Y2="486"/>
+        <dgm:gSegment X1="403" Y1="970" X2="457" Y2="970"/>
+        <dgm:gSegment X1="457" Y1="970" X2="457" Y2="497"/>
+        <dgm:gSegment X1="457" Y1="497" X2="760" Y2="497"/>
+        <dgm:gSegment X1="760" Y1="497" X2="760" Y2="486"/>
+        <dgm:gSegment X1="760" Y1="486" X2="1069" Y2="486"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelNotifyLoadInvoices/wsSOAUtilitiesTec" target="wsSOAUtilitiesTec" width="2">
-        <dgm:gSegment X1="1321" Y1="486" X2="1480" Y2="486"/>
-        <dgm:gSegment X1="1480" Y1="486" X2="1480" Y2="591"/>
-        <dgm:gSegment X1="1480" Y1="591" X2="1549" Y2="591"/>
+        <dgm:gSegment X1="1219" Y1="486" X2="1379" Y2="486"/>
+        <dgm:gSegment X1="1379" Y1="486" X2="1379" Y2="591"/>
+        <dgm:gSegment X1="1379" Y1="591" X2="1448" Y2="591"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="mediatorInvoicesBiz/bpelValidatePaymentComplements.bpelvalidatepaymentcomplements_client" target="bpelValidatePaymentComplements/bpelvalidatepaymentcomplements_client" width="2">
-        <dgm:gSegment X1="503" Y1="995" X2="632" Y2="995"/>
-        <dgm:gSegment X1="632" Y1="995" X2="632" Y2="1476"/>
-        <dgm:gSegment X1="632" Y1="1476" X2="688" Y2="1476"/>
+        <dgm:gSegment X1="403" Y1="995" X2="532" Y2="995"/>
+        <dgm:gSegment X1="532" Y1="995" X2="532" Y2="1476"/>
+        <dgm:gSegment X1="532" Y1="1476" X2="586" Y2="1476"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelValidateInvoicesAP/wsAuditControlTecPs" target="wsAuditControlTecPs" width="2">
-        <dgm:gSegment X1="838" Y1="283" X2="1132" Y2="283"/>
-        <dgm:gSegment X1="1132" Y1="283" X2="1132" Y2="1246"/>
-        <dgm:gSegment X1="1132" Y1="1246" X2="1450" Y2="1246"/>
-        <dgm:gSegment X1="1450" Y1="1246" X2="1450" Y2="1308"/>
-        <dgm:gSegment X1="1450" Y1="1308" X2="1549" Y2="1308"/>
+        <dgm:gSegment X1="736" Y1="283" X2="1030" Y2="283"/>
+        <dgm:gSegment X1="1030" Y1="283" X2="1030" Y2="1246"/>
+        <dgm:gSegment X1="1030" Y1="1246" X2="1349" Y2="1246"/>
+        <dgm:gSegment X1="1349" Y1="1246" X2="1349" Y2="1308"/>
+        <dgm:gSegment X1="1349" Y1="1308" X2="1448" Y2="1308"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="mediatorInvoicesBiz/bpelStatusLoadInvoices.bpelStatusLoadInvoices" target="bpelStatusLoadInvoices/bpelStatusLoadInvoices" width="2">
-        <dgm:gSegment X1="503" Y1="1020" X2="617" Y2="1020"/>
-        <dgm:gSegment X1="617" Y1="1020" X2="617" Y2="1652"/>
-        <dgm:gSegment X1="617" Y1="1652" X2="1171" Y2="1652"/>
+        <dgm:gSegment X1="403" Y1="1020" X2="517" Y2="1020"/>
+        <dgm:gSegment X1="517" Y1="1020" X2="517" Y2="1652"/>
+        <dgm:gSegment X1="517" Y1="1652" X2="1069" Y2="1652"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelStatusLoadInvoices/dbStatusLoadInvoices" target="dbStatusLoadInvoices" width="2">
-        <dgm:gSegment X1="1321" Y1="1652" X2="1549" Y2="1652"/>
+        <dgm:gSegment X1="1219" Y1="1652" X2="1448" Y2="1652"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="mediatorInvoicesBiz/bpelUpdateUuid.bpelUpdateUuid" target="bpelUpdateUuid/bpelUpdateUuid" width="2">
-        <dgm:gSegment X1="503" Y1="1045" X2="572" Y2="1045"/>
-        <dgm:gSegment X1="572" Y1="1045" X2="572" Y2="579"/>
-        <dgm:gSegment X1="572" Y1="579" X2="1171" Y2="579"/>
+        <dgm:gSegment X1="403" Y1="1045" X2="472" Y2="1045"/>
+        <dgm:gSegment X1="472" Y1="1045" X2="472" Y2="579"/>
+        <dgm:gSegment X1="472" Y1="579" X2="1069" Y2="579"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelUpdateUuid/wsERPIntegrationServiceTec" target="wsERPIntegrationServiceTec" width="2">
-        <dgm:gSegment X1="1321" Y1="579" X2="1390" Y2="579"/>
-        <dgm:gSegment X1="1390" Y1="579" X2="1390" Y2="203"/>
-        <dgm:gSegment X1="1390" Y1="203" X2="1549" Y2="203"/>
+        <dgm:gSegment X1="1219" Y1="579" X2="1289" Y2="579"/>
+        <dgm:gSegment X1="1289" Y1="579" X2="1289" Y2="203"/>
+        <dgm:gSegment X1="1289" Y1="203" X2="1448" Y2="203"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="mediatorInvoicesBiz/bpelGetComplementToUpdInvoices.bpelGetComplementToUpdInvoices" target="bpelGetComplementToUpdInvoices/bpelGetComplementToUpdInvoices" width="2">
-        <dgm:gSegment X1="503" Y1="1070" X2="587" Y2="1070"/>
-        <dgm:gSegment X1="587" Y1="1070" X2="587" Y2="960"/>
-        <dgm:gSegment X1="587" Y1="960" X2="862" Y2="960"/>
-        <dgm:gSegment X1="862" Y1="960" X2="862" Y2="935"/>
-        <dgm:gSegment X1="862" Y1="935" X2="1171" Y2="935"/>
+        <dgm:gSegment X1="403" Y1="1070" X2="487" Y2="1070"/>
+        <dgm:gSegment X1="487" Y1="1070" X2="487" Y2="960"/>
+        <dgm:gSegment X1="487" Y1="960" X2="760" Y2="960"/>
+        <dgm:gSegment X1="760" Y1="960" X2="760" Y2="935"/>
+        <dgm:gSegment X1="760" Y1="935" X2="1069" Y2="935"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelGetComplementToUpdInvoices/wsFinancialsTec" target="wsFinancialsTec" width="2">
-        <dgm:gSegment X1="1321" Y1="935" X2="1345" Y2="935"/>
-        <dgm:gSegment X1="1345" Y1="935" X2="1345" Y2="899"/>
-        <dgm:gSegment X1="1345" Y1="899" X2="1549" Y2="899"/>
+        <dgm:gSegment X1="1219" Y1="935" X2="1244" Y2="935"/>
+        <dgm:gSegment X1="1244" Y1="935" X2="1244" Y2="899"/>
+        <dgm:gSegment X1="1244" Y1="899" X2="1448" Y2="899"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelUpdateUuid/wsSOAUtilitiesTec" target="wsSOAUtilitiesTec" width="2">
-        <dgm:gSegment X1="1321" Y1="604" X2="1405" Y2="604"/>
-        <dgm:gSegment X1="1405" Y1="604" X2="1405" Y2="591"/>
-        <dgm:gSegment X1="1405" Y1="591" X2="1549" Y2="591"/>
+        <dgm:gSegment X1="1219" Y1="604" X2="1304" Y2="604"/>
+        <dgm:gSegment X1="1304" Y1="604" X2="1304" Y2="591"/>
+        <dgm:gSegment X1="1304" Y1="591" X2="1448" Y2="591"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelUpdateUuid/wsMessageTec" target="wsMessageTec" width="2">
-        <dgm:gSegment X1="1321" Y1="629" X2="1525" Y2="629"/>
-        <dgm:gSegment X1="1525" Y1="629" X2="1525" Y2="781"/>
-        <dgm:gSegment X1="1525" Y1="781" X2="1549" Y2="781"/>
+        <dgm:gSegment X1="1219" Y1="629" X2="1424" Y2="629"/>
+        <dgm:gSegment X1="1424" Y1="629" X2="1424" Y2="781"/>
+        <dgm:gSegment X1="1424" Y1="781" X2="1448" Y2="781"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="mediatorInvoicesBiz/bpelUpdateStatusInvoices.bpelUpdateStatusInvoices" target="bpelUpdateStatusInvoices/bpelUpdateStatusInvoices" width="2">
-        <dgm:gSegment X1="503" Y1="1095" X2="602" Y2="1095"/>
-        <dgm:gSegment X1="602" Y1="1095" X2="602" Y2="980"/>
-        <dgm:gSegment X1="602" Y1="980" X2="982" Y2="980"/>
-        <dgm:gSegment X1="982" Y1="980" X2="982" Y2="1028"/>
-        <dgm:gSegment X1="982" Y1="1028" X2="1171" Y2="1028"/>
+        <dgm:gSegment X1="403" Y1="1095" X2="502" Y2="1095"/>
+        <dgm:gSegment X1="502" Y1="1095" X2="502" Y2="980"/>
+        <dgm:gSegment X1="502" Y1="980" X2="880" Y2="980"/>
+        <dgm:gSegment X1="880" Y1="980" X2="880" Y2="1028"/>
+        <dgm:gSegment X1="880" Y1="1028" X2="1069" Y2="1028"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelUpdateStatusInvoices/wsFinancialsTec" target="wsFinancialsTec" width="2">
-        <dgm:gSegment X1="1321" Y1="1028" X2="1360" Y2="1028"/>
-        <dgm:gSegment X1="1360" Y1="1028" X2="1360" Y2="899"/>
-        <dgm:gSegment X1="1360" Y1="899" X2="1549" Y2="899"/>
+        <dgm:gSegment X1="1219" Y1="1028" X2="1259" Y2="1028"/>
+        <dgm:gSegment X1="1259" Y1="1028" X2="1259" Y2="899"/>
+        <dgm:gSegment X1="1259" Y1="899" X2="1448" Y2="899"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="sbpelValidateConfigLines/wsMessageTec" target="wsMessageTec" width="2">
-        <dgm:gSegment X1="1321" Y1="788" X2="1345" Y2="788"/>
-        <dgm:gSegment X1="1345" Y1="788" X2="1345" Y2="781"/>
-        <dgm:gSegment X1="1345" Y1="781" X2="1549" Y2="781"/>
+        <dgm:gSegment X1="1219" Y1="788" X2="1244" Y2="788"/>
+        <dgm:gSegment X1="1244" Y1="788" X2="1244" Y2="781"/>
+        <dgm:gSegment X1="1244" Y1="781" X2="1448" Y2="781"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="sbpelValidateConfigLines/wsFinancialsTec" target="wsFinancialsTec" width="2">
-        <dgm:gSegment X1="1321" Y1="813" X2="1495" Y2="813"/>
-        <dgm:gSegment X1="1495" Y1="813" X2="1495" Y2="899"/>
-        <dgm:gSegment X1="1495" Y1="899" X2="1549" Y2="899"/>
+        <dgm:gSegment X1="1219" Y1="813" X2="1394" Y2="813"/>
+        <dgm:gSegment X1="1394" Y1="813" X2="1394" Y2="899"/>
+        <dgm:gSegment X1="1394" Y1="899" X2="1448" Y2="899"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="sbpelValidateConfigLines/wsSOAUtilitiesTec" target="wsSOAUtilitiesTec" width="2">
-        <dgm:gSegment X1="1321" Y1="838" X2="1450" Y2="838"/>
-        <dgm:gSegment X1="1450" Y1="838" X2="1450" Y2="591"/>
-        <dgm:gSegment X1="1450" Y1="591" X2="1549" Y2="591"/>
+        <dgm:gSegment X1="1219" Y1="838" X2="1349" Y2="838"/>
+        <dgm:gSegment X1="1349" Y1="838" X2="1349" Y2="591"/>
+        <dgm:gSegment X1="1349" Y1="591" X2="1448" Y2="591"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelDigitalStamp/wsDigitalStampTec1" target="wsDigitalStampTec" width="2">
-        <dgm:gSegment X1="838" Y1="1186" X2="1057" Y2="1186"/>
-        <dgm:gSegment X1="1057" Y1="1186" X2="1057" Y2="1229"/>
-        <dgm:gSegment X1="1057" Y1="1229" X2="1360" Y2="1229"/>
-        <dgm:gSegment X1="1360" Y1="1229" X2="1360" Y2="1178"/>
-        <dgm:gSegment X1="1360" Y1="1178" X2="1549" Y2="1178"/>
+        <dgm:gSegment X1="736" Y1="1186" X2="955" Y2="1186"/>
+        <dgm:gSegment X1="955" Y1="1186" X2="955" Y2="1229"/>
+        <dgm:gSegment X1="955" Y1="1229" X2="1259" Y2="1229"/>
+        <dgm:gSegment X1="1259" Y1="1229" X2="1259" Y2="1178"/>
+        <dgm:gSegment X1="1259" Y1="1178" X2="1448" Y2="1178"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelDigitalStamp/wsDigitalStmapGERTec" target="wsDigitalStmapGERTec" width="2">
-        <dgm:gSegment X1="838" Y1="1211" X2="1042" Y2="1211"/>
-        <dgm:gSegment X1="1042" Y1="1211" X2="1042" Y2="1512"/>
-        <dgm:gSegment X1="1042" Y1="1512" X2="1549" Y2="1512"/>
+        <dgm:gSegment X1="736" Y1="1211" X2="940" Y2="1211"/>
+        <dgm:gSegment X1="940" Y1="1211" X2="940" Y2="1512"/>
+        <dgm:gSegment X1="940" Y1="1512" X2="1448" Y2="1512"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelValidateInvoicesAP/sbpelHoldInvoicesAP" target="sbpelHoldInvoicesAP/sbpelHoldInvoicesAP" width="2">
-        <dgm:gSegment X1="838" Y1="308" X2="877" Y2="308"/>
-        <dgm:gSegment X1="877" Y1="308" X2="877" Y2="73"/>
-        <dgm:gSegment X1="877" Y1="73" X2="1171" Y2="73"/>
+        <dgm:gSegment X1="736" Y1="308" X2="775" Y2="308"/>
+        <dgm:gSegment X1="775" Y1="308" X2="775" Y2="73"/>
+        <dgm:gSegment X1="775" Y1="73" X2="1069" Y2="73"/>
         <dgm:baseColor r="183" g="183" b="183"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelValidateInvoicesAP/sbpelValidateInvoicesAP" target="sbpelValidateInvoicesAP/sbpelValidateInvoicesAP" width="2">
-        <dgm:gSegment X1="838" Y1="333" X2="1117" Y2="333"/>
-        <dgm:gSegment X1="1117" Y1="333" X2="1117" Y2="1299"/>
-        <dgm:gSegment X1="1117" Y1="1299" X2="1171" Y2="1299"/>
+        <dgm:gSegment X1="736" Y1="333" X2="1015" Y2="333"/>
+        <dgm:gSegment X1="1015" Y1="333" X2="1015" Y2="1299"/>
+        <dgm:gSegment X1="1015" Y1="1299" X2="1069" Y2="1299"/>
         <dgm:baseColor r="183" g="183" b="183"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelValidateInvoicesAP/sbpelReleaseInvoicesAP" target="sbpelReleaseInvoicesAP/sbpelReleaseInvoicesAP" width="2">
-        <dgm:gSegment X1="838" Y1="358" X2="892" Y2="358"/>
-        <dgm:gSegment X1="892" Y1="358" X2="892" Y2="168"/>
-        <dgm:gSegment X1="892" Y1="168" X2="1171" Y2="168"/>
+        <dgm:gSegment X1="736" Y1="358" X2="790" Y2="358"/>
+        <dgm:gSegment X1="790" Y1="358" X2="790" Y2="168"/>
+        <dgm:gSegment X1="790" Y1="168" X2="1069" Y2="168"/>
         <dgm:baseColor r="183" g="183" b="183"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelValidatePaymentComplements/sbpelValidateInvoicesAP" target="sbpelValidateInvoicesAP/sbpelValidateInvoicesAP" width="2">
-        <dgm:gSegment X1="838" Y1="1501" X2="997" Y2="1501"/>
-        <dgm:gSegment X1="997" Y1="1501" X2="997" Y2="1299"/>
-        <dgm:gSegment X1="997" Y1="1299" X2="1171" Y2="1299"/>
+        <dgm:gSegment X1="736" Y1="1501" X2="895" Y2="1501"/>
+        <dgm:gSegment X1="895" Y1="1501" X2="895" Y2="1299"/>
+        <dgm:gSegment X1="895" Y1="1299" X2="1069" Y2="1299"/>
         <dgm:baseColor r="183" g="183" b="183"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelDigitalStamp/sbpelNotifyHtmlControl" target="sbpelNotifyHtmlControl/sbpelNotifyHtmlControl" width="2">
-        <dgm:gSegment X1="838" Y1="1236" X2="952" Y2="1236"/>
-        <dgm:gSegment X1="952" Y1="1236" X2="952" Y2="1121"/>
-        <dgm:gSegment X1="952" Y1="1121" X2="1171" Y2="1121"/>
+        <dgm:gSegment X1="736" Y1="1236" X2="850" Y2="1236"/>
+        <dgm:gSegment X1="850" Y1="1236" X2="850" Y2="1121"/>
+        <dgm:gSegment X1="850" Y1="1121" X2="1069" Y2="1121"/>
         <dgm:baseColor r="183" g="183" b="183"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelValidateInvoicesAP/sbpelCancelInvoicesAP" target="sbpelCancelInvoicesAP/sbpelCancelInvoicesAP" width="2">
-        <dgm:gSegment X1="838" Y1="383" X2="907" Y2="383"/>
-        <dgm:gSegment X1="907" Y1="383" X2="907" Y2="263"/>
-        <dgm:gSegment X1="907" Y1="263" X2="1171" Y2="263"/>
+        <dgm:gSegment X1="736" Y1="383" X2="805" Y2="383"/>
+        <dgm:gSegment X1="805" Y1="383" X2="805" Y2="263"/>
+        <dgm:gSegment X1="805" Y1="263" X2="1069" Y2="263"/>
         <dgm:baseColor r="183" g="183" b="183"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelValidateInvoicesAP/sbpelUploadAttachments" target="sbpelUploadAttachments/sbpelUploadAttachments" width="2">
-        <dgm:gSegment X1="838" Y1="408" X2="922" Y2="408"/>
-        <dgm:gSegment X1="922" Y1="408" X2="922" Y2="356"/>
-        <dgm:gSegment X1="922" Y1="356" X2="1171" Y2="356"/>
+        <dgm:gSegment X1="736" Y1="408" X2="820" Y2="408"/>
+        <dgm:gSegment X1="820" Y1="408" X2="820" Y2="356"/>
+        <dgm:gSegment X1="820" Y1="356" X2="1069" Y2="356"/>
         <dgm:baseColor r="183" g="183" b="183"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelValidateInvoicesAP/sbpelNotifyHtmlControl" target="sbpelNotifyHtmlControl/sbpelNotifyHtmlControl" width="2">
-        <dgm:gSegment X1="838" Y1="433" X2="1102" Y2="433"/>
-        <dgm:gSegment X1="1102" Y1="433" X2="1102" Y2="1121"/>
-        <dgm:gSegment X1="1102" Y1="1121" X2="1171" Y2="1121"/>
+        <dgm:gSegment X1="736" Y1="433" X2="1000" Y2="433"/>
+        <dgm:gSegment X1="1000" Y1="433" X2="1000" Y2="1121"/>
+        <dgm:gSegment X1="1000" Y1="1121" X2="1069" Y2="1121"/>
         <dgm:baseColor r="183" g="183" b="183"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelUploadPaymentComplements/sbpelNotifyHtmlControl" target="sbpelNotifyHtmlControl/sbpelNotifyHtmlControl" width="2">
-        <dgm:gSegment X1="838" Y1="1381" X2="982" Y2="1381"/>
-        <dgm:gSegment X1="982" Y1="1381" X2="982" Y2="1121"/>
-        <dgm:gSegment X1="982" Y1="1121" X2="1171" Y2="1121"/>
+        <dgm:gSegment X1="736" Y1="1381" X2="880" Y2="1381"/>
+        <dgm:gSegment X1="880" Y1="1381" X2="880" Y2="1121"/>
+        <dgm:gSegment X1="880" Y1="1121" X2="1069" Y2="1121"/>
         <dgm:baseColor r="183" g="183" b="183"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelBuildInvoicesZip/sbpelValidateConfigLines" target="sbpelValidateConfigLines/sbpelValidateConfigLines" width="2">
-        <dgm:gSegment X1="838" Y1="771" X2="982" Y2="771"/>
-        <dgm:gSegment X1="982" Y1="771" X2="982" Y2="788"/>
-        <dgm:gSegment X1="982" Y1="788" X2="1171" Y2="788"/>
+        <dgm:gSegment X1="736" Y1="771" X2="880" Y2="771"/>
+        <dgm:gSegment X1="880" Y1="771" X2="880" Y2="788"/>
+        <dgm:gSegment X1="880" Y1="788" X2="1069" Y2="788"/>
         <dgm:baseColor r="183" g="183" b="183"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="bpelDigitalStamp/sbpelUploadAttachments" target="sbpelUploadAttachments/sbpelUploadAttachments" width="2">
-        <dgm:gSegment X1="838" Y1="1261" X2="967" Y2="1261"/>
-        <dgm:gSegment X1="967" Y1="1261" X2="967" Y2="356"/>
-        <dgm:gSegment X1="967" Y1="356" X2="1171" Y2="356"/>
+        <dgm:gSegment X1="736" Y1="1261" X2="865" Y2="1261"/>
+        <dgm:gSegment X1="865" Y1="1261" X2="865" Y2="356"/>
+        <dgm:gSegment X1="865" Y1="356" X2="1069" Y2="356"/>
         <dgm:baseColor r="183" g="183" b="183"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>

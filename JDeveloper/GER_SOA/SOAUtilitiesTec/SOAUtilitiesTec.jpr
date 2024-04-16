@@ -77,13 +77,25 @@
    <value n="defaultPackage" v="soautilitiestec"/>
    <hash n="oracle.ide.model.ResourcePaths">
       <hash n="resourcesContentSet">
-         <list n="url-path"/>
+         <list n="pattern-filters">
+            <string v="+untitled1.xsd"/>
+         </list>
+         <list n="url-path">
+            <url path="."/>
+         </list>
       </hash>
    </hash>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
+         <string v="Database"/>
+         <string v="Java"/>
          <string v="SOA"/>
+         <string v="ServiceBusTechnology"/>
+         <string v="TopLink"/>
+         <string v="WSDL"/>
+         <string v="WSPolicy"/>
          <string v="XML"/>
+         <string v="XML_SCHEMA"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
@@ -106,6 +118,8 @@
          <string v=".xml"/>
          <string v=".xsd"/>
          <string v=".xsl"/>
+         <string v=".exm"/>
+         <string v=".xml"/>
          <string v=".exm"/>
          <string v=".xml"/>
          <string v=".exm"/>
@@ -222,17 +236,41 @@
       <hash n="javaContentSet">
          <list n="constituent-sets">
             <hash>
+               <list n="pattern-filters">
+                  <string v="+**"/>
+               </list>
                <list n="url-path">
                   <url path="SOA/SCA-INF/src/"/>
                </list>
             </hash>
+            <hash>
+               <url n="content-folder-url" path="SOA/soautilitiestec/"/>
+               <list n="pattern-filters">
+                  <string v="+soautilitiestec/"/>
+               </list>
+               <list n="url-path">
+                  <url path="SOA/"/>
+               </list>
+            </hash>
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+**"/>
+               </list>
+               <list n="url-path">
+                  <url path="src/"/>
+               </list>
+            </hash>
+            <hash>
+               <url n="content-folder-url" path="SOA/mx/com/estrellaroja/cloud/utilities/"/>
+               <list n="pattern-filters">
+                  <string v="+mx/com/estrellaroja/cloud/utilities/"/>
+               </list>
+               <list n="url-path">
+                  <url path="SOA/"/>
+               </list>
+            </hash>
          </list>
-         <list n="pattern-filters">
-            <string v="+**"/>
-         </list>
-         <list n="url-path">
-            <url path="src/"/>
-         </list>
+         <list n="url-path"/>
       </hash>
    </hash>
    <hash n="oracle.jdeveloper.runner.RunConfigurations">
@@ -241,7 +279,7 @@
             <value n="custom" v="false"/>
             <value n="name" v="Default"/>
             <hash n="oracle.jdevimpl.runner.debug.DebugConfiguration">
-               <value n="remoteParameter:SOA:hostname" v="FORTE-022"/>
+               <value n="remoteParameter:SOA:hostname" v="192.168.16.249"/>
                <value n="remoteParameter:SOA:port" v="5004"/>
                <value n="remoteProtocol" v="SOA"/>
             </hash>
@@ -276,7 +314,123 @@
             <value n="id" v="BC4J Service Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="TopLink"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle XML Parser v2"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons-io-2.5.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Junrar-7.5.5.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Slf4j-api-1.7.36.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Slf4j-simple-1.7.30.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Java-unrar-1.7.0-3.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Java-unrar-1.7.0-8.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons-collections4-4.5.0-M1.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Jcl-over-slf4j.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
+      <hash n="internalDefinitions">
+         <list n="libraryDefinitions">
+            <hash>
+               <list n="classPath">
+                  <url path="SOA/SCA-INF/lib/commons-io-2.5.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Commons-io-2.5.jar"/>
+               <value n="id" v="Commons-io-2.5.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="SOA/SCA-INF/lib/junrar-7.5.5.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Junrar-7.5.5.jar"/>
+               <value n="id" v="Junrar-7.5.5.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="SOA/SCA-INF/lib/slf4j-api-1.7.36.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Slf4j-api-1.7.36.jar"/>
+               <value n="id" v="Slf4j-api-1.7.36.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="SOA/SCA-INF/lib/slf4j-simple-1.7.30.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Slf4j-simple-1.7.30.jar"/>
+               <value n="id" v="Slf4j-simple-1.7.30.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="SOA/SCA-INF/lib/java-unrar-1.7.0-3.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Java-unrar-1.7.0-3.jar"/>
+               <value n="id" v="Java-unrar-1.7.0-3.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="SOA/SCA-INF/lib/java-unrar-1.7.0-8.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Java-unrar-1.7.0-8.jar"/>
+               <value n="id" v="Java-unrar-1.7.0-8.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="SOA/SCA-INF/lib/commons-collections4-4.5.0-M1.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Commons-collections4-4.5.0-M1.jar"/>
+               <value n="id" v="Commons-collections4-4.5.0-M1.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="SOA/SCA-INF/lib/jcl-over-slf4j.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Jcl-over-slf4j.jar"/>
+               <value n="id" v="Jcl-over-slf4j.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+         </list>
+      </hash>
       <list n="libraryReferences">
          <hash>
             <value n="id" v="SOA Designtime"/>
@@ -302,6 +456,46 @@
             <value n="id" v="BC4J Service Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="TopLink"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle XML Parser v2"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons-io-2.5.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Junrar-7.5.5.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Slf4j-api-1.7.36.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Slf4j-simple-1.7.30.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Java-unrar-1.7.0-3.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Java-unrar-1.7.0-8.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons-collections4-4.5.0-M1.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Jcl-over-slf4j.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
@@ -311,14 +505,7 @@
       <hash n="sca-content">
          <list n="constituent-sets">
             <hash>
-               <list n="pattern-filters">
-                  <string v="+SbpelValidations.sbpel"/>
-                  <string v="+SbpelSenNotificationValidation.sbpel"/>
-                  <string v="+sbpelReleaseInvoicesAP.sbpel"/>
-                  <string v="+SbpelHoldInvoicesAP.sbpel"/>
-                  <string v="+SbpelDownloadAttachment.sbpel"/>
-                  <string v="+BPELValidationInvoicesBiz.bpel"/>
-               </list>
+               <list n="pattern-filters"/>
                <list n="url-path">
                   <url path="../ValidationInvoicesAPBiz/SOA/BPEL/"/>
                </list>
@@ -335,9 +522,16 @@
                </list>
             </hash>
          </list>
+         <list n="pattern-filters">
+            <string v="-SCA-INF/classes"/>
+            <string v="+**"/>
+         </list>
          <list n="url-path">
             <url path="SOA/"/>
          </list>
       </hash>
    </hash>
+   <value n="SCA_BPEL_FOLDER_PROPERTY_NAME" v="BPEL/"/>
+   <value n="SCA_MEDIATOR_FOLDER_PROPERTY_NAME" v="Mediators/"/>
+   <value n="SOA_TRANSFORMATION_FOLDER_NAME" v="Transformations/"/>
 </jpr:project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="http://xmlns.erpsol.com/core/esb/custom/zipManager/v1/">
+    <element name="Attachments">
+        <complexType>
+            <sequence>
+                <element name="Attachment"  maxOccurs="unbounded">        
+                         <complexType>
+                                                <attribute name="AttachmentType" type="string"/>
+                                                <attribute name="AttachmentContent" type="base64Binary"/>
+                                                <attribute name="FileName" type="string"/>
+                          </complexType>
+                </element>
+                <element name="Errors">
+                    <complexType>
+                        <sequence>
+                            <element name="Attachment" maxOccurs="unbounded">
+                                <complexType>
+                                    <attribute name="Status" type="string"/>
+                                    <attribute name="Details" type="base64Binary"/>
+                                    <attribute name="FileName" type="string"/>
+                                </complexType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

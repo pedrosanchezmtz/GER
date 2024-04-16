@@ -1,0 +1,103 @@
+<notificationTransactionsRequest xmlns="http://xmlns.erpsol.com/core/esb/bss/custom/notificationsManager/v1/">
+	<businessName>BSS_VALIDATE_INVOICES_PORTAL_SUPPLIERS</businessName>
+	<esbFlowId>120261</esbFlowId>
+	<transactions>
+		<transaction>
+			<subject>ErrorInvoice-CAB000818ES4 :: 120261</subject>
+			<emisor>ALMEX</emisor>
+			<receptor>CAB000818ES4</receptor>
+			<email>psanchez@erpsol.com.mx</email>
+			<group>error</group>
+			<attached>
+				<attachments>
+					<contentType>application/octet-stream</contentType>
+					<binaryDoc>TGEgZmFjdHVyYSBmYWxsbG8gdmFsaWRhbmRvOiAKRWwgUkZDIGRlbCBlbWlzb3Igbm8gY29pbmNpZGU=</binaryDoc>
+					<name>ErrorInvoice-PRUEBA CONSORCIO 1.txt</name>
+				</attachments>
+                                <attachments>
+					<contentType>application/octet-stream</contentType>
+					<binaryDoc>TGEgZmFjdHVyYSBmYWxsbG8gdmFsaWRhbmRvOiAKRWwgUkZDIGRlbCBlbWlzb3Igbm8gY29pbmNpZGU=</binaryDoc>
+					<name>ErrorInvoice-PRUEBA CONSORCIO 12.txt</name>
+				</attachments>
+			</attached>
+		</transaction>
+                <transaction>
+			<subject>ErrorInvoice-CAB000818ES4 :: 120261</subject>
+			<emisor>ALMEX</emisor>
+			<receptor>CAB000818ES4</receptor>
+			<email>psanchez@erpsol.com.mx</email>
+			<group>error</group>
+                        <compressName>Zip</compressName>
+			<attached>
+				<attachments>
+					<contentType>application/octet-stream</contentType>
+					<binaryDoc>TGEgZmFjdHVyYSBmYWxsbG8gdmFsaWRhbmRvOiAKRWwgUkZDIGRlbCBlbWlzb3Igbm8gY29pbmNpZGU=</binaryDoc>
+					<name>ErrorInvoice-PRUEBA CONSORCIO 1.txt</name>
+				</attachments>
+                                <attachments>
+					<contentType>application/octet-stream</contentType>
+					<binaryDoc>TGEgZmFjdHVyYSBmYWxsbG8gdmFsaWRhbmRvOiAKRWwgUkZDIGRlbCBlbWlzb3Igbm8gY29pbmNpZGU=</binaryDoc>
+					<name>ErrorInvoice-PRUEBA CONSORCIO 12.txt</name>
+				</attachments>
+			</attached>
+		</transaction>
+                <transaction>
+			<subject>ErrorInvoice-CAB000818ES4 :: 120261</subject>
+			<emisor>ALMEX</emisor>
+			<receptor>CAB000818ES4</receptor>
+			<email>psanchez@erpsol.com.mx</email>
+			<group>error</group>
+                        <compressName>Zip</compressName>
+			<attached>
+				<attachments>
+					<contentType>application/octet-stream</contentType>
+					<binaryDoc>TGEgZmFjdHVyYSBmYWxsbG8gdmFsaWRhbmRvOiAKRWwgUkZDIGRlbCBlbWlzb3Igbm8gY29pbmNpZGU=</binaryDoc>
+					<name>ErrorInvoice-PRUEBA CONSORCIO 3.txt</name>
+				</attachments>
+                                <attachments>
+					<contentType>application/octet-stream</contentType>
+					<binaryDoc>TGEgZmFjdHVyYSBmYWxsbG8gdmFsaWRhbmRvOiAKRWwgUkZDIGRlbCBlbWlzb3Igbm8gY29pbmNpZGU=</binaryDoc>
+					<name>ErrorInvoice-PRUEBA CONSORCIO 4.txt</name>
+				</attachments>
+			</attached>
+		</transaction>
+                <transaction>
+			<subject>ErrorInvoice-CAB000818ES4 :: 120261</subject>
+			<emisor>ALMEX</emisor>
+			<receptor>CAB000818ES4</receptor>
+			<email>psanchez@erpsol.com.mx</email>
+			<group>error</group>
+                        <compressName>Zip2</compressName>
+			<attached>
+				<attachments>
+					<contentType>application/octet-stream</contentType>
+					<binaryDoc>TGEgZmFjdHVyYSBmYWxsbG8gdmFsaWRhbmRvOiAKRWwgUkZDIGRlbCBlbWlzb3Igbm8gY29pbmNpZGU=</binaryDoc>
+					<name>ErrorInvoice-PRUEBA CONSORCIO 1.txt</name>
+				</attachments>
+                                <attachments>
+					<contentType>application/octet-stream</contentType>
+					<binaryDoc>TGEgZmFjdHVyYSBmYWxsbG8gdmFsaWRhbmRvOiAKRWwgUkZDIGRlbCBlbWlzb3Igbm8gY29pbmNpZGU=</binaryDoc>
+					<name>ErrorInvoice-PRUEBA CONSORCIO 12.txt</name>
+				</attachments>
+			</attached>
+		</transaction>
+                                <transaction>
+			<subject>ErrorInvoice-CAB000818ES4 :: 120261</subject>
+			<emisor>ALMEX</emisor>
+			<receptor>CAB000818ES4</receptor>
+			<email>psanchez@erpsol.com.mx</email>
+			<attached>
+				<attachments>
+					<contentType>application/octet-stream</contentType>
+					<binaryDoc>TGEgZmFjdHVyYSBmYWxsbG8gdmFsaWRhbmRvOiAKRWwgUkZDIGRlbCBlbWlzb3Igbm8gY29pbmNpZGU=</binaryDoc>
+					<name>ErrorInvoice-PRUEBA CONSORCIO 1.txt</name>
+				</attachments>
+                                <attachments>
+					<contentType>application/octet-stream</contentType>
+					<binaryDoc>TGEgZmFjdHVyYSBmYWxsbG8gdmFsaWRhbmRvOiAKRWwgUkZDIGRlbCBlbWlzb3Igbm8gY29pbmNpZGU=</binaryDoc>
+					<name>ErrorInvoice-PRUEBA CONSORCIO 12.txt</name>
+				</attachments>
+			</attached>
+		</transaction>
+	</transactions>
+</notificationTransactionsRequest>

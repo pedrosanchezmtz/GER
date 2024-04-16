@@ -1,0 +1,597 @@
+<Comprobante xmlns: xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi: noNamespaceSchemaLocation = "archivo: //cfdv33_pagos10.xsd" Versión = "atributo de prueba" Serie = "atributo de prueba" Folio = "atributo de prueba" Fecha = "atributo de prueba" Sello = "atributo de prueba" FormaPago = "atributo de prueba" NoCertificado = "atributo de prueba" Certificado = "atributo de prueba" CondicionesDePago = "atributo de prueba" SubTotal = "atributo de prueba" Descuento = "prueba atributo "Moneda =" atributo de prueba "TipoCambio =" atributo de prueba "Total =" atributo de prueba "TipoDeComprobante =" atributo de prueba "MetodoPago =" atributo de prueba "LugarExpedicion =" atributo de prueba "Confirmacion =" atributo de prueba ">
+	<CfdiRelacionados TipoRelacion = "atributo de prueba">
+		<CfdiRelacionado UUID = "atributo de prueba" />
+		<CfdiRelacionado UUID = "atributo de prueba" />
+	</CfdiRelacionados>
+	<CfdiRelacionados TipoRelacion = "atributo de prueba">
+		<CfdiRelacionado UUID = "atributo de prueba" / >
+			<CfdiRelacionado UUID = "atributo de prueba" />
+		</CfdiRelacionados>
+		<Emisor Rfc = "atributo de prueba" Nombre = "atributo de prueba" RegimenFiscal = "atributo de prueba" />
+		<Emisor Rfc = "atributo de prueba" Nombre = "atributo de prueba "RegimenFiscal =" atributo de prueba "/>
+		<Receptor Rfc =" atributo de prueba "Nombre =" atributo de prueba "ResidenciaFiscal =" atributo de prueba "NumRegIdTrib =" atributo de prueba "UsoCFDI =" atributo de prueba "/>
+		<Receptor Rfc = "atributo de prueba" Nombre = "atributo de prueba" ResidenciaFiscal = "atributo de prueba" NumRegIdTrib = "atributo de prueba" UsoCFDI = "atributo de prueba" />
+		<Conceptos>
+			<Concepto ClaveProdServ = "atributo de prueba" NoIdentificacion = "atributo de prueba" Cantidad = "atributo de prueba" ClaveUnidad = "atributo de prueba" Unidad = "atributo de prueba" Descripción = "atributo de prueba" ValorUnitario = "atributo de prueba" Importe = "atributo de prueba" Descuento = "atributo de prueba">
+				<Impuestos>
+					<Traslados>
+						< Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+						<Traslado Base = "atributo de prueba"Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+					</Traslados>
+					<Traslados>
+						<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = " atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+						<Traslado Base =" atributo de prueba "Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/ >
+						</Traslados>
+						<Retenciones>
+							<Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+							<Base de retención = "atributo de prueba"Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+						</Retenciones>
+						<Retenciones>
+							<Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = " atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+							<Retencion Base =" atributo de prueba "Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/ >
+							</Retenciones>
+						</Impuestos>
+						<Impuestos>
+							<Traslados>
+								<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+								<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+							</Traslados>
+							<Traslados>
+								<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+								<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+							</Traslados>
+							<Retenciones>
+								<Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+								<Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+							</Retenciones>
+							<Retenciones>
+								<Retencion> = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+									<Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+								</Retenciones>
+							</Impuestos>
+							<InformacionAduanera NumeroPedimento = "atributo de prueba" />
+							<InformacionAduanera NumeroPedimento = "atributo de prueba" />
+							<CuentaPredial Numero = "atributo de prueba"/>
+							<CuentaPredial Numero = "atributo de prueba" />
+							<ComplementoConcepto />
+							<ComplementoConcepto />
+							<Parte ClaveProdServ = "atributo de prueba" NoIdentificacion = "atributo de prueba" Cantidad = "atributo de prueba" Unidad = "atributo de prueba" Descripcion = "prueba atributo "ValorUnitario =" atributo de prueba "Importe =" atributo de prueba ">
+								<InformacionAduanera NumeroPedimento =" atributo de prueba "/>
+								<InformacionAduanera NumeroPedimento =" atributo de prueba "/>
+							</Parte>
+							<Parte ClaveProdServ =" atributo de prueba "NoIdentificacion =" atributo de prueba "Cantidad =" atributo de prueba "Unidad =" atributo de prueba "Descripción =" atributo de prueba "ValorUnitario =" atributo de prueba "Importe =" atributo de prueba ">
+								<InformacionAduanera NumeroPedimento = "atributo de prueba" />
+								<InformacionAduanera NumeroPedimento = "atributo de prueba" />
+							</Parte>
+						</Concepto>
+						<Concepto ClaveProdServ = "atributo de prueba" NoIdentificacion = "atributo de prueba" Cantidad = "atributo de prueba" ClaveUnidad = " atributo de prueba "Unidad =" atributo de prueba "Descripcion =" atributo de prueba "ValorUnitario =" atributo de prueba "Importe =" atributo de prueba "Descuento =" atributo de prueba ">
+							<Impuestos>
+								<Traslados>
+									<Traslado Base =" atributo de prueba "Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+									<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+								</Traslados>
+								<Traslados>
+									<Traslado Base =" atributo de prueba "Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba " Importe = "atributo de prueba" />
+									<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+								</Traslados>
+								<Retenciones>
+									< Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+									<Base de retención = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+								</Retenciones>
+								<Retenciones>
+									<Retencion Base =" atributo de prueba "Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba " Importe = "atributo de prueba" />
+									<Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+								</Retenciones>
+							</Impuestos>
+							<Impuestos>
+								<Traslados>
+									<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+									<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+								</Traslados>
+								<Traslados>
+									<Traslado Base =" atributo de prueba "Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba " TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+									<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+								</ Traslados>
+								<Retenciones>
+									<Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+									<Base de retención = "atributo de prueba" Impuesto = "atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+								</Retenciones>
+								<Retenciones>
+									<Retencion Base =" atributo de prueba "Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba " TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+									<Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+								</ Retenciones>
+							</Impuestos>
+							<InformacionAduanera NumeroPedimento = "atributo de prueba" />
+							<InformacionAduanera NumeroPedimento = "atributo de prueba" />
+							<CuentaPredial Numero = "atributo de prueba" />
+							<CuentaPredial Numero = "atributo de prueba"/>
+							<ComplementoConcepto />
+							<ComplementoConcepto />
+							<Parte ClaveProdServ = "atributo de prueba" NoIdentificacion = "atributo de prueba" Cantidad = "atributo de prueba" Unidad = "atributo de prueba" Descripción = "atributo de prueba" ValorUnitario = "atributo de prueba" Importe = "atributo de prueba">
+								<InformacionAduanera NumeroPedimento = "atributo de prueba" />
+								<InformacionAduanera NumeroPedimento = "atributo de prueba" />
+							</Parte>
+							<Parte ClaveProdServ = "atributo de prueba" NoIdentificacion = "atributo de prueba" Cantidad = "atributo de prueba" Unidad = = "atributo de prueba" Descripción = "atributo de prueba" ValorUnitario = "atributo de prueba" Importe = "atributo de prueba">
+								<InformacionAduanera NumeroPedimento = "atributo de prueba" />
+								<InformacionAduanera NumeroPedimento = "atributo de prueba" />
+							</Parte>
+						</Concepto>
+					</Conceptos>
+					<Conceptos>
+						<Concepto ClaveProdServ = "atributo de prueba" NoIdentificacion = "atributo de prueba" Cantidad = "atributo de prueba" ClaveUnidad = "atributo de prueba" Unidad = "atributo de prueba" Descripción = "atributo de prueba" ValorUnitario = "atributo de prueba" Importe = "atributo de prueba" Descuento = "atributo de prueba">
+							<Impuestos>
+								<Traslados>
+									<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+									<Traslado Base =" atributo de prueba "Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+								</Traslados>
+								<Traslados>
+									<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = " atributo de prueba "/>
+									<Traslado Base =" atributo de prueba "Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+								</Traslados>
+								<Retenciones>
+									<Base de retención = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+									<Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba"TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+								</Retenciones>
+								<Retenciones>
+									<Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = " atributo de prueba "/>
+									<Retencion Base =" atributo de prueba "Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+								</Retenciones>
+							</Impuestos>
+							<Impuestos>
+								<Traslados>
+									<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+									<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba "TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+								</Traslados>
+								<Traslados>
+									<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = " atributo de prueba "Importe =" atributo de prueba "/>
+									<Traslado Base =" atributo de prueba "Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+								</Traslados>
+								< Retenciones>
+									<Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+									<Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba"TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+								</Retenciones>
+								<Retenciones>
+									<Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = " atributo de prueba "Importe =" atributo de prueba "/>
+									<Retencion Base =" atributo de prueba "Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+								</Retenciones>
+								< / Impuestos>
+									<InformacionAduanera NumeroPedimento = "atributo de prueba" />
+									<InformacionAduanera NumeroPedimento = "atributo de prueba" />
+									<CuentaPredial Numero = "atributo de prueba" />
+									<CuentaPredial Numero = "atributo de prueba" />
+									<ComplementoConcepto />
+									<ComplementoConcepto />
+									<Parte ClaveProdServ = "atributo de prueba" NoIdentificacion = "atributo de prueba" Cantidad = "atributo de prueba" Unidad = "atributo de prueba" Descripcion = "atributo de prueba" ValorUnitario = "atributo de prueba" Importe = "atributo de prueba ">
+										<InformacionAduanera NumeroPedimento =" atributo de prueba "/>
+										<InformacionAduanera NumeroPedimento =" atributo de prueba "/>
+									</Parte>
+									<Parte ClaveProdServ =" atributo de prueba "NoIdentificacion =" atributo de prueba "Cantidad =" atributo de prueba "Unidad =" prueba atributo "Descripcion =" atributo de prueba "ValorUnitario =" atributo de prueba "Importe =" atributo de prueba ">
+										<InformacionAduanera NumeroPedimento =" atributo de prueba "/>
+										<InformacionAduanera NumeroPedimento = "atributo de prueba" />
+									</Parte>
+								</Concepto>
+								<Concepto ClaveProdServ = "atributo de prueba" NoIdentificacion = "atributo de prueba" Cantidad = "atributo de prueba" ClaveUnidad = "atributo de prueba" Unidad = "atributo de prueba" Descripción = "atributo de prueba" ValorUnitario = "atributo de prueba" Importe = "atributo de prueba" Descuento = "atributo de prueba">
+									<Impuestos>
+										<Traslados>
+											<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+											<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba"Importe = "atributo de prueba" />
+										</Traslados>
+										<Traslados>
+											<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+											< Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+										</Traslados>
+										<Retenciones>
+											<Retencion> = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+												<Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba"Importe = "atributo de prueba" />
+											</Retenciones>
+											<Retenciones>
+												<Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+												< Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+											</Retenciones>
+										</Impuestos>
+										<Impuestos>
+											<Traslados>
+												<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+												<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba "TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+											</Traslados>
+											<Traslados>
+												<Traslado Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = " atributo de prueba "/>
+												<Traslado Base =" atributo de prueba "Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+											</Traslados>
+											<Retenciones>
+												<Base de retención = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+												<Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba"TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+											</Retenciones>
+											<Retenciones>
+												<Retencion Base = "atributo de prueba" Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = " atributo de prueba "/>
+												<Retencion Base =" atributo de prueba "Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+											</Retenciones>
+										</Impuestos>
+										<InformacionAduanera NumeroPedimento = "atributo de prueba" />
+										<InformacionAduanera NumeroPedimento = "atributo de prueba" />
+										<CuentaPredial Numero = "atributo de prueba" />
+										<CuentaPredial Numero = "atributo de prueba" />
+										<ComplementoConcepto />
+										<ComplementoConcepto />
+										<Parte ClaveProdServ = "atributo de prueba" NoIdentificacion = "atributo de prueba" Cantidad = "atributo de prueba" Unidad = "atributo de prueba" Descripción = "atributo de prueba" ValorUnitario = "atributo de prueba" Importe = "atributo de prueba">
+											<InformacionAduanera NumeroPedimento = " atributo de prueba "/>
+											<InformacionAduanera NumeroPedimento =" atributo de prueba "/>
+										</Parte>
+										<Parte ClaveProdServ =" atributo de prueba "NoIdentificacion =" atributo de prueba "Cantidad =" atributo de prueba "Unidad =" atributo de prueba "Descripcion =" atributo de prueba "ValorUnitario =" atributo de prueba "Importe =" atributo de prueba ">
+											<InformacionAduanera NumeroPedimento =" atributo de prueba "/>
+											<InformacionAduanera NumeroPedimento =" atributo de prueba "/>
+										</Parte>
+									</Concepto>
+								</Conceptos>
+								<Impuestos TotalImpuestosRetenidos = "atributo de prueba" TotalImpuestosTrasladados = "atributo de prueba">
+									<Retenciones>
+										<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+										<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+									</Retenciones>
+									<Retenciones>
+										<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+										<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba "/>
+									</Retenciones>
+									<Traslados>
+										<Traslado Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+										<Traslado Impuesto =" atributo de prueba "TipoFactor ="atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+									</Traslados>
+									<Traslados>
+										<Traslado Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba " />
+										<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+									</Traslados>
+								</Impuestos>
+								<Impuestos TotalImpuestosRetenidos = "atributo de prueba" TotalImpuestosTrasladados = "prueba atributo ">
+									<Retenciones>
+										<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+										<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+									</Retenciones>
+									<Retenciones>
+										<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+										<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+									</Retenciones>
+									<Traslados>
+										<Traslado Impuesto = "atributo de prueba" TipoFactor = "prueba atributo "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+										<Traslado Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+									</Traslados>
+									<Traslados >
+										<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+										<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba "Importe =" atributo de prueba "/>
+									</Traslados>
+								</Impuestos>
+								<Complemento>
+									<Pagos Version =" atributo de prueba ">
+										<Pago FechaPago =" atributo de prueba "FormaDePagoP =" atributo de prueba "MonedaP =" atributo de prueba "TipoCambioP =" atributo de prueba "Monto =" atributo de prueba "NumOperacion =" atributo de prueba "RfcEmisorCtaOrd =" atributo de prueba "NomBancoOrdExt =" atributo de prueba "CtaOrdenante =" atributo de prueba "RfcEmisorCtaBen =" atributo de prueba "CtaBeneficiario =" atributo de prueba "TipoCadPago = "atributo de prueba" CertPago = "atributo de prueba" CadPago = "atributo de prueba" SelloPago = "atributo de prueba">
+											<DoctoRelacionado IdDocumento = "atributo de prueba" Serie = "atributo de prueba"Folio = "atributo de prueba" MonedaDR = "atributo de prueba" TipoCambioDR = "atributo de prueba" MetodoDePagoDR = "atributo de prueba" NumParcialidad = "atributo de prueba" ImpSaldoAnt = "atributo de prueba" ImpPagado = "atributo de prueba" ImpSaldoInsoluto = "atributo de prueba" />
+											<DoctoRelacionado IdDocumento = "atributo de prueba" Serie = "atributo de prueba" Folio = "atributo de prueba" MonedaDR = "atributo de prueba" TipoCambioDR = "atributo de prueba" MetodoDePagoDR = "atributo de prueba" NumParcialidad = "atributo de prueba" ImpSaldoAnt = "atributo de prueba" ImpPagado = "atributo de prueba" ImpSaldoInsoluto = "atributo de prueba" />
+											<Impuestos TotalImpuestosRetenidos = "atributo de prueba" TotalImpuestosTrasladados = "atributo de prueba">
+												<Retenciones>
+													<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+													<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+												</Retenciones>
+												<Retenciones>
+													<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+													<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+												</Retenciones>
+												<Traslados>
+													<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+													<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+												</Traslados>
+												<Traslados>
+													<Traslado Impuesto = "atributo de prueba "TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+													<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+												</ Traslados>
+											</Impuestos>
+											<Impuestos TotalImpuestosRetenidos = "atributo de prueba" TotalImpuestosTrasladados = "atributo de prueba">
+												<Retenciones>
+													<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+													<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+												</Retenciones>
+												<Retenciones>
+													<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+													<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+												</ Retenciones>
+												<Traslados>
+													<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+													<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+												</Traslados>
+												<Traslados>
+													<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+													<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+												</Traslados>
+											</Impuestos>
+										</Pago>
+										<Pago FechaPago = "atributo de prueba" FormaDePagoP = "atributo de prueba "MonedaP = "atributo de prueba" TipoCambioP = "atributo de prueba" Monto = "atributo de prueba" NumOperacion = "atributo de prueba" RfcEmisorCtaOrd = "atributo de prueba" NomBancoOrdExt = "atributo de prueba" CtaOrdenante = "atributo de prueba" RfcEmisorCtaBen = "atributo de prueba" CtaBeneficiario = "atributo de prueba" TipoCadPago = "atributo de prueba" CertPago = "atributo de prueba" CadPago = "atributo de prueba" SelloPago = "atributo de prueba">
+											<DoctoRelacionado IdDocumento = "atributo de prueba" Serie = "atributo de prueba" Folio = "atributo de prueba" MonedaDR = "atributo de prueba" TipoCambioDR = "atributo de prueba" MetodoDePagoDR = "atributo de prueba" NumParcialidad = "atributo de prueba" ImpSaldoAnt = "atributo de prueba" ImpPagado = "atributo de prueba "ImpSaldoInsoluto =" atributo de prueba "/>
+											<DoctoRelacionado IdDocumento =" atributo de prueba "Serie =" atributo de prueba "Folio =" atributo de prueba "MonedaDR =" atributo de prueba "TipoCambioDR =" atributo de prueba "MetodoDePagoDR =" atributo de prueba "NumParcialidad = "atributo de prueba" ImpSaldoAnt = "atributo de prueba" ImpPagado = "atributo de prueba" ImpSaldoInsoluto = "atributo de prueba" />
+											<Impuestos TotalImpuestosRetenidos = "atributo de prueba" TotalImpuestosTrasladados = "atributo de prueba">
+												<Retenciones>
+													<Retencion Impuesto = "atributo de prueba "Importe =" atributo de prueba "/>
+													<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+												</Retenciones>
+												<Retenciones>
+													<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+													<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+												</Retenciones>
+												<Traslados>
+													<Traslado Impuesto = "atributo de prueba" TipoFactor = "prueba atributo "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+													<Traslado Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+												</Traslados>
+												<Traslados >
+													<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+													<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba "Importe =" atributo de prueba "/>
+												</Traslados>
+											</Impuestos>
+											<Impuestos TotalImpuestosRetenidos =" atributo de prueba "TotalImpuestosTrasladados =" atributo de prueba ">
+												<Retenciones>
+													<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+													<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+												</Retenciones>
+												<Retenciones>
+													<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+													<Retencion Impuesto =" atributo de prueba " Importe = "atributo de prueba" />
+												</Retenciones>
+												<Traslados>
+													<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+													<Traslado Impuesto = "atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+												</Traslados>
+												<Traslados>
+													<Traslado Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba " Importe = "atributo de prueba" />
+													<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+												</Traslados>
+											</Impuestos>
+										</Pago>
+									</ Pagos>
+									<Versión Pagos = "atributo de prueba">
+										<Pago FechaPago = "atributo de prueba" FormaDePagoP = "atributo de prueba" MonedaP = "atributo de prueba" TipoCambioP = "atributo de prueba" Monto = "atributo de prueba" NumOperacion = "atributo de prueba"RfcEmisorCtaOrd = "atributo de prueba" NomBancoOrdExt = "atributo de prueba" CtaOrdenante = "atributo de prueba" RfcEmisorCtaBen = "atributo de prueba" CtaBeneficiario = "atributo de prueba" TipoCadPago = "atributo de prueba" CertPago = "atributo de prueba" CadPago = "atributo de prueba" SelloPago = "atributo de prueba">
+											<DoctoRelacionado IdDocumento = "atributo de prueba" Serie = "atributo de prueba" Folio = "atributo de prueba" MonedaDR = "atributo de prueba" TipoCambioDR = "atributo de prueba" MetodoDePagoDR = "atributo de prueba" NumParcialidad = "atributo de prueba" ImpSaldoAnt = "atributo de prueba" ImpPagado = "atributo de prueba" ImpSaldoInsoluto = "atributo de prueba" />
+											<DoctoRelacionado IdDocumento = "atributo de prueba" Serie = "atributo de prueba "Folio =" atributo de prueba "MonedaDR =" atributo de prueba "TipoCambioDR =" atributo de prueba "MetodoDePagoDR =" atributo de prueba "NumParcialidad =" atributo de prueba "ImpSaldoAnt =" atributo de prueba "ImpPagado =" atributo de prueba "ImpSaldoInsoluto =" atributo de prueba "/>
+											<Impuestos TotalImpuestosRetenidos =" atributo de prueba "TotalImpuestosTrasladados =" atributo de prueba ">
+												<Retenciones>
+													<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+													<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+												</Retenciones>
+												<Retenciones>
+													<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+													<Retencion Impuesto =" atributo de prueba "Importe ="atributo de prueba "/>
+												</Retenciones>
+												<Traslados>
+													<Traslado Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+													<Traslado Impuesto =" atributo de prueba "TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+												</Traslados>
+												<Traslados>
+													<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba "/>
+													<Traslado Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+												</Traslados>
+											</Impuestos>
+											<Impuestos TotalImpuestosRetenidos =" atributo de prueba "TotalImpuestosTrasladados = "atributo de prueba">
+												<Retenciones>
+													<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+													<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+												</Retenciones>
+												<Retenciones>
+													< Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+													<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+												</Retenciones>
+												<Traslados>
+													<Traslado Impuesto = "atributo de prueba" TipoFactor = "prueba atributo "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+													<Traslado Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+												</Traslados>
+												<Traslados>
+													<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+													<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+												</Traslados>
+											</Impuestos>
+										</Pago>
+										<Pago FechaPago = "atributo de prueba" FormaDePagoP = "atributo de prueba" MonedaP = "atributo de prueba" TipoCambioP = "atributo de prueba" Monto = "prueba atributo "NumOperacion =" atributo de prueba "RfcEmisorCtaOrd =" atributo de prueba "NomBancoOrdExt =" atributo de prueba "CtaOrdenante =" atributo de prueba "RfcEmisorCtaBen =" atributo de prueba "CtaBeneficiario =" atributo de prueba "TipoCadPago ="atributo de prueba "CertPago =" atributo de prueba "CadPago =" atributo de prueba "SelloPago =" atributo de prueba ">
+											<DoctoRelacionado IdDocumento =" atributo de prueba "Serie =" atributo de prueba "Folio =" atributo de prueba "MonedaDR =" atributo de prueba "TipoCambioDR = "atributo de prueba" MetodoDePagoDR = "atributo de prueba" NumParcialidad = "atributo de prueba" ImpSaldoAnt = "atributo de prueba" ImpPagado = "atributo de prueba" ImpSaldoInsoluto = "atributo de prueba" />
+											<DoctoRelacionado IdDocumento = "atributo de prueba" Serie = "atributo de prueba" Folio = "atributo de prueba" MonedaDR = "atributo de prueba" TipoCambioDR = "atributo de prueba" MetodoDePagoDR = "atributo de prueba" NumParcialidad = "atributo de prueba" ImpSaldoAnt = "atributo de prueba "ImpPagado =" atributo de prueba "ImpSaldoInsoluto =" atributo de prueba "/>
+											<Impuestos TotalImpuestosRetenidos =" atributo de prueba "TotalImpuestosTrasladados =" atributo de prueba ">
+												<Retenciones>
+													<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/ >
+														<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+													</Retenciones>
+													<Retenciones>
+														<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+														<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+													</Retenciones>
+													<Traslados>
+														<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+														<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+													</Traslados>
+													<Traslados>
+														<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+														<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+													</Traslados>
+												</Impuestos>
+												<Impuestos TotalImpuestosRetenidos = "atributo de prueba" TotalImpuestosTrasladados = "atributo de prueba">
+													<Retenciones>
+														<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+														<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba "/>
+													</Retenciones>
+													<Retenciones>
+														<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+														<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+													</Retenciones>
+													<Traslados >
+														<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+														<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+													</Traslados>
+													<Traslados>
+														<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+														<Traslado Impuesto = "atributo de prueba"TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+													</Traslados>
+												</Impuestos>
+											</Pago>
+										</Pagos>
+									</Complemento>
+									<Complemento>
+										<Pagos Version = "atributo de prueba ">
+											<Pago FechaPago =" atributo de prueba "FormaDePagoP =" atributo de prueba "MonedaP =" atributo de prueba "TipoCambioP =" atributo de prueba "Monto =" atributo de prueba "NumOperacion =" atributo de prueba "RfcEmisorCtaOrd =" atributo de prueba "NomBancoOrdExt =" prueba atributo "CtaOrdenante =" atributo de prueba "RfcEmisorCtaBen =" atributo de prueba "CtaBeneficiario =" atributo de prueba "TipoCadPago =" atributo de prueba "CertPago =" atributo de prueba "CadPago =" atributo de prueba "SelloPago =" atributo de prueba ">
+												<DoctoRelacionado IdDocumento = "atributo de prueba" Serie = "atributo de prueba" Folio = "atributo de prueba" MonedaDR = "atributo de prueba" TipoCambioDR = "atributo de prueba" MetodoDePagoDR = "atributo de prueba" NumParcialidad = "atributo de prueba" ImpSaldoAnt = "atributo de prueba" ImpPagado = "atributo de prueba" ImpSaldoInsoluto = "atributo de prueba" />
+												<DoctoRelacionado IdDocumento = "atributo de prueba" Serie = "atributo de prueba" Folio = "atributo de prueba" MonedaDR = "atributo de prueba" TipoCambioDR = "atributo de prueba" MetodoDePagoDR = "prueba atributo "NumParcialidad =" atributo de prueba "ImpSaldoAnt =" atributo de prueba "ImpPagado =" atributo de prueba "ImpSaldoInsoluto =" atributo de prueba "/>
+												<Impuestos TotalImpuestosRetenidos = "atributo de prueba" TotalImpuestosTrasladados = "atributo de prueba">
+													<Retenciones>
+														<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+														<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+														< / Retenciones>
+															<Retenciones>
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+															</Retenciones>
+															<Traslados>
+																<Traslado Impuesto = " atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+																<Traslado Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe = "atributo de prueba" />
+															</Traslados>
+															<Traslados>
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+																<Traslado Impuesto = "atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+															</Traslados>
+														</Impuestos>
+														<Impuestos TotalImpuestosRetenidos =" atributo de prueba "TotalImpuestosTrasladados =" atributo de prueba ">
+															<Retenciones>
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+															</Retenciones>
+															<Retenciones>
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba "/>
+																<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+															</Retenciones>
+															<Traslados>
+																<Traslado Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe = "atributo de prueba" />
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+															</Traslados>
+															<Traslados>
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+															</ Traslados >
+														</Impuestos>
+													</Pago>
+													<Pago FechaPago = "atributo de prueba" FormaDePagoP = "atributo de prueba" MonedaP = "atributo de prueba" TipoCambioP = "atributo de prueba" Monto = "atributo de prueba" NumOperacion = "atributo de prueba" RfcEmisorCtaOrd = "prueba atributo "NomBancoOrdExt =" atributo de prueba "CtaOrdenante =" atributo de prueba "RfcEmisorCtaBen =" atributo de prueba "CtaBeneficiario =" atributo de prueba "TipoCadPago =" atributo de prueba "CertPago =" atributo de prueba "CadPago =" atributo de prueba "SelloPago =" atributo de prueba " >
+														<DoctoRelacionado IdDocumento = "atributo de prueba" Serie = "atributo de prueba" Folio = "atributo de prueba" MonedaDR = "atributo de prueba" TipoCambioDR = "atributo de prueba" MetodoDePagoDR = "atributo de prueba "NumParcialidad =" atributo de prueba "ImpSaldoAnt =" atributo de prueba "ImpPagado =" atributo de prueba "ImpSaldoInsoluto =" atributo de prueba "/>
+														<DoctoRelacionado IdDocumento =" atributo de prueba "Serie =" atributo de prueba "Folio =" atributo de prueba "MonedaDR = "atributo de prueba" TipoCambioDR = "atributo de prueba" MetodoDePagoDR = "atributo de prueba" NumParcialidad = "atributo de prueba" ImpSaldoAnt = "atributo de prueba" ImpPagado = "atributo de prueba" ImpSaldoInsoluto = "atributo de prueba" />
+														<Impuestos TotalImpuestosRetenidos = "atributo de prueba "TotalImpuestosTrasladados =" atributo de prueba ">
+															<Retenciones>
+																<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+																<Retencion Impuesto ="atributo de prueba "Importe =" atributo de prueba "/>
+															</Retenciones>
+															<Retenciones>
+																<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+																<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+															</Retenciones>
+															<Traslados>
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+															</Traslados>
+															<Traslados>
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+															</Traslados>
+														</Impuestos>
+														<Impuestos TotalImpuestosRetenidos = "atributo de prueba" TotalImpuestosTrasladados = "atributo de prueba">
+															<Retenciones>
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+															</Retenciones>
+															<Retenciones>
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+															</Retenciones>
+															<Traslados>
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba"TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+															</Traslados>
+															<Traslados>
+																< Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = " atributo de prueba "/>
+															</Traslados>
+														</Impuestos>
+													</Pago>
+												</Pagos>
+												<Pagos Version =" atributo de prueba ">
+													<Pago FechaPago =" atributo de prueba "FormaDePagoP =" atributo de prueba "MonedaP =" atributo de prueba " TipoCambioP = "atributo de prueba "Monto =" atributo de prueba "NumOperacion =" atributo de prueba "RfcEmisorCtaOrd =" atributo de prueba "NomBancoOrdExt =" atributo de prueba "CtaOrdenante =" atributo de prueba "RfcEmisorCtaBen =" atributo de prueba "CtaBeneficiario =" atributo de prueba "TipoCadPago =" atributo de prueba "CertPago =" atributo de prueba "CadPago =" atributo de prueba "SelloPago =" atributo de prueba ">
+														<DoctoRelacionado IdDocumento =" atributo de prueba "Serie =" atributo de prueba "Folio =" atributo de prueba "MonedaDR =" atributo de prueba "TipoCambioDR =" prueba atributo "MetodoDePagoDR =" atributo de prueba "NumParcialidad =" atributo de prueba "ImpSaldoAnt =" atributo de prueba "ImpPagado =" atributo de prueba "ImpSaldoInsoluto =" atributo de prueba "/>
+														<DoctoRelacionado IdDocumento = "atributo de prueba" Serie = "atributo de prueba" Folio = "atributo de prueba" MonedaDR = "atributo de prueba" TipoCambioDR = "atributo de prueba" MetodoDePagoDR = "atributo de prueba" NumParcialidad = "atributo de prueba" ImpSaldoAnt = "prueba atributo "ImpPagado =" atributo de prueba "ImpSaldoInsoluto =" atributo de prueba "/>
+														<Impuestos TotalImpuestosRetenidos =" atributo de prueba "TotalImpuestosTrasladados =" atributo de prueba ">
+															<Retenciones>
+																<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+															</Retenciones>
+															<Retenciones>
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba"/>
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+															</Retenciones>
+															<Traslados>
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba "/>
+																<Traslado Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+															</Traslados>
+															<Traslados>
+																<Traslado Impuesto =" atributo de prueba "TipoFactor =" prueba atributo "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+																<Traslado Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+															</Traslados>
+														</ Impuestos>
+														<Impuestos TotalImpuestosRetenidos = "atributo de prueba" TotalImpuestosTrasladados = "atributo de prueba">
+															<Retenciones>
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+															</Retenciones>
+															<Retenciones>
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+															</Retenciones>
+															<Traslados>
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba"Importe = "atributo de prueba" />
+															</Traslados>
+															<Traslados>
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+																<Traslado Impuesto = "atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+															</Traslados>
+														</Impuestos>
+													</Pago>
+													<Pago FechaPago =" atributo de prueba "FormaDePagoP =" atributo de prueba "MonedaP =" atributo de prueba "TipoCambioP =" atributo de prueba "Monto =" atributo de prueba "NumOperacion =" atributo de prueba "RfcEmisorCtaOrd =" atributo de prueba "NomBancoOrdExt =" atributo de prueba "CtaOrdenante =" atributo de prueba "RfcEmisorCtaBen =" atributo de prueba "CtaBeneficiario = "atributo de prueba" TipoCadPago = "atributo de prueba" CertPago = "atributo de prueba" CadPago = "atributo de prueba" SelloPago = "atributo de prueba">
+														<DoctoRelacionado IdDocumento = "atributo de prueba" Serie = "atributo de prueba" Folio = "atributo de prueba "MonedaDR =" atributo de prueba "TipoCambioDR =" atributo de prueba "MetodoDePagoDR =" atributo de prueba "NumParcialidad =" atributo de prueba "ImpSaldoAnt =" atributo de prueba "ImpPagado =" atributo de prueba "ImpSaldoInsoluto =" atributo de prueba "/>
+														<DoctoRelacionado IdDocumento =" atributo de prueba "Serie =" atributo de prueba "Folio =" atributo de prueba "MonedaDR =" atributo de prueba "TipoCambioDR =" atributo de prueba "MetodoDePagoDR =" atributo de prueba "NumParcialidad = "atributo de prueba" ImpSaldoAnt = "atributo de prueba" ImpPagado = "atributo de prueba" ImpSaldoInsoluto = "atributo de prueba" />
+														<Impuestos TotalImpuestosRetenidos = "atributo de prueba" TotalImpuestosTrasladados = "atributo de prueba">
+															<Retenciones>
+																<Retencion Impuesto = "prueba atributo "Importe =" atributo de prueba "/>
+																<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+															</Retenciones>
+															<Retenciones>
+																<Retencion Impuesto =" atributo de prueba "Importe =" atributo de prueba "/>
+																< Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+															</Retenciones>
+															<Traslados>
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba "Importe =" atributo de prueba "/>
+																<Traslado Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+															</Traslados>
+															<Traslados>
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+																<Traslado Impuesto = "atributo de prueba" TipoFactor = "atributo de prueba" TasaOCuota = "atributo de prueba" Importe = "atributo de prueba" />
+															</Traslados>
+														</Impuestos>
+														<Impuestos TotalImpuestosRetenidos = "atributo de prueba" TotalImpuestosTrasladados = "atributo de prueba">
+															<Retenciones>
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+															</Retenciones>
+															<Retenciones>
+																<Retencion Impuesto = "atributo de prueba" Importe = "atributo de prueba" />
+																<Retencion Impuesto = "atributo de prueba" Importe = "prueba atributo "/>
+															</Retenciones>
+															<Traslados>
+																<Traslado Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+																<Traslado Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+															</Traslados>
+															<Traslados>
+																<Traslado Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe ="atributo de prueba "/>
+																<Traslado Impuesto =" atributo de prueba "TipoFactor =" atributo de prueba "TasaOCuota =" atributo de prueba "Importe =" atributo de prueba "/>
+															</Traslados>
+														</Impuestos>
+													</Pago>
+												</Pagos>
+												< / Complemento>
+													<Addenda />
+													<Addenda />
+												</Comprobante>
+												

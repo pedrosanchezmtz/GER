@@ -1,0 +1,54 @@
+1.- Descargar jaxb-ri 2.2.11 descomprimirlo en C:
+
+2.- Renombrar la carpeta para acceder a ella más facilmente.
+
+	C:\jaxb
+
+3.- Agregar a las variables de entorno en la parte de
+    variables de sistema en el CLASSPATH la siguiente ruta:
+
+	;C:\jaxb\bin
+
+4.- Agregar a las variables de entorno en la parte de
+    variables de sistema en el PATH la siguiente ruta:
+
+	;C:\jaxb\bin
+
+5.- Descargar el xsd a convertir y guardarlo en una carpeta.
+
+
+6.- Dentro de esa carpeta crear un archivo bindinds.xjb
+    con el siguiente contenido: (Modifica el numero de enumeraciones )
+
+<?xml version="1.0" ?>
+<jaxb:bindings
+	version="1.0"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	schemaLocation="cfdv33.xsd">
+	<jaxb:bindings>
+		<jaxb:globalBindings typesafeEnumMaxMembers="100000" />
+	</jaxb:bindings>
+</jaxb:bindings>
+
+
+7.- Tambien dentro de esa carpeta crear una carpeta que contenga las clases a generar
+    lleve el nombre "src"
+
+
+8.- Abrir una terminal como administrador y desplazarse hasta la carpeta 
+    donde este guardado el xsd.
+
+9.- Ejecutar el siguiente comando:
+
+
+	xjc cfdv33.xsd -p mx.sat.cfd33 -b bindinds.xjb -d src\
+
+
+10.- Esperar a que se generen las clases sin ningun error.
+
+11.- Listo =)
+
+
+comando simple
+
+xjc notificationsManager.xsd -p pojoNotifications 

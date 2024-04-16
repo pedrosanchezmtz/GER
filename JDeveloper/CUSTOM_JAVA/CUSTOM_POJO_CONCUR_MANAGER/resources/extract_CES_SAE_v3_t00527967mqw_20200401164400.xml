@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AbstractConcur>
+    <AbstractConcurHeader Constant="EXTRACT" Batch_Date="13" Record_Count="2020-04-01" Journal_Amount_Hash_Total="10662.4700"/>
+    <Lines>
+        <Line>
+            <BatchData Constant="DETAIL" BatchID="1774" BatchDate="2020-04-01"/>
+            <EmployeeData EMPID="40015" LastName="ALCALA MARTIN" EmployeeOrgUnit1-Tipo="101" EmployeeOrgUnit2-Depto="000" EmployeeOrgUnit3="0000" EmployeeOrgUnit4="0104" EmployeeOrgUnit5="000" EmployeeOrgUnit6="000"/>
+            <ReportData/>
+            <EntryData/>
+            <CreditCardData/>
+            <EntryLocationData/>
+            <JournalEntryData PayerPayType="Company" PayeePayType="Employee" AccountCode="0101050301" DRCR="DR" JournalAmt="+500.0000"/>
+            <CarMileageData/>
+            <CashAdvanceData CACurrencyAlphaISO="MXN" CAKey="3205"/>
+            <AllocationData/>
+            <TravelAllowanceData/>
+            <VATTaxData/>
+            <AssignedTravelRequestData/>
+            <FutureUseSection/>
+            <ExpensePayData FutureUse="Viaje a Version Nueva1"/>
+            <EmployeeBankingData/>
+            <ReportEntryData/>
+            <RequestData/>
+        </Line>
+        <Line>
+            <BatchData Constant="DETAIL" BatchID="1774" BatchDate="2020-04-01"/>
+            <EmployeeData EMPID="40015" LastName="ALCALA MARTIN" EmployeeOrgUnit1-Tipo="101" EmployeeOrgUnit2-Depto="000" EmployeeOrgUnit3="0000" EmployeeOrgUnit4="0104" EmployeeOrgUnit5="000" EmployeeOrgUnit6="000"/>
+            <ReportData ReportKey="11674" ReportUserDefinedDate="2020-01-07" ReportTotalPostAmount="1733.8000"/>
+            <EntryData ExpenseType="Cuotas - Suscripciones" EntryTransactionDate="2020-01-03" SpendCurrencyAlphaISO="USD" CurrencyExchangeRate="19.0527" VendorDescription="GMEI utility" ReportEntryCustom7-RFC-TaxID="851532986B01" ReportEntryCustom8-Num.Factura="563857809197842570" ReportEntryCustom17="16" ReportEntryCustom35="NL" ReportEntryCustom40="1733.8000" EntryTransactionAmount="91.0000" EntryPostedAmount="1733.8000"/>
+            <CreditCardData/>
+            <EntryLocationData/>
+            <JournalEntryData PayerPayType="Company" PayeePayType="Amex" AccountCode="60609" DRCR="DR" JournalAmt="+1733.8000" JournalKey="7828608"/>
+            <CarMileageData/>
+            <CashAdvanceData CashAdvanceUtilizedAmount="0.0000"/>
+            <AllocationData FutureUse="1733.8000"/>
+            <TravelAllowanceData/>
+            <VATTaxData/>
+            <AssignedTravelRequestData/>
+            <FutureUseSection/>
+            <ExpensePayData/>
+            <EmployeeBankingData/>
+            <ReportEntryData/>
+            <RequestData/>
+        </Line>
+        <Line>
+            <BatchData Constant="DETAIL" BatchID="1774" BatchDate="2020-04-01"/>
+            <EmployeeData EMPID="40015" LastName="ALCALA MARTIN" EmployeeOrgUnit1-Tipo="101" EmployeeOrgUnit2-Depto="000" EmployeeOrgUnit3="0000" EmployeeOrgUnit4="0104" EmployeeOrgUnit5="000" EmployeeOrgUnit6="000"/>
+            <ReportData ReportKey="11792" ReportUserDefinedDate="2020-03-30" ReportTotalPostAmount="490.9800"/>
+            <EntryData ExpenseType="Taxis y Limusinas" EntryTransactionDate="2020-03-02" SpendCurrencyAlphaISO="MXN" CurrencyExchangeRate="1.0000" VendorDescription="RICARDO RAFAEL MACIAS RAMIREZ" ReportEntryCustom7-RFC-TaxID="MARR860223IT3" ReportEntryCustom8-Num.Factura="DCC32-0000196" ReportEntryCustom17="16" ReportEntryCustom35="MX" ReportEntryCustom40="289.6400" EntryTransactionAmount="335.9800" EntryPostedAmount="335.9800"/>
+            <CreditCardData/>
+            <EntryLocationData/>
+            <JournalEntryData PayerPayType="MXIVA" PayeePayType="Company" AccountCode="12245" DRCR="CR" JournalAmt="+46.3400" JournalKey="7828606"/>
+            <CarMileageData/>
+            <CashAdvanceData CashAdvanceUtilizedAmount="0.0000"/>
+            <AllocationData/>
+            <TravelAllowanceData FutureUse-RESforBankAccount="46.3400"/>
+            <VATTaxData Taxlabel="MXIVA" Taxtransactionamount="46.3400"/>
+            <AssignedTravelRequestData/>
+            <FutureUseSection/>
+            <ExpensePayData/>
+            <EmployeeBankingData/>
+            <ReportEntryData UUID="CB63AF63-19F5-40BE-B287-F256BA0B7081"/>
+            <RequestData/>
+        </Line>
+        <Line>
+            <BatchData Constant="DETAIL" BatchID="1774" BatchDate="2020-04-01"/>
+            <EmployeeData EMPID="40015" LastName="ALCALA MARTIN" EmployeeOrgUnit1-Tipo="101" EmployeeOrgUnit2-Depto="000" EmployeeOrgUnit3="0000" EmployeeOrgUnit4="0104" EmployeeOrgUnit5="000" EmployeeOrgUnit6="000"/>
+            <ReportData ReportKey="11792" ReportUserDefinedDate="2020-03-30" ReportTotalPostAmount="490.9800"/>
+            <EntryData ExpenseType="Taxis y Limusinas" EntryTransactionDate="2020-03-02" SpendCurrencyAlphaISO="MXN" CurrencyExchangeRate="1.0000" VendorDescription="RICARDO RAFAEL MACIAS RAMIREZ" ReportEntryCustom7-RFC-TaxID="MARR860223IT3" ReportEntryCustom8-Num.Factura="DCC32-0000196" ReportEntryCustom17="16" ReportEntryCustom35="MX" ReportEntryCustom40="289.6400" EntryTransactionAmount="335.9800" EntryPostedAmount="335.9800"/>
+            <CreditCardData/>
+            <EntryLocationData/>
+            <JournalEntryData PayerPayType="Company" PayeePayType="Employee" AccountCode="0801030206" DRCR="DR" JournalAmt="+335.9800" JournalKey="7828606"/>
+            <CarMileageData/>
+            <CashAdvanceData CashAdvanceUtilizedAmount="0.0000"/>
+            <AllocationData FutureUse="289.6400"/>
+            <TravelAllowanceData FutureUse-RESforBankAccount="46.3400"/>
+            <VATTaxData/>
+            <AssignedTravelRequestData/>
+            <FutureUseSection/>
+            <ExpensePayData/>
+            <EmployeeBankingData/>
+            <ReportEntryData UUID="CB63AF63-19F5-40BE-B287-F256BA0B7081"/>
+            <RequestData/>
+        </Line>
+        <Line>
+            <BatchData Constant="DETAIL" BatchID="1774" BatchDate="2020-04-01"/>
+            <EmployeeData EMPID="40015" LastName="ALCALA MARTIN" EmployeeOrgUnit1-Tipo="101" EmployeeOrgUnit2-Depto="000" EmployeeOrgUnit3="0000" EmployeeOrgUnit4="0104" EmployeeOrgUnit5="000" EmployeeOrgUnit6="000"/>
+            <ReportData ReportKey="11792" ReportUserDefinedDate="2020-03-30" ReportTotalPostAmount="490.9800"/>
+            <EntryData ExpenseType="Taxis - No Deducibles (sin CFD/XML) sin comprobante" EntryTransactionDate="2020-03-02" SpendCurrencyAlphaISO="MXN" CurrencyExchangeRate="1.0000" VendorDescription="Taxi verde" ReportEntryCustom35="MX" ReportEntryCustom40="155.0000" EntryTransactionAmount="155.0000" EntryPostedAmount="155.0000"/>
+            <CreditCardData/>
+            <EntryLocationData/>
+            <JournalEntryData PayerPayType="Company" PayeePayType="Employee" AccountCode="0801070302" DRCR="DR" JournalAmt="+155.0000" JournalKey="7828607"/>
+            <CarMileageData/>
+            <CashAdvanceData CashAdvanceUtilizedAmount="0.0000"/>
+            <AllocationData FutureUse="155.0000"/>
+            <TravelAllowanceData/>
+            <VATTaxData/>
+            <AssignedTravelRequestData/>
+            <FutureUseSection/>
+            <ExpensePayData/>
+            <EmployeeBankingData/>
+            <ReportEntryData/>
+            <RequestData/>
+        </Line>
+        <Line>
+            <BatchData Constant="DETAIL" BatchID="1774" BatchDate="2020-04-01"/>
+            <EmployeeData EMPID="40015" LastName="ALCALA MARTIN" EmployeeOrgUnit1-Tipo="101" EmployeeOrgUnit2-Depto="000" EmployeeOrgUnit3="0000" EmployeeOrgUnit4="0104" EmployeeOrgUnit5="000" EmployeeOrgUnit6="000"/>
+            <ReportData ReportKey="11794" ReportUserDefinedDate="2020-03-30" ReportTotalPostAmount="180.1900"/>
+            <EntryData ExpenseType="Autob?s" EntryTransactionDate="2020-02-10" SpendCurrencyAlphaISO="MXN" CurrencyExchangeRate="1.0000" VendorDescription="GBT TRAVEL SERVICES MEXICO S. DE R.L. DE C.V." ReportEntryCustom7-RFC-TaxID="GTS131114AL9" ReportEntryCustom8-Num.Factura="SF1406981" ReportEntryCustom17="16" ReportEntryCustom35="MX" ReportEntryCustom40="155.3400" EntryTransactionAmount="180.1900" EntryPostedAmount="180.1900"/>
+            <CreditCardData/>
+            <EntryLocationData/>
+            <JournalEntryData PayerPayType="MXIVA" PayeePayType="Company" AccountCode="12245" DRCR="CR" JournalAmt="+24.8500" JournalKey="7828605"/>
+            <CarMileageData/>
+            <CashAdvanceData CashAdvanceUtilizedAmount="0.0000"/>
+            <AllocationData/>
+            <TravelAllowanceData FutureUse-RESforBankAccount="24.8500"/>
+            <VATTaxData Taxlabel="MXIVA" Taxtransactionamount="24.8500"/>
+            <AssignedTravelRequestData/>
+            <FutureUseSection/>
+            <ExpensePayData/>
+            <EmployeeBankingData/>
+            <ReportEntryData UUID="2F2E151A-E7AE-411A-BDF5-FB1AEE05934C"/>
+            <RequestData/>
+        </Line>
+        <Line>
+            <BatchData Constant="DETAIL" BatchID="1774" BatchDate="2020-04-01"/>
+            <EmployeeData EMPID="40015" LastName="ALCALA MARTIN" EmployeeOrgUnit1-Tipo="101" EmployeeOrgUnit2-Depto="000" EmployeeOrgUnit3="0000" EmployeeOrgUnit4="0104" EmployeeOrgUnit5="000" EmployeeOrgUnit6="000"/>
+            <ReportData ReportKey="11794" ReportUserDefinedDate="2020-03-30" ReportTotalPostAmount="180.1900"/>
+            <EntryData ExpenseType="Autob?s" EntryTransactionDate="2020-02-10" SpendCurrencyAlphaISO="MXN" CurrencyExchangeRate="1.0000" VendorDescription="GBT TRAVEL SERVICES MEXICO S. DE R.L. DE C.V." ReportEntryCustom7-RFC-TaxID="GTS131114AL9" ReportEntryCustom8-Num.Factura="SF1406981" ReportEntryCustom17="16" ReportEntryCustom35="MX" ReportEntryCustom40="155.3400" EntryTransactionAmount="180.1900" EntryPostedAmount="180.1900"/>
+            <CreditCardData/>
+            <EntryLocationData/>
+            <JournalEntryData PayerPayType="Company" PayeePayType="Employee" AccountCode="0801030203" DRCR="DR" JournalAmt="+180.1900" JournalKey="7828605"/>
+            <CarMileageData/>
+            <CashAdvanceData CashAdvanceUtilizedAmount="0.0000"/>
+            <AllocationData FutureUse="155.3400"/>
+            <TravelAllowanceData FutureUse-RESforBankAccount="24.8500"/>
+            <VATTaxData/>
+            <AssignedTravelRequestData/>
+            <FutureUseSection/>
+            <ExpensePayData/>
+            <EmployeeBankingData/>
+            <ReportEntryData UUID="2F2E151A-E7AE-411A-BDF5-FB1AEE05934C"/>
+            <RequestData/>
+        </Line>
+        <Line>
+            <BatchData Constant="DETAIL" BatchID="1774" BatchDate="2020-04-01"/>
+            <EmployeeData EMPID="40015" LastName="ALCALA MARTIN" EmployeeOrgUnit1-Tipo="101" EmployeeOrgUnit2-Depto="000" EmployeeOrgUnit3="0000" EmployeeOrgUnit4="0104" EmployeeOrgUnit5="000" EmployeeOrgUnit6="000"/>
+            <ReportData ReportKey="11795" ReportUserDefinedDate="2020-03-31" ReportTotalPostAmount="7303.0000"/>
+            <EntryData ExpenseType="Boleto de Avi?n - Impuestos" EntryTransactionDate="2020-03-02" SpendCurrencyAlphaISO="MXN" CurrencyExchangeRate="1.0000" VendorDescription="AEROVIAS DE MEXICO SA DE CV" ReportEntryCustom7-RFC-TaxID="AME880912I89" ReportEntryCustom8-Num.Factura="F-1399591133235" ReportEntryCustom35="MX" ReportEntryCustom40="849.0000" EntryTransactionAmount="849.0000" EntryPostedAmount="849.0000"/>
+            <CreditCardData/>
+            <EntryLocationData/>
+            <JournalEntryData PayerPayType="Company" PayeePayType="Employee" AccountCode="0801030201" DRCR="DR" JournalAmt="+349.0000" JournalKey="7828600"/>
+            <CarMileageData/>
+            <CashAdvanceData CashAdvanceUtilizedAmount="500.0000"/>
+            <AllocationData FutureUse="349.0000"/>
+            <TravelAllowanceData/>
+            <VATTaxData/>
+            <AssignedTravelRequestData/>
+            <FutureUseSection/>
+            <ExpensePayData/>
+            <EmployeeBankingData/>
+            <ReportEntryData UUID="525FC687-E80E-41CD-B77F-AA47DC0C9C07"/>
+            <RequestData/>
+        </Line>
+        <Line>
+            <BatchData Constant="DETAIL" BatchID="1774" BatchDate="2020-04-01"/>
+            <EmployeeData EMPID="40015" LastName="ALCALA MARTIN" EmployeeOrgUnit1-Tipo="101" EmployeeOrgUnit2-Depto="000" EmployeeOrgUnit3="0000" EmployeeOrgUnit4="0104" EmployeeOrgUnit5="000" EmployeeOrgUnit6="000"/>
+            <ReportData ReportKey="11795" ReportUserDefinedDate="2020-03-31" ReportTotalPostAmount="7303.0000"/>
+            <EntryData ExpenseType="Boleto de Avi?n - Impuestos" EntryTransactionDate="2020-03-02" SpendCurrencyAlphaISO="MXN" CurrencyExchangeRate="1.0000" VendorDescription="AEROVIAS DE MEXICO SA DE CV" ReportEntryCustom7-RFC-TaxID="AME880912I89" ReportEntryCustom8-Num.Factura="F-1399591133235" ReportEntryCustom35="MX" ReportEntryCustom40="849.0000" EntryTransactionAmount="849.0000" EntryPostedAmount="849.0000"/>
+            <CreditCardData/>
+            <EntryLocationData/>
+            <JournalEntryData PayerPayType="Company" PayeePayType="Employee" AccountCode="0801030201" DRCR="DR" JournalAmt="+500.0000" JournalKey="7828603"/>
+            <CarMileageData/>
+            <CashAdvanceData CashAdvanceUtilizedAmount="500.0000"/>
+            <AllocationData FutureUse="500.0000"/>
+            <TravelAllowanceData/>
+            <VATTaxData/>
+            <AssignedTravelRequestData/>
+            <FutureUseSection/>
+            <ExpensePayData/>
+            <EmployeeBankingData/>
+            <ReportEntryData UUID="525FC687-E80E-41CD-B77F-AA47DC0C9C07"/>
+            <RequestData/>
+        </Line>
+        <Line>
+            <BatchData Constant="DETAIL" BatchID="1774" BatchDate="2020-04-01"/>
+            <EmployeeData EMPID="40015" LastName="ALCALA MARTIN" EmployeeOrgUnit1-Tipo="101" EmployeeOrgUnit2-Depto="000" EmployeeOrgUnit3="0000" EmployeeOrgUnit4="0104" EmployeeOrgUnit5="000" EmployeeOrgUnit6="000"/>
+            <ReportData ReportKey="11795" ReportUserDefinedDate="2020-03-31" ReportTotalPostAmount="7303.0000"/>
+            <EntryData ExpenseType="Boleto de Avi?n - Impuestos" EntryTransactionDate="2020-03-02" SpendCurrencyAlphaISO="MXN" CurrencyExchangeRate="1.0000" VendorDescription="AEROVIAS DE MEXICO SA DE CV" ReportEntryCustom7-RFC-TaxID="AME880912I89" ReportEntryCustom8-Num.Factura="F-1399591133235" ReportEntryCustom35="MX" ReportEntryCustom40="849.0000" EntryTransactionAmount="849.0000" EntryPostedAmount="849.0000"/>
+            <CreditCardData/>
+            <EntryLocationData/>
+            <JournalEntryData PayerPayType="Employee" PayeePayType="Company" AccountCode="0101050301" DRCR="CR" JournalAmt="-500.0000" JournalKey="7828604"/>
+            <CarMileageData/>
+            <CashAdvanceData CACurrencyAlphaISO="MXN" CAKey="3205" CashAdvanceUtilizedAmount="500.0000"/>
+            <AllocationData FutureUse="-500.0000"/>
+            <TravelAllowanceData/>
+            <VATTaxData/>
+            <AssignedTravelRequestData/>
+            <FutureUseSection/>
+            <ExpensePayData FutureUse="Viaje a Version Nueva1"/>
+            <EmployeeBankingData/>
+            <ReportEntryData UUID="525FC687-E80E-41CD-B77F-AA47DC0C9C07"/>
+            <RequestData/>
+        </Line>
+        <Line>
+            <BatchData Constant="DETAIL" BatchID="1774" BatchDate="2020-04-01"/>
+            <EmployeeData EMPID="40015" LastName="ALCALA MARTIN" EmployeeOrgUnit1-Tipo="101" EmployeeOrgUnit2-Depto="000" EmployeeOrgUnit3="0000" EmployeeOrgUnit4="0104" EmployeeOrgUnit5="000" EmployeeOrgUnit6="000"/>
+            <ReportData ReportKey="11795" ReportUserDefinedDate="2020-03-31" ReportTotalPostAmount="7303.0000"/>
+            <EntryData ExpenseType="Boleto de Avi?n" EntryTransactionDate="2020-03-02" SpendCurrencyAlphaISO="MXN" CurrencyExchangeRate="1.0000" VendorDescription="AEROVIAS DE MEXICO SA DE CV" ReportEntryCustom7-RFC-TaxID="AME880912I89" ReportEntryCustom8-Num.Factura="F-1399591133235" ReportEntryCustom17="16" ReportEntryCustom35="MX" ReportEntryCustom40="5520.6900" EntryTransactionAmount="6404.0000" EntryPostedAmount="6404.0000"/>
+            <CreditCardData/>
+            <EntryLocationData/>
+            <JournalEntryData PayerPayType="MXIVA" PayeePayType="Company" AccountCode="12245" DRCR="CR" JournalAmt="+883.3100" JournalKey="7828601"/>
+            <CarMileageData/>
+            <CashAdvanceData CashAdvanceUtilizedAmount="500.0000"/>
+            <AllocationData/>
+            <TravelAllowanceData FutureUse-RESforBankAccount="883.3100"/>
+            <VATTaxData Taxlabel="MXIVA" Taxtransactionamount="883.3100"/>
+            <AssignedTravelRequestData/>
+            <FutureUseSection/>
+            <ExpensePayData/>
+            <EmployeeBankingData/>
+            <ReportEntryData UUID="525FC687-E80E-41CD-B77F-AA47DC0C9C07"/>
+            <RequestData/>
+        </Line>
+        <Line>
+            <BatchData Constant="DETAIL" BatchID="1774" BatchDate="2020-04-01"/>
+            <EmployeeData EMPID="40015" LastName="ALCALA MARTIN" EmployeeOrgUnit1-Tipo="101" EmployeeOrgUnit2-Depto="000" EmployeeOrgUnit3="0000" EmployeeOrgUnit4="0104" EmployeeOrgUnit5="000" EmployeeOrgUnit6="000"/>
+            <ReportData ReportKey="11795" ReportUserDefinedDate="2020-03-31" ReportTotalPostAmount="7303.0000"/>
+            <EntryData ExpenseType="Boleto de Avi?n" EntryTransactionDate="2020-03-02" SpendCurrencyAlphaISO="MXN" CurrencyExchangeRate="1.0000" VendorDescription="AEROVIAS DE MEXICO SA DE CV" ReportEntryCustom7-RFC-TaxID="AME880912I89" ReportEntryCustom8-Num.Factura="F-1399591133235" ReportEntryCustom17="16" ReportEntryCustom35="MX" ReportEntryCustom40="5520.6900" EntryTransactionAmount="6404.0000" EntryPostedAmount="6404.0000"/>
+            <CreditCardData/>
+            <EntryLocationData/>
+            <JournalEntryData PayerPayType="Company" PayeePayType="Employee" AccountCode="0801030201" DRCR="DR" JournalAmt="+6404.0000" JournalKey="7828601"/>
+            <CarMileageData/>
+            <CashAdvanceData CashAdvanceUtilizedAmount="500.0000"/>
+            <AllocationData FutureUse="5520.6900"/>
+            <TravelAllowanceData FutureUse-RESforBankAccount="883.3100"/>
+            <VATTaxData/>
+            <AssignedTravelRequestData/>
+            <FutureUseSection/>
+            <ExpensePayData/>
+            <EmployeeBankingData/>
+            <ReportEntryData UUID="525FC687-E80E-41CD-B77F-AA47DC0C9C07"/>
+            <RequestData/>
+        </Line>
+        <Line>
+            <BatchData Constant="DETAIL" BatchID="1774" BatchDate="2020-04-01"/>
+            <EmployeeData EMPID="40015" LastName="ALCALA MARTIN" EmployeeOrgUnit1-Tipo="101" EmployeeOrgUnit2-Depto="000" EmployeeOrgUnit3="0000" EmployeeOrgUnit4="0104" EmployeeOrgUnit5="000" EmployeeOrgUnit6="000"/>
+            <ReportData ReportKey="11795" ReportUserDefinedDate="2020-03-31" ReportTotalPostAmount="7303.0000"/>
+            <EntryData ExpenseType="Devoluci?n Efectivo de Anticipo" EntryTransactionDate="2020-03-02" SpendCurrencyAlphaISO="MXN" CurrencyExchangeRate="1.0000" ReportEntryCustom35="MX" ReportEntryCustom40="50.0000" EntryTransactionAmount="50.0000" EntryPostedAmount="50.0000"/>
+            <CreditCardData/>
+            <EntryLocationData/>
+            <JournalEntryData PayerPayType="Company" PayeePayType="Employee" AccountCode="0101050301" DRCR="DR" JournalAmt="+50.0000" JournalKey="7828602"/>
+            <CarMileageData/>
+            <CashAdvanceData CashAdvanceUtilizedAmount="500.0000"/>
+            <AllocationData FutureUse="50.0000"/>
+            <TravelAllowanceData/>
+            <VATTaxData/>
+            <AssignedTravelRequestData/>
+            <FutureUseSection/>
+            <ExpensePayData/>
+            <EmployeeBankingData/>
+            <ReportEntryData/>
+            <RequestData/>
+        </Line>
+    </Lines>
+</AbstractConcur>

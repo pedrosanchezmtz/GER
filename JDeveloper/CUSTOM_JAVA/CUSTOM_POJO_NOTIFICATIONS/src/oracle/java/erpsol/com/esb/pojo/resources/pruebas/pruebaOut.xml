@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<notificationTransactionsRequest xmlns="http://xmlns.erpsol.com/core/esb/bss/custom/notificationsManager/v1/">
+    <transactions>
+        <transaction>
+            <subject>ErrorInvoice-CAB000818ES4 :: 120261</subject>
+            <emisor>ALMEX</emisor>
+            <receptor>CAB000818ES4</receptor>
+            <email>psanchez@erpsol.com.mx</email>
+            <attached>
+                <attachments>
+                    <name>Zip.zip</name>
+                    <contentType>application/octet-stream</contentType>
+                    <binaryDoc>UEsDBBQACAgIANdMWFEAAAAAAAAAAAAAAAAjAAAARXJyb3JJbnZvaWNlLVBSVUVCQSBDT05TT1JDSU8gMS50eHTzSVRIS0wuKS0C0Tk5OfkKZYk5mSmJeSn5VgpcrjkKQW7OCimpOQqpuZnF+UUKefkKyfmZecmZKakAUEsHCOs9ZiQ6AAAAOwAAAFBLAwQUAAgICADXTFhRAAAAAAAAAAAAAAAAJAAAAEVycm9ySW52b2ljZS1QUlVFQkEgQ09OU09SQ0lPIDEyLnR4dPNJVEhLTC4pLQLROTk5+QpliTmZKYl5KflWClyuOQpBbs4KKak5Cqm5mcX5RQp5+QrJ+Zl5yZkpqQBQSwcI6z1mJDoAAAA7AAAAUEsDBBQACAgIANdMWFEAAAAAAAAAAAAAAAAjAAAARXJyb3JJbnZvaWNlLVBSVUVCQSBDT05TT1JDSU8gMy50eHTzSVRIS0wuKS0C0Tk5OfkKZYk5mSmJeSn5VgpcrjkKQW7OCimpOQqpuZnF+UUKefkKyfmZecmZKakAUEsHCOs9ZiQ6AAAAOwAAAFBLAwQUAAgICADXTFhRAAAAAAAAAAAAAAAAIwAAAEVycm9ySW52b2ljZS1QUlVFQkEgQ09OU09SQ0lPIDQudHh080lUSEtMLiktAtE5OTn5CmWJOZkpiXkp+VYKXK45CkFuzgopqTkKqbmZxflFCnn5Csn5mXnJmSmpAFBLBwjrPWYkOgAAADsAAABQSwECFAAUAAgICADXTFhR6z1mJDoAAAA7AAAAIwAAAAAAAAAAAAAAAAAAAAAARXJyb3JJbnZvaWNlLVBSVUVCQSBDT05TT1JDSU8gMS50eHRQSwECFAAUAAgICADXTFhR6z1mJDoAAAA7AAAAJAAAAAAAAAAAAAAAAACLAAAARXJyb3JJbnZvaWNlLVBSVUVCQSBDT05TT1JDSU8gMTIudHh0UEsBAhQAFAAICAgA10xYUes9ZiQ6AAAAOwAAACMAAAAAAAAAAAAAAAAAFwEAAEVycm9ySW52b2ljZS1QUlVFQkEgQ09OU09SQ0lPIDMudHh0UEsBAhQAFAAICAgA10xYUes9ZiQ6AAAAOwAAACMAAAAAAAAAAAAAAAAAogEAAEVycm9ySW52b2ljZS1QUlVFQkEgQ09OU09SQ0lPIDQudHh0UEsFBgAAAAAEAAQARQEAAC0CAAAAAA==</binaryDoc>
+                </attachments>
+                <attachments>
+                    <name>Zip2.zip</name>
+                    <contentType>application/octet-stream</contentType>
+                    <binaryDoc>UEsDBBQACAgIANdMWFEAAAAAAAAAAAAAAAAjAAAARXJyb3JJbnZvaWNlLVBSVUVCQSBDT05TT1JDSU8gMS50eHTzSVRIS0wuKS0C0Tk5OfkKZYk5mSmJeSn5VgpcrjkKQW7OCimpOQqpuZnF+UUKefkKyfmZecmZKakAUEsHCOs9ZiQ6AAAAOwAAAFBLAwQUAAgICADXTFhRAAAAAAAAAAAAAAAAJAAAAEVycm9ySW52b2ljZS1QUlVFQkEgQ09OU09SQ0lPIDEyLnR4dPNJVEhLTC4pLQLROTk5+QpliTmZKYl5KflWClyuOQpBbs4KKak5Cqm5mcX5RQp5+QrJ+Zl5yZkpqQBQSwcI6z1mJDoAAAA7AAAAUEsBAhQAFAAICAgA10xYUes9ZiQ6AAAAOwAAACMAAAAAAAAAAAAAAAAAAAAAAEVycm9ySW52b2ljZS1QUlVFQkEgQ09OU09SQ0lPIDEudHh0UEsBAhQAFAAICAgA10xYUes9ZiQ6AAAAOwAAACQAAAAAAAAAAAAAAAAAiwAAAEVycm9ySW52b2ljZS1QUlVFQkEgQ09OU09SQ0lPIDEyLnR4dFBLBQYAAAAAAgACAKMAAAAXAQAAAAA=</binaryDoc>
+                </attachments>
+                <attachments>
+                    <name>ErrorInvoice-PRUEBA CONSORCIO 1.txt</name>
+                    <contentType>application/octet-stream</contentType>
+                    <binaryDoc>TGEgZmFjdHVyYSBmYWxsbG8gdmFsaWRhbmRvOiAKRWwgUkZDIGRlbCBlbWlzb3Igbm8gY29pbmNpZGU=</binaryDoc>
+                </attachments>
+                <attachments>
+                    <name>ErrorInvoice-PRUEBA CONSORCIO 12.txt</name>
+                    <contentType>application/octet-stream</contentType>
+                    <binaryDoc>TGEgZmFjdHVyYSBmYWxsbG8gdmFsaWRhbmRvOiAKRWwgUkZDIGRlbCBlbWlzb3Igbm8gY29pbmNpZGU=</binaryDoc>
+                </attachments>
+            </attached>
+        </transaction>
+        <transaction>
+            <subject>ErrorInvoice-CAB000818ES4 :: 120261</subject>
+            <emisor>ALMEX</emisor>
+            <receptor>CAB000818ES4</receptor>
+            <email>psanchez@erpsol.com.mx</email>
+            <attached>
+                <attachments>
+                    <name>ErrorInvoice-PRUEBA CONSORCIO 1.txt</name>
+                    <contentType>application/octet-stream</contentType>
+                    <binaryDoc>TGEgZmFjdHVyYSBmYWxsbG8gdmFsaWRhbmRvOiAKRWwgUkZDIGRlbCBlbWlzb3Igbm8gY29pbmNpZGU=</binaryDoc>
+                </attachments>
+                <attachments>
+                    <name>ErrorInvoice-PRUEBA CONSORCIO 12.txt</name>
+                    <contentType>application/octet-stream</contentType>
+                    <binaryDoc>TGEgZmFjdHVyYSBmYWxsbG8gdmFsaWRhbmRvOiAKRWwgUkZDIGRlbCBlbWlzb3Igbm8gY29pbmNpZGU=</binaryDoc>
+                </attachments>
+            </attached>
+        </transaction>
+    </transactions>
+    <details>
+        <status>Success</status>
+        <message>successful grouped transactions</message>
+    </details>
+</notificationTransactionsRequest>

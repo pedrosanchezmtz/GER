@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+     name="SOAUtilitiesTec"
+     targetNamespace="http://soa.estrellaroja.com.mx/SOAUtilitiesTec"
+     xmlns:tns="http://soa.estrellaroja.com.mx/SOAUtilitiesTec"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:ns0="http://soa.estrellaroja.com.mx/SOAUtilitiesTec"
+     xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+    >
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.estrellaroja.com.mx/SOAUtilitiesTec/types"
+             elementFormDefault="qualified">
+            <xsd:import namespace="http://soa.estrellaroja.com.mx/SOAUtilitiesTec" schemaLocation="../Schemas/SOAUtilitiesTec.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="GetDateByTimeZoneRq">
+        <wsdl:part name="GetDateByTimeZoneRq" element="tns:GetDateByTimeZoneRq"/>
+    </wsdl:message>
+    <wsdl:message name="GetDateByTimeZoneRs">
+        <wsdl:part name="GetDateByTimeZoneRs" element="tns:GetDateByTimeZoneRs"/>
+    </wsdl:message>
+    <wsdl:message name="GenerateZipFileRq">
+        <wsdl:part name="GenerateZipFileRq" element="tns:GenerateZipFileRq"/>
+    </wsdl:message>
+    <wsdl:message name="GenerateZipFileRs">
+        <wsdl:part name="GenerateZipFileRs" element="tns:GenerateZipFileRs"/>
+    </wsdl:message>
+    <wsdl:message name="DecompressFileRq">
+        <wsdl:part name="DecompressFileRq" element="tns:DecompressFileRq"/>
+    </wsdl:message>
+    <wsdl:message name="DecompressFileRs">
+        <wsdl:part name="DecompressFileRs" element="tns:DecompressFileRs"/>
+    </wsdl:message>
+    <wsdl:message name="NumberToLetterRq">
+        <wsdl:part name="NumberToLetterRq" element="tns:NumberToLetterRq"/>
+    </wsdl:message>
+    <wsdl:message name="NumberToLetterRs">
+        <wsdl:part name="NumberToLetterRs" element="tns:NumberToLetterRs"/>
+    </wsdl:message>
+    <wsdl:message name="DecodeRq">
+        <wsdl:part name="DecodeRq" element="tns:DecodeRq"/>
+    </wsdl:message>
+    <wsdl:message name="DecodeRs">
+        <wsdl:part name="DecodeRs" element="tns:DecodeRs"/>
+    </wsdl:message>
+    <wsdl:message name="EncodeRq">
+        <wsdl:part name="EncodeRq" element="tns:EncodeRq"/>
+    </wsdl:message>
+    <wsdl:message name="EncodeRs">
+        <wsdl:part name="EncodeRs" element="tns:EncodeRs"/>
+    </wsdl:message>
+    <wsdl:message name="EncodeFileBase64Rq">
+        <wsdl:part name="EncodeFileBase64Rq" element="tns:EncodeFileBase64Rq"/>
+    </wsdl:message>
+    <wsdl:message name="EncodeFileBase64Rs">
+        <wsdl:part name="EncodeFileBase64Rs" element="tns:EncodeFileBase64Rs"/>
+    </wsdl:message>
+    <wsdl:message name="GetHtmlControlRq">
+        <wsdl:part name="GetHtmlControlRq" element="tns:GetHtmlControlRq"/>
+    </wsdl:message>
+    <wsdl:message name="GetHtmlControlRs">
+        <wsdl:part name="GetHtmlControlRs" element="tns:GetHtmlControlRs"/>
+    </wsdl:message>
+    <wsdl:portType name="SOAUtilitiesTecPortType">
+        <wsdl:operation name="GetDateByTimeZone">
+            <wsdl:input message="tns:GetDateByTimeZoneRq"/>
+            <wsdl:output message="tns:GetDateByTimeZoneRs"/>
+        </wsdl:operation>
+        <wsdl:operation name="GenerateZipFile">
+            <wsdl:input message="tns:GenerateZipFileRq"/>
+            <wsdl:output message="tns:GenerateZipFileRs"/>
+        </wsdl:operation>
+        <wsdl:operation name="DecompressFile">
+            <wsdl:input message="tns:DecompressFileRq"/>
+            <wsdl:output message="tns:DecompressFileRs"/>
+        </wsdl:operation>
+        <wsdl:operation name="transformNumberToLetter">
+            <wsdl:input message="tns:NumberToLetterRq"/>
+            <wsdl:output message="tns:NumberToLetterRs"/>
+        </wsdl:operation>
+        <wsdl:operation name="Decode">
+            <wsdl:input message="tns:DecodeRq"/>
+            <wsdl:output message="tns:DecodeRs"/>
+        </wsdl:operation>
+        <wsdl:operation name="Encode">
+            <wsdl:input message="tns:EncodeRq"/>
+            <wsdl:output message="tns:EncodeRs"/>
+        </wsdl:operation>
+        <wsdl:operation name="EncodeFileBase64">
+            <wsdl:input message="tns:EncodeFileBase64Rq"/>
+            <wsdl:output message="tns:EncodeFileBase64Rs"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetHtmlControl">
+            <wsdl:input message="tns:GetHtmlControlRq"/>
+            <wsdl:output message="tns:GetHtmlControlRs"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SOAUtilitiesTecBinding" type="tns:SOAUtilitiesTecPortType">
+        <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="GetDateByTimeZone">
+            <soap12:operation soapAction="http://soa.estrellaroja.com.mx/SOAUtilitiesTec/GetDateByTimeZone"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="GetDateByTimeZoneRq"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="GetDateByTimeZoneRs"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GenerateZipFile">
+            <soap12:operation soapAction="http://soa.estrellaroja.com.mx/SOAUtilitiesTec/GenerateZipFile"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="GenerateZipFileRq"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="GenerateZipFileRs"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DecompressFile">
+            <soap12:operation soapAction="http://soa.estrellaroja.com.mx/SOAUtilitiesTec/DecompressFile"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="DecompressFileRq"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="DecompressFileRs"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="transformNumberToLetter">
+            <soap12:operation soapAction="http://soa.estrellaroja.com.mx/SOAUtilitiesTec/transformNumberToLetter"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="NumberToLetterRq"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="NumberToLetterRs"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Decode">
+            <soap12:operation soapAction="http://soa.estrellaroja.com.mx/SOAUtilitiesTec/Decode" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="DecodeRq"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="DecodeRs"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Encode">
+            <soap12:operation soapAction="http://soa.estrellaroja.com.mx/SOAUtilitiesTec/Encode" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="EncodeRq"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="EncodeRs"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EncodeFileBase64">
+            <soap12:operation soapAction="http://soa.estrellaroja.com.mx/SOAUtilitiesTec/EncodeFileBase64"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="EncodeFileBase64Rq"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="EncodeFileBase64Rs"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetHtmlControl">
+            <soap12:operation soapAction="http://soa.estrellaroja.com.mx/SOAUtilitiesTec/GetHtmlControl"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="GetHtmlControlRq"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="GetHtmlControlRs"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SOAUtilitiesTec">
+        <wsdl:port name="SOAUtilitiesTecPort" binding="tns:SOAUtilitiesTecBinding">
+            <soap12:address location="http://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073/soa-infra/services/Commons/SOAUtilitiesTec/SOAUtilitiesTec"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

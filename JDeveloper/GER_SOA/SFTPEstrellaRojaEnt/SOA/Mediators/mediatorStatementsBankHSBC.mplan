@@ -11,6 +11,10 @@
                <invoke reference="bpelManagementsStatementsBankHSBC.bpelmanagementsstatementsbankhsbc_client" operation="process"/>
             </action>
          </case>
+         <case executionType="sequential"
+               name="bpelManagementsStatementsBankBanregio.bpelmanagementsstatementsbankbanregio_client.process">
+            <action/>
+         </case>
       </switch>
    </operation>
 </Mediator>

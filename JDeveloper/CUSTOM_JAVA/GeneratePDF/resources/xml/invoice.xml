@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cfdi:Comprobante xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd" Version="3.3" Serie="FACENE" Folio="61020" Fecha="2019-10-10T00:00:00" FormaPago="99" SubTotal="57712.43" Moneda="MXN" TipoCambio="1" Total="66946.41" TipoDeComprobante="I" MetodoPago="PPD" LugarExpedicion="44660" xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" NoCertificado="30001000000400002464" Certificado="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" Sello="eQREdywbpj5j9pVres5sJJj8s8kpkQraTaFbQYoctFxJJbvHD55a1La39Zi4GIBja4FSJD3UmSlstVrAqQnT/Ae5hIRijxL4lfj9bCDRzIbSKw2qy/FPQOvj+0M69a5YQDCgGZCT+beZWrODf21vwr0flCpULYW5i+PlwC1ZwbQZOPm+5sPaEw6odZbxHfdtQI2LKt+M5YtKeGrwYWG/R98LmS+n4iWcUqqvHCfvaXK9DWI541d1BwFq1fg6j6Ar3bcto9CRuoQqECPB2qsS0jDGRTkvb5/de2qnBLeb3HKDb9PBKZXXch5ZtEdEvxT0S2YxfHNeDS013NBYNiZ+KQ==">
+	<cfdi:Emisor Rfc="OÑO120726RX3" Nombre="ENERSI SA DE CV" RegimenFiscal="601" />
+	<cfdi:Receptor Rfc="GGA030723741" Nombre="GG GAS SA DE CV" UsoCFDI="G01" />
+	<cfdi:Conceptos>
+		<cfdi:Concepto ClaveProdServ="15111510" Cantidad="2001.000000" ClaveUnidad="KGM" Unidad="KGM" Descripcion="GAS LP" ValorUnitario="6.65887" Importe="13324.4">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="13324.4" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="2131.9" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="15111510" Cantidad="6666.000000" ClaveUnidad="KGM" Unidad="KGM" Descripcion="GAS LP" ValorUnitario="6.65887" Importe="44388.03">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="44388.03" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="7102.08" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+	</cfdi:Conceptos>
+	<cfdi:Impuestos TotalImpuestosTrasladados="9233.98">
+		<cfdi:Traslados>
+			<cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="9233.98" />
+		</cfdi:Traslados>
+	</cfdi:Impuestos>
+	<cfdi:Complemento>
+		<tfd:TimbreFiscalDigital xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd" Version="1.1" UUID="7c65e055-7234-4d94-96f4-b179fd60646d" FechaTimbrado="2019-10-10T12:31:55" RfcProvCertif="AAA010101AAA" SelloCFD="eQREdywbpj5j9pVres5sJJj8s8kpkQraTaFbQYoctFxJJbvHD55a1La39Zi4GIBja4FSJD3UmSlstVrAqQnT/Ae5hIRijxL4lfj9bCDRzIbSKw2qy/FPQOvj+0M69a5YQDCgGZCT+beZWrODf21vwr0flCpULYW5i+PlwC1ZwbQZOPm+5sPaEw6odZbxHfdtQI2LKt+M5YtKeGrwYWG/R98LmS+n4iWcUqqvHCfvaXK9DWI541d1BwFq1fg6j6Ar3bcto9CRuoQqECPB2qsS0jDGRTkvb5/de2qnBLeb3HKDb9PBKZXXch5ZtEdEvxT0S2YxfHNeDS013NBYNiZ+KQ==" NoCertificadoSAT="20001000000300022323" SelloSAT="cZhOv550nbMVbrGkPZuTK58u4vCweb+5beFYMn693c9pbQL6YPPKrCwn0FyWFJev0oh8SnlvPvsD48L+oiLS+HGzaqyypsTPORhR/5Ag8igRoc7UucXA0VG4LtXnqc0xpVIy+TrS6EUQG/kAYuuxLswDbMAVlC3w32Oq9Iaz8TxI0wPHHi1VKP0poi1QQBIVKXGzyvdK1yPDg/X9iCLB13DnOoXUio3BswinE6cinCu0Kni8yaj9C05cXueePYkGJcbrlBiRiL9B0SqqlPIPX7UF13dpDdSuYDnflqHrUbezAAHkiLuxH5XGsSk+Kl6zzNLsnu8E5j1mNTS0HceGWQ==" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+	</cfdi:Complemento>
+</cfdi:Comprobante>

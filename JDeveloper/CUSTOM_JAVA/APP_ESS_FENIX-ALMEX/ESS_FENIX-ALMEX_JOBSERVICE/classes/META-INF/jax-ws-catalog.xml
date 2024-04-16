@@ -1,0 +1,4 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <system systemId="https://129.213.117.97/ess/esswebservice?WSDL#%7Bhttp%3A%2F%2Fxmlns.oracle.com%2Fscheduler%7DESSWebService"
+          uri="../com/oracle/xmlns/scheduler/ESSWebService.wsdl"/>
+</catalog>

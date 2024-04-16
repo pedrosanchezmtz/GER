@@ -1,5 +1,7 @@
 package mx.com.estrellaroja.cloud.utilities;
 
+import mx.com.estrellaroja.cloud.utilities.impl.types.DecompressFileRqType;
+import mx.com.estrellaroja.cloud.utilities.impl.types.DecompressFileRsType;
 import mx.com.estrellaroja.cloud.utilities.types.CreateZipFileRqType;
 import mx.com.estrellaroja.cloud.utilities.types.CreateZipFileRsType;
 import mx.com.estrellaroja.cloud.utilities.types.EncodeFileBase64RsType;
@@ -41,6 +43,17 @@ public interface SOAUtilities {
      * @return Retorna un tipo donde se tiene el resultado del archivo en base 64.
      */
     public CreateZipFileRsType createZipFile(CreateZipFileRqType createZipFileRqType);
+    
+    /**
+     * Crea un archivo  el servidor de weblogic y lo comprime, retorna el resultado en c&oacue;digo base 64
+     *
+     * @param fileNameZip           Nombre del archivo comprimido
+     * @param pathFileNameZip       Ruta del archivo a comprimir
+     * @param fileNameToCompress    Nombre del archivo origen
+     * @param pathFileNameToCompress    Ruta del archivo origen
+     * @return Retorna un tipo donde se tiene el resultado del archivo en base 64.
+     */
+    public DecompressFileRsType DecompressFile(DecompressFileRqType DecompressFileRq);
 
     /**
      * Crea un archivo  el servidor de weblogic y lo comprime, retorna el resultado en c&oacue;digo base 64

@@ -1,0 +1,2 @@
+-Dcustom.props.almex=C:\Users\marti\Desktop\ConfigAlmex.properties -Duser.country=MX -Dfile.encoding=UTF-8 -Duser.timezone=America/Mexico_City
+-Dcustom.props.esb=P:\Desarrollo\JDeveloper\ALMEX\ALMEX_JAVA\CUSTOM_POJO_CONCUR\resources\ConfigIntegrationw.properties
