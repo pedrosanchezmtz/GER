@@ -1,2 +1,33 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Faults/>
+<Faults>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>Mediators/MediatorReceiveFile.mplan</file>
+      <name>Mediators/MediatorReceiveFile.mplan</name>
+      <fix/>
+      <msg>La asignación de "{http://xmlns.oracle.com/pcbpel/adapter/opaque/}opaqueElement" de origen y de "{http://soa.estrellaroja.com.mx/SFTPBankEnt}File" de destino de QName distinto puede generar un XML no válido en función de XSD en caso de un nodo sin hojas. Verifíquelo manualmente si es necesario</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>Mediators/MediatorReceiveFile.mplan</file>
+      <name>Mediators/MediatorReceiveFile.mplan</name>
+      <fix/>
+      <msg>Asignación de la propiedad/constante "$in.property.jca.ftp.FileName" al elemento "$out.ProcessFileRq/ns1:ProcessFileRq/FileName". Asegúrese de que el destino es un nodo de hoja única, de lo contrario, el nodo sin hojas sólo contendrá valores de cadena que pueden generan un XML no válido en función del XSD.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>Mediators/MediatorReceiveFile.mplan</file>
+      <name>Mediators/MediatorReceiveFile.mplan</name>
+      <fix/>
+      <msg>Asignación de la propiedad/constante ""Pruebassdaew"" al elemento "$out.ProcessFileRq/ns1:ProcessFileRq/Path". Asegúrese de que el destino es un nodo de hoja única, de lo contrario, el nodo sin hojas sólo contendrá valores de cadena que pueden generan un XML no válido en función del XSD.</msg>
+   </Fault>
+</Faults>

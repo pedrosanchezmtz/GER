@@ -59,6 +59,7 @@
       <hash><url n="URL" path="PaymentComplementEnt/PaymentComplementEnt.jpr"/></hash>
       <hash><url n="URL" path="RecordUnitMetrics/RecordUnitMetrics.jpr"/></hash>
       <hash><url n="URL" path="RegisterAssetStatus/RegisterAssetStatus.jpr"/></hash>
+      <hash><url n="URL" path="SFTPBankEnt/SFTPBankEnt.jpr"/></hash>
       <hash><url n="URL" path="SFTPEstrellaRojaBiz/SFTPEstrellaRojaBiz.jpr"/></hash>
       <hash><url n="URL" path="SFTPEstrellaRojaEnt/SFTPEstrellaRojaEnt.jpr"/></hash>
       <hash><url n="URL" path="SFTPEstrellaRojaTec/SFTPEstrellaRojaTec.jpr"/></hash>

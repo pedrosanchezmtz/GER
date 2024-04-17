@@ -10,28 +10,28 @@
       <xsd:import namespace="http://soa.estrellaroja.com.mx/SFTPBankEnt" schemaLocation="SFTPBankEnt.xsd"/>
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="ReceiveFileRq">
-    <wsdl:part name="ReceiveFileRq" element="tns:ReceiveFileRq"/>
+  <wsdl:message name="ProcessFileRq">
+    <wsdl:part name="ProcessFileRq" element="tns:ProcessFileRq"/>
   </wsdl:message>
-  <wsdl:message name="ReceiveFileRs">
-    <wsdl:part name="ReceiveFileRs" element="tns:ReceiveFileRs"/>
+  <wsdl:message name="ProcessFileRs">
+    <wsdl:part name="ProcessFileRs" element="tns:ProcessFileRs"/>
   </wsdl:message>
   <wsdl:portType name="SFTPBankEntPort">
-    <wsdl:operation name="ReceiveFile">
-      <wsdl:input message="tns:ReceiveFileRq"/>
-      <wsdl:output message="tns:ReceiveFileRs"/>
+    <wsdl:operation name="ProcessFile">
+      <wsdl:input message="tns:ProcessFileRq"/>
+      <wsdl:output message="tns:ProcessFileRs"/>
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="SFTPBankEntBinding" type="tns:SFTPBankEntPort">
     <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="ReceiveFile">
-      <soap12:operation style="document" soapAction="http://soa.estrellarojacleyton.com.mx/SFTPBankEnt/ReceiveFile"
+    <wsdl:operation name="ProcessFile">
+      <soap12:operation style="document" soapAction="http://soa.estrellarojacleyton.com.mx/SFTPBankEnt/ProcessFile"
                         soapActionRequired="false"/>
       <wsdl:input>
-        <soap12:body use="literal" parts="ReceiveFileRq"/>
+        <soap12:body use="literal" parts="ProcessFileRq"/>
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" parts="ReceiveFileRs"/>
+        <soap12:body use="literal" parts="ProcessFileRs"/>
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
