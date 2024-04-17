@@ -4,9 +4,11 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="bpelproccessfile_client" x="0" y="187" side="left"/>
+      <partnerlink name="bpelproccessfile_client" x="0" y="227" side="left"/>
+      <partnerlink name="WsSftpTec" x="0" y="97" side="left"/>
+      <partnerlink name="WsSOAUtilitiesTec" x="0" y="284" side="left"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,915,429" show_swimlanes="true">
+   <graph_layout viewport="0,0,1510,929" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
    </graph_layout>

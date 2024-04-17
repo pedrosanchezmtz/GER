@@ -18,7 +18,18 @@
                xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
          xmlns:ui="http://xmlns.oracle.com/soa/designer"
          xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/ftp/GER_SOA/SFTPBankEnt/ReceiveFileSantanderEx"
-         xmlns:ns3="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+         xmlns:ns3="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"
+         xmlns:ns4="http://soa.estrellaroja.com.mx/SOAUtilitiesTec" xmlns:ns5="http://soa.estrellaroja.com.mx/SftpTec"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap">
 
   <!-- 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -35,6 +46,9 @@
       with the client role are automatically set using WS-Addressing.
     -->
     <partnerLink name="bpelproccessfile_client" partnerLinkType="ns1:BpelProccessFile" myRole="SFTPBankEntPort"/>
+    <partnerLink name="WsSOAUtilitiesTec" partnerLinkType="ns4:WsSOAUtilitiesTec"
+                 partnerRole="SOAUtilitiesTecPortType"/>
+    <partnerLink name="WsSftpTec" partnerLinkType="ns5:WsSftpTec" partnerRole="SftpTec_ptt"/>
   </partnerLinks>
 
   <!-- 
@@ -49,6 +63,8 @@
 
     <!-- Reference to the message that will be returned to the requester-->
     <variable name="outputVariable" messageType="ns1:ProcessFileRs"/>
+    <variable name="DecompressFileRq" messageType="ns4:DecompressFileRq"/>
+    <variable name="DecompressFileRs" messageType="ns4:DecompressFileRs"/>
   </variables>
 
   <!-- 
@@ -63,17 +79,25 @@
     <!-- Receive input from requestor. (Note: This maps to operation defined in BpelProccessFile.wsdl) -->
     <receive name="receiveInput" partnerLink="bpelproccessfile_client" portType="ns1:SFTPBankEntPort" operation="ProcessFile" variable="inputVariable" createInstance="yes"/>
     <assign name="Assign1">
-      <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+      <copy>
         <from>$inputVariable.ProcessFileRq/File</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.ProcessFileRs/Return/FileName/File</to>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$DecompressFileRq.DecompressFileRq/ns4:Attachments/ns4:AttachmentContent</to>
       </copy>
-      <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
+      <copy>
         <from>$inputVariable.ProcessFileRq/FileName</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.ProcessFileRs/Return/FileName/FileName</to>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$DecompressFileRq.DecompressFileRq/ns4:Attachments/ns4:FileName</to>
       </copy>
-      <copy ignoreMissingFromData="yes" bpelx:insertMissingToData="yes">
-        <from>$inputVariable.ProcessFileRq/Path</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.ProcessFileRs/Return/FileName/Path</to>
+    </assign>
+    <invoke name="WsDecompressFile" partnerLink="WsSOAUtilitiesTec" portType="ns4:SOAUtilitiesTecPortType"
+            operation="DecompressFile" bpelx:invokeAsDetail="no" inputVariable="DecompressFileRq"
+            outputVariable="DecompressFileRs"/>
+    <assign name="Transformation1">
+      <bpelx:annotation>
+        <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+      </bpelx:annotation>
+      <copy>
+        <from>ora:doXSLTransformForDoc("../Transformations/Trs_DescompressFileRs_to_OutputRs.xsl", $DecompressFileRs.DecompressFileRs)</from>
+        <to variable="outputVariable" part="ProcessFileRs"/>
       </copy>
     </assign>
     <!-- Generate reply to synchronous request -->

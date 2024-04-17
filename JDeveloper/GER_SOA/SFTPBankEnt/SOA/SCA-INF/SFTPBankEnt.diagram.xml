@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
     <dgm:gService name="ProccessFileService">
-        <dgm:body borderWidth="2" arcRad="20" X="21" Y="160" width="137" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="217" width="137" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="11" Y="153" width="156" height="98">
+        <dgm:shadow arcRad="20" X="11" Y="210" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:outputPort name="ProccessFileService" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/SFTPBankEnt#wsdl.interface(SFTPBankEntPort)"/>
@@ -15,11 +15,11 @@
         </dgm:operations>
     </dgm:gService>
     <dgm:gService name="ReceiveFileSantanderEx">
-        <dgm:body borderWidth="2" arcRad="20" X="21" Y="41" width="137" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="98" width="137" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="11" Y="34" width="156" height="98">
+        <dgm:shadow arcRad="20" X="11" Y="91" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:outputPort name="ReceiveFileSantanderEx" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/ftp/GER_SOA/SFTPBankEnt/ReceiveFileSantanderEx#wsdl.interface(ReceiveFile_ptt)"/>
@@ -28,25 +28,65 @@
             <dgm:item>ReceiveFile</dgm:item>
         </dgm:operations>
     </dgm:gService>
+    <dgm:gReference name="WsSOAUtilitiesTec">
+        <dgm:body borderWidth="2" arcRad="20" X="1134" Y="26" width="136" height="168">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1124" Y="19" width="156" height="182">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="WsSOAUtilitiesTec" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/SOAUtilitiesTec#wsdl.interface(SOAUtilitiesTecPortType)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>GetDateByTimeZone</dgm:item>
+            <dgm:item>GenerateZipFile</dgm:item>
+            <dgm:item>DecompressFile</dgm:item>
+            <dgm:item>transformNumberToLetter</dgm:item>
+            <dgm:item>Decode</dgm:item>
+            <dgm:item>Encode</dgm:item>
+            <dgm:item>EncodeFileBase64</dgm:item>
+            <dgm:item>GetHtmlControl</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="WsSftpTec">
+        <dgm:body borderWidth="2" arcRad="20" X="1134" Y="228" width="136" height="120">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1124" Y="221" width="156" height="134">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="WsSftpTec" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/SftpTec#wsdl.interface(SftpTec_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/direct_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>PutFileBancoER</dgm:item>
+            <dgm:item>PutFileER</dgm:item>
+            <dgm:item>GetFileER</dgm:item>
+            <dgm:item>GetListFilesER</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
     <dgm:gComponent name="BpelProccessFile">
-        <dgm:body borderWidth="2" arcRad="20" X="442" Y="111" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="820" Y="156" width="130" height="86">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="432" Y="104" width="150" height="77">
+        <dgm:shadow arcRad="20" X="810" Y="149" width="150" height="102">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="bpelproccessfile_client" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/SFTPBankEnt#wsdl.interface(SFTPBankEntPort)"/>
+        <dgm:outputPort name="WsSOAUtilitiesTec" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/SOAUtilitiesTec#wsdl.interface(SOAUtilitiesTecPortType)"/>
+        <dgm:outputPort name="WsSftpTec" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/SftpTec#wsdl.interface(SftpTec_ptt)"/>
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="MediatorProcessFile">
-        <dgm:body borderWidth="2" arcRad="20" X="229" Y="145" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="506" Y="202" width="130" height="61">
             <dgm:borderColor r="128" g="92" b="148"/>
             <dgm:lightBgColor r="208" g="169" b="227"/>
             <dgm:darkBgColor r="183" g="132" b="212"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="219" Y="138" width="150" height="77">
+        <dgm:shadow arcRad="20" X="496" Y="195" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="MediatorProcessFile" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://soa.estrellaroja.com.mx/SFTPBankEnt#wsdl.interface(SFTPBankEntPort)"/>
@@ -54,12 +94,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="MediatorReceiveFile">
-        <dgm:body borderWidth="2" arcRad="20" X="229" Y="26" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="506" Y="83" width="130" height="61">
             <dgm:borderColor r="128" g="92" b="148"/>
             <dgm:lightBgColor r="208" g="169" b="227"/>
             <dgm:darkBgColor r="183" g="132" b="212"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="219" Y="19" width="150" height="77">
+        <dgm:shadow arcRad="20" X="496" Y="76" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="MediatorReceiveFile" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/ftp/GER_SOA/SFTPBankEnt/ReceiveFileSantanderEx#wsdl.interface(ReceiveFile_ptt)"/>
@@ -67,26 +107,40 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gWireLink source="ProccessFileService" target="MediatorProcessFile/MediatorProcessFile" width="2">
-        <dgm:gSegment X1="168" Y1="170" X2="219" Y2="170"/>
+        <dgm:gSegment X1="168" Y1="227" X2="496" Y2="227"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="MediatorProcessFile/BpelProccessFile.bpelproccessfile_client" target="BpelProccessFile/bpelproccessfile_client" width="2">
-        <dgm:gSegment X1="369" Y1="170" X2="393" Y2="170"/>
-        <dgm:gSegment X1="393" Y1="170" X2="393" Y2="136"/>
-        <dgm:gSegment X1="393" Y1="136" X2="432" Y2="136"/>
+        <dgm:gSegment X1="646" Y1="227" X2="670" Y2="227"/>
+        <dgm:gSegment X1="670" Y1="227" X2="670" Y2="181"/>
+        <dgm:gSegment X1="670" Y1="181" X2="810" Y2="181"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="ReceiveFileSantanderEx" target="MediatorReceiveFile/MediatorReceiveFile" width="2">
-        <dgm:gSegment X1="168" Y1="51" X2="219" Y2="51"/>
+        <dgm:gSegment X1="168" Y1="108" X2="496" Y2="108"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="MediatorReceiveFile/BpelProccessFile.bpelproccessfile_client" target="BpelProccessFile/bpelproccessfile_client" width="2">
-        <dgm:gSegment X1="369" Y1="51" X2="408" Y2="51"/>
-        <dgm:gSegment X1="408" Y1="51" X2="408" Y2="136"/>
-        <dgm:gSegment X1="408" Y1="136" X2="432" Y2="136"/>
+        <dgm:gSegment X1="646" Y1="108" X2="685" Y2="108"/>
+        <dgm:gSegment X1="685" Y1="108" X2="685" Y2="181"/>
+        <dgm:gSegment X1="685" Y1="181" X2="810" Y2="181"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="BpelProccessFile/WsSOAUtilitiesTec" target="WsSOAUtilitiesTec" width="2">
+        <dgm:gSegment X1="960" Y1="181" X2="984" Y2="181"/>
+        <dgm:gSegment X1="984" Y1="181" X2="984" Y2="36"/>
+        <dgm:gSegment X1="984" Y1="36" X2="1124" Y2="36"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="BpelProccessFile/WsSftpTec" target="WsSftpTec" width="2">
+        <dgm:gSegment X1="960" Y1="206" X2="984" Y2="206"/>
+        <dgm:gSegment X1="984" Y1="206" X2="984" Y2="238"/>
+        <dgm:gSegment X1="984" Y1="238" X2="1124" Y2="238"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>

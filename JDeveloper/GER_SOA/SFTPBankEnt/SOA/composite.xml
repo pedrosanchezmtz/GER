@@ -17,6 +17,13 @@
           location="oramds:/apps/SOA/SFTPBankEnt/SFTPBankEnt.wsdl" importType="wsdl"/>
   <import namespace="http://soa.estrellaroja.com.mx/SFTPBankEnt" location="WSDLs/SFTPBankEntWrapper.wsdl"
           importType="wsdl"/>
+  <import namespace="http://soa.estrellaroja.com.mx/SOAUtilitiesTec"
+          location="oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl" importType="wsdl"/>
+  <import namespace="http://soa.estrellaroja.com.mx/SftpTec" location="oramds:/apps/OSB/SftpTec/SftpTec.wsdl"
+          importType="wsdl"/>
+  <import namespace="http://soa.estrellaroja.com.mx/SOAUtilitiesTec" location="WSDLs/SOAUtilitiesTecWrapper.wsdl"
+          importType="wsdl"/>
+  <import namespace="http://soa.estrellaroja.com.mx/SftpTec" location="WSDLs/SftpTecWrapper.wsdl" importType="wsdl"/>
   <service name="ProccessFileService" ui:wsdlLocation="oramds:/apps/SOA/SFTPBankEnt/SFTPBankEnt.wsdl">
     <interface.wsdl interface="http://soa.estrellaroja.com.mx/SFTPBankEnt#wsdl.interface(SFTPBankEntPort)"/>
     <binding.ws port="http://soa.estrellaroja.com.mx/SFTPBankEnt#wsdl.endpoint(Mediator_ep/SFTPBankEntPort_pt)">
@@ -37,8 +44,15 @@
       <service name="bpelproccessfile_client" ui:wsdlLocation="WSDLs/SFTPBankEntWrapper.wsdl">
         <interface.wsdl interface="http://soa.estrellaroja.com.mx/SFTPBankEnt#wsdl.interface(SFTPBankEntPort)"/>
       </service>
+      <reference name="WsSOAUtilitiesTec" ui:wsdlLocation="WSDLs/SOAUtilitiesTecWrapper.wsdl">
+        <interface.wsdl interface="http://soa.estrellaroja.com.mx/SOAUtilitiesTec#wsdl.interface(SOAUtilitiesTecPortType)"/>
+      </reference>
+      <reference name="WsSftpTec" ui:wsdlLocation="WSDLs/SftpTecWrapper.wsdl">
+        <interface.wsdl interface="http://soa.estrellaroja.com.mx/SftpTec#wsdl.interface(SftpTec_ptt)"/>
+      </reference>
     </componentType>
     <property name="bpel.config.transaction" type="xs:string" many="false">notSupported</property>
+    <property name="bpel.preference.SFTPSantanderExPath" type="xs:string" many="false" override="may">/SOA/er.soa/incoming/PROD/SANTANDER</property>
   </component>
   <component name="MediatorProcessFile">
     <implementation.mediator src="Mediators/MediatorProcessFile.mplan"/>
@@ -62,6 +76,21 @@
       </reference>
     </componentType>
   </component>
+  <reference name="WsSOAUtilitiesTec" ui:wsdlLocation="oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl">
+    <interface.wsdl interface="http://soa.estrellaroja.com.mx/SOAUtilitiesTec#wsdl.interface(SOAUtilitiesTecPortType)"/>
+    <binding.ws port="http://soa.estrellaroja.com.mx/SOAUtilitiesTec#wsdl.endpoint(SOAUtilitiesTec/SOAUtilitiesTecPort)"
+                location="oramds:/apps/SOA/SOAUtilitiesTec/SOAUtilitiesTec.wsdl" soapVersion="1.2">
+      <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+    </binding.ws>
+  </reference>
+  <reference name="WsSftpTec" ui:wsdlLocation="oramds:/apps/OSB/SftpTec/SftpTec.wsdl">
+    <interface.wsdl interface="http://soa.estrellaroja.com.mx/SftpTec#wsdl.interface(SftpTec_ptt)"/>
+    <binding.direct address="sb:/SftpTecPS"
+                    connection-factory="com.bea.wli.sb.transports.direct.OSBDirectConnectionFactory"
+                    useLocalJNDIProvider="false">
+      <property name="java.naming.provider.url">t3://ersoaprod02lab-soa-0.snproduccin.vcner.oraclevcn.com:9073</property>
+    </binding.direct>
+  </reference>
   <wire>
     <source.uri>ProccessFileService</source.uri>
     <target.uri>MediatorProcessFile/MediatorProcessFile</target.uri>
@@ -77,5 +106,13 @@
   <wire>
     <source.uri>MediatorReceiveFile/BpelProccessFile.bpelproccessfile_client</source.uri>
     <target.uri>BpelProccessFile/bpelproccessfile_client</target.uri>
+  </wire>
+  <wire>
+    <source.uri>BpelProccessFile/WsSOAUtilitiesTec</source.uri>
+    <target.uri>WsSOAUtilitiesTec</target.uri>
+  </wire>
+  <wire>
+    <source.uri>BpelProccessFile/WsSftpTec</source.uri>
+    <target.uri>WsSftpTec</target.uri>
   </wire>
 </composite>

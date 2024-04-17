@@ -1,35 +1,45 @@
 <?xml version='1.0' encoding='windows-1252'?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/SFTPBankEnt" targetNamespace="http://soa.estrellaroja.com.mx/SFTPBankEnt" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" attributeFormDefault="qualified">
-<xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
-<xsd:element name="ProcessFileRq" type="tns:FileType"/>
-<xsd:element name="ProcessFileRs" type="tns:ProcessFileRsType"/>
-
-
-
-<xsd:complexType name="FileType">
-<xsd:sequence>
-<xsd:element name="File" type="xsd:base64Binary"/>
-<xsd:element name="FileName" type="xsd:string"/>
-<xsd:element name="Path" type="xsd:string"/>
-</xsd:sequence>
-</xsd:complexType>
-<xsd:complexType name="ProcessFileReturnType">
-<xsd:sequence>
-<xsd:element name="FileName" type="tns:FileType" minOccurs="0" maxOccurs="unbounded"/>
-</xsd:sequence>
-</xsd:complexType>
-<xsd:complexType name="ProcessFileRsType">
-<xsd:complexContent>
-<xsd:extension base="cmn:BaseRsType">
-<xsd:sequence>
-<xsd:element name="Return" type="tns:ProcessFileReturnType" minOccurs="0" />
-</xsd:sequence>
-</xsd:extension>
-</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="ReceiveFileRqType">
-<xsd:sequence>
-<xsd:element name="File" type="xsd:base64Binary"/>
-</xsd:sequence>
-</xsd:complexType>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/SFTPBankEnt"
+            targetNamespace="http://soa.estrellaroja.com.mx/SFTPBankEnt"
+            xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons" attributeFormDefault="qualified">
+  <xsd:import schemaLocation="../../Common/XSD/EstrellaRojaCommons.xsd"
+              namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+  <xsd:element name="ProcessFileRq" type="tns:FileRqType"/>
+  <xsd:element name="ProcessFileRs" type="tns:ProcessFileRsType"/>
+  <xsd:complexType name="FileRqType">
+    <xsd:complexContent>
+      <xsd:extension base="tns:FileType">
+        <xsd:sequence>
+          <xsd:element name="Descompress" type="xsd:boolean"/>
+          <xsd:element name="SFTP" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FileType">
+    <xsd:sequence>
+      <xsd:element name="File" type="xsd:base64Binary"/>
+      <xsd:element name="FileName" type="xsd:string"/>
+      <xsd:element name="Path" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ProcessFileReturnType">
+    <xsd:sequence>
+      <xsd:element name="File" type="tns:FileType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ProcessFileRsType">
+    <xsd:complexContent>
+      <xsd:extension base="cmn:BaseRsType">
+        <xsd:sequence>
+          <xsd:element name="Return" type="tns:ProcessFileReturnType" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ReceiveFileRqType">
+    <xsd:sequence>
+      <xsd:element name="File" type="xsd:base64Binary"/>
+    </xsd:sequence>
+  </xsd:complexType>
 </xsd:schema>
